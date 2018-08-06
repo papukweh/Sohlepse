@@ -1,0 +1,187 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+
+\title{\textbf{MAC0214 - Atividade Curricular em Cultura e Extensão} \\ \small{Segundo semestre de 2018}}
+\author{Larissa Goto Sala, Pedro Paulo Bambace de Queiroz, Nathalia Orlandi Borin}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\newpage
+
+\section{Introdução}
+	
+	Nosso projeto será um jogo desenvolvido do início ao fim como parte das atividades da USPGameDev
+	desse semestre.
+
+\section{Sobre o jogo}
+\subsection{Resumo}
+
+	Sohlepse (nome passível de mudanças) é um jogo de \textit{puzzle}-plataforma que faz uso
+ de reflexões para proporcionar o controle de mais de um personagem com os mesmos comandos.
+
+ 	Isso pode ser feito de forma paralela (os dois personagens se movem ao mesmo tempo) ou
+ sequencial (a mesma sequência de movimentos de um personagem é repetida enquanto você
+ move o outro personagem).
+
+ 	Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criativo de suas
+ reflexões para superá-los.
+
+\subsection{Estrutura}
+	Usaremos a \textit{engine open source Godot}, com a qual temos um pouco de experiência, para realizar o desenvolvimento deste jogo.
+
+	O jogo será divido em 3 atos, sendo cada um deles subdividido em diversas fases, com segmentos de texto que contam
+uma história entre elas. O objetivo de cada fase é chegar num local específico, que ainda será definido, como uma porta,
+por exemplo.
+
+	O primeiro ato servirá para introduzir as mecânicas do jogo para o jogador. A tela será dividida em duas, sendo
+cada lado uma reflexão perfeita do outro. O jogador controlará então seu personagem e sua reflexão de forma 
+paralela.
+
+	O segundo ato ainda terá a tela dividida, mas a reflexão não será mais perfeita. Isso pode levar a dessincronização
+entre o personagem e seu reflexo, ainda controlado de forma paralela, o que proporcionará desafios diferentes
+dos anteriores.
+
+	No terceiro e último ato, a tela deixará de ser dividida, e o esquema de controle do personagem será sequencial,
+através de clones que repetirão os movimentos anteriores do personagem principal.   
+
+\subsection{Objetivo final}
+	Nosso objetivo é ter um jogo completo até o fim do semestre, disponível para \textit{download} no site
+da USPGameDev. Também pretendemos apresentar o jogo na \textit{let's test play} que será realizado no início
+do semestre seguinte. 
+
+
+\section{Etapas de desenvolvimento}
+
+	\subsection{Desenvolvimento das mecânicas básicas} - Movimento do personagem, pulo, implementar as reflexões e interação com objetos (como botões, alavancas, empurrar caixas, etc). Também implementar o menu principal do jogo.
+
+	\subsection{Planejamento, implementação e teste das fases} - Uso das mecânicas básicas em conjunto com \textit{assets} placeholder para criar as fases do jogo, assim como definir um esqueleto da história.
+
+	\subsection{Criação dos \textit{assets} finais} - Criação da arte, animação, música e efeitos sonoros que serão utilizados no jogo, assim como esquematização e impressão do pôster.
+
+	\subsection{Testes} - Correção de \textit{bugs}, \textit{playtesting} com mais pessoas, finalização do projeto e escrita do relatório final.
+
+\section{Cronograma}
+		Faremos 2 reuniões por semana, cada uma com duração de 3h. Elas poderão ser presenciais, no
+Laboratório 16 do CCSL, ou feitas remotamente.
+  	
+  	\subsection{Dia e horário das reuniões}
+  	\begin{itemize} 
+  	\item Segunda-feira - 9:00 às 12:00
+  	\item Quarta-feira - 13:00 às 16:00
+ 	\end{itemize}
+
+ 	Totalizando 96h por pessoa, sendo as 4h adicionais completadas durante as semanas de \textit{BREAK}.
+
+\subsection{Planejamento semanal}
+
+\begin{itemize} 
+\item Semana 1 (12-18/08)
+ \begin{itemize} 
+ \item Aprender a mexer na versão 3.0 da \textit{Godot}
+ \item Definir as mecânicas básicas e começar a implementá-las
+  \end{itemize}
+
+\item Semana 2 (19-25/08)
+ \begin{itemize} 
+ \item Continuar a implementação das mecânicas básicas
+ \item Começar a fazer os \textit{assets placeholders}
+ \end{itemize}
+
+\item Semana 3 (26/08-01/09)
+ \begin{itemize} 
+ \item Continuar a implementação das mecânicas básicas
+ \item Terminar os \textit{assets placeholders}
+ \end{itemize}
+
+\item Semana 4 (02-08/09) (\textit{BREAK})
+ \begin{itemize} 
+ \item Continuar a implementação das mecânicas básicas
+ \item Começar a implementação das fases iniciais (tutoriais) e menus
+ \end{itemize}
+
+\item Semana 5 (09-15/09)
+ \begin{itemize} 
+ \item Terminar a implementação das mecânicas básicas
+ \item Terminar as fases iniciais e menus
+ \end{itemize}
+
+\item Semana 6 (16-22/09)
+ \begin{itemize} 
+ \item Planejamento, teste e implementação das fases do Ato 1
+ \item Fazer o esqueleto da história do jogo
+ \end{itemize}
+
+\item Semana 7 (23-29/09)
+ \begin{itemize} 
+ \item Planejamento, teste e implementação das fases do Ato 1
+ \item Escrever a história do jogo
+ \end{itemize}
+
+\item Semana 8 (30/09-06/10)
+ \begin{itemize} 
+ \item Planejamento, teste e implementação das fases do Ato 2
+ \item Escrever a história do jogo
+ \end{itemize}
+
+\item Semana 9 (07-13/10) (\textit{BREAK})
+ \begin{itemize} 
+ \item Planejamento, teste e implementação das fases do Ato 2 
+ \item Listar os \textit{assets} finais do jogo (gráficos, animações e música)
+ \end{itemize}
+
+\item Semana 10 (14-20/10)
+ \begin{itemize} 
+ \item Planejamento, teste e implementação das fases do Ato 2
+ \item Fazer os \textit{assets} finais do jogo
+ \end{itemize}
+
+\item Semana 11 (21-27/10) 
+ \begin{itemize} 
+ \item Planejamento, teste e implementação das fases do Ato 3
+ \item Fazer os \textit{assets} finais do jogo
+ \end{itemize}
+
+\item Semana 12 (28-03/11)
+ \begin{itemize} 
+ \item Planejamento, teste e implementação das fases do Ato 3
+ \item Fazer os \textit{assets} finais do jogo
+ \end{itemize}
+
+\item Semana 13 (04-10/11) 
+ \begin{itemize} 
+ \item Fazer os \textit{assets} finais do jogo 
+ \item Imprimir o pôster
+ \end{itemize}
+
+\item Semana 14 (11-17/11) (\textit{BREAK})
+ \begin{itemize} 
+ \item Pôster - entrega
+ \item Fazer os \textit{assets} finais do jogo
+ \end{itemize}
+
+\item Semana 15 (18-24/11)
+ \begin{itemize} 
+ \item Correção de \textit{bugs} e \textit{playtesting}
+ \item Escrever o relatório final
+ \end{itemize}
+
+\item Semana 16 (25/11-01/12)
+ \begin{itemize} 
+ \item Correção de \textit{bugs} e \textit{playtesting}
+ \item Escrever o relatório final
+ \end{itemize}
+
+\end{itemize}
+
+\section{ACOMPANHAMENTO}
+ 	O progresso do projeto poderá ser acompanhado no nosso repositório do GitHub <insira link aqui>, 
+ que também possuirá uma wiki com detalhes do que foi feito em cada semana.
+
+ \subsection{Orientador} Wilson Kazuo Mizutani (kazuo@ime.usp.br), membro ativo da USPGameDev.
+
+\end{document}
