@@ -8,42 +8,42 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 11.1185 )
 
-[node name="Node2D" type="Node2D"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="0"]
-
-position = Vector2( -4.07257, -4.88704 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 2
-mass = 65535.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="RigidBody2D" index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 1.19748, -0.0433502 )
+position = Vector2( -2.87509, -4.93039 )
 scale = Vector2( 2, 1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="1"]
+[node name="RC_left" type="RayCast2D" parent="." index="1"]
 
-position = Vector2( 1.27886, 0.242453 )
+rotation = 1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 40 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RC_right" type="RayCast2D" parent="." index="2"]
+
+rotation = -1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 40 )
+collision_mask = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( -2.05863, -4.64459 )
 scale = Vector2( 3.2, 3 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]

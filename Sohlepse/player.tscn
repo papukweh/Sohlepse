@@ -3,31 +3,17 @@
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://robot_demo.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3.3537, 10 )
 
-[node name="player" type="RigidBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 2
-mass = 3.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = true
-continuous_cd = 0
-contacts_reported = 3
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Linear" ]
 invert_vertical = 1
@@ -35,8 +21,8 @@ invert_horizontal = 1
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
-position = Vector2( -1.23804, -8.8966 )
-scale = Vector2( 2.82163, 2.51892 )
+position = Vector2( -1.23804, 0.117938 )
+scale = Vector2( 2.82163, 2.23722 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -66,12 +52,20 @@ texture = ExtResource( 2 )
 vframes = 2
 hframes = 16
 frame = 22
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -5.25742, 8.40443 )
 scale = Vector2( 6.18919, 2.04718 )
-shape = SubResource( 14 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="RC_down" type="RayCast2D" parent="." index="3"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 29 )
+collision_mask = 1
 
 

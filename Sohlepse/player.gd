@@ -1,177 +1,118 @@
-extends RigidBody2D
+extends KinematicBody2D
 
-# Character Demo, written by Juan Linietsky.
-#
-# Implementation of a 2D Character controller.
-# This implementation uses the physics engine for
-# controlling a character, in a very similar way
-# than a 3D character controller would be implemented.
-#
-# Using the physics engine for this has the main
-# advantages:
-# -Easy to write.
-# -Interaction with other physics-based objects is free
-# -Only have to deal with the object linear velocity, not position
-# -All collision/area framework available
-# 
-# But also has the following disadvantages:
-#  
-# -Objects may bounce a little bit sometimes
-# -Going up ramps sends the chracter flying up, small hack is needed.
-# -A ray collider is needed to avoid sliding down on ramps and  
-#   undesiderd bumps, small steps and rare numerical precision errors.
-#   (another alternative may be to turn on friction when the character is not moving).
-# -Friction cant be used, so floor velocity must be considered
-#  for moving platforms.
+var GRAVITY = 700.0 # pixels/second/second
 
-# Member variables
-var anim = ""
-var siding_left = false
+# Angle in degrees towards either side that the player can consider "floor"
+const FLOOR_ANGLE_TOLERANCE = 40
+const WALK_FORCE = 500
+const WALK_MIN_SPEED = 10
+const WALK_MAX_SPEED = 400
+const STOP_FORCE = 1500
+const JUMP_SPEED = 500
+const JUMP_MAX_AIRBORNE_TIME = 0.2
+
+const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
+const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
+
+var velocity = Vector2()
+var on_air_time = 10
 var jumping = false
-var stopping_jump = false
-var shooting = false
+var pushing = false
+
+var siding_left = false
 export var invert_vertical = 1
 export var invert_horizontal = 1
 onready var move_left = false
 onready var move_right = false
 
-
-var WALK_ACCEL = 10000.0
-var WALK_DEACCEL = 5000.0
-var WALK_MAX_VELOCITY = 200.0
-var AIR_ACCEL = 225.0
-var AIR_DEACCEL = 10.0
-var JUMP_VELOCITY = 500.0
-var STOP_JUMP_FORCE = 5000.0
-
-var MAX_FLOOR_AIRBORNE_TIME = 0.05
-
-var airborne_time = 1e20
-var shoot_time = 1e20
-var MAX_SHOOT_POSE_TIME = 0.3
-
-var floor_h_velocity = 0.0
-
 func _process(delta):
 	if Input.is_action_just_pressed("change-v"):
 		invert_vertical *= -1
-		self.gravity_scale *= -1
 		self.rotate(PI)
+		GRAVITY *= -1
 	if Input.is_action_just_pressed("change-h"):
 		invert_horizontal *= -1
 	pass
 	
-func _integrate_forces(s):
-	var lv = s.get_linear_velocity()
-	var step = s.get_step()
-	
-	var new_anim = anim
-	var new_siding_left = siding_left
-	
-	# Get the controls
+func _physics_process(delta):
+	# Create forces
+	var force = Vector2(0, GRAVITY)
+	if Input.is_action_pressed("interact"):
+		pushing = true
+	else:
+		pushing = false
+		
 	if invert_horizontal == 1:
-		move_left = Input.is_action_pressed("move_left")
-		move_right = Input.is_action_pressed("move_right")
+		move_left = Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right")
+		move_right = Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left")
 	else:
-		move_right = Input.is_action_pressed("move_left")
-		move_left = Input.is_action_pressed("move_right")
-		
+		move_right = Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right")
+		move_left = Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left")
+	
 	var jump = Input.is_action_pressed("jump")
-	var push = Input.is_action_pressed("push-and-pull")
+	var stop = true
 	
-	# Deapply prev floor velocity
-	lv.x -= floor_h_velocity
-	floor_h_velocity = 0.0
-	
-	# Find the floor (a contact with upwards facing collision normal)
-	var found_floor = false
-	var floor_index = -1
-	
-	for x in range(s.get_contact_count()):
-		var ci = s.get_contact_local_normal(x)
-		if ci.dot(Vector2(0, invert_vertical * -1)) > 0.6:
-			found_floor = true
-			floor_index = x
-	
-	# A good idea when implementing characters of all kinds,
-	# compensates for physics imprecision, as well as human reaction delay.
-	
-	if found_floor:
-		airborne_time = 0.0
+	if pushing:
+		if move_left:
+			velocity.x = -200
+		elif move_right:
+			velocity.x = 200
 	else:
-		airborne_time += step # Time it spent in the air
+		if move_left:
+			if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
+				force.x -= WALK_FORCE
+				stop = false
+		elif move_right:
+			if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
+				force.x += WALK_FORCE
+				stop = false
 	
-	var on_floor = airborne_time < MAX_FLOOR_AIRBORNE_TIME
-
-	# Process jump
-	if jumping:
-		if (lv.y > 0 and invert_vertical == 1) or (lv.y < 0 and invert_vertical == -1):
-			# Set off the jumping flag if going down
-			jumping = false
-		elif not jump:
-			stopping_jump = true
+	if stop:
+		var vsign = sign(velocity.x)
+		var vlen = abs(velocity.x)
 		
-		if stopping_jump:
-			lv.y += invert_vertical * STOP_JUMP_FORCE * step
+		vlen -= STOP_FORCE * delta
+		if vlen < 0:
+			vlen = 0
+		
+		velocity.x = vlen * vsign
 	
-	if on_floor:
-		# Process logic when character is on floor
-		if move_left and not move_right:
-			if lv.x > -WALK_MAX_VELOCITY:
-				lv.x -= WALK_ACCEL * step
-		elif move_right and not move_left:
-			if lv.x < WALK_MAX_VELOCITY:
-				lv.x += WALK_ACCEL * step
-		else:
-			var xv = abs(lv.x)
-			xv -= WALK_DEACCEL * step
-			if xv < 0:
-				xv = 0
-			lv.x = sign(lv.x) * xv
+	var new_siding_left = siding_left
+	# Check siding
+	if velocity.x < 0 and move_left:
+		new_siding_left = true
+	elif velocity.x > 0 and move_right:
+		new_siding_left = false
 		
-		# Check jump
-		if not jumping and jump:
-			lv.y = -invert_vertical * JUMP_VELOCITY
-			jumping = true
-			stopping_jump = false
-		
-		# Check siding
-		if lv.x < 0 and move_left:
-			new_siding_left = true
-		elif lv.x > 0 and move_right:
-			new_siding_left = false
-
-	else:
-		# Process logic when the character is in the air
-		if move_left and not move_right:
-			if lv.x < WALK_MAX_VELOCITY:
-				lv.x += AIR_ACCEL * step
-		elif move_right and not move_left:
-			if lv.x > WALK_MAX_VELOCITY:
-				lv.x -= AIR_ACCEL * step
-		else:
-			var xv = abs(lv.x)
-			xv += AIR_DEACCEL * step
-			if xv < 0:
-				xv = 0
-			lv.x = sign(lv.x) * xv
-
-	
 	# Update siding
 	if new_siding_left != siding_left:
 		if new_siding_left:
-			$sprite.scale.x = -1
+			$sprite.scale.x = -invert_vertical
 		else:
-			$sprite.scale.x = 1
+			$sprite.scale.x = invert_vertical
 		
 		siding_left = new_siding_left
 	
+	# Integrate forces to velocity
+	velocity += force * delta	
+	# Integrate velocity into motion and move
+	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	# Apply floor velocity
-	if found_floor:
-		floor_h_velocity = s.get_contact_collider_velocity_at_position(floor_index).x
-		lv.x += floor_h_velocity
+	if $RC_down.is_colliding():
+		on_air_time = 0
+		jumping = false
+
+	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping:
+		# Jump must also be allowed to happen if the character left the floor a little bit ago.
+		# Makes controls more snappy.
+		velocity.y = -invert_vertical * JUMP_SPEED
+		jumping = true
 	
-	# Finally, apply gravity and set back the linear velocity
-	lv += s.get_total_gravity() * step
-	s.set_linear_velocity(lv)
+	on_air_time += delta
+	
+func moving_left():
+	return move_left and not move_right
+
+func moving_right():
+	return move_right and not move_left
+

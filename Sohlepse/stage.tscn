@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://box.tscn" type="PackedScene" id=3]
 
 [node name="stage" type="Node" index="0"]
 
@@ -33,5 +34,9 @@ _sections_unfolded = [ "Cell" ]
 position = Vector2( 274.969, 75.8002 )
 scale = Vector2( 0.817881, 1.08877 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Linear", "Transform" ]
+
+[node name="box" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 460.477, 36.1142 )
 
 
