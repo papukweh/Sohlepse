@@ -24,7 +24,7 @@ func _physics_process(delta):
 	elif $RC_right.is_colliding():
 		player = $RC_right.get_collider()
 	
-	if player != null and push:
+	if player != null and player.get_name() == "player" and push:
 		if player.moving_left():
 			velocity.x = -200
 		elif player.moving_right():

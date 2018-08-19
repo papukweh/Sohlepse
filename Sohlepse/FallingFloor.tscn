@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://FallingFloor.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -6,36 +6,59 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 99.2031, 10 )
+extents = Vector2( 94.8773, 4.74026 )
 
-[node name="FallingFloor" type="KinematicBody2D" index="0"]
+[sub_resource type="RectangleShape2D" id=2]
 
-position = Vector2( 544.735, 307.778 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
+custom_solver_bias = 0.0
+extents = Vector2( 9.98492, 10 )
+
+[node name="FallingFloor" type="Area2D"]
+
+position = Vector2( 557.909, 269.369 )
+scale = Vector2( 1.01135, 0.580037 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+monitorable = false
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
+position = Vector2( -0.116373, 20.7255 )
+scale = Vector2( 0.290403, 0.547745 )
 shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="." index="1"]
-
-position = Vector2( 0.518333, 1.25531 )
-scale = Vector2( 3.05016, 0.383668 )
-texture = ExtResource( 2 )
-
-[node name="RayCast2D" type="RayCast2D" parent="." index="2"]
-
-position = Vector2( 111.637, 17.7768 )
-rotation = 1.5708
-scale = Vector2( 1.51716, 4.06663 )
-enabled = false
-exclude_parent = true
-cast_to = Vector2( 0, 50 )
-collision_mask = 1
 _sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+position = Vector2( 0, 32 )
+scale = Vector2( 1, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D" index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+
+position = Vector2( -1.16113, 6.25488 )
+scale = Vector2( 3.00773, 2.49131 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_FallingFloor_body_entered"]
 
 
