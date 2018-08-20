@@ -4,18 +4,18 @@ var GRAVITY = 700.0 # pixels/second/second
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
-const WALK_FORCE = 500
+const WALK_FORCE = 300
 const WALK_MIN_SPEED = 10
-const WALK_MAX_SPEED = 400
+const WALK_MAX_SPEED = 300
 const STOP_FORCE = 1500
-const JUMP_SPEED = 500
-const JUMP_MAX_AIRBORNE_TIME = 0.2
+const JUMP_SPEED = 380
+const JUMP_MAX_AIRBORNE_TIME = 0.000000001
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 var velocity = Vector2()
-var on_air_time = 10
+var on_air_time = 0
 var jumping = false
 var pushing = false
 
@@ -32,6 +32,9 @@ func _process(delta):
 		GRAVITY *= -1
 	if Input.is_action_just_pressed("change-h"):
 		invert_horizontal *= -1
+	if Input.is_action_just_pressed("restart"):
+		get_tree().get_current_scene().get_name()
+		
 	pass
 	
 func _physics_process(delta):

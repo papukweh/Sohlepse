@@ -6,6 +6,7 @@
 
 [node name="floor" type="Sprite" parent="." index="0"]
 
+visible = false
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
@@ -28,11 +29,10 @@ bounce = 0.0
 position = Vector2( 4.76724, -58.7062 )
 scale = Vector2( 1, 0.986919 )
 build_mode = 0
-polygon = PoolVector2Array( 32, -24, 23.04, 31.9011, 3.01822, 234.637, -37.9726, -26.4474 )
+polygon = PoolVector2Array( -29.0564, 47.2792, -28.8882, 56.921, -36.6251, 56.9994, -36.8712, 47.2821 )
 
 [node name="edge" type="Sprite" parent="." index="1"]
 
-visible = false
 position = Vector2( 64, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
