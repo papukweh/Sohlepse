@@ -6,12 +6,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 94.8773, 4.74026 )
+extents = Vector2( 97.8411, 4.74026 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.98492, 10 )
+extents = Vector2( 11.0674, 10 )
 
 [node name="FallingFloor" type="Area2D"]
 
@@ -23,6 +23,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 monitorable = false
+collision_layer = 4
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
@@ -30,14 +31,13 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -0.116373, 20.7255 )
-scale = Vector2( 0.290403, 0.547745 )
+position = Vector2( -0.204643, -17.3188 )
+scale = Vector2( 0.333285, 0.547745 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
 
-position = Vector2( 0, 32 )
 scale = Vector2( 1, 0.5 )
 input_pickable = false
 collision_layer = 1
@@ -55,9 +55,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
 
-position = Vector2( -1.16113, 6.25488 )
 scale = Vector2( 3.00773, 2.49131 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_FallingFloor_body_entered"]
 

@@ -10,12 +10,13 @@
 [ext_resource path="res://Wall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Endgoal.tscn" type="PackedScene" id=9]
 
-[node name="stage1" type="Node"]
+[node name="stage1" type="Node" index="0"]
 
 _sections_unfolded = [ "Pause" ]
 
 [node name="tile_map" type="TileMap" parent="." index="0"]
 
+position = Vector2( 0, 0.814507 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 64, 64 )
@@ -37,13 +38,13 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="player" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 1243.43, -132.686 )
+position = Vector2( 153.895, 82.8612 )
 scale = Vector2( 0.817881, 1.08877 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform" ]
 
 [node name="box" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 1378.29, -131.858 )
+position = Vector2( 483.837, 28.8513 )
 
 [node name="button1" parent="." index="3" instance=ExtResource( 4 )]
 
@@ -51,9 +52,9 @@ position = Vector2( 356.121, 129.526 )
 
 [node name="lever2" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 333.76, -32.2155 )
+position = Vector2( 255.839, 123.626 )
 rotation = 1.5708
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="button3" parent="." index="5" instance=ExtResource( 6 )]
 
@@ -61,27 +62,27 @@ position = Vector2( 468.578, 127.194 )
 
 [node name="FallingFloor" parent="." index="6" instance=ExtResource( 7 )]
 
-position = Vector2( 801.681, 124.253 )
+position = Vector2( 801.681, 138.253 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="FallingFloor3" parent="." index="7" instance=ExtResource( 7 )]
 
-position = Vector2( 929.492, 125 )
+position = Vector2( 929.492, 138 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="FallingFloor4" parent="." index="8" instance=ExtResource( 7 )]
 
-position = Vector2( 993.918, 125 )
+position = Vector2( 993.918, 138 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="FallingFloor5" parent="." index="9" instance=ExtResource( 7 )]
 
-position = Vector2( 1057.65, 125 )
+position = Vector2( 1057.65, 138 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="FallingFloor2" parent="." index="10" instance=ExtResource( 7 )]
 
-position = Vector2( 865.842, 125 )
+position = Vector2( 865.842, 138 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="wall1" parent="." index="11" instance=ExtResource( 8 )]

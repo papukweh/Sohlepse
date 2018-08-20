@@ -4,7 +4,7 @@ var GRAVITY = 700.0 # pixels/second/second
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
-const WALK_FORCE = 300
+const WALK_FORCE = 400
 const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 300
 const STOP_FORCE = 1500
@@ -57,9 +57,9 @@ func _physics_process(delta):
 	
 	if pushing:
 		if move_left:
-			velocity.x = -200
+			velocity.x = -225
 		elif move_right:
-			velocity.x = 200
+			velocity.x = 225
 	else:
 		if move_left:
 			if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
@@ -82,9 +82,9 @@ func _physics_process(delta):
 	
 	var new_siding_left = siding_left
 	# Check siding
-	if velocity.x < 0 and move_left:
+	if velocity.x < 0 and move_left and not pushing:
 		new_siding_left = true
-	elif velocity.x > 0 and move_right:
+	elif velocity.x > 0 and move_right and not pushing:
 		new_siding_left = false
 		
 	# Update siding

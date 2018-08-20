@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 11.1185 )
+extents = Vector2( 9.18145, 11.1185 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
@@ -25,7 +25,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RC_left" type="RayCast2D" parent="." index="1"]
 
-rotation = 1.5708
+position = Vector2( -37.9869, -37.9802 )
+scale = Vector2( 1, 1.49668 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 40 )
@@ -34,7 +35,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RC_right" type="RayCast2D" parent="." index="2"]
 
-rotation = -1.5708
+position = Vector2( 31.5348, -36.6641 )
+scale = Vector2( 1, 1.50581 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 40 )
@@ -43,8 +45,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( -2.05863, -4.64459 )
-scale = Vector2( 3.2, 3 )
+position = Vector2( -2.73905, -4.64459 )
+scale = Vector2( 3.10942, 3 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
