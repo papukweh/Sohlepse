@@ -13,7 +13,7 @@ func _ready():
 	wall.connect("shown", wall, "_on_Wall_shown")
 	
 func _process(delta):
-	if inbody != null and inbody.get_name() == "player" and Input.is_action_just_pressed("interact"):
+	if inbody != null and inbody.get_name().begins_with("player") and Input.is_action_just_pressed("interact"):
 		emit_signal("hit")
 	
 func _on_Lever_body_entered(body):

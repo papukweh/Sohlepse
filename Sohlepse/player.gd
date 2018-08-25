@@ -18,6 +18,7 @@ var velocity = Vector2()
 var on_air_time = 0
 var jumping = false
 var pushing = false
+var dead = false
 
 var siding_left = false
 export var invert_vertical = 1
@@ -26,6 +27,7 @@ onready var move_left = false
 onready var move_right = false
 
 func _process(delta):
+	
 	if Input.is_action_just_pressed("change-v"):
 		invert_vertical *= -1
 		self.rotate(PI)
@@ -33,18 +35,15 @@ func _process(delta):
 	if Input.is_action_just_pressed("change-h"):
 		invert_horizontal *= -1
 	if Input.is_action_just_pressed("restart"):
-		get_tree().get_current_scene().get_name()
-		
+		die()
 	pass
 	
 func _physics_process(delta):
+	if dead:
+		return
 	# Create forces
 	var force = Vector2(0, GRAVITY)
-	if Input.is_action_pressed("interact"):
-		pushing = true
-	else:
-		pushing = false
-		
+
 	if invert_horizontal == 1:
 		move_left = Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right")
 		move_right = Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left")
@@ -57,9 +56,9 @@ func _physics_process(delta):
 	
 	if pushing:
 		if move_left:
-			velocity.x = -225
+			velocity.x = -175
 		elif move_right:
-			velocity.x = 225
+			velocity.x = 175
 	else:
 		if move_left:
 			if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
@@ -91,8 +90,10 @@ func _physics_process(delta):
 	if new_siding_left != siding_left:
 		if new_siding_left:
 			$sprite.scale.x = -invert_vertical
+			$Siding.position.x = -64
 		else:
 			$sprite.scale.x = invert_vertical
+			$Siding.position.x = 0
 		
 		siding_left = new_siding_left
 	
@@ -118,4 +119,14 @@ func moving_left():
 
 func moving_right():
 	return move_right and not move_left
+	
+func view():
+	return $Siding.get_collider()
+	
+func die():
+	dead = true
+	$AnimationPlayer.play("Death")
 
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Death":
+		global.restart()
