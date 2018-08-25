@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://other_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
 
 [node name="stage2" type="Node"]
@@ -23,10 +23,53 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196619, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393228, 0, 0 )
+tile_data = PoolIntArray( 0, 1073741825, 0, 1, 1073741824, 0, 2, 1073741824, 0, 3, 1073741824, 0, 4, 1073741824, 0, 5, 1073741824, 0, 6, 1073741824, 0, 7, 1073741824, 0, 8, 1073741824, 0, 9, 1073741824, 0, 10, 1, 0, 11, 1073741824, 0, 12, 1073741824, 0, 13, 1073741824, 0, 14, 1073741824, 0, 15, 1073741824, 0, 16, 1073741824, 0, 17, 1073741824, 0, 18, 1073741824, 0, 19, 1073741824, 0, 20, 1073741825, 0, 65536, 1073741825, 0, 65546, 1, 0, 65556, 1073741825, 0, 131072, 1073741825, 0, 131082, 1, 0, 131092, 1073741825, 0, 196608, 1073741825, 0, 196618, 1, 0, 196628, 1073741825, 0, 262144, 1073741825, 0, 262154, 1, 0, 262164, 1073741825, 0, 327680, 1073741825, 0, 327690, 1, 0, 327700, 1073741825, 0, 393216, 1073741825, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 1, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 1073741825, 0 )
 
-[node name="player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Players" type="Node" parent="." index="1"]
 
-position = Vector2( 185.009, 105.118 )
+[node name="player1" parent="Players" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 185, 105 )
+
+[node name="player2" parent="Players" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 1120, 105 )
+invert_horizontal = -1
+
+[node name="real" type="ReferenceRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -56.0
+margin_top = -104.0
+margin_right = 673.0
+margin_bottom = 510.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="mirrored" type="ReferenceRect" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 668.0
+margin_top = -104.0
+margin_right = 1416.0
+margin_bottom = 510.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
 
