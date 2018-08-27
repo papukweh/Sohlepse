@@ -113,15 +113,15 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="wall1" parent="Objects" index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 692, 291 )
+position = Vector2( 692.88, 286.479 )
 
 [node name="wall2" parent="Objects" index="6" instance=ExtResource( 7 )]
 
-position = Vector2( 693, 354 )
+position = Vector2( 693, 350.56 )
 
 [node name="wall3" parent="Objects" index="7" instance=ExtResource( 7 )]
 
-position = Vector2( 692, 419 )
+position = Vector2( 693.443, 414.56 )
 
 [node name="Hazards" type="Node" parent="." index="5"]
 
