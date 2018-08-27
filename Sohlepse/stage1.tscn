@@ -12,8 +12,10 @@
 [ext_resource path="res://WaterArea.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Endgoal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Limit.tscn" type="PackedScene" id=12]
+[ext_resource path="res://EndgoalMirror.tscn" type="PackedScene" id=13]
 
-[node name="stage1" type="Node" index="0"]
+
+[node name="stage1" type="Node"]
 
 _sections_unfolded = [ "Pause" ]
 
@@ -80,6 +82,8 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Players" type="Node" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="player1" parent="Players" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 128.049, 372.01 )
@@ -91,6 +95,8 @@ position = Vector2( 1222, 400 )
 invert_horizontal = -1
 
 [node name="Objects" type="Node" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="box" parent="Objects" index="0" instance=ExtResource( 3 )]
 
@@ -131,6 +137,8 @@ position = Vector2( 693, 350.56 )
 position = Vector2( 693.443, 414.56 )
 
 [node name="Hazards" type="Node" parent="." index="5"]
+
+editor/display_folded = true
 
 [node name="FallingFloor" parent="Hazards" index="0" instance=ExtResource( 8 )]
 
@@ -182,12 +190,16 @@ position = Vector2( 359.2, 479.16 )
 
 [node name="Endgoal" parent="." index="6" instance=ExtResource( 11 )]
 
-position = Vector2( 948.93, 222.291 )
+position = Vector2( 218.845, 408.588 )
 
 [node name="Limit" parent="." index="7" instance=ExtResource( 12 )]
 
 position = Vector2( 769.5, 683 )
 scale = Vector2( 29.0469, 1 )
+
+[node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 13 )]
+
+position = Vector2( 1295.08, 420.359 )
 
 [connection signal="area_entered" from="Objects/lever2" to="Objects/lever2" method="_on_lever2_area_entered"]
 
