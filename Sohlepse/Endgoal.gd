@@ -3,7 +3,6 @@ extends Area2D
 var inbody = null
 
 func _process(delta):
-	print(get_parent().get_node("EndgoalMirror").inEndGoal)
 	if inbody != null and inbody.get_name().begins_with("player") and Input.is_action_just_pressed("interact"):
 		if get_parent().get_node("EndgoalMirror") == null or get_parent().get_node("EndgoalMirror").inEndGoal:
 			global.current_stage += 1
