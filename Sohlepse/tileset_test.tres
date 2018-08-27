@@ -4,17 +4,17 @@
 [ext_resource path="res://Wall.png" type="Texture" id=2]
 [ext_resource path="res://Edge.png" type="Texture" id=3]
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
@@ -32,7 +32,7 @@ points = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 4 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
 } ]
 1/name = "wall"
@@ -46,7 +46,7 @@ points = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 5 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
 } ]
 2/name = "edge"
@@ -60,7 +60,7 @@ points = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
-"shape_transform": Transform2D( 0.964788, 0, 0, 0.952262, 30.6264, 33.5856 )
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 0.887233, 0, 0, 0.952262, 28.5874, 33.8003 )
 } ]
 
