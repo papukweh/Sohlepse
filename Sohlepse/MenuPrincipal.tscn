@@ -3,7 +3,7 @@
 [ext_resource path="res://MenuPricipal.gd" type="Script" id=1]
 [ext_resource path="res://butpres.png" type="Texture" id=2]
 
-[node name="MenuPrincipal" type="Control" index="0"]
+[node name="MenuPrincipal" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0

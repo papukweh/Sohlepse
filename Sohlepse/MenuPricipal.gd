@@ -14,9 +14,10 @@ func _ready():
 
 func _process(delta):
 	if continue_pressed or (Input.is_action_just_pressed("interact") and state == 0):
-		get_tree().change_scene("stage1.tscn")
+		global.current_stage = global.unlocked_stage
+		get_tree().change_scene("StageManager.tscn")
 	if levelSelect_pressed or (Input.is_action_just_pressed("interact") and state == 1):
-		get_tree().change_scene("stage1.tscn")
+		get_tree().change_scene("Stage_Menu.tscn")
 	if options_pressed or (Input.is_action_just_pressed("interact") and state == 2):
 		get_tree().change_scene("Options.tscn")
 	if credits_pressed or (Input.is_action_just_pressed("interact") and state == 3):
