@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Lever.gd" type="Script" id=1]
-[ext_resource path="res://scroll_bg_cloud_2.png" type="Texture" id=2]
-[ext_resource path="res://scroll_bg_cloud_1.png" type="Texture" id=3]
+[ext_resource path="res://lever_on.png" type="Texture" id=2]
+[ext_resource path="res://lever_off.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -21,7 +21,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 12.5504, 10 )
+extents = Vector2( 11.6369, 13.5594 )
 
 [node name="Lever" type="Area2D"]
 
@@ -39,16 +39,15 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-rotation = 1.5708
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
 animation = "off"
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -3.40976, -0.913229 )
-scale = Vector2( 1.37556, 1.50324 )
+position = Vector2( 0.131722, -0.0451455 )
+scale = Vector2( 0.996257, 1.6375 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_Lever_body_entered"]

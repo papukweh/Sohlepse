@@ -7,6 +7,7 @@ func _process(delta):
 		if get_parent().get_node("EndgoalMirror") == null or get_parent().get_node("EndgoalMirror").inEndGoal:
 			global.current_stage += 1
 			get_tree().reload_current_scene()
+
 		
 func _on_Endgoal_body_entered(body):
 	inbody = body

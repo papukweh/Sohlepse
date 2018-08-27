@@ -6,6 +6,7 @@
 [node name="StageManager" type="Node2D"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Setup" parent="." index="0" instance=ExtResource( 2 )]
 

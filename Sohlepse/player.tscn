@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 2.7182, 10.5321 )
+extents = Vector2( 2.36073, 10.5321 )
 
 [sub_resource type="Animation" id=2]
 
@@ -53,6 +53,7 @@ tracks/2/keys = {
 
 [node name="player" type="KinematicBody2D"]
 
+position = Vector2( -0.475647, 0 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
