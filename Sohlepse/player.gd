@@ -19,8 +19,10 @@ var on_air_time = 0
 var jumping = false
 var pushing = false
 var dead = false
+var in_terrain = false
 
 var siding_left = false
+var terrain = 1.0
 export var invert_vertical = 1
 export var invert_horizontal = 1
 onready var move_left = false
@@ -61,12 +63,12 @@ func _physics_process(delta):
 			velocity.x = 175
 	else:
 		if move_left:
-			if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
+			if velocity.x <= WALK_MIN_SPEED * terrain and velocity.x > -WALK_MAX_SPEED * terrain:
 				force.x -= WALK_FORCE
 				stop = false
 		elif move_right:
-			if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
-				force.x += WALK_FORCE
+			if velocity.x >= -WALK_MIN_SPEED * terrain and velocity.x < WALK_MAX_SPEED * terrain:
+				force.x += WALK_FORCE	
 				stop = false
 	
 	if stop:
@@ -98,18 +100,20 @@ func _physics_process(delta):
 		siding_left = new_siding_left
 	
 	# Integrate forces to velocity
-	velocity += force * delta	
+	velocity += force * delta
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	if $RC_down.is_colliding():
 		on_air_time = 0
 		jumping = false
+		if not in_terrain:
+			terrain = 1.0
 
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping:
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
-		velocity.y = -invert_vertical * JUMP_SPEED
+		velocity.y = -invert_vertical * JUMP_SPEED * terrain
 		jumping = true
 	
 	on_air_time += delta
