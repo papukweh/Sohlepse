@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Button.gd" type="Script" id=1]
-[ext_resource path="res://butpres.png" type="Texture" id=2]
-[ext_resource path="res://moving_platform.png" type="Texture" id=3]
+[ext_resource path="res://Button2.png" type="Texture" id=2]
+[ext_resource path="res://Button1.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -22,7 +22,7 @@ _sections_unfolded = [ "Resource" ]
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 8.65257, 10 )
 
 [node name="Button" type="Area2D"]
 
@@ -37,16 +37,16 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 0, 0.0973301 )
-scale = Vector2( 0.101757, 0.258212 )
+position = Vector2( 0, -2.42073 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
 animation = "default"
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.181803, -3.36307 )
-scale = Vector2( 1.01343, 0.515817 )
+position = Vector2( 0.23905, -4.75747 )
+scale = Vector2( 0.750746, 0.300749 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_Button_body_entered"]
