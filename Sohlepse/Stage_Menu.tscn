@@ -4,14 +4,14 @@
 [ext_resource path="res://Next.gd" type="Script" id=2]
 [ext_resource path="res://Prev.gd" type="Script" id=3]
 
-[node name="Stage_Menu" type="Control" index="0"]
+[node name="Stage_Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 800.0
-margin_bottom = 485.0
+margin_right = 1029.0
+margin_bottom = 676.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -22,21 +22,21 @@ _sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Re
 
 [node name="Batch1" type="ReferenceRect" parent="." index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 41.0
-margin_top = 129.0
-margin_right = 755.0
-margin_bottom = 453.0
+margin_left = 150.0
+margin_top = 250.0
+margin_right = 864.0
+margin_bottom = 574.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
 [node name="1" parent="Batch1" index="0" instance=ExtResource( 1 )]
 
@@ -107,20 +107,22 @@ script = ExtResource( 2 )
 
 [node name="Batch2" type="ReferenceRect" parent="." index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 41.0
-margin_top = 129.0
-margin_right = 755.0
-margin_bottom = 453.0
+margin_left = 150.0
+margin_top = 250.0
+margin_right = 864.0
+margin_bottom = 574.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
 [node name="7" parent="Batch2" index="0" instance=ExtResource( 1 )]
 
@@ -195,9 +197,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 320.0
+margin_left = 426.0
 margin_top = 80.0
-margin_right = 368.0
+margin_right = 474.0
 margin_bottom = 101.0
 rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
