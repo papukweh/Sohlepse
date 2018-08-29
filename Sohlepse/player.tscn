@@ -51,7 +51,7 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( -0.475647, 0 )
 input_pickable = false
@@ -91,6 +91,7 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 29 )
 collision_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
