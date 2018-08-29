@@ -11,7 +11,7 @@ extents = Vector2( 10, 10 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11.0819, 11.4069 )
+extents = Vector2( 9.99947, 11.4069 )
 
 [node name="WaterArea" type="StaticBody2D" index="0"]
 
@@ -47,22 +47,10 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 2 )
 
-[node name="On" type="RayCast2D" parent="Area" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" index="0"]
 
-visible = false
-position = Vector2( 31.6969, -5.10759 )
-rotation = 1.5708
-scale = Vector2( 1.51671, 1.17984 )
-enabled = false
-exclude_parent = true
-cast_to = Vector2( 0, 50 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" index="1"]
-
-position = Vector2( 0.399178, -9.9532 )
-scale = Vector2( 3.03559, 1.93922 )
+position = Vector2( -0.279087, -2.41135 )
+scale = Vector2( 3.03559, 1.42836 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="Area" to="Area" method="_on_Area_body_entered"]

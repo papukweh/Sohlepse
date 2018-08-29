@@ -19,7 +19,7 @@ var on_air_time = 0
 var jumping = false
 var pushing = false
 var dead = false
-var in_terrain = false
+var in_terrain = 0
 
 var siding_left = false
 var terrain = 1.0
@@ -107,7 +107,7 @@ func _physics_process(delta):
 	if $RC_down.is_colliding():
 		on_air_time = 0
 		jumping = false
-		if not in_terrain:
+		if in_terrain == 0:
 			terrain = 1.0
 
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping:
