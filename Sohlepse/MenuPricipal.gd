@@ -6,11 +6,10 @@ var credits_pressed = false
 var exit_pressed = false
 var state = 0
 var buttons = ["continue", "levelSelect", "option", "credits", "exit"]
-var label = ["continuar", "Seleção de Fase", "opções", "créditos", "sair"]
-var LABEL = ["CONTINUAR", "SELEÇÃO DE FASE", "OPÇÕES", "CRÉDITOS", "SAIR"]
+var label = ["Continuar", "Seleção de Fases", "Opções", "Créditos", "Sair"]
+var LABEL = ["CONTINUAR", "SELEÇÃO DE FASES", "OPÇÕES", "CRÉDITOS", "SAIR"]
 func _ready():
 	get_node("continue").text = "CONTINUAR"
-	pass
 
 func _process(delta):
 	if continue_pressed or (Input.is_action_just_pressed("interact") and state == 0):
@@ -32,24 +31,18 @@ func _process(delta):
 		get_node(buttons[state]).text = label[state]
 		state = (state-1)%5
 		get_node(buttons[state]).text = LABEL[state]
-	pass
 
 func _on_continue_pressed():
 	continue_pressed = true
-	pass
 
 func _on_levelSelect_pressed():
 	levelSelect_pressed = true
-	pass 
 
 func _on_option_pressed():
 	options_pressed = true
-	pass 
 
 func _on_credits_pressed():
 	credits_pressed = true
-	pass
 	
 func _on_exit_pressed():
 	exit_pressed = true
-	pass 

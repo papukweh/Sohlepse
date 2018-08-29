@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Stage_Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Next.gd" type="Script" id=2]
 [ext_resource path="res://Prev.gd" type="Script" id=3]
+[ext_resource path="res://Back.gd" type="Script" id=4]
 
-[node name="Stage_Menu" type="Control" index="0"]
+[node name="Stage_Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -101,6 +102,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Next"
 flat = false
 align = 1
 script = ExtResource( 2 )
@@ -187,6 +189,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Previous"
 flat = false
 align = 1
 script = ExtResource( 3 )
@@ -209,13 +212,43 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 text = "Fases"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
+[node name="Back" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 34.0
+margin_top = 617.0
+margin_right = 126.0
+margin_bottom = 651.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Voltar"
+flat = false
+align = 1
+script = ExtResource( 4 )
+_sections_unfolded = [ "Margin" ]
+
 [connection signal="button_down" from="Batch1/Next" to="Batch1/Next" method="_on_Next_button_down"]
 
 [connection signal="button_down" from="Batch2/Prev" to="Batch2/Prev" method="_on_Prev_button_down"]
+
+[connection signal="pressed" from="Back" to="Back" method="_on_Back_pressed"]
 
 

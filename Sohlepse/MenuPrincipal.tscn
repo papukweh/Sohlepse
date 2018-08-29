@@ -1,17 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MenuPricipal.gd" type="Script" id=1]
-[ext_resource path="res://butpres.png" type="Texture" id=2]
+[ext_resource path="res://Titulo.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
-[node name="MenuPrincipal" type="Control"]
+[node name="MenuPrincipal" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 2.0
-margin_right = 801.0
-margin_bottom = 485.0
+margin_right = 1026.0
+margin_bottom = 679.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -27,10 +28,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 321.0
-margin_top = 210.0
-margin_right = 441.0
-margin_bottom = 246.0
+margin_left = 430.0
+margin_top = 318.0
+margin_right = 560.0
+margin_bottom = 354.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -42,7 +43,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "continuar"
+text = "Continuar"
 flat = false
 align = 1
 
@@ -52,10 +53,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 322.0
-margin_top = 264.0
-margin_right = 443.0
-margin_bottom = 310.0
+margin_left = 430.0
+margin_top = 378.0
+margin_right = 561.0
+margin_bottom = 418.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -77,10 +78,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 322.0
-margin_top = 326.0
-margin_right = 444.0
-margin_bottom = 361.0
+margin_left = 430.0
+margin_top = 438.0
+margin_right = 562.0
+margin_bottom = 473.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -92,7 +93,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "opções"
+text = "Opções"
 flat = false
 align = 1
 
@@ -102,10 +103,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 324.0
-margin_top = 381.0
-margin_right = 442.0
-margin_bottom = 418.0
+margin_left = 430.0
+margin_top = 498.0
+margin_right = 564.0
+margin_bottom = 532.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -117,7 +118,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "créditos"
+text = "Créditos"
 flat = false
 align = 1
 
@@ -127,10 +128,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 324.0
-margin_top = 432.0
-margin_right = 447.0
-margin_bottom = 469.0
+margin_left = 430.0
+margin_top = 558.0
+margin_right = 563.0
+margin_bottom = 593.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -142,15 +143,23 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "sair"
+text = "Sair"
 flat = false
 align = 1
 
 [node name="Título" type="Sprite" parent="." index="5"]
 
-position = Vector2( 391.208, 86.766 )
-scale = Vector2( 2.10375, 2.14939 )
+position = Vector2( 496.999, 210.598 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Icone" type="Sprite" parent="." index="6"]
+
+position = Vector2( 807.915, 184.949 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
 
