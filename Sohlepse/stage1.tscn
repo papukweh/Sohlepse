@@ -14,7 +14,7 @@
 [ext_resource path="res://Limit.tscn" type="PackedScene" id=12]
 [ext_resource path="res://EndgoalMirror.tscn" type="PackedScene" id=13]
 
-[node name="stage1" type="Node"]
+[node name="stage1" type="Node" index="0"]
 
 _sections_unfolded = [ "Pause" ]
 
@@ -135,7 +135,7 @@ position = Vector2( 693.443, 414.56 )
 
 [node name="FallingFloor" parent="Hazards" index="0" instance=ExtResource( 8 )]
 
-position = Vector2( 745, 454.464 )
+position = Vector2( 744.339, 454.842 )
 
 [node name="FallingFloor2" parent="Hazards" index="1" instance=ExtResource( 8 )]
 
