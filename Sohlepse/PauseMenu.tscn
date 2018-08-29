@@ -1,18 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://MenuPricipal.gd" type="Script" id=1]
-[ext_resource path="res://Titulo.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Player.png" type="Texture" id=2]
+[ext_resource path="res://Endgoal.png" type="Texture" id=3]
 
-[node name="MenuPrincipal" type="Control" index="0"]
+[node name="PauseMenu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 2.0
-margin_right = 1026.0
-margin_bottom = 679.0
+margin_left = 305.0
+margin_top = 114.0
+margin_right = 757.0
+margin_bottom = 482.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -20,118 +21,130 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+_sections_unfolded = [ "Pause", "Visibility" ]
 
-[node name="continue" type="Button" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 108.325, 80.35 )
+scale = Vector2( 1.94605, 2.01259 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 276.61, 74.5449 )
+scale = Vector2( 2.08698, 1.97995 )
+texture = ExtResource( 3 )
+
+[node name="Voltar" type="Button" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 430.0
-margin_top = 318.0
-margin_right = 560.0
+margin_left = 13.0
+margin_top = 149.0
+margin_right = 426.0
+margin_bottom = 204.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Voltar para o Jogo"
+flat = false
+align = 1
+
+[node name="Menu" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 229.0
+margin_right = 127.0
+margin_bottom = 279.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Menu"
+flat = false
+align = 1
+
+[node name="Restart" type="Button" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 147.0
+margin_top = 230.0
+margin_right = 272.0
+margin_bottom = 275.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Recomeçar"
+flat = false
+align = 1
+
+[node name="Controles" type="Button" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 285.0
+margin_top = 227.0
+margin_right = 423.0
+margin_bottom = 275.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Controles"
+flat = false
+align = 1
+
+[node name="Exit" type="Button" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 291.0
+margin_right = 106.0
 margin_bottom = 354.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Jogar"
-flat = false
-align = 1
-
-[node name="levelSelect" type="Button" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 430.0
-margin_top = 378.0
-margin_right = 561.0
-margin_bottom = 418.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Seleção de Fases"
-flat = false
-align = 1
-
-[node name="option" type="Button" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 430.0
-margin_top = 438.0
-margin_right = 562.0
-margin_bottom = 473.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Opções"
-flat = false
-align = 1
-
-[node name="credits" type="Button" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 430.0
-margin_top = 498.0
-margin_right = 564.0
-margin_bottom = 532.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Créditos"
-flat = false
-align = 1
-
-[node name="exit" type="Button" parent="." index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 430.0
-margin_top = 558.0
-margin_right = 563.0
-margin_bottom = 593.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -147,28 +160,14 @@ text = "Sair"
 flat = false
 align = 1
 
-[node name="Título" type="Sprite" parent="." index="5"]
+[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 
-position = Vector2( 496.999, 210.598 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
 
-[node name="Icone" type="Sprite" parent="." index="6"]
+[connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 
-position = Vector2( 807.915, 184.949 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+[connection signal="pressed" from="Controles" to="." method="_on_Controles_pressed"]
 
-[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
-
-[connection signal="pressed" from="levelSelect" to="." method="_on_levelSelect_pressed"]
-
-[connection signal="pressed" from="option" to="." method="_on_option_pressed"]
-
-[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
-
-[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 
 

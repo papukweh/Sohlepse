@@ -10,3 +10,6 @@ func _ready():
 	print(viewport.get_children())
 	$Setup.world = get_node("Setup/Viewports/C1/Viewport1/stage"+str(id)+"/")
 	$Setup.can_load()
+	
+func _process(delta):
+		
