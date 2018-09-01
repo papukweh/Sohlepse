@@ -6,11 +6,15 @@ onready var camera1 = $Viewports/C1/Viewport1/Camera2D/
 onready var camera2 = $Viewports/C2/Viewport2/Camera2D/
 onready var world = null
 
-func can_load():
-	Viewport2.world_2d = Viewport1.world_2d
-	camera1.target = world.get_node("Players/player1")
-	camera2.target = world.get_node("Players/player2")
-	set_camera_limits()
+func can_load(mode):
+	if mode > 1:
+		Viewport2.world_2d = Viewport1.world_2d
+		camera1.target = world.get_node("Players/player1")
+		camera2.target = world.get_node("Players/player2")
+		set_camera_limits()
+	else:
+		camera1.target = world.get_node("Players/player1")
+		$Viewports/C2.queue_free()
 
 func set_camera_limits():
 	var map_limits = [world.get_node("real").get_global_rect(), world.get_node("mirrored").get_global_rect()] 

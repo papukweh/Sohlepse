@@ -23,13 +23,21 @@ var in_terrain = false
 
 var siding_left = false
 var terrain = 1.0
+onready var Recorder = null
 export var invert_vertical = 1
 export var invert_horizontal = 1
 onready var move_left = false
 onready var move_right = false
+onready var recording = false
+onready var jump = false
+onready var clone = false
+onready var on_act3 = global.current_act() == 3
 
 func _process(delta):
-	
+	if Recorder == null and not clone:
+		Recorder = get_parent().get_parent().get_recorder()
+	if dead:
+		return
 	if Input.is_action_just_pressed("change-v"):
 		invert_vertical *= -1
 		self.rotate(PI)
@@ -38,22 +46,22 @@ func _process(delta):
 		invert_horizontal *= -1
 	if Input.is_action_just_pressed("restart"):
 		die()
-	pass
+	if on_act3 and not clone:
+		if Input.is_action_just_pressed("record"):
+			if recording:
+				Recorder.stop_recording()
+				recording = false
+			else:
+				recording = true
+				Recorder.start_recording(self)
+		if Input.is_action_just_pressed("play"):
+			Recorder.play_all()
 	
 func _physics_process(delta):
 	if dead:
 		return
 	# Create forces
 	var force = Vector2(0, GRAVITY)
-
-	if invert_horizontal == 1:
-		move_left = Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right")
-		move_right = Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left")
-	else:
-		move_right = Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right")
-		move_left = Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left")
-	
-	var jump = Input.is_action_pressed("jump")
 	var stop = true
 	
 	if pushing:
@@ -130,7 +138,7 @@ func view():
 func die():
 	dead = true
 	$AnimationPlayer.play("Death")
-
+	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Death":
 		global.restart()

@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://tileset_test.tres" type="TileSet" id=1]
-[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Endgoal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://EndgoalMirror.tscn" type="PackedScene" id=5]
 
-[node name="stage2" type="Node"]
+[node name="stage2" instance=ExtResource( 1 )]
+
+ACT = 2
+PLAYERS = 2
+MIRRORS = 2
+MAX_CLONES = 0
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -23,53 +31,60 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 0, 1073741825, 0, 1, 1073741824, 0, 2, 1073741824, 0, 3, 1073741824, 0, 4, 1073741824, 0, 5, 1073741824, 0, 6, 1073741824, 0, 7, 1073741824, 0, 8, 1073741824, 0, 9, 1073741824, 0, 10, 1, 0, 11, 1073741824, 0, 12, 1073741824, 0, 13, 1073741824, 0, 14, 1073741824, 0, 15, 1073741824, 0, 16, 1073741824, 0, 17, 1073741824, 0, 18, 1073741824, 0, 19, 1073741824, 0, 20, 1073741825, 0, 65536, 1073741825, 0, 65546, 1, 0, 65556, 1073741825, 0, 131072, 1073741825, 0, 131082, 1, 0, 131092, 1073741825, 0, 196608, 1073741825, 0, 196618, 1, 0, 196628, 1073741825, 0, 262144, 1073741825, 0, 262154, 1, 0, 262164, 1073741825, 0, 327680, 1073741825, 0, 327690, 1, 0, 327700, 1073741825, 0, 393216, 1073741825, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 1, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 1073741825, 0 )
+tile_data = PoolIntArray( 0, 536870913, 0, 1, 1610612736, 0, 2, 1610612736, 0, 3, 1610612736, 0, 4, 1610612736, 0, 5, 1610612736, 0, 6, 1610612736, 0, 7, 1610612736, 0, 8, 1610612736, 0, 9, 1610612736, 0, 10, 1610612736, 0, 11, 1610612736, 0, 12, 1610612736, 0, 13, 1610612736, 0, 14, 1610612736, 0, 15, 536870913, 0, 65536, 536870913, 0, 65543, 1610612737, 0, 65544, 1610612737, 0, 65551, 536870913, 0, 131072, 536870913, 0, 131079, 1610612737, 0, 131080, 1610612737, 0, 131087, 536870913, 0, 196608, 536870913, 0, 196615, 1610612737, 0, 196616, 1610612737, 0, 196623, 536870913, 0, 262144, 536870913, 0, 262151, 1610612737, 0, 262152, 1610612737, 0, 262159, 536870913, 0, 327680, 536870913, 0, 327687, 1610612737, 0, 327688, 1610612737, 0, 327695, 536870913, 0, 393216, 536870913, 0, 393223, 1610612737, 0, 393224, 1610612737, 0, 393231, 536870913, 0, 458752, 536870913, 0, 458759, 1610612737, 0, 458760, 1610612737, 0, 458767, 536870913, 0, 524288, 536870913, 0, 524295, 1610612737, 0, 524296, 1610612737, 0, 524303, 536870913, 0, 589824, 536870913, 0, 589825, 536870912, 0, 589826, 536870912, 0, 589827, 536870912, 0, 589828, 536870912, 0, 589829, 536870912, 0, 589830, 536870912, 0, 589831, 536870912, 0, 589832, 536870912, 0, 589833, 536870912, 0, 589834, 536870912, 0, 589835, 536870912, 0, 589836, 536870912, 0, 589837, 536870912, 0, 589838, 536870912, 0, 589839, 536870913, 0 )
 
-[node name="Players" type="Node" parent="." index="1"]
+[node name="real" type="ReferenceRect" parent="." index="1"]
 
-[node name="player1" parent="Players" index="0" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 3.0
+margin_right = 513.0
+margin_bottom = 644.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
-position = Vector2( 185, 105 )
+[node name="mirrored" type="ReferenceRect" parent="." index="2"]
 
-[node name="player2" parent="Players" index="1" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 512.0
+margin_top = 3.0
+margin_right = 1015.0
+margin_bottom = 644.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
-position = Vector2( 1120, 105 )
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 203.522, 451.267 )
 invert_horizontal = -1
 
-[node name="real" type="ReferenceRect" parent="." index="2"]
+[node name="player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -56.0
-margin_top = -104.0
-margin_right = 673.0
-margin_bottom = 510.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
+position = Vector2( 849.514, 485.267 )
 
-[node name="mirrored" type="ReferenceRect" parent="." index="3"]
+[node name="Endgoal" parent="." index="4" instance=ExtResource( 4 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 668.0
-margin_top = -104.0
-margin_right = 1416.0
-margin_bottom = 510.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
+position = Vector2( 373.718, 546.127 )
+
+[node name="EndgoalMirror" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 660.145, 541.377 )
 
 

@@ -5,8 +5,11 @@ onready var viewport = $Setup/Viewports/C1/Viewport1/
 onready var stage = null
 
 func _ready():
+	if id > global.FINAL:
+		get_tree().change_scene("MenuPrincipal.tscn")
+		return
 	stage = load("res://stage"+str(id)+".tscn")
 	viewport.add_child(stage.instance())
-	print(viewport.get_children())
 	$Setup.world = get_node("Setup/Viewports/C1/Viewport1/stage"+str(id)+"/")
-	$Setup.can_load()
+	var mode = $Setup.world.PLAYERS
+	$Setup.can_load(mode) 

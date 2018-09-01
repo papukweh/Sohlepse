@@ -1,30 +1,29 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://tileset_test.tres" type="TileSet" id=1]
-[ext_resource path="res://player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://box.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Lever.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Stage.gd" type="Script" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://FireArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ButtonInst.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Wall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://FallingFloor.tscn" type="PackedScene" id=8]
-[ext_resource path="res://FireArea.tscn" type="PackedScene" id=9]
-[ext_resource path="res://WaterArea.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Endgoal.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Limit.tscn" type="PackedScene" id=12]
-[ext_resource path="res://EndgoalMirror.tscn" type="PackedScene" id=13]
+[ext_resource path="res://box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Endgoal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://EndgoalMirror.tscn" type="PackedScene" id=9]
 
 [node name="stage1" type="Node"]
 
-_sections_unfolded = [ "Pause" ]
+script = ExtResource( 1 )
+ACT = 1
+PLAYERS = 2
+MIRRORS = 2
+MAX_CLONES = 0
 
-[node name="tile_map" type="TileMap" parent="." index="0"]
+[node name="TileMap" type="TileMap" parent="." index="0"]
 
-position = Vector2( -56, 319 )
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
-cell_quadrant_size = 8
+cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
 cell_tile_origin = 0
@@ -37,8 +36,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -327679, 1073741825, 0, -327678, 1073741824, 0, -327677, 1073741824, 0, -327676, 1073741824, 0, -327675, 1073741824, 0, -327674, 1073741824, 0, -327673, 1073741824, 0, -327672, 1073741824, 0, -327671, 1073741824, 0, -327670, 1073741824, 0, -327669, 1073741824, 0, -327668, 1073741824, 0, -327667, 1073741824, 0, -327666, 1073741824, 0, -327665, 1073741824, 0, -327664, 1073741824, 0, -327663, 1073741824, 0, -327662, 1073741824, 0, -327661, 1073741824, 0, -327660, 1073741824, 0, -327659, 1073741824, 0, -327658, 1073741824, 0, -327657, 1073741824, 0, -327656, 1073741825, 0, -262143, 1073741825, 0, -262120, 1, 0, -196607, 1073741825, 0, -196584, 1, 0, -131071, 1073741825, 0, -131070, 1073741824, 0, -131069, 1073741824, 0, -131068, 1073741824, 0, -131067, 1073741824, 0, -131066, 1073741824, 0, -131065, 1073741824, 0, -131064, 1073741824, 0, -131063, 1073741824, 0, -131062, 1073741824, 0, -131061, 1073741826, 0, -131048, 1, 0, -65535, 1, 0, -65522, 536870914, 0, -65521, 536870912, 0, -65520, 536870912, 0, -65519, 536870912, 0, -65518, 536870912, 0, -65517, 2, 0, -65512, 1, 0, 1, 1, 0, 17, 1, 0, 21, 536870914, 0, 22, 0, 0, 23, 0, 0, 24, 1, 0, 65537, 1, 0, 65553, 1, 0, 65560, 1, 0, 131073, 1, 0, 131074, 0, 0, 131075, 0, 0, 131076, 2, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 2, 0, 131089, 536870914, 0, 131090, 536870912, 0, 131091, 536870912, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 1, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0 )
-_sections_unfolded = [ "Cell", "Transform" ]
+tile_data = PoolIntArray( 0, 1, 0, 1, 1073741824, 0, 2, 1073741824, 0, 3, 1073741824, 0, 4, 1073741824, 0, 5, 1073741824, 0, 6, 1073741824, 0, 7, 1073741824, 0, 8, 1073741824, 0, 9, 1073741824, 0, 10, 1073741824, 0, 11, 1073741824, 0, 12, 1073741824, 0, 13, 1073741824, 0, 14, 1073741824, 0, 15, 1073741824, 0, 16, 1073741824, 0, 17, 1073741824, 0, 18, 1073741824, 0, 19, 1073741824, 0, 20, 1073741824, 0, 21, 1073741824, 0, 22, 1, 0, 65536, 1, 0, 65546, 536870913, 0, 65558, 1, 0, 131072, 1, 0, 131082, 536870913, 0, 131094, 1, 0, 196608, 1, 0, 196614, 536870914, 0, 196615, 536870912, 0, 196616, 536870912, 0, 196617, 536870912, 0, 196618, 536870913, 0, 196619, 536870912, 0, 196620, 536870912, 0, 196621, 2, 0, 196630, 1, 0, 262144, 1, 0, 262148, 536870914, 0, 262150, 536870912, 0, 262154, 1, 0, 262158, 2, 0, 262166, 1, 0, 327680, 1, 0, 327683, 536870914, 0, 327684, 0, 0, 327690, 1, 0, 327694, 536870912, 0, 327695, 2, 0, 327702, 1, 0, 393216, 1, 0, 393217, 2, 0, 393226, 1, 0, 393231, 536870912, 0, 393232, 2, 0, 393238, 1, 0, 458752, 1, 0, 458753, 0, 0, 458754, 2, 0, 458762, 1, 0, 458768, 536870912, 0, 458770, 536870912, 0, 458771, 2, 0, 458774, 1, 0, 524288, 1, 0, 524289, 0, 0, 524290, 0, 0, 524291, 2, 0, 524298, 1, 0, 524310, 1, 0, 589824, 1, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 536870912, 0, 589840, 536870912, 0, 589841, 536870912, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 1, 0 )
 
 [node name="real" type="ReferenceRect" parent="." index="1"]
 
@@ -46,17 +44,15 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -919.0
-margin_top = -146.0
-margin_right = 770.0
-margin_bottom = 644.0
+margin_left = -101.0
+margin_right = 709.0
+margin_bottom = 688.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Rect" ]
 
 [node name="mirrored" type="ReferenceRect" parent="." index="2"]
 
@@ -64,136 +60,71 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 773.0
-margin_top = -146.0
-margin_right = 2097.0
-margin_bottom = 650.0
+margin_left = 705.0
+margin_right = 1517.0
+margin_bottom = 640.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Players" type="Node" parent="." index="3"]
 
-editor/display_folded = true
+[node name="player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-[node name="player1" parent="Players" index="0" instance=ExtResource( 2 )]
+position = Vector2( 412.372, 532.797 )
 
-position = Vector2( 128.049, 372.01 )
+[node name="player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
-[node name="player2" parent="Players" index="1" instance=ExtResource( 2 )]
-
-position = Vector2( 1222, 400 )
+position = Vector2( 794.535, 532.797 )
 invert_horizontal = -1
 
-[node name="Objects" type="Node" parent="." index="4"]
+[node name="Hazards" type="Node" parent="." index="4"]
 
-editor/display_folded = true
+[node name="FireArea" parent="Hazards" index="0" instance=ExtResource( 4 )]
 
-[node name="box" parent="Objects" index="0" instance=ExtResource( 3 )]
+position = Vector2( 1120, 479.879 )
 
-position = Vector2( 1441, 425 )
+[node name="FireArea2" parent="Hazards" index="1" instance=ExtResource( 4 )]
 
-[node name="box2" parent="Objects" index="1" instance=ExtResource( 3 )]
+position = Vector2( 351.683, 287.459 )
 
-position = Vector2( 543, 396 )
+[node name="Objects" type="Node" parent="." index="5"]
 
-[node name="button1" parent="Objects" index="2" instance=ExtResource( 4 )]
+[node name="wall2" parent="Objects" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 180.002, 448.136 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 1008.59, 510.709 )
+scale = Vector2( 1, 1.98509 )
 
-[node name="lever2" parent="Objects" index="3" instance=ExtResource( 5 )]
+[node name="wall1" parent="Objects" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 80.0705, 403.013 )
-scale = Vector2( 1.21187, 1.13228 )
-_sections_unfolded = [ "Collision", "Transform" ]
+position = Vector2( 149.9, 383.941 )
+scale = Vector2( 1, 1.89834 )
 
-[node name="button3" parent="Objects" index="4" instance=ExtResource( 6 )]
+[node name="button2" parent="Objects" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 423, 446 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 614.68, 572.27 )
 
-[node name="wall1" parent="Objects" index="5" instance=ExtResource( 7 )]
+[node name="button1" parent="Objects" index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 692.88, 286.479 )
+position = Vector2( 850.531, 569.788 )
 
-[node name="wall2" parent="Objects" index="6" instance=ExtResource( 7 )]
+[node name="box" parent="Objects" index="4" instance=ExtResource( 7 )]
 
-position = Vector2( 693, 350.56 )
+position = Vector2( 525.593, 399.451 )
 
-[node name="wall3" parent="Objects" index="7" instance=ExtResource( 7 )]
+[node name="box2" parent="Objects" index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 693.443, 414.56 )
+position = Vector2( 747.529, 342.924 )
 
-[node name="Hazards" type="Node" parent="." index="5"]
+[node name="Endgoal" parent="." index="6" instance=ExtResource( 8 )]
 
-editor/display_folded = true
+position = Vector2( 750.379, 159.213 )
 
-[node name="FallingFloor" parent="Hazards" index="0" instance=ExtResource( 8 )]
+[node name="EndgoalMirror" parent="." index="7" instance=ExtResource( 9 )]
 
-position = Vector2( 745, 455 )
-
-[node name="FallingFloor2" parent="Hazards" index="1" instance=ExtResource( 8 )]
-
-position = Vector2( 810, 455 )
-
-[node name="FallingFloor3" parent="Hazards" index="2" instance=ExtResource( 8 )]
-
-position = Vector2( 874, 455 )
-
-[node name="FallingFloor4" parent="Hazards" index="3" instance=ExtResource( 8 )]
-
-position = Vector2( 936, 455 )
-
-[node name="FallingFloor5" parent="Hazards" index="4" instance=ExtResource( 8 )]
-
-position = Vector2( 1000, 455 )
-
-[node name="FireArea" parent="Hazards" index="5" instance=ExtResource( 9 )]
-
-position = Vector2( 744, 543 )
-
-[node name="FireArea3" parent="Hazards" index="6" instance=ExtResource( 9 )]
-
-position = Vector2( 872, 543 )
-
-[node name="FireArea4" parent="Hazards" index="7" instance=ExtResource( 9 )]
-
-position = Vector2( 936, 543 )
-
-[node name="FireArea5" parent="Hazards" index="8" instance=ExtResource( 9 )]
-
-position = Vector2( 1000, 543 )
-
-[node name="FireArea2" parent="Hazards" index="9" instance=ExtResource( 9 )]
-
-position = Vector2( 808, 543 )
-
-[node name="WaterArea" parent="Hazards" index="10" instance=ExtResource( 10 )]
-
-position = Vector2( 296.043, 479.16 )
-
-[node name="WaterArea2" parent="Hazards" index="11" instance=ExtResource( 10 )]
-
-position = Vector2( 359.2, 479.16 )
-
-[node name="Endgoal" parent="." index="6" instance=ExtResource( 11 )]
-
-position = Vector2( 218.845, 408.588 )
-
-[node name="Limit" parent="." index="7" instance=ExtResource( 12 )]
-
-position = Vector2( 769.5, 683 )
-scale = Vector2( 29.0469, 1 )
-
-[node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 13 )]
-
-position = Vector2( 1295.08, 420.359 )
-
-[connection signal="area_entered" from="Objects/lever2" to="Objects/lever2" method="_on_lever2_area_entered"]
+position = Vector2( 594.373, 162.191 )
 
 

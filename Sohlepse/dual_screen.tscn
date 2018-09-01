@@ -15,7 +15,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1027.0
 margin_bottom = 682.0
-
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -33,7 +32,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 511.0
 margin_bottom = 682.0
-
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -48,7 +46,6 @@ _sections_unfolded = [ "Grow Direction", "Margin", "Rect", "Size Flags", "Theme"
 
 arvr = false
 size = Vector2( 511, 682 )
-
 own_world = false
 world = null
 transparent_bg = false
@@ -78,7 +75,6 @@ anchor_mode = 1
 rotating = false
 current = true
 zoom = Vector2( 1.25, 1.25 )
-
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -151,7 +147,6 @@ anchor_mode = 1
 rotating = false
 current = true
 zoom = Vector2( 1.25, 1.25 )
-
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000

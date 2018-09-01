@@ -6,10 +6,21 @@ var save_data = {"last_stage": 1}
 
 var current_stage = 0 
 var unlocked_stage = 1
+const ACT2 = 2
+const ACT3 = 3
+const FINAL = 3
 
 func restart():
 	get_tree().reload_current_scene()
 	
+func current_act():
+	if current_stage < ACT2:
+		return 1
+	elif current_stage < ACT3:
+		return 2
+	else:
+		return 3
+
 func progress():
 	savegame.open(save_path, File.READ)
 	save_data = savegame.get_var()
@@ -17,10 +28,11 @@ func progress():
 	return save_data["last_stage"]
 	
 func save():
-	save_data["last_stage"] = current_stage
-	savegame.open(save_path, File.WRITE)
-	savegame.store_var(save_data)
-	savegame.close()
+	if current_stage > unlocked_stage:
+		save_data["last_stage"] = current_stage
+		savegame.open(save_path, File.WRITE)
+		savegame.store_var(save_data)
+		savegame.close()
 
 func create_save():
 	savegame.open(save_path, File.WRITE)

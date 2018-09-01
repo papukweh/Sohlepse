@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Stage.gd" type="Script" id=1]
+
+[node name="Stage" type="Node"]
+
+script = ExtResource( 1 )
+ACT = 1
+PLAYERS = 1
+MIRRORS = 1
+MAX_CLONES = 3
+
+
