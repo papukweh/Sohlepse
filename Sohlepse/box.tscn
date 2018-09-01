@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8.48973, 8.77974 )
+extents = Vector2( 8.27558, 8.77974 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -45,8 +45,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( -2.73905, -5.27081 )
-scale = Vector2( 3.10942, 2.95419 )
+position = Vector2( -2.85678, -4.94659 )
+scale = Vector2( 3.09898, 2.92667 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
