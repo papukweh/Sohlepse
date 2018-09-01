@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=2]
+[ext_resource path="res://Player/InputHandler.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.36073, 10.5321 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Death"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 32, -32 ), Vector2( 64, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 270.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+
+position = Vector2( -0.475647, 0 )
+input_pickable = false
+collision_layer = 3
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform" ]
+invert_vertical = 1
+invert_horizontal = 1
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0.0276327, -1.19897 )
+scale = Vector2( 6.66499, 2.73395 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Siding" type="RayCast2D" parent="." index="2"]
+
+rotation = -1.5708
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 50 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RC_down" type="RayCast2D" parent="." index="3"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 29 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Death = SubResource( 2 )
+blend_times = [  ]
+
+[node name="InputHandler" type="Node" parent="." index="5"]
+
+script = ExtResource( 3 )
+MODE = 1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+

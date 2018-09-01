@@ -4,10 +4,11 @@ var savegame = File.new()
 var save_path = "./savegame.save" 
 var save_data = {"last_stage": 1}
 
-var current_stage = 0 
+var current_stage = 1 
 var unlocked_stage = 1
+
 const ACT2 = 2
-const ACT3 = 3
+const ACT3 = 4
 const FINAL = 4
 
 func restart():

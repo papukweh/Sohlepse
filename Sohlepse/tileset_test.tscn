@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Floor.png" type="Texture" id=1]
-[ext_resource path="res://Wall.png" type="Texture" id=2]
-[ext_resource path="res://Edge.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Floor.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Wall.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Edge.png" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="floor" type="Sprite" parent="." index="0"]
 
+visible = false
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 64.5, 64, 64 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
@@ -72,7 +73,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -3.41264, 1.8003 )
 scale = Vector2( 0.887233, 0.952262 )
 build_mode = 0
-polygon = PoolVector2Array( -32, -32, -32, 32, 32, 32, 32, -32 )
+polygon = PoolVector2Array( -32.5, -32, -32.5, 32, 32, 32, 32, -32 )
 _sections_unfolded = [ "Transform" ]
 
 
