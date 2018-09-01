@@ -8,7 +8,7 @@ var current_stage = 0
 var unlocked_stage = 1
 const ACT2 = 2
 const ACT3 = 3
-const FINAL = 3
+const FINAL = 4
 
 func restart():
 	get_tree().reload_current_scene()
