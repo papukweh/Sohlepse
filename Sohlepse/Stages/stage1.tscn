@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=16]
 
 [node name="stage1" index="0" instance=ExtResource( 1 )]
 
@@ -82,8 +83,6 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Players" type="Node" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 128.049, 372.01 )
@@ -94,8 +93,6 @@ position = Vector2( 1222, 400 )
 invert_horizontal = -1
 
 [node name="Objects" type="Node" parent="." index="4"]
-
-editor/display_folded = true
 
 [node name="Box" parent="Objects" index="0" instance=ExtResource( 4 )]
 
@@ -205,6 +202,12 @@ position = Vector2( 1295.08, 420.359 )
 [node name="Platform" parent="." index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 802.217, 357.895 )
+
+[node name="MovingPlatform" parent="." index="10" instance=ExtResource( 16 )]
+
+position = Vector2( 339.991, 387.562 )
+motion = Vector2( 60, 0 )
+cycle = 10.0
 
 [connection signal="area_entered" from="Objects/Lever2" to="Objects/Lever2" method="_on_lever2_area_entered"]
 

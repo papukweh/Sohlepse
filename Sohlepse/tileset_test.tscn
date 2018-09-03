@@ -68,9 +68,12 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="edge/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="edge/StaticBody2D" index="0"]
 
+position = Vector2( -3.41264, 1.8003 )
+scale = Vector2( 0.887233, 0.952262 )
 build_mode = 0
-polygon = PoolVector2Array( -32, -32, -32, 32, 32, 32, 32, -32 )
+polygon = PoolVector2Array( -32.5, -32, -32.5, 32, 32, 32, 32, -32 )
+_sections_unfolded = [ "Transform" ]
 
 
