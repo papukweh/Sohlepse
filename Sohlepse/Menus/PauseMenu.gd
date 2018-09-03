@@ -9,7 +9,16 @@ var buttons = ["Voltar", "Menu", "Restart", "Controles", "Exit"]
 var label = ["Voltar ao Jogo", "Menu", "Recomeçar", "Controles", "Sair"]
 var LABEL = ["VOLTAR AO JOGO", "MENU", "RECOMEÇAR", "CONTROLES", "SAIR"]
 var state = -1
+var inSure = false
 
+func openA():
+	get_node(buttons[0]).text = LABEL[0]
+	var i = 1
+	while(i <= 4):
+		get_node(buttons[i]).text = label[i]
+		i = i + 1
+	state = 0
+		
 func _process(delta):
 	if Input.is_action_just_pressed("Pause") or pressed[Voltar]:
 		if get_tree().paused:
@@ -18,8 +27,7 @@ func _process(delta):
 			hide()
 			get_tree().paused = false
 		else:
-			get_node(buttons[Voltar]).text = LABEL[Voltar]
-			state = Voltar
+			openA()
 			show()
 			get_tree().paused = true
 	if pressed[Menu]:
@@ -32,8 +40,10 @@ func _process(delta):
 		get_tree().paused = false
 		get_tree().change_scene("Menus/Options.tscn")
 	if pressed[Exit]:
-		get_tree().quit()
-	if get_tree().paused:
+		inSure = true
+		hide()
+		get_parent().get_node("Sure").show()
+	if get_tree().paused and !inSure:
 		if Input.is_action_just_pressed("interact"):
 			pressed[state] = true
 		if Input.is_action_just_pressed("move_down"):
