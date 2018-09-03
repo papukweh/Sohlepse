@@ -1,12 +1,12 @@
 extends StaticBody2D
 
-signal hidden
-signal shown
+signal triggered
+signal default
 
-func _on_Wall_hidden():
+func _on_Wall_triggered():
 	self.hide()
 	$CollisionShape2D.disabled = true
 	
-func _on_Wall_shown():
+func _on_Wall_default():
 	self.show()
 	$CollisionShape2D.disabled = false

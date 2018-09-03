@@ -1,16 +1,17 @@
 extends Area2D
 
+export var object = ""
 var inbody = null
 var activated = false
 signal hit
 
-onready var bid = get_name().substr(5,1)
-onready var wall = get_parent().get_node("Wall"+bid)
+onready var bid = get_name().substr(5,2)
+onready var obj = get_parent().get_node(object + bid)
 
 #lever1
 func _ready():
-	wall.connect("hidden", wall, "_on_Wall_hidden")
-	wall.connect("shown", wall, "_on_Wall_shown")
+	obj.connect("triggered", obj, "_on_" + object + "_triggered")
+	obj.connect("default", obj, "_on_" + object + "_default")
 	
 func _process(delta):
 	if inbody != null and inbody.get_name().begins_with("Player") and Input.is_action_just_pressed("interact"):
@@ -25,11 +26,11 @@ func _on_Lever_body_exited(body):
 func _on_Lever_hit():
 	if !activated:
 		$AnimatedSprite.animation = "on"
-		wall.emit_signal("hidden")
+		obj.emit_signal("triggered")
 		activated = true
 	else:
 		$AnimatedSprite.animation = "off"
-		wall.emit_signal("shown")
+		obj.emit_signal("default")
 		activated = false
 
 

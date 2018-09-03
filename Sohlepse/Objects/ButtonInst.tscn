@@ -4,8 +4,6 @@
 [ext_resource path="res://Assets/Button2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Button1.png" type="Texture" id=3]
 
-
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -35,6 +33,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
+object = ""
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 

@@ -4,8 +4,6 @@
 [ext_resource path="res://Assets/lever_on.png" type="Texture" id=2]
 [ext_resource path="res://Assets/lever_off.png" type="Texture" id=3]
 
-
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -38,6 +36,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+object = ""
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -48,9 +47,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.131722, -0.0451455 )
-scale = Vector2( 0.996257, 1.6375 )
+position = Vector2( 0.263002, -0.0451455 )
+scale = Vector2( 0.987288, 1.6375 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Lever_body_entered"]
 

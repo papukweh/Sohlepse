@@ -1,13 +1,15 @@
 extends StaticBody2D
 
-onready var bid = get_name().substr(6,1)
-onready var wall = get_parent().get_node("Wall"+bid)
+export var object = ""
+
+onready var bid = get_name().substr(6,2)
+onready var obj = get_parent().get_node(object+bid)
 signal hit
 signal out
 
 func _ready():
-	wall.connect("hidden", wall, "_on_Wall_hidden")
-	wall.connect("shown", wall, "_on_Wall_shown")
+	obj.connect("triggered", obj, "_on_" + object + "_triggered")
+	obj.connect("default", obj, "_on_" + object + "_default")
 
 func _process(delta):
 	if $left.is_colliding() || $right.is_colliding() || $up.is_colliding():
@@ -18,9 +20,9 @@ func _process(delta):
 func _on_ButtonInst_hit():
 	$AnimatedSprite.animation = "pressed"
 	$CollisionShape2D.disabled = true
-	wall.emit_signal("hidden")
+	obj.emit_signal("triggered")
 
 func _on_ButtonInst_out():
 	$AnimatedSprite.animation = "default"
 	$CollisionShape2D.disabled = false
-	wall.emit_signal("shown")
+	obj.emit_signal("default")
