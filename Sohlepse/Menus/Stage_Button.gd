@@ -11,4 +11,4 @@ func _ready():
 	
 func _on_button_down():
 	global.current_stage = id
-	get_tree().change_scene("Manager/StageManager.tscn")
+	get_tree().change_scene("res://Manager/StageManager.tscn")
