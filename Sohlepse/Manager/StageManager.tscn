@@ -4,7 +4,7 @@
 [ext_resource path="res://Manager/Dual_screen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=3]
 
-[node name="StageManager" type="Node2D"]
+[node name="StageManager" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]

@@ -1,0 +1,298 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Stages/Tutorial.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Interact"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Interact:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("tcaretnI:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Setas"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Setas:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sateS:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 58.507, 10 )
+
+[node name="stage5" instance=ExtResource( 1 )]
+
+PLAYERS = 2
+MIRRORS = 2
+MAX_CLONES = 0
+MODE = 1
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 65535, 1, 0, 0, 1073741824, 0, 1, 1073741824, 0, 2, 1073741824, 0, 3, 1073741824, 0, 4, 1073741824, 0, 5, 1073741824, 0, 6, 1073741824, 0, 7, 1073741824, 0, 8, 1, 0, 9, 1073741824, 0, 10, 1073741824, 0, 11, 1073741824, 0, 12, 1073741824, 0, 13, 1073741824, 0, 14, 1073741824, 0, 15, 1073741824, 0, 16, 1073741824, 0, 17, 1, 0, 131071, 1, 0, 65544, 1, 0, 65553, 1, 0, 196607, 1, 0, 131080, 1, 0, 131089, 1, 0, 262143, 1, 0, 196616, 1, 0, 196625, 1, 0, 327679, 1, 0, 262152, 1, 0, 262161, 1, 0, 393215, 1, 0, 327688, 1, 0, 327697, 1, 0, 458751, 1, 0, 393224, 1, 0, 393233, 1, 0, 524287, 1, 0, 458758, 0, 0, 458759, 0, 0, 458760, 1, 0, 458761, 0, 0, 458762, 0, 0, 458769, 1, 0, 589823, 1, 0, 524291, 0, 0, 524292, 0, 0, 524296, 1, 0, 524300, 0, 0, 524301, 0, 0, 524305, 1, 0, 655359, 1, 0, 589824, 0, 0, 589825, 0, 0, 589828, 1, 0, 589832, 1, 0, 589836, 1, 0, 589839, 0, 0, 589840, 0, 0, 589841, 1, 0, 720895, 1, 0, 655364, 1, 0, 655368, 1, 0, 655372, 1, 0, 655377, 1, 0, 786431, 1, 0, 720900, 1, 0, 720904, 1, 0, 720908, 1, 0, 720913, 1, 0, 851967, 1, 0, 786436, 1, 0, 786440, 1, 0, 786444, 1, 0, 786449, 1, 0, 917503, 1, 0, 851972, 1, 0, 851976, 1, 0, 851980, 1, 0, 851985, 1, 0 )
+
+[node name="Real" type="ReferenceRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -189.0
+margin_top = -4.0
+margin_right = 538.0
+margin_bottom = 902.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Mirrored" type="ReferenceRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 548.0
+margin_top = -4.0
+margin_right = 1270.0
+margin_bottom = 902.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 45.0617, 535.063 )
+
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1043.55, 544.586 )
+invert_horizontal = -1
+
+[node name="Limit" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 530.618, 948.694 )
+scale = Vector2( 23.1554, 1 )
+
+[node name="Endgoal" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 614.051, 416.056 )
+
+[node name="EndgoalMirror" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 475.35, 413.487 )
+
+[node name="Tutorial" type="Node" parent="." index="7"]
+
+script = ExtResource( 7 )
+
+[node name="Setas" type="Label" parent="Tutorial" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = 158.0
+margin_right = 258.0
+margin_bottom = 189.0
+rect_scale = Vector2( 2, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Utilize as setas para andar e pular"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="sateS" type="Label" parent="Tutorial" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1036.0
+margin_top = 157.0
+margin_right = 1252.0
+margin_bottom = 188.0
+rect_scale = Vector2( -2, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Utilize as setas para andar e pular"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Interact" type="Label" parent="Tutorial" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = 260.0
+margin_right = 258.0
+margin_bottom = 276.0
+rect_scale = Vector2( 2, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Pressione 'E' para interagir"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="tcaretnI" type="Label" parent="Tutorial" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1036.0
+margin_top = 258.0
+margin_right = 1252.0
+margin_bottom = 274.0
+rect_scale = Vector2( -2, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Pressione 'E' para interagir"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial" index="4"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Interact = SubResource( 1 )
+anims/Setas = SubResource( 2 )
+blend_times = [  ]
+
+[node name="Event" type="Area2D" parent="Tutorial" index="5"]
+
+position = Vector2( 256.469, 480.075 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Event" index="0"]
+
+position = Vector2( 1.36038, 19.0453 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Tutorial/Event" to="Tutorial" method="_on_Event_body_entered"]
+
+

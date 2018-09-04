@@ -4,6 +4,7 @@ export var ACT = 1
 export var PLAYERS = 1
 export var MIRRORS = 1
 export var MAX_CLONES = 3
+export var MODE = 1
 var recorder = null
 
 func _ready():

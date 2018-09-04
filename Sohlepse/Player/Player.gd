@@ -34,6 +34,11 @@ onready var clone = true
 onready var on_act3 = global.current_act() == 3
 onready var initpos = self.get_position()
 
+
+func _ready():
+	if invert_vertical == -1:
+		self.rotate(PI)
+		
 func _process(delta):
 	if Recorder == null and on_act3 and not clone:
 		Recorder = get_parent().get_parent().get_recorder()
@@ -42,7 +47,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("change-v"):
 		invert_vertical *= -1
 		self.rotate(PI)
-		GRAVITY *= -1
 	if Input.is_action_just_pressed("change-h"):
 		invert_horizontal *= -1
 	if Input.is_action_just_pressed("restart"):
@@ -62,7 +66,7 @@ func _physics_process(delta):
 	if dead:
 		return
 	# Create forces
-	var force = Vector2(0, GRAVITY)
+	var force = Vector2(0, invert_vertical*GRAVITY)
 	var stop = true
 	
 	if pushing:
