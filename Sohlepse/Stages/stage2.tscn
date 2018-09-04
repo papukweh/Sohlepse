@@ -10,8 +10,8 @@
 
 ACT = 2
 PLAYERS = 2
-MIRRORS = 2
 MAX_CLONES = 0
+MODE = 1
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
