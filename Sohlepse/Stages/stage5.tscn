@@ -78,7 +78,6 @@ extents = Vector2( 58.507, 10 )
 [node name="stage5" instance=ExtResource( 1 )]
 
 PLAYERS = 2
-MIRRORS = 2
 MAX_CLONES = 0
 MODE = 1
 

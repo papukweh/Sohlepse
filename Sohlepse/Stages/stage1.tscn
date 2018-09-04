@@ -18,7 +18,6 @@
 [node name="stage1" instance=ExtResource( 1 )]
 
 PLAYERS = 2
-MIRRORS = 2
 MAX_CLONES = 0
 MODE = 1
 

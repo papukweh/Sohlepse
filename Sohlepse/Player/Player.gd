@@ -30,18 +30,14 @@ onready var move_left = false
 onready var move_right = false
 onready var recording = false
 onready var jump = false
-onready var clone = true
-onready var on_act3 = global.current_act() == 3
+onready var on_act3 = false
 onready var initpos = self.get_position()
-
 
 func _ready():
 	if invert_vertical == -1:
 		self.rotate(PI)
-		
+
 func _process(delta):
-	if Recorder == null and on_act3 and not clone:
-		Recorder = get_parent().get_parent().get_recorder()
 	if dead:
 		return
 	if Input.is_action_just_pressed("change-v"):
@@ -51,7 +47,7 @@ func _process(delta):
 		invert_horizontal *= -1
 	if Input.is_action_just_pressed("restart"):
 		die()
-	if on_act3 and not clone:
+	if on_act3:
 		if Input.is_action_just_pressed("record"):
 			if recording:
 				Recorder.stop_recording()
