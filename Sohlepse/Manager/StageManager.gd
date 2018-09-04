@@ -1,15 +1,20 @@
 extends Node2D
 
 onready var id = global.current_stage
-onready var viewport = $Setup/Viewports/C1/Viewport1/
-onready var stage = null
 
 func _ready():
 	if id > global.FINAL:
 		get_tree().change_scene("res://Menus/MenuPrincipal.tscn")
 		return
-	stage = load("res://Stages/stage"+str(id)+".tscn")
-	viewport.add_child(stage.instance())
+	var stage = load("res://Stages/stage"+str(id)+".tscn").instance()
+	
+	if stage.MODE == 1:
+		$Setup/ViewportsH.name = "Viewports"
+		$Setup/ViewportsV.queue_free()
+	else:
+		$Setup/ViewportsV.name = "Viewports"
+		$Setup/ViewportsH.queue_free()
+	
+	$Setup/Viewports/C1/Viewport1.add_child(stage)
 	$Setup.world = get_node("Setup/Viewports/C1/Viewport1/stage"+str(id)+"/")
-	var mode = $Setup.world.PLAYERS
-	$Setup.can_load(mode) 
+	$Setup.can_load(stage.PLAYERS)

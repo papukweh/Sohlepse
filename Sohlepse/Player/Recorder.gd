@@ -35,7 +35,6 @@ func play_all():
 		var c = get_parent().get_children()[-1]
 		c.hide()
 		c.dead = true
-		c.clone = true
 		c.set_position(pos[i])
 		c.get_node("InputHandler").MODE = 2
 		c.get_node("InputHandler").inputs = [] + buffer[i]

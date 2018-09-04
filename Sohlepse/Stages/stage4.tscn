@@ -8,6 +8,7 @@
 [node name="stage4" instance=ExtResource( 1 )]
 
 ACT = 3
+MODE = 1
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
