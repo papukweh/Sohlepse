@@ -1,133 +1,178 @@
-\documentclass[a4paper, 11pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{indentfirst}
+\documentclass[a4paper, 11pt]{article} 
+\usepackage[utf8]{inputenc} 
+\usepackage{indentfirst} 
+ 
+\title{\textbf{Sohlepse} \\ \small{Um Game Design Document}} 
+\author{Larissa Goto Sala, Pedro Paulo de Queiroz Bambace, Nathalia Orlandi Borin} 
+ 
+\begin{document} 
+ 
+\maketitle 
+ 
+\newpage 
+ 
+\newpage 
+ 
+\section{Resumo} 
+	 
+	Sohlepse (nome passível de mudanças) é um jogo de puzzle-plataforma que faz uso de reflexões para proporcionar o controle de mais de um personagem com os mesmos comandos. 
+ 
+Isso pode ser feito de forma paralela (os dois personagens se movem ao mesmo tempo) ou sequencial (a mesma sequência de movimentos de um personagem é repetida enquanto você move o outro personagem). 
+ 
+Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criativo de suas reflexões para superá-los. 
+ 
+\section{Jogabilidade} 
+ 
+	\subsection{Ações do jogador} 
+		\begin{itemize} 
+			\item Andar  
+			\item Pular  
+			\item Empurrar caixas  
+			\item Pressionar botões 
+			\item Acionar alavancas  
+		\end{itemize} 
+ 
+	\subsection{Objetos do jogo} 
+		\begin{itemize} 
+			\item Botões - Se mantêm ativos enquanto estão pressionados - abrem ou fecham portas 
+			\item Alavancas - Se mantêm ativos até serem acionadas novamente - abrem ou fecham portas 
+			\item Caixas - Podem ser empurradas para formar escadas ou acionar botões 
+			\item Chão quebrável - Se quebram quando o jogador passa por ele duas vezes 
+			\item Água - Jogador pode passar por esse tile normalmente 
+			\item Lava - Jogador morre se encostar nesse tile 
+			\item Espetos - Jogador morre se encostar nesse tile - pode ser desativado por um botão/alavanca 
+		\end{itemize} 
+ 
+	\subsection{Organização das cenas} 
+		\subsection{Menu Principal} 
+			\begin{itemize} 
+				\item Jogar - Carrega o última fase que o jogador ainda não completou,armazenado na variável global unlocked\_stage. 
+				\item Seleção de fases - Carrega o menu de seleção de fases. Ssuporta apenas 12 fases atualmente, precisa ser melhorado.
+				\item Opções - Carrega o menu de opções, que não existe ainda, precisa ser feito. 
+				\item Créditos - Carrega os créditos 
+				\item Sair - Fecha o jogo.
+			\end{itemize} 
+ 
+		\subsection{Stage Manager} 
+			Faz o trabalho de carregar a fase atual nos dois viewports, assim como organiza as telas horizontal ou verticalmente, como definido na variável MODE.
+			\begin{enumerate}
+			\item Setup - Configura as câmeras de cada viewport para seguir cada player, de acordo com a variável PLAYER, que está em Stage. Também limita as câmeras aos retângulos definidos como Real e Mirrored.
+				\begin{enumerate}
+				\item Viewports - Contidos em containers verticais ou horizontais, o Setup define qual será usado.
+				\item Stage - Apresenta as variáveis ACT, PLAYERS, MAX\_CLONES, e MODE (1 é vertical, 2 é horizontal).
+				\end{enumerate}
+			\item Pause Menu
+				\begin{enumerate}
+				\item Voltar ao jogo - Retoma o jogo.
+				\item Menu - Volta ao menu principal
+				\item Recomeçar - Reinicia a fase.
+				\item Controles - Precisa ser feito.
+				\item Sair - Fecha o jogo, mas pede confirmação primeiro.
+				\end{enumerate}
+			\end{enumerate}
 
-\title{\textbf{Sohlepse} \\ \small{Um Game Design Document}}
-\author{Larissa Goto Sala, Pedro Paulo de Queiroz Bambace, Nathalia Orlandi Borin}
+		\subsection{Stage}
+			Nó raiz de cada fase.
+			\begin{enumerate}
+				\item TileMap - Layout da fase.
+				\item Real e Mirrored - ReferenceRect, definem os limites da câmera.
+				\item Endgoal e EndgoalMirror - Objetivo final de cada fase.
+				\item Players - Um Node normal, cujos filhos são instâncias do Player.
+				\item Objects - Um Node normal, cujos filhos são botões, paredes, alavancas, etc.
+				\item Hazards - Um Node normal, cujos filhos são limites, firearea, espetos, etc.
+			\end{enumerate}
 
-\begin{document}
+		\subsection{Player}
+			TBD
 
-\maketitle
-
-\newpage
-
-\newpage
-
-\section{Resumo}
-	
-	Sohlepse (nome passível de mudanças) é um jogo de puzzle-plataforma que faz uso de reflexões para proporcionar o controle de mais de um personagem com os mesmos comandos.
-
-Isso pode ser feito de forma paralela (os dois personagens se movem ao mesmo tempo) ou sequencial (a mesma sequência de movimentos de um personagem é repetida enquanto você move o outro personagem).
-
-Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criativo de suas reflexões para superá-los.
-
-\section{Jogabilidade}
-
-	\subsection{Ações do jogador}
-		\begin{itemize}
-			\item Andar 
-			\item Pular 
-			\item Empurrar caixas 
-			\item Pressionar botões
-			\item Acionar alavancas 
-		\end{itemize}
-
-	\subsection{Objetos do jogo}
-		\begin{itemize}
-			\item Botões - se mantém ativos enquanto estão pressionados - abrem ou fecham portas
-			\item Alavancas - se mantém ativos até serem acionadas novamente - abrem ou fecham portas
-			\item Caixas - podem ser empurradas para formar escadas ou acionar botões
-			\item Chão quebrável - se quebram quando o jogador passa por ele duas vezes
-			\item Água - jogador pode passar por esse tile normalmente
-			\item Lava - jogador morre se encostar nesse tile
-		\end{itemize}
-
-
-\section{Ato I}
-
-	Duas telas espelhadas, podendo a divisão ser na horizontal ou vertical, dependendo da fase. O movimento do
-	personagem na primeira tela é refletido de maneira idêntica na segunda tela. Uma das telas pode ser obscurecida
-	e/ou conter partes quebradas/cobertas dependendo da fase.
-	Nesse ato, o principal objetivo é introduzir o jogador às mecânicas do jogo. As fases são idênticas
-	em ambos lados do espelho (salvo possíveis exceções onde o espelho será obscurecido/quebrado).
-
-\subsection{Mecânicas}
-
-	Lista das mecânicas do ato
-	\begin{itemize}
-		\item Algo
-		\item Algo
-	\end{itemize}
-
-\subsection{Possíveis fases}
-
-	Descrições/desenhos mais pra frente
-	\begin{itemize}
-		\item Fase
-		\item Fase
-	\end{itemize}
-
-\subsection{História}
-
+ 
+ 
+\section{Ato I} 
+ 
+	Duas telas espelhadas, podendo a divisão ser na horizontal ou vertical, dependendo da fase. O movimento do 
+	personagem na primeira tela é refletido de maneira idêntica na segunda tela. Uma das telas pode ser obscurecida 
+	e/ou conter partes quebradas/cobertas dependendo da fase. 
+	Nesse ato, o principal objetivo é introduzir o jogador às mecânicas do jogo. As fases são idênticas 
+	em ambos lados do espelho (salvo possíveis exceções onde o espelho será obscurecido/quebrado). 
+ 
+\subsection{Mecânicas} 
+ 
+	Lista das mecânicas do ato 
+	\begin{itemize} 
+		\item Algo 
+		\item Algo 
+	\end{itemize} 
+ 
+\subsection{Possíveis fases} 
+ 
+	Descrições/desenhos mais pra frente 
+	\begin{itemize} 
+		\item Fase 
+		\item Fase 
+	\end{itemize} 
+ 
+\subsection{História} 
+ 
+	Resumo do que acontece  
+ 
+\section{Ato II} 
+ 
+	Duas telas que representam fases diferentes, podendo a divisão ser na horizontal ou vertical, dependendo da fase. 
+	O movimento do personagem na primeira tela é refletido na segunda tela, mas como os cenários são diferentes, pode 
+	haver uma dessincronização entre os movimentos 
+	Nesse ato, o mais longo do jogo, o objetivo é brincar com a noção de realidades paralelas, onde você deve planejar 
+	bem seus movimentos para controlar dois personagens em cenários distintos com os mesmos inputs. Ao longo das fases, 
+	a barreira entre as duas realidades começa a se quebrar, e você pode acabar interagindo com sua "reflexão" de  
+	maneiras diferentes. 
+ 
+	Lista das mecânicas do ato 
+	\begin{itemize} 
+		\item Algo 
+		\item Algo 
+	\end{itemize} 
+ 
+\subsection{Possíveis fases} 
+ 
+	Descrições/desenhos mais pra frente 
+	\begin{itemize} 
+		\item Fase 
+		\item Fase 
+	\end{itemize} 
+ 
+\subsection{História} 
+ 
 	Resumo do que acontece 
-
-\section{Ato II}
-
-	Duas telas que representam fases diferentes, podendo a divisão ser na horizontal ou vertical, dependendo da fase.
-	O movimento do personagem na primeira tela é refletido na segunda tela, mas como os cenários são diferentes, pode
-	haver uma dessincronização entre os movimentos
-	Nesse ato, o mais longo do jogo, o objetivo é brincar com a noção de realidades paralelas, onde você deve planejar
-	bem seus movimentos para controlar dois personagens em cenários distintos com os mesmos inputs. Ao longo das fases,
-	a barreira entre as duas realidades começa a se quebrar, e você pode acabar interagindo com sua "reflexão" de 
-	maneiras diferentes.
-
-	Lista das mecânicas do ato
-	\begin{itemize}
-		\item Algo
-		\item Algo
-	\end{itemize}
-
-\subsection{Possíveis fases}
-
-	Descrições/desenhos mais pra frente
-	\begin{itemize}
-		\item Fase
-		\item Fase
-	\end{itemize}
-
-\subsection{História}
-
-	Resumo do que acontece
-
-\section{Ato III}
-
-	Nesse ato, a realidade do espelho se fundiu quase completamente com a realidade, então as fases se passam numa única
-	tela. O diferencial desse ato é o uso de "clones", cujo número pode ser limitado ou não, dependendo da fase, que repetem o que você faz, como numa gravação. A ideia é sincronizar o seu movimento com o dos seus "clones" para conseguir atingir seu objetivo.
-
-	Lista das mecânicas do ato
-	\begin{itemize}
-		\item Algo
-		\item Algo
-	\end{itemize}
-
-\subsection{Possíveis fases}
-
-	Descrições/desenhos mais pra frente
-	\begin{itemize}
-		\item Fase
-		\item Fase
-	\end{itemize}
-
-\subsection{História}
-
-	Resumo do que acontece
-
-\section{Assets}
-
-\subsection{Placeholders}
-	Em progresso
-
-\subsection{Definitivos}
-	Em progresso
-
-\end{document}
+ 
+\section{Ato III} 
+ 
+	Nesse ato, a realidade do espelho se fundiu quase completamente com a realidade, então as fases se passam numa única 
+	tela. O diferencial desse ato é o uso de "clones", cujo número pode ser limitado ou não, dependendo da fase, que repetem o que você faz, como numa gravação. A ideia é sincronizar o seu movimento com o dos seus "clones" para conseguir atingir seu objetivo. 
+ 
+	Lista das mecânicas do ato 
+	\begin{itemize} 
+		\item Algo 
+		\item Algo 
+	\end{itemize} 
+ 
+\subsection{Possíveis fases} 
+ 
+	Descrições/desenhos mais pra frente 
+	\begin{itemize} 
+		\item Fase 
+		\item Fase 
+	\end{itemize} 
+ 
+\subsection{História} 
+ 
+	Resumo do que acontece 
+ 
+\section{Assets} 
+ 
+\subsection{Placeholders} 
+	Em progresso 
+ 
+\subsection{Definitivos} 
+	Em progresso 
+ 
+\end{document} 
+ 
