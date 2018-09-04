@@ -7,8 +7,8 @@ var save_data = {"last_stage": 1}
 var current_stage = 1 
 var unlocked_stage = 1
 
-const ACT2 = 2
-const ACT3 = 8
+const ACT2 = 4
+const ACT3 = 5
 const FINAL = 10
 
 func restart():
@@ -18,9 +18,9 @@ func current_act():
 	if current_stage < ACT2:
 		return 1
 	elif current_stage < ACT3:
-		return 2
-	else:
 		return 3
+	else:
+		return 2
 
 func progress():
 	savegame.open(save_path, File.READ)

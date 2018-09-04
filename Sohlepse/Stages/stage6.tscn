@@ -75,7 +75,7 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11.1828, 14.5196 )
+extents = Vector2( 67.0968, 27.4711 )
 
 [node name="stage6" index="0" instance=ExtResource( 1 )]
 
@@ -175,17 +175,17 @@ _sections_unfolded = [ "Collision", "Transform" ]
 [node name="Lever1" parent="Objects" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1077.18, 415.512 )
-scale = Vector2( -1, 1 )
+scale = Vector2( -1, -1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Wall1" parent="Objects" index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 915.111, 28.9895 )
+position = Vector2( 913.111, 28.9895 )
 scale = Vector2( 1, 2.99574 )
 
 [node name="Wall2" parent="Objects" index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 910, 670 )
+position = Vector2( 911, 670 )
 scale = Vector2( 1, 2.99574 )
 
 [node name="Endgoal" parent="." index="5" instance=ExtResource( 7 )]
@@ -218,7 +218,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_colors/font_color = Color( 1, 1, 1, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Você pode interagir com caixas para movê-las"
 autowrap = true
 percent_visible = 1.0
@@ -268,7 +268,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_colors/font_color = Color( 1, 1, 1, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Você pode interagir com caixas para movê-las"
 autowrap = true
 percent_visible = 1.0
@@ -311,6 +311,7 @@ playback_speed = 1.0
 anims/Alavancas = SubResource( 2 )
 anims/Caixas = SubResource( 3 )
 blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
 
 [node name="Event" type="Area2D" parent="Tutorial" index="5"]
 
@@ -320,14 +321,18 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Event" index="0"]
 
-position = Vector2( 20, -20 )
-scale = Vector2( 3.57692, 2.7549 )
+position = Vector2( 10, -30 )
+scale = Vector2( 0.252262, 1.94149 )
 shape = SubResource( 1 )
+
+[connection signal="animation_finished" from="Tutorial/AnimationPlayer" to="Tutorial" method="_on_AnimationPlayer_animation_finished"]
 
 [connection signal="body_entered" from="Tutorial/Event" to="Tutorial" method="_on_Event_body_entered"]
 
