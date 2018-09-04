@@ -7,6 +7,7 @@
 [ext_resource path="res://Objects/Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=7]
+
 [ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Hazards/FallingFloor.tscn" type="PackedScene" id=10]
@@ -43,7 +44,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -327679, 1073741825, 0, -327678, 1073741824, 0, -327677, 1073741824, 0, -327676, 1073741824, 0, -327675, 1073741824, 0, -327674, 1073741824, 0, -327673, 1073741824, 0, -327672, 1073741824, 0, -327671, 1073741824, 0, -327670, 1073741824, 0, -327669, 1073741824, 0, -327668, 1073741824, 0, -327667, 1073741824, 0, -327666, 1073741824, 0, -327665, 1073741824, 0, -327664, 1073741824, 0, -327663, 1073741824, 0, -327662, 1073741824, 0, -327661, 1073741824, 0, -327660, 1073741824, 0, -327659, 1073741824, 0, -327658, 1073741824, 0, -327657, 1073741824, 0, -327656, 1073741825, 0, -262143, 1073741825, 0, -262120, 1, 0, -196607, 1073741825, 0, -196584, 1, 0, -131071, 1073741825, 0, -131070, 1073741824, 0, -131069, 1073741824, 0, -131068, 1073741824, 0, -131067, 1073741824, 0, -131066, 1073741824, 0, -131065, 1073741824, 0, -131064, 1073741824, 0, -131063, 1073741824, 0, -131062, 1073741824, 0, -131061, 1073741826, 0, -131048, 1, 0, -65535, 1, 0, -65522, 536870914, 0, -65521, 536870912, 0, -65520, 536870912, 0, -65519, 536870912, 0, -65518, 536870912, 0, -65517, 2, 0, -65512, 1, 0, 1, 1, 0, 17, 1, 0, 21, 536870914, 0, 22, 0, 0, 23, 0, 0, 24, 1, 0, 65537, 1, 0, 65553, 1, 0, 65560, 1, 0, 131073, 1, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131089, 536870914, 0, 131090, 536870912, 0, 131091, 536870912, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 1, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0 )
+tile_data = PoolIntArray( -327679, 1073741825, 0, -327678, 1073741824, 0, -327677, 1073741824, 0, -327676, 1073741824, 0, -327675, 1073741824, 0, -327674, 1073741824, 0, -327673, 1073741824, 0, -327672, 1073741824, 0, -327671, 1073741824, 0, -327670, 1073741824, 0, -327669, 1073741824, 0, -327668, 1073741824, 0, -327667, 1073741824, 0, -327666, 1073741824, 0, -327665, 1073741824, 0, -327664, 1073741824, 0, -327663, 1073741824, 0, -327662, 1073741824, 0, -327661, 1073741824, 0, -327660, 1073741824, 0, -327659, 1073741824, 0, -327658, 1073741824, 0, -327657, 1073741824, 0, -327656, 1073741825, 0, -262143, 1073741825, 0, -262120, 1, 0, -196607, 1073741825, 0, -196584, 1, 0, -131071, 1073741825, 0, -131070, 1073741824, 0, -131069, 1073741824, 0, -131068, 1073741824, 0, -131067, 1073741824, 0, -131066, 1073741824, 0, -131065, 1073741824, 0, -131064, 1073741824, 0, -131063, 1073741824, 0, -131062, 1073741824, 0, -131061, 1073741826, 0, -131048, 1, 0, -65535, 1, 0, -65522, 536870914, 0, -65521, 536870912, 0, -65520, 536870912, 0, -65519, 536870912, 0, -65518, 536870912, 0, -65517, 2, 0, -65512, 1, 0, 1, 1, 0, 18, 536870913, 0, 21, 536870914, 0, 22, 0, 0, 23, 0, 0, 24, 1, 0, 65537, 1, 0, 65554, 536870913, 0, 65560, 1, 0, 131073, 1, 0, 131074, 0, 0, 131075, 0, 0, 131076, 2, 0, 131079, 536870914, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 536870912, 0, 131089, 536870912, 0, 131090, 536870912, 0, 131091, 536870912, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 1, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Real" type="ReferenceRect" parent="." index="1"]
@@ -56,6 +57,7 @@ margin_left = -745.0
 margin_top = -148.0
 margin_right = 944.0
 margin_bottom = 642.0
+
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -101,11 +103,11 @@ position = Vector2( 1441, 425 )
 
 [node name="Box2" parent="Objects" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 543, 396 )
+position = Vector2( 598.116, 347.565 )
 
 [node name="Box3" parent="Objects" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 636.542, 395.337 )
+position = Vector2( 496.246, 361.933 )
 
 [node name="Button1" parent="Objects" index="3" instance=ExtResource( 5 )]
 
@@ -138,29 +140,30 @@ object = "Wall"
 
 [node name="Wall1" parent="Objects" index="8" instance=ExtResource( 9 )]
 
-position = Vector2( 692.88, 286.479 )
+position = Vector2( 700.841, 351.323 )
 
 [node name="Wall2" parent="Objects" index="9" instance=ExtResource( 9 )]
 
-position = Vector2( 693, 350.56 )
+position = Vector2( 700.67, 413.527 )
 
 [node name="Wall3" parent="Objects" index="10" instance=ExtResource( 9 )]
 
-position = Vector2( 693.443, 414.56 )
+position = Vector2( 701.124, 285.966 )
 
 [node name="Hazards" type="Node" parent="." index="5"]
 
 [node name="FallingFloor" parent="Hazards" index="0" instance=ExtResource( 10 )]
 
-position = Vector2( 744.339, 454.842 )
+position = Vector2( 870, 460 )
 
 [node name="FallingFloor2" parent="Hazards" index="1" instance=ExtResource( 10 )]
 
-position = Vector2( 810, 455 )
+
+position = Vector2( 936, 460 )
 
 [node name="FallingFloor3" parent="Hazards" index="2" instance=ExtResource( 10 )]
 
-position = Vector2( 874, 455 )
+position = Vector2( 1002, 460 )
 
 [node name="FallingFloor4" parent="Hazards" index="3" instance=ExtResource( 10 )]
 
@@ -196,6 +199,7 @@ position = Vector2( 296, 479.16 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="WaterArea2" parent="Hazards" index="11" instance=ExtResource( 12 )]
+
 
 position = Vector2( 360, 479.16 )
 _sections_unfolded = [ "Transform" ]

@@ -28,12 +28,13 @@ _sections_unfolded = [ "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( -32, -32, -32, 32, 32, 32, 32, -32 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="wall" type="Sprite" parent="." index="1"]
 
 visible = false
 texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 64, 64 )
+region_rect = Rect2( 0, 0, 64.5, 64.5 )
 _sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall" index="0"]
@@ -45,6 +46,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall/StaticBody2D" index="0"]
 
@@ -54,8 +56,8 @@ polygon = PoolVector2Array( -32, -32, -32, 32, 32, 32, 32, -32 )
 [node name="edge" type="Sprite" parent="." index="2"]
 
 texture = ExtResource( 3 )
-region_rect = Rect2( 192, 64, 64, 64 )
-_sections_unfolded = [ "Offset", "Region" ]
+region_rect = Rect2( 192.5, 64.5, 64.5, 64.5 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="edge" index="0"]
 
@@ -70,10 +72,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="edge/StaticBody2D" index="0"]
 
-position = Vector2( -3.41264, 1.8003 )
-scale = Vector2( 0.887233, 0.952262 )
 build_mode = 0
-polygon = PoolVector2Array( -32.5, -32, -32.5, 32, 32, 32, 32, -32 )
+polygon = PoolVector2Array( -32, -32, -32, 32, 25, 32, 25, -32 )
 _sections_unfolded = [ "Transform" ]
 
 
