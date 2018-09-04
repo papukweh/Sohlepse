@@ -3,14 +3,12 @@
 [ext_resource path="res://Assets/Lava.png" type="Texture" id=1]
 [ext_resource path="res://Hazards/FireArea.gd" type="Script" id=2]
 
-
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 25.6657, 10 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.83139, 9.62653 )
@@ -34,7 +32,7 @@ texture = ExtResource( 1 )
 
 position = Vector2( 0.59963, 22.9208 )
 scale = Vector2( 1.26744, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="FireArea" type="Area2D" parent="." index="2"]
 
@@ -52,7 +50,7 @@ script = ExtResource( 2 )
 
 position = Vector2( 0.306502, -11.7941 )
 scale = Vector2( 3.26856, 2.66499 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [connection signal="body_entered" from="FireArea" to="FireArea" method="_on_FireArea_body_entered"]
 
