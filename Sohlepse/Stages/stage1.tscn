@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
@@ -7,13 +7,17 @@
 [ext_resource path="res://Objects/Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Hazards/FallingFloor.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Hazards/WaterArea.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=14]
+
+[ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Hazards/FallingFloor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Hazards/WaterArea.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=17]
 
 [node name="stage1" instance=ExtResource( 1 )]
 
@@ -49,10 +53,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -919.0
-margin_top = -146.0
-margin_right = 1033.0
-margin_bottom = 644.0
+margin_left = -745.0
+margin_top = -148.0
+margin_right = 944.0
+margin_bottom = 642.0
+
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -67,10 +72,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1103.0
-margin_top = -146.0
-margin_right = 2097.0
-margin_bottom = 650.0
+margin_left = 944.0
+margin_top = -121.0
+margin_right = 2268.0
+margin_bottom = 675.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -111,35 +116,47 @@ invert_vertical = 1
 
 position = Vector2( 180.002, 448.136 )
 _sections_unfolded = [ "Transform" ]
+object = "Wall"
 
 [node name="Lever3" parent="Objects" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 81, 403 )
 scale = Vector2( 1.21187, 1.13228 )
 _sections_unfolded = [ "Collision", "Transform" ]
+object = "Wall"
 
-[node name="Button3" parent="Objects" index="5" instance=ExtResource( 7 )]
+[node name="Button4" parent="Objects" index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 874.407, 254.369 )
+object = "Thorns"
+
+[node name="Thorns4" parent="Objects" index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 743.799, 212.471 )
+begin = 1
+
+[node name="Button3" parent="Objects" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 423, 446 )
 _sections_unfolded = [ "Transform" ]
+object = "Wall"
 
-[node name="Wall1" parent="Objects" index="6" instance=ExtResource( 8 )]
+[node name="Wall1" parent="Objects" index="8" instance=ExtResource( 9 )]
 
 position = Vector2( 700.841, 351.323 )
 
-[node name="Wall2" parent="Objects" index="7" instance=ExtResource( 8 )]
+[node name="Wall2" parent="Objects" index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 700.67, 413.527 )
 
-[node name="Wall3" parent="Objects" index="8" instance=ExtResource( 8 )]
+[node name="Wall3" parent="Objects" index="10" instance=ExtResource( 9 )]
 
 position = Vector2( 701.124, 285.966 )
 
 [node name="Hazards" type="Node" parent="." index="5"]
 
-editor/display_folded = true
+[node name="FallingFloor" parent="Hazards" index="0" instance=ExtResource( 10 )]
 
-[node name="FallingFloor3" parent="Hazards" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( 874, 460 )
 
@@ -151,35 +168,44 @@ position = Vector2( 746, 460 )
 
 position = Vector2( 810, 460 )
 
-[node name="FallingFloor4" parent="Hazards" index="3" instance=ExtResource( 9 )]
+[node name="FallingFloor2" parent="Hazards" index="1" instance=ExtResource( 10 )]
 
 position = Vector2( 938, 460 )
 
-[node name="FallingFloor5" parent="Hazards" index="4" instance=ExtResource( 9 )]
+
+[node name="FallingFloor3" parent="Hazards" index="2" instance=ExtResource( 10 )]
 
 position = Vector2( 1002, 460 )
 
-[node name="FireArea" parent="Hazards" index="5" instance=ExtResource( 10 )]
+[node name="FallingFloor4" parent="Hazards" index="3" instance=ExtResource( 10 )]
+
+position = Vector2( 936, 455 )
+
+[node name="FallingFloor5" parent="Hazards" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 998.149, 455 )
+
+[node name="FireArea" parent="Hazards" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( 744, 543 )
 
-[node name="FireArea3" parent="Hazards" index="6" instance=ExtResource( 10 )]
+[node name="FireArea3" parent="Hazards" index="6" instance=ExtResource( 11 )]
 
 position = Vector2( 872, 543 )
 
-[node name="FireArea4" parent="Hazards" index="7" instance=ExtResource( 10 )]
+[node name="FireArea4" parent="Hazards" index="7" instance=ExtResource( 11 )]
 
 position = Vector2( 936, 543 )
 
-[node name="FireArea5" parent="Hazards" index="8" instance=ExtResource( 10 )]
+[node name="FireArea5" parent="Hazards" index="8" instance=ExtResource( 11 )]
 
 position = Vector2( 1000, 543 )
 
-[node name="FireArea2" parent="Hazards" index="9" instance=ExtResource( 10 )]
+[node name="FireArea2" parent="Hazards" index="9" instance=ExtResource( 11 )]
 
 position = Vector2( 808, 543 )
 
-[node name="WaterArea" parent="Hazards" index="10" instance=ExtResource( 11 )]
+[node name="WaterArea" parent="Hazards" index="10" instance=ExtResource( 12 )]
 
 position = Vector2( 296, 479.16 )
 _sections_unfolded = [ "Transform" ]
@@ -189,19 +215,30 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 360, 479.16 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Endgoal" parent="." index="6" instance=ExtResource( 12 )]
+[node name="Endgoal" parent="." index="6" instance=ExtResource( 13 )]
 
-position = Vector2( 218.845, 414.588 )
+position = Vector2( 218.845, 416.095 )
 
-[node name="Limit" parent="." index="7" instance=ExtResource( 13 )]
+[node name="Limit" parent="." index="7" instance=ExtResource( 14 )]
 
 position = Vector2( 769.5, 683 )
 scale = Vector2( 29.0469, 1 )
 
-[node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 14 )]
+[node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 1295.08, 420.359 )
 
-[connection signal="area_entered" from="Objects/Lever3" to="Objects/Lever3" method="_on_lever2_area_entered"]
+[node name="Platform" parent="." index="9" instance=ExtResource( 16 )]
+
+position = Vector2( 802.217, 357.895 )
+
+[node name="MovingPlatform" parent="." index="10" instance=ExtResource( 17 )]
+
+position = Vector2( 339.991, 387.562 )
+motion = Vector2( 20, 0 )
+cycle = 5.0
+
+[connection signal="area_entered" from="Objects/Lever2" to="Objects/Lever2" method="_on_lever2_area_entered"]
+
 
 

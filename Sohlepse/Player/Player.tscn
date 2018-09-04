@@ -4,10 +4,10 @@
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 2.36073, 10.5321 )
+extents = Vector2( 10, 10 )
 
 [sub_resource type="Animation" id=2]
 
@@ -52,9 +52,9 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
-position = Vector2( -0.475647, 0 )
+position = Vector2( -0.475647, 1 )
 input_pickable = false
 collision_layer = 3
 collision_mask = 1
@@ -72,10 +72,9 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.0276327, -1.19897 )
-scale = Vector2( 6.66499, 2.73395 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+position = Vector2( -0.0293961, -2.01142 )
+scale = Vector2( 1, 2.97403 )
+shape = SubResource( 3 )
 
 [node name="Siding" type="RayCast2D" parent="." index="2"]
 
@@ -88,6 +87,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RC_down" type="RayCast2D" parent="." index="3"]
 
+position = Vector2( 0, 0.786232 )
+scale = Vector2( 1, 1.02457 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 29 )

@@ -19,6 +19,7 @@ var on_air_time = 0
 var jumping = false
 var pushing = false
 var dead = false
+var platform = false
 var in_terrain = 0
 
 var siding_left = false
@@ -113,7 +114,7 @@ func _physics_process(delta):
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	if $RC_down.is_colliding():
+	if $RC_down.is_colliding() and not platform:
 		on_air_time = 0
 		jumping = false
 		#if in_terrain == 0:
