@@ -18,7 +18,7 @@
 [ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=17]
 
-[node name="stage1" instance=ExtResource( 1 )]
+[node name="stage1" index="0" instance=ExtResource( 1 )]
 
 PLAYERS = 2
 MAX_CLONES = 0
@@ -133,7 +133,7 @@ object = "Thorns"
 position = Vector2( 743.799, 212.471 )
 begin = 1
 
-[node name="Button3" parent="Objects" index="7" instance=ExtResource( 7 )]
+[node name="Button2" parent="Objects" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 423, 446 )
 _sections_unfolded = [ "Transform" ]
@@ -167,11 +167,11 @@ position = Vector2( 1002, 460 )
 
 [node name="FallingFloor4" parent="Hazards" index="3" instance=ExtResource( 10 )]
 
-position = Vector2( 936, 455 )
+position = Vector2( 810.679, 459.859 )
 
 [node name="FallingFloor5" parent="Hazards" index="4" instance=ExtResource( 10 )]
 
-position = Vector2( 998.149, 455 )
+position = Vector2( 747.365, 460.002 )
 
 [node name="FireArea" parent="Hazards" index="5" instance=ExtResource( 11 )]
 
@@ -198,17 +198,10 @@ position = Vector2( 808, 543 )
 position = Vector2( 296, 479.16 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="WaterArea2" parent="Hazards" index="11" instance=ExtResource( 11 )]
+[node name="WaterArea2" parent="Hazards" index="11" instance=ExtResource( 12 )]
 
 position = Vector2( 360, 479.16 )
-
-[node name="FallingFloor6" parent="Hazards" index="12" instance=ExtResource( 9 )]
-
-position = Vector2( 746, 460 )
-
-[node name="FallingFloor7" parent="Hazards" index="13" instance=ExtResource( 9 )]
-
-position = Vector2( 810, 460 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Endgoal" parent="." index="6" instance=ExtResource( 13 )]
 
