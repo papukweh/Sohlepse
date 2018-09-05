@@ -98,17 +98,14 @@ invert_horizontal = -1
 [node name="Box" parent="Objects" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 1441, 425 )
-invert_vertical = 1
 
 [node name="Box2" parent="Objects" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 598.116, 347.565 )
-invert_vertical = 1
 
 [node name="Box3" parent="Objects" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 496.246, 361.933 )
-invert_vertical = 1
 
 [node name="Button1" parent="Objects" index="3" instance=ExtResource( 5 )]
 
@@ -204,7 +201,7 @@ position = Vector2( 360, 479.16 )
 
 [node name="FallingFloor6" parent="Hazards" index="12" instance=ExtResource( 9 )]
 
-position = Vector2( 746, 460 )
+position = Vector2( 751, 413 )
 
 [node name="FallingFloor7" parent="Hazards" index="13" instance=ExtResource( 9 )]
 

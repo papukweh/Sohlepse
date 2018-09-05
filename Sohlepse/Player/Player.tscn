@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -52,7 +57,7 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( -0.475647, 1 )
 input_pickable = false
@@ -70,32 +75,44 @@ z_index = 1
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
+[node name="Siding" type="Area2D" parent="sprite" index="0"]
+
+position = Vector2( -6.84678, 2.47955e-05 )
+rotation = -1.5708
+scale = Vector2( 1, 0.786038 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Siding" index="0"]
+
+position = Vector2( 12.5369, 44.0769 )
+scale = Vector2( 1.23309, 1.46085 )
+shape = SubResource( 3 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( -0.0293961, -2.01142 )
 scale = Vector2( 1, 2.97403 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
-[node name="Siding" type="RayCast2D" parent="." index="2"]
-
-rotation = -1.5708
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 50 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="RC_down" type="RayCast2D" parent="." index="3"]
+[node name="RC_down" type="RayCast2D" parent="." index="2"]
 
 position = Vector2( 0, 0.786232 )
 scale = Vector2( 1, 1.02457 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 29 )
-collision_mask = 1
+collision_mask = 3
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -105,10 +122,14 @@ playback_speed = 1.0
 anims/Death = SubResource( 2 )
 blend_times = [  ]
 
-[node name="InputHandler" type="Node" parent="." index="5"]
+[node name="InputHandler" type="Node" parent="." index="4"]
 
 script = ExtResource( 3 )
 MODE = 1
+
+[connection signal="body_entered" from="sprite/Siding" to="." method="_on_Siding_body_entered"]
+
+[connection signal="body_exited" from="sprite/Siding" to="." method="_on_Siding_body_exited"]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
