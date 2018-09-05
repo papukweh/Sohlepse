@@ -142,6 +142,8 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Players" type="Node" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 51.994, 278.603 )
