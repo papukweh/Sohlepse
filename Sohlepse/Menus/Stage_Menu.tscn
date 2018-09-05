@@ -6,8 +6,6 @@
 [ext_resource path="res://Menus/Prev.gd" type="Script" id=4]
 [ext_resource path="res://Menus/Back.gd" type="Script" id=5]
 
-
-
 [node name="Stage_Menu" type="Control"]
 
 anchor_left = 0.0

@@ -18,7 +18,7 @@ func _ready():
 		play_all_true()
 
 func start_recording(body):
-	if clones.size() < MAX:
+	if pos.size() < MAX:
 		player = body
 		realplayer = body
 		initial_pos = player.get_position()
