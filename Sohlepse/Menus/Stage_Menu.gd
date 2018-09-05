@@ -7,11 +7,11 @@ func _ready():
 	get_node("Batch1/1").text = "0"
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
-		if state > 0:
+		if state == 0:
+			get_tree().change_scene("Menus/MenuPrincipal.tscn")
+		elif state <= global.unlocked_stage:
 			global.current_stage = state
 			get_tree().change_scene("Manager/StageManager.tscn")
-		else:
-			get_tree().change_scene("Menus/MenuPrincipal.tscn")
 	if Input.is_action_just_pressed("move_down"):
 		var newState = _one_down()
 		_atualiza(newState)
