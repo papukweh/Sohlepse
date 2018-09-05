@@ -115,14 +115,12 @@ _sections_unfolded = [ "Animation", "Offset", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-visible = false
 position = Vector2( -0.0293961, -2.01142 )
 scale = Vector2( 1, 2.97403 )
 shape = SubResource( 1 )
 
 [node name="Siding" type="RayCast2D" parent="." index="2"]
 
-visible = false
 rotation = -1.5708
 enabled = true
 exclude_parent = true
@@ -132,7 +130,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RC_down" type="RayCast2D" parent="." index="3"]
 
-visible = false
 position = Vector2( 0, 0.786232 )
 scale = Vector2( 1, 1.02457 )
 enabled = true

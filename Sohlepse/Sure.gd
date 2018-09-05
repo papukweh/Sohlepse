@@ -8,7 +8,6 @@ var LABEL = ["NÃO", "SIM"]
 var state = -1
 
 
-
 func _process(delta):
 	if Input.is_action_just_pressed("Pause") and get_parent().get_node("PauseMenu").inSure:
 		get_node(buttons[no]).text = LABEL[no]
@@ -35,7 +34,6 @@ func _process(delta):
 			get_node(buttons[state]).text = label[state]
 			state = (state+1)%2
 			get_node(buttons[state]).text = LABEL[state]			
-
 
 func _on_No_pressed():
 	pressed[no] = true

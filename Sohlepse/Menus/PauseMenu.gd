@@ -10,6 +10,7 @@ var label = ["Voltar ao Jogo", "Menu", "Recomeçar", "Controles", "Sair"]
 var LABEL = ["VOLTAR AO JOGO", "MENU", "RECOMEÇAR", "CONTROLES", "SAIR"]
 var state = -1
 var inSure = false
+var inControls = false
 
 func openA():
 	get_node(buttons[0]).text = LABEL[0]
@@ -37,13 +38,14 @@ func _process(delta):
 		get_tree().paused = false
 		get_tree().reload_current_scene()
 	if pressed[Controles]:
-		get_tree().paused = false
-		get_tree().change_scene("Menus/Options.tscn")
+		inControls = true
+		hide()
+		get_parent().get_node("Controls").show()
 	if pressed[Exit]:
 		inSure = true
 		hide()
 		get_parent().get_node("Sure").show()
-	if get_tree().paused and !inSure:
+	if get_tree().paused and !inSure and !inControls:
 		if Input.is_action_just_pressed("interact"):
 			pressed[state] = true
 		if Input.is_action_just_pressed("move_down"):
