@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=4]
 
 [node name="stage2" instance=ExtResource( 1 )]
 
@@ -32,7 +30,10 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 0, 536870913, 0, 1, 1610612736, 0, 2, 1610612736, 0, 3, 1610612736, 0, 4, 1610612736, 0, 5, 1610612736, 0, 6, 1610612736, 0, 7, 1610612736, 0, 8, 1610612736, 0, 9, 1610612736, 0, 10, 1610612736, 0, 11, 1610612736, 0, 12, 1610612736, 0, 13, 1610612736, 0, 14, 1610612736, 0, 15, 536870913, 0, 65536, 536870913, 0, 65543, 1610612737, 0, 65544, 1610612737, 0, 65551, 536870913, 0, 131072, 536870913, 0, 131079, 1610612737, 0, 131080, 1610612737, 0, 131087, 536870913, 0, 196608, 536870913, 0, 196615, 1610612737, 0, 196616, 1610612737, 0, 196623, 536870913, 0, 262144, 536870913, 0, 262151, 1610612737, 0, 262152, 1610612737, 0, 262159, 536870913, 0, 327680, 536870913, 0, 327687, 1610612737, 0, 327688, 1610612737, 0, 327695, 536870913, 0, 393216, 536870913, 0, 393223, 1610612737, 0, 393224, 1610612737, 0, 393231, 536870913, 0, 458752, 536870913, 0, 458759, 1610612737, 0, 458760, 1610612737, 0, 458767, 536870913, 0, 524288, 536870913, 0, 524295, 1610612737, 0, 524296, 1610612737, 0, 524303, 536870913, 0, 589824, 536870913, 0, 589825, 536870912, 0, 589826, 536870912, 0, 589827, 536870912, 0, 589828, 536870912, 0, 589829, 536870912, 0, 589830, 536870912, 0, 589831, 536870912, 0, 589832, 536870912, 0, 589833, 536870912, 0, 589834, 536870912, 0, 589835, 536870912, 0, 589836, 536870912, 0, 589837, 536870912, 0, 589838, 536870912, 0, 589839, 536870913, 0 )
+tile_data = PoolIntArray( 65519, 1, 0, 65535, 1, 0, 0, 1, 0, 15, 1, 0, 131055, 1, 0, 131071, 1, 0, 65536, 1, 0, 65551, 1, 0, 196591, 1, 0, 196607, 1, 0, 131072, 1, 0, 131087, 1, 0, 262127, 1, 0, 262143, 1, 0, 196608, 1, 0, 196623, 1, 0, 327663, 1, 0, 327669, 0, 0, 327670, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 1, 0, 262144, 1, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262159, 1, 0, 393199, 1, 0, 393215, 1, 0, 327680, 1, 0, 327695, 1, 0, 458735, 1, 0, 458736, 0, 0, 458737, 0, 0, 458738, 0, 0, 458751, 1, 0, 393216, 1, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 1, 0, 524287, 1, 0, 458752, 1, 0, 589823, 1, 0, 524288, 1, 0, 655359, 1, 0, 589824, 1, 0, 720895, 1, 0, 655360, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Real" type="ReferenceRect" parent="." index="1"]
 
@@ -40,9 +41,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -366.0
-margin_right = 513.0
-margin_bottom = 682.0
+margin_left = -1079.0
+margin_right = 6.0
+margin_bottom = 680.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -50,6 +51,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Mirrored" type="ReferenceRect" parent="." index="2"]
 
@@ -57,9 +61,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 513.0
-margin_right = 1378.0
-margin_bottom = 679.0
+margin_right = 1085.0
+margin_bottom = 680.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -67,30 +70,25 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Players" type="Node" parent="." index="3"]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 203.522, 451.267 )
+position = Vector2( -967.564, 345.788 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 849.514, 485.267 )
+position = Vector2( 911.951, 328.969 )
 invert_horizontal = -1
 
-[node name="Endgoal" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Limit" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 373.718, 546.127 )
-
-[node name="EndgoalMirror" parent="." index="5" instance=ExtResource( 5 )]
-
-position = Vector2( 660.145, 541.377 )
-
-[node name="MovingPlatform" parent="." index="6" instance=ExtResource( 6 )]
-
-position = Vector2( 203.997, 506.902 )
-motion = Vector2( 200, 0 )
-cycle = 200.0
+position = Vector2( 18.9738, 756.852 )
+scale = Vector2( 43.3775, 1 )
+collision_layer = 0
 
 

@@ -13,6 +13,20 @@ const FINAL = 6
 func restart():
 	get_tree().reload_current_scene()
 	
+var pos = []
+var buffer = []
+var play = false
+	
+func save_clones(spos, sbuffer):
+	pos = [] + spos
+	buffer = [] + sbuffer
+	
+func load_pos():
+	return pos
+	
+func load_buffer():
+	return buffer
+	
 func progress():
 	savegame.open(save_path, File.READ)
 	save_data = savegame.get_var()

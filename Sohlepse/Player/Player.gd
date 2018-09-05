@@ -30,6 +30,7 @@ export var invert_horizontal = 1
 onready var move_left = false
 onready var move_right = false
 onready var recording = false
+onready var interacting = false
 onready var jump = false
 onready var on_act3 = false
 onready var initpos = self.get_position()
@@ -148,6 +149,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Death":
 		global.restart()
 
+func is_interacting():
+	return interacting
 
 func _on_Siding_body_entered(body):
 	view = body

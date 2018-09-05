@@ -16,13 +16,16 @@ func _process(delta):
 			player.move_left = Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left")
 		
 		player.jump = Input.is_action_pressed("jump")
+		player.interacting = Input.is_action_pressed("interact")
 	else:
 		var input = inputs.pop_front()
 		if input:
 			player.move_left = input[0]
 			player.move_right = input[1]
 			player.jump = input[2]
+			player.interacting = input[3]
 		else:
 			player.move_left = false
 			player.move_right = false
 			player.jump = false
+			player.interacting = false
