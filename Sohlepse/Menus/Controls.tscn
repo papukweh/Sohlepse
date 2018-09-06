@@ -1,0 +1,227 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Menus/Controls.gd" type="Script" id=1]
+[ext_resource path="res://Assets/left.png" type="Texture" id=2]
+[ext_resource path="res://Assets/right.png" type="Texture" id=3]
+[ext_resource path="res://Assets/up.png" type="Texture" id=4]
+[ext_resource path="res://Assets/E.png" type="Texture" id=5]
+[ext_resource path="res://Assets/R.png" type="Texture" id=6]
+
+[node name="Controls" type="Control"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 368.0
+margin_top = 235.0
+margin_right = 739.0
+margin_bottom = 474.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Margin", "Pause" ]
+
+[node name="ColorRect1" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 13.0
+margin_top = 13.0
+margin_right = 176.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.109375, 0.0999756, 0.0999756, 1 )
+_sections_unfolded = [ "Margin" ]
+
+[node name="ColorRect2" type="ColorRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 13.0
+margin_top = 121.0
+margin_right = 176.0
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.109375, 0.0999756, 0.0999756, 1 )
+_sections_unfolded = [ "Margin" ]
+
+[node name="ColorRect3" type="ColorRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 196.0
+margin_top = 121.0
+margin_right = 359.0
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.109375, 0.0999756, 0.0999756, 1 )
+_sections_unfolded = [ "Margin" ]
+
+[node name="ColorRect4" type="ColorRect" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 196.0
+margin_top = 13.0
+margin_right = 359.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.109375, 0.0999756, 0.0999756, 1 )
+_sections_unfolded = [ "Margin" ]
+
+[node name="Label" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 170.0
+margin_bottom = 225.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Andar (Esquerda/Direita)
+
+
+
+
+
+Pular
+
+
+
+"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label2" type="Label" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_top = 16.0
+margin_right = 354.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Interagir
+
+
+
+
+
+Reiniciar Fase
+
+"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Left" type="Sprite" parent="." index="6"]
+
+position = Vector2( 70.3953, 72.3953 )
+scale = Vector2( 0.209581, 0.209581 )
+texture = ExtResource( 2 )
+
+[node name="Left2" type="Sprite" parent="." index="7"]
+
+position = Vector2( 117.395, 72.3953 )
+scale = Vector2( 0.209581, 0.209581 )
+texture = ExtResource( 3 )
+
+[node name="Up" type="Sprite" parent="." index="8"]
+
+position = Vector2( 93.1372, 176.778 )
+scale = Vector2( 0.209581, 0.209581 )
+texture = ExtResource( 4 )
+
+[node name="E" type="Sprite" parent="." index="9"]
+
+position = Vector2( 277.137, 72.7784 )
+scale = Vector2( 0.209581, 0.209581 )
+texture = ExtResource( 5 )
+
+[node name="R" type="Sprite" parent="." index="10"]
+
+position = Vector2( 278.137, 176.778 )
+scale = Vector2( 0.209581, 0.209581 )
+texture = ExtResource( 6 )
+
+[node name="Voltar" type="Button" parent="." index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 216.0
+margin_right = 61.0
+margin_bottom = 236.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "VOLTAR"
+flat = false
+align = 1
+
+[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+
+

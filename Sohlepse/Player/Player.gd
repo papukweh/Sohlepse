@@ -37,6 +37,9 @@ onready var initpos = self.get_position()
 func _ready():
 	if invert_vertical == -1:
 		self.rotate(PI)
+		$sprite.scale.x = -1
+	elif invert_horizontal == -1:
+		$sprite.scale.x = -1
 
 func _process(delta):
 	if dead:
@@ -139,7 +142,10 @@ func view():
 	
 func die():
 	dead = true
-	$AnimationPlayer.play("Death")
+	if invert_horizontal == -1 or invert_vertical == -1:
+		$AnimationPlayer.play("Death2")
+	else:
+		$AnimationPlayer.play("Death")
 	
 func reset_position():
 	self.set_position(initpos)

@@ -84,6 +84,7 @@ group = null
 text = "Menu"
 flat = false
 align = 1
+_sections_unfolded = [ "Margin" ]
 
 [node name="Restart" type="Button" parent="." index="4"]
 
@@ -91,10 +92,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 147.0
-margin_top = 230.0
-margin_right = 272.0
-margin_bottom = 275.0
+margin_left = 145.0
+margin_top = 228.0
+margin_right = 270.0
+margin_bottom = 278.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -109,6 +110,7 @@ group = null
 text = "Recomeçar"
 flat = false
 align = 1
+_sections_unfolded = [ "Margin" ]
 
 [node name="Controles" type="Button" parent="." index="5"]
 
@@ -117,9 +119,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 285.0
-margin_top = 227.0
+margin_top = 228.0
 margin_right = 423.0
-margin_bottom = 275.0
+margin_bottom = 277.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -134,6 +136,7 @@ group = null
 text = "Controles"
 flat = false
 align = 1
+_sections_unfolded = [ "Margin" ]
 
 [node name="Exit" type="Button" parent="." index="6"]
 
