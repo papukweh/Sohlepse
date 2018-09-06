@@ -1,0 +1,374 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Hazards/WaterArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Stages/Labels7.gd" type="Script" id=9]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Agua"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Agua:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("augA:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Cuidado"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cuidado:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("odadiuC:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14.6744, 9.61855 )
+
+[node name="stage7" index="0" instance=ExtResource( 1 )]
+
+PLAYERS = 2
+MAX_CLONES = 0
+MODE = 2
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -458760, 0, 0, -458759, 0, 0, -458758, 0, 0, -458757, 0, 0, -458756, 0, 0, -458755, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 0, 0, -393224, 1, 0, -458743, 1, 0, -327688, 1, 0, -393207, 1, 0, -262152, 1, 0, -327671, 1, 0, -196616, 1, 0, -262135, 1, 0, -131080, 1, 0, -196599, 1, 0, -65544, 1, 0, -131063, 1, 0, -8, -1610612735, 0, -7, -1610612735, 0, -6, -1610612735, 0, -4, -1610612735, 0, -2, -1610612735, 0, -65536, -1610612735, 0, -65535, -1610612735, 0, -65528, -1610612735, 0, -65527, -1610612735, 0, 65528, -1610612735, 0, 65529, -1610612735, 0, 65530, -1610612735, 0, 65532, -1610612735, 0, 65534, -1610612735, 0, 0, -1610612735, 0, 1, -1610612735, 0, 8, -1610612735, 0, 9, -1610612735, 0, 131064, 1, 0, 65545, 1, 0, 196600, 1, 0, 131081, 1, 0, 262136, 1, 0, 196617, 1, 0, 327672, 1, 0, 262153, 1, 0, 393208, 1, 0, 327689, 1, 0, 458744, 1, 0, 393225, 1, 0, 524280, 1073741824, 0, 524281, 1073741824, 0, 524282, 1073741824, 0, 524283, 1073741824, 0, 524284, 1073741824, 0, 524285, 1073741824, 0, 524286, 1073741824, 0, 524287, 1073741824, 0, 458752, 1073741824, 0, 458753, 1073741824, 0, 458754, 1073741824, 0, 458755, 1073741824, 0, 458756, 1073741824, 0, 458757, 1073741824, 0, 458758, 1073741824, 0, 458759, 1073741824, 0, 458760, 1073741824, 0, 458761, 1073741824, 0 )
+
+[node name="Real" type="ReferenceRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -514.0
+margin_top = -495.0
+margin_right = 640.0
+margin_bottom = -3.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Mirrored" type="ReferenceRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -515.0
+margin_top = 6.0
+margin_right = 641.0
+margin_bottom = 490.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( -403.136, -112.571 )
+
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -403.136, 112.571 )
+invert_vertical = -1
+
+[node name="Endgoal" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 531.159, -96.9137 )
+
+[node name="EndgoalMirror" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 531.159, 96.9137 )
+scale = Vector2( -1, -1 )
+
+[node name="Thorns" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( -290, -39.4508 )
+begin = 1
+
+[node name="WaterArea" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( -160, -33.4356 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Thorns2" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( -290, 39.4508 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="WaterArea2" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( -160, 33.4356 )
+scale = Vector2( 1, -1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Lava" parent="." index="10" instance=ExtResource( 8 )]
+
+position = Vector2( -31.6892, -33.4356 )
+
+[node name="Lava2" parent="." index="11" instance=ExtResource( 8 )]
+
+position = Vector2( -31.6892, 33.4356 )
+scale = Vector2( 1, -1 )
+
+[node name="WaterArea3" parent="." index="12" instance=ExtResource( 7 )]
+
+position = Vector2( 191.33, -33.4356 )
+scale = Vector2( 2, 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WaterArea4" parent="." index="13" instance=ExtResource( 7 )]
+
+position = Vector2( 191.33, 33.4356 )
+scale = Vector2( 2, -1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Lava3" parent="." index="14" instance=ExtResource( 8 )]
+
+position = Vector2( 319.485, -33.4356 )
+scale = Vector2( 2, 1 )
+
+[node name="Lava4" parent="." index="15" instance=ExtResource( 8 )]
+
+position = Vector2( 319.485, 33.4356 )
+scale = Vector2( 2, -1 )
+
+[node name="WaterArea5" parent="." index="16" instance=ExtResource( 7 )]
+
+position = Vector2( 416.955, -33.4356 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WaterArea6" parent="." index="17" instance=ExtResource( 7 )]
+
+position = Vector2( 416.955, 33.4356 )
+scale = Vector2( 1, -1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Thorns3" parent="." index="18" instance=ExtResource( 6 )]
+
+position = Vector2( 480, -39.4508 )
+begin = 1
+
+[node name="Thorns4" parent="." index="19" instance=ExtResource( 6 )]
+
+position = Vector2( 480, 39.4508 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Labels7" type="Node" parent="." index="20"]
+
+script = ExtResource( 9 )
+
+[node name="Cuidado" type="Label" parent="Labels7" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -249.0
+margin_top = -350.0
+margin_right = 74.0
+margin_bottom = -311.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cuidado!  Espinhos e Lavas são mortais ao toque"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Pause", "Rect", "Size Flags", "custom_colors", "custom_fonts" ]
+
+[node name="odadiuC" type="Label" parent="Labels7" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -249.0
+margin_top = 350.0
+margin_right = 61.0
+margin_bottom = 364.0
+rect_scale = Vector2( 2, -2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cuidado!  Espinhos e Lavas são mortais ao toque"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Agua" type="Label" parent="Labels7" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -322.0
+margin_top = -233.0
+margin_right = 69.0
+margin_bottom = -219.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Hm, Parece que na água seus movimentos ficam mais lentos"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="augA" type="Label" parent="Labels7" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -322.0
+margin_top = 233.0
+margin_right = 69.0
+margin_bottom = 247.0
+rect_scale = Vector2( 2, -2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Hm, Parece que na água seus movimentos ficam mais lentos"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Labels7" index="4"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Agua = SubResource( 1 )
+anims/Cuidado = SubResource( 2 )
+blend_times = [  ]
+_sections_unfolded = [ "Pause" ]
+
+[node name="Event" type="Area2D" parent="Labels7" index="5"]
+
+position = Vector2( -161.569, -77.8435 )
+scale = Vector2( 1.02495, 0.273287 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels7/Event" index="0"]
+
+position = Vector2( 2.31237, 1.80468 )
+scale = Vector2( 1.79488, 3.09244 )
+shape = SubResource( 3 )
+
+[connection signal="animation_finished" from="Labels7/AnimationPlayer" to="Labels7" method="_on_AnimationPlayer_animation_finished"]
+
+[connection signal="body_entered" from="Labels7/Event" to="Labels7" method="_on_Event_body_entered"]
+
+

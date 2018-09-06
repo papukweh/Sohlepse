@@ -111,10 +111,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -56.0
-margin_top = -129.0
-margin_right = 1144.0
-margin_bottom = 351.0
+margin_left = -55.0
+margin_top = -137.0
+margin_right = 1145.0
+margin_bottom = 343.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -145,7 +145,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 51.994, 278.603 )
+position = Vector2( 52.5552, 278.603 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
@@ -228,7 +228,7 @@ autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors" ]
+_sections_unfolded = [ "Rect", "custom_fonts", "custom_styles" ]
 
 [node name="Alavancas" type="Label" parent="Tutorial" index="1"]
 
@@ -335,6 +335,7 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( 10, -30 )
 scale = Vector2( 0.252262, 1.94149 )
 shape = SubResource( 3 )
+_sections_unfolded = [ "Material", "Visibility" ]
 
 [connection signal="animation_finished" from="Tutorial/AnimationPlayer" to="Tutorial" method="_on_AnimationPlayer_animation_finished"]
 

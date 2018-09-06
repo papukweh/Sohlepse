@@ -3,8 +3,6 @@
 [ext_resource path="res://Assets/Water.png" type="Texture" id=1]
 [ext_resource path="res://Hazards/WaterArea.gd" type="Script" id=2]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
