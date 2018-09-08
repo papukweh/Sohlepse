@@ -72,8 +72,6 @@ size_flags_vertical = 1
 
 [node name="Players" type="Node" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 412.372, 532.797 )
@@ -84,8 +82,6 @@ position = Vector2( 794.535, 532.797 )
 invert_horizontal = -1
 
 [node name="Hazards" type="Node" parent="." index="4"]
-
-editor/display_folded = true
 
 [node name="FireArea" parent="Hazards" index="0" instance=ExtResource( 4 )]
 

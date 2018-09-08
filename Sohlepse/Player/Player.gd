@@ -32,16 +32,17 @@ onready var move_right = false
 onready var recording = false
 onready var jump = false
 onready var on_act3 = false
-onready var initpos = self.get_position()
 onready var view = null
+onready var interacting = false
+onready var initpos = self.get_position()
 
 func _ready():
 	if invert_vertical == -1:
 		self.rotate(PI)
-		$sprite.scale = Vector2(-1,1)
-	if invert_horizontal == -1:
-		$sprite.scale = Vector2(-1,1)
-		
+		$sprite.scale.x = -1
+	elif invert_horizontal == -1:
+		$sprite.scale.x = -1
+
 func _process(delta):
 	if dead:
 		return
@@ -119,6 +120,8 @@ func _physics_process(delta):
 	if $RC_down.is_colliding() and not platform:
 		on_air_time = 0
 		jumping = false
+		#if in_terrain == 0:
+			#terrain = 1.0
 
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping:
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
@@ -127,7 +130,7 @@ func _physics_process(delta):
 		jumping = true
 	
 	on_air_time += delta
-	
+		
 func moving_left():
 	return move_left and not move_right
 
@@ -139,7 +142,10 @@ func view():
 	
 func die():
 	dead = true
-	$AnimationPlayer.play("Death")
+	if invert_horizontal == -1 or invert_vertical == -1:
+		$AnimationPlayer.play("Death2")
+	else:
+		$AnimationPlayer.play("Death")
 	
 func reset_position():
 	self.set_position(initpos)
@@ -148,10 +154,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Death":
 		global.restart()
 
+func is_interacting():
+	return interacting
 
 func _on_Siding_body_entered(body):
 	view = body
 
-
 func _on_Siding_body_exited(body):
 	view = null
+

@@ -11,8 +11,14 @@ onready var buffer = []
 onready var pos = []
 onready var MAX = get_parent().MAX_CLONES
 
+func _ready():
+	if global.play:
+		pos = global.load_pos()
+		buffer = global.load_buffer()
+		play_all_true()
+
 func start_recording(body):
-	if clones.size() < MAX:
+	if pos.size() < MAX:
 		player = body
 		realplayer = body
 		initial_pos = player.get_position()
@@ -26,7 +32,13 @@ func stop_recording():
 	buffer.push_back(states)
 	
 func play_all():
-	realplayer.reset_position()
+	if not realplayer:
+		return
+	global.save_clones(pos, buffer)
+	global.play = true
+	global.restart()
+
+func play_all_true():
 	while clones.size() > 0:
 		var c = clones.pop_front()
 		c.queue_free()
@@ -44,11 +56,14 @@ func play_all():
 	for c in clones:
 		c.show()
 		c.dead = false
+	global.play = false
 		
 func _process(delta):
 	if recording:
 		var move_left = Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right")
 		var move_right = Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left")
 		var jump = Input.is_action_pressed("jump")
-		states.push_back([move_left, move_right, jump])
+		var interacting = Input.is_action_pressed("interact")
+		states.push_back([move_left, move_right, jump, interacting])
 	
+

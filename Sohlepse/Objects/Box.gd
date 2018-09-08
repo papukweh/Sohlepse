@@ -14,7 +14,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	var force = Vector2(0, invert_vertical * GRAVITY)
-	if player and Input.is_action_pressed("interact"):
+	if player and player.is_interacting():
 		player.pushing = true
 		if player.moving_left():
 			velocity.x = -200
