@@ -28,7 +28,7 @@ func _process(delta):
 	if pressed[yes]:
 		get_tree().quit()
 	if get_tree().paused and get_parent().get_node("PauseMenu").inSure:
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("ui_accept"):
 			pressed[state] = true
 		if Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right"):
 			get_node(buttons[state]).text = label[state]

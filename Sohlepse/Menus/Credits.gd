@@ -1,7 +1,7 @@
 extends Control
 
 func _process(delta):
-	if(Input.is_action_just_pressed("interact")):
+	if(Input.is_action_just_pressed("ui_accept")):
 		get_tree().change_scene("Menus/MenuPrincipal.tscn")
 
 func _on_Back_pressed():

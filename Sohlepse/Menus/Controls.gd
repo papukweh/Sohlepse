@@ -7,7 +7,7 @@ func _process(delta):
 	if get_parent().get_node("PauseMenu").inControls and get_parent().get_node("PauseMenu").pressed[3]:
 		get_parent().get_node("PauseMenu").pressed[3] = false
 	if get_tree().paused and get_parent().get_node("PauseMenu").inControls:
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("ui_accept"):
 			_on_Voltar_pressed()
 	else:
 		hide()

@@ -46,7 +46,7 @@ func _process(delta):
 		hide()
 		get_parent().get_node("Sure").show()
 	if get_tree().paused and !inSure and !inControls:
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("ui_accept"):
 			pressed[state] = true
 		if Input.is_action_just_pressed("move_down"):
 			var newState = _one_down()

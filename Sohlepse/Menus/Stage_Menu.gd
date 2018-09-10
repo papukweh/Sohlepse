@@ -6,7 +6,7 @@ const maxBatch = 2
 func _ready():
 	get_node("Batch1/1").text = "0"
 func _process(delta):
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("ui_accept"):
 		if state == 0:
 			get_tree().change_scene("Menus/MenuPrincipal.tscn")
 		if state <= global.unlocked_stage:

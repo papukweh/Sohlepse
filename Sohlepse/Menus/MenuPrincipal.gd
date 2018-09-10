@@ -29,7 +29,7 @@ func _process(delta):
 		_atualiza((state+1)%5)
 	if Input.is_action_just_pressed("jump"):
 		_atualiza((state-1)%5)
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("ui_accept"):
 		pressed[state] = true
 
 func _on_continue_pressed():
