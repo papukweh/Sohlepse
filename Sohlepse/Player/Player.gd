@@ -42,6 +42,7 @@ func _ready():
 		$sprite.scale.x = -1
 	elif invert_horizontal == -1:
 		$sprite.scale.x = -1
+		siding_left = true
 
 func _process(delta):
 	if dead:
