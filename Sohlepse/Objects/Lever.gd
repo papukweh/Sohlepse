@@ -5,14 +5,18 @@ var inbody = null
 var activated = false
 var timeout = 0
 signal hit
+signal triggered
+signal default
 
-onready var bid = get_name().substr(5,2)
-onready var obj = get_parent().get_node(object + bid)
+onready var sig = get_name()
 
 #lever1
 func _ready():
-	obj.connect("triggered", obj, "_on_" + object + "_triggered")
-	obj.connect("default", obj, "_on_" + object + "_default")
+	for n in get_tree().get_nodes_in_group(sig):
+		connect("triggered", n, "_onTriggered")
+		connect("default", n, "_onDefault")
+	#obj.connect("triggered", obj, "_on_" + object + "_triggered")
+	#obj.connect("default", obj, "_on_" + object + "_default")
 	
 func _process(delta):
 	timeout-=1
@@ -29,9 +33,9 @@ func _on_Lever_body_exited(body):
 func _on_Lever_hit():
 	if !activated:
 		$AnimatedSprite.animation = "on"
-		obj.emit_signal("triggered")
+		emit_signal("triggered")
 		activated = true
 	else:
 		$AnimatedSprite.animation = "off"
-		obj.emit_signal("default")
+		emit_signal("default")
 		activated = false

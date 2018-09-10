@@ -2,14 +2,17 @@ extends StaticBody2D
 
 export var object = ""
 
-onready var bid = get_name().substr(6,2)
-onready var obj = get_parent().get_node(object+bid)
+onready var sig = get_name()
+
 signal hit
 signal out
+signal triggered
+signal default
 
 func _ready():
-	obj.connect("triggered", obj, "_on_" + object + "_triggered")
-	obj.connect("default", obj, "_on_" + object + "_default")
+	for n in get_tree().get_nodes_in_group(sig):
+		connect("triggered", n, "_onTriggered")
+		connect("default", n, "_onDefault")
 
 func _process(delta):
 	if $left.is_colliding() || $right.is_colliding() || $up.is_colliding():
@@ -20,9 +23,9 @@ func _process(delta):
 func _on_ButtonInst_hit():
 	$AnimatedSprite.animation = "pressed"
 	$CollisionShape2D.disabled = true
-	obj.emit_signal("triggered")
+	emit_signal("triggered")
 
 func _on_ButtonInst_out():
 	$AnimatedSprite.animation = "default"
 	$CollisionShape2D.disabled = false
-	obj.emit_signal("default")
+	emit_signal("default")

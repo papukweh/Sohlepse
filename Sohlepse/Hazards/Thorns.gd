@@ -12,7 +12,7 @@ func _ready():
 		on = true
 		$AnimatedSprite.animation = "on"
 	
-func _on_Thorns_default():
+func _onDefault():
 	if begin == 0:
 		on = false
 		$AnimatedSprite.animation = "off"
@@ -20,7 +20,7 @@ func _on_Thorns_default():
 		on = true
 		$AnimatedSprite.animation = "on"
 
-func _on_Thorns_triggered():
+func _onTriggered():
 	if begin == 0:
 		on = true
 		$AnimatedSprite.animation = "on"

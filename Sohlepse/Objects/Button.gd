@@ -3,12 +3,15 @@ extends Area2D
 export var object = ""
 
 #button1
-onready var bid = get_name().substr(6,2)
-onready var obj = get_parent().get_node(object+bid)
+onready var sig = get_name()
 signal hit
+signal triggered
+signal default
 	
 func _ready():
-	obj.connect("triggered", obj, "_on_" + object + "_triggered")
+	for n in get_tree().get_nodes_in_group(sig):
+		connect("triggered", n, "_onTriggered")
+		connect("default", n, "_onDefault")
 	
 func _on_Button_body_entered(body):
 	$CollisionShape2D.disabled = true
@@ -16,4 +19,4 @@ func _on_Button_body_entered(body):
 	emit_signal("hit")
 
 func _on_Button_hit():
-	obj.emit_signal("triggered")
+	emit_signal("triggered")

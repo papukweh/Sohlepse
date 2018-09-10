@@ -69,7 +69,9 @@ scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 object = "Wall"
 
-[node name="Wall1" parent="." index="6" instance=ExtResource( 7 )]
+[node name="Wall1" parent="." index="6" groups=[
+"Lever1",
+] instance=ExtResource( 7 )]
 
 position = Vector2( 719.205, 127.733 )
 scale = Vector2( 1, 2.35957 )

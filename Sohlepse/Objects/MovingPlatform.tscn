@@ -16,12 +16,14 @@ _sections_unfolded = [ "Transform" ]
 motion = Vector2( 0, 0 )
 cycle = 1.0
 
-[node name="platform" type="RigidBody2D" parent="." index="0"]
+[node name="platform" type="RigidBody2D" parent="." index="0" groups=[
+"kill",
+]]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 1
+mode = 3
 mass = 1.0
 friction = 1.0
 bounce = 0.0

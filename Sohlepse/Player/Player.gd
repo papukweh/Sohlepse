@@ -34,6 +34,8 @@ onready var jump = false
 onready var on_act3 = false
 onready var view = null
 onready var interacting = false
+onready var crushing = false
+onready var time = 1
 onready var initpos = self.get_position()
 
 func _ready():
@@ -42,10 +44,21 @@ func _ready():
 		$sprite.scale.x = -1
 	elif invert_horizontal == -1:
 		$sprite.scale.x = -1
+		siding_left = true
 
 func _process(delta):
 	if dead:
 		return
+		
+	if not crushing:
+		time = 1
+	if crushing:
+		time -= delta
+	
+	if time <= 0:
+		#print(time)
+		die()
+		
 	if Input.is_action_just_pressed("change-v"):
 		invert_vertical *= -1
 		self.rotate(PI)
@@ -163,3 +176,10 @@ func _on_Siding_body_entered(body):
 func _on_Siding_body_exited(body):
 	view = null
 
+func _on_Head_body_entered(body):
+	if body.is_in_group('kill'):
+		crushing = true
+
+func _on_Head_body_exited(body):
+	if body.is_in_group('kill'):
+		crushing = false
