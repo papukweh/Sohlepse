@@ -151,7 +151,7 @@ func reset_position():
 	self.set_position(initpos)
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "Death":
+	if anim_name.begins_with("Death"):
 		global.restart()
 
 func is_interacting():
