@@ -100,7 +100,6 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 
-
 [node name="Player" type="KinematicBody2D"]
 
 position = Vector2( -0.475647, 1 )
