@@ -107,10 +107,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -189.0
-margin_top = -4.0
-margin_right = 538.0
-margin_bottom = 902.0
+margin_left = -193.0
+margin_top = -6.0
+margin_right = 534.0
+margin_bottom = 900.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -141,7 +141,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 45.0617, 535.063 )
+position = Vector2( 45.0617, 541.063 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
@@ -159,7 +159,7 @@ position = Vector2( 614.051, 416.056 )
 
 [node name="EndgoalMirror" parent="." index="6" instance=ExtResource( 6 )]
 
-position = Vector2( 475.35, 413.487 )
+position = Vector2( 475.35, 416.487 )
 
 [node name="Tutorial" type="Node" parent="." index="7"]
 
