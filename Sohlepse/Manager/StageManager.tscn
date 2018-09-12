@@ -31,4 +31,6 @@ visible = false
 
 [node name="Controls" parent="." index="3" instance=ExtResource( 5 )]
 
+visible = false
+
 
