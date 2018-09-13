@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32.2953, 11.9587 )
 
-[node name="MovingPlatform" type="Node2D"]
+[node name="MovingPlatform" type="Node2D" index="0"]
 
 scale = Vector2( 1.5, 1 )
 script = ExtResource( 1 )
@@ -16,9 +16,7 @@ _sections_unfolded = [ "Transform" ]
 motion = Vector2( 0, 0 )
 cycle = 1.0
 
-[node name="platform" type="RigidBody2D" parent="." index="0" groups=[
-"kill",
-]]
+[node name="platform" type="RigidBody2D" parent="." index="0"]
 
 input_pickable = false
 collision_layer = 1

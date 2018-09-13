@@ -4,24 +4,23 @@
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 9.0047
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 20.4562, 10 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "Death"
 length = 2.0
 loop = false
 step = 0.1
@@ -62,9 +61,8 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource_name = "Death2"
 length = 1.0
 loop = false
 step = 0.1
@@ -105,7 +103,7 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( -0.475647, 1 )
 input_pickable = false
@@ -131,7 +129,7 @@ audio_bus_name = "Master"
 
 position = Vector2( 0.493927, -35.5884 )
 scale = Vector2( 2.0973, 1.02584 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="." index="1"]
 
@@ -158,13 +156,13 @@ __meta__ = {
 
 position = Vector2( 6.38891, 29.3381 )
 scale = Vector2( 0.548939, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -0.0293961, -2.01142 )
 scale = Vector2( 1, 2.97403 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -189,8 +187,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 3 )
-anims/Death2 = SubResource( 4 )
+anims/Death = SubResource( 4 )
+anims/Death2 = SubResource( 5 )
 blend_times = [  ]
 _sections_unfolded = [ "Pause", "Playback Options" ]
 

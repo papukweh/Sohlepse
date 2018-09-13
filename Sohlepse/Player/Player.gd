@@ -35,7 +35,7 @@ onready var on_act3 = false
 onready var view = null
 onready var interacting = false
 onready var crushing = false
-onready var time = 1
+onready var time = 10
 onready var initpos = self.get_position()
 
 func _ready():
@@ -51,12 +51,11 @@ func _process(delta):
 		return
 		
 	if not crushing:
-		time = 1
+		time = 35
 	if crushing:
-		time -= delta
+		time -= 1
 	
 	if time <= 0:
-		#print(time)
 		die()
 		
 	if Input.is_action_just_pressed("change-v"):
@@ -155,6 +154,7 @@ func view():
 	
 func die():
 	dead = true
+	$CollisionShape2D.disabled = true
 	if invert_horizontal == -1 or invert_vertical == -1:
 		$AnimationPlayer.play("Death2")
 	else:

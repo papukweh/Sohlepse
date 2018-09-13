@@ -36,7 +36,6 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
-object = ""
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 

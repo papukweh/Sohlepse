@@ -4,6 +4,9 @@ export var motion = Vector2()
 export var cycle = 1.0
 var accum = 0.0
 
+func _ready():
+	if motion.y != 0:
+		$platform.add_to_group('kill')
 
 func _physics_process(delta):
 	accum += delta * (1.0 / cycle) * PI * 2.0

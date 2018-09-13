@@ -1,20 +1,20 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Hazards/Thorns.gd" type="Script" id=1]
-[ext_resource path="res://Assets/thorn_off.png" type="Texture" id=2]
-[ext_resource path="res://Assets/thorn_on.png" type="Texture" id=3]
+[ext_resource path="res://Assets/thorn_on.png" type="Texture" id=2]
+[ext_resource path="res://Assets/thorn_off.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "off",
+"name": "on",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "on",
+"name": "off",
 "speed": 5.0
 } ]
 
@@ -41,6 +41,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 begin = 0
+activation = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -75,9 +76,5 @@ shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Thorns_body_entered"]
-
-[connection signal="default" from="." to="." method="_on_Thorns_default"]
-
-[connection signal="triggered" from="." to="." method="_on_Thorns_triggered"]
 
 
