@@ -92,8 +92,6 @@ invert_horizontal = -1
 
 [node name="Objects" type="Node" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="Box" parent="Objects" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 1441, 425 )
@@ -111,6 +109,7 @@ position = Vector2( 496.246, 361.933 )
 position = Vector2( 180.002, 448.136 )
 _sections_unfolded = [ "Transform" ]
 object = "Wall"
+object2 = "Wall4"
 
 [node name="Lever3" parent="Objects" index="4" instance=ExtResource( 6 )]
 
@@ -137,15 +136,19 @@ object = "Wall"
 
 [node name="Wall1" parent="Objects" index="8" instance=ExtResource( 9 )]
 
-position = Vector2( 700.841, 351.323 )
+position = Vector2( 391.284, 341.396 )
 
-[node name="Wall2" parent="Objects" index="9" instance=ExtResource( 9 )]
+[node name="Wall4" parent="Objects" index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 332.622, 341.396 )
+
+[node name="Wall2" parent="Objects" index="10" instance=ExtResource( 9 )]
 
 position = Vector2( 700.67, 413.527 )
 
-[node name="Wall3" parent="Objects" index="10" instance=ExtResource( 9 )]
+[node name="Wall3" parent="Objects" index="11" instance=ExtResource( 9 )]
 
-position = Vector2( 701.124, 285.966 )
+position = Vector2( 700.221, 285.966 )
 
 [node name="Hazards" type="Node" parent="." index="5"]
 
