@@ -1,7 +1,7 @@
 extends StaticBody2D
 
+export var begin = 0 # 0 = default is enabled
 signal triggered
-export var begin = 0 #ativada por padrão
 export var activation = 0 #alternates
 onready var active = true
 onready var transmitter = false

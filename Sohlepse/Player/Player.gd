@@ -129,7 +129,7 @@ func _physics_process(delta):
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	if $RC_down.is_colliding() and not platform:
+	if ($RC_down.is_colliding() or $RC_down2.is_colliding()) and not platform:
 		on_air_time = 0
 		jumping = false
 		#if in_terrain == 0:

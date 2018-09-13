@@ -1,23 +1,119 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Hazards/WaterArea.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Stages/Label8.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19.9762, 10 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "anim1"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Primeiro:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("oriemirP:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "anim2"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Segundo:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("odnugeS:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "anim3"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Terceiro:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("oriecreT:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="stage10" index="0" instance=ExtResource( 1 )]
 
 PLAYERS = 2
 MAX_CLONES = 0
-MODE = 1
+MODE = 2
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -37,162 +133,392 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 65519, 1, 0, 65535, 1, 0, 0, 1, 0, 16, 1, 0, 131055, 1, 0, 131071, 1, 0, 65536, 1, 0, 65552, 1, 0, 196591, 1, 0, 196592, 0, 0, 196593, 0, 0, 196594, 0, 0, 196595, 0, 0, 196596, 0, 0, 196607, 1, 0, 131072, 1, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 1, 0, 262127, 1, 0, 262143, 1, 0, 196608, 1, 0, 196624, 1, 0, 327663, 1, 0, 327679, 1, 0, 262144, 1, 0, 262160, 1, 0, 393199, 1, 0, 393215, 1, 0, 327680, 1, 0, 327696, 1, 0, 458735, 1, 0, 458736, 0, 0, 458737, 0, 0, 458738, 0, 0, 458739, 0, 0, 458751, 1, 0, 393216, 1, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 1, 0, 524271, 1, 0, 524287, 1, 0, 458752, 1, 0, 458768, 1, 0, 589807, 1, 0, 589823, 1, 0, 524288, 1, 0, 524304, 1, 0, 655343, 1, 0, 655344, 0, 0, 655345, 0, 0, 655346, 0, 0, 655347, 0, 0, 655348, 0, 0, 655349, 0, 0, 655350, 0, 0, 655351, 0, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 655355, 0, 0, 655356, 2, 0, 655359, 1, 0, 589824, 1, 0, 589827, 536870914, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 1, 0, 720879, 1, 0, 720880, 3, 0, 720881, 3, 0, 720882, 3, 0, 720883, 3, 0, 720884, 3, 0, 720885, 3, 0, 720886, 3, 0, 720887, 3, 0, 720888, 3, 0, 720889, 3, 0, 720890, 3, 0, 720891, 3, 0, 720892, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 1, 0, 655360, 1, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 1, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
+tile_data = PoolIntArray( -655382, 1, 0, -655381, 1073741824, 0, -655380, 1073741824, 0, -655379, 1073741824, 0, -655378, 1073741824, 0, -655377, 1073741824, 0, -655376, 1073741824, 0, -655375, 1073741824, 0, -655374, 1073741824, 0, -655373, 1073741824, 0, -655372, 1073741824, 0, -655371, 1073741824, 0, -655370, 1073741824, 0, -655369, 1073741824, 0, -655368, 1073741824, 0, -655367, 1073741824, 0, -655366, 1073741824, 0, -655365, 1073741824, 0, -655364, 1073741824, 0, -655363, 1073741824, 0, -655362, 1073741824, 0, -655361, 1073741825, 0, -589846, 1, 0, -589825, 1073741825, 0, -524310, 1, 0, -524289, 1073741825, 0, -458774, 1, 0, -458753, 1073741825, 0, -393238, 1, 0, -393217, 1073741825, 0, -327702, 1, 0, -327681, 1073741825, 0, -262166, 1, 0, -262145, 1073741825, 0, -196630, 1, 0, -196609, 1073741825, 0, -131094, 1, 0, -131073, 1073741825, 0, -65558, 1, 0, -65537, 1073741825, 0, -22, 1, 0, -21, 1073741824, 0, -20, 1073741824, 0, -19, 1073741824, 0, -18, 1073741824, 0, -17, 1073741824, 0, -16, 1073741824, 0, -15, 1073741824, 0, -14, 1073741824, 0, -13, 1073741824, 0, -12, 1073741824, 0, -11, 1073741824, 0, -10, 1073741824, 0, -9, 1073741824, 0, -8, 1073741824, 0, -7, 1073741824, 0, -6, 1073741824, 0, -5, 1073741824, 0, -4, 1073741824, 0, -3, 1073741824, 0, -2, 1073741824, 0, -1, 1073741825, 0, 65514, 1, 0, 65515, 0, 0, 65516, 0, 0, 65517, 0, 0, 65518, 0, 0, 65519, 0, 0, 65520, 0, 0, 65521, 0, 0, 65522, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 1073741825, 0, 131050, 1, 0, 131071, 1, 0, 196586, 1, 0, 196607, 1, 0, 262122, 1, 0, 262143, 1073741825, 0, 327658, 1, 0, 327679, 1073741825, 0, 393194, 1, 0, 393215, 1, 0, 458730, 1, 0, 458751, 1073741825, 0, 524266, 1, 0, 524287, 1073741825, 0, 589802, 1, 0, 589823, 1073741825, 0, 655338, 1, 0, 655359, 1073741825, 0, 720874, 1, 0, 720875, 0, 0, 720876, 0, 0, 720877, 0, 0, 720878, 0, 0, 720879, 0, 0, 720880, 0, 0, 720881, 0, 0, 720882, 0, 0, 720883, 0, 0, 720884, 0, 0, 720885, 0, 0, 720886, 0, 0, 720887, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 1, 0 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Mirrored" type="ReferenceRect" parent="." index="1"]
+[node name="Real" type="ReferenceRect" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1088.0
-margin_bottom = 688.0
+margin_left = -1388.0
+margin_bottom = 700.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-__meta__ = {
-"_edit_lock_": true
-}
+_sections_unfolded = [ "Margin" ]
 
-[node name="Real" type="ReferenceRect" parent="." index="2"]
+[node name="Mirrored" type="ReferenceRect" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1088.0
-margin_bottom = 688.0
+margin_left = -1388.0
+margin_top = -700.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_lock_": true
-}
+_sections_unfolded = [ "Margin" ]
 
 [node name="Players" type="Node" parent="." index="3"]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( -660, 530 )
+position = Vector2( -1292.47, 591.964 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 660, 530 )
-invert_horizontal = -1
+position = Vector2( -1292.47, -591.964 )
+invert_vertical = -1
 
 [node name="Objects" type="Node" parent="." index="4"]
 
-[node name="Wall" parent="Objects" index="0" groups=[
-"Lever",
-] instance=ExtResource( 4 )]
+[node name="Real" type="Node" parent="Objects" index="0"]
 
-position = Vector2( -786, 511 )
-scale = Vector2( 1, 1.97642 )
-_sections_unfolded = [ "Collision", "Transform" ]
-begin = 0
-activation = 0
+[node name="Button2" parent="Objects/Real" index="0" instance=ExtResource( 4 )]
 
-[node name="Wall2" parent="Objects" index="1" groups=[
-"Lever2",
-] instance=ExtResource( 4 )]
-
-position = Vector2( 786, 511 )
-scale = Vector2( 1, 1.97642 )
-_sections_unfolded = [ "Collision", "Transform" ]
-begin = 0
-activation = 0
-
-[node name="MovingPlatform" parent="Objects" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( -380, 480 )
-motion = Vector2( 0, 80 )
-cycle = 5.0
-
-[node name="MovingPlatform2" parent="Objects" index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 380, 480 )
-motion = Vector2( 0, 80 )
-cycle = 5.0
-
-[node name="Platform" parent="Objects" index="4" instance=ExtResource( 6 )]
-
-position = Vector2( -300, 300 )
-scale = Vector2( 3.7449, 1 )
+position = Vector2( -526.854, 637.26 )
 _sections_unfolded = [ "Transform" ]
+object = "Wall"
 
-[node name="Platform2" parent="Objects" index="5" instance=ExtResource( 6 )]
+[node name="Button0" parent="Objects/Real" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 300, 300 )
-scale = Vector2( 3.7449, 1 )
+position = Vector2( -1184.81, 637.26 )
 _sections_unfolded = [ "Transform" ]
+object = "Wall"
 
-[node name="Box2" parent="Objects" index="6" instance=ExtResource( 7 )]
+[node name="Wall3" parent="Objects/Real" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 850, 90 )
-
-[node name="Lever" parent="Objects" index="7" instance=ExtResource( 8 )]
-
-position = Vector2( -78, 525 )
-scale = Vector2( -1, 1 )
+position = Vector2( -220.223, 355.067 )
+scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Lever2" parent="Objects" index="8" instance=ExtResource( 8 )]
+[node name="Wall0" parent="Objects/Real" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 78, 525 )
+position = Vector2( -1088.31, 355.067 )
+scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="MovingPlatform3" parent="Objects" index="9" instance=ExtResource( 5 )]
+[node name="Wall1" parent="Objects/Real" index="4" instance=ExtResource( 5 )]
 
-position = Vector2( -445, 200 )
-scale = Vector2( 3.1953, 1 )
-motion = Vector2( -50, 0 )
-cycle = 5.0
+position = Vector2( -650.335, 355.067 )
+scale = Vector2( 1, 8.89398 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="MovingPlatform4" parent="Objects" index="10" instance=ExtResource( 5 )]
+[node name="Wall2" parent="Objects/Real" index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 445, 200 )
-scale = Vector2( 3.1953, 1 )
-motion = Vector2( 50, 0 )
-cycle = 5.0
+position = Vector2( -329.295, 355.067 )
+scale = Vector2( 1, 8.89398 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Hazards" type="Node" parent="." index="5"]
+[node name="Button1" parent="Objects/Real" index="6" instance=ExtResource( 6 )]
 
-editor/display_folded = true
-
-[node name="WaterArea" parent="Hazards" index="0" instance=ExtResource( 9 )]
-
-position = Vector2( -160, 610 )
+position = Vector2( -877.021, 635.775 )
 _sections_unfolded = [ "Transform" ]
+object = "Wall"
 
-[node name="WaterArea2" parent="Hazards" index="1" instance=ExtResource( 9 )]
+[node name="Button3" parent="Objects/Real" index="7" instance=ExtResource( 6 )]
 
-position = Vector2( -96, 610 )
+position = Vector2( -969.02, 635.775 )
 _sections_unfolded = [ "Transform" ]
+object = "Wall"
 
-[node name="Lava" parent="Hazards" index="2" instance=ExtResource( 10 )]
+[node name="Box2" parent="Objects" index="1" instance=ExtResource( 7 )]
 
-position = Vector2( 96, 610 )
+position = Vector2( -423.119, 609.448 )
 
-[node name="Lava2" parent="Hazards" index="3" instance=ExtResource( 10 )]
+[node name="Box1" parent="Objects" index="2" instance=ExtResource( 7 )]
 
-position = Vector2( 160, 610 )
+position = Vector2( -751.649, 610.247 )
 
-[node name="Endgoal" parent="." index="6" instance=ExtResource( 11 )]
+[node name="Mirrored" type="Node" parent="Objects" index="3"]
 
-position = Vector2( -985, 545 )
+[node name="Button2" parent="Objects/Mirrored" index="0" instance=ExtResource( 4 )]
 
-[node name="EndgoalMirror" parent="." index="7" instance=ExtResource( 12 )]
+position = Vector2( -526.854, -637.26 )
+scale = Vector2( 1, -1 )
+_sections_unfolded = [ "Transform" ]
+object = "Wall"
 
-position = Vector2( 985, 545 )
+[node name="Button0" parent="Objects/Mirrored" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( -1184.81, -637.26 )
+scale = Vector2( 1, -1 )
+_sections_unfolded = [ "Transform" ]
+object = "Wall"
+
+[node name="Wall3" parent="Objects/Mirrored" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( -220.223, -355.067 )
+scale = Vector2( 1, -8.89398 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Wall0" parent="Objects/Mirrored" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( -1088.31, -355.067 )
+scale = Vector2( 1, -8.89398 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Wall1" parent="Objects/Mirrored" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( -650.335, -355.067 )
+scale = Vector2( 1, -8.89398 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Wall2" parent="Objects/Mirrored" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -329.295, -355.067 )
+scale = Vector2( 1, -8.89398 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Button1" parent="Objects/Mirrored" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( -877.021, -635.775 )
+scale = Vector2( 1, -1 )
+_sections_unfolded = [ "Transform" ]
+object = "Wall"
+
+[node name="Button3" parent="Objects/Mirrored" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( -969.02, -635.775 )
+scale = Vector2( 1, -1 )
+_sections_unfolded = [ "Transform" ]
+object = "Wall"
+
+[node name="Box2" parent="Objects/Mirrored" index="8" instance=ExtResource( 7 )]
+
+position = Vector2( -423.119, -609.448 )
+scale = Vector2( 1, -1 )
+invert_vertical = -1
+
+[node name="Box1" parent="Objects/Mirrored" index="9" instance=ExtResource( 7 )]
+
+position = Vector2( -751.649, -610.247 )
+invert_vertical = -1
+
+[node name="Endgoal" parent="." index="5" instance=ExtResource( 8 )]
+
+position = Vector2( -138.708, 608.291 )
+
+[node name="EndgoalMirror" parent="." index="6" instance=ExtResource( 9 )]
+
+position = Vector2( -138.708, -608.291 )
+scale = Vector2( -1, -1 )
+
+[node name="Label8" type="Node" parent="." index="7"]
+
+script = ExtResource( 10 )
+
+[node name="Primeiro" type="Label" parent="Label8" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1083.0
+margin_top = 300.0
+margin_right = -710.0
+margin_bottom = 332.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Para acionar um botão fique em cima dele"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="oriemirP" type="Label" parent="Label8" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1083.0
+margin_top = -300.0
+margin_right = -710.0
+margin_bottom = -268.0
+rect_scale = Vector2( 2, -2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Para acionar um botão fique em cima dele"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Segundo" type="Label" parent="Label8" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1201.0
+margin_top = 365.0
+margin_right = -714.0
+margin_bottom = 379.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Alguns Botões apenas funcionam enquanto estiverem pressionados"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="odnugeS" type="Label" parent="Label8" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1201.0
+margin_top = -365.0
+margin_right = -714.0
+margin_bottom = -351.0
+rect_scale = Vector2( 2, -2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Alguns Botões apenas funcionam enquanto estiverem pressionados
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Terceiro" type="Label" parent="Label8" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -879.0
+margin_top = 333.0
+margin_right = -611.0
+margin_bottom = 347.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Caixas também podem pressionar Botões"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="oriecreT" type="Label" parent="Label8" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -879.0
+margin_top = -333.0
+margin_right = -611.0
+margin_bottom = -319.0
+rect_scale = Vector2( 2, -2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Caixas também podem pressionar Botões"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Event2" type="Area2D" parent="Label8" index="6"]
+
+position = Vector2( -1127.39, 495.026 )
+scale = Vector2( 1.59668, 8.36853 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label8/Event2" index="0"]
+
+position = Vector2( 47.5793, 6.33334 )
+scale = Vector2( 0.830149, 1 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="Event3" type="Area2D" parent="Label8" index="7"]
+
+position = Vector2( -697.377, 527.201 )
+scale = Vector2( 1, 8.67064 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label8/Event3" index="0"]
+
+position = Vector2( -122.738, 2.57373 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label8" index="8"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/anim1 = SubResource( 2 )
+anims/anim2 = SubResource( 3 )
+anims/anim3 = SubResource( 4 )
+blend_times = [  ]
+
+[connection signal="body_entered" from="Label8/Event2" to="Label8" method="_on_Event2_body_entered"]
+
+[connection signal="body_entered" from="Label8/Event3" to="Label8" method="_on_Event3_body_entered"]
+
+[connection signal="animation_finished" from="Label8/AnimationPlayer" to="Label8" method="_on_AnimationPlayer_animation_finished"]
 
 
