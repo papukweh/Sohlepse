@@ -34,6 +34,8 @@ onready var jump = false
 onready var on_act3 = false
 onready var view = null
 onready var interacting = false
+onready var crushing = false
+onready var time = 10
 onready var initpos = self.get_position()
 
 func _ready():
@@ -47,6 +49,15 @@ func _ready():
 func _process(delta):
 	if dead:
 		return
+		
+	if not crushing:
+		time = 35
+	if crushing:
+		time -= 1
+	
+	if time <= 0:
+		die()
+		
 	if Input.is_action_just_pressed("change-v"):
 		invert_vertical *= -1
 		self.rotate(PI)
@@ -143,6 +154,7 @@ func view():
 	
 func die():
 	dead = true
+	$CollisionShape2D.disabled = true
 	if invert_horizontal == -1 or invert_vertical == -1:
 		$AnimationPlayer.play("Death2")
 	else:
@@ -164,3 +176,10 @@ func _on_Siding_body_entered(body):
 func _on_Siding_body_exited(body):
 	view = null
 
+func _on_Head_body_entered(body):
+	if body.is_in_group('kill'):
+		crushing = true
+
+func _on_Head_body_exited(body):
+	if body.is_in_group('kill'):
+		crushing = false

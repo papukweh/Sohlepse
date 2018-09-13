@@ -1,18 +1,19 @@
 extends Area2D
 
-export var object = ""
+onready var activated = false
+onready var transmitter = true
 var inbody = null
-var activated = false
 var timeout = 0
 signal hit
+signal triggered
 
-onready var bid = get_name().substr(5,2)
-onready var obj = get_parent().get_node(object + bid)
+onready var sig = get_name()
 
 #lever1
 func _ready():
-	obj.connect("triggered", obj, "_on_" + object + "_triggered")
-	obj.connect("default", obj, "_on_" + object + "_default")
+	for n in get_tree().get_nodes_in_group(sig):
+		print("connecting "+sig+" to "+n.get_name())
+		connect("triggered", n, "onTriggered")
 	
 func _process(delta):
 	timeout-=1
@@ -29,9 +30,14 @@ func _on_Lever_body_exited(body):
 func _on_Lever_hit():
 	if !activated:
 		$AnimatedSprite.animation = "on"
-		obj.emit_signal("triggered")
 		activated = true
+		emit_signal("triggered")
+
 	else:
 		$AnimatedSprite.animation = "off"
-		obj.emit_signal("default")
 		activated = false
+		emit_signal("triggered")
+
+
+func onTriggered():
+	pass

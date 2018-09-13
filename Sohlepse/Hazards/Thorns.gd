@@ -1,9 +1,9 @@
 extends Area2D
 
 export var begin = 0 # 0 = default is deactivated
-var on = false
-signal triggered
-signal default
+export var activation = 0
+onready var on = false
+onready var transmitter = false
 
 func _ready():
 	if begin == 0:
@@ -12,21 +12,29 @@ func _ready():
 		on = true
 		$AnimatedSprite.animation = "on"
 	
-func _on_Thorns_default():
-	if begin == 0:
-		on = false
-		$AnimatedSprite.animation = "off"
+func onTriggered():
+	var trigger = true
+	if activation != 0:
+		for g in self.get_groups():
+			if !g.begins_with("root"):
+				for n in get_tree().get_nodes_in_group(g):
+					if n.transmitter and  !n.activated:
+						trigger = false
+						
+	if trigger: 
+		if !on and begin == 0:
+			$AnimatedSprite.animation = "on"
+			on = true
+		elif on and begin != 0:
+			$AnimatedSprite.animation = "off"
+			on = false
 	else:
-		on = true
-		$AnimatedSprite.animation = "on"
-
-func _on_Thorns_triggered():
-	if begin == 0:
-		on = true
-		$AnimatedSprite.animation = "on"
-	else:
-		on = false
-		$AnimatedSprite.animation = "off"
+		if on and begin == 0:
+			$AnimatedSprite.animation = "off"
+			on = false
+		elif !on and begin != 0:
+			$AnimatedSprite.animation = "on"
+			on = true
 
 func _on_Thorns_body_entered(body):
 	if (on and body.get_name().begins_with("Player") and not body.dead):

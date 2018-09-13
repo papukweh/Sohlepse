@@ -93,11 +93,15 @@ position = Vector2( 351.683, 287.459 )
 
 [node name="Objects" type="Node" parent="." index="5"]
 
-[node name="Wall2" parent="Objects" index="0" instance=ExtResource( 5 )]
+[node name="Wall2" parent="Objects" index="0" groups=[
+"Button2",
+] instance=ExtResource( 5 )]
 
 position = Vector2( 1040.24, 544.18 )
 
-[node name="Wall1" parent="Objects" index="1" instance=ExtResource( 5 )]
+[node name="Wall1" parent="Objects" index="1" groups=[
+"Button1",
+] instance=ExtResource( 5 )]
 
 position = Vector2( 180.658, 414.699 )
 _sections_unfolded = [ "Collision", "Transform" ]

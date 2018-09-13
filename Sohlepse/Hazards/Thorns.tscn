@@ -41,6 +41,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 begin = 0
+activation = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -75,9 +76,5 @@ shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Thorns_body_entered"]
-
-[connection signal="default" from="." to="." method="_on_Thorns_default"]
-
-[connection signal="triggered" from="." to="." method="_on_Thorns_triggered"]
 
 
