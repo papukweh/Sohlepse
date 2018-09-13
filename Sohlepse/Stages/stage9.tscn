@@ -197,7 +197,9 @@ position = Vector2( -540.365, 222.084 )
 scale = Vector2( 1.06805, 1.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Thorns1" parent="Reality" index="1" instance=ExtResource( 6 )]
+[node name="Thorns1" parent="Reality" index="1" groups=[
+"Lever1",
+] instance=ExtResource( 6 )]
 
 position = Vector2( -542.919, 471.935 )
 begin = 1
@@ -207,9 +209,10 @@ begin = 1
 position = Vector2( -75.3749, 477.921 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
-object = "Thorns"
 
-[node name="Thorns2" parent="Reality" index="3" instance=ExtResource( 6 )]
+[node name="Thorns2" parent="Reality" index="3" groups=[
+"Lever2",
+] instance=ExtResource( 6 )]
 
 position = Vector2( -475.609, 221.328 )
 scale = Vector2( 1, 0.726842 )
@@ -218,9 +221,10 @@ begin = 1
 [node name="Button3" parent="Reality" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( -614.385, 638.833 )
-object = "Thorns"
 
-[node name="Thorns3" parent="Reality" index="5" instance=ExtResource( 6 )]
+[node name="Thorns3" parent="Reality" index="5" groups=[
+"Button3",
+] instance=ExtResource( 6 )]
 
 position = Vector2( -122.394, 131.853 )
 begin = 1
@@ -230,90 +234,90 @@ begin = 1
 position = Vector2( -73.1035, 289.214 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-object = "Thorns"
 
 [node name="Mirror" type="Node" parent="." index="5"]
 
 [node name="Objects" type="Node" parent="Mirror" index="0"]
 
-editor/display_folded = true
-
-[node name="Thorns1" parent="Mirror/Objects" index="0" instance=ExtResource( 6 )]
-
-position = Vector2( 542.919, 471.935 )
-begin = 1
-
-[node name="Platform1" parent="Mirror/Objects" index="1" instance=ExtResource( 5 )]
+[node name="Platform1" parent="Mirror/Objects" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 540.365, 222.084 )
 scale = Vector2( 1.06805, 1.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Platform2" parent="Mirror/Objects" index="2" instance=ExtResource( 5 )]
+[node name="Platform2" parent="Mirror/Objects" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 352.221, 566.887 )
 scale = Vector2( 2.6398, 1.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Platform5" parent="Mirror/Objects" index="3" instance=ExtResource( 5 )]
+[node name="Platform5" parent="Mirror/Objects" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 351.183, 222.51 )
 scale = Vector2( 2.92051, 1.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Platform" parent="Mirror/Objects" index="4" instance=ExtResource( 5 )]
+[node name="Platform" parent="Mirror/Objects" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 143.588, 518.279 )
 scale = Vector2( 2.50168, 1.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Platform3" parent="Mirror/Objects" index="5" instance=ExtResource( 5 )]
+[node name="Platform3" parent="Mirror/Objects" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 362.523, 405.219 )
 scale = Vector2( 2.78824, 1.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Platform4" parent="Mirror/Objects" index="6" instance=ExtResource( 5 )]
+[node name="Platform4" parent="Mirror/Objects" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 143.374, 327.874 )
 scale = Vector2( 2.50168, 1.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Box" parent="Mirror/Objects" index="7" instance=ExtResource( 4 )]
+[node name="Box" parent="Mirror/Objects" index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 542.231, 177.947 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
-[node name="Thorns2" parent="Mirror" index="1" instance=ExtResource( 6 )]
+[node name="Thorns1" parent="Mirror" index="1" groups=[
+"Lever1",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 542.919, 471.935 )
+begin = 1
+
+[node name="Thorns2" parent="Mirror" index="2" groups=[
+"Lever2",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 475.609, 221.328 )
 scale = Vector2( 1, 0.726842 )
 begin = 1
 
-[node name="Button3" parent="Mirror" index="2" instance=ExtResource( 8 )]
+[node name="Button3" parent="Mirror" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 614.385, 638.833 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Transform" ]
-object = "Thorns"
 
-[node name="Thorns3" parent="Mirror" index="3" instance=ExtResource( 6 )]
+[node name="Thorns3" parent="Mirror" index="4" groups=[
+"Button3",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 122.394, 131.853 )
 begin = 1
 
-[node name="Lever2" parent="Mirror" index="4" instance=ExtResource( 7 )]
+[node name="Lever2" parent="Mirror" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 73.1035, 289.214 )
 _sections_unfolded = [ "Collision", "Transform" ]
-object = "Thorns"
 
-[node name="Lever1" parent="Mirror" index="5" instance=ExtResource( 7 )]
+[node name="Lever1" parent="Mirror" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 75.3749, 477.921 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
-object = "Thorns"
 
 [node name="Endgoal" parent="." index="6" instance=ExtResource( 9 )]
 

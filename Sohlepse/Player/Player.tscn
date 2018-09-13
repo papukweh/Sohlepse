@@ -127,8 +127,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head" index="0"]
 
-position = Vector2( 0.493927, -35.5884 )
-scale = Vector2( 2.0973, 1.02584 )
+position = Vector2( 2.65537, -42.909 )
+scale = Vector2( 2.0973, 0.461044 )
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="." index="1"]
@@ -167,19 +167,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="RC_down" type="RayCast2D" parent="." index="3"]
-
-position = Vector2( -5.59441, 1.83518 )
-scale = Vector2( 1, 1.02457 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 29 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="RC_down2" type="RayCast2D" parent="." index="3"]
 
 position = Vector2( 5.76923, 2.01001 )
@@ -206,6 +193,19 @@ _sections_unfolded = [ "Pause", "Playback Options" ]
 
 script = ExtResource( 3 )
 MODE = 1
+
+[node name="RC_down" type="RayCast2D" parent="." index="6"]
+
+position = Vector2( -5.59441, 1.83518 )
+scale = Vector2( 1, 1.02457 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 29 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="body_entered" from="Head" to="." method="_on_Head_body_entered"]
 
