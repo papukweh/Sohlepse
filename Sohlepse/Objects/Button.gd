@@ -1,6 +1,5 @@
 extends Area2D
 
-#button1
 onready var sig = get_name()
 onready var activated = false
 onready var transmitter = true
