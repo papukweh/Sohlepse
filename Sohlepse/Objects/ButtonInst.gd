@@ -21,8 +21,9 @@ func _on_ButtonInst_hit(body):
 		cbody +=1
 		$AnimatedSprite.animation = "pressed"
 		$CollisionShape2D.disabled = true
-		activated = true
-		emit_signal("triggered")
+		if !activated:
+			activated = true
+			emit_signal("triggered")
 
 func _on_ButtonInst_out(body):
 	cbody -= 1
