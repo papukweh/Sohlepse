@@ -13,7 +13,7 @@ extents = Vector2( 32.214, 12.1308 )
 custom_solver_bias = 0.0
 extents = Vector2( 10.9849, 11.7475 )
 
-[node name="Platform" type="Area2D"]
+[node name="Platform" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -30,8 +30,8 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.0542488, -8.56392 )
-scale = Vector2( 1, 0.235769 )
+position = Vector2( -0.0542488, -9.71445 )
+scale = Vector2( 1, 0.0936394 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
@@ -46,13 +46,9 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
-position = Vector2( 0.101007, 0 )
-scale = Vector2( 2.92755, 1 )
+position = Vector2( 0.101007, 0.0517052 )
+scale = Vector2( 2.92755, 1.01954 )
 shape = SubResource( 2 )
 one_way_collision = true
-
-[connection signal="body_entered" from="." to="." method="_on_Platform_body_entered"]
-
-[connection signal="body_exited" from="." to="." method="_on_Platform_body_exited"]
 
 
