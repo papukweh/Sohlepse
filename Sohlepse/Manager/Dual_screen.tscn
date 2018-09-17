@@ -3,7 +3,7 @@
 [ext_resource path="res://Manager/Dual_screen.gd" type="Script" id=1]
 [ext_resource path="res://Manager/Camera2D.gd" type="Script" id=2]
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=1]
 
 offsets = PoolRealArray( 0, 0.248521, 0.822485 )
 colors = PoolColorArray( 0.0365753, 0.442316, 0.550781, 1, 0.828125, 0.947632, 1, 1, 0.0352941, 0.439216, 0.54902, 1 )
@@ -12,7 +12,7 @@ _sections_unfolded = [ "Resource" ]
 [sub_resource type="GradientTexture" id=2]
 
 flags = 4
-gradient = SubResource( 3 )
+gradient = SubResource( 1 )
 width = 1000
 _sections_unfolded = [ "Resource" ]
 
@@ -377,7 +377,7 @@ editor_draw_drag_margin = false
 script = ExtResource( 2 )
 _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing", "Transform", "Z Index" ]
 
-[node name="Filter2" type="Polygon2D" parent="ViewportsH" index="2"]
+[node name="Filter" type="Polygon2D" parent="ViewportsH" index="2"]
 
 polygon = PoolVector2Array( 540, 0, 540, 690, 1082, 690, 1082, 0 )
 uv = PoolVector2Array(  )
@@ -393,7 +393,7 @@ invert_enable = false
 invert_border = 100.0
 _sections_unfolded = [ "Invert", "Material", "Texture", "Transform", "Visibility" ]
 
-[node name="Division2" type="Polygon2D" parent="ViewportsH" index="3"]
+[node name="Division" type="Polygon2D" parent="ViewportsH" index="3"]
 
 position = Vector2( 890, 0 )
 rotation = 1.5708

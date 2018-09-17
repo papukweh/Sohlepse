@@ -28,7 +28,13 @@ func onTriggered():
 		elif on and begin != 0:
 			$AnimatedSprite.animation = "off"
 			on = false
-	else:
+		elif on and begin == 0:
+			$AnimatedSprite.animation = "off"
+			on = false
+		elif !on and begin != 0:
+			$AnimatedSprite.animation = "on"
+			on = true
+	elif activation != 0:
 		if on and begin == 0:
 			$AnimatedSprite.animation = "off"
 			on = false

@@ -8,12 +8,14 @@ signal triggered
 	
 func _ready():
 	for n in get_tree().get_nodes_in_group(sig):
+		print("connecting "+sig+" to "+n.get_name())
 		connect("triggered", n, "onTriggered")
 	
 func _on_Button_body_entered(body):
-	$CollisionShape2D.disabled = true
-	$AnimatedSprite.animation = "pressed"
-	emit_signal("hit")
+	if !activated:
+		$CollisionShape2D.disabled = true
+		$AnimatedSprite.animation = "pressed"
+		emit_signal("hit")
 
 func _on_Button_hit():
 	activated = true

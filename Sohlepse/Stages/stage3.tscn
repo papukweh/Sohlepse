@@ -98,23 +98,28 @@ position = Vector2( 351.683, 287.459 )
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 1040.24, 544.18 )
+activation = 0
 
 [node name="Wall1" parent="Objects" index="1" groups=[
+"Button2",
 "Button1",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 180.658, 414.699 )
 _sections_unfolded = [ "Collision", "Transform" ]
+activation = 1
 
-[node name="Button2" parent="Objects" index="2" instance=ExtResource( 6 )]
+[node name="Button2" parent="Objects" index="2" groups=[
+"Button2",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 614.68, 572.27 )
-object = "Wall"
 
-[node name="Button1" parent="Objects" index="3" instance=ExtResource( 6 )]
+[node name="Button1" parent="Objects" index="3" groups=[
+"Button1",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 850.531, 569.788 )
-object = "Wall"
 
 [node name="Box" parent="Objects" index="4" instance=ExtResource( 7 )]
 
