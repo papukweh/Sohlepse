@@ -3,7 +3,6 @@
 [ext_resource path="res://Menus/Stage_Button.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-
 [node name="1" type="Button"]
 
 anchor_left = 0.0
