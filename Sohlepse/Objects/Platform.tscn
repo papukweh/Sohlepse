@@ -30,8 +30,8 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.0542488, -8.56392 )
-scale = Vector2( 1, 0.235769 )
+position = Vector2( -0.0542488, -10.631 )
+scale = Vector2( 1, 0.0642789 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
