@@ -131,8 +131,6 @@ func _physics_process(delta):
 	if ($RC_down.is_colliding() or $RC_down2.is_colliding()):
 		on_air_time = 0
 		jumping = false
-		#if in_terrain == 0:
-			#terrain = 1.0
 
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping:
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
