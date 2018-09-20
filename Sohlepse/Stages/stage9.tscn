@@ -215,7 +215,7 @@ _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 ] instance=ExtResource( 6 )]
 
 position = Vector2( -475.609, 219.4 )
-scale = Vector2( -1, 0.813745 )
+scale = Vector2( -1.2, 0.813745 )
 begin = 1
 
 [node name="Button3" parent="Reality" index="4" instance=ExtResource( 8 )]
@@ -294,7 +294,7 @@ begin = 1
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 475.609, 219.5 )
-scale = Vector2( 1, 0.812066 )
+scale = Vector2( 1.2, 0.812066 )
 begin = 1
 
 [node name="Button6" parent="Mirror" index="3" instance=ExtResource( 8 )]

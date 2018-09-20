@@ -31,12 +31,12 @@ func body_entered(id):
 		return
 	if !checks[last] and id == last:
 		if last == 0:
-			$Tween.interpolate_property(get_node("Label"+str(last)), "modulate", 
-			Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5, 
+			$Tween.interpolate_property(get_node("Label"+str(last)), "modulate",
+			Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5,
 			Tween.TRANS_LINEAR, Tween.EASE_IN)
 		else:
-			$Tween.interpolate_property(get_node("Label"+str(last-1)), "modulate", 
-	    Color(1, 1, 1, 1), Color(1, 1, 1, 0), 0.5, 
+			$Tween.interpolate_property(get_node("Label"+str(last-1)), "modulate",
+	    Color(1, 1, 1, 1), Color(1, 1, 1, 0), 0.5,
 	    Tween.TRANS_LINEAR, Tween.EASE_IN)
 		checks[last] = true
 		$Tween.start()
@@ -46,8 +46,8 @@ func _on_Tween_tween_completed(object, key):
 		last +=1
 		return
 	if checks[last] and (last+1 >= size or not checks[last+1]):
-		$Tween.interpolate_property(get_node("Label"+str(last)), "modulate", 
-		Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5, 
+		$Tween.interpolate_property(get_node("Label"+str(last)), "modulate",
+		Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5,
 		Tween.TRANS_LINEAR, Tween.EASE_IN)
 		last +=1
 		if last >= size:

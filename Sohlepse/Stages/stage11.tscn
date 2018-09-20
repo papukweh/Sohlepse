@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Event.tscn" type="PackedScene" id=4]
 
 [node name="stage11" instance=ExtResource( 1 )]
 
+ACT = 2
+PLAYERS = 2
+MAX_CLONES = 0
 MODE = 1
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = null
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -24,7 +30,8 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( 65535, 1, 0, 0, 1, 0, 131071, 1, 0, 65536, 1, 0, 196607, 1, 0, 131072, 1, 0, 262143, 1, 0, 196608, 1, 0, 327679, 1, 0, 262144, 1, 0, 393215, 1, 0, 327680, 1, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 0, 524285, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 589813, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 655344, 0, 0, 655345, 0, 0, 655346, 0, 0, 655347, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 720875, 0, 0, 720876, 0, 0, 720877, 0, 0, 720878, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0 )
+_sections_unfolded = [ "Cell" ]
 
 [node name="Real" type="ReferenceRect" parent="." index="1"]
 
@@ -32,8 +39,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -1297.0
+margin_bottom = 720.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -41,10 +48,50 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Players" type="Node" parent="." index="2"]
+[node name="Mirrored" type="ReferenceRect" parent="." index="2"]
 
-[node name="Objects" type="Node" parent="." index="3"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1297.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
-[node name="Hazards" type="Node" parent="." index="4"]
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( -1220, 607 )
+
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1220, 607 )
+invert_horizontal = -1
+
+[node name="Objects" type="Node" parent="." index="4"]
+
+[node name="Hazards" type="Node" parent="." index="5"]
+
+[node name="Event" parent="." index="6" instance=ExtResource( 4 )]
+
+_sections_unfolded = [ "Transform" ]
+events = [ Vector2( -1220, 610 ), Vector2( -910, 540 ), Vector2( -590, 460 ), Vector2( -255, 415 ), Vector2( -93, 340 ) ]
+labels = [ "Olha, uma label", "Uia, outra", "Caralho", "Quantas labels aaaa", "Nem tenho mais o que dizer" ]
+pos = [ Vector2( -1200, 200 ), Vector2( -900, 200 ), Vector2( -600, 200 ), Vector2( -300, 200 ), Vector2( -500, 700 ) ]
+
+[node name="Event2" parent="." index="7" instance=ExtResource( 4 )]
+
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform" ]
+events = [ Vector2( -1220, 610 ), Vector2( -910, 540 ), Vector2( -590, 460 ), Vector2( -255, 415 ), Vector2( -93, 340 ) ]
+labels = [ "Olha, uma label", "Uia, outra", "Caralho", "Quantas labels aaaa", "Nem tenho mais o que dizer" ]
+pos = [ Vector2( -1200, 200 ), Vector2( -900, 200 ), Vector2( -600, 200 ), Vector2( -300, 200 ), Vector2( -500, 700 ) ]
 
 

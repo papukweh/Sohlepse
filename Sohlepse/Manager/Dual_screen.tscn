@@ -187,7 +187,7 @@ _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing", "Transform
 
 polygon = PoolVector2Array( 0, 344, 0, 690, 1082, 690, 1082, 344 )
 uv = PoolVector2Array(  )
-color = Color( 1, 1, 1, 0.0784314 )
+color = Color( 1, 1, 1, 0.156863 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
 antialiased = false
@@ -379,9 +379,10 @@ _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing", "Transform
 
 [node name="Filter" type="Polygon2D" parent="ViewportsH" index="2"]
 
+z_index = 5
 polygon = PoolVector2Array( 540, 0, 540, 690, 1082, 690, 1082, 0 )
 uv = PoolVector2Array(  )
-color = Color( 1, 1, 1, 0.0784314 )
+color = Color( 1, 1, 1, 0.156863 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
 antialiased = false
@@ -391,7 +392,7 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
-_sections_unfolded = [ "Invert", "Material", "Texture", "Transform", "Visibility" ]
+_sections_unfolded = [ "Invert", "Material", "Texture", "Transform", "Visibility", "Z Index" ]
 
 [node name="Division" type="Polygon2D" parent="ViewportsH" index="3"]
 

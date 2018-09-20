@@ -9,7 +9,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		if state == 0:
 			get_tree().change_scene("Menus/MenuPrincipal.tscn")
-		if state <= global.unlocked_stage:
+		elif state <= global.unlocked_stage:
 			global.current_stage = state
 			get_tree().change_scene("Manager/StageManager.tscn")
 
@@ -27,6 +27,7 @@ func _process(delta):
 		_atualiza(newState)
 		
 func _atualiza(newState):
+	print(state)
 	if state == 0:
 		$Back.text = "Voltar"
 	else:
