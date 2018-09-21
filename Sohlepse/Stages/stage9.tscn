@@ -253,7 +253,6 @@ scale = Vector2( 2.6398, 1.5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Platform5" parent="Mirror/Objects" index="2" instance=ExtResource( 5 )]
-
 position = Vector2( 351, 228 )
 scale = Vector2( 2.92051, 1.5 )
 _sections_unfolded = [ "Transform" ]
