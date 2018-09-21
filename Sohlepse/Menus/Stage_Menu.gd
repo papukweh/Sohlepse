@@ -31,6 +31,7 @@ func _process(delta):
 		_atualiza(newState)
 		
 func _atualiza(newState):
+	print(state)
 	if state == 0:
 		$Back.text = "Voltar"
 	elif state == -1:

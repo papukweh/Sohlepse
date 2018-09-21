@@ -47,5 +47,6 @@ texture = ExtResource( 2 )
 position = Vector2( 0.102165, 0.0842352 )
 scale = Vector2( 0.997105, 0.994369 )
 shape = SubResource( 1 )
+one_way_collision = true
 
 

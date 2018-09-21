@@ -183,50 +183,58 @@ invert_vertical = -1
 
 [node name="Real" type="Node" parent="Objects" index="0"]
 
-[node name="Button2" parent="Objects/Real" index="0" instance=ExtResource( 4 )]
+[node name="Button6" parent="Objects/Real" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( -526.854, 637.26 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Button0" parent="Objects/Real" index="1" instance=ExtResource( 4 )]
+[node name="Button4" parent="Objects/Real" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( -1184.81, 637.26 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Wall3" parent="Objects/Real" index="2" instance=ExtResource( 5 )]
+[node name="Wall7" parent="Objects/Real" index="2" groups=[
+"Button7",
+] instance=ExtResource( 5 )]
 
 position = Vector2( -220.223, 355.067 )
 scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 0
 
-[node name="Wall0" parent="Objects/Real" index="3" instance=ExtResource( 5 )]
+[node name="Wall4" parent="Objects/Real" index="3" groups=[
+"Button4",
+] instance=ExtResource( 5 )]
 
 position = Vector2( -1088.31, 355.067 )
 scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 0
 
-[node name="Wall1" parent="Objects/Real" index="4" instance=ExtResource( 5 )]
+[node name="Wall5" parent="Objects/Real" index="4" groups=[
+"Button5",
+] instance=ExtResource( 5 )]
 
 position = Vector2( -650.335, 355.067 )
 scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 0
 
-[node name="Wall2" parent="Objects/Real" index="5" instance=ExtResource( 5 )]
+[node name="Wall6" parent="Objects/Real" index="5" groups=[
+"Button6",
+] instance=ExtResource( 5 )]
 
 position = Vector2( -329.295, 355.067 )
 scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 0
 
-[node name="Button1" parent="Objects/Real" index="6" instance=ExtResource( 6 )]
+[node name="Button5" parent="Objects/Real" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( -877.021, 635.775 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Button3" parent="Objects/Real" index="7" instance=ExtResource( 6 )]
+[node name="Button7" parent="Objects/Real" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( -969.02, 635.775 )
 _sections_unfolded = [ "Transform" ]
@@ -253,28 +261,36 @@ position = Vector2( -1184.81, -637.26 )
 scale = Vector2( 1, -1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Wall3" parent="Objects/Mirrored" index="2" instance=ExtResource( 5 )]
+[node name="Wall3" parent="Objects/Mirrored" index="2" groups=[
+"Button3",
+] instance=ExtResource( 5 )]
 
 position = Vector2( -220.223, -355.067 )
 scale = Vector2( 1, -8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 0
 
-[node name="Wall0" parent="Objects/Mirrored" index="3" instance=ExtResource( 5 )]
+[node name="Wall0" parent="Objects/Mirrored" index="3" groups=[
+"Button0",
+] instance=ExtResource( 5 )]
 
 position = Vector2( -1088.31, -355.067 )
 scale = Vector2( 1, -8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 0
 
-[node name="Wall1" parent="Objects/Mirrored" index="4" instance=ExtResource( 5 )]
+[node name="Wall1" parent="Objects/Mirrored" index="4" groups=[
+"Button1",
+] instance=ExtResource( 5 )]
 
 position = Vector2( -650.335, -355.067 )
 scale = Vector2( 1, -8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 0
 
-[node name="Wall2" parent="Objects/Mirrored" index="5" instance=ExtResource( 5 )]
+[node name="Wall2" parent="Objects/Mirrored" index="5" groups=[
+"Button2",
+] instance=ExtResource( 5 )]
 
 position = Vector2( -329.295, -355.067 )
 scale = Vector2( 1, -8.89398 )

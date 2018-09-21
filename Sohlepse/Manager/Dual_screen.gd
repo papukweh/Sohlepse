@@ -18,6 +18,8 @@ func can_load(players):
 	else:
 		camera1.target = world.get_node("Players/Player1")
 		$Viewports/C2.queue_free()
+		$Viewports/Filter.queue_free()
+		$Viewports/Division.queue_free()
 
 func set_camera_limits(camera1, camera2):
 	var map_limits = [world.get_node("Real").get_global_rect(), world.get_node("Mirrored").get_global_rect()] 

@@ -25,29 +25,33 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
  
 	\subsection{Ações do jogador} 
 		\begin{itemize} 
-			\item Andar  
-			\item Pular  
-			\item Empurrar caixas  
-			\item Pressionar botões 
-			\item Acionar alavancas  
+			\item Andar: $\rightarrow$ e $\leftarrow$ ou $A$ e $D$  
+			\item Pular: $\uparrow$ ou $W$
+			\item Empurrar caixas: $E$ enquanto anda na direção da caixa  
+			\item Pressionar botões: permanecer em cima dele 
+			\item Acionar alavancas: $E$
 		\end{itemize} 
  
 	\subsection{Objetos do jogo} 
 		\begin{itemize} 
-			\item Botões - Se mantêm ativos enquanto estão pressionados - abrem ou fecham portas 
-			\item Alavancas - Se mantêm ativos até serem acionadas novamente - abrem ou fecham portas 
+			\item Botões: ativam ou desativam uma quantidade arbitrária de paredes e espinhos divididos em 2 tipos: \begin{itemize}
+			        \item Os que se mantêm ativos enquanto estão pressionados
+			        \item Os que pressionados uma vez, se mantém ativos até o fim da fase
+			\end{itemize}   
+			\item Alavancas - Se mantêm ativos até serem acionadas novamente - ativam ou desativam uma quantidade arbitrária de paredes e espinhos 
 			\item Caixas - Podem ser empurradas para formar escadas ou acionar botões 
 			\item Chão quebrável - Se quebram quando o jogador passa por ele duas vezes 
-			\item Água - Jogador pode passar por esse tile normalmente 
+			\item Água - Jogador pode passar por esse tile normalmente, mas sua movimentação fica mais lenta 
 			\item Lava - Jogador morre se encostar nesse tile 
 			\item Espetos - Jogador morre se encostar nesse tile - pode ser desativado por um botão/alavanca 
 		\end{itemize} 
- 
-	\subsection{Organização das cenas} 
+ 		\subsection{EndGoal}
+ 			Espelho que representa o ponto onde o Jogador deve chegar para terminar a fase, ao interagir com ele, a próxima fase começa(dependendo da fase podem haver cutscenes antes da inicialização)
+	\section{Organização das cenas} 
 		\subsection{Menu Principal} 
 			\begin{itemize} 
 				\item Jogar - Carrega o última fase que o jogador ainda não completou,armazenado na variável global unlocked\_stage. 
-				\item Seleção de fases - Carrega o menu de seleção de fases. Ssuporta apenas 12 fases atualmente, precisa ser melhorado.
+				\item Seleção de fases - Carrega o menu de seleção de fases. Suporta apenas 12 fases atualmente, precisa ser melhorado.
 				\item Opções - Carrega o menu de opções, que não existe ainda, precisa ser feito. 
 				\item Créditos - Carrega os créditos 
 				\item Sair - Fecha o jogo.
@@ -73,17 +77,18 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
 
 		\subsection{Stage}
 			Nó raiz de cada fase.
-			\begin{enumerate}
+			\begin{itemize}
 				\item TileMap - Layout da fase.
 				\item Real e Mirrored - ReferenceRect, definem os limites da câmera.
 				\item Endgoal e EndgoalMirror - Objetivo final de cada fase.
 				\item Players - Um Node normal, cujos filhos são instâncias do Player.
+				\item Reality e Mirror - dois Nodes normais, cujos filhos são os nós Objects e Hazardz nas fases Real e Espelhada respectivamente
 				\item Objects - Um Node normal, cujos filhos são botões, paredes, alavancas, etc.
 				\item Hazards - Um Node normal, cujos filhos são limites, firearea, espetos, etc.
-			\end{enumerate}
+			\end{itemize}
 
 		\subsection{Player}
-			TBD
+			O Player é o personagem humano controlado pelo jogador, que através da movimentação e interação com os objetos da fase, deve chegar no EndGoal, evitando cair e  tocar em Hazards
 
  
  
@@ -107,8 +112,11 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
  
 	Descrições/desenhos mais pra frente 
 	\begin{itemize} 
-		\item Fase 
-		\item Fase 
+		\item Fase5 : Tutorial In-game de movimentação e interação 
+		\item Fase6 : Tutorial In-game de caixa e alavanca
+		\item Fase7 : Tutorial In-game de água e lava
+		\item Fase9 : Tutorial de espinhos
+		\item Fase10 : Tutorial In-game de espinhos
 	\end{itemize} 
  
 \subsection{História} 
@@ -135,7 +143,7 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
  
 	Descrições/desenhos mais pra frente 
 	\begin{itemize} 
-		\item Fase 
+		\item Fase8 : Água no espelho é lava, usar caixa pra pisar na lava 
 		\item Fase 
 	\end{itemize} 
  

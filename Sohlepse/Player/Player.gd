@@ -19,7 +19,6 @@ var on_air_time = 0
 var jumping = false
 var pushing = false
 var dead = false
-var platform = false
 var in_terrain = 0
 
 var siding_left = false
@@ -36,6 +35,7 @@ onready var view = null
 onready var interacting = false
 onready var crushing = false
 onready var time = 10
+onready var platform = false
 onready var initpos = self.get_position()
 
 func _ready():
@@ -132,8 +132,6 @@ func _physics_process(delta):
 	if ($RC_down.is_colliding() or $RC_down2.is_colliding()) and not platform:
 		on_air_time = 0
 		jumping = false
-		#if in_terrain == 0:
-			#terrain = 1.0
 
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping:
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.

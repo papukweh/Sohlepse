@@ -99,7 +99,6 @@ invert_horizontal = -1
 position = Vector2( -786, 511 )
 scale = Vector2( 1, 1.97642 )
 _sections_unfolded = [ "Collision", "Transform" ]
-begin = 0
 activation = 0
 
 [node name="Wall2" parent="Objects" index="1" groups=[
@@ -109,7 +108,6 @@ activation = 0
 position = Vector2( 786, 511 )
 scale = Vector2( 1, 1.97642 )
 _sections_unfolded = [ "Collision", "Transform" ]
-begin = 0
 activation = 0
 
 [node name="MovingPlatform" parent="Objects" index="2" instance=ExtResource( 5 )]
@@ -126,13 +124,13 @@ cycle = 5.0
 
 [node name="Platform" parent="Objects" index="4" instance=ExtResource( 6 )]
 
-position = Vector2( -300, 300 )
+position = Vector2( -300, 312 )
 scale = Vector2( 3.7449, 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Platform2" parent="Objects" index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 300, 300 )
+position = Vector2( 300, 312 )
 scale = Vector2( 3.7449, 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -140,27 +138,31 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 850, 90 )
 
-[node name="Lever" parent="Objects" index="7" instance=ExtResource( 8 )]
+[node name="Box" parent="Objects" index="7" instance=ExtResource( 7 )]
+
+position = Vector2( -850, 90 )
+
+[node name="Lever" parent="Objects" index="8" instance=ExtResource( 8 )]
 
 position = Vector2( -78, 525 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Lever2" parent="Objects" index="8" instance=ExtResource( 8 )]
+[node name="Lever2" parent="Objects" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 78, 525 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="MovingPlatform3" parent="Objects" index="9" instance=ExtResource( 5 )]
+[node name="MovingPlatform3" parent="Objects" index="10" instance=ExtResource( 5 )]
 
-position = Vector2( -445, 200 )
+position = Vector2( -445, 209 )
 scale = Vector2( 3.1953, 1 )
 motion = Vector2( -50, 0 )
 cycle = 5.0
 
-[node name="MovingPlatform4" parent="Objects" index="10" instance=ExtResource( 5 )]
+[node name="MovingPlatform4" parent="Objects" index="11" instance=ExtResource( 5 )]
 
-position = Vector2( 445, 200 )
+position = Vector2( 445, 209 )
 scale = Vector2( 3.1953, 1 )
 motion = Vector2( 50, 0 )
 cycle = 5.0
