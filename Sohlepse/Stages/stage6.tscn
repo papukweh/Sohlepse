@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
@@ -8,76 +8,9 @@
 [ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Stages/Tutorial2.gd" type="Script" id=9]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=9]
 
-[sub_resource type="Animation" id=1]
-
-resource_name = "Alavancas"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("sacnavalA:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Alavancas:custom_colors/font_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-
-resource_name = "Caixas"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Caixas:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("saxiaC:custom_colors/font_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 67.0968, 27.4711 )
-
-[node name="stage6" instance=ExtResource( 1 )]
+[node name="stage6" index="0" instance=ExtResource( 1 )]
 
 PLAYERS = 2
 MAX_CLONES = 0
@@ -85,6 +18,7 @@ MODE = 2
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
+position = Vector2( 9, -361 )
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
@@ -110,10 +44,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -60.0
-margin_top = -129.0
-margin_right = 1150.0
-margin_bottom = 351.0
+margin_left = -51.0
+margin_top = -490.0
+margin_right = 1159.0
+margin_bottom = -10.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -128,10 +62,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -60.0
-margin_top = 351.0
-margin_right = 1150.0
-margin_bottom = 831.0
+margin_left = -51.0
+margin_top = -10.0
+margin_right = 1159.0
+margin_bottom = 470.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -144,35 +78,35 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 52.5552, 278.603 )
+position = Vector2( 61.5552, -82.397 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 52.5552, 423.295 )
+position = Vector2( 61.5552, 62.295 )
 invert_vertical = -1
 
 [node name="Objects" type="Node" parent="." index="4"]
 
 [node name="Box" parent="Objects" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 590, 290 )
+position = Vector2( 599, -71 )
 
 [node name="Box2" parent="Objects" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 590, 427 )
+position = Vector2( 599, 66 )
 rotation = 3.14159
 scale = Vector2( -1, 1 )
 invert_vertical = -1
 
 [node name="Lever2" parent="Objects" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 1077.18, 281.933 )
+position = Vector2( 1086.18, -79.067 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Lever1" parent="Objects" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 1077.18, 415.512 )
+position = Vector2( 1086.18, 54.512 )
 scale = Vector2( -1, -1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
@@ -180,7 +114,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 "Lever1",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 913, 31 )
+position = Vector2( 922, -330 )
 scale = Vector2( 1, 2.99574 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 0
@@ -189,158 +123,33 @@ activation = 0
 "Lever2",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 913, 670 )
+position = Vector2( 922, 309 )
 scale = Vector2( 1, 2.99574 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 0
 
 [node name="Endgoal" parent="." index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 1047.81, 608.278 )
+position = Vector2( 1056.81, 247.278 )
 scale = Vector2( 1, -1 )
 
 [node name="EndgoalMirror" parent="." index="6" instance=ExtResource( 8 )]
 
-position = Vector2( 1048.72, 96.1559 )
+position = Vector2( 1057.72, -264.844 )
 
-[node name="Tutorial" type="Node" parent="." index="7"]
+[node name="Event" parent="." index="7" instance=ExtResource( 9 )]
 
-script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+events = [ Vector2( 50, 50 ), Vector2( 950, 50 ) ]
+labels = [ "Você pode interagir com caixas para movê-las", "Ou com alavancas" ]
+pos = [ Vector2( 50, -400 ), Vector2( 350, -360 ) ]
 
-[node name="Caixas" type="Label" parent="Tutorial" index="0"]
+[node name="Event2" parent="." index="8" instance=ExtResource( 9 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 274.0
-margin_top = -3.0
-margin_right = 573.0
-margin_bottom = 24.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Você pode interagir com caixas para movê-las"
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts", "custom_styles" ]
-
-[node name="Alavancas" type="Label" parent="Tutorial" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 274.0
-margin_top = 46.0
-margin_right = 573.0
-margin_bottom = 73.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 1, 1, 1, 0 )
-text = "Ou com alavancas"
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors" ]
-
-[node name="saxiaC" type="Label" parent="Tutorial" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 274.0
-margin_top = 686.0
-margin_right = 573.0
-margin_bottom = 714.0
-rect_scale = Vector2( 2, -2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Você pode interagir com caixas para movê-las"
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors" ]
-
-[node name="sacnavalA" type="Label" parent="Tutorial" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 274.0
-margin_top = 640.0
-margin_right = 573.0
-margin_bottom = 675.0
-rect_scale = Vector2( 2, -2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 1, 1, 1, 0 )
-text = "Ou com alavancas"
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial" index="4"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Alavancas = SubResource( 1 )
-anims/Caixas = SubResource( 2 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
-
-[node name="Event" type="Area2D" parent="Tutorial" index="5"]
-
-position = Vector2( 920, 290 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Event" index="0"]
-
-position = Vector2( 10, -30 )
-scale = Vector2( 0.252262, 1.94149 )
-shape = SubResource( 3 )
-_sections_unfolded = [ "Material", "Visibility" ]
-
-[connection signal="animation_finished" from="Tutorial/AnimationPlayer" to="Tutorial" method="_on_AnimationPlayer_animation_finished"]
-
-[connection signal="body_entered" from="Tutorial/Event" to="Tutorial" method="_on_Event_body_entered"]
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform" ]
+events = [ Vector2( 50, 50 ), Vector2( 950, 50 ) ]
+labels = [ "Você pode interagir com caixas para movê-las", "Ou com alavancas" ]
+pos = [ Vector2( 50, -400 ), Vector2( 350, -360 ) ]
 
 

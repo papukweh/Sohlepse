@@ -77,6 +77,7 @@ func _process(delta):
 			Recorder.play_all()
 	
 func _physics_process(delta):
+	#print(get_floor_velocity())
 	if dead:
 		return
 	# Create forces
