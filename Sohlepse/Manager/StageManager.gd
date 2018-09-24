@@ -1,12 +1,15 @@
 extends Node2D
 
 onready var id = global.current_stage
+onready var fase = "res://Stages/stage"
 
 func _ready():
 	if id > global.FINAL:
 		get_tree().change_scene("res://Menus/MenuPrincipal.tscn")
 		return
-	var stage = load("res://Stages/stage"+str(id)+".tscn").instance()
+	elif global.DEBUG:
+		fase = "res://Testes/test"
+	var stage = load(fase+str(id)+".tscn").instance()
 	
 	if stage.MODE == 1:
 		$Setup/ViewportsH.name = "Viewports"

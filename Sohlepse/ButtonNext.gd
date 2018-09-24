@@ -1,8 +1,8 @@
 extends Button
 
-var batch = get_parent().get_parent().batch
+onready var batch = get_parent().get_parent().batch
 func _ready():
-	if(batch*6 < global.unlocked_stage):
+	if(batch*6 >= global.unlocked_stage):
 		self.disabled = true
 
 func _on_ButtonNext_button_down():

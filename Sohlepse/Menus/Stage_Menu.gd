@@ -2,8 +2,11 @@ extends Control
 var batch = 1
 var state = 1
 const maxBatch = 2
+onready var ultimo = global.unlocked_stage
 
 func _ready():
+	if global.DEBUG:
+		ultimo = 99
 	get_node("Batch1/1").text = "0"
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -64,26 +67,26 @@ func _one_down():
 		return -1
 	if state == -2:
 		return 6*batch - 3
-	if state == 6*batch and state < global.unlocked_stage:
+	if state == 6*batch and state < ultimo:
 		return -2
-	if (state-1)%6 < 3 and state + 3 > global.unlocked_stage:
+	if (state-1)%6 < 3 and state + 3 > ultimo:
 		return state
 	return (state%6 + 2)%6 + 1 + 6*(batch - 1)
 func _one_up():
 	if state == 0 and batch != 1:
 		return -1
 	if state == 0 or state == -1:
-		if global.unlocked_stage < (batch -1)*6 + 4:
+		if ultimo < (batch -1)*6 + 4:
 			return (batch -1)*6 + 1
 		else:
 			return (batch -1)*6 + 4
 	if state == (batch -1)*6 + 1:
 		return 0
-	if state == (batch -1)*6 + 3 and global.unlocked_stage > 6*batch:
+	if state == (batch -1)*6 + 3 and ultimo > 6*batch:
 		return -2
 	if state == -2:
 		return 6*batch
-	if (state-1)%6 < 3 and state + 3 > global.unlocked_stage:
+	if (state-1)%6 < 3 and state + 3 > ultimo:
 		return state
 	return (state%6 + 2)%6 + 1 + 6*(batch - 1)
 func _one_right():
@@ -91,7 +94,7 @@ func _one_right():
 		return - 1
 	if state == -1:
 		return (batch -1)*6 + 1
-	if state == global.unlocked_stage:
+	if state == ultimo:
 		return state
 	if state == 6*batch:
 		return -2

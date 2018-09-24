@@ -1,6 +1,6 @@
 extends Button
 
-var batch = get_parent().get_parent().batch
+onready var batch = get_parent().get_parent().batch
 
 func _on_ButtonPrev_button_down():
 	get_parent().hide()

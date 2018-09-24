@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Titulo.png" type="Texture" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 
-[node name="MenuPrincipal" type="Control"]
+[node name="MenuPrincipal" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -72,16 +72,41 @@ text = "Seleção de Fases"
 flat = false
 align = 1
 
-[node name="option" type="Button" parent="." index="2"]
+[node name="tests" type="Button" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 450.0
-margin_top = 438.0
+margin_top = 439.0
+margin_right = 581.0
+margin_bottom = 479.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Testes"
+flat = false
+align = 1
+
+[node name="option" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 450.0
+margin_top = 500.0
 margin_right = 582.0
-margin_bottom = 473.0
+margin_bottom = 535.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -97,16 +122,16 @@ text = "Opções"
 flat = false
 align = 1
 
-[node name="credits" type="Button" parent="." index="3"]
+[node name="credits" type="Button" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 450.0
-margin_top = 498.0
+margin_top = 560.0
 margin_right = 584.0
-margin_bottom = 532.0
+margin_bottom = 594.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -122,16 +147,16 @@ text = "Créditos"
 flat = false
 align = 1
 
-[node name="exit" type="Button" parent="." index="4"]
+[node name="exit" type="Button" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 450.0
-margin_top = 558.0
+margin_top = 620.0
 margin_right = 583.0
-margin_bottom = 593.0
+margin_bottom = 655.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -147,14 +172,14 @@ text = "Sair"
 flat = false
 align = 1
 
-[node name="Título" type="Sprite" parent="." index="5"]
+[node name="Título" type="Sprite" parent="." index="6"]
 
 position = Vector2( 516.999, 210.598 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Icone" type="Sprite" parent="." index="6"]
+[node name="Icone" type="Sprite" parent="." index="7"]
 
 position = Vector2( 827.915, 184.949 )
 scale = Vector2( 2, 2 )
@@ -164,6 +189,8 @@ _sections_unfolded = [ "Transform" ]
 [connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
 
 [connection signal="pressed" from="levelSelect" to="." method="_on_levelSelect_pressed"]
+
+[connection signal="pressed" from="tests" to="." method="_on_levelSelect_pressed"]
 
 [connection signal="pressed" from="option" to="." method="_on_option_pressed"]
 
