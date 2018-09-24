@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Menus/Stage_Menu.gd" type="Script" id=1]
 [ext_resource path="res://Menus/Stage_Button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Menus/Next.gd" type="Script" id=3]
-[ext_resource path="res://Menus/Prev.gd" type="Script" id=4]
+[ext_resource path="res://Menus/ButtonNext.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menus/ButtonPrev.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Menus/Back.gd" type="Script" id=5]
 
-[node name="Stage_Menu" type="Control" index="0"]
+[node name="Stage_Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -83,31 +83,12 @@ margin_top = 191.0
 margin_right = 678.0
 margin_bottom = 306.0
 
-[node name="Next" type="Button" parent="Batch1" index="6"]
+[node name="Next" parent="Batch1" index="6" instance=ExtResource( 3 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 682.0
-margin_top = 321.0
-margin_right = 736.0
-margin_bottom = 341.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Próximo"
-flat = false
-align = 1
-script = ExtResource( 3 )
+margin_left = 685.0
+margin_top = 309.0
+margin_right = 750.0
+margin_bottom = 329.0
 
 [node name="Batch2" type="ReferenceRect" parent="." index="1"]
 
@@ -126,7 +107,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="7" parent="Batch2" index="0" instance=ExtResource( 2 )]
 
@@ -170,31 +151,12 @@ margin_top = 191.0
 margin_right = 678.0
 margin_bottom = 306.0
 
-[node name="Prev" type="Button" parent="Batch2" index="6"]
+[node name="Prev" parent="Batch2" index="6" instance=ExtResource( 4 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -18.0
-margin_top = 321.0
-margin_right = 36.0
-margin_bottom = 341.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Anterior"
-flat = false
-align = 1
-script = ExtResource( 4 )
+margin_left = -23.0
+margin_top = 316.0
+margin_right = 41.0
+margin_bottom = 336.0
 
 [node name="Label" type="Label" parent="." index="2"]
 
@@ -247,9 +209,7 @@ align = 1
 script = ExtResource( 5 )
 _sections_unfolded = [ "Margin" ]
 
-[connection signal="button_down" from="Batch1/Next" to="Batch1/Next" method="_on_Next_button_down"]
-
-[connection signal="button_down" from="Batch2/Prev" to="Batch2/Prev" method="_on_Prev_button_down"]
+[connection signal="button_down" from="Batch1/Next" to="Batch1/Next" method="_on_ButtonNext_button_down"]
 
 [connection signal="pressed" from="Back" to="Back" method="_on_Back_pressed"]
 
