@@ -34,7 +34,7 @@ onready var on_act3 = false
 onready var view = null
 onready var interacting = false
 onready var crushing = false
-onready var time = 10
+onready var time = 0.25
 onready var platform = false
 onready var initpos = self.get_position()
 
@@ -51,9 +51,9 @@ func _process(delta):
 		return
 		
 	if not crushing:
-		time = 35
+		time = 0.25
 	if crushing:
-		time -= 1
+		time -= delta
 	
 	if time <= 0:
 		die()
@@ -178,7 +178,27 @@ func _on_Siding_body_exited(body):
 func _on_Head_body_entered(body):
 	if body.is_in_group('kill'):
 		crushing = true
+	if body.get_class() == "RigidBody2D" and body.get_linear_velocity().y > 0:
+		crushing = true
+	elif $RC_down.is_colliding():
+		var chao = $RC_down.get_collider()
+		if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y < 0:
+			crushing = true
+	elif $RC_down2.is_colliding():
+		var chao = $RC_down2.get_collider()
+		if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y < 0:
+			crushing = true
 
 func _on_Head_body_exited(body):
 	if body.is_in_group('kill'):
 		crushing = false
+	elif body.get_class() == "RigidBody2D" and body.get_linear_velocity().y <= 0:
+		crushing = false
+	elif $RC_down.is_colliding():
+		var chao = $RC_down.get_collider()
+		if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y >= 0:
+			crushing = false
+	elif $RC_down2.is_colliding():
+		var chao = $RC_down2.get_collider()
+		if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y >= 0:
+			crushing = false

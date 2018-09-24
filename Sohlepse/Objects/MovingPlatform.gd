@@ -6,10 +6,6 @@ export var cycle = 1.0
 var accum = 0.0
 signal triggered
 
-func _ready():
-	if motion.y != 0:
-		$platform.add_to_group('kill')
-
 func _physics_process(delta):
 	if activated == 0:
 		accum += delta * (1.0 / cycle) * PI * 2.0
