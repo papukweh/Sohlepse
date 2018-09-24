@@ -1,10 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Hazards/FallingFloor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=11]
 
-[node name="Stage" index="0" instance=ExtResource( 1 )]
+[node name="stage7" instance=ExtResource( 1 )]
 
+PLAYERS = 2
+MAX_CLONES = 1
 MODE = 1
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
@@ -25,7 +36,224 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( 65535, 1, 0, 0, 1, 0, 131071, 1, 0, 65536, 1, 0, 196607, 1, 0, 131072, 1, 0, 262143, 1, 0, 196608, 1, 0, 327679, 1, 0, 262144, 1, 0, 393215, 1, 0, 327680, 1, 0, 458736, 0, 0, 458737, 0, 0, 458738, 0, 0, 458739, 0, 0, 458740, 0, 0, 458751, 1, 0, 393216, 1, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 524272, 1, 0, 524287, 1, 0, 458752, 1, 0, 458762, 1, 0, 589808, 1, 0, 589823, 1, 0, 524288, 1, 0, 524298, 1, 0, 655344, 1, 0, 655357, 0, 0, 655358, 0, 0, 655359, 1, 0, 589824, 1, 0, 589825, 0, 0, 589826, 0, 0, 589834, 1, 0, 720895, 1, 0, 655360, 1, 0 )
 _sections_unfolded = [ "Collision" ]
+
+[node name="Endgoal" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -929.72, 573.011 )
+
+[node name="EndgoalMirror" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 603.369, 557.832 )
+
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( -626.614, 566.422 )
+
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 212.993, 533.657 )
+invert_horizontal = -1
+
+[node name="Objects" type="Node" parent="." index="4"]
+
+[node name="Wall" parent="Objects" index="0" groups=[
+"Lever2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( -721.331, 530.485 )
+scale = Vector2( 1, 2.50703 )
+
+[node name="Wall2" parent="Objects" index="1" groups=[
+"Lever",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 406.353, 528.665 )
+scale = Vector2( 1, 2.50703 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Box" parent="Objects" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( -979.052, 333.94 )
+
+[node name="Box2" parent="Objects" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 529.093, 329.736 )
+
+[node name="MovingPlatform" parent="Objects" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( -503.621, 478.498 )
+motion = Vector2( 0, 100 )
+cycle = 4.0
+
+[node name="MovingPlatform2" parent="Objects" index="5" instance=ExtResource( 8 )]
+
+position = Vector2( 322.227, 533.746 )
+motion = Vector2( 0, 100 )
+cycle = 4.0
+
+[node name="Lever" parent="Objects" index="6" groups=[
+"Lever",
+] instance=ExtResource( 9 )]
+
+position = Vector2( 75.124, 530.217 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Lever2" parent="Objects" index="7" groups=[
+"Lever2",
+] instance=ExtResource( 9 )]
+
+position = Vector2( -75, 530.217 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Hazards" type="Node2D" parent="." index="5"]
+
+[node name="FallingFloor" parent="Hazards" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( -927.135, 628.935 )
+
+[node name="FallingFloor2" parent="Hazards" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( -862.447, 628.935 )
+
+[node name="FallingFloor3" parent="Hazards" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( -796.447, 628.935 )
+
+[node name="FallingFloor4" parent="Hazards" index="3" instance=ExtResource( 10 )]
+
+position = Vector2( -732.447, 628.935 )
+
+[node name="FallingFloor5" parent="Hazards" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( -666.447, 628.935 )
+
+[node name="FallingFloor6" parent="Hazards" index="5" instance=ExtResource( 10 )]
+
+position = Vector2( -602.447, 628.935 )
+
+[node name="FallingFloor7" parent="Hazards" index="6" instance=ExtResource( 10 )]
+
+position = Vector2( -538.447, 628.935 )
+
+[node name="FallingFloor8" parent="Hazards" index="7" instance=ExtResource( 10 )]
+
+position = Vector2( -474.447, 628.935 )
+
+[node name="FallingFloor9" parent="Hazards" index="8" instance=ExtResource( 10 )]
+
+position = Vector2( -412.447, 628.935 )
+
+[node name="FallingFloor10" parent="Hazards" index="9" instance=ExtResource( 10 )]
+
+position = Vector2( -351.447, 628.935 )
+
+[node name="FallingFloor11" parent="Hazards" index="10" instance=ExtResource( 10 )]
+
+position = Vector2( -293.447, 628.935 )
+
+[node name="FallingFloor12" parent="Hazards" index="11" instance=ExtResource( 10 )]
+
+position = Vector2( -227.447, 628.935 )
+
+[node name="Hazards2" type="Node2D" parent="." index="6"]
+
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="FallingFloor" parent="Hazards2" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( -927.135, 628.935 )
+
+[node name="FallingFloor2" parent="Hazards2" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( -862.447, 628.935 )
+
+[node name="FallingFloor3" parent="Hazards2" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( -796.447, 628.935 )
+
+[node name="FallingFloor4" parent="Hazards2" index="3" instance=ExtResource( 10 )]
+
+position = Vector2( -732.447, 628.935 )
+
+[node name="FallingFloor5" parent="Hazards2" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( -666.447, 628.935 )
+
+[node name="FallingFloor6" parent="Hazards2" index="5" instance=ExtResource( 10 )]
+
+position = Vector2( -602.447, 628.935 )
+
+[node name="FallingFloor7" parent="Hazards2" index="6" instance=ExtResource( 10 )]
+
+position = Vector2( -538.447, 628.935 )
+
+[node name="FallingFloor8" parent="Hazards2" index="7" instance=ExtResource( 10 )]
+
+position = Vector2( -474.447, 628.935 )
+
+[node name="FallingFloor9" parent="Hazards2" index="8" instance=ExtResource( 10 )]
+
+position = Vector2( -412.447, 628.935 )
+
+[node name="FallingFloor10" parent="Hazards2" index="9" instance=ExtResource( 10 )]
+
+position = Vector2( -351.447, 628.935 )
+
+[node name="FallingFloor11" parent="Hazards2" index="10" instance=ExtResource( 10 )]
+
+position = Vector2( -293.447, 628.935 )
+
+[node name="FallingFloor12" parent="Hazards2" index="11" instance=ExtResource( 10 )]
+
+position = Vector2( -227.447, 628.935 )
+
+[node name="Real" type="ReferenceRect" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1694.0
+margin_top = 4.0
+margin_right = -5.0
+margin_bottom = 1041.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Mirrored" type="ReferenceRect" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1689.0
+margin_bottom = 1037.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Limit" parent="." index="9" instance=ExtResource( 11 )]
+
+position = Vector2( 150.282, 901.787 )
+scale = Vector2( 49.2183, 1 )
 
 

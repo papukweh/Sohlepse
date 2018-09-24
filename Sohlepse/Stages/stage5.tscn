@@ -28,7 +28,7 @@ cell_half_offset = 2
 cell_tile_origin = 0
 cell_y_sort = false
 cell_clip_uv = false
-collision_use_kinematic = true
+collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
 collision_layer = 1
@@ -102,7 +102,6 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -220.223, 355.067 )
 scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="Wall4" parent="Objects/Real" index="3" groups=[
 "Button4",
@@ -111,7 +110,6 @@ activation = 0
 position = Vector2( -1088.31, 355.067 )
 scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="Wall5" parent="Objects/Real" index="4" groups=[
 "Button5",
@@ -120,7 +118,6 @@ activation = 0
 position = Vector2( -650.335, 355.067 )
 scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="Wall6" parent="Objects/Real" index="5" groups=[
 "Button6",
@@ -129,7 +126,6 @@ activation = 0
 position = Vector2( -329.295, 355.067 )
 scale = Vector2( 1, 8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="Button5" parent="Objects/Real" index="6" instance=ExtResource( 6 )]
 
@@ -170,7 +166,6 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -220.223, -355.067 )
 scale = Vector2( 1, -8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="Wall0" parent="Objects/Mirrored" index="3" groups=[
 "Button0",
@@ -179,7 +174,6 @@ activation = 0
 position = Vector2( -1088.31, -355.067 )
 scale = Vector2( 1, -8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="Wall1" parent="Objects/Mirrored" index="4" groups=[
 "Button1",
@@ -188,7 +182,6 @@ activation = 0
 position = Vector2( -650.335, -355.067 )
 scale = Vector2( 1, -8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="Wall2" parent="Objects/Mirrored" index="5" groups=[
 "Button2",
@@ -197,7 +190,6 @@ activation = 0
 position = Vector2( -329.295, -355.067 )
 scale = Vector2( 1, -8.89398 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="Button1" parent="Objects/Mirrored" index="6" instance=ExtResource( 6 )]
 

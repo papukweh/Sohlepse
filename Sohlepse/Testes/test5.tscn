@@ -30,7 +30,7 @@ cell_half_offset = 2
 cell_tile_origin = 0
 cell_y_sort = false
 cell_clip_uv = false
-collision_use_kinematic = true
+collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
 collision_layer = 1
@@ -100,7 +100,6 @@ invert_horizontal = -1
 position = Vector2( -786, 511 )
 scale = Vector2( 1, 1.97642 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="Wall2" parent="Objects" index="1" groups=[
 "Lever2",
@@ -109,7 +108,6 @@ activation = 0
 position = Vector2( 786, 511 )
 scale = Vector2( 1, 1.97642 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activation = 0
 
 [node name="MovingPlatform" parent="Objects" index="2" instance=ExtResource( 5 )]
 

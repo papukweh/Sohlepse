@@ -29,7 +29,7 @@ cell_half_offset = 2
 cell_tile_origin = 0
 cell_y_sort = false
 cell_clip_uv = false
-collision_use_kinematic = true
+collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
 collision_layer = 1
@@ -99,7 +99,6 @@ position = Vector2( 351.683, 287.459 )
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 1040.24, 544.18 )
-activation = 0
 
 [node name="Wall1" parent="Objects" index="1" groups=[
 "Button2",
