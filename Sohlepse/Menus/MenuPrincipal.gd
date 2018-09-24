@@ -44,6 +44,9 @@ func _on_continue_pressed():
 func _on_levelSelect_pressed():
 	pressed[levelSelect_] = true
 
+func _on_tests_pressed():
+	pressed[tests_] = true
+
 func _on_option_pressed():
 	pressed[options_] = true
 
