@@ -34,7 +34,7 @@ onready var on_act3 = false
 onready var view = null
 onready var interacting = false
 onready var crushing = false
-onready var time = 0.25
+onready var time = 0.45
 onready var platform = false
 onready var initpos = self.get_position()
 
@@ -51,7 +51,7 @@ func _process(delta):
 		return
 		
 	if not crushing:
-		time = 0.25
+		time = 0.45
 	if crushing:
 		time -= delta
 	
