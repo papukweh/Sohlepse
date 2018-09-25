@@ -171,4 +171,13 @@ labels = [ "Hm... Essa plataforma parece diferente
  das outras", "", "aaaaaaaaaaa", "" ]
 pos = [ Vector2( -1000, 150 ), Vector2( 0, 0 ), Vector2( -550, 170 ), Vector2( 0, 0 ) ]
 
+[node name="Event2" parent="." index="10" instance=ExtResource( 11 )]
+
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform" ]
+events = [ Vector2( -974.301, 597.867 ), Vector2( -800, 570 ), Vector2( -575, 160 ), Vector2( 76, 606 ) ]
+labels = [ "Hm... Essa plataforma parece diferente 
+ das outras", "", "aaaaaaaaaaa", "" ]
+pos = [ Vector2( -1000, 150 ), Vector2( 0, 0 ), Vector2( -550, 170 ), Vector2( 0, 0 ) ]
+
 
