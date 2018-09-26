@@ -1,0 +1,137 @@
+Sohlepse - Story
+
+BGM:
+tela de menu
+algo estilo wretched automatons
+algo mais ambiente meio misterioso
+remix da primeira mais agressiva
+super música frenética de batalha final
+remix do tema de menu
+
+perguntar na reunião: que idioma???
+mudar pra alpha ou não?
+
+SE:
+leves para andar e cair
+death grunt, mortes variadas
+pressionar botões e alavancas (diferntes pra ativar deastaivar)
+arrastar caixas
+random sons de animais da floresta
+random sons mecânicos no lab
+fim de fase - whooosh
+sons de ativação (parede e espihmo)
+caixa cai
+sonsn abafados pra floresta
+som de selecionar
+som de mexer
+som de explosão
+
+Sprites:
+player
+esposa do player
+playerCriança
+playerJaleco_óculos
+tubos de ensaio
+livros
+lâmpada
+esntante
+estante recolor
+mesinha com flor
+janela
+tile com flor AZUL
+
+
+
+oneway platofrm diferente da platform - grade e folhas
+caixa de pedra
+botões e alavancas com vinhas
+árvores giganes
+COMO PARALAAXA FUNCIOAN??
+
+
+
+Ato 1:
+
+	Possível introdução críptica
+
+	Fase 1:
+		Fundo: parede cinzenta, cama no fundo, caixas jogadas.
+		Fase: player e espelho, fade in.
+		
+		PLAYER: Que lugar é esse?
+		
+		Setas e E de tutorial
+		Ao interagir com o espelho:
+		Cutscene:  in godot, sprites diferentes do player - braço esticado e cortado
+
+Fundo: fundo de laboratório a partir daqui 
+
+	Fase 2:
+		Fase: tutorial (caixa + alavanca)
+
+	Fase 3:
+		Fase: tutorial (água e lava e espinhos)
+
+	Fase 4:
+		Fase: tutorial (caixas e botões)
+
+	Fase 5:
+		Fase: tutorial (caixas+botão+espinhos+oneway (DIFERENTE))
+
+	Fase 6:
+		Fase: tutorial (falling floor + moving platform)
+
+	Fase 7-9: fases refletidas normais
+
+	Fase 10-11: fases refletidas com pequenas diferenças e questionamentos do player
+
+	Fase 12: TRANSIÇÃO - pequenas diferenças, usa isso no puzzle, clone tenta sabotar o player - FAKE ENDGOAL.
+
+	Fake - apenas cutscene - fase de transição: fundo de floresta + parede do laboratório na esquerda
+	player aliviado
+
+Ato 2:
+
+	Fundo: fundo de floresta fechada e escura
+	OBS: CLONE COM OLHOS VERMELHOSs
+	
+	Fase 13-20: puzzles variados
+		Fase 15: kidPlayer brincando com tubos de ensaios
+		Fase 16 e 18: questiona as memórias
+		Fase 17: adultPlayer tem uma ideia genial
+
+	Fase 21: TRANSIÇÃO - elementos do laboratório mais frequentes. lado do player tem a casa no fundo, mas o lado do clone tem o fundo do laboratório - porta (da casa) esconde um endgoal
+
+	Fake - apenas cutscene - corredor do laboratório, player anda até encontrar o espelho - clone sai do espelho. Som de pancada, fade out.
+
+Ato 3:
+
+	Fake - flashback com a esposa (sem mostrar os olhos) envolve a casa.
+
+	Fundo: back to laboratório
+
+	Fase 22: tutorial espelhado - espelho no teto - introduz mecânica de pular em clones
+
+	A partir daqui fases invertidas (endgoal na esquerda)
+
+	Fase 23: tutorial - introduz mecânica de clones ativando coisas
+
+	Fase 24-29: puzzles varaidaos
+
+	Fase 30: final - corrida ultra frenética com timer
+	CLONE: HAHAHA AUTO-DESTRUIÇÃO ATIVADA
+	> Quando timer acaba:
+		Som de explosão, fade out branco da tela
+	> Quando player chega na porta:
+		Primeira cena: saída verdadeira na esquerda, floresta no resto. 
+		Clone(?) diz algo.
+		Fim da tela: transição, som de explosão.
+		Segunda cena: floresta na esquerda, casa na direita. Entra na casa.
+
+	Fake - cutscene final - player chega em casa. Sua esposa aparece e tem olhos vermelhos, comenta a diferença do player.
+
+	tema de menu alterado aqui, com início mais suave
+
+	Fim
+
+	Créditos
