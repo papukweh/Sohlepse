@@ -8,6 +8,7 @@ var current_stage = 1
 var unlocked_stage = 1
 
 var current_act = 1
+var DEBUG = false
 const FINAL = 12
 
 func restart():

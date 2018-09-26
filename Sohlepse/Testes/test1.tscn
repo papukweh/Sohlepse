@@ -1,0 +1,218 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Hazards/FallingFloor.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Hazards/WaterArea.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=15]
+
+[node name="stage1" instance=ExtResource( 1 )]
+
+PLAYERS = 2
+MAX_CLONES = 0
+MODE = 1
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+position = Vector2( -56, 319 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 8
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -327679, 1073741825, 0, -327678, 1073741824, 0, -327677, 1073741824, 0, -327676, 1073741824, 0, -327675, 1073741824, 0, -327674, 1073741824, 0, -327673, 1073741824, 0, -327672, 1073741824, 0, -327671, 1073741824, 0, -327670, 1073741824, 0, -327669, 1073741824, 0, -327668, 1073741824, 0, -327667, 1073741824, 0, -327666, 1073741824, 0, -327665, 1073741824, 0, -327664, 1073741824, 0, -327663, 1073741824, 0, -327662, 1073741824, 0, -327661, 1073741824, 0, -327660, 1073741824, 0, -327659, 1073741824, 0, -327658, 1073741824, 0, -327657, 1073741824, 0, -327656, 1073741825, 0, -262143, 1073741825, 0, -262120, 1, 0, -196607, 1073741825, 0, -196584, 1, 0, -131071, 1073741825, 0, -131070, 1073741824, 0, -131069, 1073741824, 0, -131068, 1073741824, 0, -131067, 1073741824, 0, -131066, 1073741824, 0, -131065, 1073741824, 0, -131064, 1073741824, 0, -131063, 1073741824, 0, -131062, 1073741824, 0, -131061, 1073741826, 0, -131048, 1, 0, -65535, 1, 0, -65522, 536870914, 0, -65521, 536870912, 0, -65520, 536870912, 0, -65519, 536870912, 0, -65518, 536870912, 0, -65517, 2, 0, -65512, 1, 0, 1, 1, 0, 21, 536870914, 0, 22, 0, 0, 23, 0, 0, 24, 1, 0, 65537, 1, 0, 65560, 1, 0, 131073, 1, 0, 131074, 0, 0, 131075, 0, 0, 131076, 2, 0, 131079, 536870914, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131089, 536870912, 0, 131090, 536870912, 0, 131091, 536870912, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 1, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
+
+[node name="Real" type="ReferenceRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -745.0
+margin_top = -148.0
+margin_right = 944.0
+margin_bottom = 642.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Rect" ]
+
+[node name="Mirrored" type="ReferenceRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 944.0
+margin_top = -121.0
+margin_right = 2268.0
+margin_bottom = 675.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 182, 387 )
+
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1222, 400 )
+invert_horizontal = -1
+
+[node name="Objects" type="Node" parent="." index="4"]
+
+[node name="Box" parent="Objects" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 1441, 425 )
+
+[node name="Box2" parent="Objects" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 534, 117 )
+
+[node name="Box3" parent="Objects" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 121, 292 )
+
+[node name="Button1" parent="Objects" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 180.002, 448.136 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Lever3" parent="Objects" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 518, 392 )
+scale = Vector2( 1.21187, 1.13228 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Button4" parent="Objects" index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 874.407, 254.369 )
+
+[node name="Thorns4" parent="Objects" index="6" groups=[
+"Button4",
+] instance=ExtResource( 8 )]
+
+position = Vector2( 743.799, 212.471 )
+begin = 1
+
+[node name="Button2" parent="Objects" index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 423, 446 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Wall1" parent="Objects" index="8" groups=[
+"Button2",
+] instance=ExtResource( 9 )]
+
+position = Vector2( 700.841, 351.323 )
+
+[node name="Wall2" parent="Objects" index="9" groups=[
+"Button2",
+] instance=ExtResource( 9 )]
+
+position = Vector2( 700.67, 413.527 )
+
+[node name="Wall3" parent="Objects" index="10" groups=[
+"Lever3",
+] instance=ExtResource( 9 )]
+
+position = Vector2( 701.124, 285.966 )
+
+[node name="MovingPlatform" parent="Objects" index="11" instance=ExtResource( 10 )]
+
+position = Vector2( 341, 374 )
+motion = Vector2( 0, 150 )
+cycle = 20.0
+
+[node name="Hazards" type="Node" parent="." index="5"]
+
+[node name="FallingFloor" parent="Hazards" index="0" instance=ExtResource( 11 )]
+
+position = Vector2( 874, 460 )
+
+[node name="FallingFloor2" parent="Hazards" index="1" instance=ExtResource( 11 )]
+
+position = Vector2( 938, 460 )
+
+[node name="FallingFloor3" parent="Hazards" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( 1002, 460 )
+
+[node name="FallingFloor4" parent="Hazards" index="3" instance=ExtResource( 11 )]
+
+position = Vector2( 810.679, 459.859 )
+
+[node name="FallingFloor5" parent="Hazards" index="4" instance=ExtResource( 11 )]
+
+position = Vector2( 747.365, 460.002 )
+
+[node name="FireArea" parent="Hazards" index="5" instance=ExtResource( 12 )]
+
+position = Vector2( 744, 543 )
+
+[node name="FireArea3" parent="Hazards" index="6" instance=ExtResource( 12 )]
+
+position = Vector2( 872, 543 )
+
+[node name="FireArea4" parent="Hazards" index="7" instance=ExtResource( 12 )]
+
+position = Vector2( 936, 543 )
+
+[node name="FireArea5" parent="Hazards" index="8" instance=ExtResource( 12 )]
+
+position = Vector2( 1000, 543 )
+
+[node name="FireArea2" parent="Hazards" index="9" instance=ExtResource( 12 )]
+
+position = Vector2( 808, 543 )
+
+[node name="WaterArea" parent="Hazards" index="10" instance=ExtResource( 13 )]
+
+position = Vector2( 296, 479.16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WaterArea2" parent="Hazards" index="11" instance=ExtResource( 13 )]
+
+position = Vector2( 360, 479.16 )
+
+[node name="Endgoal" parent="." index="6" instance=ExtResource( 14 )]
+
+position = Vector2( 233, 406 )
+
+[node name="EndgoalMirror" parent="." index="7" instance=ExtResource( 15 )]
+
+position = Vector2( 1124, 414 )
+
+

@@ -2,8 +2,6 @@ extends Button
 
 onready var batch = get_parent().get_parent().batch
 func _ready():
-	print(batch)
-	print(global.unlocked_stage)
 	if(batch*6 >= global.unlocked_stage):
 		self.disabled = true
 

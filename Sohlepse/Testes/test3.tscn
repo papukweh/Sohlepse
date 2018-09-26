@@ -1,0 +1,140 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Stages/Stage.gd" type="Script" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=9]
+
+[node name="stage3" type="Node" index="0"]
+
+script = ExtResource( 1 )
+ACT = 2
+PLAYERS = 2
+MAX_CLONES = 0
+MODE = 1
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 1, 0, 1, 1073741824, 0, 2, 1073741824, 0, 3, 1073741824, 0, 4, 1073741824, 0, 5, 1073741824, 0, 6, 1073741824, 0, 7, 1073741824, 0, 8, 1073741824, 0, 9, 1073741824, 0, 10, 1073741824, 0, 11, 1073741824, 0, 12, 1073741824, 0, 13, 1073741824, 0, 14, 1073741824, 0, 15, 1073741824, 0, 16, 1073741824, 0, 17, 1073741824, 0, 18, 1073741824, 0, 19, 1073741824, 0, 20, 1073741824, 0, 21, 1073741824, 0, 22, 1, 0, 65536, 1, 0, 65546, 536870913, 0, 65558, 1, 0, 131072, 1, 0, 131082, 536870913, 0, 131094, 1, 0, 196608, 1, 0, 196614, 536870914, 0, 196615, 536870912, 0, 196616, 536870912, 0, 196617, 536870912, 0, 196618, 536870913, 0, 196619, 536870912, 0, 196620, 536870912, 0, 196621, 2, 0, 196630, 1, 0, 262144, 1, 0, 262148, 536870914, 0, 262150, 536870912, 0, 262154, 1, 0, 262158, 2, 0, 262166, 1, 0, 327680, 1, 0, 327683, 536870914, 0, 327684, 0, 0, 327690, 1, 0, 327694, 536870912, 0, 327695, 2, 0, 327702, 1, 0, 393216, 1, 0, 393217, 2, 0, 393226, 1, 0, 393231, 536870912, 0, 393232, 2, 0, 393238, 1, 0, 458752, 1, 0, 458753, 0, 0, 458754, 2, 0, 458762, 1, 0, 458768, 536870912, 0, 458770, 536870912, 0, 458771, 2, 0, 458774, 1, 0, 524288, 1, 0, 524289, 0, 0, 524290, 0, 0, 524291, 2, 0, 524298, 1, 0, 524310, 1, 0, 589824, 1, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 536870912, 0, 589840, 536870912, 0, 589841, 536870912, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 1, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Real" type="ReferenceRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -101.0
+margin_right = 709.0
+margin_bottom = 688.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Mirrored" type="ReferenceRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 705.0
+margin_right = 1517.0
+margin_bottom = 640.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 412.372, 532.797 )
+
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 794.535, 532.797 )
+invert_horizontal = -1
+
+[node name="Hazards" type="Node" parent="." index="4"]
+
+[node name="FireArea" parent="Hazards" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 1120, 479.879 )
+
+[node name="FireArea2" parent="Hazards" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 351.683, 287.459 )
+
+[node name="Objects" type="Node" parent="." index="5"]
+
+[node name="Wall2" parent="Objects" index="0" groups=[
+"Button2",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 1040.24, 544.18 )
+
+[node name="Wall1" parent="Objects" index="1" groups=[
+"Button2",
+"Button1",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 180.658, 414.699 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activation = 1
+
+[node name="Button2" parent="Objects" index="2" groups=[
+"Button2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 614.68, 572.27 )
+
+[node name="Button1" parent="Objects" index="3" groups=[
+"Button1",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 850.531, 569.788 )
+
+[node name="Box" parent="Objects" index="4" instance=ExtResource( 7 )]
+
+position = Vector2( 525.593, 399.451 )
+
+[node name="Box2" parent="Objects" index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 747.529, 342.924 )
+
+[node name="Endgoal" parent="." index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 750.379, 159.213 )
+
+[node name="EndgoalMirror" parent="." index="7" instance=ExtResource( 9 )]
+
+position = Vector2( 594.373, 162.191 )
+
+

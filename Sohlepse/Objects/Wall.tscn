@@ -20,6 +20,7 @@ bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 begin = 0
+activation = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

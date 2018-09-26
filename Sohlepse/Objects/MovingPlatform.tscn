@@ -8,11 +8,12 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32.2953, 11.9587 )
 
-[node name="MovingPlatform" type="Node2D"]
+[node name="MovingPlatform" type="Node2D" index="0"]
 
 scale = Vector2( 1.5, 1 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+activated = 0
 motion = Vector2( 0, 0 )
 cycle = 1.0
 
