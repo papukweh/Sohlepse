@@ -6,8 +6,6 @@ func _ready():
 		self.disabled = true
 
 func _on_ButtonNext_button_down():
-	
-	print(batch)
 	get_parent().hide()
 	get_parent().get_parent().get_node("Batch" + str(batch+1)).show()
 	get_parent().get_parent()._atualiza(batch*6 + 1)

@@ -211,6 +211,8 @@ _sections_unfolded = [ "Margin" ]
 
 [connection signal="button_down" from="Batch1/Next" to="Batch1/Next" method="_on_ButtonNext_button_down"]
 
+[connection signal="button_down" from="Batch2/Prev" to="Batch2/Prev" method="_on_Prev_button_down"]
+
 [connection signal="pressed" from="Back" to="Back" method="_on_Back_pressed"]
 
 
