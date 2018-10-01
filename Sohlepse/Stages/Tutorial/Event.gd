@@ -3,6 +3,7 @@ extends Node2D
 export(Array, Vector2) var events = []
 export(Array, String) var labels = []
 export(Array, Vector2) var pos = []
+export(Array, Vector2) var areascale = []
 onready var size = labels.size()
 onready var checks = []
 onready var last = 0
@@ -22,6 +23,8 @@ func _ready():
 		self.add_child(a)
 		a = get_children()[-1]
 		a.position = events[i]
+		if areascale.size() != 0:
+			a.scale = areascale[i]
 		a.set_name("Area"+str(i))
 		a.setup(self)
 		checks.push_back(false)
