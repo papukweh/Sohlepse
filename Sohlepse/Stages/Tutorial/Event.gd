@@ -23,7 +23,7 @@ func _ready():
 		self.add_child(a)
 		a = get_children()[-1]
 		a.position = events[i]
-		if areascale.size() != 0:
+		if areascale:
 			a.scale = areascale[i]
 		a.set_name("Area"+str(i))
 		a.setup(self)
