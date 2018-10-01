@@ -30,13 +30,12 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.59963, 22.9208 )
-scale = Vector2( 1.26744, 1 )
+position = Vector2( -0.0346097, 22.9208 )
+scale = Vector2( 1.25468, 1 )
 shape = SubResource( 1 )
 
 [node name="FireArea" type="Area2D" parent="." index="2"]
 
-visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -48,8 +47,8 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea" index="0"]
 
-position = Vector2( 0.306502, -11.7941 )
-scale = Vector2( 3.26856, 2.66499 )
+position = Vector2( 0.0385868, -7.9859 )
+scale = Vector2( 3.28944, 2.36339 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="FireArea" to="FireArea" method="_on_FireArea_body_entered"]
