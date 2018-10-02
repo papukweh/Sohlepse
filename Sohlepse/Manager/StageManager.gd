@@ -7,7 +7,7 @@ func _ready():
 	if id > global.FINAL:
 		get_tree().change_scene("res://Menus/MenuPrincipal.tscn")
 		return
-	elif global.DEBUG:
+	if global.DEBUG:
 		fase = "res://Testes/test"
 		#print(fase+str(id))
 	var stage = load(fase+str(id)+".tscn").instance()
