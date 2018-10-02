@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 9.96182, 10 )
 
 [node name="Wall" type="StaticBody2D"]
 
@@ -28,8 +28,8 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.619843, 0.258026 )
-scale = Vector2( 1.63087, 3.22512 )
+position = Vector2( 0.0152325, 0.0330314 )
+scale = Vector2( 1.60591, 3.20781 )
 shape = SubResource( 1 )
 
 

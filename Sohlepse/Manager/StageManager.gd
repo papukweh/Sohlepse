@@ -9,6 +9,7 @@ func _ready():
 		return
 	elif global.DEBUG:
 		fase = "res://Testes/test"
+		#print(fase+str(id))
 	var stage = load(fase+str(id)+".tscn").instance()
 	
 	if stage.MODE == 1:
