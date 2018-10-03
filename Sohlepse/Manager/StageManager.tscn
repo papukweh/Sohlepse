@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Manager/StageManager.gd" type="Script" id=1]
 [ext_resource path="res://Manager/Dual_screen.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Menus/Sure.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Menus/Controls.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menus/Sure.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menus/Controls.tscn" type="PackedScene" id=6]
 
-[node name="StageManager" type="Node2D"]
+[node name="StageManager" type="Node2D" index="0"]
 
 z_index = 20
 script = ExtResource( 1 )
@@ -15,33 +15,15 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Setup" parent="." index="0" instance=ExtResource( 2 )]
 
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
-[node name="PauseMenu" parent="." index="1" instance=ExtResource( 3 )]
-
-pause_mode = 2
-visible = false
-margin_left = 284.0
-margin_top = 121.0
-margin_right = 736.0
-margin_bottom = 489.0
-_sections_unfolded = [ "Mouse", "Pause", "Size Flags", "Theme", "Visibility" ]
-
-[node name="Sure" parent="." index="2" instance=ExtResource( 4 )]
-
-visible = false
-
-[node name="Controls" parent="." index="3" instance=ExtResource( 5 )]
-
-visible = false
-
-[node name="Tutoriais" type="Node2D" parent="." index="4"]
+[node name="Tutoriais" type="Node2D" parent="." index="1"]
 
 position = Vector2( 136, 586 )
 z_index = 95
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Panel0" parent="Tutoriais" index="0" instance=ExtResource( 6 )]
+[node name="Panel0" parent="Tutoriais" index="0" instance=ExtResource( 3 )]
 
 visible = false
 margin_left = -64.0
@@ -49,7 +31,7 @@ margin_top = 5.0
 margin_right = 111.0
 margin_bottom = 65.0
 
-[node name="Panel1" parent="Tutoriais" index="1" instance=ExtResource( 6 )]
+[node name="Panel1" parent="Tutoriais" index="1" instance=ExtResource( 3 )]
 
 visible = false
 margin_left = 313.0
@@ -57,12 +39,38 @@ margin_top = 5.0
 margin_right = 488.0
 margin_bottom = 65.0
 
-[node name="Panel2" parent="Tutoriais" index="2" instance=ExtResource( 6 )]
+[node name="Panel2" parent="Tutoriais" index="2" instance=ExtResource( 3 )]
 
 visible = false
 margin_left = 671.0
 margin_top = 5.0
 margin_right = 846.0
 margin_bottom = 65.0
+
+[node name="PauseMenu" parent="Tutoriais" index="3" instance=ExtResource( 4 )]
+
+pause_mode = 2
+visible = false
+margin_left = 148.0
+margin_top = -465.0
+margin_right = 600.0
+margin_bottom = -97.0
+_sections_unfolded = [ "Mouse", "Pause", "Size Flags", "Theme", "Visibility" ]
+
+[node name="Sure" parent="Tutoriais" index="4" instance=ExtResource( 5 )]
+
+visible = false
+margin_left = 320.0
+margin_top = -348.0
+margin_right = 473.0
+margin_bottom = -280.0
+
+[node name="Controls" parent="Tutoriais" index="5" instance=ExtResource( 6 )]
+
+visible = false
+margin_left = 232.0
+margin_top = -351.0
+margin_right = 603.0
+margin_bottom = -112.0
 
 
