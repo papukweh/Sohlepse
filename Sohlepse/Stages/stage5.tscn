@@ -16,6 +16,7 @@
 PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
+hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -226,16 +227,18 @@ scale = Vector2( -1, -1 )
 [node name="Event" parent="." index="7" instance=ExtResource( 10 )]
 
 _sections_unfolded = [ "Transform" ]
-events = [ Vector2( -1290, 590 ), Vector2( -1000, 590 ), Vector2( -800, 590 ) ]
-labels = [ "Para acionar um botão fique em cima dele", "Alguns Botões apenas funcionam enquanto estiverem pressionados", "Caixas também podem pressionar Botões" ]
+events = [ Vector2( -1290, 590 ), Vector2( -1000, 590 ), Vector2( -650, 590 ) ]
+labels = [ "", "Hmmm, preciso colocar algum peso aqui", "Caixas salvam o dia novamente!" ]
 pos = [ Vector2( -1080, 300 ), Vector2( -1000, 340 ), Vector2( -1000, 380 ) ]
+areascale = null
 
 [node name="Event2" parent="." index="8" instance=ExtResource( 10 )]
 
 scale = Vector2( 1, -1 )
 _sections_unfolded = [ "Transform" ]
-events = [ Vector2( -1290, 590 ), Vector2( -1000, 590 ), Vector2( -800, 590 ) ]
-labels = [ "Para acionar um botão fique em cima dele", "Alguns Botões apenas funcionam enquanto estiverem pressionados", "Caixas também podem pressionar Botões" ]
+events = [ Vector2( -1290, 590 ), Vector2( -1000, 590 ), Vector2( -650, 590 ) ]
+labels = [ "", "Hmmm, preciso colocar algum peso aqui", "Caixas salvam o dia novamente!" ]
 pos = [ Vector2( -1080, 300 ), Vector2( -1000, 340 ), Vector2( -1000, 380 ) ]
+areascale = null
 
 

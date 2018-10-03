@@ -15,6 +15,7 @@
 PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
+hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -139,15 +140,17 @@ position = Vector2( 1057.72, -264.844 )
 
 _sections_unfolded = [ "Transform" ]
 events = [ Vector2( 50, 50 ), Vector2( 950, 50 ) ]
-labels = [ "Você pode interagir com caixas para movê-las", "Ou com alavancas" ]
+labels = [ "Espero que essa caixa não seja pesada", "O que essa alavanca faz?" ]
 pos = [ Vector2( 50, -400 ), Vector2( 350, -360 ) ]
+areascale = null
 
 [node name="Event2" parent="." index="8" instance=ExtResource( 9 )]
 
 scale = Vector2( 1, -1 )
 _sections_unfolded = [ "Transform" ]
 events = [ Vector2( 50, 50 ), Vector2( 950, 50 ) ]
-labels = [ "Você pode interagir com caixas para movê-las", "Ou com alavancas" ]
+labels = [ "Espero que essa caixa não seja pesada", "O que essa alavanca faz?" ]
 pos = [ Vector2( 50, -400 ), Vector2( 350, -360 ) ]
+areascale = null
 
 

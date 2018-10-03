@@ -37,6 +37,7 @@ onready var crushing = false
 onready var time = 0.45
 onready var platform = false
 onready var initpos = self.get_position()
+onready var ready = true
 
 func _ready():
 	if invert_vertical == -1:
@@ -45,8 +46,11 @@ func _ready():
 	elif invert_horizontal == -1:
 		$sprite.scale.x = -1
 		siding_left = true
+	ready = true
 
 func _process(delta):
+	if !ready:
+		_ready()
 	if dead:
 		return
 		

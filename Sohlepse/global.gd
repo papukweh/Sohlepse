@@ -16,17 +16,22 @@ func restart():
 	
 var pos = []
 var buffer = []
+var state = []
 var play = false
 	
-func save_clones(spos, sbuffer):
+func save_clones(spos, sbuffer, sstate):
 	pos = [] + spos
 	buffer = [] + sbuffer
+	state = sstate
 	
 func load_pos():
 	return pos
 	
 func load_buffer():
 	return buffer
+	
+func load_state():
+	return state
 	
 func progress():
 	savegame.open(save_path, File.READ)

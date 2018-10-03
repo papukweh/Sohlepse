@@ -15,6 +15,7 @@
 PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
+hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -174,15 +175,17 @@ begin = 1
 
 _sections_unfolded = [ "Transform" ]
 events = [ Vector2( 90, -115 ), Vector2( 350, -70 ) ]
-labels = [ "Cuidado! Espinhos e Lavas são mortais ao toque", "Hm, Parece que na água seus movimentos ficam mais lentos" ]
+labels = [ "Melhor ficar longe desses espinhos... E como é que tem lava aqui?", "Tão.... devagar...." ]
 pos = [ Vector2( 125, -350 ), Vector2( 125, -300 ) ]
+areascale = null
 
 [node name="Event2" parent="." index="21" instance=ExtResource( 9 )]
 
 scale = Vector2( 1, -1 )
 _sections_unfolded = [ "Transform" ]
 events = [ Vector2( 90, -115 ), Vector2( 350, -70 ) ]
-labels = [ "Cuidado! Espinhos e Lavas são mortais ao toque", "Hm, Parece que na água seus movimentos ficam mais lentos" ]
+labels = [ "Melhor ficar longe desses espinhos... E como é que tem lava aqui?", "Tão... devagar...." ]
 pos = [ Vector2( 125, -350 ), Vector2( 125, -300 ) ]
+areascale = null
 
 
