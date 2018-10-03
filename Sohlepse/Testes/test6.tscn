@@ -11,6 +11,7 @@ ACT = 2
 PLAYERS = 2
 MAX_CLONES = 0
 MODE = 1
+hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -85,6 +86,7 @@ _sections_unfolded = [ "Transform" ]
 events = [ Vector2( -1220, 610 ), Vector2( -910, 540 ), Vector2( -590, 460 ), Vector2( -255, 415 ), Vector2( -93, 340 ) ]
 labels = [ "Olha, uma label", "Uia, outra", "Caralho", "Quantas labels aaaa", "Nem tenho mais o que dizer" ]
 pos = [ Vector2( -1200, 200 ), Vector2( -900, 200 ), Vector2( -600, 200 ), Vector2( -300, 200 ), Vector2( -500, 700 ) ]
+areascale = null
 
 [node name="Event2" parent="." index="7" instance=ExtResource( 4 )]
 
@@ -93,5 +95,6 @@ _sections_unfolded = [ "Transform" ]
 events = [ Vector2( -1220, 610 ), Vector2( -910, 540 ), Vector2( -590, 460 ), Vector2( -255, 415 ), Vector2( -93, 340 ) ]
 labels = [ "Olha, uma label", "Uia, outra", "Caralho", "Quantas labels aaaa", "Nem tenho mais o que dizer" ]
 pos = [ Vector2( -1200, 200 ), Vector2( -900, 200 ), Vector2( -600, 200 ), Vector2( -300, 200 ), Vector2( -500, 700 ) ]
+areascale = null
 
 

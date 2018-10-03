@@ -4,6 +4,7 @@ export(Array, Vector2) var events = []
 export(Array, String) var labels = []
 export(Array, Vector2) var pos = []
 export(Array, Vector2) var areascale = []
+export(bool) var playanyway = false
 onready var size = labels.size()
 onready var checks = []
 onready var last = 0
@@ -32,7 +33,13 @@ func _ready():
 func body_entered(id):
 	if stop:
 		return
-	if !checks[last] and id == last:
+	if playanyway and !checks[id]:
+		$Tween.interpolate_property(get_node("Label"+str(id)), "modulate",
+		Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5,
+		Tween.TRANS_LINEAR, Tween.EASE_IN)
+		$Tween.start()
+		checks[id] = true
+	elif !checks[last] and id == last:
 		if last == 0:
 			$Tween.interpolate_property(get_node("Label"+str(last)), "modulate",
 			Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5,

@@ -85,5 +85,6 @@ events = [ Vector2( 410, 500 ), Vector2( 750, 495 ) ]
 labels = [ "Que lugar é esse?", " " ]
 pos = [ Vector2( 440, 340 ), Vector2( 0, 0 ) ]
 areascale = null
+playanyway = false
 
 
