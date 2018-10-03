@@ -54,6 +54,8 @@ func _process(delta):
 	if dead:
 		return
 		
+
+		
 	if not crushing:
 		time = 0.45
 	if crushing:
@@ -69,6 +71,15 @@ func _process(delta):
 		invert_horizontal *= -1
 	if Input.is_action_just_pressed("restart"):
 		die()
+
+	
+func _physics_process(delta):
+	if dead:
+		return
+	# Create forces
+	var force = Vector2(0, invert_vertical*GRAVITY)
+	var stop = true
+	
 	if on_act3:
 		if Input.is_action_just_pressed("record"):
 			if recording:
@@ -80,13 +91,8 @@ func _process(delta):
 		if Input.is_action_just_pressed("play"):
 			Recorder.play_all()
 	
-func _physics_process(delta):
-	#print(get_floor_velocity())
-	if dead:
-		return
-	# Create forces
-	var force = Vector2(0, invert_vertical*GRAVITY)
-	var stop = true
+	if Input.is_action_just_pressed("debug"):
+		print(self.get_name()+": "+str(self.position))
 	
 	if pushing:
 		if move_left:

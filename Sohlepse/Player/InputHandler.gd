@@ -4,7 +4,7 @@ export var MODE = 1
 onready var inputs = null
 onready var player = get_parent()
 
-func _process(delta):
+func _physics_process(delta):
 	if player.dead:
 		return
 	if MODE == 1:

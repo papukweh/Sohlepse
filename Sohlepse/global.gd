@@ -37,7 +37,8 @@ func progress():
 	savegame.open(save_path, File.READ)
 	save_data = savegame.get_var()
 	savegame.close()
-	return save_data["last_stage"]
+	#return save_data["last_stage"]
+	return FINAL
 	
 func save():
 	if current_stage > unlocked_stage:
