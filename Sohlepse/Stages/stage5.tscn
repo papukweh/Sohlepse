@@ -13,7 +13,7 @@
 [ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=12]
 
-[node name="stage5" instance=ExtResource( 1 )]
+[node name="stage5" index="0" instance=ExtResource( 1 )]
 
 PLAYERS = 2
 MAX_CLONES = 0
@@ -270,7 +270,7 @@ scale = Vector2( 33.9487, 1 )
 
 [node name="Event" parent="." index="9" instance=ExtResource( 12 )]
 
-events = [ Vector2( -475, 605 ), Vector2( -600, 200 ) ]
+events = [ Vector2( -475, 605 ), Vector2( -650, 200 ) ]
 labels = [ "Terei um problema se não conseguir desativar esses espinhos", "Caixas salvam o dia novamente!" ]
 pos = [ Vector2( -630, 10 ), Vector2( -620, 5 ) ]
 areascale = null
@@ -280,7 +280,7 @@ playanyway = false
 
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Transform" ]
-events = [ Vector2( -475, 605 ), Vector2( -600, 200 ) ]
+events = [ Vector2( -475, 605 ), Vector2( -650, 200 ) ]
 labels = [ "Terei um problema se não conseguir desativar esses espinhos", "Caixas salvam o dia novamente!" ]
 pos = [ Vector2( -630, 10 ), Vector2( -620, 5 ) ]
 areascale = null
