@@ -69,17 +69,33 @@ Fundo: fundo de laboratório a partir daqui
 	Fase 2:
 		Fase: tutorial (caixa + alavanca)
 
+		PLAYER: Essa plataforma é um tanto alta... Espero que essa caixa não seja pesada
+		PLAYER: O que será que essa alavanca faz?
+
 	Fase 3:
 		Fase: tutorial (água e lava e espinhos)
+
+		PLAYER: Melhor ficar longe desses espinhos... E como é que tem lava aqui?
+		PLAYER: Tão... devagar...
 
 	Fase 4:
 		Fase: tutorial (caixas e botões)
 
+		PLAYER: Hm, parece que preciso colocar algum peso aqui
+		PLAYER: Obrigado, caixas
+
 	Fase 5:
-		Fase: tutorial (caixas+botão+espinhos+oneway (DIFERENTE))
+		Fase: tutorial (caixas+botão+espinhos+oneway (DIFERENTE))		
+
+		PLAYER: Terei um problema se não conseguir desativar esses espinhos
+		PLAYER: Caixas salvam o dia novamente!
+		
 
 	Fase 6:
 		Fase: tutorial (falling floor + moving platform)
+
+		PLAYER: Hm... Essa plataforma parece diferente das outras
+		PLAYER: Aaaaaaaaaa
 
 	Fase 7-9: fases refletidas normais
 
