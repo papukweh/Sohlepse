@@ -15,6 +15,7 @@
 PLAYERS = 2
 MAX_CLONES = 1
 MODE = 1
+hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 

@@ -4,8 +4,8 @@ onready var id = int(get_name())
 
 func _ready():
 	if id <= global.unlocked_stage:
-		pass
-		#$Sprite.texture = load("Assets/thumbnail"+str(id)+".png")
+		#pass
+		$Sprite.texture = load("Assets/thumbnail"+str(id)+".png")
 	else:
 		$Sprite.texture = null
 		self.disabled = true

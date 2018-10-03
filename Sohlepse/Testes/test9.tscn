@@ -1,0 +1,187 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=7]
+
+[node name="stage9" index="0" instance=ExtResource( 1 )]
+
+ACT = 2
+PLAYERS = 2
+MAX_CLONES = 0
+MODE = 2
+hasTutorial = null
+
+[node name="Real" type="ReferenceRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -705.0
+margin_right = 1080.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Mirrored" type="ReferenceRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1080.0
+margin_bottom = 705.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -720896, 1, 0, -720895, 3, 0, -720894, 3, 0, -720893, 3, 0, -720892, 3, 0, -720891, 3, 0, -720890, 3, 0, -720889, 3, 0, -720888, 3, 0, -720887, 3, 0, -720886, 3, 0, -720885, 3, 0, -720884, 3, 0, -720883, 3, 0, -720882, 3, 0, -720881, 3, 0, -720880, 1, 0, -655360, 1, 0, -655359, 3, 0, -655358, 3, 0, -655357, 3, 0, -655356, 3, 0, -655355, 3, 0, -655354, 3, 0, -655353, 3, 0, -655352, 3, 0, -655351, 3, 0, -655350, 3, 0, -655349, 3, 0, -655348, 3, 0, -655347, 3, 0, -655346, 3, 0, -655345, 3, 0, -655344, 1, 0, -589824, 1, 0, -589808, 1, 0, -524288, 1, 0, -524280, 1073741827, 0, -524272, 1, 0, -458752, 1, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -458736, 1, 0, -393216, 1, 0, -393200, 1, 0, -327680, 1, 0, -327672, 1073741827, 0, -327664, 1, 0, -262144, 1, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 1, 0, -196608, 1, 0, -196592, 1, 0, -131072, 1, 0, -131064, 1073741827, 0, -131056, 1, 0, -65536, 1, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 1, 0, 0, 1073741825, 0, 1, 1073741824, 0, 2, 1073741824, 0, 3, 1073741824, 0, 4, 1073741824, 0, 5, 1073741824, 0, 6, 1073741824, 0, 7, 1073741824, 0, 8, 1073741824, 0, 9, 1073741824, 0, 10, 1073741824, 0, 11, 1073741824, 0, 12, 1073741824, 0, 13, 1073741824, 0, 14, 1073741824, 0, 15, 1073741824, 0, 16, 1073741825, 0, 65536, 1073741825, 0, 65544, 1073741827, 0, 65552, 1073741825, 0, 131072, 1073741825, 0, 131088, 1073741825, 0, 196608, 1073741825, 0, 196611, 1073741824, 0, 196612, 1073741824, 0, 196613, 1073741824, 0, 196614, 1073741824, 0, 196615, 1073741824, 0, 196616, 1073741824, 0, 196617, 1073741824, 0, 196618, 1073741824, 0, 196619, 1073741824, 0, 196620, 1073741824, 0, 196621, 1073741824, 0, 196622, 1073741824, 0, 196623, 1073741824, 0, 196624, 1073741825, 0, 262144, 1073741825, 0, 262152, 1073741827, 0, 262160, 1073741825, 0, 327680, 1073741825, 0, 327696, 1073741825, 0, 393216, 1073741825, 0, 393217, 1073741824, 0, 393218, 1073741824, 0, 393219, 1073741824, 0, 393220, 1073741824, 0, 393221, 1073741824, 0, 393222, 1073741824, 0, 393223, 1073741824, 0, 393224, 1073741824, 0, 393225, 1073741824, 0, 393226, 1073741824, 0, 393227, 1073741824, 0, 393228, 1073741824, 0, 393229, 1073741824, 0, 393232, 1073741825, 0, 458752, 1073741825, 0, 458760, 1073741827, 0, 458768, 1073741825, 0, 524288, 1073741825, 0, 524304, 1073741825, 0, 589824, 1073741825, 0, 589825, 1073741827, 0, 589826, 1073741827, 0, 589827, 1073741827, 0, 589828, 1073741827, 0, 589829, 1073741827, 0, 589830, 1073741827, 0, 589831, 1073741827, 0, 589832, 1073741827, 0, 589833, 1073741827, 0, 589834, 1073741827, 0, 589835, 1073741827, 0, 589836, 1073741827, 0, 589837, 1073741827, 0, 589838, 1073741827, 0, 589839, 1073741827, 0, 589840, 1073741825, 0, 655360, 1073741825, 0, 655361, 1073741827, 0, 655362, 1073741827, 0, 655363, 1073741827, 0, 655364, 1073741827, 0, 655365, 1073741827, 0, 655366, 1073741827, 0, 655367, 1073741827, 0, 655368, 1073741827, 0, 655369, 1073741827, 0, 655370, 1073741827, 0, 655371, 1073741827, 0, 655372, 1073741827, 0, 655373, 1073741827, 0, 655374, 1073741827, 0, 655375, 1073741827, 0, 655376, 1073741825, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 125, -500 )
+
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 125, 500 )
+invert_vertical = -1
+
+[node name="Objects" type="Node" parent="." index="4"]
+
+[node name="Wall" parent="Objects" index="0" groups=[
+"Lever1",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 209.641, -510.142 )
+scale = Vector2( 1, 1.98563 )
+
+[node name="Wall5" parent="Objects" index="1" groups=[
+"Lever1",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 209.332, 319.583 )
+scale = Vector2( 1, 1.91904 )
+begin = 1
+
+[node name="Wall2" parent="Objects" index="2" groups=[
+"Lever2",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 879.902, -317.016 )
+scale = Vector2( 1, 1.98563 )
+begin = 1
+
+[node name="Wall6" parent="Objects" index="3" groups=[
+"Lever2",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 868.401, 317.776 )
+scale = Vector2( 1, 1.98563 )
+
+[node name="Wall4" parent="Objects" index="4" groups=[
+"Lever5",
+"Lever4",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 882.174, -126.162 )
+scale = Vector2( 1, 1.98563 )
+activation = 1
+
+[node name="Wall7" parent="Objects" index="5" groups=[
+"Lever3",
+"Lever6",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 874.442, 126.208 )
+scale = Vector2( 1, 1.98563 )
+activation = 1
+
+[node name="Wall3" parent="Objects" index="6" groups=[
+"Lever3",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 209.641, -317.016 )
+scale = Vector2( 1, 1.98563 )
+
+[node name="Lever2" parent="Objects" index="7" groups=[
+"Lever2",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 516.664, -477.942 )
+
+[node name="Lever3" parent="Objects" index="8" groups=[
+"Lever3",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 515.918, 282.41 )
+
+[node name="Lever6" parent="Objects" index="9" groups=[
+"Lever6",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 516.867, 98.6331 )
+
+[node name="Lever1" parent="Objects" index="10" groups=[
+"Lever1",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 516.814, 477.833 )
+
+[node name="Lever4" parent="Objects" index="11" groups=[
+"Lever4",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 516.852, -287.529 )
+
+[node name="Lever5" parent="Objects" index="12" groups=[
+"Lever5",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 515.462, -94.6554 )
+
+[node name="Endgoal" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 967.881, -96.0423 )
+
+[node name="EndgoalMirror" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 968.442, 99.2712 )
+scale = Vector2( 1, -1 )
+
+
