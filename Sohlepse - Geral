@@ -97,9 +97,15 @@ Fundo: fundo de laboratório a partir daqui
 		PLAYER: Hm... Essa plataforma parece diferente das outras
 		PLAYER: Aaaaaaaaaa
 
-	Fase 7-9: fases refletidas normais
+	Fase 7-8:
+		Fases normais refletidas (o que introduzir aqui?)
 
-	Fase 10-11: fases refletidas com pequenas diferenças e questionamentos do player (com restart)
+	Fase 9: normal (introduz mecânica de moving platform empurrando caixas - timed stuff!)
+
+	Fase 10: tutorial (restart e introduz mecânica de botões cumulativos que ativam mais de uma coisa)
+
+	Fase 11:
+		Fase: normal (uso de falling floor, plataformas que se movem oneway, botões que ativam mais de uma coisa)
 
 	Fase 12: TRANSIÇÃO - pequenas diferenças, usa isso no puzzle, clone tenta sabotar o player - FAKE ENDGOAL.
 

@@ -139,9 +139,9 @@ position = Vector2( 1057.72, -264.844 )
 [node name="Event" parent="." index="7" instance=ExtResource( 9 )]
 
 _sections_unfolded = [ "Transform" ]
-events = [ Vector2( 50, 50 ), Vector2( 950, 50 ) ]
-labels = [ "Essa plataforma é um tanto alta... Espero que essa caixa não seja pesada", "O que será que essa alavanca faz?" ]
-pos = [ Vector2( 50, -400 ), Vector2( 350, -360 ) ]
+events = [ Vector2( 50, 50 ), Vector2( 600, 70 ), Vector2( 1000, 50 ) ]
+labels = [ "Essa plataforma é um tanto alta... Espero que essa caixa não seja pesada", "O que será que essa alavanca faz?", " " ]
+pos = [ Vector2( 50, -400 ), Vector2( 350, -360 ), Vector2( 0, 0 ) ]
 areascale = null
 playanyway = false
 
@@ -149,9 +149,9 @@ playanyway = false
 
 scale = Vector2( 1, -1 )
 _sections_unfolded = [ "Transform" ]
-events = [ Vector2( 50, 50 ), Vector2( 950, 50 ) ]
-labels = [ "Essa plataforma é um tanto alta... Espero que essa caixa não seja pesada", "O que será que essa alavanca faz?" ]
-pos = [ Vector2( 50, -400 ), Vector2( 350, -360 ) ]
+events = [ Vector2( 50, 50 ), Vector2( 600, 70 ), Vector2( 1000, 50 ) ]
+labels = [ "Essa plataforma é um tanto alta... Espero que essa caixa não seja pesada", "O que será que essa alavanca faz?", " " ]
+pos = [ Vector2( 50, -400 ), Vector2( 350, -360 ), Vector2( 0, 0 ) ]
 areascale = null
 playanyway = false
 

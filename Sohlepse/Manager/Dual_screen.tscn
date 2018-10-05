@@ -213,6 +213,7 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+_sections_unfolded = [ "Z Index" ]
 
 [node name="ViewportsH" type="HBoxContainer" parent="." index="1"]
 
@@ -410,6 +411,6 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 
