@@ -1,7 +1,7 @@
 extends Control
 var batch = 1
 var state = 1
-const maxBatch = 2
+const maxBatch = 3
 onready var ultimo = global.unlocked_stage
 
 func _ready():
