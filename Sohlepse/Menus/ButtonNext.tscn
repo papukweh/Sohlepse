@@ -2,8 +2,7 @@
 
 [ext_resource path="res://Menus/ButtonNext.gd" type="Script" id=1]
 
-
-[node name="ButtonNext" type="Button" index="0"]
+[node name="ButtonNext" type="Button"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -26,5 +25,7 @@ text = "Próximo"
 flat = false
 align = 1
 script = ExtResource( 1 )
+
+[connection signal="button_down" from="." to="." method="_on_ButtonNext_button_down"]
 
 

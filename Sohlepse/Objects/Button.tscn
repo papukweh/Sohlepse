@@ -24,7 +24,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 8.65257, 10 )
 
-[node name="Button" type="Area2D" index="0"]
+[node name="Button" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -34,8 +34,6 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-object = ""
-object2 = ""
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 

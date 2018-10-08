@@ -1,7 +1,7 @@
 extends Control
 var batch = 1
 var state = 1
-const maxBatch = 2
+const maxBatch = 3
 onready var ultimo = global.unlocked_stage
 
 func _ready():
@@ -9,6 +9,7 @@ func _ready():
 		ultimo = 99
 	get_node("Batch1/1").text = "0"
 func _process(delta):
+	print(batch)
 	if Input.is_action_just_pressed("ui_accept"):
 		if state == 0:
 			get_tree().change_scene("Menus/MenuPrincipal.tscn")
@@ -34,7 +35,6 @@ func _process(delta):
 		_atualiza(newState)
 		
 func _atualiza(newState):
-	print(state)
 	if state == 0:
 		$Back.text = "Voltar"
 	elif state == -1:

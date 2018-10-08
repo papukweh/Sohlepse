@@ -111,8 +111,6 @@ invert_horizontal = -1
 
 [node name="Reality" type="Node" parent="." index="5"]
 
-editor/display_folded = true
-
 [node name="Objects" type="Node" parent="Reality" index="0"]
 
 [node name="Wall1" parent="Reality/Objects" index="0" groups=[
@@ -139,7 +137,7 @@ position = Vector2( 107.48, -669.28 )
 rotation = 1.5708
 scale = Vector2( 1, 1.37233 )
 collision_layer = 1
-_sections_unfolded = [ "Collision", "Transform" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="Wall4" parent="Reality/Objects" index="3" groups=[
 "Lever2",

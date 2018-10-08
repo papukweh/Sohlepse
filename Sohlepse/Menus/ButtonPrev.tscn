@@ -26,4 +26,6 @@ flat = false
 align = 1
 script = ExtResource( 1 )
 
+[connection signal="button_down" from="." to="." method="_on_ButtonPrev_button_down"]
+
 
