@@ -157,3 +157,14 @@ Ato 3:
 	Fim
 
 	Créditos
+
+
+S.O:
+mproc - tabela em si
+mp - current proccess
+who_p - pid de quem chamou
+call_nr - num da chamada
+mp.mp_parent - pai de mp(?)
+
+chpriority = 45
+
