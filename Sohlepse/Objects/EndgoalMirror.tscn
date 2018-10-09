@@ -3,41 +3,59 @@
 [ext_resource path="res://Objects/EndgoalMirror.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Endgoal.png" type="Texture" id=2]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="EndgoalMirror" type="Area2D"]
+[node name="EndgoalMirror" type="KinematicBody2D"]
+
+scale = Vector2( -1, 1 )
+z_index = -1
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "collision" ]
+invert_vertical = 1
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 2.27783, -0.229151 )
+scale = Vector2( 1.75351, 3.21874 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 4
-collision_mask = 5
+collision_layer = 16
+collision_mask = 16
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Collision" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-position = Vector2( 1.09985, -0.253721 )
-scale = Vector2( 2.84007, 2.93906 )
+position = Vector2( 0.375919, -0.253721 )
+scale = Vector2( 2.72949, 2.93906 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
-[connection signal="body_entered" from="." to="." method="_on_EndgoalMirror_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_EndgoalMirror_body_entered"]
 
-[connection signal="body_exited" from="." to="." method="_on_EndgoalMirror_body_exited"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_EndgoalMirror_body_exited"]
 
 

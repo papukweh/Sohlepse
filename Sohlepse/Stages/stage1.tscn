@@ -61,7 +61,7 @@ position = Vector2( 410, 500 )
 
 [node name="Endgoal" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 765, 495 )
+position = Vector2( 768.341, 500.01 )
 scale = Vector2( -1, 1 )
 
 [node name="Panel0" parent="." index="4" instance=ExtResource( 5 )]

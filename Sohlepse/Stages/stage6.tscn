@@ -168,6 +168,7 @@ position = Vector2( -1072.35, 608.371 )
 [node name="EndgoalMirror" parent="." index="7" instance=ExtResource( 10 )]
 
 position = Vector2( 1072.35, 608.371 )
+invert_vertical = 1
 
 [node name="Limit" parent="." index="8" instance=ExtResource( 11 )]
 
