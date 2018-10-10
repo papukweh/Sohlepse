@@ -3,7 +3,9 @@ extends Area2D
 export var begin = 0 # 0 = default is deactivated
 export var activation = 0
 onready var on = false
+onready var inside = false
 onready var transmitter = false
+onready var who = null
 
 func _ready():
 	if begin == 0:
@@ -41,7 +43,15 @@ func onTriggered():
 		elif !on and begin != 0:
 			$AnimatedSprite.animation = "on"
 			on = true
+	if inside:
+		_on_Thorns_body_entered(who)
 
 func _on_Thorns_body_entered(body):
+	who = body
+	inside = true
 	if (on and body.get_name().begins_with("Player") and not body.dead):
 		body.die()
+
+
+func _on_Thorns_body_exited(body):
+	inside = false
