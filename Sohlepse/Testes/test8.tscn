@@ -22,6 +22,7 @@ ACT = 1
 PLAYERS = 2
 MAX_CLONES = 3
 MODE = 1
+invert = false
 hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]

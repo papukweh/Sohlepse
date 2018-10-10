@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32.3126, 0.476627 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.2953, 11.9587 )
@@ -69,7 +69,7 @@ texture = ExtResource( 2 )
 
 position = Vector2( 0.102165, 0.0842352 )
 scale = Vector2( 0.997105, 0.994369 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 one_way_collision = true
 
 [connection signal="body_entered" from="platform/Area2D" to="." method="_on_Area2D_body_entered"]

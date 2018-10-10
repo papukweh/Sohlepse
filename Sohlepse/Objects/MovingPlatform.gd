@@ -18,12 +18,11 @@ func _physics_process(delta):
 		$platform.transform = xf
 		
 		if !objs.empty() and motion[1] != 0:
-			var corrige = 0
-			#print(d)
-			if d < 0:
-				corrige = 700
 			for i in objs.values():
-				i.GRAVITY = 0
+				if sign(i.velocity.y) != sign(d): 
+					i.GRAVITY = -10
+				else:
+					i.GRAVITY = 0
 				i.position += $platform.get_linear_velocity()*delta
 				if i.get_name().begins_with("Box"):
 					if !i.get_objs().empty():
@@ -37,15 +36,7 @@ func onTriggered():
 		activated = 1
 
 func _on_Area2D_body_entered(body):
-	var doit = false
 	if body.is_in_group('gravity'):
-		doit = true
-		if body.get_name().begins_with("Player"):
-			#if body.ground().get_name() == "Area2D" or body.ground().get_name().begins_with("TileMap"):
-				doit = true
-#			else:
-#				doit = false
-	if doit:
 		print("botei no ash: "+body.get_name())
 		objs[body.get_name()] = body
 

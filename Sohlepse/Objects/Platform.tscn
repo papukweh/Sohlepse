@@ -11,7 +11,7 @@ extents = Vector2( 32.214, 12.1308 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32.7392, 10 )
+extents = Vector2( 32.7392, 15.951 )
 
 [node name="Platform" type="StaticBody2D"]
 
@@ -47,7 +47,7 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 0.194506, 0.22707 )
+position = Vector2( 0.19451, 1.62567 )
 scale = Vector2( 0.976977, 0.638528 )
 shape = SubResource( 2 )
 
