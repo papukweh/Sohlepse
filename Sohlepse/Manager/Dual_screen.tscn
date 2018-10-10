@@ -275,7 +275,7 @@ shadow_atlas_quad_0 = 2
 shadow_atlas_quad_1 = 2
 shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
-_sections_unfolded = [ "Audio Listener", "Rendering" ]
+_sections_unfolded = [ "Audio Listener", "Render Target", "Rendering" ]
 
 [node name="Camera2D" type="Camera2D" parent="ViewportsH/C1/Viewport1" index="0"]
 

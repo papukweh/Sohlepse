@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/MovingPlatform_OneWay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=8]
 
 [node name="stage2" instance=ExtResource( 1 )]
 
@@ -75,7 +76,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 288.65, 532.694 )
+position = Vector2( 285.861, 125.426 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
@@ -98,6 +99,12 @@ cycle = 5.0
 
 [node name="Box" parent="." index="7" instance=ExtResource( 7 )]
 
-position = Vector2( 248.266, 502.111 )
+position = Vector2( 705.745, 262.214 )
+
+[node name="MovingPlatform2" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 382.163, 446.322 )
+motion = Vector2( 0, 200 )
+cycle = 5.0
 
 

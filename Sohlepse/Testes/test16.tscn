@@ -43,7 +43,7 @@ tile_data = PoolIntArray( -786432, 1, 0, -786431, 1073741824, 0, -786430, 107374
 
 [node name="TileMap2" type="TileMap" parent="." index="1"]
 
-scale = Vector2( 1, -1 )
+position = Vector2( 0, 900 )
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
@@ -84,8 +84,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_top = 200.0
 margin_right = 1408.0
-margin_bottom = 704.0
+margin_bottom = 904.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -101,8 +102,7 @@ position = Vector2( 256, -160 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 256, 160 )
-invert_vertical = -1
+position = Vector2( 279.974, 728.515 )
 
 [node name="Reality" type="Node" parent="." index="5"]
 
@@ -251,19 +251,23 @@ position = Vector2( 800, -32 )
 
 position = Vector2( 736, -32 )
 
-[node name="Mirror" type="Node" parent="." index="6"]
+[node name="Mirror" type="Node2D" parent="." index="6"]
 
-[node name="Objects" type="Node" parent="Mirror" index="0"]
+position = Vector2( 0, 900 )
+scale = Vector2( 1, -1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Objects" type="Node2D" parent="Mirror" index="0"]
 
 [node name="Box" parent="Mirror/Objects" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 384, 160 )
-invert_vertical = -1
+scale = Vector2( 1, -1 )
 
 [node name="Box2" parent="Mirror/Objects" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 320, 352 )
-invert_vertical = -1
+scale = Vector2( 1, -1 )
 
 [node name="MovingPlatform8" parent="Mirror/Objects" index="2" instance=ExtResource( 5 )]
 
@@ -272,7 +276,6 @@ rotation = 3.14159
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 motion = Vector2( 140, 0 )
 cycle = 10.0
-invertido = true
 
 [node name="MovingPlatform4" parent="Mirror/Objects" index="3" groups=[
 "Button6",
@@ -283,7 +286,6 @@ scale = Vector2( 1.25, -1 )
 activated = 1
 motion = Vector2( 210, 0 )
 cycle = 10.0
-invertido = true
 
 [node name="MovingPlatform5" parent="Mirror/Objects" index="4" groups=[
 "Lever5",
@@ -294,18 +296,17 @@ scale = Vector2( 1.25, -1 )
 activated = 1
 motion = Vector2( 250, 0 )
 cycle = 10.0
-invertido = true
 
 [node name="MovingPlatform6" parent="Mirror/Objects" index="5" groups=[
 "Lever5",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 1104.72, 474.256 )
-scale = Vector2( -1.25, -1 )
+rotation = -3.14159
+scale = Vector2( 1.25, 1 )
 activated = 1
 motion = Vector2( 250, 0 )
 cycle = 10.0
-invertido = true
 
 [node name="Button4" parent="Mirror/Objects" index="6" instance=ExtResource( 6 )]
 
@@ -334,7 +335,6 @@ scale = Vector2( 1.5, -1 )
 activated = 1
 motion = Vector2( 225, 0 )
 cycle = 11.0
-invertido = true
 
 [node name="Wall1" parent="Mirror/Objects" index="10" groups=[
 "Lever6",
@@ -364,12 +364,11 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 position = Vector2( 1024, 224 )
 scale = Vector2( 1.5, -1 )
-invertido = true
 
 [node name="Lever4" parent="Mirror/Objects" index="14" instance=ExtResource( 8 )]
 
 position = Vector2( 1340.88, 363.398 )
-scale = Vector2( -1, -1 )
+rotation = -3.14159
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Lever5" parent="Mirror/Objects" index="15" instance=ExtResource( 8 )]
@@ -380,11 +379,11 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Lever6" parent="Mirror/Objects" index="16" instance=ExtResource( 8 )]
 
-position = Vector2( 1339.65, 550.936 )
-scale = Vector2( -1, -1 )
+position = Vector2( 1336.56, 544.754 )
+rotation = -3.14159
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Hazards" type="Node" parent="Mirror" index="1"]
+[node name="Hazards" type="Node2D" parent="Mirror" index="1"]
 
 [node name="Lava1" parent="Mirror/Hazards" index="0" instance=ExtResource( 9 )]
 
@@ -432,8 +431,7 @@ position = Vector2( 96, -160 )
 
 [node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 11 )]
 
-position = Vector2( 96, 160 )
+position = Vector2( 104.086, 738.636 )
 scale = Vector2( 1, -1 )
-invert_vertical = -1
 
 

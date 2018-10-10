@@ -3,7 +3,6 @@ extends Node2D
 export var activated = 0 #activated by default
 export var motion = Vector2()
 export var cycle = 1.0
-export var invertido = false
 var accum = 0.0
 signal triggered
 onready var objs = Dictionary()
@@ -18,7 +17,7 @@ func _physics_process(delta):
 		xf[2]= motion * d 
 		$platform.transform = xf
 		
-		if !objs.empty() and (invertido or motion[1] != 0):
+		if !objs.empty() and motion[1] != 0:
 			var corrige = 0
 			#print(d)
 			if d < 0:
@@ -42,10 +41,10 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group('gravity'):
 		doit = true
 		if body.get_name().begins_with("Player"):
-			if body.ground().get_name() == "Area2D" or body.ground().get_name().begins_with("TileMap"):
+			#if body.ground().get_name() == "Area2D" or body.ground().get_name().begins_with("TileMap"):
 				doit = true
-			else:
-				doit = false
+#			else:
+#				doit = false
 	if doit:
 		print("botei no ash: "+body.get_name())
 		objs[body.get_name()] = body

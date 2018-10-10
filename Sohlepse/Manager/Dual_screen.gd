@@ -4,7 +4,7 @@ onready var x = get_viewport().size.x
 onready var y = get_viewport().size.y
 onready var world = null
 
-func can_load(players):
+func can_load(players, mode):
 	var Viewport1 = $Viewports/C1/Viewport1/
 	var Viewport2 = $Viewports/C2/Viewport2/
 	var camera1 = $Viewports/C1/Viewport1/Camera2D/
@@ -12,6 +12,8 @@ func can_load(players):
 	
 	if players > 1:
 		Viewport2.world_2d = Viewport1.world_2d
+		if mode == 2:
+			Viewport2.render_target_v_flip = true
 		camera1.target = world.get_node("Players/Player1")
 		camera2.target = world.get_node("Players/Player2")
 		set_camera_limits(camera1, camera2)
