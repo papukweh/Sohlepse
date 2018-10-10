@@ -21,4 +21,4 @@ func _ready():
 	
 	$Setup/Viewports/C1/Viewport1.add_child(stage)
 	$Setup.world = get_node("Setup/Viewports/C1/Viewport1/stage"+str(id)+"/")
-	$Setup.can_load(stage.PLAYERS, stage.MODE)
+	$Setup.can_load(stage.PLAYERS, stage.MODE, stage.invert)

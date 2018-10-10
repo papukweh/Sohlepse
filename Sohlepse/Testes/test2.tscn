@@ -95,16 +95,16 @@ position = Vector2( 660.145, 541.377 )
 
 position = Vector2( 133.271, 433.492 )
 motion = Vector2( 0, 200 )
-cycle = 5.0
+cycle = 2.0
 
 [node name="Box" parent="." index="7" instance=ExtResource( 7 )]
 
-position = Vector2( 705.745, 262.214 )
+position = Vector2( 287.319, 304.057 )
 
 [node name="MovingPlatform2" parent="." index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 382.163, 446.322 )
 motion = Vector2( 0, 200 )
-cycle = 5.0
+cycle = 2.0
 
 

@@ -15,6 +15,7 @@
 PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
+invert = false
 hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
@@ -95,8 +96,8 @@ position = Vector2( 599, -71 )
 [node name="Box2" parent="Objects" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 599, 66 )
-rotation = 3.14159
-scale = Vector2( -1, 1 )
+rotation = 2.53518e-06
+scale = Vector2( 1, -1 )
 invert_vertical = -1
 
 [node name="Lever2" parent="Objects" index="2" instance=ExtResource( 5 )]
@@ -108,7 +109,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 [node name="Lever1" parent="Objects" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1086.18, 54.512 )
-scale = Vector2( -1, -1 )
+rotation = -3.14159
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Wall1" parent="Objects" index="4" groups=[
