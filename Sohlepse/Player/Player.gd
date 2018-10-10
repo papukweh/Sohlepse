@@ -9,7 +9,7 @@ const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 300
 const STOP_FORCE = 1500
 const JUMP_SPEED = 380
-const JUMP_MAX_AIRBORNE_TIME = 0.000000001
+const JUMP_MAX_AIRBORNE_TIME = 0.2
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
@@ -34,7 +34,7 @@ onready var on_act3 = false
 onready var view = null
 onready var interacting = false
 onready var crushing = false
-onready var time = 0.45
+onready var time = 0.15
 onready var platform = false
 onready var initpos = self.get_position()
 onready var ready = true
@@ -54,10 +54,8 @@ func _process(delta):
 	if dead:
 		return
 		
-
-		
 	if not crushing:
-		time = 0.45
+		time = 0.15
 	if crushing:
 		time -= delta
 	
@@ -141,10 +139,12 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	if ($RC_down.is_colliding() or $RC_down2.is_colliding()) and not platform:
+		#print("cao")
 		on_air_time = 0
 		jumping = false
 
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping:
+		print(on_air_time)
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -invert_vertical * JUMP_SPEED * terrain
@@ -172,6 +172,10 @@ func die():
 func reset_position():
 	self.set_position(initpos)
 	
+func ground():
+	print($RC_down.get_collider().get_name())
+	return $RC_down.get_collider()
+	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name.begins_with("Death"):
 		global.restart()
@@ -187,16 +191,24 @@ func _on_Siding_body_exited(body):
 
 func _on_Head_body_entered(body):
 	if body.is_in_group('kill'):
-		crushing = true
-	if body.get_class() == "RigidBody2D" and body.get_linear_velocity().y > 0:
-		crushing = true
-	elif $RC_down.is_colliding():
-		var chao = $RC_down.get_collider()
-		if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y < 0:
-			crushing = true
-	elif $RC_down2.is_colliding():
-		var chao = $RC_down2.get_collider()
-		if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y < 0:
+		var cls = body.get_class()
+		
+		if cls == "RigidBody2D": 
+			if body.get_linear_velocity().y > 0:
+				print(jumping)
+				if(!jumping):
+					print("porra")
+					crushing = true
+			elif $RC_down.is_colliding():
+				var chao = $RC_down.get_collider()
+				if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y < 0:
+					crushing = true
+					print("SUBIIIINDO")
+				else:
+					crushing = false
+			else:
+				crushing = false
+		elif cls == "KinematicBody2D":
 			crushing = true
 
 func _on_Head_body_exited(body):

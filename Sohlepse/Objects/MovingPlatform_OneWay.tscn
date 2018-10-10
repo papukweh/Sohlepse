@@ -1,9 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects/MovingPlatform.gd" type="Script" id=1]
 [ext_resource path="res://Assets/platform1.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32.3126, 0.476627 )
+
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.2953, 11.9587 )
@@ -39,15 +44,36 @@ angular_velocity = 0.0
 angular_damp = -1.0
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="platform" index="0"]
+[node name="Area2D" type="Area2D" parent="platform" index="0"]
+
+position = Vector2( 0.862757, -6.47066 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform/Area2D" index="0"]
+
+position = Vector2( -0.430425, -7.17054 )
+scale = Vector2( 1, 3.16552 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="platform" index="1"]
 
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform" index="2"]
 
 position = Vector2( 0.102165, 0.0842352 )
 scale = Vector2( 0.997105, 0.994369 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 one_way_collision = true
+
+[connection signal="body_entered" from="platform/Area2D" to="." method="_on_Area2D_body_entered"]
+
+[connection signal="body_exited" from="platform/Area2D" to="." method="_on_Area2D_body_exited"]
 
 

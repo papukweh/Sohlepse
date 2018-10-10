@@ -12,7 +12,7 @@
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=11]
 
-[node name="stage13" index="0" instance=ExtResource( 1 )]
+[node name="stage13" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -195,7 +195,6 @@ scale = Vector2( -1, 1 )
 [node name="EndgoalMirror" parent="." index="7" instance=ExtResource( 10 )]
 
 position = Vector2( 104.578, 289.127 )
-scale = Vector2( -1, 1 )
 
 [node name="Limit" parent="." index="8" instance=ExtResource( 11 )]
 
