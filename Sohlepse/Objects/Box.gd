@@ -6,6 +6,11 @@ var GRAVITY = 700.0 # pixels/second/second
 var DEACCEL = 100.0
 var velocity = Vector2()
 onready var player = null
+onready var objs = Dictionary()
+
+func _ready():
+	if invert_vertical == -1:
+		self.scale.y = -1
 
 func _process(delta):
 	if Input.is_action_just_pressed("change-v"):
@@ -43,3 +48,19 @@ func _on_RC_right_body_exited(body):
 	if body.get_name().begins_with("Player"):
 		player = null
 		body.pushing = false
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group('gravity') and body != self:
+		print("coloquei !!!!!")
+		objs[body.get_name()] = body
+
+func _on_Area2D_body_exited(body):
+		if body.is_in_group('gravity') and body != self:
+			if objs.has(body.get_name()):
+				objs.erase(body.get_name())
+
+func get_objs():
+	if invert_vertical == -1:
+		return objs
+	else:
+		return Dictionary()

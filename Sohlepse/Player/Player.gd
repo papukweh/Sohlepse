@@ -172,6 +172,10 @@ func die():
 func reset_position():
 	self.set_position(initpos)
 	
+func ground():
+	print($RC_down.get_collider().get_name())
+	return $RC_down.get_collider()
+	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name.begins_with("Death"):
 		global.restart()

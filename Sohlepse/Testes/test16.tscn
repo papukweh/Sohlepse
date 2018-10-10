@@ -12,7 +12,7 @@
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=11]
 
-[node name="stage13" type="Node" index="0"]
+[node name="stage16" type="Node"]
 
 script = ExtResource( 1 )
 ACT = 1
@@ -265,12 +265,14 @@ invert_vertical = -1
 position = Vector2( 320, 352 )
 invert_vertical = -1
 
-[node name="MovingPlatform7" parent="Mirror/Objects" index="2" instance=ExtResource( 5 )]
+[node name="MovingPlatform8" parent="Mirror/Objects" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 700.735, 116.19 )
-scale = Vector2( -1.5, -1 )
+rotation = 3.14159
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 motion = Vector2( 140, 0 )
 cycle = 10.0
+invertido = true
 
 [node name="MovingPlatform4" parent="Mirror/Objects" index="3" groups=[
 "Button6",
@@ -281,6 +283,7 @@ scale = Vector2( 1.25, -1 )
 activated = 1
 motion = Vector2( 210, 0 )
 cycle = 10.0
+invertido = true
 
 [node name="MovingPlatform5" parent="Mirror/Objects" index="4" groups=[
 "Lever5",
@@ -291,6 +294,7 @@ scale = Vector2( 1.25, -1 )
 activated = 1
 motion = Vector2( 250, 0 )
 cycle = 10.0
+invertido = true
 
 [node name="MovingPlatform6" parent="Mirror/Objects" index="5" groups=[
 "Lever5",
@@ -301,6 +305,7 @@ scale = Vector2( -1.25, -1 )
 activated = 1
 motion = Vector2( 250, 0 )
 cycle = 10.0
+invertido = true
 
 [node name="Button4" parent="Mirror/Objects" index="6" instance=ExtResource( 6 )]
 
@@ -329,6 +334,7 @@ scale = Vector2( 1.5, -1 )
 activated = 1
 motion = Vector2( 225, 0 )
 cycle = 11.0
+invertido = true
 
 [node name="Wall1" parent="Mirror/Objects" index="10" groups=[
 "Lever6",
@@ -358,6 +364,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 position = Vector2( 1024, 224 )
 scale = Vector2( 1.5, -1 )
+invertido = true
 
 [node name="Lever4" parent="Mirror/Objects" index="14" instance=ExtResource( 8 )]
 
@@ -427,5 +434,6 @@ position = Vector2( 96, -160 )
 
 position = Vector2( 96, 160 )
 scale = Vector2( 1, -1 )
+invert_vertical = -1
 
 
