@@ -278,8 +278,8 @@ cycle = 15.0
 
 position = Vector2( 608, 128 )
 activated = 1
-motion = Vector2( 0, 200 )
-cycle = 10.0
+motion = Vector2( 0, 500 )
+cycle = 15.0
 
 [node name="Wall" parent="Objects" index="5" groups=[
 "Lever",
