@@ -12,6 +12,7 @@
 
 ACT = 3
 MODE = 1
+invert = false
 hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]

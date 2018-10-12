@@ -97,26 +97,39 @@ Fundo: fundo de laboratório a partir daqui
 		PLAYER: Hm... Essa plataforma parece diferente das outras
 		PLAYER: Aaaaaaaaaa
 
-	Fase 7-8:
-		Fases normais refletidas (o que introduzir aqui?)
+	Fase 7: normal (one ways, cair propositalmente)
+	
+	Fase 8: normal (caixas em plataformas, ordem certa)
 
 	Fase 9: normal (introduz mecânica de moving platform empurrando caixas - timed stuff!)
 
-	Fase 10: tutorial (restart e introduz mecânica de botões cumulativos que ativam mais de uma coisa)
+	Fase 10: tutorial (restart e introduz mecânica de botões cumulativos que ativam mais de uma coisa) - pequena diferença
 
 	Fase 11:
-		Fase: normal (uso de falling floor, plataformas que se movem oneway, botões que ativam mais de uma coisa)
+		Fase: normal (uso de falling floor, plataformas que se movem oneway, botões que ativam mais de uma coisa) - pequena diferença
 
 	Fase 12: TRANSIÇÃO - pequenas diferenças, usa isso no puzzle, clone tenta sabotar o player - FAKE ENDGOAL.
 
 	Fake - apenas cutscene - fase de transição: fundo de floresta + parede do laboratório na esquerda
 	player aliviado
 
+	* Temos 11 fases do Ato 1 concluídas *
+
 Ato 2:
 
 	Fundo: fundo de floresta fechada e escura
 	OBS: CLONE COM OLHOS VERMELHOSs
 	
+	Fase 13: 
+
+	Fase 14:
+
+	Fase 15:
+
+	Fase 16:
+
+	Fase 17:
+
 	Fase 13-20: puzzles variados
 		Fase 15: kidPlayer brincando com tubos de ensaios
 		Fase 16 e 18: questiona as memórias
@@ -126,6 +139,8 @@ Ato 2:
 
 	Fake - apenas cutscene - corredor do laboratório, player anda até encontrar o espelho - clone sai do espelho. Som de pancada, fade out.
 
+	* Temos 5 fases do Ato 2 concluídas *
+
 Ato 3:
 
 	Fake - flashback com a esposa (sem mostrar os olhos) envolve a casa.
@@ -134,11 +149,11 @@ Ato 3:
 
 	Fase 22: tutorial espelhado - espelho no teto - introduz mecânica de pular em clones
 
-	A partir daqui fases invertidas (endgoal na esquerda)
-
 	Fase 23: tutorial - introduz mecânica de clones ativando coisas
 
 	Fase 24-29: puzzles varaidaos
+
+	* Temos 2 fases do Ato 3 concluídas *
 
 	Fase 30: final - corrida ultra frenética com timer
 	CLONE: HAHAHA AUTO-DESTRUIÇÃO ATIVADA

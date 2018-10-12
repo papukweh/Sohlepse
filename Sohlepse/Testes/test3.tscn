@@ -10,13 +10,15 @@
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=9]
 
-[node name="stage3" type="Node" index="0"]
+[node name="stage3" type="Node"]
 
 script = ExtResource( 1 )
 ACT = 2
 PLAYERS = 2
 MAX_CLONES = 0
 MODE = 1
+invert = false
+hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
