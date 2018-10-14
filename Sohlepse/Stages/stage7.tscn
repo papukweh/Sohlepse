@@ -15,9 +15,6 @@
 
 PLAYERS = 2
 MAX_CLONES = 0
-MODE = 1
-invert = false
-hasTutorial = null
 
 [node name="Real" type="ReferenceRect" parent="." index="0"]
 
@@ -42,8 +39,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -1090.0
 margin_top = -200.0
-margin_right = 1090.0
 margin_bottom = 850.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

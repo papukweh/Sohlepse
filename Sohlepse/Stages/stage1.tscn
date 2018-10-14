@@ -9,8 +9,8 @@
 
 [node name="stage1" instance=ExtResource( 1 )]
 
+ACT = 3
 MAX_CLONES = 0
-MODE = 1
 hasTutorial = [ true, true, true ]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]

@@ -15,8 +15,6 @@
 PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
-invert = false
-hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -65,16 +63,16 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -51.0
-margin_top = -10.0
+margin_top = -490.0
 margin_right = 1159.0
-margin_bottom = 470.0
+margin_bottom = -10.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Anchor", "Rect" ]
 
 [node name="Players" type="Node" parent="." index="3"]
 
@@ -96,7 +94,7 @@ position = Vector2( 599, -71 )
 [node name="Box2" parent="Objects" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 599, 66 )
-rotation = 2.53518e-06
+rotation = 2.53518e-006
 scale = Vector2( 1, -1 )
 invert_vertical = -1
 

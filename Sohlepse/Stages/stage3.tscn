@@ -15,7 +15,6 @@
 PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
-hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -65,10 +64,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -24.0
-margin_top = 4.0
-margin_right = 1132.0
-margin_bottom = 488.0
+margin_left = -23.0
+margin_top = -497.0
+margin_right = 1131.0
+margin_bottom = -5.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
