@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/ButtonInst.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Button2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Button1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/ButtonInst2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/ButtonInst1.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -28,7 +28,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="ButtonInst" type="StaticBody2D"]
+[node name="ButtonInst" type="StaticBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
