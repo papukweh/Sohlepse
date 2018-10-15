@@ -26,10 +26,14 @@ func can_load(act, mode, invert):
 		Viewport2.world_2d = Viewport1.world_2d
 		camera1.target = world.get_node("Players/Player1")
 		camera2.target = world.get_node("Players/Player1")
-		Viewport2.render_target_v_flip = true
+		#Viewport2.render_target_v_flip = true
 		if mode == 1:
-			camera2.rotating = true
-		else: set_camera_limits(camera1, camera2)
+			camera1.zoom = Vector2(1.25, 1.25)
+			camera2.zoom = Vector2(-1.25, 1.25)
+		else:
+			camera1.zoom = Vector2(1.25, 1.25)
+			camera2.zoom = Vector2(1.25, -1.25)
+		set_camera_limits(camera1, camera2)
 func set_camera_limits(camera1, camera2):
 	var map_limits = [world.get_node("Real").get_global_rect(), world.get_node("Mirrored").get_global_rect()] 
 	var cam = [camera1, camera2]

@@ -1,5 +1,6 @@
 extends Node2D
 
+export var oneway = false
 export var activated = 0 #activated by default
 export var motion = Vector2()
 export var cycle = 1.0
@@ -23,11 +24,18 @@ func _physics_process(delta):
 					i.GRAVITY = -10
 				else:
 					i.GRAVITY = 0
-				i.position += $platform.get_linear_velocity()*delta
-				if i.get_name().begins_with("Box"):
-					if !i.get_objs().empty():
-						for a in i.get_objs().values():
-							a.position += $platform.get_linear_velocity()*delta
+				#i.position += $platform.get_linear_velocity()*delta
+				if i.get_name().begins_with("Player"):
+					if oneway:
+						i.position += $platform.get_linear_velocity()*delta
+					elif not i.jumping and i.jump:
+						i.position.y = $platform.global_position.y - 42
+				else:
+					i.position.y = $platform.global_position.y - 36
+#				if i.get_name().begins_with("Box"):
+#					if !i.get_objs().empty():
+#						for a in i.get_objs().values():
+#							a.position += $platform.get_linear_velocity()*delta
 		
 func onTriggered():
 	if activated == 1:

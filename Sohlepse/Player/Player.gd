@@ -34,7 +34,7 @@ onready var on_act3 = false
 onready var view = null
 onready var interacting = false
 onready var crushing = false
-onready var time = 0.15
+onready var time = 0.05
 onready var platform = false
 onready var initpos = self.get_position()
 onready var ready = true
@@ -55,7 +55,7 @@ func _process(delta):
 		return
 		
 	if not crushing:
-		time = 0.15
+		time = 0.05
 	if crushing:
 		time -= delta
 	
@@ -133,25 +133,25 @@ func _physics_process(delta):
 		
 		siding_left = new_siding_left
 	
-	# Integrate forces to velocity
-	velocity += force * delta
-	# Integrate velocity into motion and move
-	velocity = move_and_slide(velocity, Vector2(0, -1))
-	
 	if ($RC_down.is_colliding() or $RC_down2.is_colliding()) and not platform:
-		#print("cao")
+		print($RC_down.get_collider())
+		print("cao")
 		on_air_time = 0
 		jumping = false
 
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping:
-		print(on_air_time)
+		print("jump")
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -invert_vertical * JUMP_SPEED * terrain
 		jumping = true
+		on_air_time += delta
 	
-	on_air_time += delta
-		
+	# Integrate forces to velocity
+	velocity += force * delta
+	# Integrate velocity into motion and move
+	velocity = move_and_slide(velocity, Vector2(0, -1))
+
 func moving_left():
 	return move_left and not move_right
 
@@ -190,37 +190,42 @@ func _on_Siding_body_exited(body):
 	view = null
 
 func _on_Head_body_entered(body):
-	if body.is_in_group('kill'):
-		var cls = body.get_class()
-		
-		if cls == "RigidBody2D": 
-			if body.get_linear_velocity().y > 0:
-				print(jumping)
-				if(!jumping):
-					print("porra")
-					crushing = true
-			elif $RC_down.is_colliding():
-				var chao = $RC_down.get_collider()
-				if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y < 0:
-					crushing = true
-					print("SUBIIIINDO")
-				else:
-					crushing = false
-			else:
-				crushing = false
-		elif cls == "KinematicBody2D":
+	var cls = body.get_class()
+	
+	if body.is_in_group('safe') or body.get_name().begins_with("Player"):
+		crushing = false
+		return
+	
+	print("tem um "+body.get_name()+" na minha cabeça")
+	if cls == "RigidBody2D": 
+		if body.get_linear_velocity().y > 0:
+			if(!jumping):
+				print("no jump, being crushed")
+				crushing = true
+		elif self.velocity.y < 0:
+			print("subindo")
+			if (!jumping):
+				print("mas no jump, being crushed")
+				crushing = true
+		else:
+			crushing = false
+	elif cls == "TileMap":
+		if self.velocity.y < 0 and !jumping:
 			crushing = true
+			print("being cccrushed")
+	elif cls == "KinematicBody2D":
+		if body.get_name().begins_with("Box"):
+			if !jumping and body.falling():
+				print("boxcrsuh")
+				crushing = true
+		elif !jumping and body.velocity.y > 0:
+			if body.falling:
+				print("crcrcush")
+				crushing = true
+	else:
+		crushing = false
+		print("no crush "+cls)
 
 func _on_Head_body_exited(body):
-	if body.is_in_group('kill'):
-		crushing = false
-	elif body.get_class() == "RigidBody2D" and body.get_linear_velocity().y <= 0:
-		crushing = false
-	elif $RC_down.is_colliding():
-		var chao = $RC_down.get_collider()
-		if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y >= 0:
-			crushing = false
-	elif $RC_down2.is_colliding():
-		var chao = $RC_down2.get_collider()
-		if chao.get_class() == "RigidBody2D" and chao.get_linear_velocity().y >= 0:
+		if not (body.is_in_group('safe') or body.get_name().begins_with("Player")):
 			crushing = false

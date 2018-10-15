@@ -60,7 +60,7 @@ func _on_Area2D_body_exited(body):
 				objs.erase(body.get_name())
 
 func get_objs():
-	if invert_vertical == -1:
-		return objs
-	else:
-		return Dictionary()
+	return objs
+		
+func falling():
+	return !test_move(transform, Vector2(0,-1))
