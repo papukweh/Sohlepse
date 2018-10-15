@@ -9,7 +9,6 @@ func _ready():
 		ultimo = 99
 	get_node("Batch1/1").text = "0"
 func _process(delta):
-	print(batch)
 	if Input.is_action_just_pressed("ui_accept"):
 		if state == 0:
 			get_tree().change_scene("Menus/MenuPrincipal.tscn")
