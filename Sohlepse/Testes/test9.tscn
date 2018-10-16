@@ -9,8 +9,6 @@
 [node name="stage9" instance=ExtResource( 1 )]
 
 ACT = 3
-MODE = 1
-invert = false
 hasTutorial = [ true, true, true ]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]

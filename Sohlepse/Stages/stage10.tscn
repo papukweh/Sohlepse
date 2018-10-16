@@ -11,10 +11,10 @@
 
 [node name="stage10" instance=ExtResource( 1 )]
 
+ACT = 2
 PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
-invert = false
 hasTutorial = [ false, true, false ]
 
 [node name="Real" type="ReferenceRect" parent="." index="0"]
@@ -125,8 +125,8 @@ scale = Vector2( 1, 2.00608 )
 activation = 1
 
 [node name="Wall7" parent="Objects" index="5" groups=[
-"Lever3",
 "Lever6",
+"Lever3",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 874.442, 127.727 )

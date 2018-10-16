@@ -17,9 +17,6 @@
 ACT = 2
 PLAYERS = 2
 MAX_CLONES = 0
-MODE = 1
-invert = false
-hasTutorial = null
 
 [node name="Real" type="ReferenceRect" parent="." index="0"]
 
@@ -99,7 +96,6 @@ invert_horizontal = -1
 position = Vector2( -864.083, 336.017 )
 rotation = -1.5708
 scale = Vector2( 1, 10.994 )
-collision_layer = 1
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
 activation = 1
 

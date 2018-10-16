@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Stages/Stage.gd" type="Script" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=11]
 
 [node name="stage8" type="Node"]
 
@@ -61,7 +60,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -786432, 1, 0, -786431, 1073741824, 0, -786430, 1073741824, 0, -786429, 1073741824, 0, -786428, 1073741824, 0, -786427, 1073741824, 0, -786426, 1073741824, 0, -786425, 1073741824, 0, -786424, 1073741824, 0, -786423, 1073741824, 0, -786422, 1073741824, 0, -786421, 1073741824, 0, -786420, 1073741824, 0, -786419, 1073741824, 0, -786418, 1073741824, 0, -786417, 1073741824, 0, -786416, 1073741824, 0, -786415, 1073741824, 0, -786414, 1073741824, 0, -786413, 1073741824, 0, -786412, 1073741824, 0, -786411, 1, 0, -720896, 1, 0, -720875, 1, 0, -655360, 1, 0, -655339, 1, 0, -589824, 1, 0, -589803, 1, 0, -524288, 1, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 2, 0, -524270, 536870914, 0, -524269, 0, 0, -524268, 0, 0, -524267, 1, 0, -458752, 1, 0, -458731, 1, 0, -393216, 1, 0, -393195, 1, 0, -327680, 1, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 2, 0, -327662, 536870914, 0, -327661, 0, 0, -327660, 0, 0, -327659, 1, 0, -262144, 1, 0, -262123, 1, 0, -196608, 1, 0, -196587, 1, 0, -131072, 1, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 2, 0, -131052, 536870914, 0, -131051, 1, 0, -65536, 1, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65521, 3, 0, -65520, 3, 0, -65519, 3, 0, -65518, 3, 0, -65517, 0, 0, -65516, 3, 0, -65515, 1, 0 )
+tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Real" type="ReferenceRect" parent="." index="2"]
@@ -85,9 +84,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 200.0
+margin_top = -704.0
 margin_right = 1408.0
-margin_bottom = 904.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -100,10 +98,6 @@ size_flags_vertical = 1
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 256, -160 )
-
-[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 256, 728.515 )
 
 [node name="Reality" type="Node" parent="." index="5"]
 
@@ -252,187 +246,8 @@ position = Vector2( 800, -32 )
 
 position = Vector2( 736, -32 )
 
-[node name="Mirror" type="Node2D" parent="." index="6"]
-
-position = Vector2( 0, 900 )
-scale = Vector2( 1, -1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Objects" type="Node2D" parent="Mirror" index="0"]
-
-[node name="Box" parent="Mirror/Objects" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( 384, 160 )
-scale = Vector2( 1, -1 )
-
-[node name="Box2" parent="Mirror/Objects" index="1" instance=ExtResource( 4 )]
-
-position = Vector2( 320, 352 )
-scale = Vector2( 1, -1 )
-
-[node name="MovingPlatform8" parent="Mirror/Objects" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( 700.735, 116.19 )
-rotation = 3.14159
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
-motion = Vector2( 140, 0 )
-cycle = 10.0
-
-[node name="MovingPlatform4" parent="Mirror/Objects" index="3" groups=[
-"Button6",
-] instance=ExtResource( 5 )]
-
-position = Vector2( 123.015, 393.044 )
-scale = Vector2( 1.25, -1 )
-activated = 1
-motion = Vector2( 210, 0 )
-cycle = 10.0
-
-[node name="MovingPlatform5" parent="Mirror/Objects" index="4" groups=[
-"Lever5",
-] instance=ExtResource( 5 )]
-
-position = Vector2( 369.929, 474.256 )
-scale = Vector2( 1.25, -1 )
-activated = 1
-motion = Vector2( 250, 0 )
-cycle = 10.0
-
-[node name="MovingPlatform6" parent="Mirror/Objects" index="5" groups=[
-"Lever5",
-] instance=ExtResource( 5 )]
-
-position = Vector2( 1104.72, 474.256 )
-rotation = -3.14159
-scale = Vector2( 1.25, 1 )
-activated = 1
-motion = Vector2( 250, 0 )
-cycle = 10.0
-
-[node name="Button4" parent="Mirror/Objects" index="6" instance=ExtResource( 6 )]
-
-position = Vector2( 1088.26, 130.419 )
-scale = Vector2( 1, -1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Button5" parent="Mirror/Objects" index="7" instance=ExtResource( 6 )]
-
-position = Vector2( 1248.6, 67.0131 )
-scale = Vector2( 1, -1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Button6" parent="Mirror/Objects" index="8" instance=ExtResource( 6 )]
-
-position = Vector2( 95.6028, 323.178 )
-scale = Vector2( 1, -1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="MovingPlatform" parent="Mirror/Objects" index="9" groups=[
-"Button4",
-] instance=ExtResource( 5 )]
-
-position = Vector2( 767, 308.142 )
-scale = Vector2( 1.5, -1 )
-activated = 1
-motion = Vector2( 225, 0 )
-cycle = 11.0
-
-[node name="Wall1" parent="Mirror/Objects" index="10" groups=[
-"Lever6",
-] instance=ExtResource( 7 )]
-
-position = Vector2( 192, 192 )
-scale = Vector2( 1, -2 )
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="Wall2" parent="Mirror/Objects" index="11" groups=[
-"Lever4",
-] instance=ExtResource( 7 )]
-
-position = Vector2( 192, 384 )
-scale = Vector2( 1, -2 )
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="Wall3" parent="Mirror/Objects" index="12" groups=[
-"Button5",
-] instance=ExtResource( 7 )]
-
-position = Vector2( 1216, 384 )
-scale = Vector2( 1, -2 )
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="MovingPlatform3" parent="Mirror/Objects" index="13" instance=ExtResource( 5 )]
-
-position = Vector2( 1024, 224 )
-scale = Vector2( 1.5, -1 )
-
-[node name="Lever4" parent="Mirror/Objects" index="14" instance=ExtResource( 8 )]
-
-position = Vector2( 1340.88, 363.398 )
-rotation = -3.14159
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="Lever5" parent="Mirror/Objects" index="15" instance=ExtResource( 8 )]
-
-position = Vector2( 68.6907, 552.041 )
-scale = Vector2( 1, -1 )
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="Lever6" parent="Mirror/Objects" index="16" instance=ExtResource( 8 )]
-
-position = Vector2( 1336.56, 544.754 )
-rotation = -3.14159
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="Hazards" type="Node2D" parent="Mirror" index="1"]
-
-[node name="Lava1" parent="Mirror/Hazards" index="0" instance=ExtResource( 9 )]
-
-position = Vector2( 480, 32 )
-scale = Vector2( 1, -1 )
-
-[node name="Lava2" parent="Mirror/Hazards" index="1" instance=ExtResource( 9 )]
-
-position = Vector2( 544, 32 )
-scale = Vector2( 1, -1 )
-
-[node name="Lava3" parent="Mirror/Hazards" index="2" instance=ExtResource( 9 )]
-
-position = Vector2( 672, 32 )
-scale = Vector2( 1, -1 )
-
-[node name="Lava4" parent="Mirror/Hazards" index="3" instance=ExtResource( 9 )]
-
-position = Vector2( 608, 32 )
-scale = Vector2( 1, -1 )
-
-[node name="Lava5" parent="Mirror/Hazards" index="4" instance=ExtResource( 9 )]
-
-position = Vector2( 864, 32 )
-scale = Vector2( 1, -1 )
-
-[node name="Lava6" parent="Mirror/Hazards" index="5" instance=ExtResource( 9 )]
-
-position = Vector2( 928, 32 )
-scale = Vector2( 1, -1 )
-
-[node name="Lava7" parent="Mirror/Hazards" index="6" instance=ExtResource( 9 )]
-
-position = Vector2( 800, 32 )
-scale = Vector2( 1, -1 )
-
-[node name="Lava8" parent="Mirror/Hazards" index="7" instance=ExtResource( 9 )]
-
-position = Vector2( 736, 32 )
-scale = Vector2( 1, -1 )
-
-[node name="Endgoal" parent="." index="7" instance=ExtResource( 10 )]
+[node name="Endgoal" parent="." index="6" instance=ExtResource( 10 )]
 
 position = Vector2( 96, -160 )
-
-[node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 11 )]
-
-position = Vector2( 96, 738.636 )
-scale = Vector2( 1, 1 )
 
 

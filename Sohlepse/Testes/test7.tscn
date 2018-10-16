@@ -14,10 +14,9 @@
 
 [node name="stage7" instance=ExtResource( 1 )]
 
+ACT = 2
 PLAYERS = 2
 MAX_CLONES = 0
-MODE = 1
-invert = false
 hasTutorial = [ false, true, false ]
 
 [node name="Real" type="ReferenceRect" parent="." index="0"]

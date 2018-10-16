@@ -103,8 +103,8 @@ position = Vector2( 351.683, 287.459 )
 position = Vector2( 1040.24, 544.18 )
 
 [node name="Wall1" parent="Objects" index="1" groups=[
-"Button2",
 "Button1",
+"Button2",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 180.658, 414.699 )
