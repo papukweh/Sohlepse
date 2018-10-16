@@ -18,7 +18,7 @@ extents = Vector2( 27, 3 )
 custom_solver_bias = 0.0
 extents = Vector2( 7.52237, 8.57211 )
 
-[node name="Box" type="KinematicBody2D" index="0" groups=[
+[node name="Box" type="KinematicBody2D" groups=[
 "gravity",
 ]]
 
@@ -81,7 +81,7 @@ scale = Vector2( 1, 2.07729 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="3"]
+[node name="Teto" type="Area2D" parent="." index="3"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -92,7 +92,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teto" index="0"]
 
 position = Vector2( 0, -27 )
 shape = SubResource( 3 )
@@ -104,6 +104,13 @@ scale = Vector2( 3.40759, 2.91697 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Down" type="RayCast2D" parent="." index="5"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 25 )
+collision_mask = 1
+
 [connection signal="body_entered" from="RC_left" to="." method="_on_RC_left_body_entered"]
 
 [connection signal="body_exited" from="RC_left" to="." method="_on_RC_left_body_exited"]
@@ -112,8 +119,8 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_exited" from="RC_right" to="." method="_on_RC_right_body_exited"]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Teto" to="." method="_on_Area2D_body_entered"]
 
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_exited" from="Teto" to="." method="_on_Area2D_body_exited"]
 
 

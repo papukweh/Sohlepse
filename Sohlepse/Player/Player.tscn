@@ -103,7 +103,7 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "gravity",
 ]]
 
@@ -129,8 +129,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head" index="0"]
 
-position = Vector2( 0.356158, -34.717 )
-scale = Vector2( 1.34705, 0.57061 )
+position = Vector2( 0.356158, -29.5812 )
+scale = Vector2( 1.34705, 0.981325 )
 shape = SubResource( 6 )
 
 [node name="sprite" type="Sprite" parent="." index="1"]

@@ -134,8 +134,8 @@ func _physics_process(delta):
 		siding_left = new_siding_left
 	
 	if ($RC_down.is_colliding() or $RC_down2.is_colliding()) and not platform:
-		print($RC_down.get_collider())
-		print("cao")
+		#print($RC_down.get_collider())
+		#print("cao")
 		on_air_time = 0
 		jumping = false
 

@@ -21,22 +21,28 @@ func _physics_process(delta):
 		if !objs.empty() and motion[1] != 0:
 			for i in objs.values():
 				if sign(i.velocity.y) != sign(d): 
-					i.GRAVITY = -10
+					i.GRAVITY = -2
 				else:
 					i.GRAVITY = 0
-				#i.position += $platform.get_linear_velocity()*delta
 				if i.get_name().begins_with("Player"):
 					if oneway:
-						i.position += $platform.get_linear_velocity()*delta
-					elif not i.jumping and i.jump:
 						i.position.y = $platform.global_position.y - 42
+					elif not i.jumping and i.jump:
+						i.position += $platform.get_linear_velocity()*delta
+				elif i.get_name().begins_with("Box"):
+					if oneway:
+						if !i.get_objs().empty():
+							for a in i.get_objs().values():
+								a.position.y = $platform.global_position.y - 86
+						i.position.y = $platform.global_position.y - 42
+					else:
+						i.position += $platform.get_linear_velocity()*delta
+						if !i.get_objs().empty():
+							for a in i.get_objs().values():
+								a.position += $platform.get_linear_velocity()*delta
 				else:
-					i.position.y = $platform.global_position.y - 36
-#				if i.get_name().begins_with("Box"):
-#					if !i.get_objs().empty():
-#						for a in i.get_objs().values():
-#							a.position += $platform.get_linear_velocity()*delta
-		
+					i.position += $platform.get_linear_velocity()*delta
+
 func onTriggered():
 	if activated == 1:
 		activated = 0
@@ -45,11 +51,14 @@ func onTriggered():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('gravity'):
+		if body.get_name().begins_with("Player") and oneway:
+			print("minhavel="+str(body.velocity.y))
+			if body.velocity.y <= 0:
+				return
 		print("botei no ash: "+body.get_name())
 		objs[body.get_name()] = body
 
 func _on_Area2D_body_exited(body):
-	
 	if body.is_in_group('gravity'):
 		if objs.has(body.get_name()):
 			print("tirei do ash: "+body.get_name())

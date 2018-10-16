@@ -73,7 +73,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 110.315, 413.927 )
+position = Vector2( 271.281, 609.14 )
 
 [node name="Endgoal" parent="." index="4" instance=ExtResource( 4 )]
 
@@ -98,7 +98,7 @@ position = Vector2( 644.768, 178.741 )
 
 [node name="Box" parent="." index="8" instance=ExtResource( 6 )]
 
-position = Vector2( 146.857, 522.995 )
+position = Vector2( 109.184, 242.163 )
 
 [node name="Move V" parent="." index="9" instance=ExtResource( 7 )]
 
