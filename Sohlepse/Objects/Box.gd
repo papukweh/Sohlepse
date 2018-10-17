@@ -70,4 +70,7 @@ func get_objs():
 	return objs
 		
 func falling():
-	return $Down.get_collider().get_name()=="Head"
+	if $Down.is_colliding():
+		return $Down.get_collider().get_name()=="Head"
+	else:
+		return false

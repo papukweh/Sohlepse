@@ -75,7 +75,7 @@ label = "Para gravação"
 
 [node name="Panel2" parent="." index="6" instance=ExtResource( 5 )]
 
-input = 4
+input = 5
 label = "Toca tudo"
 
 
