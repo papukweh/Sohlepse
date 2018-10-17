@@ -20,7 +20,6 @@ PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
 invert = true
-hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 

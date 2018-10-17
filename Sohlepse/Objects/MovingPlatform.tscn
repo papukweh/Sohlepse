@@ -18,7 +18,6 @@ extents = Vector2( 32.2953, 11.9587 )
 scale = Vector2( 1.5, 1 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-oneway = false
 activated = 0
 motion = Vector2( 0, 0 )
 cycle = 1.0

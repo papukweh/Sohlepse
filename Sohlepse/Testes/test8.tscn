@@ -58,7 +58,6 @@ position = Vector2( -1116.53, 75.5027 )
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 213.993, 533.657 )
-invert_horizontal = -1
 
 [node name="Real" type="ReferenceRect" parent="." index="4"]
 
@@ -112,7 +111,6 @@ position = Vector2( -976.487, 92.7488 )
 
 position = Vector2( -778, 650 )
 scale = Vector2( 2.25, 1 )
-oneway = false
 activated = 1
 motion = Vector2( 0, 110 )
 cycle = 4.0
@@ -123,7 +121,6 @@ cycle = 4.0
 
 position = Vector2( -640, 450 )
 scale = Vector2( 2.25, 1 )
-oneway = false
 activated = 1
 motion = Vector2( 0, 100 )
 cycle = 3.0
@@ -134,7 +131,6 @@ cycle = 3.0
 
 position = Vector2( -485, 350 )
 scale = Vector2( 2.25, 1 )
-oneway = false
 activated = 1
 motion = Vector2( 0, 110 )
 cycle = 2.0

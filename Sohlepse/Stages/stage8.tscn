@@ -116,7 +116,6 @@ position = Vector2( 320, -352 )
 position = Vector2( 700.735, -116.19 )
 scale = Vector2( -1.5, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
-oneway = false
 motion = Vector2( 140, 0 )
 cycle = 10.0
 
@@ -126,7 +125,6 @@ cycle = 10.0
 
 position = Vector2( 123.015, -393.044 )
 scale = Vector2( 1.25, 1 )
-oneway = false
 activated = 1
 motion = Vector2( 210, 0 )
 cycle = 10.0
@@ -137,7 +135,6 @@ cycle = 10.0
 
 position = Vector2( 369.929, -474.256 )
 scale = Vector2( 1.25, 1 )
-oneway = false
 activated = 1
 motion = Vector2( 250, 0 )
 cycle = 10.0
@@ -148,7 +145,6 @@ cycle = 10.0
 
 position = Vector2( 1101.93, -474.256 )
 scale = Vector2( -1.25, 1 )
-oneway = false
 activated = 1
 motion = Vector2( 250, 0 )
 cycle = 10.0
@@ -170,7 +166,6 @@ position = Vector2( 95.6028, -323.178 )
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 767, -308.142 )
-oneway = false
 activated = 1
 motion = Vector2( 225, 0 )
 cycle = 11.0
@@ -199,7 +194,6 @@ scale = Vector2( 1, 2 )
 [node name="MovingPlatform3" parent="Reality/Objects" index="13" instance=ExtResource( 5 )]
 
 position = Vector2( 1024, -224 )
-oneway = false
 
 [node name="Lever1" parent="Reality/Objects" index="14" instance=ExtResource( 8 )]
 

@@ -82,7 +82,6 @@ position = Vector2( 928.533, 535.853 )
 [node name="One way V" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 245.628, 485.103 )
-oneway = true
 motion = Vector2( 0, 200 )
 cycle = 10.0
 
