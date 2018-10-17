@@ -26,7 +26,7 @@ extents = Vector2( 32.3044, 10.1168 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 31.105, 10 )
+extents = Vector2( 31.105, 12.2945 )
 
 [node name="Thorns" type="Area2D"]
 
@@ -70,8 +70,8 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
-position = Vector2( 0.00627472, 10.3568 )
-scale = Vector2( 1.02956, 2.18522 )
+position = Vector2( 0.00627472, 9.36174 )
+scale = Vector2( 1.02956, 2.26176 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 

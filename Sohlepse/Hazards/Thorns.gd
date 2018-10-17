@@ -47,11 +47,13 @@ func onTriggered():
 		_on_Thorns_body_entered(who)
 
 func _on_Thorns_body_entered(body):
-	who = body
-	inside = true
-	if (on and body.get_name().begins_with("Player") and not body.dead):
-		body.die()
+	if body.get_name().begins_with("Player"):
+		who = body
+		inside = true
+		if (on and not body.dead):
+			body.die()
 
 
 func _on_Thorns_body_exited(body):
-	inside = false
+	if body.get_name().begins_with("Player"):
+		inside = false

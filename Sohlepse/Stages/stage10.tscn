@@ -85,26 +85,26 @@ invert_vertical = -1
 
 [node name="Objects" type="Node" parent="." index="4"]
 
-[node name="Wall" parent="Objects" index="0" groups=[
+[node name="Wall1" parent="Objects" index="0" groups=[
 "Lever1",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 209.641, -510.142 )
-scale = Vector2( 1, 1.98563 )
+position = Vector2( 209.641, -511.783 )
+scale = Vector2( 1, 2.00565 )
 
 [node name="Wall5" parent="Objects" index="1" groups=[
 "Lever1",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 209.332, 319.583 )
-scale = Vector2( 1, 1.91904 )
+position = Vector2( 209.332, 320.049 )
+scale = Vector2( 1, 2.00742 )
 begin = 1
 
 [node name="Wall2" parent="Objects" index="2" groups=[
 "Lever2",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 879.902, -317.016 )
+position = Vector2( 879.902, -320.016 )
 scale = Vector2( 1, 1.98563 )
 begin = 1
 
@@ -112,7 +112,7 @@ begin = 1
 "Lever2",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 868.401, 317.776 )
+position = Vector2( 868.401, 319.776 )
 scale = Vector2( 1, 1.98563 )
 
 [node name="Wall4" parent="Objects" index="4" groups=[
@@ -120,8 +120,8 @@ scale = Vector2( 1, 1.98563 )
 "Lever5",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 882.174, -126.162 )
-scale = Vector2( 1, 1.98563 )
+position = Vector2( 882.174, -127.817 )
+scale = Vector2( 1, 2.00608 )
 activation = 1
 
 [node name="Wall7" parent="Objects" index="5" groups=[
@@ -129,15 +129,15 @@ activation = 1
 "Lever3",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 874.442, 126.208 )
-scale = Vector2( 1, 1.98563 )
+position = Vector2( 874.442, 127.727 )
+scale = Vector2( 1, 2.00186 )
 activation = 1
 
 [node name="Wall3" parent="Objects" index="6" groups=[
 "Lever3",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 209.641, -317.016 )
+position = Vector2( 209.641, -320.016 )
 scale = Vector2( 1, 1.98563 )
 
 [node name="Lever2" parent="Objects" index="7" groups=[
