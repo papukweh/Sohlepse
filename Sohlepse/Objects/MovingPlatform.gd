@@ -21,30 +21,24 @@ func _physics_process(delta):
 		if !objs.empty(): #and motion[1] != 0:
 			for i in objs.values():
 				if !oneway:
-					if motion[1] != 0:
-						if sign(i.velocity.y) != sign(d): 
-							i.GRAVITY = -1
-						else:
-							i.GRAVITY = 0
+					if motion[1] != 0: 
+						i.GRAVITY = -0.01
 						#print("jump="+str(i.jump))
 						#print("jumping="+str(i.jumping))
-					i.position += 0.8*$platform.get_linear_velocity()*delta
+						i.position += 0.8*$platform.get_linear_velocity()*delta
 					#i.position.y = $platform.global_position.y - 42
 					if i.get_name().begins_with("Box"):
 						if !i.get_objs().empty():
 							for a in i.get_objs().values():
 								if motion[1] != 0:
-									a.GRAVITY = -1
+									a.GRAVITY = -0.01
 								a.position += 0.8*$platform.get_linear_velocity()*delta
 				else:
 					#print("sou onewat")
 					if motion[1] == 0:
 						i.GRAVITY = 0
 					else:
-						if sign(i.velocity.y) != sign(d): 
-							i.GRAVITY = -1
-						else:
-							i.GRAVITY = 0
+						i.GRAVITY = -0.01
 						#print("jump="+str(i.jump))
 						#print("jumping="+str(i.jumping))
 					i.position += $platform.get_linear_velocity()*delta
@@ -53,7 +47,7 @@ func _physics_process(delta):
 						if !i.get_objs().empty():
 							for a in i.get_objs().values():
 								if motion[1] != 0:
-									a.GRAVITY = -1
+									a.GRAVITY = -0.01
 									a.position += $platform.get_linear_velocity()*delta
 		
 func onTriggered():

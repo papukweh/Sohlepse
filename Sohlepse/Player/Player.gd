@@ -214,8 +214,7 @@ func _on_Head_body_entered(body):
 		else:
 			crushing = false
 	elif cls == "TileMap":
-		print(self.velocity)
-		if self.velocity.y < 0 and !jumping:
+		if self.GRAVITY < 0 and !jumping:
 			crushing = true
 			#print("being cccrushed")
 	elif cls == "KinematicBody2D":
