@@ -120,7 +120,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Box" parent="Reality/Objects" index="4" instance=ExtResource( 7 )]
 
-position = Vector2( 108, -1088.78 )
+position = Vector2( 97, -1088.78 )
 
 [node name="FallingFloor" parent="Reality/Objects" index="5" instance=ExtResource( 8 )]
 

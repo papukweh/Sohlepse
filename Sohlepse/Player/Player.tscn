@@ -4,10 +4,10 @@
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
-radius = 9.0047
+extents = Vector2( 8.45907, 15.0242 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -129,9 +129,9 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head" index="0"]
 
-position = Vector2( 2.65537, -42.909 )
-scale = Vector2( 2.0973, 0.461044 )
-shape = SubResource( 1 )
+position = Vector2( 1.10945, -28.212 )
+scale = Vector2( 2.7117, 0.461044 )
+shape = SubResource( 6 )
 
 [node name="sprite" type="Sprite" parent="." index="1"]
 
