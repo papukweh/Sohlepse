@@ -6,6 +6,7 @@ export var cycle = 1.0
 var accum = 0.0
 signal triggered
 onready var objs = Dictionary()
+onready var oneway = $platform/CollisionShape2D.one_way_collision
 
 func _physics_process(delta):
 	var d = 0
@@ -17,17 +18,37 @@ func _physics_process(delta):
 		xf[2]= motion * d 
 		$platform.transform = xf
 		
-		if !objs.empty() and motion[1] != 0:
+		if !objs.empty(): #and motion[1] != 0:
 			for i in objs.values():
-				if sign(i.velocity.y) != sign(d): 
-					i.GRAVITY = -10
+				if !oneway:
+					if sign(i.velocity.y) != sign(d): 
+						i.GRAVITY = -1
+					else:
+						i.GRAVITY = 0
+						#print("jump="+str(i.jump))
+						#print("jumping="+str(i.jumping))
+					i.position += 0.8*$platform.get_linear_velocity()*delta
+					#i.position.y = $platform.global_position.y - 42
+					if i.get_name().begins_with("Box"):
+						if !i.get_objs().empty():
+							for a in i.get_objs().values():
+								a.GRAVITY = -1
+								a.position += 0.8*$platform.get_linear_velocity()*delta
 				else:
-					i.GRAVITY = 0
-				i.position += $platform.get_linear_velocity()*delta
-				if i.get_name().begins_with("Box"):
-					if !i.get_objs().empty():
-						for a in i.get_objs().values():
-							a.position += $platform.get_linear_velocity()*delta
+					print("sou onewat")
+					if sign(i.velocity.y) != sign(d): 
+						i.GRAVITY = -1
+					else:
+						i.GRAVITY = 0
+						#print("jump="+str(i.jump))
+						#print("jumping="+str(i.jumping))
+					i.position += $platform.get_linear_velocity()*delta
+					#i.position.y = $platform.global_position.y - 42
+					if i.get_name().begins_with("Box"):
+						if !i.get_objs().empty():
+							for a in i.get_objs().values():
+								a.GRAVITY = -1
+								a.position += $platform.get_linear_velocity()*delta
 		
 func onTriggered():
 	if activated == 1:
@@ -38,6 +59,7 @@ func onTriggered():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('gravity'):
 		print("botei no ash: "+body.get_name())
+		body.position.y = $platform.global_position.y - 42
 		objs[body.get_name()] = body
 
 func _on_Area2D_body_exited(body):

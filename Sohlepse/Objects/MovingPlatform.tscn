@@ -3,12 +3,12 @@
 [ext_resource path="res://Objects/MovingPlatform.gd" type="Script" id=1]
 [ext_resource path="res://Assets/platform1.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 23.3567, 2.94384 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.2953, 11.9587 )
@@ -22,9 +22,7 @@ activated = 0
 motion = Vector2( 0, 0 )
 cycle = 1.0
 
-[node name="platform" type="RigidBody2D" parent="." index="0" groups=[
-"kill",
-]]
+[node name="platform" type="RigidBody2D" parent="." index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -60,7 +58,7 @@ audio_bus_name = "Master"
 
 position = Vector2( 0.0325597, -12.2661 )
 scale = Vector2( 1.3679, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="platform" index="1"]
 
@@ -70,7 +68,7 @@ texture = ExtResource( 2 )
 
 position = Vector2( 0.102165, 1.06243 )
 scale = Vector2( 0.997105, 0.928976 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [connection signal="body_entered" from="platform/Area2D" to="." method="_on_Area2D_body_entered"]
 

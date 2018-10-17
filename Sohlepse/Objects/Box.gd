@@ -5,6 +5,7 @@ export var invert_vertical = 1
 var GRAVITY = 700.0 # pixels/second/second
 var DEACCEL = 100.0
 var velocity = Vector2()
+var oldposy = 0
 onready var player = null
 onready var objs = Dictionary()
 
@@ -29,6 +30,7 @@ func _physics_process(delta):
 		velocity.x = 0
 		
 	velocity += force * delta	
+	oldposy = position.y
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func _on_RC_left_body_entered(body):
@@ -51,8 +53,12 @@ func _on_RC_right_body_exited(body):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('gravity') and body != self:
-		print("coloquei !!!!!")
-		objs[body.get_name()] = body
+		if body.get_name().begins_with("Player"):
+			if body.ground().get_name() == "Teto":
+				print("coloquei !!!!!")
+			else:
+				return
+			objs[body.get_name()] = body
 
 func _on_Area2D_body_exited(body):
 		if body.is_in_group('gravity') and body != self:
@@ -60,7 +66,7 @@ func _on_Area2D_body_exited(body):
 				objs.erase(body.get_name())
 
 func get_objs():
-	if invert_vertical == -1:
-		return objs
-	else:
-		return Dictionary()
+	return objs
+		
+func falling():
+	return $Down.get_collider().get_name()=="Head"
