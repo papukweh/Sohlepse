@@ -54,9 +54,10 @@ func _on_RC_right_body_exited(body):
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('gravity') and body != self:
 		if body.get_name().begins_with("Player"):
-			if body.ground().get_name() == "Teto":
-				print("coloquei !!!!!")
-			else:
+			var tmp = body.ground()
+			if (tmp[0] == null or tmp[1] == null):
+				return
+			if !(tmp[0].get_name() == "Teto" or tmp[1].get_name() == "Teto"):
 				return
 			objs[body.get_name()] = body
 

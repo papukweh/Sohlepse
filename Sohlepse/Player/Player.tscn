@@ -168,11 +168,11 @@ shape = SubResource( 3 )
 
 [node name="RC_down2" type="RayCast2D" parent="." index="3"]
 
-position = Vector2( 5.76923, 2.01001 )
+position = Vector2( 7, 2.01001 )
 scale = Vector2( 1, 1.02457 )
 enabled = true
 exclude_parent = true
-cast_to = Vector2( 0, 29 )
+cast_to = Vector2( 0, 27 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -198,11 +198,11 @@ MODE = 1
 
 [node name="RC_down" type="RayCast2D" parent="." index="6"]
 
-position = Vector2( -5.59441, 1.83518 )
+position = Vector2( -7, 1.83518 )
 scale = Vector2( 1, 1.02457 )
 enabled = true
 exclude_parent = true
-cast_to = Vector2( 0, 29 )
+cast_to = Vector2( 0, 27 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 __meta__ = {

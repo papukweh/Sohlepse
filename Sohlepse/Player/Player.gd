@@ -38,6 +38,7 @@ onready var time = 0.05
 onready var platform = false
 onready var initpos = self.get_position()
 onready var ready = true
+onready var carry = null
 
 func _ready():
 	if invert_vertical == -1:
@@ -138,6 +139,19 @@ func _physics_process(delta):
 #	# Integrate velocity into motion and move
 #	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
+	#print(carry)
+	var tmp = ground()
+	#print(tmp)
+	if tmp[0] != null and tmp[0].is_in_group('carry'):
+		carry = tmp[0].get_parent().get_parent()
+		carry.entered(self)
+	elif tmp[1] != null and tmp[1].is_in_group('carry'):
+		carry = tmp[1].get_parent().get_parent()
+		carry.entered(self)
+	elif carry != null:
+		carry.left(self)
+		carry = null
+
 	if ($RC_down.is_colliding() or $RC_down2.is_colliding()) and not platform:
 		#print("cao")
 		on_air_time = 0
@@ -177,8 +191,13 @@ func reset_position():
 	self.set_position(initpos)
 	
 func ground():
-	print($RC_down.get_collider().get_name())
-	return $RC_down.get_collider()
+	var r1 = null
+	var r2 = null
+	if ($RC_down.is_colliding()):
+		r1 = $RC_down.get_collider()
+	if ($RC_down2.is_colliding()):
+		r2 = $RC_down2.get_collider()
+	return [r1,r2]
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name.begins_with("Death"):

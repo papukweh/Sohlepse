@@ -9,6 +9,8 @@ onready var objs = Dictionary()
 onready var oneway = $platform/CollisionShape2D.one_way_collision
 
 func _physics_process(delta):
+	if motion[0] == motion[1] and motion[1] == 0:
+		return
 	var d = 0
 	var xf = Transform2D()
 	if activated == 0:
@@ -56,14 +58,32 @@ func onTriggered():
 	else:
 		activated = 1
 
+func entered(body):
+	if motion[0] == motion[1] and motion[1] == 0:
+		return
+	elif !objs.has(body.get_name()):
+		body.position.y = $platform.global_position.y - 42
+		objs[body.get_name()] = body
+	return
+	
+func left(body):
+	print("saiu")
+	if objs.has(body.get_name()):
+		body.GRAVITY = 700
+		objs.erase(body.get_name())
+
 func _on_Area2D_body_entered(body):
+	if motion[0] == motion[1] and motion[1] == 0:
+		return
 	if body.is_in_group('gravity'):
-		#print("botei no ash: "+body.get_name())
+		if body.get_name().begins_with("Player"):
+			return
 		body.position.y = $platform.global_position.y - 42
 		objs[body.get_name()] = body
 
 func _on_Area2D_body_exited(body):
-	
+	if motion[0] == motion[1] and motion[1] == 0:
+		return
 	if body.is_in_group('gravity'):
 		if objs.has(body.get_name()):
 			#print("tirei do ash: "+body.get_name())

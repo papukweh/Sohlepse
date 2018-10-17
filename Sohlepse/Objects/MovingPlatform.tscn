@@ -6,14 +6,14 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 23.3567, 2.94384 )
+extents = Vector2( 22.6244, 2.94384 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.2953, 11.9587 )
 
-[node name="MovingPlatform" type="Node2D"]
+[node name="MovingPlatform" type="Node2D" index="0"]
 
 scale = Vector2( 1.5, 1 )
 script = ExtResource( 1 )
@@ -44,7 +44,9 @@ angular_velocity = 0.0
 angular_damp = -1.0
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="platform" index="0"]
+[node name="Area2D" type="Area2D" parent="platform" index="0" groups=[
+"carry",
+]]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -56,7 +58,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform/Area2D" index="0"]
 
-position = Vector2( 0.0325597, -12.2661 )
+position = Vector2( -0.110537, -12.2661 )
 scale = Vector2( 1.3679, 1 )
 shape = SubResource( 1 )
 
