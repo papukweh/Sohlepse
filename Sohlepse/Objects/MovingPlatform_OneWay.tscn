@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 31.6711, 0.70306 )
+extents = Vector2( 31.6711, 1.23438 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -48,7 +48,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="platform" index="0"]
 
-position = Vector2( 0.647069, -13.9119 )
+position = Vector2( 0.647069, -15.0742 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -59,8 +59,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform/Area2D" index="0"]
 
-position = Vector2( -0.878015, 1.45082 )
-scale = Vector2( 1.01261, 3.16552 )
+position = Vector2( -0.619736, 3.00286 )
+scale = Vector2( 1.01261, 5.25734 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="platform" index="1"]

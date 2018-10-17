@@ -21,10 +21,11 @@ func _physics_process(delta):
 		if !objs.empty(): #and motion[1] != 0:
 			for i in objs.values():
 				if !oneway:
-					if sign(i.velocity.y) != sign(d): 
-						i.GRAVITY = -1
-					else:
-						i.GRAVITY = 0
+					if motion[1] != 0:
+						if sign(i.velocity.y) != sign(d): 
+							i.GRAVITY = -1
+						else:
+							i.GRAVITY = 0
 						#print("jump="+str(i.jump))
 						#print("jumping="+str(i.jumping))
 					i.position += 0.8*$platform.get_linear_velocity()*delta
@@ -32,14 +33,18 @@ func _physics_process(delta):
 					if i.get_name().begins_with("Box"):
 						if !i.get_objs().empty():
 							for a in i.get_objs().values():
-								a.GRAVITY = -1
+								if motion[1] != 0:
+									a.GRAVITY = -1
 								a.position += 0.8*$platform.get_linear_velocity()*delta
 				else:
-					print("sou onewat")
-					if sign(i.velocity.y) != sign(d): 
-						i.GRAVITY = -1
-					else:
+					#print("sou onewat")
+					if motion[1] == 0:
 						i.GRAVITY = 0
+					else:
+						if sign(i.velocity.y) != sign(d): 
+							i.GRAVITY = -1
+						else:
+							i.GRAVITY = 0
 						#print("jump="+str(i.jump))
 						#print("jumping="+str(i.jumping))
 					i.position += $platform.get_linear_velocity()*delta
@@ -47,8 +52,9 @@ func _physics_process(delta):
 					if i.get_name().begins_with("Box"):
 						if !i.get_objs().empty():
 							for a in i.get_objs().values():
-								a.GRAVITY = -1
-								a.position += $platform.get_linear_velocity()*delta
+								if motion[1] != 0:
+									a.GRAVITY = -1
+									a.position += $platform.get_linear_velocity()*delta
 		
 func onTriggered():
 	if activated == 1:
@@ -58,7 +64,7 @@ func onTriggered():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('gravity'):
-		print("botei no ash: "+body.get_name())
+		#print("botei no ash: "+body.get_name())
 		body.position.y = $platform.global_position.y - 42
 		objs[body.get_name()] = body
 
@@ -66,6 +72,6 @@ func _on_Area2D_body_exited(body):
 	
 	if body.is_in_group('gravity'):
 		if objs.has(body.get_name()):
-			print("tirei do ash: "+body.get_name())
+			#print("tirei do ash: "+body.get_name())
 			body.GRAVITY = 700
 			objs.erase(body.get_name())

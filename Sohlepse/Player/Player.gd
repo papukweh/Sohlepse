@@ -200,16 +200,16 @@ func _on_Head_body_entered(body):
 		crushing = false
 		return
 
-	print("tem um "+body.get_name()+" na minha cabeça")
+	#print("tem um "+body.get_name()+" na minha cabeça")
 	if cls == "RigidBody2D": 
 		if body.get_linear_velocity().y > 0:
 			if(!jumping):
-				print("no jump, being crushed")
+				#print("no jump, being crushed")
 				crushing = true
 		elif self.velocity.y < 0:
-			print("subindo")
+			#print("subindo")
 			if (!jumping):
-				print("mas no jump, being crushed")
+			#	print("mas no jump, being crushed")
 				crushing = true
 		else:
 			crushing = false
@@ -217,19 +217,19 @@ func _on_Head_body_entered(body):
 		print(self.velocity)
 		if self.velocity.y < 0 and !jumping:
 			crushing = true
-			print("being cccrushed")
+			#print("being cccrushed")
 	elif cls == "KinematicBody2D":
 		if body.get_name().begins_with("Box"):
 			if !jumping and body.falling():
-				print("boxcrsuh")
+				#print("boxcrsuh")
 				crushing = true
 		elif !jumping and body.velocity.y > 0:
 			if body.falling:
-				print("crcrcush")
+				#print("crcrcush")
 				crushing = true
 	else:
 		crushing = false
-		print("no crush "+cls)
+		#print("no crush "+cls)
 
 func _on_Head_body_exited(body):
 		if not (body.is_in_group('safe') or body.get_name().begins_with("Player")):
