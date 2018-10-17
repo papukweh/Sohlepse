@@ -58,7 +58,6 @@ position = Vector2( -1116.53, 75.5027 )
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 213.993, 533.657 )
-invert_horizontal = -1
 
 [node name="Real" type="ReferenceRect" parent="." index="4"]
 

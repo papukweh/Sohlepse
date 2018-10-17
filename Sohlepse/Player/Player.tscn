@@ -4,10 +4,10 @@
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
-radius = 9.0047
+extents = Vector2( 7.72532, 9.50457 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -103,7 +103,7 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "gravity",
 ]]
 
@@ -129,9 +129,9 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head" index="0"]
 
-position = Vector2( 2.65537, -42.909 )
-scale = Vector2( 2.0973, 0.461044 )
-shape = SubResource( 1 )
+position = Vector2( 0.356158, -29.5812 )
+scale = Vector2( 1.34705, 0.981325 )
+shape = SubResource( 6 )
 
 [node name="sprite" type="Sprite" parent="." index="1"]
 
@@ -168,16 +168,13 @@ shape = SubResource( 3 )
 
 [node name="RC_down2" type="RayCast2D" parent="." index="3"]
 
-position = Vector2( 5.76923, 2.01001 )
-scale = Vector2( 1, 1.02457 )
+position = Vector2( 5.76923, 0.00475764 )
+scale = Vector2( 1, 0.961906 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 29 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
@@ -198,16 +195,13 @@ MODE = 1
 
 [node name="RC_down" type="RayCast2D" parent="." index="6"]
 
-position = Vector2( -5.59441, 1.83518 )
-scale = Vector2( 1, 1.02457 )
+position = Vector2( -5.59441, 0.312622 )
+scale = Vector2( 1, 0.97699 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 29 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [connection signal="body_entered" from="Head" to="." method="_on_Head_body_entered"]
 

@@ -89,8 +89,8 @@ invert_horizontal = -1
 [node name="Reality" type="Node" parent="." index="4"]
 
 [node name="Wall4" parent="Reality" index="0" groups=[
-"ButtonInst3",
 "Lever2",
+"ButtonInst3",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( -864.083, 336.017 )

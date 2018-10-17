@@ -183,3 +183,5 @@ mp.mp_parent - pai de mp(?)
 
 chpriority = 45
 
+
+NÃO ESQUECER O DEFINE kernel/config.h
