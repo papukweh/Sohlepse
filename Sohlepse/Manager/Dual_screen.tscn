@@ -16,7 +16,7 @@ gradient = SubResource( 1 )
 width = 1000
 _sections_unfolded = [ "Resource" ]
 
-[node name="Setup" type="Node2D"]
+[node name="Setup" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -353,7 +353,6 @@ _sections_unfolded = [ "Audio Listener", "GUI", "Physics", "Render Target", "Ren
 
 [node name="Camera2D" type="Camera2D" parent="ViewportsH/C2/Viewport2" index="0"]
 
-rotation = 3.14159
 anchor_mode = 1
 rotating = false
 current = true
