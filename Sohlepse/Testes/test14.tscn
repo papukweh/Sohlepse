@@ -20,7 +20,6 @@ PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
 invert = true
-hasTutorial = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -298,14 +297,17 @@ scale = Vector2( 1, 1.01087 )
 [node name="ButtonInst" parent="Objects" index="7" instance=ExtResource( 9 )]
 
 position = Vector2( 256, 1149 )
+names = [ "Button", "Button1" ]
 
 [node name="ButtonInst3" parent="Objects" index="8" instance=ExtResource( 9 )]
 
 position = Vector2( 640, 1149 )
+names = [ "Button", "Button1" ]
 
 [node name="ButtonInst2" parent="Objects" index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 448, 1149 )
+names = [ "Button", "Button1" ]
 
 [node name="Lever" parent="Objects" index="10" groups=[
 "Lever",
