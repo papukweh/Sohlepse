@@ -30,6 +30,7 @@ func can_load(act, mode, invert):
 		camera2.target = world.get_node("Players/Player1")
 		set_camera1_limits(camera1)
 		if mode == 1:
+			camera2.zoom.x = -camera2.zoom.x
 			set_camera2_limits(camera2, 675)
 		else:
 			set_camera2_limits(camera2, 0)
@@ -42,7 +43,7 @@ func set_camera1_limits(cam1):
 	cam1.limit_bottom = map_limits.end.y
 func set_camera2_limits(cam2, desloc):
 	var map_limits = world.get_node("Mirrored").get_global_rect()
-	cam2.limit_left = map_limits.position.x - desloc
-	cam2.limit_right = map_limits.end.x + desloc
+	cam2.limit_left = map_limits.position.x + desloc
+	cam2.limit_right = map_limits.end.x - desloc
 	cam2.limit_top = map_limits.position.y
 	cam2.limit_bottom = map_limits.end.y
