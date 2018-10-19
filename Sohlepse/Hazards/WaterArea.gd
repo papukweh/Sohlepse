@@ -9,5 +9,5 @@ func _on_Area_body_entered(body):
 func _on_Area_body_exited(body):
 	if (body.get_name().begins_with("Player")):
 		body.in_terrain = body.in_terrain - 1
-		if (body.in_terrain == 0):
-			body.terrain = 1.0
+#		if (body.in_terrain == 0):
+#			body.terrain = 1.0

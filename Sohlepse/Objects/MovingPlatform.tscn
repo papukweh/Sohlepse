@@ -13,7 +13,7 @@ extents = Vector2( 22.6244, 2.94384 )
 custom_solver_bias = 0.0
 extents = Vector2( 32.2953, 11.9587 )
 
-[node name="MovingPlatform" type="Node2D" index="0"]
+[node name="MovingPlatform" type="Node2D"]
 
 scale = Vector2( 1.5, 1 )
 script = ExtResource( 1 )
