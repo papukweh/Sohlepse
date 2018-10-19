@@ -5,7 +5,6 @@ export var invert_vertical = 1
 var GRAVITY = 700.0 # pixels/second/second
 var DEACCEL = 100.0
 var velocity = Vector2()
-var oldposy = 0
 onready var player = null
 onready var objs = Dictionary()
 
@@ -20,7 +19,32 @@ func _process(delta):
 
 func _physics_process(delta):
 	var force = Vector2(0, invert_vertical * GRAVITY)
-	if player and player.is_interacting():
+
+	if player != null:
+		player.pushing = false
+		player = null
+	
+	var left = left()
+	#print(left)
+	for l in left:
+		print(l.get_name())
+		if l.get_name() == "Siding":
+			player = l.get_parent().get_parent()
+			break
+		player = null
+		player.pushing = false
+
+	var right = right()
+	#print(right)
+	if player == null:
+		for r in right:
+			if r.get_name() == "Siding":
+				player = r.get_parent().get_parent()
+				break
+			player = null
+			player.pushing = false
+
+	if player != null and player.is_interacting():
 		player.pushing = true
 		if player.moving_left():
 			velocity.x = -200
@@ -30,34 +54,39 @@ func _physics_process(delta):
 		velocity.x = 0
 		
 	velocity += force * delta	
-	oldposy = position.y
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-
-func _on_RC_left_body_entered(body):
-	if body.get_name().begins_with("Player") and body.view() == self:
-		player = body
-
-func _on_RC_left_body_exited(body):
-	if body.get_name().begins_with("Player"):
-		player = null
-		body.pushing = false
-
-func _on_RC_right_body_entered(body):
-	if body.get_name().begins_with("Player") and body.view() == self:
-		player = body
-
-func _on_RC_right_body_exited(body):
-	if body.get_name().begins_with("Player"):
-		player = null
-		body.pushing = false
+	
+#	if player != null:
+#		player.pushing = false
+#		player = null
+#
+#func _on_RC_left_body_entered(body):
+#	if body.get_name().begins_with("Player") and body.view() == self:
+#		player = body
+#
+#func _on_RC_left_body_exited(body):
+#	if body.get_name().begins_with("Player"):
+#		player = null
+#		body.pushing = false
+#
+#func _on_RC_right_body_entered(body):
+#	if body.get_name().begins_with("Player") and body.view() == self:
+#		player = body
+#
+#func _on_RC_right_body_exited(body):
+#	if body.get_name().begins_with("Player"):
+#		player = null
+#		body.pushing = false
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('gravity') and body != self:
 		if body.get_name().begins_with("Player"):
 			var tmp = body.ground()
-			if (tmp[0] == null or tmp[1] == null):
-				return
-			if !(tmp[0].get_name() == "Teto" or tmp[1].get_name() == "Teto"):
+			var confirm = false
+			for t in tmp[1]:
+				if t.get_name() == "Teto":
+					confirm = true
+			if not confirm:
 				return
 			objs[body.get_name()] = body
 
@@ -74,3 +103,9 @@ func falling():
 		return $Down.get_collider().get_name()=="Head"
 	else:
 		return false
+		
+func left():
+	return $RC_left.get_overlapping_areas()
+	
+func right():
+	return $RC_right.get_overlapping_areas()

@@ -100,13 +100,13 @@ position = Vector2( 644.768, 178.741 )
 
 [node name="Box" parent="." index="8" instance=ExtResource( 6 )]
 
-position = Vector2( 769.929, 330.767 )
+position = Vector2( 131.467, 360.377 )
 
 [node name="Move V" parent="." index="9" instance=ExtResource( 7 )]
 
-position = Vector2( 419.073, 420.373 )
+position = Vector2( 450.501, 401.032 )
 motion = Vector2( 0, 400 )
-cycle = 10.0
+cycle = 20.0
 
 [node name="Move H" parent="." index="10" instance=ExtResource( 7 )]
 
@@ -124,12 +124,12 @@ position = Vector2( 364.277, 250.105 )
 scale = Vector2( 1.59329, 1 )
 
 [node name="Wall1" parent="." index="13" groups=[
-"Lever2",
-"Button1",
 "Lever1",
+"Button1",
+"Lever2",
 ] instance=ExtResource( 9 )]
 
-position = Vector2( 464.266, 515.016 )
+position = Vector2( 573.859, 528.715 )
 scale = Vector2( 1, 1.59548 )
 activation = 1
 

@@ -67,7 +67,7 @@ func entered(body):
 	return
 	
 func left(body):
-	print("saiu")
+	#print("saiu")
 	if objs.has(body.get_name()):
 		body.GRAVITY = 700
 		objs.erase(body.get_name())
