@@ -1,0 +1,269 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Stages/Stage.gd" type="Script" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/FakeEndgoal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/MovingPlatform_OneWay.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Hazards/FallingFloor.tscn" type="PackedScene" id=11]
+
+[node name="stage15" type="Node" index="0"]
+
+script = ExtResource( 1 )
+ACT = 2
+PLAYERS = 1
+MAX_CLONES = 3
+MODE = 2
+invert = false
+hasTutorial = null
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1048576, 1, 0, -983040, 1, 0, -917504, 1, 0, -851968, 1, 0, -786432, 1, 0, -720896, 1, 0, -655360, 1, 0, -589824, 1, 0, -524288, 1, 0, -458752, 1, 0, -393216, 1, 0, -327680, 1, 0, -327627, 0, 0, -327626, 0, 0, -327625, 0, 0, -327624, 0, 0, -327623, 0, 0, -327622, 0, 0, -327621, 0, 0, -327620, 0, 0, -327619, 0, 0, -327618, 0, 0, -327617, 0, 0, -327616, 0, 0, -327615, 0, 0, -262144, 1, 0, -262094, 0, 0, -262093, 0, 0, -262092, 0, 0, -262091, 3, 0, -262090, 3, 0, -262089, 3, 0, -262088, 3, 0, -262087, 3, 0, -262086, 3, 0, -262085, 3, 0, -262084, 3, 0, -262083, 3, 0, -262082, 3, 0, -262081, 3, 0, -262080, 3, 0, -262079, 3, 0, -196608, 1, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -196582, 0, 0, -196581, 0, 0, -196580, 0, 0, -196578, 0, 0, -196577, 0, 0, -196576, 0, 0, -196575, 0, 0, -196574, 0, 0, -196573, 0, 0, -196572, 0, 0, -196571, 0, 0, -196570, 0, 0, -196569, 0, 0, -196568, 0, 0, -196567, 0, 0, -196566, 0, 0, -196558, 3, 0, -196557, 3, 0, -196556, 3, 0, -196555, 3, 0, -196554, 3, 0, -196553, 3, 0, -196552, 3, 0, -196551, 3, 0, -196550, 3, 0, -196549, 3, 0, -196548, 3, 0, -196547, 3, 0, -196546, 3, 0, -196545, 3, 0, -196544, 3, 0, -196543, 3, 0, -131072, 1, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 3, 0, -131056, 3, 0, -131055, 3, 0, -131054, 3, 0, -131046, 3, 0, -131045, 3, 0, -131044, 3, 0, -131043, 3, 0, -131042, 3, 0, -131041, 3, 0, -131040, 3, 0, -131039, 3, 0, -131038, 3, 0, -131037, 3, 0, -131036, 3, 0, -131035, 3, 0, -131034, 3, 0, -131033, 3, 0, -131032, 3, 0, -131031, 3, 0, -131030, 3, 0, -131029, 3, 0, -131028, 3, 0, -131027, 3, 0, -131026, 3, 0, -131025, 3, 0, -131024, 3, 0, -131023, 3, 0, -131022, 3, 0, -131021, 3, 0, -131020, 3, 0, -131019, 3, 0, -131018, 3, 0, -131017, 3, 0, -131016, 3, 0, -131015, 3, 0, -131014, 3, 0, -131013, 3, 0, -131012, 3, 0, -131011, 3, 0, -131010, 3, 0, -131009, 3, 0, -131008, 3, 0, -131007, 3, 0, -65536, 1, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 3, 0, -65528, 3, 0, -65527, 3, 0, -65526, 3, 0, -65525, 3, 0, -65524, 3, 0, -65523, 3, 0, -65522, 3, 0, -65521, 3, 0, -65520, 3, 0, -65519, 3, 0, -65518, 3, 0, -65517, 3, 0, -65516, 3, 0, -65515, 3, 0, -65514, 3, 0, -65513, 3, 0, -65512, 3, 0, -65511, 3, 0, -65510, 3, 0, -65509, 3, 0, -65508, 3, 0, -65507, 3, 0, -65506, 3, 0, -65505, 3, 0, -65504, 3, 0, -65503, 3, 0, -65502, 3, 0, -65501, 3, 0, -65500, 3, 0, -65499, 3, 0, -65498, 3, 0, -65497, 3, 0, -65496, 3, 0, -65495, 3, 0, -65494, 3, 0, -65493, 3, 0, -65492, 3, 0, -65491, 3, 0, -65490, 3, 0, -65489, 3, 0, -65488, 3, 0, -65487, 3, 0, -65486, 3, 0, -65485, 3, 0, -65484, 3, 0, -65483, 3, 0, -65482, 3, 0, -65481, 3, 0, -65480, 3, 0, -65479, 3, 0, -65478, 3, 0, -65477, 3, 0, -65476, 3, 0, -65475, 3, 0, -65474, 3, 0, -65473, 3, 0, -65472, 3, 0, -65471, 3, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Real" type="ReferenceRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -576.0
+margin_right = 4192.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Mirrored" type="ReferenceRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 736.0
+margin_top = 1216.0
+margin_right = 3488.0
+margin_bottom = 1960.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 1024, -224 )
+
+[node name="Reality" type="Node" parent="." index="4"]
+
+[node name="Objects" type="Node" parent="Reality" index="0"]
+
+[node name="Wall1" parent="Reality/Objects" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 943.853, -352.22 )
+scale = Vector2( 1, 6.99314 )
+
+[node name="Wall2" parent="Reality/Objects" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 320, -352 )
+scale = Vector2( 1, 7 )
+
+[node name="Wall3" parent="Reality/Objects" index="2" groups=[
+"Button4",
+"Button1",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 2112, -383.592 )
+scale = Vector2( 1, -6.01276 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Wall4" parent="Reality/Objects" index="3" groups=[
+"Button1",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 1888.64, -603.807 )
+rotation = 1.5708
+scale = Vector2( 0.25, 1.13089 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Wall5" parent="Reality/Objects" index="4" groups=[
+"Button1",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 3360, -415.796 )
+scale = Vector2( 1, -5.00638 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="MovingPlatform" parent="Reality/Objects" index="5" groups=[
+"Button2",
+"Button1",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 1888.46, -58.8593 )
+activated = 1
+motion = Vector2( 0, -200 )
+cycle = 15.0
+
+[node name="MovingPlatform2" parent="Reality/Objects" index="6" groups=[
+"Button3",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 3091.32, -142.444 )
+scale = Vector2( 1.49285, 1 )
+activated = 1
+motion = Vector2( 0, -200 )
+cycle = 15.0
+
+[node name="Box" parent="Reality/Objects" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 1888, -640 )
+
+[node name="Box2" parent="Reality/Objects" index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 2528, -672 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Button1" parent="Reality/Objects" index="9" groups=[
+"Button",
+"Button1",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 1887.65, -130.204 )
+names = [ "Button", "Button1" ]
+
+[node name="Button2" parent="Reality/Objects" index="10" groups=[
+"Button2",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 2400.21, -195.453 )
+names = [ "Button", "Button1" ]
+
+[node name="Button4" parent="Reality/Objects" index="11" groups=[
+"Button4",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 2528.51, -195.056 )
+names = [ "Button", "Button1" ]
+
+[node name="Button3" parent="Reality/Objects" index="12" groups=[
+"Button3",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 2784, -160 )
+collision_layer = 2
+collision_mask = 2
+_sections_unfolded = [ "Collision" ]
+names = [ "Button", "Button1" ]
+
+[node name="FakeEndgoal" parent="Reality/Objects" index="13" instance=ExtResource( 8 )]
+
+position = Vector2( 384, -160.663 )
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MovingPlatform3" parent="Reality/Objects" index="14" groups=[
+"Button2",
+"Button1",
+] instance=ExtResource( 9 )]
+
+position = Vector2( 2528, -608 )
+activated = 1
+motion = Vector2( 0, 500 )
+cycle = 10.0
+
+[node name="Hazards" type="Node" parent="Reality" index="1"]
+
+[node name="Lava1" parent="Reality/Hazards" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 1248, -77.9666 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Lava2" parent="Reality/Hazards" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( 1312, -77.9666 )
+
+[node name="Lava3" parent="Reality/Hazards" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 1376, -77.9666 )
+
+[node name="Lava4" parent="Reality/Hazards" index="3" instance=ExtResource( 10 )]
+
+position = Vector2( 1568, -77.9666 )
+
+[node name="Lava5" parent="Reality/Hazards" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 1440, -77.9666 )
+
+[node name="Lava6" parent="Reality/Hazards" index="5" instance=ExtResource( 10 )]
+
+position = Vector2( 1504, -77.9666 )
+
+[node name="Lava7" parent="Reality/Hazards" index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 1632, -77.9666 )
+
+[node name="FallingFloor1" parent="Reality/Hazards" index="7" instance=ExtResource( 11 )]
+
+position = Vector2( 1439, -160 )
+
+[node name="Lava8" parent="Reality/Hazards" index="8" instance=ExtResource( 10 )]
+
+position = Vector2( 2848, -160 )
+
+[node name="Lava12" parent="Reality/Hazards" index="9" instance=ExtResource( 10 )]
+
+position = Vector2( 2784, -160 )
+
+[node name="Lava10" parent="Reality/Hazards" index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 2912, -160 )
+
+[node name="Lava9" parent="Reality/Hazards" index="11" instance=ExtResource( 10 )]
+
+position = Vector2( 3104, -160 )
+
+[node name="Lava13" parent="Reality/Hazards" index="12" instance=ExtResource( 10 )]
+
+position = Vector2( 2976, -160 )
+
+[node name="Lava11" parent="Reality/Hazards" index="13" instance=ExtResource( 10 )]
+
+position = Vector2( 3040, -160 )
+
+[node name="Lava14" parent="Reality/Hazards" index="14" instance=ExtResource( 10 )]
+
+position = Vector2( 3168, -160 )
+
+[node name="Mirror" type="Node" parent="." index="5"]
+
+

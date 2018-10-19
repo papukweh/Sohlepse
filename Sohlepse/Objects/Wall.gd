@@ -18,17 +18,18 @@ func _ready():
 		$CollisionShape2D.disabled = false
 		active = true
 	
-	for g in self.get_groups():
-		if !g.begins_with("root"):
-			bcount = bcount + 1
-	if bcount == 1:
-		$AnimatedSprite.animation = "10"
-	elif bcount == 2:
-		$AnimatedSprite.animation = "20"
-	elif bcount == 3:
-		$AnimatedSprite.animation = "30"
-	else:
-		print("Invalid number of buttons for " + self.name)
+	if activation != 0:
+		for g in self.get_groups():
+			if !g.begins_with("root"):
+				bcount = bcount + 1
+		if bcount == 1:
+			$AnimatedSprite.animation = "10"
+		elif bcount == 2:
+			$AnimatedSprite.animation = "20"
+		elif bcount == 3:
+			$AnimatedSprite.animation = "30"
+		else:
+			print("Invalid number of buttons for " + self.name)
 
 func onTriggered():
 	var trigger = true
@@ -37,6 +38,7 @@ func onTriggered():
 		for g in self.get_groups():
 			if !g.begins_with("root"):
 				for n in get_tree().get_nodes_in_group(g):
+					print(n.get_name())
 #					$AnimatedSprite.animation = str(int($AnimatedSprite.animation) + 1)
 #					print($AnimatedSprite.animation)
 					#print(n.activated)

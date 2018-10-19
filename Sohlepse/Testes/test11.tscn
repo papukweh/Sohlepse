@@ -119,7 +119,7 @@ scale = Vector2( 1, 4.00797 )
 "Lever1",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( -496.033, 192.6 )
+position = Vector2( -491.489, 197.144 )
 scale = Vector2( 1, 3.97908 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
@@ -169,16 +169,19 @@ position = Vector2( -2556.48, 155.576 )
 [node name="ButtonInst" parent="Mirror" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 766.966, 316.836 )
+names = [ "Button", "Button1" ]
 
 [node name="ButtonInst3" parent="Mirror" index="1" groups=[
 "ButtonInst3",
 ] instance=ExtResource( 7 )]
 
 position = Vector2( 956.778, 317.219 )
+names = [ "Button", "Button1" ]
 
 [node name="ButtonInst2" parent="Mirror" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 1058.4, 317.443 )
+names = [ "Button", "Button1" ]
 
 [node name="Box" parent="Mirror" index="3" instance=ExtResource( 8 )]
 

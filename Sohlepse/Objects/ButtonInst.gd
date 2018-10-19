@@ -4,15 +4,25 @@ onready var sig = get_name()
 onready var activated = false
 onready var transmitter = true
 onready var cbody = 0
+export var names = []
 
 signal hit
 signal out
 signal triggered
 
 func _ready():
-	for n in get_tree().get_nodes_in_group(sig):
-		print("connecting "+sig+" to "+n.get_name())
-		connect("triggered", n, "onTriggered")
+	print(names)
+	if !names.empty():
+		print("not null")
+		for name in names:
+			for n in get_tree().get_nodes_in_group(name):
+				print("connecting "+name+" to "+n.get_name())
+				connect("triggered", n, "onTriggered")
+	else:
+		print("is null")
+		for n in get_tree().get_nodes_in_group(sig):
+			print("connecting "+sig+" to "+n.get_name())
+			connect("triggered", n, "onTriggered")
 	$AnimatedSprite.animation = "default"
 	$CollisionShape2D.disabled = false
 
