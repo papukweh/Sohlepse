@@ -13,7 +13,7 @@
 [ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=12]
 
-[node name="stage15" index="0" instance=ExtResource( 1 )]
+[node name="stage16" index="0" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
