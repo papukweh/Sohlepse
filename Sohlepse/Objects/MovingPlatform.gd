@@ -75,7 +75,7 @@ func left(body):
 func _on_Area2D_body_entered(body):
 	if motion[0] == motion[1] and motion[1] == 0:
 		return
-	if body.is_in_group('gravity'):
+	if body.is_in_group('gravity') and oneway:
 		if body.get_name().begins_with("Player"):
 			return
 		body.position.y = $platform.global_position.y - 42
