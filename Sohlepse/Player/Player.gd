@@ -54,15 +54,7 @@ func _process(delta):
 		_ready()
 	if dead:
 		return
-		
-	if not crushing:
-		time = 0.05
-	if crushing:
-		time -= delta
-	
-	if time <= 0:
-		die()
-		
+			
 	if Input.is_action_just_pressed("change-v"):
 		invert_vertical *= -1
 		self.rotate(PI)
@@ -78,6 +70,60 @@ func _physics_process(delta):
 	# Create forces
 	var force = Vector2(0, invert_vertical*GRAVITY)
 	var stop = true
+
+	var opa = siding()
+	for a in opa:
+		if a == self:
+			continue
+		elif a.get_name().begins_with("Box"):
+			view = a
+			break
+
+	var head = head()
+	for body in head:
+		#print(body.get_name())
+		var cls = body.get_class()
+
+		if body.is_in_group('safe') or body.get_name().begins_with("Player"):
+			continue
+
+		#print("tem um "+body.get_name()+" na minha cabeça")
+		if cls == "RigidBody2D": 
+			if body.get_linear_velocity().y > 0:
+				if(!jumping):
+					#print("no jump, being crushed")
+					crushing = true
+			elif self.velocity.y < 0:
+				#print("subindo")
+				if (!jumping):
+				#	print("mas no jump, being crushed")
+					crushing = true
+			else:
+				crushing = false
+		elif cls == "TileMap":
+			if self.GRAVITY < 0 and !jumping:
+				crushing = true
+				#print("being cccrushed")
+		elif cls == "KinematicBody2D":
+			if body.get_name().begins_with("Box"):
+				if !jumping and body.falling():
+					#print("boxcrsuh")
+					crushing = true
+			elif !jumping and body.velocity.y > 0:
+				if body.falling:
+					#print("crcrcush")
+					crushing = true
+		else:
+			crushing = false
+			#print("no crush "+cls)
+			
+	if not crushing:
+		time = 0.05
+	if crushing:
+		time -= delta
+	
+	if time <= 0:
+		die()
 	
 	if on_act3:
 		if Input.is_action_just_pressed("record"):
@@ -141,24 +187,36 @@ func _physics_process(delta):
 	
 	#print(carry)
 	var tmp = ground()
+	var nope = true
 	#print(tmp)
-	if tmp[0] != null and tmp[0].is_in_group('carry'):
-		carry = tmp[0].get_parent().get_parent()
-		carry.entered(self)
-	elif tmp[1] != null and tmp[1].is_in_group('carry'):
-		carry = tmp[1].get_parent().get_parent()
-		carry.entered(self)
-	elif carry != null:
+	for i in tmp[1]:
+			if i.is_in_group('carry'):
+				carry = i.get_parent().get_parent()
+				carry.entered(self)
+				nope = false
+	
+	if nope and carry != null:
 		carry.left(self)
-		carry = null
+		
+#	if tmp[0] != null and tmp[0].is_in_group('carry'):
+#		carry = tmp[0].get_parent().get_parent()
+#		carry.entered(self)
+#	elif tmp[1] != null and tmp[1].is_in_group('carry'):
+#		carry = tmp[1].get_parent().get_parent()
+#		carry.entered(self)
+#	elif carry != null:
+#		carry.left(self)
+#		carry = null
 
-	if ($RC_down.is_colliding() or $RC_down2.is_colliding()) and not platform:
-		#print("cao")
+	if (tmp[0].size() > 1 and not platform or in_terrain == 0 and terrain != 1):
+		#print("enterando")
 		on_air_time = 0
 		jumping = false
+		if (in_terrain == 0):
+			terrain = 1
 
-	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping:
-		print(on_air_time)
+	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and not jumping and jump) or (in_terrain > 0 and jump):
+		#print(on_air_time)
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -invert_vertical * JUMP_SPEED * terrain
@@ -176,9 +234,6 @@ func moving_left():
 func moving_right():
 	return move_right and not move_left
 	
-func view():
-	return view
-	
 func die():
 	dead = true
 	$CollisionShape2D.disabled = true
@@ -191,13 +246,7 @@ func reset_position():
 	self.set_position(initpos)
 	
 func ground():
-	var r1 = null
-	var r2 = null
-	if ($RC_down.is_colliding()):
-		r1 = $RC_down.get_collider()
-	if ($RC_down2.is_colliding()):
-		r2 = $RC_down2.get_collider()
-	return [r1,r2]
+	return [$Feet.get_overlapping_bodies(), $Feet.get_overlapping_areas()]
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name.begins_with("Death"):
@@ -206,49 +255,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func is_interacting():
 	return interacting
 
-func _on_Siding_body_entered(body):
-	view = body
+func view():
+	return view
 
-func _on_Siding_body_exited(body):
-	view = null
+func siding():
+	return $sprite/Siding.get_overlapping_bodies()
+	
+func head():
+	return $Head.get_overlapping_bodies()
 
-func _on_Head_body_entered(body):
-	var cls = body.get_class()
-
-	if body.is_in_group('safe') or body.get_name().begins_with("Player"):
-		crushing = false
-		return
-
-	#print("tem um "+body.get_name()+" na minha cabeça")
-	if cls == "RigidBody2D": 
-		if body.get_linear_velocity().y > 0:
-			if(!jumping):
-				#print("no jump, being crushed")
-				crushing = true
-		elif self.velocity.y < 0:
-			#print("subindo")
-			if (!jumping):
-			#	print("mas no jump, being crushed")
-				crushing = true
-		else:
-			crushing = false
-	elif cls == "TileMap":
-		if self.GRAVITY < 0 and !jumping:
-			crushing = true
-			#print("being cccrushed")
-	elif cls == "KinematicBody2D":
-		if body.get_name().begins_with("Box"):
-			if !jumping and body.falling():
-				#print("boxcrsuh")
-				crushing = true
-		elif !jumping and body.velocity.y > 0:
-			if body.falling:
-				#print("crcrcush")
-				crushing = true
-	else:
-		crushing = false
-		#print("no crush "+cls)
-
-func _on_Head_body_exited(body):
-		if not (body.is_in_group('safe') or body.get_name().begins_with("Player")):
-			crushing = false
