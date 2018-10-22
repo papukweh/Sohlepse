@@ -45,7 +45,9 @@ func onTriggered():
 					if n.transmitter and !n.activated:
 						trigger = false
 					elif n.transmitter and n.activated:
+						print("entrei")
 						active_buttons += 1
+		print("ativados: " + str(active_buttons))
 		if bcount == 2 and active_buttons != 2:
 			$AnimatedSprite.animation = str(20+active_buttons)
 		elif bcount == 3 and active_buttons != 3:

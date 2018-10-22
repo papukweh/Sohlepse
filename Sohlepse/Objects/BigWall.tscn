@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Wall.gd" type="Script" id=1]
-[ext_resource path="res://Assets/actionable_wall_2b.png" type="Texture" id=2]
-[ext_resource path="res://Assets/actionable_wall_3a.png" type="Texture" id=3]
-[ext_resource path="res://Assets/actionable_wall_2a.png" type="Texture" id=4]
-[ext_resource path="res://Assets/actionable_wall_3c.png" type="Texture" id=5]
-[ext_resource path="res://Assets/actionable_wall_3b.png" type="Texture" id=6]
-[ext_resource path="res://Assets/actionable_wall.png" type="Texture" id=7]
+[ext_resource path="res://Assets/big_actionable_wall_2b.png" type="Texture" id=2]
+[ext_resource path="res://Assets/big_actionable_wall_3a.png" type="Texture" id=3]
+[ext_resource path="res://Assets/big_actionable_wall_2a.png" type="Texture" id=4]
+[ext_resource path="res://Assets/big_actionable_wall_3c.png" type="Texture" id=5]
+[ext_resource path="res://Assets/big_actionable_wall_3b.png" type="Texture" id=6]
+[ext_resource path="res://Assets/big_actionable_wall.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -45,9 +45,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.96182, 10 )
+extents = Vector2( 9.96182, 69.8504 )
 
-[node name="Wall" type="StaticBody2D" index="0"]
+[node name="Wall" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1

@@ -4,7 +4,8 @@ onready var sig = get_name()
 onready var activated = false
 onready var transmitter = true
 onready var cbody = 0
-export var names = []
+export(Array, String) var names = []
+
 
 signal hit
 signal out
@@ -12,7 +13,7 @@ signal triggered
 
 func _ready():
 	print(names)
-	if !names.empty():
+	if names != null:
 		print("not null")
 		for name in names:
 			for n in get_tree().get_nodes_in_group(name):

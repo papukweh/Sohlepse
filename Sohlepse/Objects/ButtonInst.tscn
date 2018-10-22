@@ -28,7 +28,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="ButtonInst" type="StaticBody2D" index="0"]
+[node name="ButtonInst" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -38,7 +38,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
-names = [  ]
+names = null
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
@@ -77,5 +77,6 @@ _sections_unfolded = [ "Transform" ]
 [connection signal="body_entered" from="Area2D" to="." method="_on_ButtonInst_hit"]
 
 [connection signal="body_exited" from="Area2D" to="." method="_on_ButtonInst_out"]
+
 
 
