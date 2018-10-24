@@ -28,7 +28,7 @@ extents = Vector2( 32.3044, 10.1168 )
 custom_solver_bias = 0.0
 extents = Vector2( 31.105, 12.2945 )
 
-[node name="Thorns" type="Area2D" index="0"]
+[node name="Thorns" type="Area2D"]
 
 scale = Vector2( 1, 1.265 )
 input_pickable = true
