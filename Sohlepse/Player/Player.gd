@@ -75,7 +75,7 @@ func _physics_process(delta):
 	for a in opa:
 		if a == self:
 			continue
-		elif a.get_name().begins_with("Box"):
+		elif a.get_name().begins_with("Box") or a.get_class() == "TileMap":
 			view = a
 			break
 
@@ -93,7 +93,7 @@ func _physics_process(delta):
 				if(!jumping):
 					#print("no jump, being crushed")
 					crushing = true
-			elif self.velocity.y < 0:
+			elif self.GRAVITY < 0:
 				#print("subindo")
 				if (!jumping):
 				#	print("mas no jump, being crushed")
@@ -101,7 +101,7 @@ func _physics_process(delta):
 			else:
 				crushing = false
 		elif cls == "TileMap":
-			if self.GRAVITY < 0 and !jumping:
+			if self.GRAVITY < 0 and !jumping and view != body:
 				crushing = true
 				#print("being cccrushed")
 		elif cls == "KinematicBody2D":

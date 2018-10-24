@@ -97,22 +97,36 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( 0, -27 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="4"]
+[node name="Down" type="Area2D" parent="." index="4"]
+
+scale = Vector2( 1, -1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down" index="0"]
+
+position = Vector2( 0, -25 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="5"]
 
 position = Vector2( 0.0109762, 0.00458836 )
 scale = Vector2( 3.40759, 2.91697 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Down" type="RayCast2D" parent="." index="5"]
-
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 25 )
-collision_mask = 1
-
 [connection signal="body_entered" from="Teto" to="." method="_on_Area2D_body_entered"]
 
 [connection signal="body_exited" from="Teto" to="." method="_on_Area2D_body_exited"]
+
+[connection signal="body_entered" from="Down" to="." method="_on_Area2D_body_entered"]
+
+[connection signal="body_exited" from="Down" to="." method="_on_Area2D_body_exited"]
 
 
