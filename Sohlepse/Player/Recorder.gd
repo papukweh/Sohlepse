@@ -23,7 +23,7 @@ func start_recording(body):
 	if pos.size() < MAX:
 		player = body
 		realplayer = body
-		initial_pos = player.get_position()
+		initial_pos = player.get_global_position()
 		states = []
 		recording = true
 

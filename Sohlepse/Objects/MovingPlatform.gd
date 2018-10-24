@@ -59,6 +59,7 @@ func onTriggered():
 		activated = 1
 
 func entered(body):
+	#print(body.get_name()+" entrou em "+self.get_name())
 	if motion[0] == motion[1] and motion[1] == 0:
 		return
 	elif !objs.has(body.get_name()):
@@ -67,7 +68,7 @@ func entered(body):
 	return
 	
 func left(body):
-	#print("saiu")
+	body.GRAVITY = 700
 	if objs.has(body.get_name()):
 		body.GRAVITY = 700
 		objs.erase(body.get_name())
@@ -85,6 +86,8 @@ func _on_Area2D_body_exited(body):
 	if motion[0] == motion[1] and motion[1] == 0:
 		return
 	if body.is_in_group('gravity'):
+		if body.get_name().begins_with("Player"):
+			return
 		if objs.has(body.get_name()):
 			#print("tirei do ash: "+body.get_name())
 			body.GRAVITY = 700

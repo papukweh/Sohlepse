@@ -14,7 +14,7 @@
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=13]
 
-[node name="stage12" instance=ExtResource( 1 )]
+[node name="stage16" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -71,7 +71,7 @@ scale = Vector2( 1, 1.25914 )
 "ButtonInst6",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 979.809, 116.654 )
+position = Vector2( 979.809, 117.654 )
 scale = Vector2( 1, 3.97613 )
 
 [node name="Wall2" parent="Reality/Objects" index="2" groups=[

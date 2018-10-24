@@ -31,8 +31,9 @@ func _physics_process(delta):
 		if l.get_name() == "Siding":
 			player = l.get_parent().get_parent()
 			break
-		player = null
-		player.pushing = false
+		if player:
+			player.pushing = false
+			player = null
 
 	var right = right()
 	#print(right)
@@ -41,8 +42,9 @@ func _physics_process(delta):
 			if r.get_name() == "Siding":
 				player = r.get_parent().get_parent()
 				break
-			player = null
-			player.pushing = false
+			if player:
+				player.pushing = false
+				player = null
 
 	if player != null and player.is_interacting():
 		player.pushing = true

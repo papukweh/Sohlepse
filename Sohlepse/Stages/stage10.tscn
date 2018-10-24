@@ -125,8 +125,8 @@ scale = Vector2( 1, 2.00608 )
 activation = 1
 
 [node name="Wall7" parent="Objects" index="5" groups=[
-"Lever3",
 "Lever6",
+"Lever3",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 874.442, 127.727 )

@@ -6,7 +6,6 @@ onready var transmitter = true
 onready var cbody = 0
 export(Array, String) var names = []
 
-
 signal hit
 signal out
 signal triggered
@@ -17,7 +16,7 @@ func _ready():
 		print("not null")
 		for name in names:
 			for n in get_tree().get_nodes_in_group(name):
-				print("connecting "+name+" to "+n.get_name())
+				print("connecting "+sig+" to "+n.get_name())
 				connect("triggered", n, "onTriggered")
 	else:
 		print("is null")

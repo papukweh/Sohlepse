@@ -34,7 +34,8 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
  
 	\subsection{Objetos do jogo} 
 		\begin{itemize} 
-			\item Botões: ativam ou desativam uma quantidade arbitrária de paredes e espinhos divididos em 2 tipos: \begin{itemize}
+			\item Botões: ativam ou desativam uma quantidade arbitrária de paredes e espinhos divididos em 2 tipos: 
+			\begin{itemize}
 			        \item Os que se mantêm ativos enquanto estão pressionados
 			        \item Os que pressionados uma vez, se mantém ativos até o fim da fase
 			\end{itemize}   
@@ -47,7 +48,8 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
 		\end{itemize} 
  		\subsection{EndGoal}
  			Espelho que representa o ponto onde o Jogador deve chegar para terminar a fase, ao interagir com ele, a próxima fase começa(dependendo da fase podem haver cutscenes antes da inicialização)
-	\section{Organização das cenas} 
+	
+\section{Organização das cenas} 
 		\subsection{Menu Principal} 
 			\begin{itemize} 
 				\item Jogar - Carrega o última fase que o jogador ainda não completou,armazenado na variável global unlocked\_stage. 
@@ -90,8 +92,49 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
 		\subsection{Player}
 			O Player é o personagem humano controlado pelo jogador, que através da movimentação e interação com os objetos da fase, deve chegar no EndGoal, evitando cair e  tocar em Hazards
 
- 
- 
+		\subsection{Botões e paredes}
+			Nesta seção, paredes se referem à Walls, MovingPlatforms e Thorns. E botões se refere à Button, ButtonInst ou Levers.
+			\begin{itemize}
+				\item 1 parede -> 1 botão:
+				\\
+				Coloque a parede num grupo com o nome do botão.
+				\item 1 parede -> 2-3 botões (alternado):
+				\\
+				Coloque a parede em 2-3 grupos, cada um com o nome do botão desejado.
+				A parede deve ter activation = 0.
+				\item 1 acionável -> 2-3 ações (cumulativas):
+				\\
+				Coloque a parede em 2-3 grupos, cada um com o nome do botão desejado.
+				A parede deve ter activation = 1.
+				\item 2-3 paredes -> 1 botão
+				\\
+				Coloque as 2-3 paredes no grupo do botão.
+				\item Parede 1 -> Botão A e B (alternado), Parede 2 -> Botão B
+				\\
+				Coloque a Parede 1 nos grupos A e B, e a Parede 2 no grupo B.
+				A parede 1 deve ter activation = 0.
+				\item Parede 1 -> Botão A e B (cumulativo), Parede 2 -> Botão B
+				\\
+				Coloque a Parede 1 nos grupos A e B, assim como os próprios botões, e a Parede 2 no grupo B. 
+				A parede 1 deve ter activation = 1.
+				\item Parede 1 -> Botão A, B e C (cumulativo), Parede 2 -> Botão B e C (alternado), Parede 3 -> Botão A
+				\\
+				Coloque a Parede 1 nos grupos A.B e C. Coloque a Parede 2 nos grupos B e C. Coloque a Parede 3 no grupo A. Coloque os botões A,B e C em seus respectivos grupos.
+				A parede 1 deve ter activation = 1, e a parede 2 deve ter activation = 0.
+				\item Parede 1 -> Botão A, B e C (cumulativo), Parede 2 -> Botão B e C (alternado), Parede 3 -> Botão A
+				\\
+				Coloque a Parede 1 nos grupos A.B e C. Coloque a Parede 2 nos grupos B e C. Coloque a Parede 3 no grupo A. Coloque os botões A,B e C em seus respectivos grupos.
+				As paredes 1 e 2 devem ter activation = 1
+				\item CASO ESPECIAL: \\
+				Para facilitar a organização, em botões do tipo ButtonInst que \textbf{ativam mais de dois grupos de paredes de forma acumulada}, você pode colocar o nome dos grupos na array \textit{names}, inserir o ButtonInst nesses dois grupos, e colocar as paredes acionadas por eles em seu respectivo grupo.
+				Ex:
+				Parede 1 -> Botão A e C (alternada)
+				Parede 2 -> Botão A e B (acumulada) 
+ 				Parede 3 -> Botão B e C (alternada)
+ 				Names(A) = ["A", "A2"], Names(B) = ["B", "B2"]
+ 				Botão A está nos grupos A e A2, Botão B está nos grupos B e B2, Botão C está no grupo C.
+ 				Parede 1 está nos grupos A e C, Parede 2 está no grupos A2 e B2, Parede 3 está nos grupos B e C.
+
 \section{Ato I} 
  
 	Duas telas espelhadas, podendo a divisão ser na horizontal ou vertical, dependendo da fase. O movimento do 

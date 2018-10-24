@@ -188,15 +188,19 @@ func _physics_process(delta):
 	#print(carry)
 	var tmp = ground()
 	var nope = true
+	var oldcarry = carry
 	#print(tmp)
 	for i in tmp[1]:
-			if i.is_in_group('carry'):
-				carry = i.get_parent().get_parent()
-				carry.entered(self)
-				nope = false
+		if i.is_in_group('carry'):
+			carry = i.get_parent().get_parent()
+			carry.entered(self)
+			nope = false
 	
 	if nope and carry != null:
 		carry.left(self)
+		
+	if oldcarry != null and carry != oldcarry:
+		oldcarry.left(self)
 		
 #	if tmp[0] != null and tmp[0].is_in_group('carry'):
 #		carry = tmp[0].get_parent().get_parent()
