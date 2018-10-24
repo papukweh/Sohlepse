@@ -151,9 +151,8 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
 		\item Algo 
 	\end{itemize} 
  
-\subsection{Possíveis fases} 
+\subsection{Fases} 
  
-	Descrições/desenhos mais pra frente 
 	\begin{itemize} 
 		\item Fase1 : Tutorial de movimento, interação e pausa 
 		\item Fase2 : Introduz caixas para subir e alavancas
@@ -161,12 +160,12 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
 		\item Fase4 : Introduz caixas para apertar botões
 		\item Fase5 : Introduz espinhos acionáveis e plataformas one-way
 		\item Fase6 : Introduz falling floor e plataformas que se movem
-		\item Fase7 : ?
-		\item Fase8 : ?
+		\item Fase7 : Quebrar falling floors de propósito é uma estratégia válida
+		\item Fase8 : Plataformas e caixas: não fazer o óbvio primeiro (tacar no buraco)
 		\item Fase9 : Introduz mecânica de plataforma que empurra caixa, morte por esmagamento
 		\item Fase10 : Tutorial de restart, introduz alavancas cumulativas e que ativam mais de uma coisa (pequenas diferenças entre as paredes)
 		\item Fase11 : Uso de falling floors, alavancas que ativam mais de uma coisa - patience platforming (pequenas diferenças entre água e lava)
-		\item Fase12 : Fase final do Ato 1 - usa da dessincronização.
+		\item Fase12 : Fase final do Ato 1 - plataformas ativando botões, traps com espinhos, uso de dessincronização com paredes acionáveis.
 	\end{itemize} 
  
 \subsection{História} 
@@ -190,13 +189,17 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
 		\item Algo 
 	\end{itemize} 
  
-\subsection{Possíveis fases} 
+\subsection{Fases} 
  
-	Descrições/desenhos mais pra frente 
 	\begin{itemize} 
-		\item Fase13 : ?
-		\item Fase14 : ?
+		\item Fase1 : Clone fica ativando/desativando plataformas para o player - uso da caixa para sincronizar os movimentos sem que o player caia no espinho.
+		\item Fase2 : Clone fica aativando/desativando plataformas para o player, tomando cuidado para não ser esmagado e/ou desativar o próprio chão.
+		\item Fase3 : Traps envolvendo espinhos e caixas, depende de um "leap of faith" do player e seu clone, que desativa os espinhos da fase antes do player cair neles.
+		\item Fase4 : Uso de falling floors no lado espelhado, de forma que os movimentos do clone não pode ser 1:1 os do player. O segredo da fase está na sincronização do movimento dos dois no pulo da terceira plataforma para a quarta (o clone deve aproveitar esse momento para chegar na alavanca e ativá-la). Introduz mecânica de espelho que se move.
+		\item Fase5 : Plataformas "troll" e traps com espinhos. Uso de uma parede acionável para dessincronizar os jogadores (callback para fase12). Uso de informação no lado espelhado para guiar ações do player no lado real (o movimento da plataforma que carrega o espelho está sincronizado com a plataforma espelhada).
+		\item Fase6 : Fase "Mario Maker" - jogador não pode pular e nem ir muito para os lados, ou o clone morre. A ideia é sincronizar as plataformas que se movem de antemão, e depois só seguir o fluxo.
 	\end{itemize} 
+ 
  
 \subsection{História} 
  
@@ -213,13 +216,21 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
 		\item Algo 
 	\end{itemize} 
  
-\subsection{Possíveis fases} 
  
-	Descrições/desenhos mais pra frente 
+\subsection{Fases} 
+ 
 	\begin{itemize} 
-		\item Fase 
-		\item Fase 
+		\item Fase1 : Callback da primeira fase: mas dessa vez o espelho está no "teto". Introduz mecânica de pular nos clones para atingir seu objetivo.
+		\item Fase2 : Callback da primeira fase do ato 2: dessa vez quem ativa as plataformas é um clone gravado, e não um clone do espelho.
+		\item Fase3 : Mostra a importância de começar sua gravação no momento certo - é possível fechar o espelho apertando um botão muito bem posicionado. A gravação deve ativar e desativar espinhos/paredes em um ritmo no qual o jogador possa passar por eles com facilidade.
 	\end{itemize} 
+
+\subsection{Progresso}
+	\begin{itemize}
+		\item Ato 1 : 12/12 fases - Completo!
+		\item Ato 2 : 6/? fases
+		\item Ato 3 : 3/? fases
+ 
  
 \subsection{História} 
  
