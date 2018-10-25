@@ -201,6 +201,7 @@ position = Vector2( 64, 128 )
 
 position = Vector2( 576, 352 )
 activated = 1
+thorn_begin = 1
 motion = Vector2( 350, 0 )
 cycle = 14.0
 

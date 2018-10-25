@@ -243,6 +243,7 @@ position = Vector2( 1376, 1184 )
 
 position = Vector2( 256, 512 )
 activated = 1
+thorn_begin = 1
 motion = Vector2( 0, -200 )
 cycle = 10.0
 
@@ -251,6 +252,7 @@ cycle = 10.0
 ] instance=ExtResource( 7 )]
 
 position = Vector2( 992, 512 )
+thorn_begin = 1
 motion = Vector2( 200, 0 )
 cycle = 10.0
 
@@ -259,6 +261,7 @@ cycle = 10.0
 ] instance=ExtResource( 7 )]
 
 position = Vector2( 1436, 928 )
+thorn_begin = 1
 motion = Vector2( 200, 0 )
 cycle = 10.0
 
@@ -268,6 +271,7 @@ cycle = 10.0
 
 position = Vector2( 448, 448 )
 activated = 1
+thorn_begin = 1
 motion = Vector2( 0, -400 )
 cycle = 18.0
 
@@ -277,6 +281,7 @@ cycle = 18.0
 
 position = Vector2( 608, 128 )
 activated = 1
+thorn_begin = 1
 motion = Vector2( 0, 500 )
 cycle = 15.0
 

@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 export var begin = 0 # 0 = default is deactivated
 export var activation = 0
@@ -9,10 +9,10 @@ onready var who = null
 
 func _ready():
 	if begin == 0:
-		$AnimatedSprite.animation = "off"
+		$Body/AnimatedSprite.animation = "off"
 	else:
 		on = true
-		$AnimatedSprite.animation = "on"
+		$Body/AnimatedSprite.animation = "on"
 	
 func onTriggered():
 	var trigger = true
@@ -25,23 +25,23 @@ func onTriggered():
 						
 	if trigger: 
 		if !on and begin == 0:
-			$AnimatedSprite.animation = "on"
+			$Body/AnimatedSprite.animation = "on"
 			on = true
 		elif on and begin != 0:
-			$AnimatedSprite.animation = "off"
+			$Body/AnimatedSprite.animation = "off"
 			on = false
 		elif on and begin == 0:
-			$AnimatedSprite.animation = "off"
+			$Body/AnimatedSprite.animation = "off"
 			on = false
 		elif !on and begin != 0:
-			$AnimatedSprite.animation = "on"
+			$Body/AnimatedSprite.animation = "on"
 			on = true
 	elif activation != 0:
 		if on and begin == 0:
-			$AnimatedSprite.animation = "off"
+			$Body/AnimatedSprite.animation = "off"
 			on = false
 		elif !on and begin != 0:
-			$AnimatedSprite.animation = "on"
+			$Body/AnimatedSprite.animation = "on"
 			on = true
 	if inside:
 		_on_Thorns_body_entered(who)
