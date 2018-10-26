@@ -99,13 +99,19 @@ func _on_Area2D_body_exited(body):
 
 func get_objs():
 	return objs
-		
+
 func falling():
-	if $Down.is_colliding():
-		return $Down.get_collider().get_name()=="Head"
-	else:
-		return false
-		
+	print("falling")
+	var tmp = $Down.get_overlapping_areas()
+	for x in tmp:
+		print(x.get_name())
+		var p1 = x.get_global_position().y
+		var box = self.get_global_position().y
+		if x.get_name()=="Head" and (p1 > box):
+			return true
+		else:
+			return false
+
 func left():
 	return $RC_left.get_overlapping_areas()
 	

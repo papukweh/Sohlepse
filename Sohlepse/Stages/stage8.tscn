@@ -113,8 +113,7 @@ position = Vector2( 320, -352 )
 
 [node name="MovingPlatform2" parent="Reality/Objects" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 700.735, -116.19 )
-scale = Vector2( -1.5, 1 )
+position = Vector2( 700, -117 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 motion = Vector2( 140, 0 )
 cycle = 10.0

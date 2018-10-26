@@ -13,14 +13,15 @@ onready var state = null
 onready var MAX = get_parent().MAX_CLONES
 
 func _ready():
+	pos = global.load_pos()
+	buffer = global.load_buffer()
+	state = global.load_state()
 	if global.play:
-		pos = global.load_pos()
-		buffer = global.load_buffer()
-		state = global.load_state()
 		play_all_true()
 
 func start_recording(body):
 	if pos.size() < MAX:
+		get_parent().recording(true)
 		player = body
 		realplayer = body
 		initial_pos = player.get_global_position()
@@ -28,10 +29,13 @@ func start_recording(body):
 		recording = true
 
 func stop_recording():
-	player = null
-	recording = false
-	pos.push_back(initial_pos)
-	buffer.push_back(states)
+	if pos.size() < MAX:
+		global.nclones += 1
+		get_parent().recording(false)
+		player = null
+		recording = false
+		pos.push_back(initial_pos)
+		buffer.push_back(states)
 	
 func play_all():
 	if not realplayer:
@@ -58,9 +62,11 @@ func play_all_true():
 		c.show()
 		c.dead = false
 		c.ready = false
+		c.on_act3 = true
 		clones.push_back(c)
 	for c in clones:
 		c.show()
+		c.clone = true
 		c.dead = false
 	global.play = false
 		

@@ -1,0 +1,316 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/MovingPlatform_OneWay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/MovingThorns.tscn" type="PackedScene" id=15]
+
+[node name="stage11" instance=ExtResource( 1 )]
+
+ACT = 2
+PLAYERS = 2
+MODE = 2
+
+[node name="Real" type="ReferenceRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -162.0
+margin_top = 63.0
+margin_right = 1630.0
+margin_bottom = 748.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Mirrored" type="ReferenceRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -126.0
+margin_top = 759.0
+margin_right = 1666.0
+margin_bottom = 1445.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -131073, 1, 0, -196608, 3, 0, -196607, 3, 0, -196606, 3, 0, -196605, 3, 0, -196604, 3, 0, -196603, 3, 0, -196602, 3, 0, -196601, 3, 0, -196600, 3, 0, -196599, 3, 0, -196598, 3, 0, -196597, 3, 0, -196596, 3, 0, -196595, 3, 0, -196594, 3, 0, -196593, 3, 0, -196592, 3, 0, -196591, 3, 0, -196590, 3, 0, -196589, 3, 0, -196588, 3, 0, -196587, 3, 0, -196586, 3, 0, -196585, 3, 0, -196584, 1, 0, -65537, 1, 0, -131048, 1, 0, -1, 1, 0, -65512, 1, 0, 65535, 1, 0, 24, 1, 0, 131071, 1, 0, 65560, 1, 0, 196607, 1, 0, 131096, 1, 0, 262143, 1, 0, 196632, 1, 0, 327679, 1, 0, 262168, 1, 0, 393215, 1, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327704, 1, 0, 458751, 1, 0, 393240, 1, 0, 524287, 1, 0, 458776, 1, 0, 589823, 1, 0, 524312, 1, 0, 655359, 1, 0, 589824, 0, 0, 589825, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589848, 1, 0, 720895, 1, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 1, 0, 851967, 1, 0, 786432, 3, 0, 786433, 3, 0, 786434, 3, 0, 786435, 3, 0, 786436, 3, 0, 786437, 3, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 3, 0, 786442, 3, 0, 786443, 3, 0, 786444, 3, 0, 786445, 3, 0, 786446, 3, 0, 786447, 3, 0, 786448, 3, 0, 786449, 3, 0, 786450, 3, 0, 786451, 3, 0, 786452, 3, 0, 786453, 3, 0, 786454, 3, 0, 786455, 3, 0, 786456, 1, 0, 917503, 1, 0, 851992, 1, 0, 983039, 1, 0, 917528, 1, 0, 1048575, 1, 0, 983064, 1, 0, 1114111, 1, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048600, 1, 0, 1179647, 1, 0, 1114136, 1, 0, 1245183, 1, 0, 1179672, 1, 0, 1310719, 1, 0, 1245208, 1, 0, 1376255, 1, 0, 1310720, 0, 0, 1310721, 0, 0, 1310722, 0, 0, 1310723, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1310734, 0, 0, 1310735, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1310738, 0, 0, 1310739, 0, 0, 1310740, 0, 0, 1310741, 0, 0, 1310742, 0, 0, 1310743, 0, 0, 1310744, 1, 0, 1441791, 1, 0, 1376256, 3, 0, 1376257, 3, 0, 1376258, 3, 0, 1376259, 3, 0, 1376260, 3, 0, 1376261, 3, 0, 1376262, 3, 0, 1376263, 3, 0, 1376264, 3, 0, 1376265, 3, 0, 1376266, 3, 0, 1376267, 3, 0, 1376268, 3, 0, 1376269, 3, 0, 1376270, 3, 0, 1376271, 3, 0, 1376272, 3, 0, 1376273, 3, 0, 1376274, 3, 0, 1376275, 3, 0, 1376276, 3, 0, 1376277, 3, 0, 1376278, 3, 0, 1376279, 3, 0, 1376280, 1, 0 )
+_sections_unfolded = [ "Occluder" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Players" type="Node" parent="." index="3"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 1010, 525 )
+
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1010, 1225 )
+
+[node name="Reality" type="Node" parent="." index="4"]
+
+[node name="Objects" type="Node" parent="Reality" index="0"]
+
+[node name="MovingPlatform" parent="Reality/Objects" index="0" groups=[
+"ButtonInst",
+] instance=ExtResource( 4 )]
+
+position = Vector2( 1170, 540 )
+activated = 1
+thorn_begin = 1
+motion = Vector2( 200, 0 )
+cycle = 7.5
+
+[node name="MovingPlatform5" parent="Reality/Objects" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 1465.88, 39.3071 )
+scale = Vector2( 2.26505, 1.25798 )
+thorn_begin = 1
+cycle = 7.5
+
+[node name="MovingPlatform2" parent="Reality/Objects" index="2" groups=[
+"ButtonInst2",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 1486.63, 461.105 )
+activated = 1
+thorn_begin = 1
+motion = Vector2( 0, 50 )
+cycle = 2.0
+
+[node name="Platform2" parent="Reality/Objects" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 1295.58, 161.645 )
+scale = Vector2( 2.05056, 1 )
+
+[node name="MovingPlatform3" parent="Reality/Objects" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 1338.49, 81.3019 )
+thorn_begin = 1
+motion = Vector2( -200, 0 )
+cycle = 10.0
+
+[node name="MovingPlatform4" parent="Reality/Objects" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 1167.87, 243.714 )
+thorn_begin = 1
+
+[node name="Wall" parent="Reality/Objects" index="6" groups=[
+"Button",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 310, 65 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Wall2" parent="Reality/Objects" index="7" groups=[
+"Button2",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 520, 65 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Box" parent="Reality/Objects" index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 306.837, 5.21364 )
+
+[node name="Box2" parent="Reality/Objects" index="9" instance=ExtResource( 8 )]
+
+position = Vector2( 517.522, 2.94675 )
+
+[node name="Box3" parent="Reality/Objects" index="10" instance=ExtResource( 8 )]
+
+position = Vector2( 1496.98, -9.88307 )
+
+[node name="Button" parent="Reality/Objects" index="11" instance=ExtResource( 9 )]
+
+position = Vector2( 881.345, 318.074 )
+
+[node name="Button2" parent="Reality/Objects" index="12" instance=ExtResource( 9 )]
+
+position = Vector2( 1344, 364.34 )
+
+[node name="Hazards" type="Node" parent="Reality" index="1"]
+
+[node name="Lava" parent="Reality/Hazards" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 160, 610 )
+
+[node name="Lava2" parent="Reality/Hazards" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( 220, 610 )
+
+[node name="Lava3" parent="Reality/Hazards" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 280, 610 )
+
+[node name="Lava4" parent="Reality/Hazards" index="3" instance=ExtResource( 10 )]
+
+position = Vector2( 340, 610 )
+
+[node name="Lava5" parent="Reality/Hazards" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 400, 610 )
+
+[node name="Lava6" parent="Reality/Hazards" index="5" instance=ExtResource( 10 )]
+
+position = Vector2( 460, 610 )
+
+[node name="Lava7" parent="Reality/Hazards" index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 520, 610 )
+
+[node name="Lava8" parent="Reality/Hazards" index="7" instance=ExtResource( 10 )]
+
+position = Vector2( 930, 610 )
+
+[node name="Lava9" parent="Reality/Hazards" index="8" instance=ExtResource( 10 )]
+
+position = Vector2( 870, 610 )
+
+[node name="Lava10" parent="Reality/Hazards" index="9" instance=ExtResource( 10 )]
+
+position = Vector2( 810, 610 )
+
+[node name="Lava11" parent="Reality/Hazards" index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 750, 610 )
+
+[node name="Lava12" parent="Reality/Hazards" index="11" instance=ExtResource( 10 )]
+
+position = Vector2( 690, 610 )
+
+[node name="Lava13" parent="Reality/Hazards" index="12" instance=ExtResource( 10 )]
+
+position = Vector2( 630, 610 )
+
+[node name="Lava14" parent="Reality/Hazards" index="13" instance=ExtResource( 10 )]
+
+position = Vector2( 570, 610 )
+
+[node name="Thorns" parent="Reality/Hazards" index="14" instance=ExtResource( 11 )]
+
+position = Vector2( 1248, 599 )
+begin = 1
+
+[node name="Thorns2" parent="Reality/Hazards" index="15" instance=ExtResource( 11 )]
+
+position = Vector2( 1312, 599 )
+begin = 1
+
+[node name="Thorns3" parent="Reality/Hazards" index="16" instance=ExtResource( 11 )]
+
+position = Vector2( 1376, 599 )
+begin = 1
+
+[node name="Thorns4" parent="Reality/Hazards" index="17" instance=ExtResource( 11 )]
+
+position = Vector2( 1440, 599 )
+begin = 1
+
+[node name="Thorns5" parent="Reality/Hazards" index="18" instance=ExtResource( 11 )]
+
+position = Vector2( 1504, 599 )
+begin = 1
+
+[node name="Thorns6" parent="Reality/Hazards" index="19" instance=ExtResource( 11 )]
+
+position = Vector2( 1312, 410 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Thorns8" parent="Reality/Hazards" index="20" instance=ExtResource( 11 )]
+
+position = Vector2( 672, 218 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Thorns9" parent="Reality/Hazards" index="21" instance=ExtResource( 11 )]
+
+position = Vector2( 608, 218 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Thorns7" parent="Reality/Hazards" index="22" instance=ExtResource( 11 )]
+
+position = Vector2( 1376, 410 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Endgoal" parent="Reality" index="2" instance=ExtResource( 12 )]
+
+position = Vector2( 30.6706, 547.817 )
+
+[node name="Mirror" type="Node" parent="." index="5"]
+
+[node name="EndgoalMirror" parent="Mirror" index="0" instance=ExtResource( 13 )]
+
+position = Vector2( 41.1967, 1252.32 )
+
+[node name="Objects" type="Node" parent="Mirror" index="1"]
+
+[node name="Box4" parent="Mirror/Objects" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( 883.441, 986.792 )
+
+[node name="ButtonInst" parent="Mirror/Objects" index="1" instance=ExtResource( 14 )]
+
+position = Vector2( 1181.06, 1276.67 )
+
+[node name="ButtonInst2" parent="Mirror/Objects" index="2" instance=ExtResource( 14 )]
+
+position = Vector2( 1414.24, 1274.82 )
+
+[node name="Hazards" type="Node" parent="Mirror" index="2"]
+
+[node name="MovingThorns" parent="Mirror/Hazards" index="0" instance=ExtResource( 15 )]
+
+position = Vector2( 545.844, 1302.19 )
+motion = Vector2( 1200, 0 )
+cycle = 18.0
+
+

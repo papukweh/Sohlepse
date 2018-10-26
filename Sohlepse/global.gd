@@ -18,7 +18,8 @@ var pos = []
 var buffer = []
 var state = []
 var play = false
-	
+var nclones = 0
+
 func save_clones(spos, sbuffer, sstate):
 	pos = [] + spos
 	buffer = [] + sbuffer
@@ -32,6 +33,12 @@ func load_buffer():
 	
 func load_state():
 	return state
+	
+func clean():
+	pos = []
+	buffer = []
+	state = []
+	nclones = 0
 	
 func progress():
 	savegame.open(save_path, File.READ)

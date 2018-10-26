@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Objects/MovingPlatform.gd" type="Script" id=1]
+[ext_resource path="res://Objects/MovingThorns.gd" type="Script" id=1]
 [ext_resource path="res://Assets/platform1.png" type="Texture" id=2]
+[ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -13,9 +14,8 @@ extents = Vector2( 22.6244, 2.94384 )
 custom_solver_bias = 0.0
 extents = Vector2( 32.2953, 11.9587 )
 
-[node name="MovingPlatform" type="Node2D"]
+[node name="MovingThorns" type="Node2D"]
 
-scale = Vector2( 1.5, 1 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 activated = 0
@@ -73,8 +73,11 @@ position = Vector2( 0.102165, -1.28368 )
 scale = Vector2( 0.997105, 1.08582 )
 shape = SubResource( 2 )
 
+[node name="Thorns" parent="." index="1" instance=ExtResource( 3 )]
+
 [connection signal="body_entered" from="platform/Area2D" to="." method="_on_Area2D_body_entered"]
 
 [connection signal="body_exited" from="platform/Area2D" to="." method="_on_Area2D_body_exited"]
 
 
+[editable path="Thorns"]

@@ -9,6 +9,11 @@ signal triggered
 onready var objs = Dictionary()
 onready var oneway = $platform/CollisionShape2D.one_way_collision
 
+func _ready():
+	if thorn_begin == 1:
+		$Thorns.on = true
+		$Thorns/Body/AnimatedSprite.animation = "on"
+
 func _physics_process(delta):
 	if motion[0] == motion[1] and motion[1] == 0:
 		return
@@ -18,13 +23,14 @@ func _physics_process(delta):
 		accum += delta * (1.0 / cycle) * PI * 2.0
 		accum = fmod(accum, PI * 2.0)
 		d = sin(accum)
-		xf[2]= motion * d 
+		xf[2]= motion * d
 		$platform.transform = xf
-		
+		$Thorns/Body.transform = xf
+
 		if !objs.empty(): #and motion[1] != 0:
 			for i in objs.values():
 				if !oneway:
-					if motion[1] != 0: 
+					if motion[1] != 0:
 						i.GRAVITY = -0.01
 						#print("jump="+str(i.jump))
 						#print("jumping="+str(i.jumping))
@@ -52,7 +58,7 @@ func _physics_process(delta):
 								if motion[1] != 0:
 									a.GRAVITY = -0.01
 									a.position += $platform.get_linear_velocity()*delta
-		
+
 func onTriggered():
 	if activated == 1:
 		activated = 0
@@ -60,16 +66,15 @@ func onTriggered():
 		activated = 1
 
 func entered(body):
-	print(body.get_name()+" entrou em "+self.get_name())
+	#print(body.get_name()+" entrou em "+self.get_name())
 	if motion[0] == motion[1] and motion[1] == 0:
 		return
 	elif !objs.has(body.get_name()):
 		body.position.y = $platform.global_position.y - 42
 		objs[body.get_name()] = body
 	return
-	
+
 func left(body):
-	print(body.get_name()+" saiu de "+self.get_name())
 	body.GRAVITY = 700
 	if objs.has(body.get_name()):
 		body.GRAVITY = 700

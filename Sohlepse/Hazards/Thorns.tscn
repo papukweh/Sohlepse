@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/thorn_on.png" type="Texture" id=2]
 [ext_resource path="res://Assets/thorn_off.png" type="Texture" id=3]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
@@ -18,19 +18,62 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10.9503, 11.929 )
+
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.3044, 10.1168 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[node name="Thorns" type="Node2D"]
 
-custom_solver_bias = 0.0
-extents = Vector2( 31.105, 12.2945 )
+position = Vector2( 0, 0.828376 )
+scale = Vector2( 1, 1.29089 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+begin = 0
+activation = 0
 
-[node name="Thorns" type="Area2D" index="0"]
+[node name="Body" type="RigidBody2D" parent="." index="0"]
 
-scale = Vector2( 1, 1.265 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 3
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Body" index="0"]
+
+position = Vector2( 0, -0.214584 )
+scale = Vector2( 1, 0.79 )
+frames = SubResource( 3 )
+animation = "on"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body" index="1"]
+
+position = Vector2( -0.393662, 9.51764 )
+scale = Vector2( 2.95049, 2.32327 )
+shape = SubResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="Body" index="2"]
+
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -38,45 +81,16 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
-begin = 0
-activation = 0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
-
-position = Vector2( 0, -0.214584 )
-scale = Vector2( 1, 0.79 )
-frames = SubResource( 1 )
-animation = "on"
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D" index="0"]
 
 position = Vector2( 0.0189441, -16.5034 )
 scale = Vector2( 0.990205, 1.55619 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+[connection signal="body_entered" from="Body/Area2D" to="." method="_on_Thorns_body_entered"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
-
-position = Vector2( 0.00627472, 6.61299 )
-scale = Vector2( 1.02956, 2.08204 )
-shape = SubResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[connection signal="body_entered" from="." to="." method="_on_Thorns_body_entered"]
-
-[connection signal="body_exited" from="." to="." method="_on_Thorns_body_exited"]
+[connection signal="body_exited" from="Body/Area2D" to="." method="_on_Thorns_body_exited"]
 
 
