@@ -37,7 +37,7 @@ func _on_ButtonInst_hit(body):
 
 func _on_ButtonInst_out(body):
 	cbody -= 1
-	if cbody == 0:
+	if cbody == 0 and body != self:
 		$AnimatedSprite.animation = "default"
 		$CollisionShape2D.disabled = false
 		activated = false

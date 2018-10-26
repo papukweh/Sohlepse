@@ -36,7 +36,7 @@ func onTriggered():
 	if activation != 0:
 		active_buttons = 0 
 		for g in self.get_groups():
-			if !g.begins_with("root"):
+			if !g.begins_with("root") and !g.begins_with("idle"):
 				for n in get_tree().get_nodes_in_group(g):
 					print(n.get_name())
 #					$AnimatedSprite.animation = str(int($AnimatedSprite.animation) + 1)

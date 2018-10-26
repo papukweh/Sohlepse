@@ -24,7 +24,7 @@ func start_recording(body):
 		get_parent().recording(true)
 		player = body
 		realplayer = body
-		initial_pos = player.get_global_position()
+		initial_pos = player.get_position()
 		states = []
 		recording = true
 

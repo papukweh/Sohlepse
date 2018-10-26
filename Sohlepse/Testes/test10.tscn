@@ -10,7 +10,7 @@
 [ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=9]
 
-[node name="stage10" instance=ExtResource( 1 )]
+[node name="stage10" index="0" instance=ExtResource( 1 )]
 
 ACT = 3
 MAX_CLONES = 1
@@ -34,6 +34,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -1114113, 3, 0, -1179648, 3, 0, -1179647, 3, 0, -1179646, 3, 0, -1179645, 3, 0, -1179644, 3, 0, -1179643, 3, 0, -1179642, 3, 0, -1179641, 3, 0, -1179640, 3, 0, -1179639, 3, 0, -1179638, 3, 0, -1179637, 3, 0, -1179636, 3, 0, -1179635, 3, 0, -1179634, 3, 0, -1179633, 3, 0, -1179632, 3, 0, -1179631, 3, 0, -1048577, 1073741825, 0, -1114095, 1073741825, 0, -983041, 1073741825, 0, -1048559, 1073741825, 0, -917505, 1073741825, 0, -983023, 1073741825, 0, -851969, 1073741825, 0, -917487, 1073741825, 0, -786433, 1073741825, 0, -851951, 1073741825, 0, -720897, 1073741825, 0, -786426, 1073741825, 0, -786415, 1073741825, 0, -655361, 1073741825, 0, -720890, 1073741825, 0, -720889, 0, 0, -720888, 0, 0, -720887, 0, 0, -720886, 0, 0, -720885, 0, 0, -720884, 0, 0, -720879, 1073741825, 0, -589825, 1073741825, 0, -655354, 1073741825, 0, -655343, 1073741825, 0, -524289, 1073741825, 0, -589818, 1073741825, 0, -589807, 1073741825, 0, -458753, 1073741825, 0, -524282, 1073741825, 0, -524277, 0, 0, -524276, 0, 0, -524275, 0, 0, -524273, 0, 0, -524271, 1073741825, 0, -393217, 1073741825, 0, -458746, 1073741825, 0, -458735, 1073741825, 0, -327681, 1073741825, 0, -393210, 1073741825, 0, -393199, 1073741825, 0, -262145, 1073741825, 0, -327674, 1073741825, 0, -327671, 0, 0, -327669, 0, 0, -327668, 0, 0, -327663, 1073741825, 0, -196609, 1073741825, 0, -262138, 1073741825, 0, -131073, 1073741825, 0, -196602, 1, 0, -65537, 1073741825, 0, -131066, 1, 0, -131061, 0, 0, -131060, 0, 0, -131056, 0, 0, -131055, 1073741825, 0, -1, 1073741825, 0, -65530, 1, 0, -65519, 1073741825, 0, 65535, 1073741825, 0, 6, 1, 0, 17, 1073741825, 0, 131071, 1073741825, 0, 65542, 1, 0, 65547, 0, 0, 196607, 1073741825, 0, 131078, 1, 0, 262143, 1073741825, 0, 196614, 1, 0, 327679, 1073741825, 0, 262150, 1, 0, 262156, 0, 0, 262161, 1073741825, 0, 393215, 1073741825, 0, 327686, 1, 0, 327697, 1073741825, 0, 458751, 1073741825, 0, 393222, 1, 0, 393233, 1073741825, 0, 524287, 1073741825, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 1, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 1073741825, 0, 589823, 1073741825, 0, 524288, 3, 0, 524289, 3, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 1, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 3, 0, 524303, 3, 0, 524304, 3, 0, 524305, 1073741825, 0, 655359, 1073741825, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 1, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 1073741825, 0, 720895, 1073741825, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 1, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 1073741825, 0 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="Real" type="ReferenceRect" parent="." index="1"]
 
@@ -137,7 +138,9 @@ activated = 1
 motion = Vector2( 0, -1300 )
 cycle = 50.0
 
-[node name="Lever1" parent="Objects" index="10" instance=ExtResource( 7 )]
+[node name="Lever1" parent="Objects" index="10" groups=[
+"Lever1",
+] instance=ExtResource( 7 )]
 
 position = Vector2( 456.86, -737.808 )
 
@@ -158,35 +161,35 @@ activation = 1
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 1056, -488.625 )
+position = Vector2( 1056, -488.6 )
 activation = 1
 
 [node name="Thorns2" parent="Hazards" index="2" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 928, -488.625 )
+position = Vector2( 928, -488 )
 activation = 1
 
 [node name="Thorns3" parent="Hazards" index="3" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 672, -296.625 )
+position = Vector2( 672, -295.625 )
 activation = 1
 
 [node name="Thorns5" parent="Hazards" index="4" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 544, -296.625 )
+position = Vector2( 544, -295.625 )
 activation = 1
 
 [node name="Thorns6" parent="Hazards" index="5" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 480, -296.625 )
+position = Vector2( 480, -295.625 )
 begin = 1
 activation = 1
 
@@ -194,7 +197,7 @@ activation = 1
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 992, -104.625 )
+position = Vector2( 992, -103.625 )
 begin = 1
 activation = 1
 
@@ -202,7 +205,7 @@ activation = 1
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 928, -104.625 )
+position = Vector2( 928, -103.625 )
 begin = 1
 activation = 1
 
@@ -210,21 +213,21 @@ activation = 1
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 864, -104.625 )
+position = Vector2( 864, -103.625 )
 activation = 1
 
 [node name="Thorns10" parent="Hazards" index="9" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 800.54, 87.375 )
+position = Vector2( 800.54, 89.375 )
 activation = 1
 
 [node name="Thorns11" parent="Hazards" index="10" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 672, 87.375 )
+position = Vector2( 672, 88.375 )
 begin = 1
 activation = 1
 
@@ -232,14 +235,14 @@ activation = 1
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 608, 87.375 )
+position = Vector2( 608, 88.375 )
 activation = 1
 
 [node name="Thorns13" parent="Hazards" index="12" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 544, 87.375 )
+position = Vector2( 544, 88.375 )
 begin = 1
 activation = 1
 
@@ -247,14 +250,14 @@ activation = 1
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 480, 87.375 )
+position = Vector2( 480, 88.375 )
 activation = 1
 
 [node name="Thorns15" parent="Hazards" index="14" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 864, 279.375 )
+position = Vector2( 864, 280.375 )
 begin = 1
 activation = 1
 
@@ -262,14 +265,14 @@ activation = 1
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 928, 279.375 )
+position = Vector2( 928, 280.375 )
 activation = 1
 
 [node name="Thorns17" parent="Hazards" index="16" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 992, 279.375 )
+position = Vector2( 992, 280.375 )
 begin = 1
 activation = 1
 
@@ -277,21 +280,21 @@ activation = 1
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 1056, 279.375 )
+position = Vector2( 1056, 280.375 )
 activation = 1
 
 [node name="Thorns19" parent="Hazards" index="18" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 672, 279.375 )
+position = Vector2( 672, 280.375 )
 activation = 1
 
 [node name="Thorns20" parent="Hazards" index="19" groups=[
 "Lever1",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 736, 279.375 )
+position = Vector2( 736, 280.375 )
 activation = 1
 
 [node name="Thorns21" parent="Hazards" index="20" groups=[

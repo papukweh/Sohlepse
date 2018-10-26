@@ -22,11 +22,12 @@ func onTriggered():
 	var trigger = true
 	if activation != 0:
 		for g in self.get_groups():
-			if !g.begins_with("root"):
+			if !g.begins_with("root") and !g.begins_with("idle"):
 				for n in get_tree().get_nodes_in_group(g):
-					if n.transmitter and  !n.activated:
+					print(n.get_name()+" in "+g)
+					if n.transmitter and !n.activated:
 						trigger = false
-						
+
 	if trigger: 
 		if !on and begin == 0:
 			$Body/AnimatedSprite.animation = "on"
