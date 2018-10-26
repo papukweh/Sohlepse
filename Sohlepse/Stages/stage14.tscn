@@ -94,7 +94,7 @@ invert_horizontal = -1
 "ButtonInst3",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( -864.339, 337.241 )
+position = Vector2( -864.339, 335.241 )
 rotation = -1.5708
 scale = Vector2( 1, 1.5783 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -127,6 +127,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 [node name="MovingPlatform1" parent="Reality" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( -1304.11, 238.388 )
+thorn_begin = 1
 motion = Vector2( 800, 0 )
 cycle = 30.0
 
@@ -136,6 +137,7 @@ cycle = 30.0
 
 position = Vector2( -1125.96, 818.168 )
 activated = 1
+thorn_begin = 1
 motion = Vector2( 0, -600 )
 cycle = 30.0
 
@@ -145,6 +147,7 @@ cycle = 30.0
 
 position = Vector2( -676.68, 21.6682 )
 activated = 1
+thorn_begin = 1
 motion = Vector2( 0, 200 )
 cycle = 10.0
 

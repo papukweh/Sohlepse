@@ -41,6 +41,8 @@ onready var ready = true
 onready var carry = null
 onready var restart = false
 onready var clone = false
+onready var dict = Dictionary()
+onready var cnt = 0
 
 func _ready():
 	if invert_vertical == -1:
@@ -196,19 +198,31 @@ func _physics_process(delta):
 	#print(carry)
 	var tmp = ground()
 	var nope = true
-	var oldcarry = carry
 	#print(tmp)
 	for i in tmp[1]:
 		if i.is_in_group('carry'):
 			carry = i.get_parent().get_parent()
-			carry.entered(self)
+			if !dict.has(carry.get_name()):
+				carry.entered(self)
+				dict[carry.get_name()] = [cnt, carry]
+				cnt += 1
 			nope = false
 	
 	if nope and carry != null:
 		carry.left(self)
-		
-	if oldcarry != null and carry != oldcarry:
-		oldcarry.left(self)
+		dict.erase(carry.get_name())
+		carry = null
+
+	if dict.size() > 1:
+		var minn = 9999
+		var minkey = ""
+		for c in dict.keys():
+			if dict[c][0] < minn:
+				minn = dict[c][0]
+				minkey = c
+				
+		dict[minkey][1].left(self)
+		dict.erase(minkey)
 		
 #	if tmp[0] != null and tmp[0].is_in_group('carry'):
 #		carry = tmp[0].get_parent().get_parent()

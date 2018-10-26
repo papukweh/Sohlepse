@@ -88,7 +88,7 @@ position = Vector2( 658.805, -349.966 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( -660, -610 )
+position = Vector2( -681, -610 )
 
 [node name="Reality" type="Node2D" parent="." index="4"]
 
@@ -110,15 +110,15 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Lever3" parent="Reality/Objects" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 773.72, -342.538 )
+position = Vector2( 769.72, -342.538 )
 
 [node name="Lever2" parent="Reality/Objects" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 733.294, -341.698 )
+position = Vector2( 728.294, -341.698 )
 
 [node name="Lever1" parent="Reality/Objects" index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 692.396, -343.147 )
+position = Vector2( 691.396, -343.147 )
 
 [node name="MovingPlatform" parent="Reality/Objects" index="4" groups=[
 "Lever1",

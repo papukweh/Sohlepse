@@ -19,6 +19,7 @@ scale = Vector2( 1.5, 1 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 activated = 0
+thorn_begin = 1
 motion = Vector2( 0, 0 )
 cycle = 1.0
 

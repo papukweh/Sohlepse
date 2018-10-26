@@ -10,7 +10,7 @@ var recorder = null
 var pan = null
 
 func _ready():
-	if ACT == 3:
+	if ACT == 3 and self.get_name() != "stage1":
 		recorder = preload("res://Player/Recorder.tscn")
 		self.add_child(recorder.instance())
 		$Players/Player1.Recorder = get_node("Recorder")

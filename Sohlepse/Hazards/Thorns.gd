@@ -15,9 +15,8 @@ func _ready():
 		$Body/AnimatedSprite.animation = "on"
 
 func _process(delta):
-#	if inside > 0:
-#		print(inside)
-	try_kill()
+	if on:
+		try_kill()
 
 func onTriggered():
 	var trigger = true
