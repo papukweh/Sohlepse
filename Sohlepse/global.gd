@@ -24,7 +24,6 @@ func save_clones(spos, sbuffer, sstate):
 	pos = [] + spos
 	buffer = [] + sbuffer
 	state = sstate
-	nclones += 1
 	
 func load_pos():
 	return pos

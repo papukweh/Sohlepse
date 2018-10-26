@@ -1,8 +1,8 @@
 extends HBoxContainer
 
-onready var vector = ["E", "setas", "R", "P", "G", "F"]
+onready var vector = ["E", "setas", "R", "P", "G", "F", "Player", "Circle"]
 
-export(int, "E", "setas", "R", "P", "G", "F") var input = 0
+export(int, "E", "setas", "R", "P", "G", "F", "Player", "Circle") var input = 0
 export var label = ""
 
 func ready():

@@ -9,7 +9,6 @@
 [node name="stage6" instance=ExtResource( 1 )]
 
 ACT = 3
-MAX_CLONES = 15
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 

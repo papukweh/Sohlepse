@@ -21,6 +21,7 @@ func _ready():
 
 func start_recording(body):
 	if pos.size() < MAX:
+		get_parent().recording(true)
 		player = body
 		realplayer = body
 		initial_pos = player.get_global_position()
@@ -28,10 +29,13 @@ func start_recording(body):
 		recording = true
 
 func stop_recording():
-	player = null
-	recording = false
-	pos.push_back(initial_pos)
-	buffer.push_back(states)
+	if pos.size() < MAX:
+		global.nclones += 1
+		get_parent().recording(false)
+		player = null
+		recording = false
+		pos.push_back(initial_pos)
+		buffer.push_back(states)
 	
 func play_all():
 	if not realplayer:
