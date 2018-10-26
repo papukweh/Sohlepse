@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/MovingThorns.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=5]
 
 [node name="stage6" instance=ExtResource( 1 )]
 
-ACT = 2
-PLAYERS = 2
-MAX_CLONES = 0
+ACT = 3
+MAX_CLONES = 15
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -69,16 +69,15 @@ _sections_unfolded = [ "Rect" ]
 
 position = Vector2( -1220, 607 )
 
-[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 1220, 607 )
-invert_horizontal = -1
-
 [node name="Objects" type="Node" parent="." index="4"]
 
 [node name="Hazards" type="Node" parent="." index="5"]
 
-[node name="Event" parent="." index="6" instance=ExtResource( 4 )]
+[node name="MovingThorns" parent="Hazards" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( -829.306, 592.211 )
+
+[node name="Event" parent="." index="6" instance=ExtResource( 5 )]
 
 _sections_unfolded = [ "Transform" ]
 events = [ Vector2( -1220, 610 ), Vector2( -910, 540 ), Vector2( -590, 460 ), Vector2( -255, 415 ), Vector2( -93, 340 ) ]
@@ -87,7 +86,7 @@ pos = [ Vector2( -1200, 200 ), Vector2( -900, 200 ), Vector2( -600, 200 ), Vecto
 areascale = null
 playanyway = false
 
-[node name="Event2" parent="." index="7" instance=ExtResource( 4 )]
+[node name="Event2" parent="." index="7" instance=ExtResource( 5 )]
 
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Transform" ]

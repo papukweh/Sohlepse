@@ -3,7 +3,7 @@ extends Node2D
 export var begin = 0 # 0 = default is deactivated
 export var activation = 0
 onready var on = false
-onready var inside = false
+onready var inside = 0
 onready var transmitter = false
 onready var who = null
 
@@ -13,7 +13,12 @@ func _ready():
 	else:
 		on = true
 		$Body/AnimatedSprite.animation = "on"
-	
+
+func _process(delta):
+#	if inside > 0:
+#		print(inside)
+	try_kill()
+
 func onTriggered():
 	var trigger = true
 	if activation != 0:
@@ -43,17 +48,21 @@ func onTriggered():
 		elif !on and begin != 0:
 			$Body/AnimatedSprite.animation = "on"
 			on = true
-	if inside:
-		_on_Thorns_body_entered(who)
 
 func _on_Thorns_body_entered(body):
 	if body.get_name().begins_with("Player"):
 		who = body
-		inside = true
+		inside += 1
 		if (on and not body.dead):
 			body.die()
 
-
 func _on_Thorns_body_exited(body):
 	if body.get_name().begins_with("Player"):
-		inside = false
+		inside -= 1
+
+func try_kill():
+	var tmp = $Body/Area2D.get_overlapping_bodies()
+	for i in tmp:
+		if i.is_in_group("Player") and !i.dead:
+			i.die()
+			inside -= 1

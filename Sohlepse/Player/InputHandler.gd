@@ -8,6 +8,7 @@ func _physics_process(delta):
 	if player.dead:
 		return
 	if MODE == 1:
+		player.clone = false
 		if player.invert_horizontal == 1:
 			player.move_left = Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right")
 			player.move_right = Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left")
@@ -21,6 +22,7 @@ func _physics_process(delta):
 			player.jump = Input.is_action_pressed("jump")
 		player.interacting = Input.is_action_pressed("interact")
 	else:
+		player.clone = true
 		var input = inputs.pop_front()
 		if input:
 			player.move_left = input[0]

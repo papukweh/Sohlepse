@@ -39,6 +39,8 @@ onready var platform = false
 onready var initpos = self.get_position()
 onready var ready = true
 onready var carry = null
+onready var restart = false
+onready var clone = false
 
 func _ready():
 	if invert_vertical == -1:
@@ -51,21 +53,27 @@ func _ready():
 
 func _process(delta):
 	if !ready:
+		clone = true
 		_ready()
 	if dead:
 		return
-			
+	
+	restart = false
 	if Input.is_action_just_pressed("change-v"):
 		invert_vertical *= -1
 		self.rotate(PI)
 	if Input.is_action_just_pressed("change-h"):
 		invert_horizontal *= -1
 	if Input.is_action_just_pressed("restart"):
+		global.clean()
+		restart = true
 		die()
 
 	
 func _physics_process(delta):
+	#print(self.get_name()+str(restart))
 	if dead:
+		restart = false
 		return
 	# Create forces
 	var force = Vector2(0, invert_vertical*GRAVITY)
@@ -106,13 +114,13 @@ func _physics_process(delta):
 				#print("being cccrushed")
 		elif cls == "KinematicBody2D":
 			if body.get_name().begins_with("Box"):
-				if !jumping and body.falling():
+				if !jumping and body.falling() and view != body:
 					#print("boxcrsuh")
 					crushing = true
-			elif !jumping and body.velocity.y > 0:
-				if body.falling:
+				elif !jumping and body.velocity.y > 0:
+					if body.falling():
 					#print("crcrcush")
-					crushing = true
+						crushing = true
 		else:
 			crushing = false
 			#print("no crush "+cls)
@@ -125,7 +133,7 @@ func _physics_process(delta):
 	if time <= 0:
 		die()
 	
-	if on_act3:
+	if on_act3 and not clone:
 		if Input.is_action_just_pressed("record"):
 			if recording:
 				Recorder.stop_recording()
@@ -240,7 +248,6 @@ func moving_right():
 	
 func die():
 	dead = true
-	$CollisionShape2D.disabled = true
 	if invert_horizontal == -1 or invert_vertical == -1:
 		$AnimationPlayer.play("Death2")
 	else:
@@ -254,7 +261,15 @@ func ground():
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name.begins_with("Death"):
-		global.restart()
+		if restart or (!on_act3 and not clone):
+			global.restart()
+		elif !clone:
+			if global.nclones > 0:
+				Recorder.play_all()
+			else:
+				global.restart()
+		else:
+			return
 
 func is_interacting():
 	return interacting

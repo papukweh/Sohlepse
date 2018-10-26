@@ -14,6 +14,7 @@ func _ready():
 		self.add_child(recorder.instance())
 		$Players/Player1.Recorder = get_node("Recorder")
 		$Players/Player1.on_act3 = true
+		$Players/Player1.Recorder.realplayer = $Players/Player1
 	
 	if hasTutorial:
 		for i in range(3):

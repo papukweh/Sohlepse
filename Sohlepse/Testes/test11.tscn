@@ -29,7 +29,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -162.0
-margin_top = -90.0
+margin_top = 63.0
 margin_right = 1630.0
 margin_bottom = 748.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -309,8 +309,8 @@ position = Vector2( 1414.24, 1274.82 )
 
 [node name="MovingThorns" parent="Mirror/Hazards" index="0" instance=ExtResource( 15 )]
 
-position = Vector2( 545.844, 1303.19 )
-motion = Vector2( 700, 0 )
+position = Vector2( 545.844, 1302.19 )
+motion = Vector2( 1200, 0 )
 cycle = 18.0
 
 
