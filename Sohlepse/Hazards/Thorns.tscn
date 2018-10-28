@@ -74,6 +74,7 @@ shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="Body" index="2"]
 
+position = Vector2( 0.291992, -0.226194 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -84,8 +85,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D" index="0"]
 
-position = Vector2( 0.0189441, -16.5034 )
-scale = Vector2( 0.990205, 1.55619 )
+position = Vector2( 0.0189441, -20.8835 )
+scale = Vector2( 0.990205, 1.22226 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 

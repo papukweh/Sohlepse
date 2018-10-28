@@ -94,6 +94,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 		if body.is_in_group('gravity') and body != self:
+			body.GRAVITY = 700
 			if objs.has(body.get_name()):
 				objs.erase(body.get_name())
 

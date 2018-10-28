@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 10, 9.43702 )
 
-[node name="EndgoalMirror" type="KinematicBody2D" index="0" groups=[
+[node name="EndgoalMirror" type="KinematicBody2D" groups=[
 "gravity",
 ]]
 
@@ -31,7 +31,7 @@ _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform",
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 2.27783, -0.229151 )
+position = Vector2( 1.91935, 1.20479 )
 scale = Vector2( 1.75351, 3.21874 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
