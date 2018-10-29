@@ -114,6 +114,8 @@ invert_horizontal = -1
 
 [node name="Objects" type="Node" parent="Reality" index="0"]
 
+editor/display_folded = true
+
 [node name="Wall1" parent="Reality/Objects" index="0" groups=[
 "Button1",
 ] instance=ExtResource( 4 )]
@@ -195,6 +197,8 @@ position = Vector2( 901.927, -254.39 )
 position = Vector2( 610.043, -638.758 )
 
 [node name="Hazards" type="Node" parent="Reality" index="1"]
+
+editor/display_folded = true
 
 [node name="Thorns1" parent="Reality/Hazards" index="0" groups=[
 "Button2",
@@ -451,9 +455,9 @@ begin = 1
 
 [node name="Mirror" type="Node" parent="." index="6"]
 
-editor/display_folded = true
-
 [node name="Hazards" type="Node" parent="Mirror" index="0"]
+
+editor/display_folded = true
 
 [node name="Thorns13" parent="Mirror/Hazards" index="0" groups=[
 "Button3",
@@ -856,6 +860,24 @@ scale = Vector2( -0.881685, 1 )
 position = Vector2( -901.927, -254.39 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="ColorRect" type="ColorRect" parent="Mirror" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1471.0
+margin_top = -576.0
+margin_right = -703.0
+margin_bottom = -512.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.0490723, 0.478966, 0.523438, 0.176784 )
 
 [node name="Endgoal" parent="." index="7" instance=ExtResource( 13 )]
 

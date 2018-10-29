@@ -21,7 +21,6 @@ _sections_unfolded = [ "Transform" ]
 activated = 0
 motion = Vector2( 0, 0 )
 cycle = 1.0
-invert = 1
 
 [node name="platform" type="RigidBody2D" parent="." index="0"]
 
