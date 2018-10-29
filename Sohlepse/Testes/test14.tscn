@@ -74,35 +74,38 @@ position = Vector2( 160.898, -4.01203 )
 names = null
 
 [node name="Lever2" parent="Objects" index="1" groups=[
-"Mov",
-"Led",
+"Wall3Led1",
+"Mov2",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 160.898, -422.899 )
-names = [ "Led", "Mov" ]
+names = [ "Mov2", "Wall3Led1" ]
 
 [node name="Lever3" parent="Objects" index="2" groups=[
-"Led1",
+"Wall2Led2",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 160.898, 604.086 )
-names = [ "Led1" ]
+names = [ "Wall2Led2" ]
 
 [node name="Button1" parent="Objects" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 748.709, 62.1187 )
 
-[node name="Button2" parent="Objects" index="4" instance=ExtResource( 6 )]
+[node name="Button2" parent="Objects" index="4" groups=[
+"Mov1",
+"Wall2Led1",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 1070.49, 379.943 )
-names = [ "Led1", "Mov1" ]
+names = [ "Mov1", "Wall2Led1" ]
 
 [node name="Button3" parent="Objects" index="5" groups=[
-"Led",
+"Wall3Led2",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 896.78, 631.698 )
-names = [ "Led" ]
+names = [ "Wall3Led2" ]
 
 [node name="Wall1" parent="Objects" index="6" groups=[
 "Button1",
@@ -124,7 +127,8 @@ motion = Vector2( 0, -600 )
 cycle = 30.0
 
 [node name="Wall2" parent="Objects" index="8" groups=[
-"Led1",
+"Wall2Led2",
+"Wall2Led1",
 ] instance=ExtResource( 7 )]
 
 position = Vector2( 278.923, 543.32 )
@@ -132,7 +136,8 @@ scale = Vector2( 1, 2.98959 )
 activation = 1
 
 [node name="Wall3" parent="Objects" index="9" groups=[
-"Led",
+"Wall3Led1",
+"Wall3Led2",
 ] instance=ExtResource( 7 )]
 
 position = Vector2( 971.249, 544.431 )
@@ -140,7 +145,7 @@ scale = Vector2( 1, 2.94564 )
 activation = 1
 
 [node name="MovingPlatform2" parent="Objects" index="10" groups=[
-"Mov",
+"Mov2",
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 246.72, -417.914 )
