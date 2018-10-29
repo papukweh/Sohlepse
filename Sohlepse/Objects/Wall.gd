@@ -32,51 +32,52 @@ func _ready():
 			print("Invalid number of buttons for " + self.name)
 
 func onTriggered():
-	var trigger = true
-	if activation != 0:
-		active_buttons = 0 
-		for g in self.get_groups():
-			if !g.begins_with("root") and !g.begins_with("idle"):
-				for n in get_tree().get_nodes_in_group(g):
-					print(n.get_name())
-#					$AnimatedSprite.animation = str(int($AnimatedSprite.animation) + 1)
-#					print($AnimatedSprite.animation)
-					#print(n.activated)
-					if n.transmitter and !n.activated:
-						trigger = false
-					elif n.transmitter and n.activated:
-						print("entrei")
-						active_buttons += 1
-		print("ativados: " + str(active_buttons))
-		if bcount == 2 and active_buttons != 2:
-			$AnimatedSprite.animation = str(20+active_buttons)
-		elif bcount == 3 and active_buttons != 3:
-			$AnimatedSprite.animation = str(30+active_buttons)
-	#print("trigger="+str(trigger)+" act="+str(active)+" and begin="+str(begin))
-	
-	if trigger:
-		if active and begin == 0:
-			self.hide()
-			$CollisionShape2D.disabled = true
-			active = false
-		elif !active and begin != 0:
-			self.show()
-			$CollisionShape2D.disabled = false
-			active = true
-		elif active and begin != 0:
-			self.hide()
-			$CollisionShape2D.disabled = true
-			active = false
-		elif !active and begin == 0:
-			self.show()
-			$CollisionShape2D.disabled = false
-			active = true
-	elif activation != 0:
-		if active and begin != 0:
-			self.hide()
-			$CollisionShape2D.disabled = true
-			active = false
-		elif !active and begin == 0:
-			self.show()
-			$CollisionShape2D.disabled = false
-			active = true
+	if !global.restarting :
+		var trigger = true
+		if activation != 0:
+			active_buttons = 0 
+			for g in self.get_groups():
+				if !g.begins_with("root") and !g.begins_with("idle"):
+					for n in get_tree().get_nodes_in_group(g):
+						print(n.get_name())
+	#					$AnimatedSprite.animation = str(int($AnimatedSprite.animation) + 1)
+	#					print($AnimatedSprite.animation)
+						#print(n.activated)
+						if n.transmitter and !n.activated:
+							trigger = false
+						elif n.transmitter and n.activated:
+							print("entrei")
+							active_buttons += 1
+			print("ativados: " + str(active_buttons))
+			if bcount == 2 and active_buttons != 2:
+				$AnimatedSprite.animation = str(20+active_buttons)
+			elif bcount == 3 and active_buttons != 3:
+				$AnimatedSprite.animation = str(30+active_buttons)
+		#print("trigger="+str(trigger)+" act="+str(active)+" and begin="+str(begin))
+		
+		if trigger:
+			if active and begin == 0:
+				self.hide()
+				$CollisionShape2D.disabled = true
+				active = false
+			elif !active and begin != 0:
+				self.show()
+				$CollisionShape2D.disabled = false
+				active = true
+			elif active and begin != 0:
+				self.hide()
+				$CollisionShape2D.disabled = true
+				active = false
+			elif !active and begin == 0:
+				self.show()
+				$CollisionShape2D.disabled = false
+				active = true
+		elif activation != 0:
+			if active and begin != 0:
+				self.hide()
+				$CollisionShape2D.disabled = true
+				active = false
+			elif !active and begin == 0:
+				self.show()
+				$CollisionShape2D.disabled = false
+				active = true
