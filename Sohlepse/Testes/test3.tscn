@@ -145,8 +145,8 @@ position = Vector2( 514.71, 491.956 )
 position = Vector2( 429.163, 494.349 )
 
 [node name="MovingPlatform" parent="Objects" index="8" groups=[
-"Button3",
 "Button1",
+"Button3",
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 423.396, 396.391 )
@@ -154,8 +154,8 @@ activated = 1
 motion = Vector2( 20, 0 )
 
 [node name="MovingPlatform2" parent="Objects" index="9" groups=[
-"Button3",
 "Button1",
+"Button3",
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 551.79, 396.391 )

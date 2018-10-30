@@ -149,11 +149,13 @@ position = Vector2( -850, 90 )
 position = Vector2( -78, 525 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Lever2" parent="Objects" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 78, 525 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="MovingPlatform3" parent="Objects" index="10" instance=ExtResource( 9 )]
 

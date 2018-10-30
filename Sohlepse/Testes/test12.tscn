@@ -57,14 +57,17 @@ position = Vector2( 1082.41, 934.39 )
 [node name="Lever" parent="Reality" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 4.58679, -802.599 )
+names = null
 
 [node name="Lever2" parent="Reality" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 130.628, -718.204 )
+names = null
 
 [node name="Lever3" parent="Reality" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 259.335, -656.066 )
+names = null
 
 [node name="Endgoal" parent="Reality" index="3" instance=ExtResource( 5 )]
 
@@ -179,8 +182,8 @@ motion = Vector2( 300, 0 )
 cycle = 15.0
 
 [node name="MovingPlatform3" parent="Mirror" index="2" groups=[
-"Lever3",
 "Lever",
+"Lever3",
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 50, 175 )

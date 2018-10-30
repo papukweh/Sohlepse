@@ -89,48 +89,41 @@ __meta__ = {
 
 position = Vector2( 479.27, 424 )
 scale = Vector2( 1, 1 )
-thorn_begin = 1
 
 [node name="MovingPlatform2" parent="Reality/Object" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 294, 334 )
 scale = Vector2( 1, 1 )
-thorn_begin = 1
 cycle = 10.0
 
 [node name="MovingPlatform3" parent="Reality/Object" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 293.482, 163.809 )
 scale = Vector2( 1, 1 )
-thorn_begin = 1
 cycle = 10.0
 
 [node name="MovingPlatform6" parent="Reality/Object" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 162.988, 254.938 )
 scale = Vector2( 1, 1 )
-thorn_begin = 1
 cycle = 10.0
 
 [node name="MovingPlatform4" parent="Reality/Object" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 992, 309 )
 scale = Vector2( 1, 1 )
-thorn_begin = 1
 cycle = 10.0
 
 [node name="MovingPlatform7" parent="Reality/Object" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 991.11, 161.395 )
 scale = Vector2( 1, 1 )
-thorn_begin = 1
 cycle = 10.0
 
 [node name="MovingPlatform8" parent="Reality/Object" index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 991.33, 232.546 )
 scale = Vector2( 1, 1 )
-thorn_begin = 1
 cycle = 10.0
 
 [node name="Wall" parent="Reality/Object" index="7" groups=[
@@ -151,12 +144,14 @@ position = Vector2( 1022.96, 27.8727 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Lever2" parent="Reality/Object" index="9" groups=[
 "Lever2",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 572.26, 472.74 )
+names = null
 
 [node name="Hazards" type="Node2D" parent="Reality" index="2"]
 

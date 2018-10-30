@@ -137,6 +137,7 @@ begin = 1
 position = Vector2( -75.3749, 477.921 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+names = null
 
 [node name="Thorns2" parent="Reality" index="3" groups=[
 "Lever2",
@@ -163,6 +164,7 @@ begin = 1
 position = Vector2( -73.1035, 285.214 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Endgoal" parent="." index="5" instance=ExtResource( 9 )]
 

@@ -107,18 +107,22 @@ __meta__ = {
 
 position = Vector2( 810.701, -341.716 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Lever3" parent="Reality/Objects" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 769.72, -342.538 )
+names = null
 
 [node name="Lever2" parent="Reality/Objects" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 728.294, -341.698 )
+names = null
 
 [node name="Lever1" parent="Reality/Objects" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 691.396, -343.147 )
+names = null
 
 [node name="MovingPlatform" parent="Reality/Objects" index="4" groups=[
 "Lever1",
@@ -126,7 +130,6 @@ position = Vector2( 691.396, -343.147 )
 
 position = Vector2( 382.495, -554.791 )
 activated = 1
-thorn_begin = 1
 motion = Vector2( 200, 0 )
 cycle = 20.0
 
@@ -136,7 +139,6 @@ cycle = 20.0
 
 position = Vector2( 93.1748, -303.341 )
 activated = 1
-thorn_begin = 1
 motion = Vector2( 0, 275 )
 cycle = 20.0
 
@@ -146,7 +148,6 @@ cycle = 20.0
 
 position = Vector2( 750.05, -139.66 )
 activated = 1
-thorn_begin = 1
 motion = Vector2( 450, 0 )
 cycle = 20.0
 
@@ -156,7 +157,6 @@ cycle = 20.0
 
 position = Vector2( 1158.93, -305.764 )
 activated = 1
-thorn_begin = 1
 motion = Vector2( -250, 0 )
 cycle = 20.0
 

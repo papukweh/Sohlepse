@@ -116,7 +116,6 @@ cycle = 2.0
 [node name="MovingPlatform3" parent="Reality/Objects" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 1488.86, 72.014 )
-thorn_begin = 1
 motion = Vector2( -1500, 0 )
 cycle = 130.0
 
@@ -303,7 +302,6 @@ position = Vector2( 1455.24, 1274.82 )
 [node name="MovingPlatform4" parent="Mirror/Objects" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 1489.79, 1061.3 )
-thorn_begin = 1
 motion = Vector2( -1500, 0 )
 cycle = 130.0
 

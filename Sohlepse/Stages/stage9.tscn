@@ -13,7 +13,7 @@
 [ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=12]
 
-[node name="stage9" index="0" instance=ExtResource( 1 )]
+[node name="stage9" instance=ExtResource( 1 )]
 
 PLAYERS = 2
 
@@ -62,13 +62,11 @@ editor/display_folded = true
 
 position = Vector2( 925.154, 236.596 )
 scale = Vector2( 2.80672, 1 )
-thorn_begin = 1
 
 [node name="MovingPlatform5" parent="Reality/Objects" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 545.148, 158.911 )
 scale = Vector2( 1.41687, 1 )
-thorn_begin = 1
 motion = Vector2( 500, 0 )
 cycle = 50.0
 
@@ -76,7 +74,6 @@ cycle = 50.0
 
 position = Vector2( 481.937, 78.4881 )
 scale = Vector2( 1.41687, 1 )
-thorn_begin = 1
 motion = Vector2( 500, 0 )
 cycle = 50.0
 
@@ -95,14 +92,12 @@ position = Vector2( 853.359, -222.988 )
 [node name="MovingPlatform" parent="Reality/Objects" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( 19.5266, 418.427 )
-thorn_begin = 1
 motion = Vector2( 125, 0 )
 cycle = 10.0
 
 [node name="MovingPlatform2" parent="Reality/Objects" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( 15.6671, 223.421 )
-thorn_begin = 1
 motion = Vector2( 525, 0 )
 cycle = 100.0
 
@@ -111,7 +106,6 @@ cycle = 100.0
 position = Vector2( 965.395, -221.906 )
 rotation = -3.14159
 scale = Vector2( 1.5, -1 )
-thorn_begin = 1
 motion = Vector2( 525, 0 )
 cycle = 725.0
 
