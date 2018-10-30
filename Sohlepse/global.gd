@@ -9,9 +9,11 @@ var unlocked_stage = 1
 
 var current_act = 1
 var DEBUG = false
+var restarting = false
 const FINAL = 18
 
 func restart():
+	restarting = true
 	get_tree().reload_current_scene()
 	
 var pos = []
