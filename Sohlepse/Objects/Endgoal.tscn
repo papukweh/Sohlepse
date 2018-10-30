@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 5.67953, 10.2621 )
+extents = Vector2( 4.72039, 10.2621 )
 
 [node name="Endgoal" type="KinematicBody2D" groups=[
 "gravity",
@@ -44,15 +44,15 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 16
-collision_mask = 16
+collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 2.19098, -3.22899 )
-scale = Vector2( 5.04346, 2.93906 )
+position = Vector2( -1.9686, -3.22899 )
+scale = Vector2( 4.69041, 2.93906 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 

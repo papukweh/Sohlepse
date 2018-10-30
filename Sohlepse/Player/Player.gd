@@ -9,7 +9,6 @@ const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 300
 const STOP_FORCE = 1500
 const JUMP_SPEED = 380
-const JUMP_MAX_AIRBORNE_TIME = 0.2
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
@@ -234,20 +233,21 @@ func _physics_process(delta):
 #		carry.left(self)
 #		carry = null
 
-	if (tmp[0].size() > 1 and not platform or in_terrain == 0 and terrain != 1):
-		#print("enterando")
-		on_air_time = 0
+	#print(tmp[0])
+
+	if ((tmp[0].size() > 1 and not platform) or (in_terrain == 0 and terrain != 1)):
 		jumping = false
 		if (in_terrain == 0):
 			terrain = 1
 
-	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and not jumping and jump) or (in_terrain > 0 and jump):
+	if (tmp[0].size() > 1 and not jumping and jump) or (in_terrain > 0 and jump):
 		#print(on_air_time)
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -invert_vertical * JUMP_SPEED * terrain
 		jumping = true
-		on_air_time += delta
+		print("enterando")
+		print(tmp[0])
 
 		# Integrate forces to velocity
 	velocity += force * delta

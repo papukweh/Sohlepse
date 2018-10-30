@@ -40,8 +40,8 @@ func onTriggered():
 				if !g.begins_with("root") and !g.begins_with("idle"):
 					for n in get_tree().get_nodes_in_group(g):
 						print(n.get_name())
-	#					$AnimatedSprite.animation = str(int($AnimatedSprite.animation) + 1)
-	#					print($AnimatedSprite.animation)
+						$AnimatedSprite.animation = str(int($AnimatedSprite.animation) + 1)
+						print($AnimatedSprite.animation)
 						#print(n.activated)
 						if n.transmitter and !n.activated:
 							trigger = false
