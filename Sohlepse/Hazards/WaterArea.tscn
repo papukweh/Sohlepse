@@ -13,7 +13,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 9.99947, 11.4069 )
 
-[node name="WaterArea" type="StaticBody2D" index="0"]
+[node name="WaterArea" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1

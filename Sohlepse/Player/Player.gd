@@ -242,15 +242,15 @@ func _physics_process(delta):
 			terrain = 1
 
 	if jump and ((tmp[0].size() > 1 and not jumping) or (in_terrain > 0) or (water)):
-		print(in_terrain)
-		print(terrain)
+		#print(in_terrain)
+		#print(terrain)
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -invert_vertical * JUMP_SPEED * terrain
 		jumping = true
 		water = false
-		print("enterando")
-		print(tmp[1])
+		#print("enterando")
+		#print(tmp[1])
 
 		# Integrate forces to velocity
 	velocity += force * delta

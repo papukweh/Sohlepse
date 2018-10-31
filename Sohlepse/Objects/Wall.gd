@@ -47,17 +47,20 @@ func onTriggered():
 							if n.transmitter and !n.activated:
 								trigger = false
 							elif n.transmitter and n.activated:
-								print("entrei")
+								print("entrei "+self.get_name())
 								active_buttons += 1
 			print("ativados: " + str(active_buttons))
 			if bcount == 2 and active_buttons != 2:
 				$AnimatedSprite.animation = str(20+active_buttons)
+				self.show()
 			elif bcount == 3 and active_buttons != 3:
 				$AnimatedSprite.animation = str(30+active_buttons)
-		#print("trigger="+str(trigger)+" act="+str(active)+" and begin="+str(begin))
+				self.show()
+		print("trigger="+str(trigger)+" act="+str(active)+" and begin="+str(begin))
 		
 		if trigger:
 			if active and begin == 0:
+				print("some porra")
 				self.hide()
 				$CollisionShape2D.disabled = true
 				active = false
@@ -75,6 +78,7 @@ func onTriggered():
 				active = true
 		elif activation != 0:
 			if active and begin != 0:
+				print("some porra2")
 				self.hide()
 				$CollisionShape2D.disabled = true
 				active = false

@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 5.68235, 15.0242 )
+extents = Vector2( 4.96362, 15.0242 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -156,7 +156,7 @@ tracks/4/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 2.56728 )
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "gravity",
 "Player",
 ]]

@@ -76,7 +76,6 @@ position = Vector2( 341.026, 444.854 )
 position = Vector2( 658.082, 384.344 )
 scale = Vector2( 1, 1.94471 )
 begin = 1
-activation = 1
 
 [node name="Wall2" parent="Objects" index="3" groups=[
 "Lever1",
@@ -84,7 +83,6 @@ activation = 1
 
 position = Vector2( 814.464, 191.474 )
 scale = Vector2( 1, 1.94471 )
-activation = 1
 
 [node name="Wall3" parent="Objects" index="4" groups=[
 "Lever1",
@@ -93,7 +91,6 @@ activation = 1
 position = Vector2( 733.399, 2.1814 )
 scale = Vector2( 1, 1.94471 )
 begin = 1
-activation = 1
 
 [node name="Wall4" parent="Objects" index="5" groups=[
 "Lever1",
@@ -101,7 +98,6 @@ activation = 1
 
 position = Vector2( 811.505, -193.084 )
 scale = Vector2( 1, 1.94471 )
-activation = 1
 
 [node name="Wall5" parent="Objects" index="6" groups=[
 "Lever1",
@@ -110,7 +106,6 @@ activation = 1
 position = Vector2( 722.714, -383.375 )
 scale = Vector2( 1, 1.94471 )
 begin = 1
-activation = 1
 
 [node name="Wall6" parent="Objects" index="7" groups=[
 "Lever1",
@@ -118,7 +113,6 @@ activation = 1
 
 position = Vector2( 816.153, -575.679 )
 scale = Vector2( 1, 1.94471 )
-activation = 1
 
 [node name="MovingPlatform" parent="Objects" index="8" groups=[
 "Button2",
@@ -143,7 +137,6 @@ cycle = 50.0
 ] instance=ExtResource( 7 )]
 
 position = Vector2( 456.86, -737.808 )
-names = null
 
 [node name="Hazards" type="Node2D" parent="." index="4"]
 

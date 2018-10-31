@@ -22,7 +22,7 @@ func _ready():
 	
 func _process(delta):
 	timeout-=1
-	if timeout <= 0 and inbody != null and inbody.get_name().begins_with("Player") and inbody.is_interacting():
+	if timeout <= 0 and inbody != null and inbody.is_in_group("Player") and inbody.is_interacting():
 		emit_signal("hit")
 		timeout = 10
 	

@@ -87,12 +87,12 @@ __meta__ = {
 
 [node name="MovingPlatform" parent="Reality/Object" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 479.27, 424 )
+position = Vector2( 479.27, 427 )
 scale = Vector2( 1, 1 )
 
 [node name="MovingPlatform2" parent="Reality/Object" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 294, 334 )
+position = Vector2( 298, 337 )
 scale = Vector2( 1, 1 )
 cycle = 10.0
 
@@ -110,25 +110,25 @@ cycle = 10.0
 
 [node name="MovingPlatform4" parent="Reality/Object" index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 992, 309 )
+position = Vector2( 992, 312 )
 scale = Vector2( 1, 1 )
 cycle = 10.0
 
 [node name="MovingPlatform7" parent="Reality/Object" index="5" instance=ExtResource( 4 )]
 
-position = Vector2( 991.11, 161.395 )
+position = Vector2( 991.11, 163.395 )
 scale = Vector2( 1, 1 )
 cycle = 10.0
 
 [node name="MovingPlatform8" parent="Reality/Object" index="6" instance=ExtResource( 4 )]
 
-position = Vector2( 991.33, 232.546 )
+position = Vector2( 991.33, 234.546 )
 scale = Vector2( 1, 1 )
 cycle = 10.0
 
 [node name="Wall" parent="Reality/Object" index="7" groups=[
-"Lever2",
 "Lever1",
+"Lever2",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 153, -32 )
