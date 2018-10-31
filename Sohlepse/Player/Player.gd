@@ -75,9 +75,17 @@ func _process(delta):
 func _physics_process(delta):
 	#print(self.get_name()+str(restart))
 	if dead:
+		GRAVITY = 700
+		print("to morto"+self.get_name())
+		var force = Vector2(0, invert_vertical*GRAVITY)
 		restart = false
+		# Integrate forces to velocity
+		velocity += force * delta
+		# Integrate velocity into motion and move
+		velocity = move_and_slide(velocity, Vector2(0, 1))
 		return
 	# Create forces
+	print("to vivo"+self.get_name())
 	var force = Vector2(0, invert_vertical*GRAVITY)
 	var stop = true
 
@@ -264,6 +272,7 @@ func moving_right():
 	return move_right and not move_left
 	
 func die():
+	$CollisionShape2D.disabled = false
 	dead = true
 	if invert_horizontal == -1 or invert_vertical == -1:
 		$AnimationPlayer.play("Death2")
