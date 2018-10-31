@@ -42,6 +42,7 @@ onready var restart = false
 onready var clone = false
 onready var dict = Dictionary()
 onready var cnt = 0
+onready var water = false
 
 func _ready():
 	if invert_vertical == -1:
@@ -240,14 +241,16 @@ func _physics_process(delta):
 		if (in_terrain == 0):
 			terrain = 1
 
-	if (tmp[0].size() > 1 and not jumping and jump) or (in_terrain > 0 and jump):
-		#print(on_air_time)
+	if jump and ((tmp[0].size() > 1 and not jumping) or (in_terrain > 0) or (water)):
+		print(in_terrain)
+		print(terrain)
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -invert_vertical * JUMP_SPEED * terrain
 		jumping = true
+		water = false
 		print("enterando")
-		print(tmp[0])
+		print(tmp[1])
 
 		# Integrate forces to velocity
 	velocity += force * delta
