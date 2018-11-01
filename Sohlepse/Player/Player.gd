@@ -56,6 +56,7 @@ func _process(delta):
 	if !ready:
 		_ready()
 	if dead:
+		$sprite.animation = "still"
 		return
 			
 	if Input.is_action_just_pressed("change-v"):
