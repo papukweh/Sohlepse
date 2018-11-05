@@ -16,7 +16,7 @@ gradient = SubResource( 1 )
 width = 1000
 _sections_unfolded = [ "Resource" ]
 
-[node name="Setup" type="Node2D" index="0"]
+[node name="Setup" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -399,7 +399,7 @@ _sections_unfolded = [ "Invert", "Material", "Texture", "Transform", "Visibility
 
 position = Vector2( 890, 0 )
 rotation = 1.5708
-polygon = PoolVector2Array( 1.52116e-005, 348, 1.5299e-005, 350, 690, 350, 690, 348 )
+polygon = PoolVector2Array( 1.52116e-05, 348, 1.5299e-05, 350, 690, 350, 690, 348 )
 uv = PoolVector2Array(  )
 color = Color( 0.264496, 0.703178, 0.835938, 0.121529 )
 vertex_colors = PoolColorArray(  )

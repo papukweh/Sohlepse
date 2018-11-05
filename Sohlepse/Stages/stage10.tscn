@@ -116,8 +116,8 @@ position = Vector2( 868.401, 319.776 )
 scale = Vector2( 1, 1.98563 )
 
 [node name="Wall4" parent="Objects" index="4" groups=[
-"Lever4",
 "Lever5",
+"Lever4",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 882.174, -127.817 )
