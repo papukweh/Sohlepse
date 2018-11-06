@@ -158,12 +158,10 @@ position = Vector2( 606, -1114 )
 [node name="Lever1" parent="Reality/Objects" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 64, -1121 )
-names = null
 
 [node name="Lever2" parent="Reality/Objects" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( 63.4012, -718 )
-names = null
 
 [node name="MovingPlatform" parent="Reality/Objects" index="7" instance=ExtResource( 7 )]
 
@@ -193,7 +191,6 @@ scale = Vector2( 0.881685, 1 )
 [node name="Lever3" parent="Reality/Objects" index="12" instance=ExtResource( 6 )]
 
 position = Vector2( 901.927, -254.39 )
-names = null
 
 [node name="Button1" parent="Reality/Objects" index="13" instance=ExtResource( 8 )]
 
@@ -821,14 +818,12 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -64, -1121 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="Lever4" parent="Mirror/Objects" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( -63.4012, -718 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="MovingPlatform6" parent="Mirror/Objects" index="8" instance=ExtResource( 7 )]
 
@@ -865,7 +860,6 @@ scale = Vector2( -0.881685, 1 )
 position = Vector2( -901.927, -254.39 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="ColorRect" type="ColorRect" parent="Mirror" index="2"]
 

@@ -10,7 +10,7 @@ var unlocked_stage = 1
 var current_act = 1
 var DEBUG = false
 var restarting = false
-const FINAL = 18
+const FINAL = 21
 
 func restart():
 	restarting = true

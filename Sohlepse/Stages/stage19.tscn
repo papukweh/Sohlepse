@@ -1,0 +1,323 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Hazards/WaterArea.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=12]
+
+[node name="stage19" index="0" instance=ExtResource( 1 )]
+
+ACT = 2
+PLAYERS = 2
+MAX_CLONES = 0
+MODE = 2
+invert = true
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -327680, 1, 0, -327679, 1073741833, 0, -327678, 1073741833, 0, -327677, 1073741833, 0, -327676, 1073741833, 0, -327675, 1073741833, 0, -327674, 1073741833, 0, -327673, 1073741834, 0, -327672, 11, 0, -327671, 11, 0, -327670, 11, 0, -327669, 11, 0, -327668, 11, 0, -327667, 11, 0, -327666, 1610612746, 0, -327665, 1073741833, 0, -327664, 1073741833, 0, -327663, 1073741833, 0, -327662, 1073741833, 0, -327661, 1073741833, 0, -327660, 1073741833, 0, -327659, 1, 0, -262144, 1, 0, -262143, 3, 0, -262142, 3, 0, -262141, 3, 0, -262140, 3, 0, -262139, 3, 0, -262138, 3, 0, -262137, 7, 0, -262132, 4, 0, -262130, 536870919, 0, -262129, 3, 0, -262128, 3, 0, -262127, 3, 0, -262126, 3, 0, -262125, 3, 0, -262124, 3, 0, -262123, 1, 0, -196608, 1, 0, -196607, 3, 0, -196606, 3, 0, -196605, 3, 0, -196604, 3, 0, -196603, 3, 0, -196602, 3, 0, -196601, 7, 0, -196596, 4, 0, -196594, 536870919, 0, -196593, 3, 0, -196592, 3, 0, -196591, 3, 0, -196590, 3, 0, -196589, 3, 0, -196588, 3, 0, -196587, 1, 0, -131072, 1, 0, -131071, 3, 0, -131070, 3, 0, -131069, 3, 0, -131068, 3, 0, -131067, 3, 0, -131066, 3, 0, -131065, 7, 0, -131060, 4, 0, -131058, 536870924, 0, -131057, 536870923, 0, -131056, 536870923, 0, -131055, 536870923, 0, -131054, 536870923, 0, -131053, 536870923, 0, -131052, 536870923, 0, -131051, 1, 0, -65536, 1, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 536870923, 0, -65531, 536870923, 0, -65530, 536870923, 0, -65529, 7, 0, -65524, 4, 0, -65515, 1, 0, 0, 1, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 7, 0, 12, 4, 0, 21, 1, 0, 65536, 1, 0, 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 7, 0, 65547, 536870914, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 2, 0, 65557, 1, 0, 131072, 1, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 7, 0, 131093, 1, 0, 196608, 1, 0, 196609, 536870923, 0, 196610, 536870923, 0, 196611, 536870923, 0, 196612, 7, 0, 196629, 1, 0, 262144, 1, 0, 262165, 1, 0, 327680, 1, 0, 327701, 1, 0, 393216, 1, 0, 393237, 1, 0, 458752, 1, 0, 458773, 1, 0, 524288, 1, 0, 524309, 1, 0, 589824, 1, 0, 589825, 0, 0, 589826, 2, 0, 589845, 1, 0, 720896, 1, 0, 720897, 11, 0, 720898, 11, 0, 720899, 11, 0, 720900, 11, 0, 720901, 11, 0, 720902, 11, 0, 720903, 11, 0, 720904, 11, 0, 720905, 11, 0, 720906, 11, 0, 720907, 11, 0, 720908, 11, 0, 720909, 11, 0, 720910, 11, 0, 720911, 11, 0, 720912, 11, 0, 720913, 11, 0, 720914, 11, 0, 720915, 11, 0, 720916, 11, 0, 720917, 11, 0, 720918, 11, 0, 720919, 11, 0, 720920, 11, 0, 720921, 11, 0, 720922, 11, 0, 720923, 11, 0, 720924, 1, 0, 786432, 1, 0, 786460, 1, 0, 851968, 1, 0, 851996, 1, 0, 917504, 1, 0, 917532, 1, 0, 983040, 1, 0, 983065, 0, 0, 983066, 0, 0, 983067, 0, 0, 983068, 1, 0, 1048576, 1, 0, 1048604, 1, 0, 1114112, 1, 0, 1114140, 1, 0, 1179648, 1, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Real" type="ReferenceRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -320.0
+margin_right = 1408.0
+margin_bottom = 640.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Mirrored" type="ReferenceRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 704.0
+margin_right = 1856.0
+margin_bottom = 1216.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Players" type="Node" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 96, 512 )
+
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 96, 1088 )
+
+[node name="Hazards" type="Node" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="Thorns" parent="Hazards" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 224, 256 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Thorns2" parent="Hazards" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 256 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Thorns3" parent="Hazards" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 416, 0 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Thorns4" parent="Hazards" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 480, 0 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Thorns5" parent="Hazards" index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 576, -224 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Thorns6" parent="Hazards" index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 640, -224 )
+scale = Vector2( 1, -1.265 )
+begin = 1
+
+[node name="Lava" parent="Hazards" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 224, 608 )
+
+[node name="Lava2" parent="Hazards" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 288, 608 )
+
+[node name="Lava3" parent="Hazards" index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 608 )
+
+[node name="Lava4" parent="Hazards" index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 416, 608 )
+
+[node name="Lava5" parent="Hazards" index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 480, 608 )
+
+[node name="Lava6" parent="Hazards" index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 544, 608 )
+
+[node name="Lava7" parent="Hazards" index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 608, 608 )
+
+[node name="Lava8" parent="Hazards" index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 608 )
+
+[node name="Lava9" parent="Hazards" index="14" instance=ExtResource( 5 )]
+
+position = Vector2( 736, 608 )
+
+[node name="Lava10" parent="Hazards" index="15" instance=ExtResource( 5 )]
+
+position = Vector2( 800, 608 )
+
+[node name="Lava11" parent="Hazards" index="16" instance=ExtResource( 5 )]
+
+position = Vector2( 864, 608 )
+
+[node name="Lava12" parent="Hazards" index="17" instance=ExtResource( 5 )]
+
+position = Vector2( 928, 608 )
+
+[node name="Lava13" parent="Hazards" index="18" instance=ExtResource( 5 )]
+
+position = Vector2( 992, 608 )
+
+[node name="Lava14" parent="Hazards" index="19" instance=ExtResource( 5 )]
+
+position = Vector2( 1056, 608 )
+
+[node name="Lava15" parent="Hazards" index="20" instance=ExtResource( 5 )]
+
+position = Vector2( 1120, 608 )
+
+[node name="Lava16" parent="Hazards" index="21" instance=ExtResource( 5 )]
+
+position = Vector2( 1184, 608 )
+
+[node name="Lava17" parent="Hazards" index="22" instance=ExtResource( 5 )]
+
+position = Vector2( 1248, 608 )
+
+[node name="Lava18" parent="Hazards" index="23" instance=ExtResource( 5 )]
+
+position = Vector2( 1312, 608 )
+
+[node name="Lava19" parent="Hazards" index="24" instance=ExtResource( 5 )]
+
+position = Vector2( 928, 1184 )
+
+[node name="Lava20" parent="Hazards" index="25" instance=ExtResource( 5 )]
+
+position = Vector2( 992, 1184 )
+
+[node name="Lava21" parent="Hazards" index="26" instance=ExtResource( 5 )]
+
+position = Vector2( 1184, 1184 )
+
+[node name="Lava22" parent="Hazards" index="27" instance=ExtResource( 5 )]
+
+position = Vector2( 1248, 1184 )
+
+[node name="WaterArea" parent="Hazards" index="28" instance=ExtResource( 6 )]
+
+position = Vector2( 1056, 1184 )
+
+[node name="WaterArea2" parent="Hazards" index="29" instance=ExtResource( 6 )]
+
+position = Vector2( 1120, 1184 )
+
+[node name="WaterArea3" parent="Hazards" index="30" instance=ExtResource( 6 )]
+
+position = Vector2( 1312, 1184 )
+
+[node name="WaterArea4" parent="Hazards" index="31" instance=ExtResource( 6 )]
+
+position = Vector2( 1376, 1184 )
+
+[node name="Objects" type="Node" parent="." index="5"]
+
+[node name="MovingPlatform" parent="Objects" index="0" groups=[
+"ButtonInst",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 256, 512 )
+activated = 1
+motion = Vector2( 0, -200 )
+cycle = 10.0
+
+[node name="MovingPlatform4" parent="Objects" index="1" groups=[
+"ButtonInst",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 992, 512 )
+motion = Vector2( 200, 0 )
+cycle = 10.0
+
+[node name="MovingPlatform5" parent="Objects" index="2" groups=[
+"ButtonInst",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 1436, 928 )
+motion = Vector2( 200, 0 )
+cycle = 10.0
+
+[node name="MovingPlatform2" parent="Objects" index="3" groups=[
+"ButtonInst2",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 448, 448 )
+activated = 1
+motion = Vector2( 0, -400 )
+cycle = 18.0
+
+[node name="MovingPlatform3" parent="Objects" index="4" groups=[
+"ButtonInst3",
+] instance=ExtResource( 7 )]
+
+position = Vector2( 608, 128 )
+activated = 1
+motion = Vector2( 0, 500 )
+cycle = 15.0
+
+[node name="Wall" parent="Objects" index="5" groups=[
+"Lever",
+] instance=ExtResource( 8 )]
+
+position = Vector2( 1616.52, 1089 )
+scale = Vector2( 1, 2 )
+
+[node name="Wall2" parent="Objects" index="6" groups=[
+"Lever",
+] instance=ExtResource( 8 )]
+
+position = Vector2( 910.53, -30.7467 )
+scale = Vector2( 1, 1.01087 )
+
+[node name="ButtonInst" parent="Objects" index="7" instance=ExtResource( 9 )]
+
+position = Vector2( 256, 1149 )
+
+[node name="ButtonInst3" parent="Objects" index="8" instance=ExtResource( 9 )]
+
+position = Vector2( 640, 1149 )
+
+[node name="ButtonInst2" parent="Objects" index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 448, 1149 )
+
+[node name="Lever" parent="Objects" index="10" groups=[
+"Lever",
+] instance=ExtResource( 10 )]
+
+position = Vector2( 793.538, 23 )
+
+[node name="Endgoal" parent="." index="6" instance=ExtResource( 11 )]
+
+position = Vector2( 992, 463 )
+
+[node name="EndgoalMirror" parent="." index="7" instance=ExtResource( 12 )]
+
+position = Vector2( 1740.6, 1108.37 )
+
+
