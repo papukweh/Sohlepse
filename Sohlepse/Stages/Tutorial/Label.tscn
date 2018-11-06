@@ -23,6 +23,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0.0546875, 0.0448608, 0.0448608, 0.696118 )
 text = "wyudyalda"
 autowrap = true
 percent_visible = 1.0

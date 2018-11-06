@@ -1,23 +1,32 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
-[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/background.png" type="Texture" id=2]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=7]
 
-[node name="stage1" instance=ExtResource( 1 )]
+[node name="stage1" index="0" instance=ExtResource( 1 )]
 
 ACT = 3
 MAX_CLONES = 0
 hasTutorial = [ true, true, true ]
 
-[node name="TileMap" type="TileMap" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 589.791, 399.472 )
+scale = Vector2( 0.186057, 0.187322 )
+z_index = -1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
 
 position = Vector2( -529.323, -108.949 )
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -38,7 +47,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Real" type="ReferenceRect" parent="." index="1"]
+[node name="Real" type="ReferenceRect" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -55,38 +64,41 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Players" type="Node" parent="." index="2"]
+[node name="Players" type="Node" parent="." index="3"]
 
-[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 410, 500 )
 
-[node name="Endgoal" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Endgoal" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 768.341, 500.01 )
 scale = Vector2( -1, 1 )
 
-[node name="Panel0" parent="." index="4" instance=ExtResource( 5 )]
+[node name="Panel0" parent="." index="5" instance=ExtResource( 6 )]
 
 input = 1
 label = "Mover"
 
-[node name="Panel1" parent="." index="5" instance=ExtResource( 5 )]
+[node name="Panel1" parent="." index="6" instance=ExtResource( 6 )]
 
 label = "Interagir"
 
-[node name="Panel2" parent="." index="6" instance=ExtResource( 5 )]
+[node name="Panel2" parent="." index="7" instance=ExtResource( 6 )]
 
 input = 3
 label = "Pausa"
 
-[node name="Event" parent="." index="7" instance=ExtResource( 6 )]
+[node name="Event" parent="." index="8" instance=ExtResource( 7 )]
 
 _sections_unfolded = [ "Transform" ]
 events = [ Vector2( 410, 500 ), Vector2( 750, 495 ) ]
 labels = [ "Que lugar é esse?", " " ]
-pos = [ Vector2( 440, 340 ), Vector2( 0, 0 ) ]
+pos = [ Vector2( 480, 340 ), Vector2( 0, 0 ) ]
 areascale = null
 playanyway = false
 
