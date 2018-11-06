@@ -1,44 +1,44 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Wall.gd" type="Script" id=1]
-[ext_resource path="res://Assets/actionable_wall_2b.png" type="Texture" id=2]
-[ext_resource path="res://Assets/actionable_wall_3a.png" type="Texture" id=3]
-[ext_resource path="res://Assets/actionable_wall_3c.png" type="Texture" id=4]
-[ext_resource path="res://Assets/actionable_wall_3b.png" type="Texture" id=5]
-[ext_resource path="res://Assets/actionable_wall.png" type="Texture" id=6]
-[ext_resource path="res://Assets/actionable_wall_2a.png" type="Texture" id=7]
+[ext_resource path="res://Assets/actionable_wall_3a.png" type="Texture" id=2]
+[ext_resource path="res://Assets/actionable_wall_2a.png" type="Texture" id=3]
+[ext_resource path="res://Assets/actionable_wall_2b.png" type="Texture" id=4]
+[ext_resource path="res://Assets/actionable_wall.png" type="Texture" id=5]
+[ext_resource path="res://Assets/actionable_wall_3c.png" type="Texture" id=6]
+[ext_resource path="res://Assets/actionable_wall_3b.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "21",
+"name": "30",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "30",
+"name": "20",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "32",
+"name": "21",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "31",
+"name": "10",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "10",
+"name": "32",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "20",
+"name": "31",
 "speed": 5.0
 } ]
 

@@ -1,14 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Lava.png" type="Texture" id=1]
-[ext_resource path="res://Hazards/FireArea.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Lava1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Lava2.png" type="Texture" id=2]
+[ext_resource path="res://Hazards/FireArea.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 25.6657, 10 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.83139, 9.62653 )
@@ -24,15 +34,17 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-texture = ExtResource( 1 )
+frames = SubResource( 1 )
+animation = "default"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( -0.0346097, 22.9208 )
 scale = Vector2( 1.25468, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="FireArea" type="Area2D" parent="." index="2"]
 
@@ -43,13 +55,13 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea" index="0"]
 
 position = Vector2( 0.0385868, -7.9859 )
 scale = Vector2( 3.28944, 2.36339 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [connection signal="body_entered" from="FireArea" to="FireArea" method="_on_FireArea_body_entered"]
 

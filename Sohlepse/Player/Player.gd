@@ -38,6 +38,7 @@ onready var platform = false
 onready var initpos = self.get_position()
 onready var ready = true
 onready var carry = null
+onready var anim = ""
 onready var restart = false
 onready var clone = false
 onready var dict = Dictionary()
@@ -52,12 +53,15 @@ func _ready():
 		$sprite.scale.x = -1
 		siding_left = true
 	ready = true
+	$sprite.play("still")
+	anim = "still"
 
 func _process(delta):
 	if !ready:
 		clone = true
 		_ready()
 	if dead:
+		$sprite.animation = "still"
 		return
 	
 	restart = false
@@ -148,13 +152,16 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("debug"):
 		print(self.get_name()+": "+str(self.position))
-	
+		
 	if pushing:
 		if move_left:
 			velocity.x = -175
 		elif move_right:
 			velocity.x = 175
 	else:
+		if not is_interacting() and anim != "walking":
+			$sprite.play("walking")
+			anim = "walking"
 		if move_left:
 			if velocity.x <= WALK_MIN_SPEED * terrain and velocity.x > -WALK_MAX_SPEED * terrain:
 				force.x -= WALK_FORCE
@@ -189,7 +196,20 @@ func _physics_process(delta):
 			$sprite.scale.x = invert_vertical
 		
 		siding_left = new_siding_left
+		
+	if velocity.x == 0 or siding().size() > 1:
+		$sprite.play("still")
+		anim = "still"
 	
+	if is_interacting():
+		if velocity.x == 0 or siding().size() > 1:
+			if anim != "pushing_still":
+				$sprite.animation = "pushing_still"
+				anim = "pushing_still"
+		else:
+			if anim != "pushing_walk":
+				$sprite.play("pushing_walk")
+				anim = "pushing_walk"
 #	# Integrate forces to velocity
 #	velocity += force * delta
 #	# Integrate velocity into motion and move
@@ -240,6 +260,13 @@ func _physics_process(delta):
 		jumping = false
 		if (in_terrain == 0):
 			terrain = 1
+	else:
+		if is_interacting():
+			$sprite.play("pushing_still")
+			anim = "pushing_still"
+		else:
+			$sprite.play("still")
+			anim = "still"
 
 	if jump and ((tmp[0].size() > 1 and not jumping) or (in_terrain > 0) or (water)):
 		#print(in_terrain)
