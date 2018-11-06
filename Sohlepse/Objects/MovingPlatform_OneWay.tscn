@@ -6,14 +6,14 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 26.9189, 1.23438 )
+extents = Vector2( 26.9189, 1.4311 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.2953, 11.9587 )
 
-[node name="MovingPlatform" type="Node2D" index="0"]
+[node name="MovingPlatform" type="Node2D"]
 
 scale = Vector2( 1.5, 1 )
 script = ExtResource( 1 )
@@ -62,7 +62,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform/Area2D" index="0"]
 
-position = Vector2( -0.630747, 5.38411 )
+position = Vector2( -0.725677, 6.23849 )
 scale = Vector2( 1.17864, 5.75451 )
 shape = SubResource( 1 )
 
@@ -72,7 +72,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform" index="2"]
 
-position = Vector2( -0.026975, -12.7988 )
+position = Vector2( 0.44768, -10.5205 )
 scale = Vector2( 0.997105, 0.0873001 )
 shape = SubResource( 2 )
 one_way_collision = true
