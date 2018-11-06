@@ -79,9 +79,25 @@ func _process(delta):
 func _physics_process(delta):
 	#print(self.get_name()+str(restart))
 	if dead:
+		GRAVITY = 700
+		#print("to morto"+self.get_name())
+		var force = Vector2(0, invert_vertical*GRAVITY)
 		restart = false
+		
+		var tmp = deadbody()
+		for i in tmp:
+			if i.get_parent() != self and i.get_name() == "Feet":
+				i.get_parent().position.y = self.position.y - 45
+		
+		# Integrate forces to velocity
+		velocity += force * delta
+		velocity = Vector2(0, velocity.y)
+		# Integrate velocity into motion and move
+		velocity = move_and_slide(velocity, Vector2(0, -1))
 		return
+
 	# Create forces
+	#print("to vivo"+self.get_name())
 	var force = Vector2(0, invert_vertical*GRAVITY)
 	var stop = true
 
@@ -291,11 +307,14 @@ func moving_right():
 	return move_right and not move_left
 	
 func die():
+	#$CollisionShape2D.disabled = false
+	self.velocity = Vector2(0,0)
 	dead = true
 	if invert_horizontal == -1 or invert_vertical == -1:
 		$AnimationPlayer.play("Death2")
 	else:
 		$AnimationPlayer.play("Death")
+	self.velocity = Vector2(0,0)
 	
 func reset_position():
 	self.set_position(initpos)
@@ -305,6 +324,7 @@ func ground():
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name.begins_with("Death"):
+		self.velocity = Vector2(0,0)
 		if restart or (!on_act3 and not clone):
 			global.restart()
 		elif !clone:
@@ -320,6 +340,9 @@ func is_interacting():
 
 func view():
 	return view
+
+func deadbody():
+	return $sprite/Body.get_overlapping_areas()
 
 func siding():
 	return $sprite/Siding.get_overlapping_bodies()

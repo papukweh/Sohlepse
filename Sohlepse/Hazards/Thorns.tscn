@@ -26,7 +26,7 @@ extents = Vector2( 10.9503, 11.929 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32.3044, 10.1168 )
+extents = Vector2( 32.3044, 6.60888 )
 
 [node name="Thorns" type="Node2D"]
 
@@ -85,7 +85,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D" index="0"]
 
-position = Vector2( 0.0189441, -20.8835 )
+position = Vector2( 0.0189441, -18.5595 )
 scale = Vector2( 0.990205, 1.22226 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Player.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=7]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -19,22 +19,22 @@ extents = Vector2( 4.96362, 15.0242 )
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
+"name": "pushing_still",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
 "name": "still",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "walking",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "pushing_walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "pushing_still",
+"name": "walking",
 "speed": 5.0
 } ]
 
@@ -46,7 +46,7 @@ extents = Vector2( 20.4562, 10 )
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.0516, 29.7649 )
+extents = Vector2( 14.0813, 29.7649 )
 
 [sub_resource type="RectangleShape2D" id=5]
 
@@ -190,7 +190,7 @@ tracks/4/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 2.56728 )
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "gravity",
 "Player",
 ]]
@@ -217,8 +217,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head" index="0"]
 
-position = Vector2( 0.479584, -25.8322 )
-scale = Vector2( 4.56207, 0.461044 )
+position = Vector2( -1.31071, -25.8322 )
+scale = Vector2( 4.33726, 0.461044 )
 shape = SubResource( 1 )
 
 [node name="sprite" type="AnimatedSprite" parent="." index="1"]
@@ -244,8 +244,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Siding" index="0"]
 
-position = Vector2( 7.46442, 12.6041 )
-scale = Vector2( 0.548939, 0.843376 )
+position = Vector2( 7.46442, 14.4807 )
+scale = Vector2( 0.548939, 0.987727 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
