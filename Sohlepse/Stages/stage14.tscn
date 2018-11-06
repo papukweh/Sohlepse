@@ -154,6 +154,7 @@ cycle = 10.0
 
 position = Vector2( -1216, 768 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Lever2" parent="Reality" index="8" groups=[
 "Lever2",
@@ -162,12 +163,14 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( -573.534, -128.375 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Lever3" parent="Reality" index="9" groups=[
 "Lever3",
 ] instance=ExtResource( 7 )]
 
 position = Vector2( -2556.48, 155.576 )
+names = null
 
 [node name="Mirror" type="Node" parent="." index="5"]
 

@@ -111,18 +111,21 @@ cycle = 2.0
 ] instance=ExtResource( 7 )]
 
 position = Vector2( -909.863, 915.833 )
+names = null
 
 [node name="Lever2" parent="Objects" index="5" groups=[
 "Lever2",
 ] instance=ExtResource( 7 )]
 
 position = Vector2( -783.104, 911.244 )
+names = null
 
 [node name="Lever3" parent="Objects" index="6" groups=[
 "Lever3",
 ] instance=ExtResource( 7 )]
 
 position = Vector2( -654.107, 910.089 )
+names = null
 
 [node name="Wall" parent="Objects" index="7" groups=[
 "Button",

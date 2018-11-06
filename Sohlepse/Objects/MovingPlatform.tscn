@@ -19,6 +19,7 @@ scale = Vector2( 1.5, 1 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 activated = 0
+thorn_begin = 1
 motion = Vector2( 0, 0 )
 cycle = 1.0
 
@@ -58,8 +59,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform/Area2D" index="0"]
 
-position = Vector2( -0.110537, -12.2661 )
-scale = Vector2( 1.3679, 1 )
+position = Vector2( 0.0982835, -13.315 )
+scale = Vector2( 1.40789, 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="platform" index="1"]
@@ -68,8 +69,8 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform" index="2"]
 
-position = Vector2( 0.102165, 1.06243 )
-scale = Vector2( 0.997105, 0.928976 )
+position = Vector2( 0.102165, -1.28368 )
+scale = Vector2( 0.997105, 1.08582 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="platform/Area2D" to="." method="_on_Area2D_body_entered"]

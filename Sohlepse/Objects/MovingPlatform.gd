@@ -1,6 +1,7 @@
 extends Node2D
 
 export var activated = 0 #activated by default
+export var thorn_begin = 1 #activated by default
 export var motion = Vector2()
 export var cycle = 1.0
 var accum = 0.0
@@ -59,7 +60,7 @@ func onTriggered():
 		activated = 1
 
 func entered(body):
-	#print(body.get_name()+" entrou em "+self.get_name())
+	print(body.get_name()+" entrou em "+self.get_name())
 	if motion[0] == motion[1] and motion[1] == 0:
 		return
 	elif !objs.has(body.get_name()):
@@ -68,6 +69,7 @@ func entered(body):
 	return
 	
 func left(body):
+	print(body.get_name()+" saiu de "+self.get_name())
 	body.GRAVITY = 700
 	if objs.has(body.get_name()):
 		body.GRAVITY = 700

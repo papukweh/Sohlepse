@@ -10,6 +10,7 @@ func _process(delta):
 		if get_parent().get_node("EndgoalMirror") == null or get_parent().get_node("EndgoalMirror").inEndGoal:
 			global.current_stage += 1
 			global.save()
+			global.clean()
 			get_tree().reload_current_scene()
 
 func _physics_process(delta):

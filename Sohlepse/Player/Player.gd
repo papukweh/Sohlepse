@@ -9,7 +9,6 @@ const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 300
 const STOP_FORCE = 1500
 const JUMP_SPEED = 380
-const JUMP_MAX_AIRBORNE_TIME = 0.2
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
@@ -40,6 +39,11 @@ onready var initpos = self.get_position()
 onready var ready = true
 onready var carry = null
 onready var anim = ""
+onready var restart = false
+onready var clone = false
+onready var dict = Dictionary()
+onready var cnt = 0
+onready var water = false
 
 func _ready():
 	if invert_vertical == -1:
@@ -54,22 +58,28 @@ func _ready():
 
 func _process(delta):
 	if !ready:
+		clone = true
 		_ready()
 	if dead:
 		$sprite.animation = "still"
 		return
-			
+	
+	restart = false
 	if Input.is_action_just_pressed("change-v"):
 		invert_vertical *= -1
 		self.rotate(PI)
 	if Input.is_action_just_pressed("change-h"):
 		invert_horizontal *= -1
 	if Input.is_action_just_pressed("restart"):
+		global.clean()
+		restart = true
 		die()
 
 	
 func _physics_process(delta):
+	#print(self.get_name()+str(restart))
 	if dead:
+		restart = false
 		return
 	# Create forces
 	var force = Vector2(0, invert_vertical*GRAVITY)
@@ -79,7 +89,7 @@ func _physics_process(delta):
 	for a in opa:
 		if a == self:
 			continue
-		elif a.get_name().begins_with("Box"):
+		elif a.get_name().begins_with("Box") or a.get_class() == "TileMap":
 			view = a
 			break
 
@@ -97,7 +107,7 @@ func _physics_process(delta):
 				if(!jumping):
 					#print("no jump, being crushed")
 					crushing = true
-			elif self.velocity.y < 0:
+			elif self.GRAVITY < 0:
 				#print("subindo")
 				if (!jumping):
 				#	print("mas no jump, being crushed")
@@ -105,18 +115,18 @@ func _physics_process(delta):
 			else:
 				crushing = false
 		elif cls == "TileMap":
-			if self.GRAVITY < 0 and !jumping:
+			if self.GRAVITY < 0 and !jumping and view != body:
 				crushing = true
 				#print("being cccrushed")
 		elif cls == "KinematicBody2D":
 			if body.get_name().begins_with("Box"):
-				if !jumping and body.falling():
+				if !jumping and body.falling() and view != body:
 					#print("boxcrsuh")
 					crushing = true
-			elif !jumping and body.velocity.y > 0:
-				if body.falling:
+				elif !jumping and body.velocity.y > 0:
+					if body.falling():
 					#print("crcrcush")
-					crushing = true
+						crushing = true
 		else:
 			crushing = false
 			#print("no crush "+cls)
@@ -129,7 +139,7 @@ func _physics_process(delta):
 	if time <= 0:
 		die()
 	
-	if on_act3:
+	if on_act3 and not clone:
 		if Input.is_action_just_pressed("record"):
 			if recording:
 				Recorder.stop_recording()
@@ -208,19 +218,31 @@ func _physics_process(delta):
 	#print(carry)
 	var tmp = ground()
 	var nope = true
-	var oldcarry = carry
 	#print(tmp)
 	for i in tmp[1]:
 		if i.is_in_group('carry'):
 			carry = i.get_parent().get_parent()
-			carry.entered(self)
+			if !dict.has(carry.get_name()):
+				carry.entered(self)
+				dict[carry.get_name()] = [cnt, carry]
+				cnt += 1
 			nope = false
 	
 	if nope and carry != null:
 		carry.left(self)
-		
-	if oldcarry != null and carry != oldcarry:
-		oldcarry.left(self)
+		dict.erase(carry.get_name())
+		carry = null
+
+	if dict.size() > 1:
+		var minn = 9999
+		var minkey = ""
+		for c in dict.keys():
+			if dict[c][0] < minn:
+				minn = dict[c][0]
+				minkey = c
+				
+		dict[minkey][1].left(self)
+		dict.erase(minkey)
 		
 #	if tmp[0] != null and tmp[0].is_in_group('carry'):
 #		carry = tmp[0].get_parent().get_parent()
@@ -232,9 +254,9 @@ func _physics_process(delta):
 #		carry.left(self)
 #		carry = null
 
-	if (tmp[0].size() > 1 and not platform or in_terrain == 0 and terrain != 1):
-		#print("enterando")
-		on_air_time = 0
+	#print(tmp[0])
+
+	if ((tmp[0].size() > 1 and not platform) or (in_terrain == 0 and terrain != 1)):
 		jumping = false
 		if (in_terrain == 0):
 			terrain = 1
@@ -246,13 +268,16 @@ func _physics_process(delta):
 			$sprite.play("still")
 			anim = "still"
 
-	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and not jumping and jump) or (in_terrain > 0 and jump):
-		#print(on_air_time)
+	if jump and ((tmp[0].size() > 1 and not jumping) or (in_terrain > 0) or (water)):
+		#print(in_terrain)
+		#print(terrain)
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -invert_vertical * JUMP_SPEED * terrain
 		jumping = true
-		on_air_time += delta
+		water = false
+		#print("enterando")
+		#print(tmp[1])
 
 		# Integrate forces to velocity
 	velocity += force * delta
@@ -267,7 +292,6 @@ func moving_right():
 	
 func die():
 	dead = true
-	$CollisionShape2D.disabled = true
 	if invert_horizontal == -1 or invert_vertical == -1:
 		$AnimationPlayer.play("Death2")
 	else:
@@ -281,7 +305,15 @@ func ground():
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name.begins_with("Death"):
-		global.restart()
+		if restart or (!on_act3 and not clone):
+			global.restart()
+		elif !clone:
+			if global.nclones > 0:
+				Recorder.play_all()
+			else:
+				global.restart()
+		else:
+			return
 
 func is_interacting():
 	return interacting

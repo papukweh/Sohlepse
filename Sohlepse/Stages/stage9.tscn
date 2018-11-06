@@ -13,7 +13,7 @@
 [ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=12]
 
-[node name="stage9" index="0" instance=ExtResource( 1 )]
+[node name="stage9" instance=ExtResource( 1 )]
 
 PLAYERS = 2
 
@@ -173,7 +173,7 @@ begin = 1
 
 [node name="Thorns3" parent="Reality/Hazards" index="1" instance=ExtResource( 10 )]
 
-position = Vector2( 352.55, 40.2872 )
+position = Vector2( 353.55, 40.2872 )
 scale = Vector2( 1, -1.265 )
 begin = 1
 

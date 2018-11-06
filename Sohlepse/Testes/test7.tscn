@@ -95,6 +95,7 @@ invert_horizontal = -1
 
 position = Vector2( -1077, 533 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Lever3" parent="Objects" index="1" groups=[
 "Lever3",
@@ -103,6 +104,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( -77, 160 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Lever4" parent="Objects" index="2" groups=[
 "Lever4",
@@ -110,6 +112,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 position = Vector2( 77, 160 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Lever2" parent="Objects" index="3" groups=[
 "Lever2",
@@ -118,6 +121,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( 1077, 533 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+names = null
 
 [node name="Wall" parent="Objects" index="4" groups=[
 "Lever",

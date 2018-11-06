@@ -82,7 +82,7 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('gravity') and body != self:
-		if body.get_name().begins_with("Player"):
+		if body.is_in_group("Player"):
 			var tmp = body.ground()
 			var confirm = false
 			for t in tmp[1]:
@@ -94,18 +94,25 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 		if body.is_in_group('gravity') and body != self:
+			body.GRAVITY = 700
 			if objs.has(body.get_name()):
 				objs.erase(body.get_name())
 
 func get_objs():
 	return objs
-		
+
 func falling():
-	if $Down.is_colliding():
-		return $Down.get_collider().get_name()=="Head"
-	else:
-		return false
-		
+	print("falling")
+	var tmp = $Down.get_overlapping_areas()
+	for x in tmp:
+		print(x.get_name())
+		var p1 = x.get_global_position().y
+		var box = self.get_global_position().y
+		if x.get_name()=="Head" and (p1 > box):
+			return true
+		else:
+			return false
+
 func left():
 	return $RC_left.get_overlapping_areas()
 	

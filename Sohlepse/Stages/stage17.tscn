@@ -311,6 +311,7 @@ position = Vector2( 448, 1149 )
 ] instance=ExtResource( 10 )]
 
 position = Vector2( 793.538, 23 )
+names = null
 
 [node name="Endgoal" parent="." index="6" instance=ExtResource( 11 )]
 

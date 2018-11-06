@@ -6,18 +6,23 @@ var inbody = null
 var timeout = 0
 signal hit
 signal triggered
+export(Array, String) var names = []
 
 onready var sig = get_name()
 
 #lever1
 func _ready():
-	for n in get_tree().get_nodes_in_group(sig):
-		print("connecting "+sig+" to "+n.get_name())
-		connect("triggered", n, "onTriggered")
+	if names != null:
+		for name in names:
+			for n in get_tree().get_nodes_in_group(name):
+				connect("triggered", n, "onTriggered")
+	else:
+		for n in get_tree().get_nodes_in_group(sig):
+			connect("triggered", n, "onTriggered")
 	
 func _process(delta):
 	timeout-=1
-	if timeout <= 0 and inbody != null and inbody.get_name().begins_with("Player") and inbody.is_interacting():
+	if timeout <= 0 and inbody != null and inbody.is_in_group("Player") and inbody.is_interacting():
 		emit_signal("hit")
 		timeout = 10
 	

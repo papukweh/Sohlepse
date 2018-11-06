@@ -9,16 +9,19 @@ var unlocked_stage = 1
 
 var current_act = 1
 var DEBUG = false
+var restarting = false
 const FINAL = 18
 
 func restart():
+	restarting = true
 	get_tree().reload_current_scene()
 	
 var pos = []
 var buffer = []
 var state = []
 var play = false
-	
+var nclones = 0
+
 func save_clones(spos, sbuffer, sstate):
 	pos = [] + spos
 	buffer = [] + sbuffer
@@ -32,6 +35,12 @@ func load_buffer():
 	
 func load_state():
 	return state
+	
+func clean():
+	pos = []
+	buffer = []
+	state = []
+	nclones = 0
 	
 func progress():
 	savegame.open(save_path, File.READ)
