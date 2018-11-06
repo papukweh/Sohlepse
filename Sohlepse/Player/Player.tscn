@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
@@ -14,10 +14,15 @@ extents = Vector2( 4.96362, 15.0242 )
 custom_solver_bias = 0.0
 extents = Vector2( 20.4562, 10 )
 
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.0516, 29.7649 )
+
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10.9948, 10 )
+extents = Vector2( 12.741, 10 )
 
 [sub_resource type="Animation" id=4]
 
@@ -213,6 +218,22 @@ position = Vector2( 7.46442, 12.6041 )
 scale = Vector2( 0.548939, 0.843376 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Body" type="Area2D" parent="sprite" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Body" index="0"]
+
+position = Vector2( 0, -1.85787 )
+scale = Vector2( 1, 1.0567 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 

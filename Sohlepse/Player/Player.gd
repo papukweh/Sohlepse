@@ -76,16 +76,23 @@ func _physics_process(delta):
 	#print(self.get_name()+str(restart))
 	if dead:
 		GRAVITY = 700
-		print("to morto"+self.get_name())
+		#print("to morto"+self.get_name())
 		var force = Vector2(0, invert_vertical*GRAVITY)
 		restart = false
+		
+		var tmp = deadbody()
+		for i in tmp:
+			if i.get_parent() != self and i.get_name() == "Feet":
+				i.get_parent().position.y = self.position.y - 42
+		
 		# Integrate forces to velocity
 		velocity += force * delta
 		# Integrate velocity into motion and move
-		velocity = move_and_slide(velocity, Vector2(0, 1))
+		velocity = move_and_slide(velocity, Vector2(0, -1))
 		return
+
 	# Create forces
-	print("to vivo"+self.get_name())
+	#print("to vivo"+self.get_name())
 	var force = Vector2(0, invert_vertical*GRAVITY)
 	var stop = true
 
@@ -278,6 +285,7 @@ func die():
 		$AnimationPlayer.play("Death2")
 	else:
 		$AnimationPlayer.play("Death")
+	self.velocity = Vector2(0,0)
 	
 func reset_position():
 	self.set_position(initpos)
@@ -305,7 +313,10 @@ func view():
 
 func siding():
 	return $sprite/Siding.get_overlapping_bodies()
-	
+
+func deadbody():
+	return $sprite/Body.get_overlapping_areas()
+
 func head():
 	return $Head.get_overlapping_bodies()
 

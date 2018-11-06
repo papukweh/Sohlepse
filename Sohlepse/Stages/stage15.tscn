@@ -102,7 +102,6 @@ scale = Vector2( 1, 3 )
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 64, -896 )
-names = null
 
 [node name="Button2" parent="Reality/Objects" index="2" groups=[
 "Button2",
@@ -195,7 +194,6 @@ scale = Vector2( 1, 3 )
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 64, 128 )
-names = null
 
 [node name="MovingPlatform" parent="Mirror/Objects" index="2" groups=[
 "Button2",

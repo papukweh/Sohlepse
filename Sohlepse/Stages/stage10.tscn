@@ -116,8 +116,8 @@ position = Vector2( 868.401, 319.776 )
 scale = Vector2( 1, 1.98563 )
 
 [node name="Wall4" parent="Objects" index="4" groups=[
-"Lever5",
 "Lever4",
+"Lever5",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 882.174, -127.817 )
@@ -125,8 +125,8 @@ scale = Vector2( 1, 2.00608 )
 activation = 1
 
 [node name="Wall7" parent="Objects" index="5" groups=[
-"Lever3",
 "Lever6",
+"Lever3",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 874.442, 127.727 )
@@ -146,7 +146,6 @@ scale = Vector2( 1, 1.98563 )
 
 position = Vector2( 516.664, -477.942 )
 scale = Vector2( -1, 1 )
-names = null
 
 [node name="Lever3" parent="Objects" index="8" groups=[
 "Lever3",
@@ -154,7 +153,6 @@ names = null
 
 position = Vector2( 515.918, 282.41 )
 scale = Vector2( -1, 1 )
-names = null
 
 [node name="Lever6" parent="Objects" index="9" groups=[
 "Lever6",
@@ -162,7 +160,6 @@ names = null
 
 position = Vector2( 516.867, 98.6331 )
 scale = Vector2( -1, 1 )
-names = null
 
 [node name="Lever1" parent="Objects" index="10" groups=[
 "Lever1",
@@ -170,7 +167,6 @@ names = null
 
 position = Vector2( 516.814, 477.833 )
 scale = Vector2( -1, 1 )
-names = null
 
 [node name="Lever4" parent="Objects" index="11" groups=[
 "Lever4",
@@ -178,7 +174,6 @@ names = null
 
 position = Vector2( 516.852, -287.529 )
 scale = Vector2( -1, 1 )
-names = null
 
 [node name="Lever5" parent="Objects" index="12" groups=[
 "Lever5",
@@ -186,7 +181,6 @@ names = null
 
 position = Vector2( 515.462, -94.6554 )
 scale = Vector2( -1, 1 )
-names = null
 
 [node name="Endgoal" parent="." index="5" instance=ExtResource( 6 )]
 

@@ -12,7 +12,7 @@
 [ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=11]
 
-[node name="stage7" instance=ExtResource( 1 )]
+[node name="stage7" index="0" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -95,7 +95,6 @@ invert_horizontal = -1
 
 position = Vector2( -1077, 533 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="Lever3" parent="Objects" index="1" groups=[
 "Lever3",
@@ -104,7 +103,6 @@ names = null
 position = Vector2( -77, 160 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="Lever4" parent="Objects" index="2" groups=[
 "Lever4",
@@ -112,7 +110,6 @@ names = null
 
 position = Vector2( 77, 160 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="Lever2" parent="Objects" index="3" groups=[
 "Lever2",
@@ -121,7 +118,6 @@ names = null
 position = Vector2( 1077, 533 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="Wall" parent="Objects" index="4" groups=[
 "Lever",

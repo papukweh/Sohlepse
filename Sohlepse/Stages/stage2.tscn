@@ -90,7 +90,6 @@ position = Vector2( 599, -71 )
 position = Vector2( 1086.18, -79.067 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="Wall1" parent="Objects" index="2" groups=[
 "Lever2",

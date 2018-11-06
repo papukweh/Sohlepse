@@ -252,7 +252,6 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( -57.4812, 521.232 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="Real" type="ReferenceRect" parent="." index="4"]
 
