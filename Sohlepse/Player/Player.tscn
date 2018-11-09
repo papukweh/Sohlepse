@@ -1,12 +1,12 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Player.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=7]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -22,19 +22,19 @@ animations = [ {
 "name": "pushing_still",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "still",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "pushing_walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "walking",
+"name": "pushing_walk",
 "speed": 5.0
 } ]
 
@@ -47,6 +47,11 @@ extents = Vector2( 20.4562, 10 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 14.0813, 29.7649 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.0944, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 
@@ -244,8 +249,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Siding" index="0"]
 
-position = Vector2( 7.46442, 14.4807 )
-scale = Vector2( 0.548939, 0.987727 )
+position = Vector2( 7.46442, 13.5597 )
+scale = Vector2( 0.548939, 0.916878 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -264,6 +269,22 @@ audio_bus_name = "Master"
 position = Vector2( 0, -1.85787 )
 scale = Vector2( 1, 1.0567 )
 shape = SubResource( 4 )
+
+[node name="siding" type="Area2D" parent="sprite" index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/siding" index="0"]
+
+position = Vector2( -0.39323, 6.43916 )
+scale = Vector2( 3.41687, 1 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
@@ -300,8 +321,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Feet" index="0"]
 
-position = Vector2( 0.203575, 29.2672 )
-scale = Vector2( 1, 1.40262 )
+position = Vector2( 0.203575, 28.7784 )
+scale = Vector2( 1, 1.23771 )
 shape = SubResource( 8 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

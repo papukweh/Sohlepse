@@ -131,7 +131,7 @@ func _physics_process(delta):
 			else:
 				crushing = false
 		elif cls == "TileMap":
-			if self.GRAVITY < 0 and !jumping and view != body:
+			if self.GRAVITY < 0 and !jumping and not view2():
 				crushing = true
 				#print("being cccrushed")
 		elif cls == "KinematicBody2D":
@@ -246,6 +246,7 @@ func _physics_process(delta):
 	
 	if nope and carry != null:
 		carry.left(self)
+		platform = false
 		dict.erase(carry.get_name())
 		carry = null
 
@@ -274,6 +275,7 @@ func _physics_process(delta):
 
 	if ((tmp[0].size() > 1 and not platform) or (in_terrain == 0 and terrain != 1)):
 		jumping = false
+		#print('chao')
 		if (in_terrain == 0):
 			terrain = 1
 	else:
@@ -284,7 +286,7 @@ func _physics_process(delta):
 			$sprite.play("still")
 			anim = "still"
 
-	if jump and ((tmp[0].size() > 1 and not jumping) or (in_terrain > 0) or (water)):
+	if jump and ((tmp[0].size() > 1 and not jumping) or (carry and not jumping) or (in_terrain > 0) or (water)):
 		#print(in_terrain)
 		#print(terrain)
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
@@ -346,7 +348,14 @@ func deadbody():
 
 func siding():
 	return $sprite/Siding.get_overlapping_bodies()
-	
+
+func view2():
+	var opa = false
+	for x in $sprite/siding.get_overlapping_bodies():
+		if x.get_class() == "TileMap":
+			opa = true
+	return opa
+
 func head():
 	return $Head.get_overlapping_bodies()
 

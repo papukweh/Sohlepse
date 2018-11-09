@@ -8,4 +8,7 @@ func _on_FallingFloor_body_entered(body):
 		if(NumberOfTouches == 1):
 			$StaticBody2D/AnimatedSprite.animation = "broken"
 		if(NumberOfTouches == 0):
-			queue_free()
+			$Timer.start()
+
+func _on_Timer_timeout():
+	queue_free()

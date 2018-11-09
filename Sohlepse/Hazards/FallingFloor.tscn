@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 101.986, 18.885 )
+extents = Vector2( 101.986, 15.3868 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -44,8 +44,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0, -8 )
-scale = Vector2( 0.31377, 0.649908 )
+position = Vector2( -0.470726, -4.02514 )
+scale = Vector2( 0.318811, 0.705662 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -77,6 +77,15 @@ scale = Vector2( 2.37913, 0.0588236 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.08
+one_shot = true
+autostart = false
+
 [connection signal="body_entered" from="." to="." method="_on_FallingFloor_body_entered"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

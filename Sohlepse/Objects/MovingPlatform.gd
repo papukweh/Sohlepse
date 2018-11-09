@@ -36,6 +36,8 @@ func _physics_process(delta):
 								if motion[1] != 0:
 									a.GRAVITY = -0.01
 								a.position += 0.8*$platform.get_linear_velocity()*delta
+					elif i.is_in_group("player"):
+						i.platform = true
 				else:
 					#print("sou onewat")
 					if motion[1] == 0:
@@ -52,7 +54,8 @@ func _physics_process(delta):
 								if motion[1] != 0:
 									a.GRAVITY = -0.01
 									a.position += $platform.get_linear_velocity()*delta
-		
+					elif i.is_in_group("player"):
+						i.platform = true
 func onTriggered():
 	if activated == 1:
 		activated = 0
