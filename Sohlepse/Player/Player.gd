@@ -44,6 +44,7 @@ onready var clone = false
 onready var dict = Dictionary()
 onready var cnt = 0
 onready var water = false
+onready var objs = Dictionary()
 
 func _ready():
 	if invert_vertical == -1:
@@ -84,11 +85,13 @@ func _physics_process(delta):
 		var force = Vector2(0, invert_vertical*GRAVITY)
 		restart = false
 		
+		objs = Dictionary()
+		
 		var tmp = deadbody()
 		for i in tmp:
 			if i.get_parent() != self and i.get_name() == "Feet":
-				i.get_parent().position.y = self.position.y - 45
-		
+				objs[i.get_name()] = i
+				#i.get_parent().position.y = self.position.y - 45
 		# Integrate forces to velocity
 		velocity += force * delta
 		velocity = Vector2(0, velocity.y)
@@ -238,10 +241,12 @@ func _physics_process(delta):
 	for i in tmp[1]:
 		if i.is_in_group('carry'):
 			carry = i.get_parent().get_parent()
-			if !dict.has(carry.get_name()):
-				carry.entered(self)
-				dict[carry.get_name()] = [cnt, carry]
-				cnt += 1
+			if carry.get_name() == "Thorns":
+				carry = carry.get_parent()
+				if !dict.has(carry.get_name()):
+					carry.entered(self)
+					dict[carry.get_name()] = [cnt, carry]
+					cnt += 1
 			nope = false
 	
 	if nope and carry != null:
@@ -271,9 +276,7 @@ func _physics_process(delta):
 #		carry.left(self)
 #		carry = null
 
-	#print(tmp[0])
-
-	if ((tmp[0].size() > 1 and not platform) or (in_terrain == 0 and terrain != 1)):
+	if ((tmp[0].size() > 1 and not platform) or platform or (in_terrain == 0 and terrain != 1)):
 		jumping = false
 		#print('chao')
 		if (in_terrain == 0):
@@ -358,4 +361,6 @@ func view2():
 
 func head():
 	return $Head.get_overlapping_bodies()
-
+	
+func get_objs():
+	return objs
