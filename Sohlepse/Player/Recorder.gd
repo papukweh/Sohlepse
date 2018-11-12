@@ -5,6 +5,7 @@ onready var player = null
 onready var recording = false
 onready var states = null
 onready var initial_pos = null
+onready var pos_inicial_fase = null
 onready var clone = preload("Player.tscn")
 onready var clones = []
 onready var buffer = []
@@ -16,17 +17,25 @@ func _ready():
 	pos = global.load_pos()
 	buffer = global.load_buffer()
 	state = global.load_state()
+	pos_inicial_fase = get_parent().get_node("Players").get_node("Player1").get_position()
 	if global.play:
 		play_all_true()
 
 func start_recording(body):
 	if pos.size() < MAX:
-		get_parent().recording(true)
 		player = body
 		realplayer = body
 		initial_pos = player.get_position()
-		states = []
-		recording = true
+		if ! Rect2(pos_inicial_fase, Vector2(32, 32)).has_point(initial_pos):
+			states = []
+			get_parent().recording(true)
+			recording = true
+			return true
+		else:
+			player = null
+			realplayer = null
+			initial_pos = null
+		return false
 
 func stop_recording():
 	if pos.size() < MAX:
