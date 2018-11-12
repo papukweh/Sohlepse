@@ -105,8 +105,8 @@ __meta__ = {
 }
 
 [node name="Wall" parent="Reality/Objects" index="0" groups=[
-"MirrorLED1",
 "RealLED1",
+"MirrorLED1",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 978.648, -306.387 )
@@ -151,18 +151,21 @@ position = Vector2( 2492.67, -626.324 )
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 333.046, -67.8457 )
+names = [ "RealLED1" ]
 
 [node name="ButtonInst12" parent="Reality/Objects" index="7" groups=[
 "RealLED2",
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 1369.72, -195.251 )
+names = [ "RealLED2" ]
 
 [node name="ButtonInst13" parent="Reality/Objects" index="8" groups=[
 "RealLED3",
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 2388.31, -323.258 )
+names = [ "RealLED3" ]
 
 [node name="Hazards" type="Node2D" parent="Reality" index="1"]
 
@@ -189,8 +192,8 @@ __meta__ = {
 }
 
 [node name="WallM" parent="Mirror/Objects" index="0" groups=[
-"MirrorLED1",
 "RealLED1",
+"MirrorLED1",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 978.648, -306.387 )
@@ -235,18 +238,21 @@ position = Vector2( 2492.67, -626.324 )
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 493.297, -69.7546 )
+names = [ "MirrorLED1" ]
 
 [node name="ButtonInst22" parent="Mirror/Objects" index="7" groups=[
 "MirrorLED2",
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 1111.17, -196.647 )
+names = [ "RealLED2" ]
 
 [node name="ButtonInst23" parent="Mirror/Objects" index="8" groups=[
 "MirrorLED3",
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 2177.35, -323.145 )
+names = [ "RealLED3" ]
 
 [node name="Hazards" type="Node2D" parent="Mirror" index="1"]
 
