@@ -1,0 +1,214 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=11]
+
+[node name="stage16" instance=ExtResource( 1 )]
+
+ACT = 3
+MAX_CLONES = 1
+
+[node name="Real" type="ReferenceRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1141.0
+margin_bottom = 754.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 131084, 536870912, 0, 131085, 536870912, 0, 131086, 536870912, 0, 131087, 536870912, 0, 196611, 536870913, 0, 196614, 536870918, 0, 196615, 536870918, 0, 196616, 536870918, 0, 196617, 536870918, 0, 262147, 536870913, 0, 262150, 536870916, 0, 262151, 536870916, 0, 262152, 536870916, 0, 262153, 536870916, 0, 327683, 536870912, 0, 327684, 536870912, 0, 327685, 536870912, 0, 327686, 536870912, 0, 327687, 536870912, 0, 327688, 536870912, 0, 327689, 536870912, 0, 327690, 536870912, 0, 327691, 536870912, 0, 327692, 536870912, 0, 524290, 536870914, 0, 524291, 536870912, 0, 524296, 536870912, 0, 524297, 536870912, 0, 524300, 536870912, 0, 524301, 536870912, 0, 524302, 536870912, 0, 524303, 536870912, 0 )
+
+[node name="Players" type="Node" parent="." index="2"]
+
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 743.778, 259.906 )
+
+[node name="Endgoal" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 289.076, 285.241 )
+
+[node name="Objects" type="Node2D" parent="." index="4"]
+
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Wall" parent="Objects" index="0" groups=[
+"ButtonInst1",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 351.401, 255.589 )
+scale = Vector2( 1, 1.98161 )
+activation = 1
+
+[node name="Wall2" parent="Objects" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 665.65, 255.589 )
+scale = Vector2( 1, 1.98161 )
+activation = 1
+
+[node name="Wall3" parent="Objects" index="2" groups=[
+"Button",
+"Lever1",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 392.614, 478.377 )
+rotation = 1.5708
+scale = Vector2( 1, 1.98161 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activation = 1
+
+[node name="Button" parent="Objects" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 630.002, 319.336 )
+
+[node name="Button2" parent="Objects" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 741.912, 317.531 )
+
+[node name="Lever1" parent="Objects" index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 566.608, 290.688 )
+
+[node name="Lever2" parent="Objects" index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 447.522, 289.953 )
+
+[node name="MovingPlatform" parent="Objects" index="7" groups=[
+"Button2",
+"Lever2",
+] instance=ExtResource( 8 )]
+
+position = Vector2( 60.4413, 312.337 )
+activated = 1
+motion = Vector2( 0, 200 )
+cycle = 20.0
+
+[node name="MovingPlatform2" parent="Objects" index="8" groups=[
+"Button2",
+"Lever1",
+] instance=ExtResource( 8 )]
+
+position = Vector2( 443.635, 89.8183 )
+activated = 1
+motion = Vector2( 180, 0 )
+cycle = 15.0
+
+[node name="ButtonInst1" parent="Objects" index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 994.022, 125.291 )
+
+[node name="ButtonInst2" parent="Objects" index="10" instance=ExtResource( 9 )]
+
+position = Vector2( 934.421, 507.276 )
+
+[node name="Hazards" type="Node2D" parent="." index="5"]
+
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lava" parent="Hazards" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 160, 160 )
+
+[node name="Lava2" parent="Hazards" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( 224, 160 )
+
+[node name="Lava3" parent="Hazards" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 288, 160 )
+
+[node name="Lava4" parent="Hazards" index="3" instance=ExtResource( 10 )]
+
+position = Vector2( 352, 160 )
+
+[node name="Lava5" parent="Hazards" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 416, 160 )
+
+[node name="Lava10" parent="Hazards" index="5" instance=ExtResource( 10 )]
+
+position = Vector2( 480, 160 )
+
+[node name="Lava11" parent="Hazards" index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 544, 160 )
+
+[node name="Lava12" parent="Hazards" index="7" instance=ExtResource( 10 )]
+
+position = Vector2( 608, 160 )
+
+[node name="Lava13" parent="Hazards" index="8" instance=ExtResource( 10 )]
+
+position = Vector2( 672, 160 )
+
+[node name="Lava14" parent="Hazards" index="9" instance=ExtResource( 10 )]
+
+position = Vector2( 736, 160 )
+
+[node name="Lava6" parent="Hazards" index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 288, 544 )
+
+[node name="Lava7" parent="Hazards" index="11" instance=ExtResource( 10 )]
+
+position = Vector2( 352, 544 )
+
+[node name="Lava8" parent="Hazards" index="12" instance=ExtResource( 10 )]
+
+position = Vector2( 416, 544 )
+
+[node name="Lava9" parent="Hazards" index="13" instance=ExtResource( 10 )]
+
+position = Vector2( 480, 544 )
+
+[node name="Thorns" parent="Hazards" index="14" groups=[
+"Button",
+] instance=ExtResource( 11 )]
+
+position = Vector2( 672, 536 )
+
+[node name="Thorns2" parent="Hazards" index="15" groups=[
+"Button",
+] instance=ExtResource( 11 )]
+
+position = Vector2( 736, 536 )
+
+
