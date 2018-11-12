@@ -195,7 +195,7 @@ tracks/4/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 2.56728 )
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "gravity",
 "Player",
 ]]
