@@ -51,7 +51,7 @@ func _process(delta):
 		if Input.is_action_just_pressed("move_down"):
 			var newState = _one_down()
 			_atualiza(newState)
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("move_up"):
 			var newState = _one_up()
 			_atualiza(newState)
 		if Input.is_action_just_pressed("move_right"):
