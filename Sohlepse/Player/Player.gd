@@ -243,10 +243,10 @@ func _physics_process(delta):
 			carry = i.get_parent().get_parent()
 			if carry.get_name() == "Thorns":
 				carry = carry.get_parent()
-				if !dict.has(carry.get_name()):
-					carry.entered(self)
-					dict[carry.get_name()] = [cnt, carry]
-					cnt += 1
+			if !dict.has(carry.get_name()):
+				carry.entered(self)
+				dict[carry.get_name()] = [cnt, carry]
+				cnt += 1
 			nope = false
 	
 	if nope and carry != null:
