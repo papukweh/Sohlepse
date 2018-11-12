@@ -35,6 +35,7 @@ func start_recording(body):
 			player = null
 			realplayer = null
 			initial_pos = null
+			get_parent().fail_recording()
 		return false
 
 func stop_recording():

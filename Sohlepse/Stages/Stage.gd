@@ -51,3 +51,5 @@ func recording(val):
 		p4.visible = true
 	p3.label = str(MAX_CLONES - global.nclones)
 	p3.ready()
+func fail_recording():
+	print("panel com X")
