@@ -12,6 +12,7 @@ var buttons = ["continue", "levelSelect", "tests", "option", "credits", "exit"]
 var label = ["Jogar", "Seleção de Fases", "Testes", "Opções", "Créditos", "Sair"]
 var LABEL = ["JOGAR", "SELEÇÃO DE FASES", "TESTES", "OPÇÕES", "CRÉDITOS", "SAIR"]
 func _ready():
+	global.initSound()
 	get_node("continue").text = "JOGAR"
 
 func _process(delta):
