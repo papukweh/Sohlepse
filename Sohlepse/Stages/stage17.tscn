@@ -1,20 +1,21 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
-[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://tileset_forest.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Hazards/FallingFloor.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/BigWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Hazards/FallingFloor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=14]
 
-[node name="stage17" index="0" instance=ExtResource( 1 )]
+[node name="stage17" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -39,7 +40,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -17, 536870913, 0, -16, 536870923, 0, -15, 536870923, 0, -14, 536870923, 0, -13, 536870923, 0, -12, 536870923, 0, -11, 536870923, 0, -10, 536870923, 0, -9, 536870923, 0, -8, 536870923, 0, -7, 536870923, 0, -6, 536870923, 0, -5, 536870923, 0, -4, 536870923, 0, -3, 536870923, 0, -2, 536870923, 0, -1, 536870923, 0, -65536, 536870923, 0, -65535, 1073741825, 0, -65534, 1073741825, 0, -65533, 536870923, 0, -65532, 536870923, 0, -65531, 536870923, 0, -65530, 536870923, 0, -65529, 536870923, 0, -65528, 536870923, 0, -65527, 536870923, 0, -65526, 536870923, 0, -65525, 536870923, 0, -65524, 536870923, 0, -65523, 536870923, 0, -65522, 536870923, 0, -65521, 536870923, 0, -65520, 536870923, 0, -65519, 536870923, 0, -65518, 536870923, 0, -65517, 536870923, 0, -65516, 536870913, 0, 65519, 1, 0, 1, 1, 0, 2, 1, 0, 20, 1, 0, 131055, 1, 0, 65537, 1, 0, 65538, 1, 0, 65556, 1, 0, 196591, 1, 0, 131073, 1, 0, 131074, 1, 0, 131092, 1, 0, 262127, 1, 0, 262143, 536870914, 0, 196608, 0, 0, 196609, 1, 0, 196610, 1, 0, 196611, 0, 0, 196612, 2, 0, 196628, 1, 0, 327663, 1, 0, 327666, 0, 0, 327667, 2, 0, 262145, 1, 0, 262146, 1, 0, 262160, 536870914, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 1, 0, 393199, 1, 0, 327681, 1, 0, 327682, 1, 0, 327700, 1, 0, 458735, 1, 0, 393217, 1, 0, 393218, 1, 0, 393236, 1, 0, 524271, 1, 0, 458753, 1, 0, 458754, 1, 0, 458761, 11, 0, 458765, 11, 0, 458772, 1, 0, 589807, 1, 0, 524289, 1, 0, 524290, 1, 0, 524308, 1, 0, 655343, 1, 0, 655344, 0, 0, 655345, 2, 0, 655359, 536870914, 0, 589824, 0, 0, 589825, 1, 0, 589826, 1, 0, 655367, 1073741835, 0, 655371, 1073741835, 0, 655375, 1073741835, 0, 655378, 536870914, 0, 655379, 0, 0, 655380, 2, 0 )
+tile_data = PoolIntArray( -17, 536870913, 0, -16, 536870922, 0, -15, 536870922, 0, -14, 536870922, 0, -13, 536870922, 0, -12, 536870922, 0, -11, 536870922, 0, -10, 536870922, 0, -9, 536870922, 0, -8, 536870922, 0, -7, 536870922, 0, -6, 536870922, 0, -5, 536870922, 0, -4, 536870922, 0, -3, 536870922, 0, -2, 536870922, 0, -1, 536870922, 0, -65536, 536870922, 0, -65535, 1073741825, 0, -65534, 1073741825, 0, -65533, 536870922, 0, -65532, 536870922, 0, -65531, 536870922, 0, -65530, 536870922, 0, -65529, 536870922, 0, -65528, 536870922, 0, -65527, 536870922, 0, -65526, 536870922, 0, -65525, 536870922, 0, -65524, 536870922, 0, -65523, 536870922, 0, -65522, 536870922, 0, -65521, 536870922, 0, -65520, 536870922, 0, -65519, 536870922, 0, -65518, 536870922, 0, -65517, 536870922, 0, -65516, 536870913, 0, 65519, 1, 0, 1, 1, 0, 2, 1, 0, 20, 1, 0, 131055, 1, 0, 65537, 1, 0, 65538, 1, 0, 65556, 1, 0, 196591, 1, 0, 131073, 1, 0, 131074, 1, 0, 131092, 1, 0, 262127, 1, 0, 262143, 536870915, 0, 196608, 0, 0, 196609, 1, 0, 196610, 1, 0, 196611, 0, 0, 196612, 3, 0, 196628, 1, 0, 327663, 1, 0, 327666, 0, 0, 327667, 3, 0, 262145, 1, 0, 262146, 1, 0, 262160, 536870915, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 1, 0, 393199, 1, 0, 327681, 1, 0, 327682, 1, 0, 327700, 1, 0, 458735, 1, 0, 393217, 1, 0, 393218, 1, 0, 393236, 1, 0, 524271, 1, 0, 458753, 1, 0, 458754, 1, 0, 458761, 11, 0, 458765, 11, 0, 458772, 1, 0, 589807, 1, 0, 524289, 1, 0, 524290, 1, 0, 524308, 1, 0, 655343, 1, 0, 655344, 0, 0, 655345, 3, 0, 655359, 536870915, 0, 589824, 0, 0, 589825, 1, 0, 589826, 1, 0, 655367, 1073741835, 0, 655371, 1073741835, 0, 655375, 1073741835, 0, 655378, 536870915, 0, 655379, 0, 0, 655380, 3, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -66,49 +67,55 @@ invert_horizontal = -1
 
 position = Vector2( 354.569, 587.093 )
 scale = Vector2( 1, 1.25914 )
+forest = 1
 
-[node name="Wall6" parent="Reality/Objects" index="1" groups=[
-"ButtonInst6",
-] instance=ExtResource( 4 )]
-
-position = Vector2( 979.809, 117.654 )
-scale = Vector2( 1, 3.97613 )
-
-[node name="Wall2" parent="Reality/Objects" index="2" groups=[
+[node name="Wall2" parent="Reality/Objects" index="1" groups=[
 "ButtonInst2",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 481.27, 541.782 )
 scale = Vector2( 1, 1.25914 )
+forest = 1
 
-[node name="Wall3" parent="Reality/Objects" index="3" groups=[
+[node name="Wall3" parent="Reality/Objects" index="2" groups=[
 "ButtonInst3",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 608.707, 588.563 )
 scale = Vector2( 1, 1.25914 )
+forest = 1
 
-[node name="Wall4" parent="Reality/Objects" index="4" groups=[
+[node name="Wall4" parent="Reality/Objects" index="3" groups=[
 "ButtonInst4",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 737.553, 542.047 )
 scale = Vector2( 1, 1.25914 )
+forest = 1
 
-[node name="Wall5" parent="Reality/Objects" index="5" groups=[
+[node name="Wall5" parent="Reality/Objects" index="4" groups=[
 "ButtonInst5",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 864.989, 587.828 )
 scale = Vector2( 1, 1.25914 )
+forest = 1
 
-[node name="Box" parent="Reality/Objects" index="6" instance=ExtResource( 5 )]
+[node name="Wall7" parent="Reality/Objects" index="5" groups=[
+"ButtonInst6",
+] instance=ExtResource( 5 )]
+
+position = Vector2( 979.163, 117.88 )
+scale = Vector2( 0.78476, 0.568879 )
+forest = 1
+
+[node name="Box" parent="Reality/Objects" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( 169.417, 120.992 )
 
 [node name="ButtonInst" parent="Reality/Objects" index="7" groups=[
 "ButtonInst",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 position = Vector2( 360, 124 )
 scale = Vector2( 1.3, 1 )
@@ -116,7 +123,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ButtonInst2" parent="Reality/Objects" index="8" groups=[
 "ButtonInst2",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 position = Vector2( 760, 123 )
 scale = Vector2( 1.3, 1 )
@@ -124,7 +131,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ButtonInst3" parent="Reality/Objects" index="9" groups=[
 "ButtonInst3",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 position = Vector2( 560, 213 )
 scale = Vector2( 1.3, 1 )
@@ -132,7 +139,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ButtonInst4" parent="Reality/Objects" index="10" groups=[
 "ButtonInst4",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 position = Vector2( 360, 300 )
 scale = Vector2( 1.3, 1 )
@@ -140,7 +147,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ButtonInst5" parent="Reality/Objects" index="11" groups=[
 "ButtonInst5",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 position = Vector2( 760, 300 )
 scale = Vector2( 1.3, 1 )
@@ -148,41 +155,41 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ButtonInst6" parent="Reality/Objects" index="12" groups=[
 "ButtonInst6",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 position = Vector2( 1111.07, 625.556 )
 
-[node name="Platform" parent="Reality/Objects" index="13" instance=ExtResource( 7 )]
+[node name="Platform" parent="Reality/Objects" index="13" instance=ExtResource( 8 )]
 
 position = Vector2( 362, 139 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Pickable", "Transform" ]
 
-[node name="Platform2" parent="Reality/Objects" index="14" instance=ExtResource( 7 )]
+[node name="Platform2" parent="Reality/Objects" index="14" instance=ExtResource( 8 )]
 
 position = Vector2( 362, 315 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Platform3" parent="Reality/Objects" index="15" instance=ExtResource( 7 )]
+[node name="Platform3" parent="Reality/Objects" index="15" instance=ExtResource( 8 )]
 
 position = Vector2( 560, 228 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Platform4" parent="Reality/Objects" index="16" instance=ExtResource( 7 )]
+[node name="Platform4" parent="Reality/Objects" index="16" instance=ExtResource( 8 )]
 
 position = Vector2( 758, 138 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Platform5" parent="Reality/Objects" index="17" instance=ExtResource( 7 )]
+[node name="Platform5" parent="Reality/Objects" index="17" instance=ExtResource( 8 )]
 
 position = Vector2( 758, 315 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="MovingPlatform" parent="Reality/Objects" index="18" instance=ExtResource( 8 )]
+[node name="MovingPlatform" parent="Reality/Objects" index="18" instance=ExtResource( 9 )]
 
 position = Vector2( 113.289, 594.139 )
 motion = Vector2( 1200, 0 )
@@ -195,41 +202,41 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Hazards" type="Node" parent="Mirror" index="0"]
 
-[node name="FallingFloor" parent="Mirror/Hazards" index="0" instance=ExtResource( 9 )]
+[node name="FallingFloor" parent="Mirror/Hazards" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( -362, 140 )
 scale = Vector2( 1.3, 1 )
 
-[node name="FallingFloor2" parent="Mirror/Hazards" index="1" instance=ExtResource( 9 )]
+[node name="FallingFloor2" parent="Mirror/Hazards" index="1" instance=ExtResource( 10 )]
 
 position = Vector2( -758, 139 )
 scale = Vector2( 1.3, 1 )
 
-[node name="FallingFloor3" parent="Mirror/Hazards" index="2" instance=ExtResource( 9 )]
+[node name="FallingFloor3" parent="Mirror/Hazards" index="2" instance=ExtResource( 10 )]
 
 position = Vector2( -560, 230 )
 scale = Vector2( 1.3, 1 )
 
-[node name="FallingFloor4" parent="Mirror/Hazards" index="3" instance=ExtResource( 9 )]
+[node name="FallingFloor4" parent="Mirror/Hazards" index="3" instance=ExtResource( 10 )]
 
 position = Vector2( -362, 315 )
 scale = Vector2( 1.3, 1 )
 
-[node name="FallingFloor5" parent="Mirror/Hazards" index="4" instance=ExtResource( 9 )]
+[node name="FallingFloor5" parent="Mirror/Hazards" index="4" instance=ExtResource( 10 )]
 
 position = Vector2( -758, 315 )
 scale = Vector2( 1.3, 1 )
 
 [node name="Objects" type="Node" parent="Mirror" index="1"]
 
-[node name="MovingPlatform" parent="Mirror/Objects" index="0" instance=ExtResource( 8 )]
+[node name="MovingPlatform" parent="Mirror/Objects" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( -840.779, 639.857 )
 scale = Vector2( 5.07734, 1 )
 motion = Vector2( 50, 0 )
 cycle = 15.0
 
-[node name="MovingPlatform2" parent="Mirror/Objects" index="1" instance=ExtResource( 8 )]
+[node name="MovingPlatform2" parent="Mirror/Objects" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( -421.442, 638.95 )
 scale = Vector2( 5.51, 1 )
@@ -244,10 +251,11 @@ position = Vector2( -1085.19, 263.034 )
 rotation = 1.5708
 scale = Vector2( 1, 1.94409 )
 _sections_unfolded = [ "Collision", "Transform" ]
+forest = 1
 
 [node name="Lever" parent="Mirror/Objects" index="3" groups=[
 "Lever",
-] instance=ExtResource( 10 )]
+] instance=ExtResource( 11 )]
 
 position = Vector2( -57.4812, 521.232 )
 scale = Vector2( -1, 1 )
@@ -294,16 +302,16 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Limit" parent="." index="6" instance=ExtResource( 11 )]
+[node name="Limit" parent="." index="6" instance=ExtResource( 12 )]
 
 position = Vector2( -2.39429, 795.084 )
 scale = Vector2( 43.8254, 1 )
 
-[node name="Endgoal" parent="." index="7" instance=ExtResource( 12 )]
+[node name="Endgoal" parent="." index="7" instance=ExtResource( 13 )]
 
 position = Vector2( -1105.13, 212.563 )
 
-[node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 13 )]
+[node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 14 )]
 
 position = Vector2( 1115, 215 )
 
