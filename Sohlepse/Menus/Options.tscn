@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Menus/Options.gd" type="Script" id=1]
 
-[node name="Options" type="Control"]
+[node name="Options" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -63,6 +63,8 @@ group = null
 text = "Voltar"
 flat = false
 align = 1
+
+[connection signal="mouse_entered" from="Back" to="." method="_on_Back_mouse_entered"]
 
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 

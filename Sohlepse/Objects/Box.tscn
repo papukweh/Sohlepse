@@ -18,7 +18,7 @@ extents = Vector2( 27, 3 )
 custom_solver_bias = 0.0
 extents = Vector2( 7.52237, 8.57211 )
 
-[node name="Box" type="KinematicBody2D" groups=[
+[node name="Box" type="KinematicBody2D" index="0" groups=[
 "gravity",
 ]]
 

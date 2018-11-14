@@ -33,6 +33,7 @@ func _on_Lever_body_exited(body):
 	inbody = null
 
 func _on_Lever_hit():
+	global.play_se(global.SE_LEVER)
 	if !activated:
 		$AnimatedSprite.animation = "on"
 		activated = true

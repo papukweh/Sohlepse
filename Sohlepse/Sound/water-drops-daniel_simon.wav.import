@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/water-drops-daniel_simon.wav-d325adb8947f738945374145900c0385.sample"
+
+[deps]
+
+source_file="res://Sound/water-drops-daniel_simon.wav"
+dest_files=[ "res://.import/water-drops-daniel_simon.wav-d325adb8947f738945374145900c0385.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

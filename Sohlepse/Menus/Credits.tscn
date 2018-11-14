@@ -70,6 +70,8 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin" ]
 
+[connection signal="mouse_entered" from="Back" to="." method="_on_Back_mouse_entered"]
+
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 
 

@@ -28,4 +28,6 @@ script = ExtResource( 1 )
 
 [connection signal="button_down" from="." to="." method="_on_ButtonPrev_button_down"]
 
+[connection signal="mouse_entered" from="." to="." method="_on_ButtonPrev_mouse_entered"]
+
 

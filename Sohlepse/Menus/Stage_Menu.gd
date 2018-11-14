@@ -11,12 +11,16 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		if state == 0:
+			global.play_se(global.SE_CHANGE,-5)
 			get_tree().change_scene("Menus/MenuPrincipal.tscn")
 		elif state == -1:
+			global.play_se(global.SE_CHANGE,-5)
 			_atualiza(6*(batch-1))
 		elif state == -2:
+			global.play_se(global.SE_CHANGE,-5)
 			_atualiza(6*batch + 1)
 		else:
+			global.play_se(global.SE_JOGAR)
 			global.current_stage = state
 			get_tree().change_scene("Manager/StageManager.tscn")
 
@@ -34,6 +38,7 @@ func _process(delta):
 		_atualiza(newState)
 		
 func _atualiza(newState):
+	global.play_se(global.SE_MOVE,-15)
 	if state == 0:
 		$Back.text = "Voltar"
 	elif state == -1:

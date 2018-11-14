@@ -18,6 +18,7 @@ func _on_Button_body_entered(body):
 		emit_signal("hit")
 
 func _on_Button_hit():
+	global.play_se(global.SE_LEVER)
 	activated = true
 	emit_signal("triggered")
 

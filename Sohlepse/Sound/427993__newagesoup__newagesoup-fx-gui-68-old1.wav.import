@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/427993__newagesoup__newagesoup-fx-gui-68-old1.wav-404e0bbf5577678345e206ee572afb81.sample"
+
+[deps]
+
+source_file="res://Sound/427993__newagesoup__newagesoup-fx-gui-68-old1.wav"
+dest_files=[ "res://.import/427993__newagesoup__newagesoup-fx-gui-68-old1.wav-404e0bbf5577678345e206ee572afb81.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

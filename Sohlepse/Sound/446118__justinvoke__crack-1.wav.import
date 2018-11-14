@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/446118__justinvoke__crack-1.wav-063a935014591437de9a0fa4a5665b9b.sample"
+
+[deps]
+
+source_file="res://Sound/446118__justinvoke__crack-1.wav"
+dest_files=[ "res://.import/446118__justinvoke__crack-1.wav-063a935014591437de9a0fa4a5665b9b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

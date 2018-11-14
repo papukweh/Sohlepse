@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menus/MenuPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Titulo.png" type="Texture" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Sound/427993__newagesoup__newagesoup-fx-gui-68.wav" type="AudioStream" id=4]
 
 [node name="MenuPrincipal" type="Control"]
 
@@ -187,15 +188,37 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[connection signal="mouse_entered" from="continue" to="." method="_on_continue_mouse_entered"]
+
 [connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+
+[connection signal="mouse_entered" from="levelSelect" to="." method="_on_levelSelect_mouse_entered"]
 
 [connection signal="pressed" from="levelSelect" to="." method="_on_levelSelect_pressed"]
 
+[connection signal="mouse_entered" from="tests" to="." method="_on_tests_mouse_entered"]
+
 [connection signal="pressed" from="tests" to="." method="_on_tests_pressed"]
+
+[connection signal="mouse_entered" from="option" to="." method="_on_option_mouse_entered"]
 
 [connection signal="pressed" from="option" to="." method="_on_option_pressed"]
 
+[connection signal="mouse_entered" from="credits" to="." method="_on_credits_mouse_entered"]
+
 [connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
+
+[connection signal="mouse_entered" from="exit" to="." method="_on_exit_mouse_entered"]
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 
