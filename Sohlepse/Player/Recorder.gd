@@ -26,7 +26,7 @@ func start_recording(body):
 		player = body
 		realplayer = body
 		initial_pos = player.get_position()
-		if ! Rect2(pos_inicial_fase, Vector2(32, 32)).has_point(initial_pos):
+		if ! Rect2(pos_inicial_fase, Vector2(32, 32)).intersects(Rect2(initial_pos, Vector2(32, 32))):
 			states = []
 			get_parent().recording(true)
 			recording = true
@@ -35,7 +35,7 @@ func start_recording(body):
 			player = null
 			realplayer = null
 			initial_pos = null
-			get_parent().fail_recording()
+		get_parent().fail_recording()
 		return false
 
 func stop_recording():
