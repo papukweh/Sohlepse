@@ -20,6 +20,7 @@ func _ready():
 		pan = get_tree().get_root().get_child(1).get_node("Tutoriais")
 		var p3 = pan.get_node("Panel3")
 		var p4 = pan.get_node("Panel4")
+		var error = pan.get_node("Error")
 		p3.label = str(MAX_CLONES - global.nclones)
 		p3.input = 6
 		p3.visible = true
@@ -51,5 +52,10 @@ func recording(val):
 		p4.visible = true
 	p3.label = str(MAX_CLONES - global.nclones)
 	p3.ready()
-func fail_recording():
-	print("panel com X")
+func fail_recording(bol):
+	var error = pan.get_node("Error")
+	error.stop()
+	error.frame = 0
+	if bol:
+		error.play()
+	

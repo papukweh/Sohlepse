@@ -22,21 +22,29 @@ func _ready():
 		play_all_true()
 
 func start_recording(body):
+	var can_record = false
 	if pos.size() < MAX:
-		player = body
-		realplayer = body
-		initial_pos = player.get_position()
-		if ! Rect2(pos_inicial_fase, Vector2(32, 32)).intersects(Rect2(initial_pos, Vector2(32, 32))):
-			states = []
-			get_parent().recording(true)
-			recording = true
-			return true
+		var player_aux = body
+		var pos_aux = player_aux.get_position()
+		can_record = true
+		if ! Rect2(pos_inicial_fase, Vector2(32, 32)).intersects(Rect2(pos_aux, Vector2(32, 32))):
+			for posi in pos :
+				if  Rect2(posi, Vector2(32, 32)).intersects(Rect2(pos_aux, Vector2(32, 32))):
+					can_record = false
+					break
 		else:
-			player = null
-			realplayer = null
-			initial_pos = null
-		get_parent().fail_recording()
-		return false
+			can_record = false
+		if can_record:
+			player = body
+			realplayer = body
+			initial_pos = pos_aux
+			states = []
+			get_parent().fail_recording(!can_record)
+			get_parent().recording(can_record)
+			recording = can_record
+			return can_record
+	get_parent().fail_recording(!can_record)
+	return can_record
 
 func stop_recording():
 	if pos.size() < MAX:
