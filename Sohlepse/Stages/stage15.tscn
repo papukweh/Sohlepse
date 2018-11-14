@@ -13,7 +13,7 @@
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=12]
 
-[node name="stage15" instance=ExtResource( 1 )]
+[node name="stage15" index="0" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -133,6 +133,7 @@ forest = 1
 position = Vector2( -1304.11, 238.388 )
 motion = Vector2( 800, 0 )
 cycle = 30.0
+forest = 1
 
 [node name="MovingPlatform3" parent="Reality" index="5" groups=[
 "Lever1",
@@ -142,6 +143,7 @@ position = Vector2( -1125.96, 818.168 )
 activated = 1
 motion = Vector2( 0, -600 )
 cycle = 30.0
+forest = 1
 
 [node name="MovingPlatform2" parent="Reality" index="6" groups=[
 "Lever3",
@@ -151,6 +153,7 @@ position = Vector2( -676.68, 21.6682 )
 activated = 1
 motion = Vector2( 0, 200 )
 cycle = 10.0
+forest = 1
 
 [node name="Lever1" parent="Reality" index="7" groups=[
 "Lever1",

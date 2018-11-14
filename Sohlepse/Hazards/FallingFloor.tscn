@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Hazards/FallingFloor.gd" type="Script" id=1]
-[ext_resource path="res://Assets/platform1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/platform2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Forest_platform2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Forest_platform1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/platform1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/platform2.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,12 +16,22 @@ extents = Vector2( 101.986, 15.3868 )
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "default",
+"name": "forest_broken",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "broken",
+"name": "forest_default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "lab_default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "lab_broken",
 "speed": 5.0
 } ]
 
@@ -41,6 +53,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+forest = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -67,7 +80,7 @@ _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 position = Vector2( -0.190478, -0.288845 )
 scale = Vector2( 1.03551, 2.02533 )
 frames = SubResource( 2 )
-animation = "default"
+animation = "lab_default"
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]

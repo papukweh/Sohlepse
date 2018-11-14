@@ -14,12 +14,12 @@ extents = Vector2( 827.329, 18.885 )
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "default",
+"name": "lab_default",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "broken",
+"name": "lab_broken",
 "speed": 5.0
 } ]
 
@@ -41,6 +41,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+forest = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -67,7 +68,7 @@ _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 position = Vector2( -0.190478, -0.288845 )
 scale = Vector2( 1.03551, 2.02533 )
 frames = SubResource( 2 )
-animation = "default"
+animation = "lab_default"
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
@@ -77,6 +78,15 @@ scale = Vector2( 2.39271, 0.0596974 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.08
+one_shot = true
+autostart = false
+
 [connection signal="body_entered" from="." to="." method="_on_FallingFloor_body_entered"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

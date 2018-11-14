@@ -1,20 +1,32 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Hazards/Thorns.gd" type="Script" id=1]
-[ext_resource path="res://Assets/thorn_on.png" type="Texture" id=2]
-[ext_resource path="res://Assets/thorn_off.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Forest_thorn_off.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Forest_thorn_on.png" type="Texture" id=3]
+[ext_resource path="res://Assets/thorn_off.png" type="Texture" id=4]
+[ext_resource path="res://Assets/thorn_on.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "on",
+"name": "forest_off",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "off",
+"name": "forest_on",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "lab_off",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "lab_on",
 "speed": 5.0
 } ]
 
@@ -36,6 +48,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 begin = 0
 activation = 0
+forest = 0
 
 [node name="Body" type="RigidBody2D" parent="." index="0"]
 
@@ -63,13 +76,13 @@ angular_damp = -1.0
 position = Vector2( 0, -0.214584 )
 scale = Vector2( 1, 0.79 )
 frames = SubResource( 1 )
-animation = "on"
+animation = "lab_on"
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" index="1"]
 
-position = Vector2( -0.393662, 9.51764 )
-scale = Vector2( 2.95049, 2.32327 )
+position = Vector2( -0.10274, 7.01507 )
+scale = Vector2( 2.92964, 2.12072 )
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="Body" index="2"]
@@ -85,8 +98,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D" index="0"]
 
-position = Vector2( 0.0189441, -18.5595 )
-scale = Vector2( 0.990205, 1.22226 )
+position = Vector2( -0.258629, -20.2291 )
+scale = Vector2( 0.998067, 1.39602 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 

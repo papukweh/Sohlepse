@@ -164,36 +164,42 @@ position = Vector2( 1111.07, 625.556 )
 position = Vector2( 362, 139 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Pickable", "Transform" ]
+forest = 1
 
 [node name="Platform2" parent="Reality/Objects" index="14" instance=ExtResource( 8 )]
 
 position = Vector2( 362, 315 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Transform" ]
+forest = 1
 
 [node name="Platform3" parent="Reality/Objects" index="15" instance=ExtResource( 8 )]
 
 position = Vector2( 560, 228 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Transform" ]
+forest = 1
 
 [node name="Platform4" parent="Reality/Objects" index="16" instance=ExtResource( 8 )]
 
 position = Vector2( 758, 138 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Transform" ]
+forest = 1
 
 [node name="Platform5" parent="Reality/Objects" index="17" instance=ExtResource( 8 )]
 
 position = Vector2( 758, 315 )
 scale = Vector2( 1.3, 1 )
 _sections_unfolded = [ "Transform" ]
+forest = 1
 
 [node name="MovingPlatform" parent="Reality/Objects" index="18" instance=ExtResource( 9 )]
 
 position = Vector2( 113.289, 594.139 )
 motion = Vector2( 1200, 0 )
 cycle = 350.0
+forest = 1
 
 [node name="Mirror" type="Node2D" parent="." index="3"]
 
@@ -206,42 +212,51 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -362, 140 )
 scale = Vector2( 1.3, 1 )
+forest = 1
 
 [node name="FallingFloor2" parent="Mirror/Hazards" index="1" instance=ExtResource( 10 )]
 
 position = Vector2( -758, 139 )
 scale = Vector2( 1.3, 1 )
+forest = 1
 
 [node name="FallingFloor3" parent="Mirror/Hazards" index="2" instance=ExtResource( 10 )]
 
 position = Vector2( -560, 230 )
 scale = Vector2( 1.3, 1 )
+forest = 1
 
 [node name="FallingFloor4" parent="Mirror/Hazards" index="3" instance=ExtResource( 10 )]
 
 position = Vector2( -362, 315 )
 scale = Vector2( 1.3, 1 )
+forest = 1
 
 [node name="FallingFloor5" parent="Mirror/Hazards" index="4" instance=ExtResource( 10 )]
 
 position = Vector2( -758, 315 )
 scale = Vector2( 1.3, 1 )
+forest = 1
 
 [node name="Objects" type="Node" parent="Mirror" index="1"]
 
 [node name="MovingPlatform" parent="Mirror/Objects" index="0" instance=ExtResource( 9 )]
 
-position = Vector2( -840.779, 639.857 )
-scale = Vector2( 5.07734, 1 )
+position = Vector2( -421.73, 638.95 )
+scale = Vector2( 5.54882, 1 )
 motion = Vector2( 50, 0 )
 cycle = 15.0
+forest = 1
+big = 1
 
 [node name="MovingPlatform2" parent="Mirror/Objects" index="1" instance=ExtResource( 9 )]
 
-position = Vector2( -421.442, 638.95 )
-scale = Vector2( 5.51, 1 )
+position = Vector2( -842.158, 639.95 )
+scale = Vector2( 5.1292, 1 )
 motion = Vector2( 50, 0 )
 cycle = 15.0
+forest = 1
+big = 1
 
 [node name="Wall" parent="Mirror/Objects" index="2" groups=[
 "Lever",

@@ -103,6 +103,7 @@ position = Vector2( 1170, 540 )
 activated = 1
 motion = Vector2( 250, 0 )
 cycle = 15.0
+forest = 1
 
 [node name="MovingPlatform4" parent="Reality/Objects" index="1" groups=[
 "ButtonInst2",
@@ -112,12 +113,15 @@ position = Vector2( 1485, 515 )
 activated = 1
 motion = Vector2( 0, -75 )
 cycle = 2.0
+forest = 1
 
 [node name="MovingPlatform3" parent="Reality/Objects" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 1488.86, 72.014 )
 motion = Vector2( -1500, 0 )
 cycle = 130.0
+forest = 1
+big = 0
 
 [node name="Wall" parent="Reality/Objects" index="3" groups=[
 "Button",
@@ -158,8 +162,6 @@ position = Vector2( 881.345, 318.074 )
 position = Vector2( 1344, 364.34 )
 
 [node name="Hazards" type="Node" parent="Reality" index="1"]
-
-editor/display_folded = true
 
 [node name="Lava" parent="Reality/Hazards" index="0" instance=ExtResource( 9 )]
 
@@ -221,44 +223,52 @@ position = Vector2( 570, 610 )
 
 position = Vector2( 1248, 599 )
 begin = 1
+forest = 1
 
 [node name="Thorns2" parent="Reality/Hazards" index="15" instance=ExtResource( 10 )]
 
 position = Vector2( 1312, 599 )
 begin = 1
+forest = 1
 
 [node name="Thorns3" parent="Reality/Hazards" index="16" instance=ExtResource( 10 )]
 
 position = Vector2( 1376, 599 )
 begin = 1
+forest = 1
 
 [node name="Thorns4" parent="Reality/Hazards" index="17" instance=ExtResource( 10 )]
 
 position = Vector2( 1440, 599 )
 begin = 1
+forest = 1
 
 [node name="Thorns5" parent="Reality/Hazards" index="18" instance=ExtResource( 10 )]
 
 position = Vector2( 1504, 599 )
 begin = 1
+forest = 1
 
 [node name="Thorns6" parent="Reality/Hazards" index="19" instance=ExtResource( 10 )]
 
 position = Vector2( 1312, 410 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns8" parent="Reality/Hazards" index="20" instance=ExtResource( 10 )]
 
 position = Vector2( 1055.76, 343.032 )
 scale = Vector2( 1, 1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns9" parent="Reality/Hazards" index="21" instance=ExtResource( 10 )]
 
 position = Vector2( 991.48, 342.988 )
 scale = Vector2( 1, 1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns10" parent="Reality/Hazards" index="22" instance=ExtResource( 10 )]
 
@@ -266,12 +276,14 @@ position = Vector2( 830.824, 417.645 )
 rotation = -1.5708
 scale = Vector2( 1, 1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns7" parent="Reality/Hazards" index="23" instance=ExtResource( 10 )]
 
 position = Vector2( 1376, 410 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Endgoal" parent="Reality" index="2" instance=ExtResource( 11 )]
 
@@ -306,6 +318,8 @@ position = Vector2( 1455.24, 1274.82 )
 position = Vector2( 1489.79, 1061.3 )
 motion = Vector2( -1500, 0 )
 cycle = 130.0
+forest = 1
+big = 0
 
 [node name="Box7" parent="Mirror/Objects" index="5" instance=ExtResource( 7 )]
 
@@ -318,5 +332,6 @@ position = Vector2( 1491.84, 1019.69 )
 position = Vector2( 545.844, 1302.19 )
 motion = Vector2( 1200, 0 )
 cycle = 15.0
+forest = 1
 
 

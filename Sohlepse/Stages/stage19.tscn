@@ -93,43 +93,47 @@ position = Vector2( 96, 1088 )
 
 [node name="Hazards" type="Node" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="Thorns" parent="Hazards" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 224, 256 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns2" parent="Hazards" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 288, 256 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns3" parent="Hazards" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 416, 0 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns4" parent="Hazards" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 480, 0 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns5" parent="Hazards" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 576, -224 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns6" parent="Hazards" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 640, -224 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Lava" parent="Hazards" index="6" instance=ExtResource( 5 )]
 
@@ -245,6 +249,7 @@ position = Vector2( 256, 512 )
 activated = 1
 motion = Vector2( 0, -200 )
 cycle = 10.0
+forest = 1
 
 [node name="MovingPlatform4" parent="Objects" index="1" groups=[
 "ButtonInst",
@@ -253,6 +258,7 @@ cycle = 10.0
 position = Vector2( 992, 512 )
 motion = Vector2( 200, 0 )
 cycle = 10.0
+forest = 1
 
 [node name="MovingPlatform5" parent="Objects" index="2" groups=[
 "ButtonInst",
@@ -261,6 +267,7 @@ cycle = 10.0
 position = Vector2( 1436, 928 )
 motion = Vector2( 200, 0 )
 cycle = 10.0
+forest = 1
 
 [node name="MovingPlatform2" parent="Objects" index="3" groups=[
 "ButtonInst2",
@@ -270,6 +277,7 @@ position = Vector2( 448, 448 )
 activated = 1
 motion = Vector2( 0, -400 )
 cycle = 18.0
+forest = 1
 
 [node name="MovingPlatform3" parent="Objects" index="4" groups=[
 "ButtonInst3",
@@ -279,6 +287,7 @@ position = Vector2( 608, 128 )
 activated = 1
 motion = Vector2( 0, 500 )
 cycle = 15.0
+forest = 1
 
 [node name="Wall" parent="Objects" index="5" groups=[
 "Lever",
@@ -286,6 +295,7 @@ cycle = 15.0
 
 position = Vector2( 1616.52, 1089 )
 scale = Vector2( 1, 2 )
+forest = 1
 
 [node name="Wall2" parent="Objects" index="6" groups=[
 "Lever",
