@@ -8,6 +8,7 @@ var velocity = Vector2()
 func _process(delta):
 	if inbody != null and inbody.get_name().begins_with("Player") and Input.is_action_just_pressed("interact"):
 		if get_parent().get_node("EndgoalMirror") == null or get_parent().get_node("EndgoalMirror").inEndGoal:
+			global.play_se(global.SE_JOGAR)
 			global.current_stage += 1
 			global.save()
 			global.clean()

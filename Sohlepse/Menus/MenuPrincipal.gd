@@ -11,29 +11,39 @@ var pressed = [false, false, false, false, false, false]
 var buttons = ["continue", "levelSelect", "tests", "option", "credits", "exit"]
 var label = ["Jogar", "Seleção de Fases", "Testes", "Opções", "Créditos", "Sair"]
 var LABEL = ["JOGAR", "SELEÇÃO DE FASES", "TESTES", "OPÇÕES", "CRÉDITOS", "SAIR"]
+
 func _ready():
+	global.initSound()
 	get_node("continue").text = "JOGAR"
 
 func _process(delta):
 	if pressed[continue_]:
 		global.DEBUG = false
 		global.current_stage = global.unlocked_stage
+		global.play_se(global.SE_JOGAR)
 		get_tree().change_scene("res://Manager/StageManager.tscn")
 	if pressed[levelSelect_]:
+		global.play_se(global.SE_ACCEPT)
 		global.DEBUG = false
 		get_tree().change_scene("Menus/Stage_Menu.tscn")
 	if pressed[tests_]:
+		global.play_se(global.SE_ACCEPT)
 		global.DEBUG = true
 		get_tree().change_scene("Menus/Stage_Menu.tscn")
 	if pressed[options_]:
+		global.play_se(global.SE_ACCEPT)
 		get_tree().change_scene("Menus/Options.tscn")
 	if pressed[credits_]:
+		global.play_se(global.SE_ACCEPT)
 		get_tree().change_scene("Menus/Credits.tscn")
 	if pressed[exit_]:
+		global.play_se(global.SE_ACCEPT)
 		get_tree().quit()
 	if Input.is_action_just_pressed("move_down"):
+		global.play_se(global.SE_MOVE,-15)
 		_atualiza((state+1)%6)
 	if Input.is_action_just_pressed("move_up"):
+		global.play_se(global.SE_MOVE,-15)
 		_atualiza((state-1)%6)
 	if Input.is_action_just_pressed("ui_accept"):
 		pressed[state] = true
@@ -60,3 +70,27 @@ func _atualiza(newState):
 	get_node(buttons[state]).text = label[state]
 	state = newState
 	get_node(buttons[state]).text = LABEL[state]
+
+
+func _on_continue_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_levelSelect_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_tests_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_option_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_credits_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_exit_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)

@@ -29,8 +29,6 @@ func _ready():
 		p4.label = "REC"
 		p4.input = 7
 		p4.visible = false
-		p4.ready()
-		
 	if hasTutorial:
 		for i in range(3):
 			if hasTutorial[i]:
@@ -42,7 +40,8 @@ func _ready():
 				pan.input = copy.input
 				pan.ready()
 				copy.queue_free()
-				
+	global.play_bgm()
+
 func recording(val):
 	var p4 = pan.get_node("Panel4")
 	var p3 = pan.get_node("Panel3")

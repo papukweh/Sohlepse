@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/38873__swuing__footstep-concrete2.wav-782de3e293efc4370d65fe13aeeaf017.sample"
+
+[deps]
+
+source_file="res://Sound/38873__swuing__footstep-concrete2.wav"
+dest_files=[ "res://.import/38873__swuing__footstep-concrete2.wav-782de3e293efc4370d65fe13aeeaf017.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

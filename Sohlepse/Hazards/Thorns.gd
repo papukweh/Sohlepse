@@ -33,6 +33,7 @@ func onTriggered():
 						trigger = false
 
 	if trigger: 
+		global.play_se(global.SE_THORNS,-7)
 		if !on and begin == 0:
 			$Body/AnimatedSprite.animation = pref + "on"
 			on = true
@@ -46,6 +47,7 @@ func onTriggered():
 			$Body/AnimatedSprite.animation = pref + "on"
 			on = true
 	elif activation != 0:
+		global.play_se(global.SE_THORNS,-7)
 		if on and begin == 0:
 			$Body/AnimatedSprite.animation = pref + "off"
 			on = false

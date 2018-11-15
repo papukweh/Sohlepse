@@ -151,7 +151,7 @@ forest = 1
 
 position = Vector2( -676.68, 21.6682 )
 activated = 1
-motion = Vector2( 0, 200 )
+motion = Vector2( 0, 240 )
 cycle = 10.0
 forest = 1
 

@@ -163,13 +163,23 @@ text = "Sair"
 flat = false
 align = 1
 
+[connection signal="mouse_entered" from="Voltar" to="." method="_on_Voltar_mouse_entered"]
+
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+
+[connection signal="mouse_entered" from="Menu" to="." method="_on_Menu_mouse_entered"]
 
 [connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
 
+[connection signal="mouse_entered" from="Restart" to="." method="_on_Restart_mouse_entered"]
+
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 
+[connection signal="mouse_entered" from="Controles" to="." method="_on_Controles_mouse_entered"]
+
 [connection signal="pressed" from="Controles" to="." method="_on_Controles_pressed"]
+
+[connection signal="mouse_entered" from="Exit" to="." method="_on_Exit_mouse_entered"]
 
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 

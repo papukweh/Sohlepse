@@ -13,6 +13,7 @@ var inSure = false
 var inControls = false
 
 func openA():
+	global.play_se(global.SE_PAUSE,-5)
 	get_node(buttons[0]).text = LABEL[0]
 	var i = 1
 	while(i <= 4):
@@ -23,6 +24,7 @@ func openA():
 func _process(delta):
 	if Input.is_action_just_pressed("Pause") or pressed[Voltar]:
 		if get_tree().paused:
+			global.play_se(global.SE_UNPAUSE,-5)
 			state = -1
 			pressed[Voltar] = false
 			hide()
@@ -32,16 +34,20 @@ func _process(delta):
 			show()
 			get_tree().paused = true
 	if pressed[Menu]:
+		global.play_se(global.SE_ACCEPT)
 		get_tree().paused = false
 		get_tree().change_scene("Menus/MenuPrincipal.tscn")
 	if pressed[Restart]:
+		global.play_se(global.SE_ACCEPT)
 		get_tree().paused = false
 		get_tree().reload_current_scene()
 	if pressed[Controles]:
+		global.play_se(global.SE_ACCEPT)
 		inControls = true
 		hide()
 		get_parent().get_node("Controls").show()
 	if pressed[Exit]:
+		global.play_se(global.SE_EXIT,-5)
 		inSure = true
 		hide()
 		get_parent().get_node("Sure").show()
@@ -49,31 +55,41 @@ func _process(delta):
 		if Input.is_action_just_pressed("ui_accept"):
 			pressed[state] = true
 		if Input.is_action_just_pressed("move_down"):
+			global.play_se(global.SE_MOVE,-15)
 			var newState = _one_down()
 			_atualiza(newState)
+		if Input.is_action_just_pressed("move_up"):
+			global.play_se(global.SE_MOVE,-15)
 		if Input.is_action_just_pressed("move_up"):
 			var newState = _one_up()
 			_atualiza(newState)
 		if Input.is_action_just_pressed("move_right"):
+			global.play_se(global.SE_MOVE,-15)
 			var newState = _one_right()
 			_atualiza(newState)
 		if Input.is_action_just_pressed("move_left"):
+			global.play_se(global.SE_MOVE,-15)
 			var newState = _one_left()
 			_atualiza(newState)
 			
 func _on_Voltar_pressed():
+	global.play_se(global.SE_UNPAUSE)
 	pressed[Voltar] = true 
 
 func _on_Menu_pressed():
+	global.play_se(global.SE_ACCEPT)
 	pressed[Menu] = true
 
 func _on_Restart_pressed():
+	global.play_se(global.SE_ACCEPT)
 	pressed[Restart] = true
 
 func _on_Controles_pressed():
+	global.play_se(global.SE_ACCEPT)
 	pressed[Controles] = true
 
 func _on_Exit_pressed():
+	global.play_se(global.SE_EXIT,-5)
 	pressed[Exit] = true
 	
 func _atualiza(newState):
@@ -82,25 +98,48 @@ func _atualiza(newState):
 	get_node(buttons[state]).text = LABEL[state]
 
 func _one_down():
+	global.play_se(global.SE_MOVE,-15)
 	if state == 1 or state == 2:
 		 return 4
 	if state == 4:
 		return 0
 	return state + 1
 func _one_up():
+	global.play_se(global.SE_MOVE,-15)
 	if state == 3 or state == 2:
 		 return 0
 	if state == 0:
 		return 4
 	return state - 1
 func _one_right():
+	global.play_se(global.SE_MOVE,-15)
 	if state == 0 or state == 4:
 		return state
 	else:
 		return state%3 + 1
 func _one_left():
+	global.play_se(global.SE_MOVE,-15)
 	if state == 0 or state == 4:
 		return state
 	else:
 		return (state - 2)%3 + 1
 	
+
+func _on_Voltar_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_Menu_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_Controles_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_Exit_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_Restart_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)

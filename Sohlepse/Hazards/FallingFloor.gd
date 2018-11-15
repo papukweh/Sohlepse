@@ -11,6 +11,7 @@ func _ready():
 	
 func _on_FallingFloor_body_entered(body):
 	if(body.get_name().begins_with("Player") or body.get_name().begins_with("Box")):
+		global.play_se(global.SE_BREAK,-10)
 		NumberOfTouches = NumberOfTouches - 1
 		if(NumberOfTouches == 1):
 			$StaticBody2D/AnimatedSprite.animation = pref + "broken"

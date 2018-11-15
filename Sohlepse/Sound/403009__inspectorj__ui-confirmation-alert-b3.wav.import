@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/403009__inspectorj__ui-confirmation-alert-b3.wav-3af16f604f0c5e014d204691978922a6.sample"
+
+[deps]
+
+source_file="res://Sound/403009__inspectorj__ui-confirmation-alert-b3.wav"
+dest_files=[ "res://.import/403009__inspectorj__ui-confirmation-alert-b3.wav-3af16f604f0c5e014d204691978922a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Night_Sounds_-_Crickets-Lisa_Redfern-591005346.wav-050f4be90bc891c42fcc01497d4d42d4.sample"
+
+[deps]
+
+source_file="res://Sound/Night_Sounds_-_Crickets-Lisa_Redfern-591005346.wav"
+dest_files=[ "res://.import/Night_Sounds_-_Crickets-Lisa_Redfern-591005346.wav-050f4be90bc891c42fcc01497d4d42d4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

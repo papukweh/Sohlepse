@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Water-Lisa_Redfern-1888623835.wav-858d28b8ce89768b4a70379efaca0805.sample"
+
+[deps]
+
+source_file="res://Sound/Water-Lisa_Redfern-1888623835.wav"
+dest_files=[ "res://.import/Water-Lisa_Redfern-1888623835.wav-858d28b8ce89768b4a70379efaca0805.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

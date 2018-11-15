@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/398554__raceynovel__footstep-metal.ogg-1f85db289f04109379452bb3966bde51.oggstr"
+
+[deps]
+
+source_file="res://Sound/398554__raceynovel__footstep-metal.ogg"
+dest_files=[ "res://.import/398554__raceynovel__footstep-metal.ogg-1f85db289f04109379452bb3966bde51.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

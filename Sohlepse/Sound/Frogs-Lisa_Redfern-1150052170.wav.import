@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Frogs-Lisa_Redfern-1150052170.wav-5a99e1f2ea65632358980aec2e74fbf2.sample"
+
+[deps]
+
+source_file="res://Sound/Frogs-Lisa_Redfern-1150052170.wav"
+dest_files=[ "res://.import/Frogs-Lisa_Redfern-1150052170.wav-5a99e1f2ea65632358980aec2e74fbf2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

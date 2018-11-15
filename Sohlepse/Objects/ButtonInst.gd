@@ -27,6 +27,7 @@ func _ready():
 	$CollisionShape2D.disabled = false
 
 func _on_ButtonInst_hit(body):
+	global.play_se(global.SE_LEVER)
 	if body != self:
 		cbody +=1
 		$AnimatedSprite.animation = "pressed"

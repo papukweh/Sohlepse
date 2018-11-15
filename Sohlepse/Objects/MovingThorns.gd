@@ -46,6 +46,7 @@ func _physics_process(delta):
 							a.carry = self
 					i.position += 0.8*$Thorns/Body.get_linear_velocity()*delta
 func onTriggered():
+	global.play_se(global.SE_THORNS,-7)
 	if activated == 1:
 		activated = 0
 	else:

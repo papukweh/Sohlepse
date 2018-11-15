@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/145459__soughtaftersounds__menu-click-sparkle.wav-76b4a42511bc04a6a7092f6e4b1e5d9e.sample"
+
+[deps]
+
+source_file="res://Sound/145459__soughtaftersounds__menu-click-sparkle.wav"
+dest_files=[ "res://.import/145459__soughtaftersounds__menu-click-sparkle.wav-76b4a42511bc04a6a7092f6e4b1e5d9e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

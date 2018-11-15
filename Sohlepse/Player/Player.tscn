@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Player.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=7]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=8]
@@ -19,12 +19,12 @@ extents = Vector2( 4.96362, 15.0242 )
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "pushing_walk",
+"name": "walking",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "pushing_still",
+"name": "pushing_walk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],

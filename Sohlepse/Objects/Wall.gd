@@ -65,6 +65,7 @@ func onTriggered():
 		print("trigger="+str(trigger)+" act="+str(active)+" and begin="+str(begin))
 		
 		if trigger:
+			global.play_se(global.SE_WALL,-12)
 			if active and begin == 0:
 				print("some porra")
 				self.hide()
@@ -83,6 +84,7 @@ func onTriggered():
 				$CollisionShape2D.disabled = false
 				active = true
 		elif activation != 0:
+			global.play_se(global.SE_LED,-5)
 			if active and begin != 0:
 				print("some porra2")
 				self.hide()
