@@ -44,14 +44,14 @@ func _physics_process(delta):
 						i.GRAVITY = -0.01
 						#print("jump="+str(i.jump))
 						#print("jumping="+str(i.jumping))
-					i.position += $platform.get_linear_velocity()*delta
+					i.position += 0.99*$platform.get_linear_velocity()*delta
 					#i.position.y = $platform.global_position.y - 42
-					if i.get_name().begins_with("Box") or i.is_in_group("player"):
+					if i.get_name().begins_with("Box") or i.is_in_group("Player"):
 						if !i.get_objs().empty():
 							for a in i.get_objs().values():
 								if motion[1] != 0:
 									a.GRAVITY = -0.01
-									a.position += $platform.get_linear_velocity()*delta
+									a.position += 0.8*$platform.get_linear_velocity()*delta
 func onTriggered():
 	if activated == 1:
 		activated = 0
