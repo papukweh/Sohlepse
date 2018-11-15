@@ -40,6 +40,10 @@ var SE_WALL = load("res://Sound/425090__neospica__pressurized-door-opening.wav")
 var SE_LED = load("res://Sound/154953__keykrusher__microwave-beep.wav")
 var SE_PLATFORM = load("res://Sound/28341__xsub__5400-spin-down.wav")
 
+onready var base_master = 0
+onready var base_bgm = 0
+onready var base_se = 0
+
 func restart():
 	restarting = true
 	get_tree().reload_current_scene()
@@ -100,36 +104,41 @@ func initSound():
 		for i in range(10):
 			audio.push_back(AudioStreamPlayer.new())
 			self.add_child(audio[i])
-			audio[i].volume_db = 0
+			audio[i].volume_db = base_master
 	else:
 		audio[0].stop()
 	if music == null:
 		music = AudioStreamPlayer.new()
 		self.add_child(music)
 		music.stream = MENU_THEME
-		music.volume_db = -10
+		music.volume_db = base_master -10
 		music.play()
 	elif music.stream != MENU_THEME:
 		music.stream = MENU_THEME
 		music.play()
 	else:
 		return
-	
+
+func recalibrate():
+	music.volume_db = base_master - 10
+	for i in range(10):
+		audio[i].volume_db = base_master
+
 func play_bgm():
 	if current_stage < 13:
 		music.stream = ACT1_THEME
 		audio[0].stream = ACT1_BG
-		audio[0].volume_db = -20
+		audio[0].volume_db = base_master + base_bgm -20
 		audio[0].play()
 	elif current_stage < 22:
 		music.stream = ACT2_THEME
 		audio[0].stream = ACT2_BG
-		audio[0].volume_db = -20
+		audio[0].volume_db = base_master + base_bgm -20
 		audio[0].play()
 	else:
 		music.stream = ACT3_THEME
 		audio[0].stream = ACT3_BG
-		audio[0].volume_db = -20
+		audio[0].volume_db = base_master + base_bgm -20
 		audio[0].play()
 	music.play()
 
@@ -140,7 +149,7 @@ func play_se(sound, loud=0):
 		if audio[i].playing and audio[i].stream == sound and !get_tree().paused:
 			return
 		elif !audio[i].playing:
-			audio[i].volume_db = 0 + loud
+			audio[i].volume_db = base_master + base_se + loud
 			audio[i].stream = sound
 			audio[i].play()
 			return
