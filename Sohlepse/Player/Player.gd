@@ -230,8 +230,8 @@ func _physics_process(delta):
 			global.play_se(SE_WALKING,-20)
 		elif terrain == 0.99:
 			global.play_se(global.SE_METAL,-15)
-		if pushing:
-			global.play_se(global.SE_BOX, -5)
+		#if pushing:
+			#global.play_se(global.SE_BOX, -5)
 	
 	if is_interacting():
 		if velocity.x == 0 or siding().size() > 1:

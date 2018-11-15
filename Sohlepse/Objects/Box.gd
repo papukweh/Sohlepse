@@ -54,9 +54,13 @@ func _physics_process(delta):
 			velocity.x = 200
 	else:
 		velocity.x = 0
-		
+	
+
 	velocity += force * delta	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+	if velocity.x != 0:
+		global.play_se(global.SE_BOX,-5)
 	
 #	if player != null:
 #		player.pushing = false

@@ -120,9 +120,9 @@ func initSound():
 		return
 
 func recalibrate():
-	music.volume_db = base_master - 10
+	music.volume_db = base_master + base_bgm - 10
 	for i in range(10):
-		audio[i].volume_db = base_master
+		audio[i].volume_db = base_master + base_se
 
 func play_bgm():
 	if current_stage < 13:
