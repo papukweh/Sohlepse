@@ -59,6 +59,8 @@ func onTriggered():
 		activated = 1
 
 func entered(body):
+	if oneway:
+		body.terrain = 0.99
 	print(body.get_name()+" entrou em "+self.get_name())
 	if motion[0] == motion[1] and motion[1] == 0:
 		return
@@ -68,6 +70,7 @@ func entered(body):
 	return
 	
 func left(body):
+	body.terrain = 1
 	print(body.get_name()+" saiu de "+self.get_name())
 	body.GRAVITY = 700
 	if objs.has(body.get_name()):

@@ -25,11 +25,17 @@ var ACT3_BG = load("res://Sound/Textile Printer.wav")
 var SE_JOGAR = load("res://Sound/145459__soughtaftersounds__menu-click-sparkle.wav")
 var SE_MOVE = load("res://Sound/397599__nightflame__menu-fx-02.wav")
 var SE_ACCEPT = load("res://Sound/427993__newagesoup__newagesoup-fx-gui-682.wav")
-var SE_CHANGE = load("res://Sound/237713__hydranos__beepd.wav")
+var SE_CHANGE = load("res://Sound/403011__inspectorj__ui-confirmation-alert-b1.wav")
+var SE_PAUSE = load("res://Sound/403009__inspectorj__ui-confirmation-alert-b3.wav")
+var SE_UNPAUSE = load("res://Sound/403010__inspectorj__ui-confirmation-alert-b2.wav")
+var SE_EXIT = load("res://Sound/413749__inspectorj__ui-confirmation-alert-d1.wav")
+
 var SE_LEVER = load("res://Sound/277651__coral-island-studios__button-4.wav")
 var SE_BOX = load("res://Sound/218035__nitramdoh__moving-with-table.wav")
 var SE_BREAK = load("res://Sound/446118__justinvoke__crack-1.wav")
 var SE_WATER = load("res://Sound/190085__tran5ient__splash9.wav")
+var SE_METAL = load("res://Sound/403162__fallujahqc__footstep-metal.wav")
+var SE_THORNS = load("res://Sound/443806__deathscyp__spiketrap.wav")
 
 func restart():
 	restarting = true
@@ -129,7 +135,7 @@ func play_se(sound, loud=0):
 			if audio[i].playing and audio[i].stream == sound:
 				return
 			elif !audio[i].playing:
-				audio[i].volume_db = loud
+				audio[i].volume_db = 0 + loud
 				audio[i].stream = sound
 				audio[i].play()
 				return

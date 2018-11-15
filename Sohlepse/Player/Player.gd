@@ -224,7 +224,13 @@ func _physics_process(delta):
 		anim = "still"
 	
 	if not jumping and (anim == "walking" or anim == "pushing_walk") and $sprite.frame == 0:
-		global.play_se(SE_WALKING,-15)
+		print(terrain)
+		if terrain == 1:
+			global.play_se(SE_WALKING,-15)
+		elif terrain == 0.2:
+			global.play_se(SE_WALKING,-20)
+		elif terrain == 0.99:
+			global.play_se(global.SE_METAL,-15)
 		if pushing:
 			global.play_se(global.SE_BOX, -5)
 	
@@ -286,10 +292,15 @@ func _physics_process(delta):
 
 	if ((tmp[0].size() > 1 and not platform) or platform or (in_terrain == 0 and terrain != 1)):
 		if jumping:
-			global.play_se(SE_WALKING,-15)
+			if terrain == 1:
+				global.play_se(SE_WALKING,-15)
+			elif terrain == 0.2:
+				global.play_se(SE_WALKING,-20)
+			elif terrain == 0.99:
+				global.play_se(global.SE_METAL,-15)
 		jumping = false
 		#print('chao')
-		if (in_terrain == 0):
+		if (in_terrain == 0) and terrain != 0.99:
 			terrain = 1
 	else:
 		if is_interacting():

@@ -13,6 +13,7 @@ var inSure = false
 var inControls = false
 
 func openA():
+	global.play_se(global.SE_PAUSE,-5)
 	get_node(buttons[0]).text = LABEL[0]
 	var i = 1
 	while(i <= 4):
@@ -23,6 +24,7 @@ func openA():
 func _process(delta):
 	if Input.is_action_just_pressed("Pause") or pressed[Voltar]:
 		if get_tree().paused:
+			global.play_se(global.SE_UNPAUSE,-5)
 			state = -1
 			pressed[Voltar] = false
 			hide()
@@ -32,16 +34,20 @@ func _process(delta):
 			show()
 			get_tree().paused = true
 	if pressed[Menu]:
+		global.play_se(global.SE_ACCEPT)
 		get_tree().paused = false
 		get_tree().change_scene("Menus/MenuPrincipal.tscn")
 	if pressed[Restart]:
+		global.play_se(global.SE_ACCEPT)
 		get_tree().paused = false
 		get_tree().reload_current_scene()
 	if pressed[Controles]:
+		global.play_se(global.SE_ACCEPT)
 		inControls = true
 		hide()
 		get_parent().get_node("Controls").show()
 	if pressed[Exit]:
+		global.play_se(global.SE_EXIT,-5)
 		inSure = true
 		hide()
 		get_parent().get_node("Sure").show()
@@ -77,6 +83,7 @@ func _on_Exit_pressed():
 	pressed[Exit] = true
 	
 func _atualiza(newState):
+	global.play_se(global.SE_MOVE,-15)
 	get_node(buttons[state]).text = label[state]
 	state = newState
 	get_node(buttons[state]).text = LABEL[state]
@@ -104,3 +111,22 @@ func _one_left():
 	else:
 		return (state - 2)%3 + 1
 	
+
+func _on_Voltar_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_Menu_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_Controles_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_Exit_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+
+
+func _on_Restart_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)

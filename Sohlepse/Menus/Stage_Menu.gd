@@ -116,6 +116,5 @@ func _one_left():
 		return 6*batch
 	return state - 1
 		
-	
 
 
