@@ -12,7 +12,7 @@
 [ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=11]
 
-[node name="stage12" index="0" instance=ExtResource( 1 )]
+[node name="stage30" instance=ExtResource( 1 )]
 
 ACT = 3
 
@@ -110,8 +110,8 @@ __meta__ = {
 position = Vector2( 160.898, -4.01203 )
 
 [node name="Lever2" parent="Objects" index="1" groups=[
-"Mov2",
 "Wall3Led1",
+"Mov2",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 160.898, -422.899 )

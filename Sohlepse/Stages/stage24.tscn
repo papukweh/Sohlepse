@@ -6,7 +6,7 @@
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=5]
 
-[node name="stage8" instance=ExtResource( 1 )]
+[node name="stage24" index="0" instance=ExtResource( 1 )]
 
 ACT = 3
 hasTutorial = [ true, true, true ]

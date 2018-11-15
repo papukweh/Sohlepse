@@ -152,16 +152,7 @@ activated = 1
 motion = Vector2( 175, 0 )
 cycle = 5.0
 
-[node name="Wall3" parent="Objects" index="8" groups=[
-"Button",
-] instance=ExtResource( 5 )]
-
-position = Vector2( -566, 127 )
-scale = Vector2( 1, 2.00254 )
-collision_mask = 0
-_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
-
-[node name="Button" parent="Objects" index="9" groups=[
+[node name="Button" parent="Objects" index="8" groups=[
 "Button",
 ] instance=ExtResource( 7 )]
 

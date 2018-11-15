@@ -1,6 +1,10 @@
 extends Control
 
+onready var options = false
+
 func _process(delta):
+	if options:
+		return
 	if Input.is_action_just_pressed("Pause") and get_parent().get_node("PauseMenu").inControls:
 		get_parent().get_node("PauseMenu").inControls = false
 		hide()

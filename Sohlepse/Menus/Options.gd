@@ -2,7 +2,9 @@ extends Control
 
 
 func _ready():
-	pass
+	$Controls.options = true
+	$Controls/Voltar.disabled = true
+	$Controls/Voltar.hide()
 
 func _process(delta):
 	if(Input.is_action_just_pressed("ui_accept")):
