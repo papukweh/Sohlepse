@@ -4,14 +4,18 @@ export var activated = 0 #activated by default
 export var thorn_begin = 1 #activated by default
 export var motion = Vector2()
 export var cycle = 1.0
+export var forest = 0
+onready var pref = "lab_"
 var accum = 0.0
 signal triggered
 onready var objs = Dictionary()
 
 func _ready():
+	if forest != 0:
+		pref = "forest_"
 	if thorn_begin == 1:
 		$Thorns.on = true
-		$Thorns/Body/AnimatedSprite.animation = "on"
+		$Thorns/Body/AnimatedSprite.animation = pref + "on"
 
 func _physics_process(delta):
 	if motion[0] == motion[1] and motion[1] == 0:

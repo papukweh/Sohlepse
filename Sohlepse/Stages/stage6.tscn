@@ -90,7 +90,6 @@ position = Vector2( -974.301, 597.867 )
 position = Vector2( -74.1851, 606.937 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-names = null
 
 [node name="Wall" parent="Reality/Objects" index="1" groups=[
 "Lever",
@@ -110,12 +109,14 @@ cycle = 10.0
 
 position = Vector2( -448.006, 653.412 )
 scale = Vector2( -1.209, 1 )
+forest = 0
 
 [node name="MovingPlatform3" parent="Reality/Objects" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( -590.096, 187.077 )
 motion = Vector2( 30, 0 )
 cycle = 2.0
+big = 0
 
 [node name="Endgoal" parent="." index="5" instance=ExtResource( 9 )]
 

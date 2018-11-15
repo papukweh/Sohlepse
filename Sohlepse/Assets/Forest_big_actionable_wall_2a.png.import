@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_test.png-a080b0eb19fcf91d23f983ddbd279f18.stex"
+path="res://.import/Forest_big_actionable_wall_2a.png-029e1d766430e28b1aeb8456430bdd89.stex"
 
 [deps]
 
-source_file="res://Assets/tileset_test.png"
-dest_files=[ "res://.import/tileset_test.png-a080b0eb19fcf91d23f983ddbd279f18.stex" ]
+source_file="res://Assets/Forest_big_actionable_wall_2a.png"
+dest_files=[ "res://.import/Forest_big_actionable_wall_2a.png-029e1d766430e28b1aeb8456430bdd89.stex" ]
 
 [params]
 

@@ -129,8 +129,6 @@ position = Vector2( 990, 865 )
 
 [node name="Reality" type="Node" parent="." index="5"]
 
-editor/display_folded = true
-
 [node name="Objects" type="Node" parent="Reality" index="0"]
 
 [node name="Wall1" parent="Reality/Objects" index="0" groups=[
@@ -150,8 +148,8 @@ position = Vector2( 255, -464 )
 scale = Vector2( 1, 10.5 )
 
 [node name="Wall3" parent="Reality/Objects" index="2" groups=[
-"Button4",
 "Button1",
+"Button4",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 2112, -495.592 )
@@ -188,8 +186,8 @@ motion = Vector2( 0, -200 )
 cycle = 15.0
 
 [node name="Button1" parent="Reality/Objects" index="6" groups=[
-"Button1.1",
 "Button1",
+"Button1.1",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 1888.24, -130.204 )
@@ -203,16 +201,16 @@ names = [ "Button1", "Button1.1" ]
 position = Vector2( 2368, -195 )
 
 [node name="Button4" parent="Reality/Objects" index="8" groups=[
-"Button4",
 "Button4.1",
+"Button4",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 2590.51, -194.056 )
 names = [ "Button4", "Button4.1" ]
 
 [node name="Button3" parent="Reality/Objects" index="9" groups=[
-"Button3.1",
 "Button3",
+"Button3.1",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 2784, -155 )
@@ -246,6 +244,7 @@ position = Vector2( 2590, -595 )
 activated = 1
 motion = Vector2( 0, 420 )
 cycle = 10.0
+big = 0
 
 [node name="Lever1" parent="Reality/Objects" index="14" groups=[
 "Lever1",
@@ -304,8 +303,8 @@ scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Wall5" parent="Reality/Objects" index="22" groups=[
-"Button3.1",
 "Button4.1",
+"Button3.1",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 3232, -627 )
@@ -339,10 +338,9 @@ position = Vector2( 96, -128 )
 position = Vector2( 3680, -397 )
 motion = Vector2( 0, 110 )
 cycle = 8.0
+big = 0
 
 [node name="Hazards" type="Node" parent="Reality" index="1"]
-
-editor/display_folded = true
 
 [node name="Lava1" parent="Reality/Hazards" index="0" instance=ExtResource( 13 )]
 
@@ -406,94 +404,94 @@ position = Vector2( 3040, -160 )
 position = Vector2( 3168, -160 )
 
 [node name="Thorns" parent="Reality/Hazards" index="15" groups=[
-"Lever7",
 "Lever3",
 "Lever4",
 "Lever6",
 "Lever2",
+"Lever7",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3551.98, -231.955 )
+position = Vector2( 3551.98, -232.321 )
 
 [node name="Thorns9" parent="Reality/Hazards" index="16" groups=[
-"Lever7",
 "Lever3",
 "Lever4",
 "Lever6",
 "Lever2",
+"Lever7",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3423.98, -231.955 )
+position = Vector2( 3423.98, -232.321 )
 
 [node name="Thorns2" parent="Reality/Hazards" index="17" groups=[
-"Lever7",
 "Lever3",
 "Lever4",
 "Lever6",
 "Lever2",
+"Lever7",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3615.98, -231.955 )
+position = Vector2( 3615.98, -232.321 )
 
 [node name="Thorns8" parent="Reality/Hazards" index="18" groups=[
-"Lever7",
 "Lever3",
 "Lever4",
 "Lever6",
 "Lever2",
+"Lever7",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3487.98, -231.955 )
+position = Vector2( 3487.98, -232.321 )
 
 [node name="Thorns3" parent="Reality/Hazards" index="19" groups=[
-"Lever7",
 "Lever3",
 "Lever4",
 "Lever6",
 "Lever2",
+"Lever7",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3679.98, -231.955 )
+position = Vector2( 3679.98, -232.321 )
 
 [node name="Thorns4" parent="Reality/Hazards" index="20" groups=[
-"Lever7",
 "Lever3",
 "Lever4",
 "Lever6",
 "Lever2",
+"Lever7",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3743.98, -231.955 )
+position = Vector2( 3743.98, -232.321 )
 
 [node name="Thorns6" parent="Reality/Hazards" index="21" groups=[
-"Lever7",
 "Lever3",
 "Lever4",
 "Lever6",
 "Lever2",
+"Lever7",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3871.98, -231.955 )
+position = Vector2( 3871.98, -232.321 )
 
 [node name="Thorns5" parent="Reality/Hazards" index="22" groups=[
-"Lever7",
 "Lever3",
 "Lever4",
 "Lever6",
 "Lever2",
+"Lever7",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3807.98, -231.955 )
+position = Vector2( 3807.98, -232.321 )
 
 [node name="Thorns7" parent="Reality/Hazards" index="23" groups=[
-"Lever7",
 "Lever3",
 "Lever4",
 "Lever6",
 "Lever2",
+"Lever7",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3935.98, -231.955 )
+position = Vector2( 3935.98, -232.321 )
 
 [node name="Endgoal" parent="Reality" index="2" instance=ExtResource( 16 )]
 
@@ -660,8 +658,8 @@ position = Vector2( 3424.03, 512.676 )
 position = Vector2( 64, 896 )
 
 [node name="MovingPlatform5" parent="Mirror/Objects2" index="20" groups=[
-"Button6",
 "Button7",
+"Button6",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 1888.46, 1029.14 )
@@ -670,20 +668,22 @@ motion = Vector2( 0, -200 )
 cycle = 15.0
 
 [node name="MovingPlatform7" parent="Mirror/Objects2" index="21" groups=[
-"Button6",
 "Button7",
+"Button6",
 ] instance=ExtResource( 9 )]
 
 position = Vector2( 2590.03, 493.676 )
 activated = 1
 motion = Vector2( 0, 420 )
 cycle = 10.0
+big = 0
 
 [node name="MovingPlatform8" parent="Mirror/Objects2" index="22" instance=ExtResource( 9 )]
 
 position = Vector2( 3680.03, 691.676 )
 motion = Vector2( 0, 110 )
 cycle = 8.0
+big = 0
 
 [node name="Hazards2" type="Node" parent="Mirror" index="1"]
 
@@ -730,7 +730,7 @@ position = Vector2( 1448, 910 )
 "Lever15",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3551.98, 856.009 )
+position = Vector2( 3551.98, 855.643 )
 
 [node name="Thorns9" parent="Mirror/Hazards2" index="9" groups=[
 "Lever10",
@@ -740,7 +740,7 @@ position = Vector2( 3551.98, 856.009 )
 "Lever15",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3423.98, 856.009 )
+position = Vector2( 3423.98, 855.643 )
 
 [node name="Thorns2" parent="Mirror/Hazards2" index="10" groups=[
 "Lever10",
@@ -750,7 +750,7 @@ position = Vector2( 3423.98, 856.009 )
 "Lever15",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3615.98, 856.009 )
+position = Vector2( 3615.98, 855.643 )
 
 [node name="Thorns8" parent="Mirror/Hazards2" index="11" groups=[
 "Lever10",
@@ -760,7 +760,7 @@ position = Vector2( 3615.98, 856.009 )
 "Lever15",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3487.98, 856.009 )
+position = Vector2( 3487.98, 855.643 )
 
 [node name="Thorns3" parent="Mirror/Hazards2" index="12" groups=[
 "Lever10",
@@ -770,7 +770,7 @@ position = Vector2( 3487.98, 856.009 )
 "Lever15",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3679.98, 856.009 )
+position = Vector2( 3679.98, 855.643 )
 
 [node name="Thorns4" parent="Mirror/Hazards2" index="13" groups=[
 "Lever10",
@@ -780,7 +780,7 @@ position = Vector2( 3679.98, 856.009 )
 "Lever15",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3743.98, 856.009 )
+position = Vector2( 3743.98, 855.643 )
 
 [node name="Thorns6" parent="Mirror/Hazards2" index="14" groups=[
 "Lever10",
@@ -790,7 +790,7 @@ position = Vector2( 3743.98, 856.009 )
 "Lever15",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3871.98, 856.009 )
+position = Vector2( 3871.98, 855.643 )
 
 [node name="Thorns5" parent="Mirror/Hazards2" index="15" groups=[
 "Lever10",
@@ -800,7 +800,7 @@ position = Vector2( 3871.98, 856.009 )
 "Lever15",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3807.98, 856.009 )
+position = Vector2( 3807.98, 855.643 )
 
 [node name="Thorns7" parent="Mirror/Hazards2" index="16" groups=[
 "Lever10",
@@ -810,7 +810,7 @@ position = Vector2( 3807.98, 856.009 )
 "Lever15",
 ] instance=ExtResource( 15 )]
 
-position = Vector2( 3935.98, 856.009 )
+position = Vector2( 3935.98, 855.643 )
 
 [node name="WaterArea" parent="Mirror/Hazards2" index="17" instance=ExtResource( 17 )]
 

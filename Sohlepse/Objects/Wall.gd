@@ -3,6 +3,8 @@ extends StaticBody2D
 export var begin = 0 # 0 = default is enabled
 signal triggered
 export var activation = 0 #alternates
+export var forest = 0
+onready var pref = ""
 onready var active = true
 onready var transmitter = false
 onready var bcount = 0
@@ -18,16 +20,20 @@ func _ready():
 		$CollisionShape2D.disabled = false
 		active = true
 	
+	if forest != 0:
+		pref = "1"
+		$AnimatedSprite.animation = pref + "10"
+	
 	if activation != 0:
 		for g in self.get_groups():
 			if !g.begins_with("root"):
 				bcount = bcount + 1
 		if bcount == 1:
-			$AnimatedSprite.animation = "10"
+			$AnimatedSprite.animation = pref + "10"
 		elif bcount == 2:
-			$AnimatedSprite.animation = "20"
+			$AnimatedSprite.animation = pref + "20"
 		elif bcount == 3:
-			$AnimatedSprite.animation = "30"
+			$AnimatedSprite.animation = pref + "30"
 		else:
 			print("Invalid number of buttons for " + self.name)
 
@@ -51,10 +57,10 @@ func onTriggered():
 								active_buttons += 1
 			print("ativados: " + str(active_buttons))
 			if bcount == 2 and active_buttons != 2:
-				$AnimatedSprite.animation = str(20+active_buttons)
+				$AnimatedSprite.animation = pref+str(20+active_buttons)
 				self.show()
 			elif bcount == 3 and active_buttons != 3:
-				$AnimatedSprite.animation = str(30+active_buttons)
+				$AnimatedSprite.animation = pref+str(30+active_buttons)
 				self.show()
 		print("trigger="+str(trigger)+" act="+str(active)+" and begin="+str(begin))
 		
