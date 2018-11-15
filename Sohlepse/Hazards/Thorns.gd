@@ -2,17 +2,21 @@ extends Node2D
 
 export var begin = 0 # 0 = default is deactivated
 export var activation = 0
+export var forest = 0
+onready var pref = "lab_"
 onready var on = false
 onready var inside = 0
 onready var transmitter = false
 onready var who = null
 
 func _ready():
+	if forest != 0:
+		pref = "forest_"
 	if begin == 0:
-		$Body/AnimatedSprite.animation = "off"
+		$Body/AnimatedSprite.animation = pref + "off"
 	else:
 		on = true
-		$Body/AnimatedSprite.animation = "on"
+		$Body/AnimatedSprite.animation = pref + "on"
 
 func _process(delta):
 	if on:
@@ -31,24 +35,24 @@ func onTriggered():
 	if trigger: 
 		global.play_se(global.SE_THORNS,-7)
 		if !on and begin == 0:
-			$Body/AnimatedSprite.animation = "on"
+			$Body/AnimatedSprite.animation = pref + "on"
 			on = true
 		elif on and begin != 0:
-			$Body/AnimatedSprite.animation = "off"
+			$Body/AnimatedSprite.animation = pref + "off"
 			on = false
 		elif on and begin == 0:
-			$Body/AnimatedSprite.animation = "off"
+			$Body/AnimatedSprite.animation = pref + "off"
 			on = false
 		elif !on and begin != 0:
-			$Body/AnimatedSprite.animation = "on"
+			$Body/AnimatedSprite.animation = pref + "on"
 			on = true
 	elif activation != 0:
 		global.play_se(global.SE_THORNS,-7)
 		if on and begin == 0:
-			$Body/AnimatedSprite.animation = "off"
+			$Body/AnimatedSprite.animation = pref + "off"
 			on = false
 		elif !on and begin != 0:
-			$Body/AnimatedSprite.animation = "on"
+			$Body/AnimatedSprite.animation = pref + "on"
 			on = true
 
 func _on_Thorns_body_entered(body):

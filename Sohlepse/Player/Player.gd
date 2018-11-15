@@ -167,8 +167,7 @@ func _physics_process(delta):
 				Recorder.stop_recording()
 				recording = false
 			else:
-				recording = true
-				Recorder.start_recording(self)
+				recording = Recorder.start_recording(self)
 		if Input.is_action_just_pressed("play"):
 			Recorder.play_all()
 	

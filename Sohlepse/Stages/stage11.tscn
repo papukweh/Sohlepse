@@ -834,7 +834,7 @@ cycle = 5.001
 
 [node name="Button3" parent="Mirror/Objects" index="9" instance=ExtResource( 8 )]
 
-position = Vector2( -800, -532 )
+position = Vector2( -840, -532 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Transform" ]
 

@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Manager/StageManager.gd" type="Script" id=1]
 [ext_resource path="res://Manager/Dual_screen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Menus/Sure.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Menus/Controls.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/X.png" type="Texture" id=4]
+[ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menus/Sure.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Menus/Controls.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ null, ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), null ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="StageManager" type="Node2D"]
 
@@ -67,7 +77,13 @@ margin_bottom = -520.0
 input = 7
 label = "REC"
 
-[node name="PauseMenu" parent="Tutoriais" index="5" instance=ExtResource( 4 )]
+[node name="Error" type="AnimatedSprite" parent="Tutoriais" index="5"]
+
+position = Vector2( 778.848, -549.452 )
+frames = SubResource( 1 )
+animation = "default"
+
+[node name="PauseMenu" parent="Tutoriais" index="6" instance=ExtResource( 5 )]
 
 pause_mode = 2
 visible = false
@@ -77,7 +93,7 @@ margin_right = 600.0
 margin_bottom = -97.0
 _sections_unfolded = [ "Mouse", "Pause", "Size Flags", "Theme", "Visibility" ]
 
-[node name="Sure" parent="Tutoriais" index="6" instance=ExtResource( 5 )]
+[node name="Sure" parent="Tutoriais" index="7" instance=ExtResource( 6 )]
 
 visible = false
 margin_left = 320.0
@@ -85,7 +101,7 @@ margin_top = -348.0
 margin_right = 473.0
 margin_bottom = -280.0
 
-[node name="Controls" parent="Tutoriais" index="7" instance=ExtResource( 6 )]
+[node name="Controls" parent="Tutoriais" index="8" instance=ExtResource( 7 )]
 
 visible = false
 margin_left = 232.0

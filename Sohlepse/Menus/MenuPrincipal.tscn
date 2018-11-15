@@ -5,7 +5,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Sound/427993__newagesoup__newagesoup-fx-gui-68.wav" type="AudioStream" id=4]
 
-[node name="MenuPrincipal" type="Control"]
+[node name="MenuPrincipal" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

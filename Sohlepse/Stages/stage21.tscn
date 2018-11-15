@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/background.png" type="Texture" id=2]
-[ext_resource path="res://tileset_test.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/Florest_bg.png" type="Texture" id=2]
+[ext_resource path="res://tileset_forest.tres" type="TileSet" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=6]
@@ -11,21 +11,29 @@
 [ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=10]
 
-[node name="stage21" instance=ExtResource( 1 )]
+[node name="stage21" index="0" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
 MAX_CLONES = 0
 
-[node name="Sprite2" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 928, 320 )
-scale = Vector2( 0.664062, 0.651042 )
+position = Vector2( 288.259, 318.088 )
+scale = Vector2( -0.872132, 0.855033 )
 z_index = -1
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="TileMap" type="TileMap" parent="." index="1"]
+[node name="Sprite2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 1630.49, 319.245 )
+scale = Vector2( 0.875, 0.857844 )
+z_index = -1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
 
 position = Vector2( 1082.41, 934.39 )
 mode = 0
@@ -44,12 +52,12 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -983041, 1, 0, -917505, 1, 0, -851969, 1, 0, -786433, 1, 0, -720897, 1, 0, -786432, 0, 0, -786431, 2, 0, -655361, 1, 0, -720896, 6, 0, -720895, 8, 0, -720894, 0, 0, -720893, 2, 0, -589825, 1, 0, -655360, 3, 0, -655359, 7, 0, -655358, 6, 0, -655357, 8, 0, -655356, 0, 0, -655355, 2, 0, -524300, 536870914, 0, -524299, 0, 0, -524298, 0, 0, -524297, 0, 0, -524296, 2, 0, -524289, 1, 0, -589824, 3, 0, -589823, 7, 0, -589822, 3, 0, -589821, 7, 0, -589820, 6, 0, -589819, 8, 0, -458753, 1, 0, -524288, 3, 0, -524287, 7, 0, -524286, 3, 0, -524285, 7, 0, -524284, 3, 0, -524283, 7, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 2, 0, -393217, 1, 0, -458752, 9, 0, -458751, 10, 0, -458750, 9, 0, -458749, 10, 0, -458748, 9, 0, -458747, 10, 0, -458746, 6, 0, -458745, 6, 0, -458744, 6, 0, -458743, 8, 0 )
+tile_data = PoolIntArray( -983041, 1, 0, -917505, 1, 0, -851969, 1, 0, -786433, 1, 0, -720897, 1, 0, -786432, 0, 0, -786431, 3, 0, -655361, 1, 0, -720896, 7, 0, -720895, 5, 0, -720894, 0, 0, -720893, 3, 0, -589825, 1, 0, -655360, 2, 0, -655359, 4, 0, -655358, 7, 0, -655357, 5, 0, -655356, 0, 0, -655355, 3, 0, -524300, 536870915, 0, -524299, 0, 0, -524298, 0, 0, -524297, 0, 0, -524296, 3, 0, -524289, 1, 0, -589824, 2, 0, -589823, 4, 0, -589822, 2, 0, -589821, 4, 0, -589820, 7, 0, -589819, 5, 0, -458753, 1, 0, -524288, 2, 0, -524287, 4, 0, -524286, 2, 0, -524285, 4, 0, -524284, 2, 0, -524283, 4, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 3, 0, -393217, 1, 0, -458752, 8, 0, -458751, 9, 0, -458750, 8, 0, -458749, 9, 0, -458748, 8, 0, -458747, 9, 0, -458746, 7, 0, -458745, 7, 0, -458744, 7, 0, -458743, 5, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Players" type="Node" parent="." index="2"]
+[node name="Players" type="Node" parent="." index="3"]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 4 )]
 
@@ -59,7 +67,7 @@ position = Vector2( 477.011, 324.767 )
 
 position = Vector2( 1151.91, 127.538 )
 
-[node name="Reality" type="Node2D" parent="." index="3"]
+[node name="Reality" type="Node2D" parent="." index="4"]
 
 position = Vector2( 1082.41, 934.39 )
 
@@ -79,7 +87,7 @@ position = Vector2( 259.335, -656.066 )
 
 position = Vector2( 572.846, -546.655 )
 
-[node name="Mirror" type="Node2D" parent="." index="4"]
+[node name="Mirror" type="Node2D" parent="." index="5"]
 
 __meta__ = {
 "_edit_lock_": true
@@ -118,60 +126,70 @@ position = Vector2( -864, -544 )
 position = Vector2( -861.336, -685.761 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns2" parent="Mirror/Hazards" index="7" instance=ExtResource( 8 )]
 
 position = Vector2( -797.336, -685.761 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns3" parent="Mirror/Hazards" index="8" instance=ExtResource( 8 )]
 
 position = Vector2( -733.336, -685.761 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns4" parent="Mirror/Hazards" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( -669.336, -685.761 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns5" parent="Mirror/Hazards" index="10" instance=ExtResource( 8 )]
 
 position = Vector2( -923.623, -685.711 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns6" parent="Mirror/Hazards" index="11" instance=ExtResource( 8 )]
 
 position = Vector2( -541.336, -685.761 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns7" parent="Mirror/Hazards" index="12" instance=ExtResource( 8 )]
 
 position = Vector2( -477.336, -685.761 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns9" parent="Mirror/Hazards" index="13" instance=ExtResource( 8 )]
 
 position = Vector2( -349.336, -685.761 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns8" parent="Mirror/Hazards" index="14" instance=ExtResource( 8 )]
 
 position = Vector2( -413.336, -685.761 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Thorns10" parent="Mirror/Hazards" index="15" instance=ExtResource( 8 )]
 
 position = Vector2( -285.336, -685.761 )
 scale = Vector2( 1, -1.265 )
 begin = 1
+forest = 1
 
 [node name="Endgoal" parent="Mirror/Hazards" index="16" instance=ExtResource( 6 )]
 
@@ -186,6 +204,7 @@ activated = 1
 thorn_begin = 0
 motion = Vector2( 300, 0 )
 cycle = 15.0
+forest = 1
 
 [node name="MovingPlatform3" parent="Mirror" index="2" groups=[
 "Lever",
@@ -197,10 +216,11 @@ activated = 1
 thorn_begin = 0
 motion = Vector2( 300, 0 )
 cycle = 10.0
+forest = 1
 
 [node name="MovingPlatform2" parent="Mirror" index="3" groups=[
-"Lever2",
 "Lever3",
+"Lever2",
 ] instance=ExtResource( 9 )]
 
 position = Vector2( 50, 400 )
@@ -208,17 +228,18 @@ activated = 1
 thorn_begin = 0
 motion = Vector2( 0, 350 )
 cycle = 15.0
+forest = 1
 
-[node name="Real" type="ReferenceRect" parent="." index="5"]
+[node name="Real" type="ReferenceRect" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -95.0
-margin_top = -152.0
+margin_top = -128.0
 margin_right = 957.0
-margin_bottom = 835.0
+margin_bottom = 768.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -229,16 +250,16 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Mirrored" type="ReferenceRect" parent="." index="6"]
+[node name="Mirrored" type="ReferenceRect" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 952.0
-margin_top = -101.0
-margin_right = 2974.0
-margin_bottom = 886.0
+margin_top = -128.0
+margin_right = 2400.0
+margin_bottom = 768.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -249,7 +270,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Limit" parent="." index="7" instance=ExtResource( 10 )]
+[node name="Limit" parent="." index="8" instance=ExtResource( 10 )]
 
 position = Vector2( 1270.65, 919.004 )
 scale = Vector2( 49.0264, 1 )

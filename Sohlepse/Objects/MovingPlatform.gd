@@ -4,10 +4,18 @@ export var activated = 0 #activated by default
 export var thorn_begin = 1 #activated by default
 export var motion = Vector2()
 export var cycle = 1.0
+export var forest = 0
+export var big = 0
 var accum = 0.0
 signal triggered
 onready var objs = Dictionary()
 onready var oneway = $platform/CollisionShape2D.one_way_collision
+
+func _ready():
+	if forest != 0:
+		$platform/AnimatedSprite.animation = "forest"
+		if big != 0:
+			$platform/AnimatedSprite.animation = "big_forest"
 
 func _physics_process(delta):
 	if motion[0] == motion[1] and motion[1] == 0:

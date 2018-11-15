@@ -16,6 +16,7 @@ activated = 0
 thorn_begin = 1
 motion = Vector2( 0, 0 )
 cycle = 1.0
+forest = 0
 
 [node name="Thorns" parent="." index="0" instance=ExtResource( 2 )]
 

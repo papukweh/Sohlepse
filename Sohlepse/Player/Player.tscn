@@ -195,7 +195,7 @@ tracks/4/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 2.56728 )
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "gravity",
 "Player",
 ]]
@@ -219,6 +219,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head" index="0"]
 

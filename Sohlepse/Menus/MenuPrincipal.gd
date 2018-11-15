@@ -42,7 +42,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("move_down"):
 		global.play_se(global.SE_MOVE,-15)
 		_atualiza((state+1)%6)
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("move_up"):
 		global.play_se(global.SE_MOVE,-15)
 		_atualiza((state-1)%6)
 	if Input.is_action_just_pressed("ui_accept"):

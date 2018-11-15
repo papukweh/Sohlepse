@@ -58,8 +58,9 @@ func _process(delta):
 			global.play_se(global.SE_MOVE,-15)
 			var newState = _one_down()
 			_atualiza(newState)
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("move_up"):
 			global.play_se(global.SE_MOVE,-15)
+		if Input.is_action_just_pressed("move_up"):
 			var newState = _one_up()
 			_atualiza(newState)
 		if Input.is_action_just_pressed("move_right"):
