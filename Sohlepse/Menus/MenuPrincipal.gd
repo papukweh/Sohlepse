@@ -33,7 +33,7 @@ func _process(delta):
 		get_tree().quit()
 	if Input.is_action_just_pressed("move_down"):
 		_atualiza((state+1)%6)
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("move_up"):
 		_atualiza((state-1)%6)
 	if Input.is_action_just_pressed("ui_accept"):
 		pressed[state] = true
