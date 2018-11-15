@@ -90,8 +90,8 @@ invert_horizontal = -1
 [node name="Reality" type="Node" parent="." index="4"]
 
 [node name="Wall4" parent="Reality" index="0" groups=[
-"ButtonInst3",
 "Lever2",
+"ButtonInst3",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( -864.113, 337.241 )
@@ -145,7 +145,7 @@ cycle = 30.0
 
 position = Vector2( -676.68, 21.6682 )
 activated = 1
-motion = Vector2( 0, 200 )
+motion = Vector2( 0, 240 )
 cycle = 10.0
 
 [node name="Lever1" parent="Reality" index="7" groups=[

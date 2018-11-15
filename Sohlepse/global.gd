@@ -19,7 +19,7 @@ var ACT2_THEME = load("res://Sound/mu45.wav")
 var ACT3_THEME = load("res://Sound/cy34.wav")
 
 var ACT1_BG = load("res://Sound/385943__inspectorj__ambience-machine-factory-a.wav")
-var ACT2_BG = load("res://Sound/Cowbell Reversed.wav")
+var ACT2_BG = load("res://Sound/Night_Sounds_-_Crickets-Lisa_Redfern-591005346.wav")
 var ACT3_BG = load("res://Sound/Textile Printer.wav")
 
 var SE_JOGAR = load("res://Sound/145459__soughtaftersounds__menu-click-sparkle.wav")
@@ -36,6 +36,9 @@ var SE_BREAK = load("res://Sound/446118__justinvoke__crack-1.wav")
 var SE_WATER = load("res://Sound/190085__tran5ient__splash9.wav")
 var SE_METAL = load("res://Sound/403162__fallujahqc__footstep-metal.wav")
 var SE_THORNS = load("res://Sound/443806__deathscyp__spiketrap.wav")
+var SE_WALL = load("res://Sound/425090__neospica__pressurized-door-opening.wav")
+var SE_LED = load("res://Sound/154953__keykrusher__microwave-beep.wav")
+var SE_PLATFORM = load("res://Sound/28341__xsub__5400-spin-down.wav")
 
 func restart():
 	restarting = true
@@ -121,21 +124,23 @@ func play_bgm():
 	elif current_stage < 22:
 		music.stream = ACT2_THEME
 		audio[0].stream = ACT2_BG
-		audio[0].volume_db = -10
+		audio[0].volume_db = -20
 		audio[0].play()
 	else:
 		music.stream = ACT3_THEME
 		audio[0].stream = ACT3_BG
-		audio[0].volume_db = -10
+		audio[0].volume_db = -20
 		audio[0].play()
 	music.play()
 
 func play_se(sound, loud=0):
-		for i in range(10):
-			if audio[i].playing and audio[i].stream == sound:
-				return
-			elif !audio[i].playing:
-				audio[i].volume_db = 0 + loud
-				audio[i].stream = sound
-				audio[i].play()
-				return
+	for i in range(10):
+		if get_tree().paused and i >= 3:
+			audio[i].playing = false
+		if audio[i].playing and audio[i].stream == sound and !get_tree().paused:
+			return
+		elif !audio[i].playing:
+			audio[i].volume_db = 0 + loud
+			audio[i].stream = sound
+			audio[i].play()
+			return

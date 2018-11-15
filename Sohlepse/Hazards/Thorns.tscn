@@ -28,7 +28,7 @@ extents = Vector2( 10.9503, 11.929 )
 custom_solver_bias = 0.0
 extents = Vector2( 32.3044, 6.60888 )
 
-[node name="Thorns" type="Node2D" index="0"]
+[node name="Thorns" type="Node2D"]
 
 position = Vector2( 0, 0.828376 )
 scale = Vector2( 1, 1.29089 )

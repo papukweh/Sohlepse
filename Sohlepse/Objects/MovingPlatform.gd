@@ -53,6 +53,7 @@ func _physics_process(delta):
 									a.GRAVITY = -0.01
 									a.position += 0.8*$platform.get_linear_velocity()*delta
 func onTriggered():
+	global.play_se(global.SE_PLATFORM, -12)
 	if activated == 1:
 		activated = 0
 	else:
