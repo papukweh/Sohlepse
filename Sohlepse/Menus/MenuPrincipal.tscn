@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Menus/MenuPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Titulo.png" type="Texture" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://Sound/427993__newagesoup__newagesoup-fx-gui-68.wav" type="AudioStream" id=4]
 
-[node name="MenuPrincipal" type="Control"]
+[node name="MenuPrincipal" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -187,16 +186,6 @@ position = Vector2( 827.915, 184.949 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
-
-stream = ExtResource( 4 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-_sections_unfolded = [ "Pause" ]
 
 [connection signal="mouse_entered" from="continue" to="." method="_on_continue_mouse_entered"]
 

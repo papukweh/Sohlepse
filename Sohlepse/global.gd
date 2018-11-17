@@ -15,13 +15,13 @@ var audio = []
 const FINAL = 30
 
 var MENU_THEME = load("res://Sound/he56.wav")
-var ACT1_THEME = load("res://Sound/cy34no-kick.wav")
+var ACT1_THEME = load("res://Sound/cy34.wav")
 var ACT2_THEME = load("res://Sound/mu45.wav")
-var ACT3_THEME = load("res://Sound/cy34.wav")
+var ACT3_THEME = load("res://Sound/cy67.wav")
 
 var ACT1_BG = load("res://Sound/385943__inspectorj__ambience-machine-factory-a.wav")
 var ACT2_BG = load("res://Sound/Night_Sounds_-_Crickets-Lisa_Redfern-591005346.wav")
-var ACT3_BG = load("res://Sound/Textile Printer.wav")
+var ACT3_BG = load("res://Sound/385943__inspectorj__ambience-machine-factory-a.wav")
 
 var SE_JOGAR = load("res://Sound/145459__soughtaftersounds__menu-click-sparkle.wav")
 var SE_MOVE = load("res://Sound/397599__nightflame__menu-fx-02.wav")
@@ -131,7 +131,7 @@ func play_bgm():
 		audio[0].stream = ACT1_BG
 		audio[0].volume_db = base_master + base_bgm -20
 		audio[0].play()
-	elif current_stage < 22:
+	elif current_stage < 24:
 		music.stream = ACT2_THEME
 		audio[0].stream = ACT2_BG
 		audio[0].volume_db = base_master + base_bgm -20

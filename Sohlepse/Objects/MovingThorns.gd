@@ -37,13 +37,29 @@ func _physics_process(delta):
 					#print("jumping="+str(i.jumping))
 					i.position += 0.8*$Thorns/Body.get_linear_velocity()*delta
 				#i.position.y = $platform.global_position.y - 42
-				if i.get_name().begins_with("Box") or i.is_in_group("Player"):
+				
+				var box = false
+				var pl = false
+				if i.get_name().begins_with("Box"):
+					box = true 
+				
+				if i.is_in_group("Player"):
+					pl = true
+				
+				if box or pl:
 					if !i.get_objs().empty():
 						for a in i.get_objs().values():
-							if motion[1] != 0:
+							if motion[1] != 0 and box:
 								a.GRAVITY = -0.01
-							a.position += 0.8*$Thorns/Body.get_linear_velocity()*delta
-							a.carry = self
+							elif motion[1] != 0:
+								a.get_parent().GRAVITY = -0.01
+						
+							if box:	
+								a.position += 0.8*$Thorns/Body.get_linear_velocity()*delta
+								a.carry = self
+							else:
+								a.get_parent().position += 0.8*$Thorns/Body.get_linear_velocity()*delta
+								a.get_parent().carry = self
 					i.position += 0.8*$Thorns/Body.get_linear_velocity()*delta
 func onTriggered():
 	global.play_se(global.SE_THORNS,-7)
