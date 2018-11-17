@@ -17,7 +17,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="StageManager" type="Node2D"]
+[node name="StageManager" type="Node2D" index="0"]
 
 z_index = 20
 script = ExtResource( 1 )
@@ -79,7 +79,8 @@ label = "REC"
 
 [node name="Error" type="AnimatedSprite" parent="Tutoriais" index="5"]
 
-position = Vector2( 778.848, -549.452 )
+position = Vector2( 889.11, -554.755 )
+scale = Vector2( 0.629245, 0.385542 )
 frames = SubResource( 1 )
 animation = "default"
 

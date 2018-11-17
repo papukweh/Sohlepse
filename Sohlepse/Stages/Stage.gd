@@ -29,6 +29,7 @@ func _ready():
 		p4.label = "REC"
 		p4.input = 7
 		p4.visible = false
+		p4.ready()
 	if hasTutorial:
 		for i in range(3):
 			if hasTutorial[i]:
