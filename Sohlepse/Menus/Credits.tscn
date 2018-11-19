@@ -1,8 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Menus/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Menus/BG.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/OldSansBlack.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://imeccsl.png" type="Texture" id=4]
+[ext_resource path="res://uspgamedev.png" type="Texture" id=5]
 
-[node name="Credits" type="Control" index="0"]
+[sub_resource type="DynamicFont" id=2]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Credits" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -19,32 +39,46 @@ size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor" ]
 
-[node name="Label" type="Label" parent="." index="0"]
+[node name="BG" parent="." index="0" instance=ExtResource( 2 )]
+
+polygon = PoolVector2Array( 0, 0, 1080, 0, 1080, 690, 0, 690 )
+
+[node name="Label" type="Label" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 401.0
-margin_top = 277.0
-margin_right = 646.0
-margin_bottom = 370.0
+margin_left = 108.0
+margin_top = 72.0
+margin_right = 985.0
+margin_bottom = 459.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Larissa Goto Sala
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+text = "Este jogo é um projeto da disciplina
+MAC214 -Atividade Curricular em Cultura e Extensão
+do Instituto de Matemática e Estatística da Universidade de São Paulo
+
+
+Foi inteiramente desenvolvido por:
+Larissa Goto Sala
 Pedro Paulo de Queiroz Bambace
-Nathalia Orlandi Borin"
+N	athalia Orlandi Borin"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Back" type="Button" parent="." index="1"]
+[node name="Back" type="Button" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -65,12 +99,79 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Voltar"
-flat = false
+flat = true
 align = 1
 _sections_unfolded = [ "Margin" ]
 
+[node name="Label" type="Label" parent="Back" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+custom_constants/shadow_offset_x = 3
+text = "Voltar"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="TextureRect" type="TextureRect" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 199.0
+margin_top = 514.0
+margin_right = 699.0
+margin_bottom = 621.0
+rect_scale = Vector2( 0.7, 0.7 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="TextureRect2" type="TextureRect" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 639.0
+margin_top = 504.0
+margin_right = 3955.0
+margin_bottom = 1584.0
+rect_scale = Vector2( 0.08, 0.08 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
 [connection signal="mouse_entered" from="Back" to="." method="_on_Back_mouse_entered"]
+
+[connection signal="mouse_exited" from="Back" to="." method="_on_Back_mouse_exited"]
 
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 

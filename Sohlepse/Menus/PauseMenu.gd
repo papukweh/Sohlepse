@@ -6,19 +6,18 @@ const Controles = 3
 const Exit = 4
 var pressed = [false, false, false, false, false]
 var buttons = ["Voltar", "Menu", "Restart", "Controles", "Exit"]
-var label = ["Voltar ao Jogo", "Menu", "Recomeçar", "Controles", "Sair"]
-var LABEL = ["VOLTAR AO JOGO", "MENU", "RECOMEÇAR", "CONTROLES", "SAIR"]
+var on = [false, false, false, false, false]
 var state = -1
 var inSure = false
 var inControls = false
 
 func openA():
 	global.play_se(global.SE_PAUSE,-5)
-	get_node(buttons[0]).text = LABEL[0]
-	var i = 1
-	while(i <= 4):
-		get_node(buttons[i]).text = label[i]
-		i = i + 1
+#	get_node(buttons[0]).text = LABEL[0]
+#	var i = 1
+#	while(i <= 4):
+#		get_node(buttons[i]).text = label[i]
+#		i = i + 1
 	state = 0
 		
 func _process(delta):
@@ -46,6 +45,7 @@ func _process(delta):
 		inControls = true
 		hide()
 		get_parent().get_node("Controls").show()
+		$Controles/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
 	if pressed[Exit]:
 		global.play_se(global.SE_EXIT,-5)
 		inSure = true
@@ -93,9 +93,11 @@ func _on_Exit_pressed():
 	pressed[Exit] = true
 	
 func _atualiza(newState):
-	get_node(buttons[state]).text = label[state]
+	get_node(buttons[state]+"/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
+	on[state] = false
 	state = newState
-	get_node(buttons[state]).text = LABEL[state]
+	get_node(buttons[state]+"/Label").set("custom_colors/font_color", Color(0,0,0))
+	on[state] = true
 
 func _one_down():
 	global.play_se(global.SE_MOVE,-15)
@@ -127,19 +129,61 @@ func _one_left():
 
 func _on_Voltar_mouse_entered():
 	global.play_se(global.SE_MOVE,-15)
-
+	$Voltar/Label.set("custom_colors/font_color", Color(0,0,0))
+	on[0] = true
+	for i in range (1,5):
+		if on[i]:
+			get_node(buttons[i]+"/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
 
 func _on_Menu_mouse_entered():
 	global.play_se(global.SE_MOVE,-15)
-
-
-func _on_Controles_mouse_entered():
-	global.play_se(global.SE_MOVE,-15)
-
-
-func _on_Exit_mouse_entered():
-	global.play_se(global.SE_MOVE,-15)
-
+	$Menu/Label.set("custom_colors/font_color", Color(0,0,0))
+	on[1] = true
+	for i in [0,2,3,4]:
+		if on[i]:
+			get_node(buttons[i]+"/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
 
 func _on_Restart_mouse_entered():
 	global.play_se(global.SE_MOVE,-15)
+	$Restart/Label.set("custom_colors/font_color", Color(0,0,0))
+	on[2] = true
+	for i in [0,1,3,4]:
+		if on[i]:
+			get_node(buttons[i]+"/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
+
+func _on_Controles_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+	$Controles/Label.set("custom_colors/font_color", Color(0,0,0))
+	on[3] = true
+	for i in [0,1,2,4]:
+		if on[i]:
+			get_node(buttons[i]+"/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
+
+func _on_Exit_mouse_entered():
+	global.play_se(global.SE_MOVE,-15)
+	$Exit/Label.set("custom_colors/font_color", Color(0,0,0))
+	on[4] = true
+	for i in range(4):
+		if on[i]:
+			get_node(buttons[i]+"/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
+
+func _on_Voltar_mouse_exited():
+	$Voltar/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+	on[0] = false
+
+func _on_Menu_mouse_exited():
+	$Menu/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+	on[1] = false
+
+func _on_Restart_mouse_exited():
+	$Restart/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+	on[2] = false
+
+func _on_Controles_mouse_exited():
+	$Controles/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+	on[3] = false
+
+func _on_Exit_mouse_exited():
+	$Exit/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+	on[4] = false
+	

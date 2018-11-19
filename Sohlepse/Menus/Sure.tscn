@@ -1,9 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menus/Sure.gd" type="Script" id=1]
+[ext_resource path="res://Assets/OldSansBlack.ttf" type="DynamicFontData" id=2]
 
+[sub_resource type="DynamicFont" id=2]
 
-[node name="Sure" type="Control" index="0"]
+size = 25
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Sure" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -23,34 +39,53 @@ size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Visibility" ]
 
-[node name="ColorRect" type="ColorRect" parent="." index="0"]
+[node name="ColorRect2" type="ColorRect" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -7.0
-margin_top = -4.0
-margin_right = 145.0
-margin_bottom = 60.0
+margin_left = -19.0
+margin_top = -13.0
+margin_right = 198.0
+margin_bottom = 97.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.105882, 0.0980392, 0.0980392, 1 )
+color = Color( 0.0394287, 0.124323, 0.132812, 1 )
 
-[node name="Yes" type="Button" parent="." index="1"]
+[node name="ColorRect" type="ColorRect" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 11.0
-margin_top = 35.0
-margin_right = 66.0
-margin_bottom = 55.0
+margin_left = -15.0
+margin_top = -9.0
+margin_right = 194.0
+margin_bottom = 93.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.177155, 0.335707, 0.351562, 1 )
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Yes" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 29.0
+margin_top = 64.0
+margin_right = 84.0
+margin_bottom = 84.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -62,20 +97,48 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+flat = true
+align = 1
+
+[node name="Label" type="Label" parent="Yes" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3.0
+margin_top = -8.0
+margin_right = 44.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+custom_constants/shadow_offset_x = 2
 text = "Sim"
-flat = false
-align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="No" type="Button" parent="." index="2"]
+[node name="No" type="Button" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 74.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 55.0
+margin_left = 96.0
+margin_top = 63.0
+margin_right = 150.0
+margin_bottom = 83.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -87,11 +150,39 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Não"
-flat = false
+flat = true
 align = 1
 
-[node name="Label" type="Label" parent="." index="3"]
+[node name="Label" type="Label" parent="No" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = -7.0
+margin_right = 49.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+custom_constants/shadow_offset_x = 2
+text = "Não"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -107,6 +198,10 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+custom_constants/shadow_offset_x = 1
 text = "Você tem certeza que
  quer sair do jogo?"
 align = 1
@@ -114,9 +209,17 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Pause", "Visibility" ]
+_sections_unfolded = [ "Pause", "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[connection signal="mouse_entered" from="Yes" to="." method="_on_Yes_mouse_entered"]
+
+[connection signal="mouse_exited" from="Yes" to="." method="_on_Yes_mouse_exited"]
 
 [connection signal="pressed" from="Yes" to="." method="_on_Yes_pressed"]
+
+[connection signal="mouse_entered" from="No" to="." method="_on_No_mouse_entered"]
+
+[connection signal="mouse_exited" from="No" to="." method="_on_No_mouse_exited"]
 
 [connection signal="pressed" from="No" to="." method="_on_No_pressed"]
 
