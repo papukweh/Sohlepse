@@ -51,8 +51,8 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Z Ind
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( -1.9686, -3.22899 )
-scale = Vector2( 4.69041, 2.93906 )
+position = Vector2( -2.55342, -3.22899 )
+scale = Vector2( 4.22608, 2.93906 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
