@@ -10,7 +10,7 @@
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=9]
 
-[node name="stage13" index="0" instance=ExtResource( 1 )]
+[node name="stage13" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -145,8 +145,8 @@ scale = Vector2( 1, 1.98563 )
 forest = 1
 
 [node name="Wall4" parent="Objects" index="4" groups=[
-"Lever5",
 "Lever4",
+"Lever5",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 882.174, -127.817 )
@@ -155,8 +155,8 @@ activation = 1
 forest = 1
 
 [node name="Wall7" parent="Objects" index="5" groups=[
-"Lever6",
 "Lever3",
+"Lever6",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 874.442, 127.727 )

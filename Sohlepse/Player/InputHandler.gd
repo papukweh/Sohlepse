@@ -16,10 +16,10 @@ func _physics_process(delta):
 			player.move_right = Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right")
 			player.move_left = Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left")
 		
-		if (player.terrain == 1):
-			player.jump = Input.is_action_just_pressed("jump")
-		else:
+		if (player.terrain == 0.2):
 			player.jump = Input.is_action_pressed("jump")
+		else:
+			player.jump = Input.is_action_just_pressed("jump")
 		player.interacting = Input.is_action_pressed("interact")
 	else:
 		player.clone = true
