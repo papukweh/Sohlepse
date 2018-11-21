@@ -24,7 +24,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Controls" type="Control" index="0"]
+[node name="Controls" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0

@@ -165,9 +165,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 26.0
+margin_left = 29.0
 margin_top = 14.0
-margin_right = 88.0
+margin_right = 91.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -217,9 +217,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1.0
+margin_left = 6.0
 margin_top = 15.0
-margin_right = 123.0
+margin_right = 130.0
 margin_bottom = 45.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -238,7 +238,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="Controles" type="Button" parent="." index="7"]
+[node name="Options" type="Button" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -263,7 +263,7 @@ flat = true
 align = 1
 _sections_unfolded = [ "Margin" ]
 
-[node name="Label" type="Label" parent="Controles" index="0"]
+[node name="Label" type="Label" parent="Options" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -283,7 +283,7 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
 custom_constants/shadow_offset_x = 3
-text = "Controles"
+text = "Opções"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -361,11 +361,11 @@ __meta__ = {
 
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 
-[connection signal="mouse_entered" from="Controles" to="." method="_on_Controles_mouse_entered"]
+[connection signal="mouse_entered" from="Options" to="." method="_on_Options_mouse_entered"]
 
-[connection signal="mouse_exited" from="Controles" to="." method="_on_Controles_mouse_exited"]
+[connection signal="mouse_exited" from="Options" to="." method="_on_Options_mouse_exited"]
 
-[connection signal="pressed" from="Controles" to="." method="_on_Controles_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
 
 [connection signal="mouse_entered" from="Exit" to="." method="_on_Exit_mouse_entered"]
 

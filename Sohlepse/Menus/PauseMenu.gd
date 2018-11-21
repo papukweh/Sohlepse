@@ -2,14 +2,15 @@ extends Control
 const Voltar = 0
 const Menu = 1
 const Restart = 2
-const Controles = 3
+const Options = 3
 const Exit = 4
 var pressed = [false, false, false, false, false]
-var buttons = ["Voltar", "Menu", "Restart", "Controles", "Exit"]
+var buttons = ["Voltar", "Menu", "Restart", "Options", "Exit"]
 var on = [false, false, false, false, false]
 var state = -1
 var inSure = false
-var inControls = false
+var inOptions = false
+onready var MenuOptions = load("res://Menus/Options.tscn")
 
 func openA():
 	global.play_se(global.SE_PAUSE,-5)
@@ -40,18 +41,18 @@ func _process(delta):
 		global.play_se(global.SE_ACCEPT)
 		get_tree().paused = false
 		get_tree().reload_current_scene()
-	if pressed[Controles]:
+	if pressed[Options]:
 		global.play_se(global.SE_ACCEPT)
-		inControls = true
+		inOptions = true
 		hide()
-		get_parent().get_node("Controls").show()
-		$Controles/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+		get_parent().add_child(MenuOptions)
+		$Options/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
 	if pressed[Exit]:
 		global.play_se(global.SE_EXIT,-5)
 		inSure = true
 		hide()
 		get_parent().get_node("Sure").show()
-	if get_tree().paused and !inSure and !inControls:
+	if get_tree().paused and !inSure and !inOptions:
 		if Input.is_action_just_pressed("ui_accept"):
 			pressed[state] = true
 		if Input.is_action_just_pressed("move_down"):
@@ -84,9 +85,9 @@ func _on_Restart_pressed():
 	global.play_se(global.SE_ACCEPT)
 	pressed[Restart] = true
 
-func _on_Controles_pressed():
+func _on_Options_pressed():
 	global.play_se(global.SE_ACCEPT)
-	pressed[Controles] = true
+	pressed[Options] = true
 
 func _on_Exit_pressed():
 	global.play_se(global.SE_EXIT,-5)
@@ -151,9 +152,9 @@ func _on_Restart_mouse_entered():
 		if on[i]:
 			get_node(buttons[i]+"/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
 
-func _on_Controles_mouse_entered():
+func _on_Options_mouse_entered():
 	global.play_se(global.SE_MOVE,-15)
-	$Controles/Label.set("custom_colors/font_color", Color(0,0,0))
+	$Options/Label.set("custom_colors/font_color", Color(0,0,0))
 	on[3] = true
 	for i in [0,1,2,4]:
 		if on[i]:
@@ -179,8 +180,8 @@ func _on_Restart_mouse_exited():
 	$Restart/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
 	on[2] = false
 
-func _on_Controles_mouse_exited():
-	$Controles/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+func _on_Options_mouse_exited():
+	$Options/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
 	on[3] = false
 
 func _on_Exit_mouse_exited():
