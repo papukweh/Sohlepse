@@ -8,7 +8,7 @@
 [ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=7]
 
-[node name="stage1" index="0" instance=ExtResource( 1 )]
+[node name="stage1" instance=ExtResource( 1 )]
 
 ACT = 3
 MAX_CLONES = 0
@@ -96,7 +96,7 @@ label = "Pausa"
 [node name="Event" parent="." index="8" instance=ExtResource( 7 )]
 
 _sections_unfolded = [ "Transform" ]
-events = [ Vector2( 410, 500 ), Vector2( 750, 495 ) ]
+events = [ Vector2( 410, 500 ), Vector2( 700, 495 ) ]
 labels = [ "Que lugar é esse?", " " ]
 pos = [ Vector2( 480, 340 ), Vector2( 0, 0 ) ]
 areascale = null

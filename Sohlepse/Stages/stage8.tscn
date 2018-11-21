@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Stages/Stage.gd" type="Script" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
@@ -10,8 +10,9 @@
 [ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=11]
 
-[node name="stage8" type="Node"]
+[node name="stage8" type="Node" index="0"]
 
 script = ExtResource( 1 )
 ACT = 1
@@ -100,6 +101,8 @@ size_flags_vertical = 1
 position = Vector2( 256, -160 )
 
 [node name="Reality" type="Node" parent="." index="5"]
+
+editor/display_folded = true
 
 [node name="Objects" type="Node" parent="Reality" index="0"]
 
@@ -254,5 +257,13 @@ position = Vector2( 736, -32 )
 [node name="Endgoal" parent="." index="6" instance=ExtResource( 10 )]
 
 position = Vector2( 96, -160 )
+
+[node name="Event" parent="." index="7" instance=ExtResource( 11 )]
+
+events = [ Vector2( 20, -360 ), Vector2( 20, -640 ) ]
+labels = [ "Esse lugar é enorme!", " " ]
+pos = [ Vector2( 500, -450 ), Vector2( 0, 0 ) ]
+areascale = [ Vector2( 10, 1 ), Vector2( 10, 1 ) ]
+playanyway = false
 
 

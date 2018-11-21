@@ -120,20 +120,10 @@ begin = 1
 [node name="Event" parent="." index="12" instance=ExtResource( 8 )]
 
 _sections_unfolded = [ "Transform" ]
-events = [ Vector2( 90, -115 ), Vector2( 350, -70 ), Vector2( 970, -35 ) ]
+events = [ Vector2( 90, -115 ), Vector2( 300, -20 ), Vector2( 900, -50 ) ]
 labels = [ "Melhor ficar longe desses espinhos... E como é que tem lava aqui?", "Tão.... devagar....", " " ]
 pos = [ Vector2( 125, -350 ), Vector2( 125, -300 ), Vector2( 0, 0 ) ]
-areascale = [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 10 ) ]
-playanyway = false
-
-[node name="Event2" parent="." index="13" instance=ExtResource( 8 )]
-
-scale = Vector2( 1, -1 )
-_sections_unfolded = [ "Transform" ]
-events = [ Vector2( 90, -115 ), Vector2( 350, -70 ), Vector2( 970, -35 ) ]
-labels = [ "Melhor ficar longe desses espinhos... E como é que tem lava aqui?", "Tão.... devagar....", " " ]
-pos = [ Vector2( 125, -350 ), Vector2( 125, -300 ), Vector2( 0, 0 ) ]
-areascale = [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 10 ) ]
+areascale = [ Vector2( 1, 1 ), Vector2( 1, -5 ), Vector2( 1, -5 ) ]
 playanyway = false
 
 

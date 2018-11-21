@@ -154,20 +154,10 @@ position = Vector2( -138.708, 608.291 )
 [node name="Event" parent="." index="6" instance=ExtResource( 9 )]
 
 _sections_unfolded = [ "Transform" ]
-events = [ Vector2( -1290, 590 ), Vector2( -1000, 590 ), Vector2( -650, 590 ) ]
-labels = [ "", "Hmmm, preciso colocar algum peso aqui", "Obrigado, caixas" ]
-pos = [ Vector2( -1080, 300 ), Vector2( -1000, 340 ), Vector2( -1000, 380 ) ]
-areascale = null
-playanyway = false
-
-[node name="Event2" parent="." index="7" instance=ExtResource( 9 )]
-
-scale = Vector2( 1, -1 )
-_sections_unfolded = [ "Transform" ]
-events = [ Vector2( -1290, 590 ), Vector2( -1000, 590 ), Vector2( -650, 590 ) ]
-labels = [ "", "Hmmm, preciso colocar algum peso aqui", "Obrigado, caixas" ]
-pos = [ Vector2( -1080, 300 ), Vector2( -1000, 340 ), Vector2( -1000, 380 ) ]
-areascale = null
+events = [ Vector2( -1290, 590 ), Vector2( -1000, 640 ), Vector2( -650, 640 ), Vector2( 0, 640 ) ]
+labels = [ "", "Hmmm, preciso colocar algum peso aqui", "Obrigado, caixas", " " ]
+pos = [ Vector2( -1080, 300 ), Vector2( -1000, 340 ), Vector2( -1000, 380 ), Vector2( 0, 0 ) ]
+areascale = [ Vector2( 1, 1 ), Vector2( 1, -2 ), Vector2( 1, -2 ), Vector2( -2, -2 ) ]
 playanyway = false
 
 
