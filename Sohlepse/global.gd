@@ -12,7 +12,7 @@ var DEBUG = false
 var restarting = false
 var music = null
 var audio = []
-const FINAL = 30
+const FINAL = 32
 
 var MENU_THEME = load("res://Sound/he56.wav")
 var ACT1_THEME = load("res://Sound/cy34.wav")

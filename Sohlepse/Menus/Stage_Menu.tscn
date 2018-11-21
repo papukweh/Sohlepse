@@ -462,6 +462,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="Fases" type="Label" parent="." index="7"]
 
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
