@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Menus/MenuPrincipal.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Titulo.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Menus/BG.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/OldSansBlack.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Titulo.png" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 40
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
 [node name="MenuPrincipal" type="Control"]
 
@@ -22,17 +32,24 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="continue" type="Button" parent="." index="0"]
+[node name="BG" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 1.90735e-06, -1 )
+
+[node name="continue" type="Button" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 450.0
-margin_top = 318.0
-margin_right = 580.0
-margin_bottom = 354.0
+margin_left = 408.0
+margin_top = 292.0
+margin_right = 615.0
+margin_bottom = 335.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -44,20 +61,47 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Jogar"
-flat = false
+flat = true
 align = 1
+_sections_unfolded = [ "Rect" ]
 
-[node name="levelSelect" type="Button" parent="." index="1"]
+[node name="Label" type="Label" parent="continue" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 450.0
-margin_top = 378.0
-margin_right = 581.0
-margin_bottom = 418.0
+margin_left = 17.0
+margin_top = -4.0
+margin_right = 214.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
+custom_constants/shadow_offset_x = 3
+text = "Continuar"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="levelSelect" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 345.0
+margin_top = 371.0
+margin_right = 685.0
+margin_bottom = 410.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -69,34 +113,39 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+flat = true
+align = 1
+_sections_unfolded = [ "Grow Direction", "Margin", "Rect" ]
+
+[node name="Label" type="Label" parent="levelSelect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 41.0
+margin_top = -7.0
+margin_right = 328.0
+margin_bottom = 41.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
+custom_constants/shadow_offset_x = 3
 text = "Seleção de Fases"
-flat = false
 align = 1
-
-[node name="tests" type="Button" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 450.0
-margin_top = 439.0
-margin_right = 581.0
-margin_bottom = 479.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Testes"
-flat = false
-align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="option" type="Button" parent="." index="3"]
 
@@ -104,10 +153,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 450.0
-margin_top = 500.0
-margin_right = 582.0
-margin_bottom = 535.0
+margin_left = 447.0
+margin_top = 451.0
+margin_right = 590.0
+margin_bottom = 485.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -119,9 +168,38 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Opções"
-flat = false
+flat = true
 align = 1
+
+[node name="Label" type="Label" parent="option" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -68.0
+margin_top = -14.0
+margin_right = 219.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
+custom_constants/shadow_offset_x = 3
+text = "Opções"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="credits" type="Button" parent="." index="4"]
 
@@ -129,10 +207,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 450.0
-margin_top = 560.0
-margin_right = 584.0
-margin_bottom = 594.0
+margin_left = 449.0
+margin_top = 532.0
+margin_right = 596.0
+margin_bottom = 562.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -144,9 +222,38 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Créditos"
-flat = false
+flat = true
 align = 1
+
+[node name="Label" type="Label" parent="credits" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -70.0
+margin_top = -14.0
+margin_right = 217.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
+custom_constants/shadow_offset_x = 3
+text = "Créditos"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="exit" type="Button" parent="." index="5"]
 
@@ -154,10 +261,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 450.0
-margin_top = 620.0
-margin_right = 583.0
-margin_bottom = 655.0
+margin_left = 453.0
+margin_top = 599.0
+margin_right = 585.0
+margin_bottom = 637.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -169,45 +276,80 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Sair"
-flat = false
+flat = true
 align = 1
+
+[node name="Label" type="Label" parent="exit" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -73.0
+margin_top = -9.0
+margin_right = 214.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
+custom_constants/shadow_offset_x = 3
+text = "Sair"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Título" type="Sprite" parent="." index="6"]
 
-position = Vector2( 516.999, 210.598 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 2 )
+position = Vector2( 504.34, 209.795 )
+scale = Vector2( 0.929272, 0.929272 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Icone" type="Sprite" parent="." index="7"]
 
-position = Vector2( 827.915, 184.949 )
+position = Vector2( 827.915, 176.747 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="mouse_entered" from="continue" to="." method="_on_continue_mouse_entered"]
+
+[connection signal="mouse_exited" from="continue" to="." method="_on_continue_mouse_exited"]
 
 [connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
 
 [connection signal="mouse_entered" from="levelSelect" to="." method="_on_levelSelect_mouse_entered"]
 
+[connection signal="mouse_exited" from="levelSelect" to="." method="_on_levelSelect_mouse_exited"]
+
 [connection signal="pressed" from="levelSelect" to="." method="_on_levelSelect_pressed"]
 
-[connection signal="mouse_entered" from="tests" to="." method="_on_tests_mouse_entered"]
-
-[connection signal="pressed" from="tests" to="." method="_on_tests_pressed"]
-
 [connection signal="mouse_entered" from="option" to="." method="_on_option_mouse_entered"]
+
+[connection signal="mouse_exited" from="option" to="." method="_on_option_mouse_exited"]
 
 [connection signal="pressed" from="option" to="." method="_on_option_pressed"]
 
 [connection signal="mouse_entered" from="credits" to="." method="_on_credits_mouse_entered"]
 
+[connection signal="mouse_exited" from="credits" to="." method="_on_credits_mouse_exited"]
+
 [connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
 
 [connection signal="mouse_entered" from="exit" to="." method="_on_exit_mouse_entered"]
+
+[connection signal="mouse_exited" from="exit" to="." method="_on_exit_mouse_exited"]
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 

@@ -27,6 +27,7 @@ group = null
 flat = false
 align = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Theme" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

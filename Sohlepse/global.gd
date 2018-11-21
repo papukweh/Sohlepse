@@ -116,6 +116,7 @@ func initSound():
 		music.play()
 	elif music.stream != MENU_THEME:
 		music.stream = MENU_THEME
+		music.volume_db = base_master -10
 		music.play()
 	else:
 		return
@@ -128,18 +129,21 @@ func recalibrate():
 func play_bgm():
 	if current_stage < 13:
 		music.stream = ACT1_THEME
+		music.volume_db = base_master + base_bgm - 3
 		audio[0].stream = ACT1_BG
-		audio[0].volume_db = base_master + base_bgm -20
+		audio[0].volume_db = base_master + base_se -20
 		audio[0].play()
 	elif current_stage < 24:
 		music.stream = ACT2_THEME
+		music.volume_db = base_master + base_bgm  - 10
 		audio[0].stream = ACT2_BG
-		audio[0].volume_db = base_master + base_bgm -20
+		audio[0].volume_db = base_master + base_se -20
 		audio[0].play()
 	else:
 		music.stream = ACT3_THEME
+		music.volume_db = base_master + base_bgm  - 5
 		audio[0].stream = ACT3_BG
-		audio[0].volume_db = base_master + base_bgm -20
+		audio[0].volume_db = base_master + base_se -20
 		audio[0].play()
 	music.play()
 

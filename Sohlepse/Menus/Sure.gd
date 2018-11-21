@@ -3,21 +3,17 @@ const no = 0
 const yes = 1
 var pressed = [false, false]
 var buttons = ["No", "Yes"]
-var label = ["Não", "Sim"]
-var LABEL = ["NÃO", "SIM"]
+var on = [false, false]
 var state = -1
 
 
 func _process(delta):
 	if Input.is_action_just_pressed("Pause") and get_parent().get_node("PauseMenu").inSure:
-		get_node(buttons[no]).text = LABEL[no]
-		get_node(buttons[yes]).text = label[yes]
 		get_parent().get_node("PauseMenu").inSure = false
 		hide()
 	if get_parent().get_node("PauseMenu").inSure and get_parent().get_node("PauseMenu").pressed[4]:
 		state = no
 		get_parent().get_node("PauseMenu").pressed[4] = false
-		get_node(buttons[no]).text = LABEL[no]
 	if pressed[no]:
 		state = -1
 		get_parent().get_node("PauseMenu").inSure = false
@@ -31,15 +27,39 @@ func _process(delta):
 		if Input.is_action_just_pressed("ui_accept"):
 			pressed[state] = true
 		if Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right"):
-			get_node(buttons[state]).text = label[state]
+			get_node(buttons[state]+"/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
+			on[state] = false
 			state = (state+1)%2
-			get_node(buttons[state]).text = LABEL[state]			
+			get_node(buttons[state]+"/Label").set("custom_colors/font_color", Color(0,0,0))
+			on[state] = true
 
 func _on_No_pressed():
 	pressed[no] = true
 
-
-
 func _on_Yes_pressed():
 	pressed[yes] = true
 
+
+
+func _on_Yes_mouse_entered():
+	$Yes/Label.set("custom_colors/font_color", Color(0,0,0))
+	on[1] = true
+	if on[0]:
+		$No/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+
+
+func _on_Yes_mouse_exited():
+	$Yes/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+	on[1] = false
+
+
+func _on_No_mouse_entered():
+	$No/Label.set("custom_colors/font_color", Color(0,0,0))
+	on[0] = true
+	if on[1]:
+		$Yes/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+
+
+func _on_No_mouse_exited():
+	$No/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+	on[0] = false

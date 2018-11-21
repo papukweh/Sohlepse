@@ -1,8 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Menus/PauseMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Player.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Endgoal.png" type="Texture" id=3]
+[ext_resource path="res://Menus/BG.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Endgoal.png" type="Texture" id=4]
+[ext_resource path="res://Assets/OldSansBlack.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 25
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="PauseMenu" type="Control"]
 
@@ -12,7 +46,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 305.0
 margin_top = 114.0
-margin_right = 757.0
+margin_right = 747.0
 margin_bottom = 482.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -23,19 +57,30 @@ size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Visibility" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="BG" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 108.325, 80.35 )
+polygon = PoolVector2Array( -10, -10, 450, -10, 450, 370, -10, 370 )
+color = Color( 0.178528, 0.277012, 0.292969, 1 )
+
+[node name="BG2" parent="." index="1" instance=ExtResource( 2 )]
+
+polygon = PoolVector2Array( 0, 0, 440, 0, 440, 360, 0, 360 )
+color = Color( 0.18, 0.336244, 0.351562, 1 )
+texture = null
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
+position = Vector2( 143.325, 80.35 )
 scale = Vector2( 1.94605, 2.01259 )
-texture = ExtResource( 2 )
-
-[node name="Sprite2" type="Sprite" parent="." index="1"]
-
-position = Vector2( 276.61, 74.5449 )
-scale = Vector2( 2.08698, 1.97995 )
 texture = ExtResource( 3 )
 
-[node name="Voltar" type="Button" parent="." index="2"]
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+
+position = Vector2( 311.61, 74.5449 )
+scale = Vector2( 2.08698, 1.97995 )
+texture = ExtResource( 4 )
+
+[node name="Voltar" type="Button" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -52,15 +97,44 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Voltar para o Jogo"
-flat = false
+flat = true
 align = 1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Menu" type="Button" parent="." index="3"]
+[node name="Label" type="Label" parent="Voltar" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 93.0
+margin_top = 19.0
+margin_right = 320.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+custom_constants/shadow_offset_x = 3
+text = "Voltar para o Jogo"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Menu" type="Button" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -81,12 +155,38 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Menu"
-flat = false
+flat = true
 align = 1
 _sections_unfolded = [ "Margin" ]
 
-[node name="Restart" type="Button" parent="." index="4"]
+[node name="Label" type="Label" parent="Menu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 26.0
+margin_top = 14.0
+margin_right = 88.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+custom_constants/shadow_offset_x = 3
+text = "Menu"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Restart" type="Button" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -107,12 +207,38 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Recomeçar"
-flat = false
+flat = true
 align = 1
 _sections_unfolded = [ "Margin" ]
 
-[node name="Controles" type="Button" parent="." index="5"]
+[node name="Label" type="Label" parent="Restart" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = 15.0
+margin_right = 123.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+custom_constants/shadow_offset_x = 3
+text = "Recomeçar"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Controles" type="Button" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -133,21 +259,47 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Controles"
-flat = false
+flat = true
 align = 1
 _sections_unfolded = [ "Margin" ]
 
-[node name="Exit" type="Button" parent="." index="6"]
+[node name="Label" type="Label" parent="Controles" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 16.0
-margin_top = 291.0
-margin_right = 106.0
-margin_bottom = 354.0
+margin_left = 8.0
+margin_top = 15.0
+margin_right = 132.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+custom_constants/shadow_offset_x = 3
+text = "Controles"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Exit" type="Button" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 172.0
+margin_top = 293.0
+margin_right = 262.0
+margin_bottom = 356.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -159,27 +311,65 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Sair"
-flat = false
+flat = true
 align = 1
 
+[node name="Label" type="Label" parent="Exit" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 17.0
+margin_right = 67.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.86, 0.96, 0.92, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.52 )
+custom_constants/shadow_offset_x = 3
+text = "Sair"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="mouse_entered" from="Voltar" to="." method="_on_Voltar_mouse_entered"]
+
+[connection signal="mouse_exited" from="Voltar" to="." method="_on_Voltar_mouse_exited"]
 
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 
 [connection signal="mouse_entered" from="Menu" to="." method="_on_Menu_mouse_entered"]
 
+[connection signal="mouse_exited" from="Menu" to="." method="_on_Menu_mouse_exited"]
+
 [connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
 
 [connection signal="mouse_entered" from="Restart" to="." method="_on_Restart_mouse_entered"]
+
+[connection signal="mouse_exited" from="Restart" to="." method="_on_Restart_mouse_exited"]
 
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 
 [connection signal="mouse_entered" from="Controles" to="." method="_on_Controles_mouse_entered"]
 
+[connection signal="mouse_exited" from="Controles" to="." method="_on_Controles_mouse_exited"]
+
 [connection signal="pressed" from="Controles" to="." method="_on_Controles_pressed"]
 
 [connection signal="mouse_entered" from="Exit" to="." method="_on_Exit_mouse_entered"]
+
+[connection signal="mouse_exited" from="Exit" to="." method="_on_Exit_mouse_exited"]
 
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 

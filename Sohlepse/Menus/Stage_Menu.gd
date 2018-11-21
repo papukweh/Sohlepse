@@ -40,20 +40,20 @@ func _process(delta):
 func _atualiza(newState):
 	global.play_se(global.SE_MOVE,-15)
 	if state == 0:
-		$Back.text = "Voltar"
+		$Back/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
 	elif state == -1:
-		get_node("Batch" + str(batch) + "/Prev").text = "Anterior"
+		get_node("Batch" + str(batch) + "/Prev/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
 	elif state == -2:
-		get_node("Batch" + str(batch) + "/Next").text = "Próximo"
+		get_node("Batch" + str(batch) + "/Next/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
 	else:
 		get_node("Batch" + str(batch) + "/" + str(state)).text = ""
 	state = newState
 	if state == 0:
-		$Back.text = "VOLTAR"
+		$Back/Label.set("custom_colors/font_color", Color(0,0,0))
 	elif state == -1:
-		get_node("Batch" + str(batch) + "/Prev").text = "ANTERIOR"
+		get_node("Batch" + str(batch) + "/Prev/Label").set("custom_colors/font_color", Color(0,0,0))
 	elif state == -2:
-		get_node("Batch" + str(batch) + "/Next").text = "PRÓXIMO"
+		get_node("Batch" + str(batch) + "/Next/Label").set("custom_colors/font_color", Color(0,0,0))
 	else:
 		if batch != ((state-1)/6) + 1:
 			get_node("Batch" + str(batch)).hide()
@@ -117,4 +117,9 @@ func _one_left():
 	return state - 1
 		
 
+func _on_Back_mouse_entered():
+	$Back/Label.set("custom_colors/font_color", Color(0,0,0))
 
+
+func _on_Back_mouse_exited():
+	$Back/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))

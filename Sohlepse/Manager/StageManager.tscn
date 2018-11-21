@@ -17,7 +17,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="StageManager" type="Node2D" index="0"]
+[node name="StageManager" type="Node2D"]
 
 z_index = 20
 script = ExtResource( 1 )
@@ -88,26 +88,26 @@ animation = "default"
 
 pause_mode = 2
 visible = false
-margin_left = 148.0
-margin_top = -465.0
-margin_right = 600.0
-margin_bottom = -97.0
+margin_left = 181.0
+margin_top = -426.0
+margin_right = 633.0
+margin_bottom = -58.0
 _sections_unfolded = [ "Mouse", "Pause", "Size Flags", "Theme", "Visibility" ]
 
 [node name="Sure" parent="Tutoriais" index="7" instance=ExtResource( 6 )]
 
 visible = false
-margin_left = 320.0
+margin_left = 314.0
 margin_top = -348.0
-margin_right = 473.0
+margin_right = 467.0
 margin_bottom = -280.0
 
 [node name="Controls" parent="Tutoriais" index="8" instance=ExtResource( 7 )]
 
 visible = false
-margin_left = 232.0
+margin_left = 220.0
 margin_top = -351.0
-margin_right = 603.0
+margin_right = 591.0
 margin_bottom = -112.0
 
 

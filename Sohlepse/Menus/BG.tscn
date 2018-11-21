@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 0.159763, 1 )
+colors = PoolColorArray( 0.521683, 0.640965, 0.699219, 1, 1, 1, 1, 1, 0.111328, 0.288483, 0.375, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
+
+[node name="BG" type="Polygon2D"]
+
+polygon = PoolVector2Array( -25, -10, 1060, -10, 1060, 690, -25, 690 )
+uv = PoolVector2Array(  )
+color = Color( 0.34, 0.578538, 0.617188, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = SubResource( 3 )
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Texture" ]
+
+

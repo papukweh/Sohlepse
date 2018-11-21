@@ -19,6 +19,10 @@ func _on_Back_pressed():
 
 func _on_Back_mouse_entered():
 	global.play_se(global.SE_MOVE,-15)
+	$Back/Label.set("custom_colors/font_color", Color(0,0,0))
+	
+func _on_Back_mouse_exited():
+	$Back/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
 
 
 func _on_HSlider_value_changed(value):
