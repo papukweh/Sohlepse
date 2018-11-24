@@ -133,7 +133,7 @@ func play_bgm():
 		audio[0].stream = ACT1_BG
 		audio[0].volume_db = base_master + base_se -20
 		audio[0].play()
-	elif current_stage < 24:
+	elif current_stage < 25:
 		music.stream = ACT2_THEME
 		music.volume_db = base_master + base_bgm  - 10
 		audio[0].stream = ACT2_BG
