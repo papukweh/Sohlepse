@@ -131,7 +131,7 @@ func _physics_process(delta):
 					crushing = true
 			elif self.GRAVITY < 0:
 				#print("subindo")
-				if (!jumping):
+				if (!jumping and !body.get_parent().get_name().begins_with("Thorns")):
 				#	print("mas no jump, being crushed")
 					crushing = true
 			else:

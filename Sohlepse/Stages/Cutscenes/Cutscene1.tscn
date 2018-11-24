@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Stages/Cutscenes/Cutscene1.gd" type="Script" id=1]
+[ext_resource path="res://Assets/background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Florest_bg.png" type="Texture" id=3]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=4]
+[ext_resource path="res://tileset_forest.tres" type="TileSet" id=5]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/back_wall.png" type="Texture" id=7]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 36.3943, 158.356 )
+
+[node name="Cutscene1" type="Node2D"]
+
+script = ExtResource( 1 )
+
+[node name="Lab" type="Sprite" parent="." index="0"]
+
+position = Vector2( -840.852, 166.417 )
+scale = Vector2( 0.922125, 0.954311 )
+texture = ExtResource( 2 )
+
+[node name="Floresta" type="Sprite" parent="." index="1"]
+
+position = Vector2( 1295.16, 179.674 )
+texture = ExtResource( 3 )
+
+[node name="TileMap2" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 11, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0, 7, 11, 0, 8, 11, 0, 65544, 5, 0, 131080, 5, 0, 196616, 5, 0, 262152, 5, 0, 327688, 5, 0, 393224, 5, 0, 458760, 5, 0, 524296, 5, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 720894, 6, 0, 720895, 6, 0, 655360, 6, 0, 655361, 6, 0, 655362, 6, 0, 655363, 6, 0, 655364, 6, 0, 655365, 6, 0, 655366, 6, 0, 655367, 6, 0, 655368, 6, 0, 655369, 6, 0 )
+
+[node name="TileMap" type="TileMap" parent="." index="3"]
+
+mode = 0
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 655369, 7, 0, 655370, 7, 0, 655371, 7, 0, 655372, 7, 0, 655373, 7, 0, 655374, 7, 0, 655375, 7, 0, 655376, 7, 0, 655377, 7, 0, 655378, 7, 0, 655379, 7, 0, 655380, 7, 0, 655381, 7, 0 )
+
+[node name="Player" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( -72.3562, 511.381 )
+
+[node name="Wall" type="Sprite" parent="." index="5"]
+
+position = Vector2( 545.167, 319.645 )
+scale = Vector2( 1, 8.0669 )
+z_index = 20
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Event" parent="." index="6" instance=ExtResource( 8 )]
+
+z_index = 20
+_sections_unfolded = [ "Z Index" ]
+events = [ Vector2( 160, 640 ), Vector2( 600, 640 ) ]
+labels = [ "A saída! Finalmente!", "Espero que minha família esteja bem..." ]
+pos = [ Vector2( 120, 390 ), Vector2( 340, 390 ) ]
+areascale = [ Vector2( 1, -5 ), Vector2( 1, -5 ) ]
+playanyway = false
+
+[node name="Exit" type="Area2D" parent="." index="7"]
+
+position = Vector2( 1094.86, 577.715 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" index="0"]
+
+position = Vector2( 105.514, -49.7422 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
+
+

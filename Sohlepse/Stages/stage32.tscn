@@ -18,7 +18,7 @@
 [ext_resource path="res://Hazards/WaterArea.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=17]
 
-[node name="stage32" index="0" instance=ExtResource( 1 )]
+[node name="stage32" instance=ExtResource( 1 )]
 
 ACT = 3
 MAX_CLONES = 0

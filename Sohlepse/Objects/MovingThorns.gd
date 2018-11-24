@@ -16,6 +16,9 @@ func _ready():
 	if thorn_begin == 1:
 		$Thorns.on = true
 		$Thorns/Body/AnimatedSprite.animation = pref + "on"
+	else:
+		$Thorns.on = false
+		$Thorns/Body/AnimatedSprite.animation = pref + "off"
 
 func _physics_process(delta):
 	if motion[0] == motion[1] and motion[1] == 0:
@@ -65,8 +68,12 @@ func onTriggered():
 	global.play_se(global.SE_THORNS,-7)
 	if activated == 1:
 		activated = 0
+		$Thorns.on = true
+		$Thorns/Body/AnimatedSprite.animation = pref + "on"
 	else:
 		activated = 1
+		$Thorns.on = false
+		$Thorns/Body/AnimatedSprite.animation = pref + "off"
 
 func entered(body):
 	#print(body.get_name()+" entrou em "+self.get_name())

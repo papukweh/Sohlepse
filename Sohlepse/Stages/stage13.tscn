@@ -153,8 +153,8 @@ activation = 1
 forest = 1
 
 [node name="Wall7" parent="Objects" index="5" groups=[
-"Lever6",
 "Lever3",
+"Lever6",
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 874.442, 127.727 )

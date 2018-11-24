@@ -1,25 +1,30 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Player.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=7]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 4.96362, 15.0242 )
+extents = Vector2( 4.36212, 15.0242 )
 
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "walking",
+"name": "pushing_still",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "still",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
@@ -27,14 +32,9 @@ animations = [ {
 "name": "pushing_walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "still",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "pushing_still",
+"name": "walking",
 "speed": 5.0
 } ]
 
@@ -193,7 +193,7 @@ tracks/4/keys = {
 [sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 2.56728 )
+extents = Vector2( 8.6704, 2.56728 )
 
 [node name="Player" type="KinematicBody2D" index="0" groups=[
 "gravity",
