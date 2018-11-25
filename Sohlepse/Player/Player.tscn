@@ -1,13 +1,19 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Player.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=7]
-[ext_resource path="res://Player/InputHandler.gd" type="Script" id=8]
+[ext_resource path="res://Assets/RedPlayer.png" type="Texture" id=2]
+[ext_resource path="res://Assets/RedPlayer_pushing1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=9]
+[ext_resource path="res://Assets/RedPlayer_pushing2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/RedPlayer_pushing3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/RedPlayer_walking1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/RedPlayer_walking2.png" type="Texture" id=13]
+[ext_resource path="res://Player/InputHandler.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,22 +25,42 @@ extents = Vector2( 4.36212, 15.0242 )
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "pushing_still",
+"name": "redstill",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "still",
+"name": "redpushing_still",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "pushing_still",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "pushing_walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "still",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "redpushing_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "redwalking",
 "speed": 5.0
 } ]
 
@@ -307,7 +333,7 @@ _sections_unfolded = [ "Pause", "Playback Options" ]
 
 [node name="InputHandler" type="Node" parent="." index="4"]
 
-script = ExtResource( 8 )
+script = ExtResource( 14 )
 MODE = 1
 
 [node name="Feet" type="Area2D" parent="." index="5"]

@@ -45,9 +45,15 @@ onready var dict = Dictionary()
 onready var cnt = 0
 onready var water = false
 onready var objs = Dictionary()
+onready var prefix = ""
 
 onready var SE_DIE = load("res://Sound/257710__vmgraw__grunt-1.wav")
 onready var SE_WALKING = load("res://Sound/151229__owlstorm__grassy-footstep-2.wav")
+
+func evil():
+	$sprite.play("redstill")
+	anim = "redstill"
+	prefix = "red"
 
 func _ready():
 	if invert_vertical == -1:
@@ -65,7 +71,7 @@ func _process(delta):
 		clone = true
 		_ready()
 	if dead:
-		$sprite.animation = "still"
+		$sprite.animation = prefix+"still"
 		return
 	
 	restart = false
@@ -180,9 +186,9 @@ func _physics_process(delta):
 		elif move_right:
 			velocity.x = 175
 	else:
-		if not is_interacting() and anim != "walking":
-			$sprite.play("walking")
-			anim = "walking"
+		if not is_interacting() and anim != prefix+"walking":
+			$sprite.play(prefix+"walking")
+			anim = prefix+"walking"
 		if move_left:
 			if velocity.x <= WALK_MIN_SPEED * terrain and velocity.x > -WALK_MAX_SPEED * terrain:
 				force.x -= WALK_FORCE
@@ -219,10 +225,10 @@ func _physics_process(delta):
 		siding_left = new_siding_left
 		
 	if velocity.x == 0 or siding().size() > 1:
-		$sprite.play("still")
-		anim = "still"
+		$sprite.play(prefix+"still")
+		anim = prefix+"still"
 	
-	if not jumping and (anim == "walking" or anim == "pushing_walk") and $sprite.frame == 0:
+	if not jumping and (anim == prefix+"walking" or anim == prefix+"pushing_walk") and $sprite.frame == 0:
 		#print(terrain)
 		if terrain == 1:
 			global.play_se(SE_WALKING,-15)
@@ -235,13 +241,13 @@ func _physics_process(delta):
 	
 	if is_interacting():
 		if velocity.x == 0 or siding().size() > 1:
-			if anim != "pushing_still":
-				$sprite.animation = "pushing_still"
-				anim = "pushing_still"
+			if anim != prefix+"pushing_still":
+				$sprite.animation = prefix+"pushing_still"
+				anim = prefix+"pushing_still"
 		else:
-			if anim != "pushing_walk":
-				$sprite.play("pushing_walk")
-				anim = "pushing_walk"
+			if anim != prefix+"pushing_walk":
+				$sprite.play(prefix+"pushing_walk")
+				anim = prefix+"pushing_walk"
 #	# Integrate forces to velocity
 #	velocity += force * delta
 #	# Integrate velocity into motion and move
@@ -303,11 +309,11 @@ func _physics_process(delta):
 			terrain = 1
 	else:
 		if is_interacting():
-			$sprite.play("pushing_still")
-			anim = "pushing_still"
+			$sprite.play(prefix+"pushing_still")
+			anim = prefix+"pushing_still"
 		else:
-			$sprite.play("still")
-			anim = "still"
+			$sprite.play(prefix+"still")
+			anim = prefix+"still"
 
 	if jump and ((tmp[0].size() > 1 and not jumping) or (carry and not jumping) or (in_terrain > 0) or (water)):
 		#print(in_terrain)

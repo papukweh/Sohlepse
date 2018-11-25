@@ -16,6 +16,7 @@ func can_load(act, mode, invert):
 			Viewport2.render_target_v_flip = true
 		camera1.target = world.get_node("Players/Player1")
 		camera2.target = world.get_node("Players/Player2")
+		camera2.target.evil()
 		set_camera1_limits(camera1)
 		set_camera2_limits(camera2, 0)
 	elif act == 3:
