@@ -3,6 +3,9 @@ extends Node2D
 onready var id = global.current_stage
 onready var fase = "res://Stages/stage"
 
+onready var rand_bg = null
+onready var volume = 0
+
 func _ready():
 	if id > global.FINAL:
 		get_tree().change_scene("res://Menus/MenuPrincipal.tscn")
@@ -22,3 +25,20 @@ func _ready():
 	$Setup/Viewports/C1/Viewport1.add_child(stage)
 	$Setup.world = get_node("Setup/Viewports/C1/Viewport1/stage"+str(id)+"/")
 	$Setup.can_load(stage.ACT, stage.MODE, stage.invert)
+	
+	if global.current_stage < 13:
+		rand_bg = global.ACT1_BG2
+		volume = 8
+	elif global.current_stage < 25:
+		rand_bg = global.ACT2_BG2
+		volume = -5
+	else:
+		rand_bg = global.ACT3_BG2
+		volume = -3
+	$Timer.wait_time = rand_range(10,30)
+	$Timer.start()
+
+func _on_Timer_timeout():
+	global.play_se(rand_bg, volume)
+	$Timer.wait_time = rand_range(10,30)
+	$Timer.start()

@@ -32,8 +32,9 @@ _sections_unfolded = [ "Theme" ]
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 86.7076, 61.1693 )
-scale = Vector2( 2.3541, 1.59391 )
+scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 

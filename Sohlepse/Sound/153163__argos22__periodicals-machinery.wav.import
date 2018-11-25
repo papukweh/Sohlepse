@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/153163__argos22__periodicals-machinery.wav-afb814fb4b81e6c217d36260dffa5067.sample"
+
+[deps]
+
+source_file="res://Sound/153163__argos22__periodicals-machinery.wav"
+dest_files=[ "res://.import/153163__argos22__periodicals-machinery.wav-afb814fb4b81e6c217d36260dffa5067.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

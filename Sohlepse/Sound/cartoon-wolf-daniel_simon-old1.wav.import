@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cartoon-wolf-daniel_simon-old1.wav-dc749d29746d033d86d117bf9777b21f.sample"
+
+[deps]
+
+source_file="res://Sound/cartoon-wolf-daniel_simon-old1.wav"
+dest_files=[ "res://.import/cartoon-wolf-daniel_simon-old1.wav-dc749d29746d033d86d117bf9777b21f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -20,8 +20,12 @@ var ACT2_THEME = load("res://Sound/mu45.wav")
 var ACT3_THEME = load("res://Sound/cy67.wav")
 
 var ACT1_BG = load("res://Sound/385943__inspectorj__ambience-machine-factory-a.wav")
+var ACT1_BG2 = load("res://Sound/13538__bjornredtail__printernoise.wav")
 var ACT2_BG = load("res://Sound/Night_Sounds_-_Crickets-Lisa_Redfern-591005346.wav")
+var ACT2_BG2 = load("res://Sound/cartoon-wolf-daniel_simon.wav")
 var ACT3_BG = load("res://Sound/385943__inspectorj__ambience-machine-factory-a.wav")
+var ACT3_BG2 = load("res://Sound/65145__andaris__bounce.wav")
+var ACT3_BG3 = load("res://Sound/432068__screamstudio__future-alarm.wav")
 
 var SE_JOGAR = load("res://Sound/145459__soughtaftersounds__menu-click-sparkle.wav")
 var SE_MOVE = load("res://Sound/397599__nightflame__menu-fx-02.wav")
@@ -112,11 +116,11 @@ func initSound():
 		music = AudioStreamPlayer.new()
 		self.add_child(music)
 		music.stream = MENU_THEME
-		music.volume_db = base_master -10
+		music.volume_db = base_master -5
 		music.play()
 	elif music.stream != MENU_THEME:
 		music.stream = MENU_THEME
-		music.volume_db = base_master -10
+		music.volume_db = base_master -5
 		music.play()
 	else:
 		return
@@ -126,25 +130,32 @@ func recalibrate():
 	for i in range(10):
 		audio[i].volume_db = base_master + base_se
 
+func stop_bgm():
+	music.stop()
+
 func play_bgm():
 	if current_stage < 13:
 		music.stream = ACT1_THEME
-		music.volume_db = base_master + base_bgm - 3
+		music.volume_db = base_master + base_bgm + 2
 		audio[0].stream = ACT1_BG
-		audio[0].volume_db = base_master + base_se -20
+		audio[0].volume_db = base_master + base_se -10
 		audio[0].play()
 	elif current_stage < 25:
 		music.stream = ACT2_THEME
-		music.volume_db = base_master + base_bgm  - 10
+		music.volume_db = base_master + base_bgm  - 5
 		audio[0].stream = ACT2_BG
 		audio[0].volume_db = base_master + base_se -20
 		audio[0].play()
 	else:
 		music.stream = ACT3_THEME
-		music.volume_db = base_master + base_bgm  - 5
-		audio[0].stream = ACT3_BG
-		audio[0].volume_db = base_master + base_se -20
-		audio[0].play()
+		music.volume_db = base_master + base_bgm  + 2
+		if current_stage == 32:
+			audio[0].stream = ACT3_BG3
+			audio[0].volume_db = base_master + base_se -5
+		else:
+			audio[0].stream = ACT3_BG
+			audio[0].volume_db = base_master + base_se -20
+	audio[0].play()
 	music.play()
 
 func play_se(sound, loud=0):

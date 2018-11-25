@@ -16,7 +16,6 @@ func can_load(act, mode, invert):
 			Viewport2.render_target_v_flip = true
 		camera1.target = world.get_node("Players/Player1")
 		camera2.target = world.get_node("Players/Player2")
-		camera2.target.evil()
 		set_camera1_limits(camera1)
 		set_camera2_limits(camera2, 0)
 	elif act == 3:
@@ -36,6 +35,9 @@ func can_load(act, mode, invert):
 		else:
 			set_camera2_limits(camera2, 0)
 			Viewport2.render_target_v_flip = true 
+			
+	if global.current_stage > 12 and global.current_stage < 25:
+		camera2.target.evil()
 func set_camera1_limits(cam1):
 	var map_limits = world.get_node("Real").get_global_rect()
 	cam1.limit_left = map_limits.position.x

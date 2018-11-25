@@ -17,7 +17,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="StageManager" type="Node2D"]
+[node name="StageManager" type="Node2D" index="0"]
 
 z_index = 20
 script = ExtResource( 1 )
@@ -29,6 +29,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="Tutoriais" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 136, 586 )
 z_index = 95
 _sections_unfolded = [ "Z Index" ]
@@ -109,5 +110,14 @@ margin_left = 220.0
 margin_top = -351.0
 margin_right = 591.0
 margin_bottom = -112.0
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
