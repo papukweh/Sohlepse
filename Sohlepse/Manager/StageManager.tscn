@@ -29,6 +29,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="Tutoriais" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 136, 586 )
 z_index = 95
 _sections_unfolded = [ "Z Index" ]
@@ -109,5 +110,14 @@ margin_left = -135.0
 margin_top = -585.0
 margin_right = 951.0
 margin_bottom = 105.0
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

@@ -110,8 +110,8 @@ __meta__ = {
 position = Vector2( 160.898, -4.01203 )
 
 [node name="Lever2" parent="Objects" index="1" groups=[
-"Wall3Led1",
 "Mov2",
+"Wall3Led1",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 160.898, -422.899 )
@@ -129,8 +129,8 @@ names = [ "Wall2Led2" ]
 position = Vector2( 748.709, 62.1187 )
 
 [node name="Button2" parent="Objects" index="4" groups=[
-"Mov1",
 "Wall2Led1",
+"Mov1",
 ] instance=ExtResource( 7 )]
 
 position = Vector2( 1070.49, 379.943 )
@@ -162,8 +162,8 @@ motion = Vector2( 0, -600 )
 cycle = 30.0
 
 [node name="Wall2" parent="Objects" index="8" groups=[
-"Wall2Led2",
 "Wall2Led1",
+"Wall2Led2",
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 278.923, 543.32 )

@@ -10,7 +10,7 @@
 [ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=9]
 
-[node name="stage29" index="0" instance=ExtResource( 1 )]
+[node name="stage30" instance=ExtResource( 1 )]
 
 ACT = 3
 MAX_CLONES = 1

@@ -8,6 +8,9 @@ script = ExtResource( 1 )
 events = null
 labels = null
 pos = null
+areascale = null
+playanyway = false
+red = false
 
 [node name="Tween" type="Tween" parent="." index="0"]
 

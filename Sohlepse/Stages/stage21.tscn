@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Florest_bg.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=11]
 
 [node name="stage21" instance=ExtResource( 1 )]
 
@@ -207,8 +208,8 @@ cycle = 15.0
 forest = 1
 
 [node name="MovingPlatform3" parent="Mirror" index="2" groups=[
-"Lever3",
 "Lever",
+"Lever3",
 ] instance=ExtResource( 9 )]
 
 position = Vector2( 50, 175 )
@@ -219,8 +220,8 @@ cycle = 10.0
 forest = 1
 
 [node name="MovingPlatform2" parent="Mirror" index="3" groups=[
-"Lever3",
 "Lever2",
+"Lever3",
 ] instance=ExtResource( 9 )]
 
 position = Vector2( 50, 400 )
@@ -274,5 +275,13 @@ __meta__ = {
 
 position = Vector2( 1270.65, 919.004 )
 scale = Vector2( 49.0264, 1 )
+
+[node name="Event" parent="." index="9" instance=ExtResource( 11 )]
+
+events = [ Vector2( 1024, 180 ), Vector2( 1024, 320 ), Vector2( 1024, 420 ) ]
+labels = [ "Já não me lembro mais", "Por que estava com tanta pressa?", " " ]
+pos = [ Vector2( 260, 450 ), Vector2( 260, 450 ), Vector2( 0, 0 ) ]
+areascale = [ Vector2( 5, -1 ), Vector2( 5, -1 ), Vector2( 5, -1 ) ]
+playanyway = false
 
 

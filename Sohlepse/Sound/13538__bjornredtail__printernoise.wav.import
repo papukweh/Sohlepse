@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/13538__bjornredtail__printernoise.wav-1516c1928499e0bf9b8bbc0228e40639.sample"
+
+[deps]
+
+source_file="res://Sound/13538__bjornredtail__printernoise.wav"
+dest_files=[ "res://.import/13538__bjornredtail__printernoise.wav-1516c1928499e0bf9b8bbc0228e40639.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

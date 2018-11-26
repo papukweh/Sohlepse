@@ -16,6 +16,9 @@ func _process(delta):
 			if global.current_stage == 13:
 				get_tree().change_scene("res://Stages/Cutscenes/Cutscene1.tscn")
 				return
+			elif global.current_stage == 25:
+				get_tree().change_scene("res://Stages/Cutscenes/Cutscene2.tscn")
+				return
 			get_tree().reload_current_scene()
 
 func _physics_process(delta):

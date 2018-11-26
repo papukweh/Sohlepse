@@ -48,6 +48,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 0, 11, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0, 7, 11, 0, 8, 11, 0, 65544, 5, 0, 131080, 5, 0, 196616, 5, 0, 262152, 5, 0, 327688, 5, 0, 393224, 5, 0, 458760, 5, 0, 524296, 5, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 720894, 6, 0, 720895, 6, 0, 655360, 6, 0, 655361, 6, 0, 655362, 6, 0, 655363, 6, 0, 655364, 6, 0, 655365, 6, 0, 655366, 6, 0, 655367, 6, 0, 655368, 6, 0, 655369, 6, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="." index="3"]
 
@@ -104,8 +105,19 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" index="0"]
 
-position = Vector2( 105.514, -49.7422 )
+position = Vector2( 34.3965, -43.9375 )
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Exit" index="1"]
+
+position = Vector2( -970.369, -27.5332 )
+shape = SubResource( 1 )
+
+[node name="Player2" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( -27.4396, 541.276 )
+collision_layer = 1
+collision_mask = 0
 
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
 

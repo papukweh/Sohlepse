@@ -51,11 +51,11 @@ __meta__ = {
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 785.084, -328.981 )
+position = Vector2( 2434.74, 67.8692 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( -445.708, 832.367 )
+position = Vector2( 2589.03, 69.7922 )
 
 [node name="Reality" type="Node" parent="." index="2"]
 
@@ -97,8 +97,8 @@ cycle = 10.0
 forest = 1
 
 [node name="MovingThorns" parent="Reality/Objects" index="4" groups=[
-"Lever5",
 "Lever1",
+"Lever5",
 ] instance=ExtResource( 7 )]
 
 position = Vector2( 947.045, -233.007 )
@@ -143,8 +143,8 @@ forest = 1
 big = 0
 
 [node name="Wall3" parent="Reality/Objects" index="10" groups=[
-"Lever5",
 "Lever1",
+"Lever5",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 1263.57, -415.558 )
@@ -177,8 +177,8 @@ activation = 1
 forest = 1
 
 [node name="Wall4" parent="Reality/Objects" index="13" groups=[
-"Lever4",
 "Lever1",
+"Lever4",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 591.995, -416.786 )
