@@ -18,7 +18,7 @@
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=17]
 
-[node name="stage24" instance=ExtResource( 1 )]
+[node name="stage24" index="0" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -51,7 +51,7 @@ __meta__ = {
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 707.327, -289.553 )
+position = Vector2( 721.243, -287.674 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
@@ -172,7 +172,6 @@ position = Vector2( 2439.15, -274.419 )
 rotation = 1.5708
 scale = Vector2( 1, 0.537 )
 _sections_unfolded = [ "Collision", "Transform" ]
-begin = 1
 activation = 1
 forest = 1
 
