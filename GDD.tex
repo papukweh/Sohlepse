@@ -15,7 +15,7 @@
  
 \section{Resumo} 
 	 
-	Sohlepse (nome passível de mudanças) é um jogo de puzzle-plataforma que faz uso de reflexões para proporcionar o controle de mais de um personagem com os mesmos comandos. 
+	Sohlepse é um jogo de puzzle-plataforma que faz uso de reflexões para proporcionar o controle de mais de um personagem com os mesmos comandos. 
  
 Isso pode ser feito de forma paralela (os dois personagens se movem ao mesmo tempo) ou sequencial (a mesma sequência de movimentos de um personagem é repetida enquanto você move o outro personagem). 
  
@@ -25,26 +25,27 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
  
 	\subsection{Ações do jogador} 
 		\begin{itemize} 
-			\item Andar: $\rightarrow$ e $\leftarrow$ ou $A$ e $D$  
-			\item Pular: $\uparrow$ ou $W$
-			\item Empurrar caixas: $E$ enquanto anda na direção da caixa  
-			\item Pressionar botões: permanecer em cima dele 
-			\item Acionar alavancas: $E$
+			\item \textbf{Andar:} $\rightarrow$ e $\leftarrow$ ou $A$ e $D$  
+			\item \textbf{Pular:} $\uparrow$ ou $W$
+			\item \textbf{Empurrar caixas:} $E$ enquanto anda na direção da caixa  
+			\item \textbf{Pressionar botões:} permanecer em cima dele 
+			\item \textbf{Acionar alavancas:} $E$
 		\end{itemize} 
  
 	\subsection{Objetos do jogo} 
 		\begin{itemize} 
-			\item Botões: ativam ou desativam uma quantidade arbitrária de paredes e espinhos divididos em 2 tipos: 
+			\item \textbf{Botões:} ativam ou desativam uma quantidade arbitrária de paredes e espinhos divididos em 2 tipos: 
 			\begin{itemize}
 			        \item Os que se mantêm ativos enquanto estão pressionados
 			        \item Os que pressionados uma vez, se mantém ativos até o fim da fase
 			\end{itemize}   
-			\item Alavancas - Se mantêm ativos até serem acionadas novamente - ativam ou desativam uma quantidade arbitrária de paredes e espinhos 
-			\item Caixas - Podem ser empurradas para formar escadas ou acionar botões 
-			\item Chão quebrável - Se quebram quando o jogador passa por ele duas vezes 
-			\item Água - Jogador pode passar por esse tile normalmente, mas sua movimentação fica mais lenta 
-			\item Lava - Jogador morre se encostar nesse tile 
-			\item Espetos - Jogador morre se encostar nesse tile - pode ser desativado por um botão/alavanca 
+			\item \textbf{Alavancas} - Se mantêm ativos até serem acionadas novamente - ativam ou desativam uma quantidade arbitrária de paredes e espinhos 
+			\item \textbf{Caixas} - Podem ser empurradas para formar escadas ou acionar botões 
+			\item \textbf{Chão quebrável} - Se quebram quando o jogador passa por ele duas vezes 
+			\item \textbf{Água} - Jogador pode passar por esse tile normalmente, mas sua movimentação fica mais lenta 
+			\item \textbf{Lava} - Jogador morre se encostar nesse tile 
+			\item \textbf{Espetos} - Jogador morre se encostar nesse tile - pode ser desativado por um botão/alavanca
+			\item \textbf{MovingEspetos} - Como um tile de espeto, mas que se move 
 		\end{itemize} 
  		\subsection{EndGoal}
  			Espelho que representa o ponto onde o Jogador deve chegar para terminar a fase, ao interagir com ele, a próxima fase começa(dependendo da fase podem haver cutscenes antes da inicialização)
@@ -52,27 +53,27 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
 \section{Organização das cenas} 
 		\subsection{Menu Principal} 
 			\begin{itemize} 
-				\item Jogar - Carrega o última fase que o jogador ainda não completou,armazenado na variável global unlocked\_stage. 
-				\item Seleção de fases - Carrega o menu de seleção de fases. Suporta batches de 12 fases cada.
-				\item Opções - Carrega o menu de opções, que não existe ainda, precisa ser feito. 
-				\item Créditos - Carrega os créditos 
-				\item Sair - Fecha o jogo.
+				\item \textbf{Jogar} - Carrega o última fase que o jogador ainda não completou,armazenado na variável global unlocked\_stage. 
+				\item \textbf{Seleção de fases} - Carrega o menu de seleção de fases. Suporta batches de 12 fases cada.
+				\item \textbf{Opções} - Carrega o menu de opções, que possui controladores de volume (para músicas, efeitos sonoros ou ambos) assim como indicação dos controles (em teclado ou em joypads)
+				\item \textbf{Créditos} - Carrega os créditos 
+				\item \textbf{Sair} - Fecha o jogo.
 			\end{itemize} 
  
 		\subsection{Stage Manager} 
 			Faz o trabalho de carregar a fase atual nos dois viewports, assim como organiza as telas horizontal ou verticalmente, como definido na variável MODE.
 			\begin{enumerate}
-			\item Setup - Configura as câmeras de cada viewport para seguir cada player, de acordo com a variável PLAYER, que está em Stage. Também limita as câmeras aos retângulos definidos como Real e Mirrored.
+			\item \textbf{Setup} - Configura as câmeras de cada viewport para seguir cada player, de acordo com a variável PLAYER, que está em Stage. Também limita as câmeras aos retângulos definidos como Real e Mirrored.
 				\begin{enumerate}
-				\item Viewports - Contidos em containers verticais ou horizontais, o Setup define qual será usado.
-				\item Stage - Apresenta as variáveis ACT, PLAYERS, MAX\_CLONES, e MODE (1 é vertical, 2 é horizontal).
+				\item \textbf{Viewports} - Contidos em containers verticais ou horizontais, o Setup define qual será usado.
+				\item \textbf{Stage} - Apresenta as variáveis ACT, PLAYERS, MAX\_CLONES, e MODE (1 é vertical, 2 é horizontal).
 				\end{enumerate}
-			\item Pause Menu
+			\item \textbf{Pause Menu}
 				\begin{enumerate}
 				\item Voltar ao jogo - Retoma o jogo.
 				\item Menu - Volta ao menu principal
 				\item Recomeçar - Reinicia a fase.
-				\item Controles - Precisa ser feito.
+				\item Opções - Mostra a tela de opções.
 				\item Sair - Fecha o jogo, mas pede confirmação primeiro.
 				\end{enumerate}
 			\end{enumerate}
@@ -80,17 +81,31 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
 		\subsection{Stage}
 			Nó raiz de cada fase.
 			\begin{itemize}
-				\item TileMap - Layout da fase.
-				\item Real e Mirrored - ReferenceRect, definem os limites da câmera.
-				\item Endgoal e EndgoalMirror - Objetivo final de cada fase.
-				\item Players - Um Node normal, cujos filhos são instâncias do Player.
-				\item Reality e Mirror - dois Nodes normais, cujos filhos são os nós Objects e Hazardz nas fases Real e Espelhada respectivamente
-				\item Objects - Um Node normal, cujos filhos são botões, paredes, alavancas, etc.
-				\item Hazards - Um Node normal, cujos filhos são limites, firearea, espetos, etc.
+				\item \textbf{TileMap} - Layout da fase.
+				\item \textbf{Real e Mirrored} - ReferenceRect, definem os limites da câmera.
+				\item \textbf{Endgoal e EndgoalMirror} - Objetivo final de cada fase.
+				\item \textbf{Players} - Um Node normal, cujos filhos são instâncias do Player.
+				\item \textbf{Reality e Mirror} - dois Nodes normais, cujos filhos são os nós Objects e Hazardz nas fases Real e Espelhada respectivamente
+				\item \textbf{Objects} - Um Node normal, cujos filhos são botões, paredes, alavancas, etc.
+				\item \textbf{Hazards} - Um Node normal, cujos filhos são limites, firearea, espetos, etc.
 			\end{itemize}
 
 		\subsection{Player}
 			O Player é o personagem humano controlado pelo jogador, que através da movimentação e interação com os objetos da fase, deve chegar no EndGoal, evitando cair e  tocar em Hazards
+			\begin{itemize}
+				\item \textbf{InputHandler} - Lida com os inputs do jogador. Tem dois modos de funcionamento - um espera inputs do teclado, enquanto outro lê de um vetor de inputs (usado para as gravações do Ato 3)
+				\item \textbf{Recorder} - Responsável pela gravação do movimento do jogador. Para cada frame, grava o "estado" do player. O estado nesse caso consiste de um vetor booleano com quatro entradas, que indicam se os botões $\rightarrow$, $\leftarrow$, $\uparrow$ e $E$, respectivamente, estavam pressionados nessa frame.
+			\end{itemize}
+			\\
+			Alguns atributos:
+			\begin{itemize}
+				\item \textbf{Terrain e In\_terrain} - Escalar que multiplica a velocidade do player (deixa ele mais lento na água, por exemplo) e indica se o player está em algum terreno diferente, respectivamente.
+				\item \textbf{Pushing} - Indica se o player está empurrando/puxando uma caixa - diminui a velocidade do player nesse caso.
+				\item \textbf{Crushing} - Indica se o player está sendo esmagado - mata o player se ele permanecer nesse estado por um certo período de tempo.
+				\item \textbf{Clone e Red} - Indica se o player é uma gravação ou o player real, e se ele tem olhos vermelhos ou não, respectivamente.
+				\item \textbf{Dead} - Indica se o player está morto, e nesse caso, ignora quaisquer inputs recebidos (mas ainda aplica força gravitacional no cadáver do player).
+				\item \textbf{Carry} - Indica se o player está sendo carregado por uma plataforma - nesse casos a plataforma deve setar sua posição manualmente (a física da engine não funcionava como esperado).
+			\end{itemize}
 
 		\subsection{Botões e paredes}
 			Nesta seção, paredes se referem à Walls, MovingPlatforms e Thorns. E botões se refere à Button, ButtonInst ou Levers.
@@ -135,6 +150,19 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
  				Botão A está nos grupos A e A2, Botão B está nos grupos B e B2, Botão C está no grupo C.
  				Parede 1 está nos grupos A e C, Parede 2 está no grupos A2 e B2, Parede 3 está nos grupos B e C.
 
+ 			\subsection{Events e Cutscenes}
+ 				Nó que permite a automatização da criação de "eventos" - isto é, áreas que triggam algumas linhas de diálogo dentro de uma fase. Seus atributos são:
+ 				\begin{itemize}
+ 					\item \textbf{Events} - lista de posições na fase onde ficam as áreas que triggarão os eventos
+ 					\item \textbf{Labels} - lista de textos que serão mostrados
+ 					\item \textbf{Pos} - lista de posições na fase onde as labels devem surgir
+ 					\item \textbf{Areascale} - lista de escalares para as áreas dos events
+ 					\item \textbf{Playanyway} - indica se os diálogos podem ser mostrados fora de ordem. Por padrão, a segunda área na lista de events ativaria o segundo label apenas se o player já tiver passado pela primeira, por exemplo.
+ 				\end{itemize}
+ 				\\
+ 				No caso de cutscenes, introduzimos os atores da cena como clones e setamos seu vetor de inputs para os movimentos que queremos que eles façam. Isso é feito usando alguns vetores previamente definidos tais como MOVE\_LEFT, MOVE\_RIGHT, JUMP ou INTERACT que consistem apenas na realização desses movimentos atômicos. Construímos a cena com a ajuda de Áreas2D que, ao serem cruzadas pelo player, atualiza seu vetor de inputs para a próxima sequência de comandos.
+
+
 \section{Ato I} 
  
 	Duas telas espelhadas, podendo a divisão ser na horizontal ou vertical, dependendo da fase. O movimento do 
@@ -147,31 +175,33 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
  
 	Lista das mecânicas do ato 
 	\begin{itemize} 
-		\item Algo 
-		\item Algo 
+		\item Plataformas que empurram caixas que pressionam botões. 
+		\item Plataformas que pressionam botões.
+		\item Paredes acionáveis que derrubam caixas e/ou o player.
+		\item Dessincronização usando paredes.
 	\end{itemize} 
  
 \subsection{Fases} 
  
 	\begin{itemize} 
-		\item Fase1 : Tutorial de movimento, interação e pausa 
-		\item Fase2 : Introduz caixas para subir e alavancas
-		\item Fase3 : Introduz água, lava e espinhos
-		\item Fase4 : Introduz caixas para apertar botões
-		\item Fase5 : Introduz espinhos acionáveis e plataformas one-way
-		\item Fase6 : Introduz falling floor e plataformas que se movem
-		\item Fase7 : Quebrar falling floors de propósito é uma estratégia válida
-		\item Fase8 : Plataformas e caixas: não fazer o óbvio primeiro (tacar no buraco)
-		\item Fase9 : Introduz mecânica de plataforma que empurra caixa, morte por esmagamento
-		\item Fase10 : Tutorial de restart, introduz alavancas cumulativas e que ativam mais de uma coisa (pequenas diferenças entre as paredes)
-		\item Fase11 : Uso de falling floors, alavancas que ativam mais de uma coisa - patience platforming (pequenas diferenças entre água e lava)
-		\item Fase12 : Fase final do Ato 1 - plataformas ativando botões, traps com espinhos, uso de dessincronização com paredes acionáveis.
+		\item \textbf{Fase1} : Tutorial de movimento, interação e pausa 
+		\item \textbf{Fase2} : Introduz caixas para subir e alavancas
+		\item \textbf{Fase3} : Introduz água, lava e espinhos
+		\item \textbf{Fase4} : Introduz caixas para apertar botões
+		\item \textbf{Fase5} : Introduz espinhos acionáveis e plataformas one-way
+		\item \textbf{Fase6} : Introduz falling floor e plataformas que se movem
+		\item \textbf{Fase7} : Quebrar falling floors de propósito é uma estratégia válida, introduz alavancas cumulativas
+		\item \textbf{Fase8} : Plataformas e caixas: não fazer o óbvio primeiro (tacar no buraco)
+		\item \textbf{Fase9} : Tutorial de restart, não fazer o óbvio primeiro (novamente)
+		\item \textbf{Fase10} : Introduz mecânica de plataforma que empurra caixa, morte por esmagamento
+		\item \textbf{Fase11} : Uso de falling floors, alavancas que ativam mais de uma coisa - patience platforming (pequenas diferenças entre água e lava)
+		\item \textbf{Fase12} : Fase final do Ato 1 - plataformas ativando botões, traps com espinhos, uso de dessincronização com paredes acionáveis, falling floor com timing preciso.
 	\end{itemize} 
  
 \subsection{História} 
  
 	Jogador acorda em uma sala fechada, com apenas um espelho, sem saber onde está. Ao interagir com o espelho, é puxado pela própria reflexão para o "mundo espelhado".
-	Percorre o laboratório e vai percebendo sutis mudanças na reflexão das fases. Eventualmente, encontra saída, mas é quase morto pela própria reflexão.
+	Percorre o laboratório e vai percebendo sutis mudanças na reflexão das fases. Eventualmente, encontra uma saída, e acaba perdido numa floresta desconhecida. Termina o ato jurando que voltará para sua família.
 
 \section{Ato II} 
  
@@ -185,64 +215,71 @@ Cada fase apresentará diferentes obstáculos que te obrigará a fazer uso criat
  
 	Lista das mecânicas do ato 
 	\begin{itemize} 
-		\item Algo 
-		\item Algo 
+		\item Dessincronização usando paredes, caixas, plataformas e água.
+		\item Fases em que um dos players tem seu movimento restrito ou pode morrer.
+		\item Fases em que um dos players pode restringir o movimento do outro para evitar sua morte.
+		\item Fases em que acontecimentos no lado espelhado podem dar dicas sobre o que fazer no lado real e vice-versa.
 	\end{itemize} 
  
 \subsection{Fases} 
  
 	\begin{itemize} 
-		\item Fase1 : Clone fica ativando/desativando plataformas para o player - uso da caixa para sincronizar os movimentos sem que o player caia no espinho.
-		\item Fase2 : Clone fica aativando/desativando plataformas para o player, tomando cuidado para não ser esmagado e/ou desativar o próprio chão.
-		\item Fase3 : Traps envolvendo espinhos e caixas, depende de um "leap of faith" do player e seu clone, que desativa os espinhos da fase antes do player cair neles.
-		\item Fase4 : Uso de falling floors no lado espelhado, de forma que os movimentos do clone não pode ser 1:1 os do player. O segredo da fase está na sincronização do movimento dos dois no pulo da terceira plataforma para a quarta (o clone deve aproveitar esse momento para chegar na alavanca e ativá-la). Introduz mecânica de espelho que se move.
-		\item Fase5 : Plataformas "troll" e traps com espinhos. Uso de uma parede acionável para dessincronizar os jogadores (callback para fase12). Uso de informação no lado espelhado para guiar ações do player no lado real (o movimento da plataforma que carrega o espelho está sincronizado com a plataforma espelhada).
-		\item Fase6 : Fase "Mario Maker" - jogador não pode pular e nem ir muito para os lados, ou o clone morre. A ideia é sincronizar as plataformas que se movem de antemão, e depois só seguir o fluxo.
+		\item \textbf{Fase13} : Introduz mecânica de alavancas que ativam mais de uma coisa. O puzzle é descobrir a ordem certa de ativar as alavancas.
+		\item \textbf{Fase14} : Clone fica ativando/desativando plataformas para o player - uso da caixa para sincronizar os movimentos sem que o player caia no espinho.
+		\item \textbf{Fase15} : Clone fica ativando/desativando plataformas para o player, tomando cuidado para não ser esmagado e/ou desativar o próprio chão.
+		\item \textbf{Fase16} : Traps envolvendo espinhos e caixas, depende de um "leap of faith" do player e seu clone, que desativa os espinhos da fase antes do player cair neles.
+		\item \textbf{Fase17} : Uso de falling floors no lado espelhado, de forma que os movimentos do clone não pode ser 1:1 os do player. O segredo da fase está na sincronização do movimento dos dois no pulo da terceira plataforma para a quarta (o clone deve aproveitar esse momento para chegar na alavanca e ativá-la). Introduz mecânica de espelho que se move.
+		\item \textbf{Fase18} : Fase "Mario Maker" - jogador não pode pular e nem ir muito para os lados, ou o clone morre. A ideia é sincronizar as plataformas que se movem de antemão, e depois só seguir o fluxo.
+		\item \textbf{Fase19} : Fase em que o player deve ativar diversos botões ao mesmo tempo com seu clone, precisando usar da dessincronização para isso.
+		\item \textbf{Fase20} : Fase em que o player precisa usar um tile bem colocado para dessincronizar seu movimento em relação a uma plataforma que se move.
+		\item \textbf{Fase21} : Fase "Mario Maker Invertido" - jogador só pode pular em uma pequena área na fase e seu clone deve ativar e desativar plataformas de forma a levar o espelho até ele. É preciso tomar cuidado para não mandar o espelho pro abismo.
+		\item \textbf{Fase22} : Plataformas "troll" e traps com espinhos. Uso de uma parede acionável para dessincronizar os jogadores (callback para \textbf{fase12}). Uso de informação no lado espelhado para guiar ações do player no lado real (o movimento da plataforma que carrega o espelho está sincronizado com a plataforma espelhada).
+		\item \textbf{Fase23} : Fase de corrida - o player deve desativar as paredes e derrubar as caixas antes que elas sejam levadas por outra plataforma - essa é a única maneira de atravessar a lava. Introduz meĉanica de espinho que se move.
+		\item \textbf{Fase24} : Fase final do Ato 2 - espinhos que se movem, dessincronização usando paredes. espiral da morte com espinhos, timear bem o pulo dos dois players.
 	\end{itemize} 
  
  
 \subsection{História} 
  
-	Resumo do que acontece 
+	O jogador percebe que sua reflexão agora tem olhos vermelhos. Ao longo das fases, sente-se mal e começa a esquecer acontecimentos importantes em sua própria vida. Coopera com sua reflexão contra sua vontade, tendo sempre um pouco de desconfiança com relação à esse. Na fase final, a realidade espelhada e a real se juntam numa só, e o player finalmente chega em um lugar que parece sua casa. Sua reflexão o aconselha a não entrar. O jogador a ignora e entra em sua própria casa.
  
 \section{Ato III} 
  
 	Nesse ato, a realidade do espelho se fundiu quase completamente com a realidade, então as fases se passam numa única 
 	tela. O diferencial desse ato é o uso de "clones", cujo número pode ser limitado ou não, dependendo da fase, que repetem o que você faz, como numa gravação. A ideia é sincronizar o seu movimento com o dos seus "clones" para conseguir atingir seu objetivo. 
  
-	Lista das mecânicas do ato 
+	Algumas mecânicas do ato 
 	\begin{itemize} 
-		\item Algo 
-		\item Algo 
+		\item Fazer uma gravação e ativar/desativar coisas para garantir sua sobrevivência
+		\item Fazer uma gravação e ativar/desativar coisas para matá-la e usar seu cadáver para pisar sobre tiles perigosos.
+		\item Começar uma gravação em spots estratégicos - antes de um botão importante, sobre plataformas que ainda serão ativadas e coisas do tipo.
+		\item Platforming preciso - momentos em que plataformas são ativadas e desativadas sucessivamente, de modo que o player deve ter pressa.
 	\end{itemize} 
  
  
 \subsection{Fases} 
  
 	\begin{itemize} 
-		\item Fase1 : Callback da primeira fase: mas dessa vez o espelho está no "teto". Introduz mecânica de pular nos clones para atingir seu objetivo.
-		\item Fase2 : Callback da primeira fase do ato 2: dessa vez quem ativa as plataformas é um clone gravado, e não um clone do espelho.
-		\item Fase3 : Mostra a importância de começar sua gravação no momento certo - é possível fechar o espelho apertando um botão muito bem posicionado. A gravação deve ativar e desativar espinhos/paredes em um ritmo no qual o jogador possa passar por eles com facilidade.
+		\item \textbf{Fase25} : Callback da primeira fase: mas dessa vez o espelho está no "teto". Introduz mecânica de pular nos clones para atingir seu objetivo.
+		\item \textbf{Fase26} : Callback da primeira fase do ato 2: dessa vez quem ativa as plataformas é um clone gravado, e não um clone do espelho.
+		\item \textbf{Fase27} : Player tem acesso a apenas um clone e deve ativar todos os botões para abrir a parede que protege o espelho.
+		\item \textbf{Fase28} : Introduz mecânica de matar clones para prosseguir - player deve usar uma plataforma com espinhos para atingir seu objetivo, e para isso precisa ficar sobre o cadáver de um clone.
+		\item \textbf{Fase29} : Como na fase anterior, temos apenas um clone, que deve percorrer a fase e ativar um botão que abre a parede que protege o espelho. Porém, o sucesso da gravação depende do player ativando/desativando plataformas e paredes no momento certo.
+		\item \textbf{Fase30} : Mostra a importância de começar sua gravação no momento certo - é possível fechar o espelho apertando um botão muito bem posicionado. A gravação deve ativar e desativar espinhos/paredes em um ritmo no qual o jogador possa passar por eles com facilidade.
+		\item \textbf{Fase31} : Nesta fase é preciso timear bem suas gravações: um movimento que ativava uma alavanca inicialmente pode ser reutilizado para ativar outra, se você usar bem seus recursos. Introduz mecânica de carregar um clone em sua cabeça.
+		\item \textbf{Fase32} : Fase final - corrida contra o tempo. Essa fase apresenta um timer e está repleta de armadilhas. O player deve ter pressa e timear muito bem seus pulos para atingir o final.
 	\end{itemize} 
 
 \subsection{Progresso}
 	\begin{itemize}
-		\item Ato 1 : 12/12 fases - Completo!
-		\item Ato 2 : 6/? fases
-		\item Ato 3 : 3/? fases
+		\item \textbf{Ato 1} : 12/12 fases - Completo!
+		\item \textbf{Ato 2} : 12/12 fases - Completo!
+		\item \textbf{Ato 3} : 8/8 fases - Completo!
  
  
 \subsection{História} 
  
-	Resumo do que acontece 
- 
-\section{Assets} 
- 
-\subsection{Placeholders} 
-	Em progresso 
- 
-\subsection{Definitivos} 
-	Em progresso 
+	O jogador novamente acaba na sala inicial do laboratório. Exasperado, recomeça sua busca por uma saída. Quando finalmente a encontra, seu clone aparece e lhe diz que apenas um deles pode sair daquele lugar vivo, e ativa um mecanismo de auto-destruição do laboratório. O jogador declara que não deixará que o clone roube sua identidade, e começa então uma corrida para a saída. Se o jogador conseguir escapar a tempo, ele chega em casa e o clone acaba morrendo na explosão. Em casa, entretanto, depara-se com uma surpresa - sua esposa tem olhos vermelhos, como o seu clone. 
  
 \end{document} 
  
