@@ -22,6 +22,8 @@ func openA():
 	state = 0
 		
 func _process(delta):
+	if inOptions:
+		return
 	if Input.is_action_just_pressed("Pause") or pressed[Voltar]:
 		if get_tree().paused:
 			global.play_se(global.SE_UNPAUSE,-5)
@@ -43,10 +45,10 @@ func _process(delta):
 		get_tree().reload_current_scene()
 	if pressed[Options]:
 		global.play_se(global.SE_ACCEPT)
+		$Options/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
 		inOptions = true
 		hide()
-		get_parent().add_child(MenuOptions)
-		$Options/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+		get_parent().get_child(8).show()
 	if pressed[Exit]:
 		global.play_se(global.SE_EXIT,-5)
 		inSure = true

@@ -6,33 +6,36 @@ func _ready():
 	$Controls/Voltar.disabled = true
 	$Controls/Voltar.hide()
 	
-	print(get_parent().get_name())
 	if get_parent().get_name() == "Tutoriais":
 		pause = true
+
+func _process(delta):
+	if pause:
 		if Input.is_action_just_pressed("Pause") and get_parent().get_node("PauseMenu").inOptions:
-			print("hide")
 			get_parent().get_node("PauseMenu").inOptions = false
-			queue_free()
+			get_parent().get_node("PauseMenu").hide()
+			get_tree().paused = false
+			global.play_se(global.SE_UNPAUSE,-5)
+			hide()
 		if get_parent().get_node("PauseMenu").inOptions and get_parent().get_node("PauseMenu").pressed[3]:
 			get_parent().get_node("PauseMenu").pressed[3] = false
-		if get_tree().paused and get_parent().get_node("PauseMenu").inOptions:
-			if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
-				$Back/Label.set("custom_colors/font_color", Color(0,0,0))
-			if Input.is_action_just_pressed("ui_accept"):
-				$Back/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
-				_on_Back_pressed()
-		else:
-			hide()
+	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
+		global.play_se(global.SE_MOVE,-15)
+		$Back/Label.set("custom_colors/font_color", Color(0,0,0))
+	if Input.is_action_just_pressed("ui_accept"):
+		global.play_se(global.SE_CHANGE, -5)		
+		$Back/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+		_on_Back_pressed()
 
 func _on_Back_pressed():
 	if pause:
 		print("voltei")
+		hide()
 		global.play_se(global.SE_CHANGE, -5)
 		get_parent().get_node("PauseMenu").inOptions = false
 		get_parent().get_node("PauseMenu").openA()
 		print("hide")
 		get_parent().get_node("PauseMenu").show()
-		queue_free()
 	else:	
 		global.play_se(global.SE_CHANGE, -5)
 		get_tree().change_scene("Menus/MenuPrincipal.tscn")

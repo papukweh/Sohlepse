@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Manager/StageManager.gd" type="Script" id=1]
 [ext_resource path="res://Manager/Dual_screen.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/X.png" type="Texture" id=4]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Menus/Sure.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Menus/Options.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -100,5 +101,13 @@ margin_left = 314.0
 margin_top = -348.0
 margin_right = 467.0
 margin_bottom = -280.0
+
+[node name="Options" parent="Tutoriais" index="8" instance=ExtResource( 7 )]
+
+visible = false
+margin_left = -135.0
+margin_top = -585.0
+margin_right = 951.0
+margin_bottom = 105.0
 
 
