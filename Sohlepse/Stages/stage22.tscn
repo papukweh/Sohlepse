@@ -115,8 +115,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
 [node name="Wall2" parent="Reality/Objects" index="1" groups=[
-"RealLED2",
 "MirrorLED2",
+"RealLED2",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 1730.54, -433.501 )
@@ -125,8 +125,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
 [node name="Wall3" parent="Reality/Objects" index="2" groups=[
-"RealLED3",
 "MirrorLED3",
+"RealLED3",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 2493, -568.597 )
@@ -202,8 +202,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
 [node name="WallM2" parent="Mirror/Objects" index="1" groups=[
-"RealLED2",
 "MirrorLED2",
+"RealLED2",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 1730.54, -433.501 )
@@ -212,8 +212,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
 [node name="WallM3" parent="Mirror/Objects" index="2" groups=[
-"RealLED3",
 "MirrorLED3",
+"RealLED3",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 2493, -568.597 )

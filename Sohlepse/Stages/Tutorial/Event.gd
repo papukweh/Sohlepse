@@ -5,12 +5,15 @@ export(Array, String) var labels = []
 export(Array, Vector2) var pos = []
 export(Array, Vector2) var areascale = []
 export(bool) var playanyway = false
+export(bool) var red = false
 onready var size = labels.size()
 onready var checks = []
 onready var last = 0
 onready var stop = false
 var area = preload("Area.tscn")
 var label = preload("Label.tscn")
+var color = Color(1,1,1,0)
+var color2 = Color(1,1,1,1)
 
 func _ready():
 	for i in range (labels.size()):
@@ -20,6 +23,10 @@ func _ready():
 		l.set_text(labels[i])
 		l.set_position(pos[i])
 		l.set_name("Label"+str(i))
+		if red:
+			l.red()
+			color = Color(1,0,0,0)
+			color2 = Color(1,0,0,1)
 		var a = area.instance()
 		self.add_child(a)
 		a = get_children()[-1]
@@ -31,22 +38,23 @@ func _ready():
 		checks.push_back(false)
 
 func body_entered(id):
+	print("prita caralho")
 	if stop:
 		return
 	if playanyway and !checks[id]:
 		$Tween.interpolate_property(get_node("Label"+str(id)), "modulate",
-		Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5,
+		color, color2, 0.5,
 		Tween.TRANS_LINEAR, Tween.EASE_IN)
 		$Tween.start()
 		checks[id] = true
 	elif !checks[last] and id == last:
 		if last == 0:
 			$Tween.interpolate_property(get_node("Label"+str(last)), "modulate",
-			Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5,
+			color, color2, 0.5,
 			Tween.TRANS_LINEAR, Tween.EASE_IN)
 		else:
 			$Tween.interpolate_property(get_node("Label"+str(last-1)), "modulate",
-	    Color(1, 1, 1, 1), Color(1, 1, 1, 0), 0.5,
+	    color2, color, 0.5,
 	    Tween.TRANS_LINEAR, Tween.EASE_IN)
 		checks[last] = true
 		$Tween.start()
@@ -57,7 +65,7 @@ func _on_Tween_tween_completed(object, key):
 		return
 	if checks[last] and (last+1 >= size or not checks[last+1]):
 		$Tween.interpolate_property(get_node("Label"+str(last)), "modulate",
-		Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5,
+		color, color2, 0.5,
 		Tween.TRANS_LINEAR, Tween.EASE_IN)
 		last +=1
 		if last >= size:

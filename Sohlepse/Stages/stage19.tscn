@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_forest.tres" type="TileSet" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=13]
 
 [node name="stage19" instance=ExtResource( 1 )]
 
@@ -330,5 +331,13 @@ position = Vector2( 992, 463 )
 [node name="EndgoalMirror" parent="." index="7" instance=ExtResource( 12 )]
 
 position = Vector2( 1740.6, 1108.37 )
+
+[node name="Event" parent="." index="8" instance=ExtResource( 13 )]
+
+events = [ Vector2( 240, 1160 ), Vector2( 440, 1160 ), Vector2( 1440, 1200 ) ]
+labels = [ "Às vezes parece que", "O meu reflexo está tentando me matar", "Mas ambos estaríamos ferrados sem a ajuda do outro" ]
+pos = [ Vector2( 200, 530 ), Vector2( 400, 400 ), Vector2( 600, 400 ) ]
+areascale = [ Vector2( 1, -1 ), Vector2( 1, -1 ), Vector2( 1, -5 ) ]
+playanyway = false
 
 

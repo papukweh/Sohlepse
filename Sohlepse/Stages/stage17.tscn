@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_forest.tres" type="TileSet" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=15]
 
 [node name="stage17" instance=ExtResource( 1 )]
 
@@ -329,5 +330,13 @@ position = Vector2( -1105.13, 212.563 )
 [node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 14 )]
 
 position = Vector2( 1115, 215 )
+
+[node name="Event" parent="." index="9" instance=ExtResource( 15 )]
+
+events = [ Vector2( 520, 250 ), Vector2( 520, 250 ), Vector2( -120, 640 ) ]
+labels = [ "Me sinto... diferente", "Preciso chegar logo em casa", " " ]
+pos = [ Vector2( 320, 25 ), Vector2( 320, 25 ), Vector2( 0, 0 ) ]
+areascale = [ Vector2( 1, -1 ), Vector2( 1, -1 ), Vector2( 2, -1 ) ]
+playanyway = false
 
 

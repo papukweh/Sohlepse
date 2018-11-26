@@ -44,8 +44,9 @@ var SE_THORNS = load("res://Sound/443806__deathscyp__spiketrap.wav")
 var SE_WALL = load("res://Sound/425090__neospica__pressurized-door-opening.wav")
 var SE_LED = load("res://Sound/154953__keykrusher__microwave-beep.wav")
 var SE_PLATFORM = load("res://Sound/28341__xsub__5400-spin-down.wav")
+var SE_EVIL_LAUGH = load("res://Sound/Evil_Laugh_Male_6-Himan-1359990674.wav")
 
-onready var base_master = 0
+onready var base_master = -10
 onready var base_bgm = 0
 onready var base_se = 0
 
