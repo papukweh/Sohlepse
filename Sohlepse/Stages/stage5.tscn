@@ -18,31 +18,17 @@
 PLAYERS = 2
 MAX_CLONES = 0
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Background" type="Sprite" parent="." index="0"]
 
-position = Vector2( -368.796, 464.207 )
-scale = Vector2( 0.353516, 0.353516 )
+position = Vector2( -349.118, 262.93 )
+scale = Vector2( 0.221838, 0.281884 )
 z_index = -1
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+region_enabled = true
+region_rect = Rect2( 0, 0, 3070, 2768 )
+_sections_unfolded = [ "Region", "Z Index" ]
 
-[node name="Sprite3" type="Sprite" parent="." index="1"]
-
-position = Vector2( -368.808, 949.603 )
-scale = Vector2( 0.353516, 0.353516 )
-z_index = -1
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite2" type="Sprite" parent="." index="2"]
-
-position = Vector2( -368.796, -25.7925 )
-scale = Vector2( 0.353516, 0.353516 )
-z_index = -1
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="TileMap" type="TileMap" parent="." index="3"]
+[node name="TileMap" type="TileMap" parent="." index="1"]
 
 mode = 0
 tile_set = ExtResource( 3 )
@@ -66,7 +52,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Real" type="ReferenceRect" parent="." index="4"]
+[node name="Real" type="ReferenceRect" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -74,7 +60,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -700.0
 margin_top = -128.0
-margin_right = 3.0
 margin_bottom = 721.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -84,7 +69,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Mirrored" type="ReferenceRect" parent="." index="5"]
+[node name="Mirrored" type="ReferenceRect" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -92,7 +77,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -700.0
 margin_top = -127.0
-margin_right = 3.0
 margin_bottom = 724.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -102,13 +86,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Players" type="Node" parent="." index="6"]
+[node name="Players" type="Node" parent="." index="4"]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( -476.683, 605.436 )
 
-[node name="Reality" type="Node" parent="." index="7"]
+[node name="Reality" type="Node" parent="." index="5"]
 
 [node name="Objects" type="Node" parent="Reality" index="0"]
 
@@ -192,21 +176,20 @@ position = Vector2( -73.1035, 285.214 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Endgoal" parent="." index="8" instance=ExtResource( 10 )]
+[node name="Endgoal" parent="." index="6" instance=ExtResource( 10 )]
 
 position = Vector2( -123.24, 76.7144 )
 
-[node name="Limit" parent="." index="9" instance=ExtResource( 11 )]
+[node name="Limit" parent="." index="7" instance=ExtResource( 11 )]
 
 position = Vector2( 10, 1000 )
 scale = Vector2( 33.9487, 1 )
 
-[node name="Event" parent="." index="10" instance=ExtResource( 12 )]
+[node name="Event" parent="." index="8" instance=ExtResource( 12 )]
 
 events = [ Vector2( -475, 605 ), Vector2( -70, 480 ), Vector2( -650, 200 ), Vector2( -70, 80 ) ]
 labels = [ "Terei um problema se não conseguir desativar esses espinhos", " ", "Caixas salvam o dia novamente!", " " ]
 pos = [ Vector2( -600, 10 ), Vector2( 0, 0 ), Vector2( -620, 5 ), Vector2( 0, 0 ) ]
 areascale = [ Vector2( 2, 1 ), Vector2( -1.25, -1 ), Vector2( 1, 1 ), Vector2( -1.25, 1 ) ]
-playanyway = false
 
 

@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Manager/Dual_screen.gd" type="Script" id=1]
-[ext_resource path="res://Manager/Camera2D.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Florest_bg.png" type="Texture" id=2]
+[ext_resource path="res://Assets/background.png" type="Texture" id=3]
+[ext_resource path="res://Manager/Camera2D.gd" type="Script" id=4]
+[ext_resource path="res://Assets/backgroundV.png" type="Texture" id=5]
 
 [sub_resource type="Gradient" id=1]
 
@@ -82,7 +85,47 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 _sections_unfolded = [ "Audio Listener", "Rendering" ]
 
-[node name="Camera2D" type="Camera2D" parent="ViewportsV/C1/Viewport1" index="0"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ViewportsV/C1/Viewport1" index="0"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ViewportsV/C1/Viewport1/ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 0.5, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Forest" type="Sprite" parent="ViewportsV/C1/Viewport1/ParallaxBackground/ParallaxLayer" index="0"]
+
+position = Vector2( 500, -100 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6144, 1080 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Lab" type="Sprite" parent="ViewportsV/C1/Viewport1/ParallaxBackground/ParallaxLayer" index="1"]
+
+position = Vector2( 500, 524.21 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+offset = Vector2( 100, -1030 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 12288, 1536 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="ViewportsV/C1/Viewport1" index="1"]
 
 editor/display_folded = true
 anchor_mode = 1
@@ -107,7 +150,7 @@ drag_margin_bottom = 0.0
 editor_draw_screen = false
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Smoothing", "Transform", "Z Index" ]
 
 [node name="C2" type="ViewportContainer" parent="ViewportsV" index="1"]
@@ -180,8 +223,48 @@ drag_margin_bottom = 0.0
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing", "Transform", "Z Index" ]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ViewportsV/C2/Viewport2" index="1"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ViewportsV/C2/Viewport2/ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 0.5, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Forest" type="Sprite" parent="ViewportsV/C2/Viewport2/ParallaxBackground/ParallaxLayer" index="0"]
+
+position = Vector2( 500, 100 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6144, 1080 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Lab" type="Sprite" parent="ViewportsV/C2/Viewport2/ParallaxBackground/ParallaxLayer" index="1"]
+
+position = Vector2( 500, 524.21 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+offset = Vector2( 100, -1030 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 12288, 1536 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="Filter" type="Polygon2D" parent="ViewportsV" index="2"]
 
@@ -302,8 +385,47 @@ drag_margin_bottom = 0.0
 editor_draw_screen = false
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Smoothing", "Transform", "Z Index" ]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ViewportsH/C1/Viewport1" index="1"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ViewportsH/C1/Viewport1/ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 0.5, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Forest" type="Sprite" parent="ViewportsH/C1/Viewport1/ParallaxBackground/ParallaxLayer" index="0"]
+
+position = Vector2( 0, 100 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6144, 1080 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Lab" type="Sprite" parent="ViewportsH/C1/Viewport1/ParallaxBackground/ParallaxLayer" index="1"]
+
+position = Vector2( 500, 900 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 100, -1030 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 3070, 5536 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="C2" type="ViewportContainer" parent="ViewportsH" index="1"]
 
@@ -351,7 +473,47 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 _sections_unfolded = [ "Audio Listener", "GUI", "Physics", "Render Target", "Rendering", "Shadow Atlas" ]
 
-[node name="Camera2D" type="Camera2D" parent="ViewportsH/C2/Viewport2" index="0"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ViewportsH/C2/Viewport2" index="0"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ViewportsH/C2/Viewport2/ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 0.5, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Forest" type="Sprite" parent="ViewportsH/C2/Viewport2/ParallaxBackground/ParallaxLayer" index="0"]
+
+position = Vector2( 0, 100 )
+texture = ExtResource( 2 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 0, 0, 6144, 1080 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Lab" type="Sprite" parent="ViewportsH/C2/Viewport2/ParallaxBackground/ParallaxLayer" index="1"]
+
+position = Vector2( 500, 900 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 100, -1030 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 3070, 5536 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="ViewportsH/C2/Viewport2" index="1"]
 
 anchor_mode = 1
 rotating = false
@@ -375,7 +537,7 @@ drag_margin_bottom = 0.0
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing", "Transform", "Z Index" ]
 
 [node name="Filter" type="Polygon2D" parent="ViewportsH" index="2"]

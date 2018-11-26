@@ -10,6 +10,19 @@ var recorder = null
 var pan = null
 
 func _ready():
+	print("pai: " + self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground").get_name())
+	if ACT == 2:
+		self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Lab").hide()
+		self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Lab").hide()
+		if self.get_name() == "stage13" or self.get_name() == "stage23":
+			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").set_flip_v(true)
+		if self.get_name() == "stage18":
+			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.x = -160
+			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.y = -150
+		if self.get_name() == "stage22":
+			self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Forest").position.x = 670
+			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.x = 1100
+			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.y = -100
 	global.restarting = false
 	if ACT == 3 and self.get_name() != "stage1":
 		recorder = preload("res://Player/Recorder.tscn")

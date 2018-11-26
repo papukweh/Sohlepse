@@ -222,6 +222,5 @@ events = [ Vector2( -2320, 240 ), Vector2( -2320, 240 ), Vector2( -320, 360 ) ]
 labels = [ "Um laboratório no meio do nada é algo bem suspeito", " ", "Sinto que deveria conhecer aquele lugar" ]
 pos = [ Vector2( -2500, 0 ), Vector2( 0, 0 ), Vector2( -560, 110 ) ]
 areascale = [ Vector2( 1, -5 ), Vector2( 1, -5 ), Vector2( 1, -5 ) ]
-playanyway = false
 
 

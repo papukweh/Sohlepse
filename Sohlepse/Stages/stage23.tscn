@@ -13,7 +13,7 @@
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=12]
 
-[node name="stage23" instance=ExtResource( 1 )]
+[node name="stage23" index="0" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -284,6 +284,5 @@ events = [ Vector2( 1100, -350 ), Vector2( 385, -64 ) ]
 labels = [ "Tinha alguém me esperando em casa?", "Não consigo me lembrar.." ]
 pos = [ Vector2( 700, -480 ), Vector2( 50, -250 ) ]
 areascale = [ Vector2( 1, -5 ), Vector2( 1, -5 ) ]
-playanyway = false
 
 
