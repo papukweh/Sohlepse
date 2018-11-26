@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Objects/ButtonInst.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Hazards/WaterArea.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Stages/Timer.gd" type="Script" id=18]
 
 [node name="stage32" instance=ExtResource( 1 )]
 
@@ -813,5 +814,15 @@ position = Vector2( 6048, -992 )
 [node name="Endgoal" parent="." index="5" instance=ExtResource( 17 )]
 
 position = Vector2( 6435.56, -1057.06 )
+
+[node name="Timer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 91.0
+one_shot = false
+autostart = true
+script = ExtResource( 18 )
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
 
 

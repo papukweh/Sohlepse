@@ -8,6 +8,7 @@ export var invert = false
 export(Array, bool) var hasTutorial = [false, false, false]
 var recorder = null
 var pan = null
+var FINALSTAGE = "stage32"
 
 func _ready():
 	global.restarting = false
@@ -30,6 +31,9 @@ func _ready():
 		p4.input = 7
 		p4.visible = false
 		p4.ready()
+		if self.get_name() == FINALSTAGE:
+			var p5 = pan.get_node("Panel5")
+			p5.visible = true;
 	if hasTutorial:
 		for i in range(3):
 			if hasTutorial[i]:
