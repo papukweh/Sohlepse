@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/X.png" type="Texture" id=4]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Menus/Sure.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Menus/Controls.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Menus/Options.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -17,7 +17,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="StageManager" type="Node2D"]
+[node name="StageManager" type="Node2D" index="0"]
 
 z_index = 20
 script = ExtResource( 1 )
@@ -102,12 +102,12 @@ margin_top = -348.0
 margin_right = 467.0
 margin_bottom = -280.0
 
-[node name="Controls" parent="Tutoriais" index="8" instance=ExtResource( 7 )]
+[node name="Options" parent="Tutoriais" index="8" instance=ExtResource( 7 )]
 
 visible = false
-margin_left = 220.0
-margin_top = -351.0
-margin_right = 591.0
-margin_bottom = -112.0
+margin_left = -135.0
+margin_top = -585.0
+margin_right = 951.0
+margin_bottom = 105.0
 
 
