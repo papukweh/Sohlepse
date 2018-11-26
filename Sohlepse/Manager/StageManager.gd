@@ -28,17 +28,17 @@ func _ready():
 	
 	if global.current_stage < 13:
 		rand_bg = global.ACT1_BG2
-		volume = 8
+		volume = -2
 	elif global.current_stage < 25:
 		rand_bg = global.ACT2_BG2
-		volume = -5
+		volume = -10
 	else:
 		rand_bg = global.ACT3_BG2
-		volume = -3
-	$Timer.wait_time = rand_range(10,30)
+		volume = -6
+	$Timer.wait_time = rand_range(25,50)
 	$Timer.start()
 
 func _on_Timer_timeout():
 	global.play_se(rand_bg, volume)
-	$Timer.wait_time = rand_range(10,30)
+	$Timer.wait_time = rand_range(25,50)
 	$Timer.start()
