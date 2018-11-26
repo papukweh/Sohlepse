@@ -5,6 +5,9 @@ func _ready():
 	$Controls.options = true
 	$Controls/Voltar.disabled = true
 	$Controls/Voltar.hide()
+	$Controls2.options = true
+	$Controls2/Voltar.disabled = true
+	$Controls2/Voltar.hide()
 	
 	if get_parent().get_name() == "Tutoriais":
 		pause = true

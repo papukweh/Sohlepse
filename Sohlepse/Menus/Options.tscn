@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Menus/Options.gd" type="Script" id=1]
 [ext_resource path="res://Menus/BG.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/OldSansBlack.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Menus/Controls.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menus/ControlsJoy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -45,7 +46,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Options" type="Control"]
+[node name="Options" type="Control" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -349,16 +350,23 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="Controles2" type="Label" parent="Controls" index="13"]
+[node name="Controls2" parent="." index="4" instance=ExtResource( 5 )]
+
+margin_left = 655.0
+margin_top = 448.0
+margin_right = 1026.0
+margin_bottom = 687.0
+
+[node name="Controles2" type="Label" parent="Controls2" index="17"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
-margin_top = 261.0
+margin_top = -34.0
 margin_right = 366.0
-margin_bottom = 336.0
+margin_bottom = 41.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -378,32 +386,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
-
-[node name="(ops)" type="Label" parent="Controls" index="14"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -38.0
-margin_top = 336.0
-margin_right = 185.0
-margin_bottom = 408.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
-text = "(nothing here yet)"
-align = 1
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "Theme", "custom_fonts", "custom_styles" ]
 
 [connection signal="mouse_entered" from="Back" to="." method="_on_Back_mouse_entered"]
 

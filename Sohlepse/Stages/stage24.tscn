@@ -18,7 +18,7 @@
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=17]
 
-[node name="stage24" index="0" instance=ExtResource( 1 )]
+[node name="stage24" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -51,11 +51,11 @@ __meta__ = {
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 2434.74, 67.8692 )
+position = Vector2( 707.327, -289.553 )
 
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 2589.03, 69.7922 )
+position = Vector2( -570.998, 865.902 )
 
 [node name="Reality" type="Node" parent="." index="2"]
 
@@ -97,8 +97,8 @@ cycle = 10.0
 forest = 1
 
 [node name="MovingThorns" parent="Reality/Objects" index="4" groups=[
-"Lever1",
 "Lever5",
+"Lever1",
 ] instance=ExtResource( 7 )]
 
 position = Vector2( 947.045, -233.007 )
@@ -143,8 +143,8 @@ forest = 1
 big = 0
 
 [node name="Wall3" parent="Reality/Objects" index="10" groups=[
-"Lever1",
 "Lever5",
+"Lever1",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 1263.57, -415.558 )
@@ -164,8 +164,8 @@ begin = 1
 forest = 1
 
 [node name="Wall1" parent="Reality/Objects" index="12" groups=[
-"ButtonInst3",
 "ButtonInst2",
+"ButtonInst3",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 2439.15, -274.419 )
