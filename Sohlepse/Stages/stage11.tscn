@@ -17,7 +17,7 @@
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=16]
 
-[node name="stage11" type="Node"]
+[node name="stage11" type="Node" index="0"]
 
 script = ExtResource( 1 )
 ACT = 2
