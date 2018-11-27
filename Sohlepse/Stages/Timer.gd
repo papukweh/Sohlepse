@@ -2,19 +2,23 @@ extends Timer
 var pan = null
 var ptimer = null
 var played = false
+var anim = null
 
 func _ready():
 	pan = get_tree().get_root().get_child(1).get_node("Tutoriais")
 	ptimer = pan.get_node("Panel5")
-	pass
+	anim = pan.get_node("Bomb")
 
 func _process(delta):
 	if time_left <= 2 and !played:
 		print("ue")
-		pan.get_node("Bomb").play("Booom")
+		global.play_se(global.SE_EXPLOSION, 3)
+		anim.play("Booom")
 		played = true
 	ptimer.label = time_the_timer()
 	ptimer.ready()
+	if !anim.is_playing():
+		anim.play("Flash")
 	
 func time_the_timer():
 	if time_left < 10:
