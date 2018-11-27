@@ -20,7 +20,7 @@ animations = [ {
 [sub_resource type="Animation" id=2]
 
 resource_name = "Booom"
-length = 2.0
+length = 2.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -30,7 +30,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 2.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -165,7 +165,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 1, 0, 0, 0 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="PauseMenu" parent="Tutoriais" index="9" instance=ExtResource( 5 )]
 

@@ -10,14 +10,14 @@ func _ready():
 	anim = pan.get_node("Bomb")
 
 func _process(delta):
-	if time_left <= 2 and !played:
+	if time_left <= 1.5 and !played:
 		global.stop_bgm()
 		global.play_se(global.SE_EXPLOSION, 3)
 		anim.play("Booom")
 		played = true
 	ptimer.label = time_the_timer()
 	ptimer.ready()
-	if !anim.is_playing():
+	if !anim.is_playing() and !played:
 		anim.play("Flash")
 	
 func time_the_timer():
