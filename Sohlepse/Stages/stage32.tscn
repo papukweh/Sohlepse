@@ -20,7 +20,7 @@
 [ext_resource path="res://Stages/Timer.gd" type="Script" id=18]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=19]
 
-[node name="stage32" instance=ExtResource( 1 )]
+[node name="stage32" index="0" instance=ExtResource( 1 )]
 
 ACT = 3
 MAX_CLONES = 0
@@ -830,7 +830,7 @@ script = ExtResource( 18 )
 
 events = [ Vector2( -3600, 200 ), Vector2( -2900, 200 ), Vector2( -2200, 200 ), Vector2( -560, 200 ), Vector2( 2800, -1200 ), Vector2( 3440, -1200 ), Vector2( 4240, -960 ) ]
 labels = [ "Minha família...", "Minha vida...", "Não vou deixar você tomá-las!", " ", "Apenas um de nós", "Pode sair daqui vivo...", "E serei eu!!" ]
-pos = [ Vector2( -3680, 0 ), Vector2( -3200, 0 ), Vector2( -2240, 30 ), Vector2( 0, 0 ), Vector2( 2640, -1400 ), Vector2( 3360, -1400 ), Vector2( 4320, -1160 ) ]
+pos = [ Vector2( -3400, 0 ), Vector2( -3000, 0 ), Vector2( -2000, 30 ), Vector2( 0, 0 ), Vector2( 2640, -1400 ), Vector2( 3360, -1400 ), Vector2( 4320, -1160 ) ]
 areascale = [ Vector2( 2, -5 ), Vector2( 2, -5 ), Vector2( 2, -5 ), Vector2( 2, -5 ), Vector2( 2, -5 ), Vector2( 2, -5 ), Vector2( 2, -5 ) ]
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]

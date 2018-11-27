@@ -55,7 +55,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 0, 0, 0 ), Color( 1, 0, 0, 0.215686 ), Color( 1, 0, 0, 0 ) ]
 }
 
-[node name="StageManager" type="Node2D" index="0"]
+[node name="StageManager" type="Node2D"]
 
 z_index = 20
 script = ExtResource( 1 )
@@ -138,9 +138,19 @@ scale = Vector2( 0.629245, 0.385542 )
 frames = SubResource( 1 )
 animation = "default"
 
-[node name="ColorRect" type="ColorRect" parent="Tutoriais" index="7"]
+[node name="Bomb" type="AnimationPlayer" parent="Tutoriais" index="7"]
 
-visible = false
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Booom = SubResource( 2 )
+anims/Flash = SubResource( 3 )
+blend_times = [  ]
+
+[node name="ColorRect" type="ColorRect" parent="Tutoriais" index="8"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -155,18 +165,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 1, 1, 1, 0 )
-
-[node name="Bomb" type="AnimationPlayer" parent="Tutoriais" index="8"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Booom = SubResource( 2 )
-anims/Flash = SubResource( 3 )
-blend_times = [  ]
+color = Color( 1, 0, 0, 0 )
 
 [node name="PauseMenu" parent="Tutoriais" index="9" instance=ExtResource( 5 )]
 

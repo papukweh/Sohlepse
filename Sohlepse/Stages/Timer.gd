@@ -12,6 +12,7 @@ func _ready():
 func _process(delta):
 	if time_left <= 2 and !played:
 		print("ue")
+		global.stop_bgm()
 		global.play_se(global.SE_EXPLOSION, 3)
 		anim.play("Booom")
 		played = true
