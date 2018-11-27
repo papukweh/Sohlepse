@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/background.png" type="Texture" id=2]
-[ext_resource path="res://tileset_test.tres" type="TileSet" id=3]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=7]
+[ext_resource path="res://tileset_test.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Stages/Tutorial/Panel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=6]
 
 [node name="stage1" instance=ExtResource( 1 )]
 
@@ -14,41 +13,11 @@ ACT = 3
 MAX_CLONES = 0
 hasTutorial = [ true, true, true ]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
-
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-scroll_offset = Vector2( 0, 0 )
-scroll_base_offset = Vector2( 0, 0 )
-scroll_base_scale = Vector2( 1, 1 )
-scroll_limit_begin = Vector2( 0, 0 )
-scroll_limit_end = Vector2( 0, 0 )
-scroll_ignore_camera_zoom = true
-_sections_unfolded = [ "Scroll" ]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
-
-motion_scale = Vector2( 0.5, 0.2 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
-
-position = Vector2( 227.566, 54.3873 )
-scale = Vector2( 0.132666, 0.174095 )
-z_index = -1
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="TileMap" type="TileMap" parent="." index="1"]
+[node name="TileMap" type="TileMap" parent="." index="0"]
 
 position = Vector2( -529.323, -108.949 )
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -69,7 +38,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Real" type="ReferenceRect" parent="." index="2"]
+[node name="Real" type="ReferenceRect" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -90,33 +59,33 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Players" type="Node" parent="." index="3"]
+[node name="Players" type="Node" parent="." index="2"]
 
-[node name="Player1" parent="Players" index="0" instance=ExtResource( 4 )]
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 410, 500 )
 
-[node name="Endgoal" parent="." index="4" instance=ExtResource( 5 )]
+[node name="Endgoal" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 768.341, 500.01 )
 scale = Vector2( -1, 1 )
 
-[node name="Panel0" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Panel0" parent="." index="4" instance=ExtResource( 5 )]
 
 input = 1
 label = "Mover"
 
-[node name="Panel1" parent="." index="6" instance=ExtResource( 6 )]
+[node name="Panel1" parent="." index="5" instance=ExtResource( 5 )]
 
 label = "Interagir"
 
-[node name="Panel2" parent="." index="7" instance=ExtResource( 6 )]
+[node name="Panel2" parent="." index="6" instance=ExtResource( 5 )]
 
 margin_bottom = 60.0
 input = 3
 label = "Pausa"
 
-[node name="Event" parent="." index="8" instance=ExtResource( 7 )]
+[node name="Event" parent="." index="7" instance=ExtResource( 6 )]
 
 _sections_unfolded = [ "Transform" ]
 events = [ Vector2( 410, 500 ), Vector2( 700, 495 ) ]

@@ -23,6 +23,14 @@ func _ready():
 			self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Forest").position.x = 670
 			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.x = 1100
 			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.y = -100
+	elif ACT == 3:
+		self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Lab").position.x = 200
+		if self.get_name() == "stage26":
+			self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Lab").scale.x = 1
+			self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Lab").scale.y = 1
+		if self.get_name() == "stage32":
+			self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Lab").hide()
+			self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Forest").hide()
 	global.restarting = false
 	if ACT == 3 and self.get_name() != "stage1":
 		recorder = preload("res://Player/Recorder.tscn")

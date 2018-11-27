@@ -20,6 +20,7 @@
 ACT = 2
 PLAYERS = 2
 MODE = 2
+invert = true
 
 [node name="Real" type="ReferenceRect" parent="." index="0"]
 
@@ -193,7 +194,7 @@ position = Vector2( 520, 610 )
 
 [node name="Lava8" parent="Reality/Hazards" index="7" instance=ExtResource( 9 )]
 
-position = Vector2( 930, 610 )
+position = Vector2( 928, 610 )
 
 [node name="Lava9" parent="Reality/Hazards" index="8" instance=ExtResource( 9 )]
 

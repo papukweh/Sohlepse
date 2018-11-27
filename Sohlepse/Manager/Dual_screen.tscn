@@ -19,7 +19,7 @@ gradient = SubResource( 1 )
 width = 1000
 _sections_unfolded = [ "Resource" ]
 
-[node name="Setup" type="Node2D"]
+[node name="Setup" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -409,7 +409,14 @@ motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
 
-[node name="Forest" type="Sprite" parent="ViewportsH/C1/Viewport1/ParallaxBackground/ParallaxLayer" index="0"]
+[node name="Lab2" type="Sprite" parent="ViewportsH/C1/Viewport1/ParallaxBackground/ParallaxLayer" index="0"]
+
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 12288, 1536 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="Forest" type="Sprite" parent="ViewportsH/C1/Viewport1/ParallaxBackground/ParallaxLayer" index="1"]
 
 position = Vector2( 0, 100 )
 texture = ExtResource( 2 )
@@ -417,7 +424,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 6144, 1080 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="Lab" type="Sprite" parent="ViewportsH/C1/Viewport1/ParallaxBackground/ParallaxLayer" index="1"]
+[node name="Lab" type="Sprite" parent="ViewportsH/C1/Viewport1/ParallaxBackground/ParallaxLayer" index="2"]
 
 position = Vector2( 500, 900 )
 scale = Vector2( 0.5, 0.5 )

@@ -69,6 +69,7 @@ position = Vector2( 477.011, 324.767 )
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 1151.91, 127.538 )
+invert_horizontal = -1
 
 [node name="Reality" type="Node2D" parent="." index="4"]
 
