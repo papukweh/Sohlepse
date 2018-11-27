@@ -7,4 +7,7 @@ export var label = ""
 
 func ready():
 	$Container/Label.text = label
-	$Container/Sprite.texture = load("res://Assets/"+str(vector[input])+".png")       
+	if input == 8:
+		$Container/Sprite.texture = null
+	else:
+		$Container/Sprite.texture = load("res://Assets/"+str(vector[input])+".png")       
