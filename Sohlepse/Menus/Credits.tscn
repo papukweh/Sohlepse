@@ -22,7 +22,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Credits" type="Control"]
+[node name="Credits" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -70,7 +70,7 @@ do Instituto de Matemática e Estatística da Universidade de São Paulo
 Foi inteiramente desenvolvido por:
 Larissa Goto Sala
 Pedro Paulo de Queiroz Bambace
-Nathalia Orlandi Borin
+N	athalia Orlandi Borin
 
 
 
