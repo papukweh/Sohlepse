@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Manager/StageManager.gd" type="Script" id=1]
 [ext_resource path="res://Manager/Dual_screen.tscn" type="PackedScene" id=2]
@@ -33,12 +33,30 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=3]
 
-resource_name = "Flash"
+resource_name = "Fadeout"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
 length = 2.0
 loop = false
 step = 0.1
@@ -146,7 +164,8 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Booom = SubResource( 2 )
-anims/Flash = SubResource( 3 )
+anims/Fadeout = SubResource( 3 )
+anims/Flash = SubResource( 4 )
 blend_times = [  ]
 
 [node name="ColorRect" type="ColorRect" parent="Tutoriais" index="8"]
@@ -165,7 +184,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 1, 1, 1, 0 )
+color = Color( 0, 0, 0, 0 )
 
 [node name="PauseMenu" parent="Tutoriais" index="9" instance=ExtResource( 5 )]
 

@@ -1,0 +1,179 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Stages/Cutscenes/Cutscene4.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Florest_bg.png" type="Texture" id=2]
+[ext_resource path="res://tileset_forest.tres" type="TileSet" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/X.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Endgoal.png" type="Texture" id=6]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 26.7753, 158.356 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Fadeout"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="Cutscene4" type="Node2D" index="0"]
+
+position = Vector2( -239.735, -3.4248 )
+script = ExtResource( 1 )
+
+[node name="Floresta" type="Sprite" parent="." index="0"]
+
+position = Vector2( 635.015, 183.879 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 655360, 7, 0, 655361, 7, 0, 655362, 7, 0, 655363, 7, 0, 655364, 7, 0, 655365, 7, 0, 655366, 7, 0, 655367, 7, 0, 655368, 7, 0, 655369, 7, 0, 655370, 7, 0, 655371, 7, 0, 655372, 7, 0, 655373, 7, 0, 655374, 7, 0, 655375, 7, 0, 655376, 7, 0, 655377, 7, 0, 655378, 7, 0, 655379, 7, 0, 655380, 7, 0, 655381, 7, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 155.087, 539.178 )
+
+[node name="Player2" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 1234.43, 534.953 )
+
+[node name="Home" type="Sprite" parent="." index="4"]
+
+position = Vector2( 1343.91, 403.145 )
+scale = Vector2( 2.46973, 2.65674 )
+texture = ExtResource( 5 )
+
+[node name="Endgoal" type="Sprite" parent="." index="5"]
+
+position = Vector2( 1242.53, 534.721 )
+texture = ExtResource( 6 )
+
+[node name="Exit" type="Area2D" parent="." index="6"]
+
+position = Vector2( 1097.86, 577.715 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" index="0"]
+
+position = Vector2( -16.7786, -37.1213 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Exit" index="1"]
+
+position = Vector2( -294.704, -49.7077 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Exit" index="2"]
+
+position = Vector2( -188.23, -50.4973 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Exit" index="3"]
+
+position = Vector2( -762.252, -42.102 )
+shape = SubResource( 1 )
+
+[node name="Event" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 241.683, 7.5526 )
+z_index = 3
+_sections_unfolded = [ "Transform", "Z Index" ]
+events = [ Vector2( -64, 576 ), Vector2( 150, 576 ), Vector2( 350, 576 ), Vector2( 520, 576 ) ]
+labels = [ "Você não me deu outra escolha...", "Agora realmente é o fim", "Lar, doce lar", "... Querida?" ]
+pos = [ Vector2( 400, 256 ), Vector2( 400, 256 ), Vector2( 400, 256 ), Vector2( 400, 256 ) ]
+areascale = [ Vector2( 0.5, -2 ), Vector2( 0.2, -2 ), Vector2( 0.2, -2 ), Vector2( 0.2, -2 ) ]
+cutscene = true
+
+[node name="Event2" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 239.166, 5.03507 )
+z_index = 3
+_sections_unfolded = [ "Transform", "Z Index" ]
+events = [ Vector2( 900, 576 ), Vector2( 700, 576 ) ]
+labels = [ "Você voltou!", "O que houve?" ]
+pos = [ Vector2( 704, 448 ), Vector2( 704, 448 ) ]
+areascale = [ Vector2( -1, -5 ), Vector2( 1, -5 ), Vector2( 1, -5 ) ]
+red = true
+
+[node name="Timer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 1.5
+one_shot = true
+autostart = false
+
+[node name="ColorRect" type="ColorRect" parent="." index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -126.0
+margin_top = -177.0
+margin_right = 1627.0
+margin_bottom = 851.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="11"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Fadeout = SubResource( 2 )
+blend_times = [  ]
+
+[connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

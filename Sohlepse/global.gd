@@ -136,6 +136,9 @@ func recalibrate():
 
 func stop_bgm():
 	music.stop()
+	
+func stop_siren():
+	audio[0].stop()
 
 func play_bgm():
 	if current_stage < 13:

@@ -19,6 +19,10 @@ func _process(delta):
 			elif global.current_stage == 25:
 				get_tree().change_scene("res://Stages/Cutscenes/Cutscene2.tscn")
 				return
+			elif global.current_stage > 32:
+				print("topa")
+				get_parent().get_node("Timer").fadeout()
+				return
 			get_tree().reload_current_scene()
 
 func _physics_process(delta):
