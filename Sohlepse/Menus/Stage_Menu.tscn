@@ -24,7 +24,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Stage_Menu" type="Control"]
+[node name="Stage_Menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -51,6 +51,7 @@ _sections_unfolded = [ "Texture", "Z Index" ]
 
 [node name="Batch1" type="ReferenceRect" parent="." index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -418,7 +419,6 @@ margin_bottom = 336.0
 
 [node name="Batch6" type="ReferenceRect" parent="." index="6"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -437,17 +437,17 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="31" parent="Batch6" index="0" instance=ExtResource( 3 )]
 
-margin_left = 39.0
-margin_top = 31.0
-margin_right = 198.0
-margin_bottom = 146.0
+margin_left = 125.0
+margin_top = 72.0
+margin_right = 284.0
+margin_bottom = 187.0
 
 [node name="32" parent="Batch6" index="1" instance=ExtResource( 3 )]
 
-margin_left = 279.0
-margin_top = 31.0
-margin_right = 438.0
-margin_bottom = 146.0
+margin_left = 450.0
+margin_top = 76.0
+margin_right = 609.0
+margin_bottom = 191.0
 
 [node name="Prev" parent="Batch6" index="2" instance=ExtResource( 5 )]
 
