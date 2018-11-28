@@ -24,7 +24,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Stage_Menu" type="Control" index="0"]
+[node name="Stage_Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -51,7 +51,6 @@ _sections_unfolded = [ "Texture", "Z Index" ]
 
 [node name="Batch1" type="ReferenceRect" parent="." index="1"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -419,6 +418,7 @@ margin_bottom = 336.0
 
 [node name="Batch6" type="ReferenceRect" parent="." index="6"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
