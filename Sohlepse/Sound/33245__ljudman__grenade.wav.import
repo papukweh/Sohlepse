@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/33245__ljudman__grenade.wav-2cd9bda08ccf2ff86d774e897076ec8f.sample"
+
+[deps]
+
+source_file="res://Sound/33245__ljudman__grenade.wav"
+dest_files=[ "res://.import/33245__ljudman__grenade.wav-2cd9bda08ccf2ff86d774e897076ec8f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

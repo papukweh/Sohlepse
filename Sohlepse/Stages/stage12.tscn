@@ -139,7 +139,6 @@ position = Vector2( 990, 865 )
 
 position = Vector2( 255, -464 )
 scale = Vector2( 1, 10.5 )
-
 [node name="Wall7" parent="Reality/Objects" index="1" groups=[
 "Button5",
 ] instance=ExtResource( 4 )]
@@ -150,6 +149,7 @@ scale = Vector2( 1, 10.5 )
 [node name="Wall3" parent="Reality/Objects" index="2" groups=[
 "Button1",
 "Button4",
+"Button1",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 2112, -495.592 )
@@ -211,6 +211,7 @@ names = [ "Button4", "Button4.1" ]
 [node name="Button3" parent="Reality/Objects" index="9" groups=[
 "Button3.1",
 "Button3",
+"Button3.1",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 2784, -155 )
@@ -315,6 +316,8 @@ activation = 1
 "Lever1",
 "Lever8",
 "Lever5",
+"Lever8",
+"Lever1",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 4096.51, -620.034 )
@@ -404,7 +407,6 @@ position = Vector2( 3040, -160 )
 position = Vector2( 3168, -160 )
 
 [node name="Thorns" parent="Reality/Hazards" index="15" groups=[
-"Lever3",
 "Lever2",
 "Lever6",
 "Lever4",
@@ -414,7 +416,6 @@ position = Vector2( 3168, -160 )
 position = Vector2( 3551.98, -232.413 )
 
 [node name="Thorns9" parent="Reality/Hazards" index="16" groups=[
-"Lever3",
 "Lever2",
 "Lever6",
 "Lever4",
@@ -424,7 +425,6 @@ position = Vector2( 3551.98, -232.413 )
 position = Vector2( 3423.98, -232.413 )
 
 [node name="Thorns2" parent="Reality/Hazards" index="17" groups=[
-"Lever3",
 "Lever2",
 "Lever6",
 "Lever4",
@@ -434,7 +434,6 @@ position = Vector2( 3423.98, -232.413 )
 position = Vector2( 3615.98, -232.413 )
 
 [node name="Thorns8" parent="Reality/Hazards" index="18" groups=[
-"Lever3",
 "Lever2",
 "Lever6",
 "Lever4",
@@ -444,7 +443,6 @@ position = Vector2( 3615.98, -232.413 )
 position = Vector2( 3487.98, -232.413 )
 
 [node name="Thorns3" parent="Reality/Hazards" index="19" groups=[
-"Lever3",
 "Lever2",
 "Lever6",
 "Lever4",
@@ -454,7 +452,6 @@ position = Vector2( 3487.98, -232.413 )
 position = Vector2( 3679.98, -232.413 )
 
 [node name="Thorns4" parent="Reality/Hazards" index="20" groups=[
-"Lever3",
 "Lever2",
 "Lever6",
 "Lever4",
@@ -464,7 +461,6 @@ position = Vector2( 3679.98, -232.413 )
 position = Vector2( 3743.98, -232.413 )
 
 [node name="Thorns6" parent="Reality/Hazards" index="21" groups=[
-"Lever3",
 "Lever2",
 "Lever6",
 "Lever4",
@@ -474,7 +470,6 @@ position = Vector2( 3743.98, -232.413 )
 position = Vector2( 3871.98, -232.413 )
 
 [node name="Thorns5" parent="Reality/Hazards" index="22" groups=[
-"Lever3",
 "Lever2",
 "Lever6",
 "Lever4",
@@ -484,7 +479,6 @@ position = Vector2( 3871.98, -232.413 )
 position = Vector2( 3807.98, -232.413 )
 
 [node name="Thorns7" parent="Reality/Hazards" index="23" groups=[
-"Lever3",
 "Lever2",
 "Lever6",
 "Lever4",
@@ -572,6 +566,7 @@ position = Vector2( 2368.03, 893.676 )
 [node name="Button9" parent="Mirror/Objects2" index="8" groups=[
 "Button9",
 "Button9.1",
+"Button9",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 2590.28, 893.854 )
@@ -720,6 +715,8 @@ position = Vector2( 1448, 910 )
 "Lever15",
 "Lever10",
 "Lever11",
+"Lever15",
+"Lever10",
 "Lever12",
 "Lever14",
 ] instance=ExtResource( 15 )]
@@ -730,6 +727,8 @@ position = Vector2( 3551.98, 855.643 )
 "Lever15",
 "Lever10",
 "Lever11",
+"Lever15",
+"Lever10",
 "Lever12",
 "Lever14",
 ] instance=ExtResource( 15 )]
@@ -740,6 +739,8 @@ position = Vector2( 3423.98, 855.643 )
 "Lever15",
 "Lever10",
 "Lever11",
+"Lever15",
+"Lever10",
 "Lever12",
 "Lever14",
 ] instance=ExtResource( 15 )]
@@ -750,6 +751,8 @@ position = Vector2( 3615.98, 855.643 )
 "Lever15",
 "Lever10",
 "Lever11",
+"Lever15",
+"Lever10",
 "Lever12",
 "Lever14",
 ] instance=ExtResource( 15 )]
@@ -760,6 +763,8 @@ position = Vector2( 3487.98, 855.643 )
 "Lever15",
 "Lever10",
 "Lever11",
+"Lever15",
+"Lever10",
 "Lever12",
 "Lever14",
 ] instance=ExtResource( 15 )]
@@ -770,6 +775,8 @@ position = Vector2( 3679.98, 855.643 )
 "Lever15",
 "Lever10",
 "Lever11",
+"Lever15",
+"Lever10",
 "Lever12",
 "Lever14",
 ] instance=ExtResource( 15 )]
@@ -780,6 +787,8 @@ position = Vector2( 3743.98, 855.643 )
 "Lever15",
 "Lever10",
 "Lever11",
+"Lever15",
+"Lever10",
 "Lever12",
 "Lever14",
 ] instance=ExtResource( 15 )]
@@ -790,6 +799,8 @@ position = Vector2( 3871.98, 855.643 )
 "Lever15",
 "Lever10",
 "Lever11",
+"Lever15",
+"Lever10",
 "Lever12",
 "Lever14",
 ] instance=ExtResource( 15 )]
@@ -800,6 +811,8 @@ position = Vector2( 3807.98, 855.643 )
 "Lever15",
 "Lever10",
 "Lever11",
+"Lever15",
+"Lever10",
 "Lever12",
 "Lever14",
 ] instance=ExtResource( 15 )]

@@ -95,7 +95,6 @@ names = [ "Wall2Led2" ]
 position = Vector2( 748.709, 62.1187 )
 
 [node name="Button2" parent="Objects" index="4" groups=[
-"Wall2Led1",
 "Mov1",
 ] instance=ExtResource( 6 )]
 
@@ -131,7 +130,6 @@ cycle = 30.0
 "Wall2Led2",
 "Wall2Led1",
 ] instance=ExtResource( 7 )]
-
 position = Vector2( 278.923, 543.32 )
 scale = Vector2( 1, 2.98959 )
 activation = 1

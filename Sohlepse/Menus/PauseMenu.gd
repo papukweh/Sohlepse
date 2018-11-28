@@ -48,7 +48,7 @@ func _process(delta):
 		$Options/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
 		inOptions = true
 		hide()
-		get_parent().get_child(8).show()
+		get_parent().get_node("Options").show()
 	if pressed[Exit]:
 		global.play_se(global.SE_EXIT,-5)
 		inSure = true

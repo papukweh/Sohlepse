@@ -45,6 +45,7 @@ var SE_WALL = load("res://Sound/425090__neospica__pressurized-door-opening.wav")
 var SE_LED = load("res://Sound/154953__keykrusher__microwave-beep.wav")
 var SE_PLATFORM = load("res://Sound/28341__xsub__5400-spin-down.wav")
 var SE_EVIL_LAUGH = load("res://Sound/Evil_Laugh_Male_6-Himan-1359990674.wav")
+var SE_EXPLOSION = load("res://Sound/33245__ljudman__grenade.wav")
 
 onready var base_master = -10
 onready var base_bgm = 0
