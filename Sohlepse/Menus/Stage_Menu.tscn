@@ -445,9 +445,9 @@ margin_bottom = 187.0
 [node name="32" parent="Batch6" index="1" instance=ExtResource( 3 )]
 
 margin_left = 450.0
-margin_top = 76.0
+margin_top = 72.0
 margin_right = 609.0
-margin_bottom = 191.0
+margin_bottom = 187.0
 
 [node name="Prev" parent="Batch6" index="2" instance=ExtResource( 5 )]
 
