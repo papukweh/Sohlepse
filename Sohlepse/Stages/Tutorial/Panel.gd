@@ -9,6 +9,7 @@ func ready():
 	$Container/Label.text = label
 	if input == 8:
 		$Container/Sprite.texture = null
-		$Container/Label.rect_position = Vector2(42,7)
+		$Container/Label.rect_position = Vector2(25,0)
+		$Container/Label.rect_scale = Vector2(1.4, 1.4)
 	else:
 		$Container/Sprite.texture = load("res://Assets/"+str(vector[input])+".png")       

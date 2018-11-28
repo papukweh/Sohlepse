@@ -55,7 +55,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 0, 0, 0 ), Color( 1, 0, 0, 0.215686 ), Color( 1, 0, 0, 0 ) ]
 }
 
-[node name="StageManager" type="Node2D"]
+[node name="StageManager" type="Node2D" index="0"]
 
 z_index = 20
 script = ExtResource( 1 )

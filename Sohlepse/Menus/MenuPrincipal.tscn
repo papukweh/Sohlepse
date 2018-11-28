@@ -38,7 +38,7 @@ __meta__ = {
 
 [node name="BG" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 1.90735e-006, -1 )
+position = Vector2( 1.90735e-06, -1 )
 
 [node name="continue" type="Button" parent="." index="1"]
 
