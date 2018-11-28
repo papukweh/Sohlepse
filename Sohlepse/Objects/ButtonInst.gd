@@ -11,17 +11,17 @@ signal out
 signal triggered
 
 func _ready():
-	print(names)
+	#print(names)
 	if names != null:
-		print("not null")
+		#print("not null")
 		for name in names:
 			for n in get_tree().get_nodes_in_group(name):
-				print("connecting "+sig+" to "+n.get_name())
+				#print("connecting "+sig+" to "+n.get_name())
 				connect("triggered", n, "onTriggered")
 	else:
-		print("is null")
+		#print("is null")
 		for n in get_tree().get_nodes_in_group(sig):
-			print("connecting "+sig+" to "+n.get_name())
+			#print("connecting "+sig+" to "+n.get_name())
 			connect("triggered", n, "onTriggered")
 	$AnimatedSprite.animation = "default"
 	$CollisionShape2D.disabled = false

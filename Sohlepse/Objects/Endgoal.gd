@@ -12,7 +12,7 @@ func _process(delta):
 			global.current_stage += 1
 			global.save()
 			global.clean()
-			print(global.current_stage)
+			#print(global.current_stage)
 			if global.current_stage == 13:
 				get_tree().change_scene("res://Stages/Cutscenes/Cutscene1.tscn")
 				return
@@ -28,9 +28,9 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func _on_Endgoal_body_entered(body):
-	print("etnei")
+	#print("etnei")
 	inbody = body
 
 func _on_Endgoal_body_exited(body):
-	print("sai")
+	#print("sai")
 	inbody = null

@@ -38,6 +38,7 @@ thorn_begin = 1
 motion = Vector2( 0, 0 )
 cycle = 1.0
 forest = 0
+big = 0
 
 [node name="platform" type="RigidBody2D" parent="." index="0" groups=[
 "safe",

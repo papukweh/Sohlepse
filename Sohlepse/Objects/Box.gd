@@ -5,10 +5,12 @@ export var invert_vertical = 1
 var GRAVITY = 700.0 # pixels/second/second
 var DEACCEL = 100.0
 var velocity = Vector2()
+var prevpos = null
 onready var player = null
 onready var objs = Dictionary()
 
 func _ready():
+	prevpos = self.get_position()
 	if invert_vertical == -1:
 		self.scale.y = -1
 
@@ -27,7 +29,7 @@ func _physics_process(delta):
 	var left = left()
 	#print(left)
 	for l in left:
-		print(l.get_name())
+		#print(l.get_name())
 		if l.get_name() == "Siding":
 			player = l.get_parent().get_parent()
 			break
@@ -59,31 +61,12 @@ func _physics_process(delta):
 	velocity += force * delta	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	if velocity.x != 0:
+	#if velocity.x != 0:
+	if self.get_position().x - prevpos.x != 0:
 		global.play_se(global.SE_BOX,-5)
+		
+	prevpos = self.get_position()
 	
-#	if player != null:
-#		player.pushing = false
-#		player = null
-#
-#func _on_RC_left_body_entered(body):
-#	if body.get_name().begins_with("Player") and body.view() == self:
-#		player = body
-#
-#func _on_RC_left_body_exited(body):
-#	if body.get_name().begins_with("Player"):
-#		player = null
-#		body.pushing = false
-#
-#func _on_RC_right_body_entered(body):
-#	if body.get_name().begins_with("Player") and body.view() == self:
-#		player = body
-#
-#func _on_RC_right_body_exited(body):
-#	if body.get_name().begins_with("Player"):
-#		player = null
-#		body.pushing = false
-
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('gravity') and body != self:
 		if body.is_in_group("Player"):
@@ -106,10 +89,10 @@ func get_objs():
 	return objs
 
 func falling():
-	print("falling")
+	#print("falling")
 	var tmp = $Down.get_overlapping_areas()
 	for x in tmp:
-		print(x.get_name())
+		#print(x.get_name())
 		var p1 = x.get_global_position().y
 		var box = self.get_global_position().y
 		if x.get_name()=="Head" and (p1 > box):

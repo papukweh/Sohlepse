@@ -99,7 +99,6 @@ func save():
 		savegame.close()
 
 func create_save():
-	print("ih, nem tinha save. Criando.")
 	savegame.open(save_path, File.WRITE)
 	savegame.store_var(save_data)
 	savegame.close()

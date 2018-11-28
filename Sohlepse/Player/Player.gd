@@ -228,7 +228,7 @@ func _physics_process(delta):
 	if not jumping and (anim == prefix+"walking" or anim == prefix+"pushing_walk") and $sprite.frame == 0:
 		#print(terrain)
 		if terrain == 1:
-			global.play_se(global.SE_WALKING,-15)
+			global.play_se(global.SE_WALKING,-10)
 		elif terrain == 0.2:
 			global.play_se(global.SE_WALKING,-20)
 		elif terrain == 0.99:
@@ -295,7 +295,7 @@ func _physics_process(delta):
 	if ((tmp[0].size() > 1 and not platform) or platform or (in_terrain == 0 and terrain != 1)):
 		if jumping:
 			if terrain == 1:
-				global.play_se(global.SE_WALKING,-15)
+				global.play_se(global.SE_WALKING,-10)
 			elif terrain == 0.2:
 				global.play_se(global.SE_WALKING,-20)
 			elif terrain == 0.99:

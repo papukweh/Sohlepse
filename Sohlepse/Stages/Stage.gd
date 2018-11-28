@@ -11,7 +11,7 @@ var pan = null
 var FINALSTAGE = "stage32"
 
 func _ready():
-	print("pai: " + self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground").get_name())
+	#print("pai: " + self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground").get_name())
 	if ACT == 2 and self.get_name() != "stage12":
 		self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Lab").hide()
 		self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Lab").hide()
