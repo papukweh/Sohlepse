@@ -3,6 +3,9 @@ var arr = []
 var arr2 = []
 var count = 0
 
+const MOVE_RIGHT = [false, true, false, false]
+const IDLE = [false, false, false, false]
+
 func _ready():
 	global.stop_bgm()
 	$Player2.clone = true
@@ -11,10 +14,10 @@ func _ready():
 	$Player2.hide()
 	for i in range(30):
 		for i in range(10):
-			arr.push_back([false, true, false, false])
-			arr2.push_back([false, true, false, false])
+			arr.push_back(MOVE_RIGHT)
+			arr2.push_back(MOVE_RIGHT)
 		for i in range(2):
-			arr.push_back([false, false, false, false])
+			arr.push_back(IDLE)
 	$Player/InputHandler.inputs = arr
 	$Player/InputHandler.MODE = 0
 
