@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Menus/Stage_Button.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/thumbnail1.png" type="Texture" id=2]
 
-[node name="1" type="Button"]
+[node name="1" type="Button" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -11,8 +11,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 63.0
 margin_top = 147.0
-margin_right = 266.0
-margin_bottom = 289.0
+margin_right = 263.0
+margin_bottom = 282.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -27,17 +27,20 @@ group = null
 flat = false
 align = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Theme" ]
+_sections_unfolded = [ "Hint", "Margin", "Rect", "Theme", "Visibility", "custom_colors", "custom_constants" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 80, 58 )
 scale = Vector2( 0.4, 0.4 )
+z_index = 1
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 
 [connection signal="mouse_entered" from="." to="." method="_on_1_mouse_entered"]
+
+[connection signal="mouse_exited" from="." to="." method="_on_1_mouse_exited"]
 
 

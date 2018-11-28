@@ -46,7 +46,7 @@ func _atualiza(newState):
 	elif state == -2:
 		get_node("Batch" + str(batch) + "/Next/Label").set("custom_colors/font_color", Color(0.86,0.96,0.92))
 	else:
-		get_node("Batch" + str(batch) + "/" + str(state)).text = ""
+		get_node("Batch" + str(batch) + "/" + str(state))._on_1_mouse_exited()
 	state = newState
 	if state == 0:
 		$Back/Label.set("custom_colors/font_color", Color(0,0,0))
@@ -59,7 +59,7 @@ func _atualiza(newState):
 			get_node("Batch" + str(batch)).hide()
 			batch = ((state-1)/6) + 1
 			get_node("Batch" + str(batch)).show()
-		get_node("Batch" + str(batch) + "/" + str(state)).text = "0"
+		get_node("Batch" + str(batch) + "/" + str(state))._on_1_mouse_entered()
 	
 
 func _one_down():

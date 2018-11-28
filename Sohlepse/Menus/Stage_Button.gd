@@ -17,3 +17,8 @@ func _on_button_down():
 	
 func _on_1_mouse_entered():
 	global.play_se(global.SE_MOVE,-15)
+	$Sprite.set_modulate(Color("c8ffff"))
+
+
+func _on_1_mouse_exited():
+	$Sprite.set_modulate(Color("ffffff"))
