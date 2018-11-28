@@ -244,8 +244,6 @@ position = Vector2( 1376, 1184 )
 
 [node name="Objects" type="Node" parent="." index="5"]
 
-editor/display_folded = true
-
 [node name="MovingPlatform" parent="Objects" index="0" groups=[
 "ButtonInst",
 ] instance=ExtResource( 7 )]
@@ -308,7 +306,6 @@ forest = 1
 
 position = Vector2( 910.53, -30.7467 )
 scale = Vector2( 1, 1.01087 )
-forest = 1
 
 [node name="ButtonInst" parent="Objects" index="7" instance=ExtResource( 9 )]
 

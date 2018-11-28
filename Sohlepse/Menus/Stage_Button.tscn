@@ -11,8 +11,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 63.0
 margin_top = 147.0
-margin_right = 249.0
-margin_bottom = 279.0
+margin_right = 266.0
+margin_bottom = 289.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -31,8 +31,8 @@ _sections_unfolded = [ "Theme" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 86.7076, 61.1693 )
-scale = Vector2( 0.35, 0.35 )
+position = Vector2( 80, 58 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 

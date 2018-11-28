@@ -220,7 +220,6 @@ activated = 1
 thorn_begin = 0
 motion = Vector2( 300, 0 )
 cycle = 10.0
-forest = 1
 
 [node name="MovingPlatform2" parent="Mirror" index="3" groups=[
 "Lever3",

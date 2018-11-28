@@ -173,7 +173,6 @@ rotation = 1.5708
 scale = Vector2( 1, 0.537 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
-forest = 1
 
 [node name="Wall4" parent="Reality/Objects" index="13" groups=[
 "Lever4",
@@ -635,7 +634,6 @@ forest = 1
 ] instance=ExtResource( 12 )]
 
 position = Vector2( 882.766, 663.6 )
-forest = 1
 
 [node name="Thorns2" parent="Mirror/Hazards" index="8" groups=[
 "Lever5",
