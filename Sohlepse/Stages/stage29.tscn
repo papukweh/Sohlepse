@@ -67,7 +67,6 @@ position = Vector2( 289.076, 285.241 )
 
 [node name="Objects" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -114,8 +113,8 @@ position = Vector2( 447.522, 289.953 )
 ] instance=ExtResource( 8 )]
 
 position = Vector2( 60.4413, 312.337 )
-motion = Vector2( 0, 200 )
-cycle = 20.0
+motion = Vector2( 0, 220 )
+cycle = 22.0
 
 [node name="MovingPlatform2" parent="Objects" index="7" groups=[
 "Button",
@@ -124,7 +123,7 @@ cycle = 20.0
 
 position = Vector2( 443.635, 89.8183 )
 motion = Vector2( 180, 0 )
-cycle = 15.0
+cycle = 18.0
 
 [node name="ButtonInst1" parent="Objects" index="8" instance=ExtResource( 9 )]
 

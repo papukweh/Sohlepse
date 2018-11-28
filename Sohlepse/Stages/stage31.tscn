@@ -11,7 +11,7 @@
 [ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=10]
 
-[node name="stage31" instance=ExtResource( 1 )]
+[node name="stage31" index="0" instance=ExtResource( 1 )]
 
 ACT = 3
 
@@ -71,7 +71,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Lever1" parent="Objects" index="0" instance=ExtResource( 5 )]
+[node name="Lever1" parent="Objects" index="0" groups=[
+"Lever1",
+] instance=ExtResource( 5 )]
 
 position = Vector2( 160.898, -4.01203 )
 
@@ -95,6 +97,7 @@ names = [ "Wall2Led2" ]
 position = Vector2( 748.709, 62.1187 )
 
 [node name="Button2" parent="Objects" index="4" groups=[
+"Wall2Led1",
 "Mov1",
 ] instance=ExtResource( 6 )]
 
@@ -130,6 +133,7 @@ cycle = 30.0
 "Wall2Led2",
 "Wall2Led1",
 ] instance=ExtResource( 7 )]
+
 position = Vector2( 278.923, 543.32 )
 scale = Vector2( 1, 2.98959 )
 activation = 1
@@ -154,7 +158,6 @@ cycle = 25.0
 
 [node name="Hazards" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
