@@ -1,14 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Stages/Stage.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Florest_bg.png" type="Texture" id=2]
-[ext_resource path="res://tileset_forest.tres" type="TileSet" id=3]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=9]
+[ext_resource path="res://tileset_forest.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=8]
 
 [node name="stage13" instance=ExtResource( 1 )]
 
@@ -17,31 +16,7 @@ PLAYERS = 2
 MAX_CLONES = 0
 MODE = 2
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-visible = false
-position = Vector2( 540, -433.187 )
-scale = Vector2( 0.885417, 0.802577 )
-z_index = -1
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Z Index" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite2" type="Sprite" parent="." index="1"]
-
-visible = false
-position = Vector2( 540.05, 433.863 )
-scale = Vector2( 0.885481, -0.802577 )
-z_index = -1
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Real" type="ReferenceRect" parent="." index="2"]
+[node name="Real" type="ReferenceRect" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -58,7 +33,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Mirrored" type="ReferenceRect" parent="." index="3"]
+[node name="Mirrored" type="ReferenceRect" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -75,10 +50,10 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="TileMap" type="TileMap" parent="." index="4"]
+[node name="TileMap" type="TileMap" parent="." index="2"]
 
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -98,26 +73,26 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Players" type="Node" parent="." index="5"]
+[node name="Players" type="Node" parent="." index="3"]
 
 editor/display_folded = true
 
-[node name="Player1" parent="Players" index="0" instance=ExtResource( 4 )]
+[node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 125, -500 )
 
-[node name="Player2" parent="Players" index="1" instance=ExtResource( 4 )]
+[node name="Player2" parent="Players" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 125, 500 )
 invert_vertical = -1
 
-[node name="Objects" type="Node" parent="." index="6"]
+[node name="Objects" type="Node" parent="." index="4"]
 
 editor/display_folded = true
 
 [node name="Wall1" parent="Objects" index="0" groups=[
 "Lever1",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 4 )]
 
 position = Vector2( 209.641, -511.783 )
 scale = Vector2( 1, 2.00565 )
@@ -125,7 +100,7 @@ forest = 1
 
 [node name="Wall5" parent="Objects" index="1" groups=[
 "Lever1",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 4 )]
 
 position = Vector2( 209.332, 320.049 )
 scale = Vector2( 1, 2.00742 )
@@ -134,7 +109,7 @@ forest = 1
 
 [node name="Wall2" parent="Objects" index="2" groups=[
 "Lever2",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 4 )]
 
 position = Vector2( 879.902, -320.016 )
 scale = Vector2( 1, 1.98563 )
@@ -143,7 +118,7 @@ forest = 1
 
 [node name="Wall6" parent="Objects" index="3" groups=[
 "Lever2",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 4 )]
 
 position = Vector2( 868.401, 319.776 )
 scale = Vector2( 1, 1.98563 )
@@ -152,7 +127,7 @@ forest = 1
 [node name="Wall4" parent="Objects" index="4" groups=[
 "Lever4",
 "Lever5",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 4 )]
 
 position = Vector2( 882.174, -127.817 )
 scale = Vector2( 1, 2.00608 )
@@ -160,9 +135,9 @@ activation = 1
 forest = 1
 
 [node name="Wall7" parent="Objects" index="5" groups=[
-"Lever3",
 "Lever6",
-] instance=ExtResource( 5 )]
+"Lever3",
+] instance=ExtResource( 4 )]
 
 position = Vector2( 874.442, 127.727 )
 scale = Vector2( 1, 2.00186 )
@@ -171,7 +146,7 @@ forest = 1
 
 [node name="Wall3" parent="Objects" index="6" groups=[
 "Lever3",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 4 )]
 
 position = Vector2( 209.641, -320.016 )
 scale = Vector2( 1, 1.98563 )
@@ -179,58 +154,59 @@ forest = 1
 
 [node name="Lever2" parent="Objects" index="7" groups=[
 "Lever2",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 5 )]
 
 position = Vector2( 516.664, -477.942 )
 scale = Vector2( -1, 1 )
 
 [node name="Lever3" parent="Objects" index="8" groups=[
 "Lever3",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 5 )]
 
 position = Vector2( 515.918, 282.41 )
 scale = Vector2( -1, 1 )
 
 [node name="Lever6" parent="Objects" index="9" groups=[
 "Lever6",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 5 )]
 
 position = Vector2( 516.867, 98.6331 )
 scale = Vector2( -1, 1 )
 
 [node name="Lever1" parent="Objects" index="10" groups=[
 "Lever1",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 5 )]
 
 position = Vector2( 516.814, 477.833 )
 scale = Vector2( -1, 1 )
 
 [node name="Lever4" parent="Objects" index="11" groups=[
 "Lever4",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 5 )]
 
 position = Vector2( 516.852, -287.529 )
 scale = Vector2( -1, 1 )
 
 [node name="Lever5" parent="Objects" index="12" groups=[
 "Lever5",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 5 )]
 
 position = Vector2( 515.462, -94.6554 )
 scale = Vector2( -1, 1 )
 
-[node name="Endgoal" parent="." index="7" instance=ExtResource( 7 )]
+[node name="Endgoal" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 967.881, -96.0423 )
 
-[node name="EndgoalMirror" parent="." index="8" instance=ExtResource( 8 )]
+[node name="EndgoalMirror" parent="." index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 968.442, 99.2712 )
 scale = Vector2( 1, -1 )
 invert_vertical = -1
 
-[node name="Event" parent="." index="9" instance=ExtResource( 9 )]
+[node name="Event" parent="." index="7" instance=ExtResource( 8 )]
 
+_sections_unfolded = [ "Z Index" ]
 events = [ Vector2( 480, -400 ), Vector2( 960, -400 ), Vector2( 480, -200 ), Vector2( 160, -200 ) ]
 labels = [ "Mais puzzles...", " ", "Achei que estivesse livre deles!", " " ]
 pos = [ Vector2( 400, -560 ), Vector2( 0, 0 ), Vector2( 380, -380 ), Vector2( 0, 0 ) ]

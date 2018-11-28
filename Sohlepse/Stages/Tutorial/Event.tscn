@@ -11,6 +11,7 @@ pos = null
 areascale = null
 playanyway = false
 red = false
+cutscene = false
 
 [node name="Tween" type="Tween" parent="." index="0"]
 

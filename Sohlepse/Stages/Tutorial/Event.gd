@@ -6,6 +6,7 @@ export(Array, Vector2) var pos = []
 export(Array, Vector2) var areascale = []
 export(bool) var playanyway = false
 export(bool) var red = false
+export(bool) var cutscene = false
 onready var size = labels.size()
 onready var checks = []
 onready var last = 0

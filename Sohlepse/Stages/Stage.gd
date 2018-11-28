@@ -14,12 +14,12 @@ func _ready():
 	if ACT == 2 and self.get_name() != "stage12":
 		self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Lab").hide()
 		self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Lab").hide()
-		if self.get_name() == "stage13" or self.get_name() == "stage23":
+		if self.get_name() == "stage13" or self.get_name() == "stage20":
 			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").set_flip_v(true)
 		if self.get_name() == "stage18":
 			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.x = -160
 			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.y = -150
-		if self.get_name() == "stage22":
+		if self.get_name() == "stage19":
 			self.get_parent().get_node("ParallaxBackground/ParallaxLayer/Forest").position.x = 670
 			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.x = 1100
 			self.get_parent().get_parent().get_parent().get_node("C2/Viewport2/ParallaxBackground/ParallaxLayer/Forest").position.y = -100

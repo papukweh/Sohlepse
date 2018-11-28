@@ -211,8 +211,8 @@ cycle = 15.0
 forest = 1
 
 [node name="MovingPlatform3" parent="Mirror" index="2" groups=[
-"Lever3",
 "Lever",
+"Lever3",
 ] instance=ExtResource( 9 )]
 
 position = Vector2( 50, 175 )
