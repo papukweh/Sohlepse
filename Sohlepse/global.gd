@@ -135,7 +135,10 @@ func recalibrate():
 
 func stop_bgm():
 	music.stop()
-
+	
+func play_sirine():
+	audio[0].play()
+	
 func play_bgm():
 	if current_stage < 13:
 		music.stream = ACT1_THEME
