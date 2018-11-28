@@ -659,8 +659,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 begin = 1
 
 [node name="Wall10" parent="Objects" index="28" groups=[
-"LED1",
 "LED2",
+"LED1",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 5073.84, -1055.61 )

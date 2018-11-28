@@ -20,6 +20,7 @@ MAX_CLONES = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+visible = false
 position = Vector2( 288.259, 318.088 )
 scale = Vector2( -0.872132, 0.855033 )
 z_index = -1
@@ -28,6 +29,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite2" type="Sprite" parent="." index="1"]
 
+visible = false
 position = Vector2( 1630.49, 319.245 )
 scale = Vector2( 0.875, 0.857844 )
 z_index = -1
@@ -67,6 +69,7 @@ position = Vector2( 477.011, 324.767 )
 [node name="Player2" parent="Players" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 1151.91, 127.538 )
+invert_horizontal = -1
 
 [node name="Reality" type="Node2D" parent="." index="4"]
 
@@ -220,8 +223,8 @@ cycle = 10.0
 forest = 1
 
 [node name="MovingPlatform2" parent="Mirror" index="3" groups=[
-"Lever2",
 "Lever3",
+"Lever2",
 ] instance=ExtResource( 9 )]
 
 position = Vector2( 50, 400 )
@@ -282,6 +285,5 @@ events = [ Vector2( 1024, 180 ), Vector2( 1024, 320 ), Vector2( 1024, 420 ) ]
 labels = [ "Já não me lembro mais", "Por que estava com tanta pressa?", " " ]
 pos = [ Vector2( 260, 450 ), Vector2( 260, 450 ), Vector2( 0, 0 ) ]
 areascale = [ Vector2( 5, -1 ), Vector2( 5, -1 ), Vector2( 5, -1 ) ]
-playanyway = false
 
 

@@ -337,6 +337,5 @@ events = [ Vector2( 520, 250 ), Vector2( 520, 250 ), Vector2( -120, 640 ) ]
 labels = [ "Me sinto... diferente", "Preciso chegar logo em casa", " " ]
 pos = [ Vector2( 320, 25 ), Vector2( 320, 25 ), Vector2( 0, 0 ) ]
 areascale = [ Vector2( 1, -1 ), Vector2( 1, -1 ), Vector2( 2, -1 ) ]
-playanyway = false
 
 

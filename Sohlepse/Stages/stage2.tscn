@@ -36,6 +36,9 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -65537, 1073741825, 0, -131072, 536870923, 0, -131071, 536870923, 0, -131070, 536870923, 0, -131069, 536870923, 0, -131068, 536870923, 0, -131067, 536870923, 0, -131066, 536870923, 0, -131065, 536870923, 0, -131064, 536870923, 0, -131063, 536870923, 0, -131062, 536870923, 0, -131061, 536870923, 0, -131060, 536870923, 0, -131059, 536870923, 0, -131058, 536870923, 0, -131057, 536870923, 0, -131056, 536870923, 0, -131055, 1073741825, 0, -1, 1073741825, 0, -65519, 1073741825, 0, 65535, 536870913, 0, 17, 536870913, 0, 131071, 536870913, 0, 65553, 536870913, 0, 196607, 536870913, 0, 131080, 536870914, 0, 131081, 536870912, 0, 131082, 2, 0, 131086, 536870914, 0, 131087, 536870912, 0, 131088, 0, 0, 131089, 536870913, 0, 262143, 536870913, 0, 196612, 536870914, 0, 196613, 536870912, 0, 196614, 2, 0, 196625, 536870913, 0, 327679, 536870913, 0, 262161, 536870913, 0, 393215, 536870913, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 536870913, 0 )
 _sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Real" type="ReferenceRect" parent="." index="1"]
 
@@ -43,9 +46,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -51.0
+margin_left = -90.0
 margin_top = -490.0
-margin_right = 1159.0
+margin_right = 1230.0
 margin_bottom = -10.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -61,9 +64,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -51.0
+margin_left = -90.0
 margin_top = -490.0
-margin_right = 1159.0
+margin_right = 1230.0
 margin_bottom = -10.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -106,7 +109,6 @@ events = [ Vector2( 50, -50 ), Vector2( 600, 0 ), Vector2( 1000, 0 ) ]
 labels = [ "Essa plataforma é um tanto alta... Espero que essa caixa não seja pesada", "O que será que essa alavanca faz?", " " ]
 pos = [ Vector2( 50, -400 ), Vector2( 350, -360 ), Vector2( 0, 0 ) ]
 areascale = [ Vector2( 1, 1 ), Vector2( 1, -5 ), Vector2( 1, -3 ) ]
-playanyway = false
 
 [node name="Endgoal" parent="." index="6" instance=ExtResource( 8 )]
 
