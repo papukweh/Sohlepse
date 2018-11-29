@@ -67,11 +67,8 @@ func _on_Exit_body_entered(body):
 		$Player/InputHandler.inputs = [] + interact
 		$Timer.start()
 		$AnimationPlayer.play_backwards("Fadeout")
-		$Player.hide()
-		$Player2.hide()
-		$Event.hide()
 		$Event2.hide()
 
 func _on_Timer_timeout():
 	global.play_se(global.SE_JOGAR)
-	get_tree().change_scene("res://Menus/MenuPrincipal.tscn")
+	get_tree().change_scene("res://Menus/Credits.tscn")

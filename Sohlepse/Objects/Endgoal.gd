@@ -9,7 +9,7 @@ var velocity = Vector2()
 func _ready():
 	if final != 0:
 		$AnimatedSprite.animation = "door"
-		
+
 func _process(delta):
 	if inbody != null and inbody.get_name().begins_with("Player") and Input.is_action_just_pressed("interact"):
 		if get_parent().get_node("EndgoalMirror") == null or get_parent().get_node("EndgoalMirror").inEndGoal:
@@ -26,6 +26,7 @@ func _process(delta):
 				return
 			elif global.current_stage == 32:
 				get_tree().change_scene("res://Stages/Cutscenes/Cutscene3.tscn")
+				return
 			elif global.current_stage > 32:
 				get_parent().get_node("Timer").fadeout()
 				return

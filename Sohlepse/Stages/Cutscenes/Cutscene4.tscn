@@ -40,7 +40,9 @@ script = ExtResource( 1 )
 [node name="Floresta" type="Sprite" parent="." index="0"]
 
 position = Vector2( 635.015, 183.879 )
+z_index = -10
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
@@ -68,24 +70,30 @@ __meta__ = {
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 155.087, 539.178 )
+z_index = -5
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform", "Z Index", "collision" ]
 
 [node name="Player2" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 1234.43, 534.953 )
+z_index = -5
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform", "Z Index", "collision" ]
 
 [node name="Home" type="Sprite" parent="." index="4"]
 
 position = Vector2( 1246.91, 378.145 )
 scale = Vector2( 1.31228, 1.31228 )
+z_index = -6
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Endgoal" type="Sprite" parent="." index="5"]
 
 position = Vector2( 1242.53, 538.721 )
 scale = Vector2( 1.14858, 1.14858 )
+z_index = -5
 texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Exit" type="Area2D" parent="." index="6"]
 
@@ -123,10 +131,10 @@ shape = SubResource( 1 )
 position = Vector2( 241.683, 7.5526 )
 z_index = 3
 _sections_unfolded = [ "Transform", "Z Index" ]
-events = [ Vector2( -64, 576 ), Vector2( 150, 576 ), Vector2( 350, 576 ), Vector2( 520, 576 ) ]
-labels = [ "Você não me deu outra escolha...", "Agora realmente é o fim", "Lar, doce lar", "... Querida?" ]
-pos = [ Vector2( 400, 256 ), Vector2( 400, 256 ), Vector2( 400, 256 ), Vector2( 400, 256 ) ]
-areascale = [ Vector2( 0.5, -2 ), Vector2( 0.2, -2 ), Vector2( 0.2, -2 ), Vector2( 0.2, -2 ) ]
+events = [ Vector2( -64, 576 ), Vector2( 150, 576 ), Vector2( 350, 576 ), Vector2( 520, 576 ), Vector2( 740, 576 ) ]
+labels = [ "Você não me deu outra escolha...", "Agora realmente é o fim", "Lar, doce lar", "... Querida?", "..." ]
+pos = [ Vector2( 400, 256 ), Vector2( 400, 256 ), Vector2( 400, 256 ), Vector2( 400, 256 ), Vector2( 570, 256 ) ]
+areascale = [ Vector2( 0.5, -2 ), Vector2( 0.2, -2 ), Vector2( 0.2, -2 ), Vector2( 0.2, -2 ), Vector2( 0.2, -2 ) ]
 cutscene = true
 
 [node name="Event2" parent="." index="8" instance=ExtResource( 7 )]
@@ -143,11 +151,21 @@ red = true
 [node name="Timer" type="Timer" parent="." index="9"]
 
 process_mode = 1
-wait_time = 1.5
+wait_time = 2.5
 one_shot = true
 autostart = false
 
-[node name="ColorRect" type="ColorRect" parent="." index="10"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="10"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Fadeout = SubResource( 2 )
+blend_times = [  ]
+
+[node name="ColorRect" type="ColorRect" parent="." index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -164,16 +182,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0, 0, 0, 1 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="11"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Fadeout = SubResource( 2 )
-blend_times = [  ]
 
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
 

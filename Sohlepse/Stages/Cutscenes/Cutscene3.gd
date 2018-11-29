@@ -32,7 +32,7 @@ func _process(delta):
 		$Player4/InputHandler.inputs = interact_and_back
 		global.play_se(global.SE_EVIL_LAUGH, -5)
 		$Anim.play("Flash")
-		global.play_sirine()
+		global.play_siren()
 		$HAHATimer.start()
 		$EndTimer.start()
 		played2 = true

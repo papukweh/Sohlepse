@@ -137,7 +137,9 @@ func recalibrate():
 func stop_bgm():
 	music.stop()
 	
-func play_sirine():
+func play_siren():
+	audio[0].volume_db = base_master + base_se -5
+	audio[0].stream = ACT3_BG3
 	audio[0].play()
 	
 func stop_siren():

@@ -4,12 +4,12 @@
 [ext_resource path="res://Assets/Endgoal.png" type="Texture" id=2]
 [ext_resource path="res://Assets/FinalEndgoal.png" type="Texture" id=3]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "mirror",
+"name": "default",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -18,7 +18,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 4.72039, 10.2621 )
@@ -41,14 +41,14 @@ final = 0
 
 rotation = 3.14159
 scale = Vector2( 1, -1 )
-frames = SubResource( 1 )
-animation = "mirror"
+frames = SubResource( 2 )
+animation = "default"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 2.36399, 0.545403 )
 scale = Vector2( 2.84007, 2.93906 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
@@ -69,7 +69,7 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Z Ind
 
 position = Vector2( -2.55342, -3.22899 )
 scale = Vector2( 4.22608, 2.93906 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Endgoal_body_entered"]
