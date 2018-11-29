@@ -91,7 +91,7 @@ func progress():
 	#return FINAL
 	
 func save():
-	if current_stage > unlocked_stage:
+	if current_stage > unlocked_stage and current_stage <= FINAL:
 		unlocked_stage = current_stage
 		save_data["last_stage"] = current_stage
 		savegame.open(save_path, File.WRITE)
@@ -136,6 +136,9 @@ func recalibrate():
 
 func stop_bgm():
 	music.stop()
+	
+func play_sirine():
+	audio[0].play()
 	
 func stop_siren():
 	audio[0].stop()
