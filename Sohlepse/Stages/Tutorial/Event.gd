@@ -39,7 +39,7 @@ func _ready():
 		checks.push_back(false)
 
 func body_entered(id):
-	print("prita caralho")
+	#print("prita caralho")
 	if stop:
 		return
 	if playanyway and !checks[id]:

@@ -36,12 +36,12 @@ func _process(delta):
 
 func _on_Back_pressed():
 	if pause:
-		print("voltei")
+		#print("voltei")
 		hide()
 		global.play_se(global.SE_CHANGE, -5)
 		get_parent().get_node("PauseMenu").inOptions = false
 		get_parent().get_node("PauseMenu").openA()
-		print("hide")
+		#print("hide")
 		get_parent().get_node("PauseMenu").show()
 	else:	
 		global.play_se(global.SE_CHANGE, -5)

@@ -47,13 +47,15 @@ onready var water = false
 onready var objs = Dictionary()
 onready var prefix = ""
 
-onready var SE_DIE = load("res://Sound/257710__vmgraw__grunt-1.wav")
-onready var SE_WALKING = load("res://Sound/151229__owlstorm__grassy-footstep-2.wav")
-
 func evil():
 	$sprite.play("redstill")
 	anim = "redstill"
 	prefix = "red"
+
+func wife():
+	$sprite.play("wifestill")
+	anim = "wifestill"
+	prefix = "wife"
 
 func _ready():
 	if invert_vertical == -1:
@@ -231,9 +233,9 @@ func _physics_process(delta):
 	if not jumping and (anim == prefix+"walking" or anim == prefix+"pushing_walk") and $sprite.frame == 0:
 		#print(terrain)
 		if terrain == 1:
-			global.play_se(SE_WALKING,-15)
+			global.play_se(global.SE_WALKING,-10)
 		elif terrain == 0.2:
-			global.play_se(SE_WALKING,-20)
+			global.play_se(global.SE_WALKING,-20)
 		elif terrain == 0.99:
 			global.play_se(global.SE_METAL,-15)
 		#if pushing:
@@ -298,9 +300,9 @@ func _physics_process(delta):
 	if ((tmp[0].size() > 1 and not platform) or platform or (in_terrain == 0 and terrain != 1)):
 		if jumping:
 			if terrain == 1:
-				global.play_se(SE_WALKING,-15)
+				global.play_se(global.SE_WALKING,-10)
 			elif terrain == 0.2:
-				global.play_se(SE_WALKING,-20)
+				global.play_se(global.SE_WALKING,-20)
 			elif terrain == 0.99:
 				global.play_se(global.SE_METAL,-15)
 		jumping = false
@@ -345,7 +347,7 @@ func die():
 		$AnimationPlayer.play("Death2")
 	else:
 		$AnimationPlayer.play("Death")
-	global.play_se(SE_DIE,-5)
+	global.play_se(global.SE_DIE,-5)
 	self.velocity = Vector2(0,0)
 	
 func reset_position():

@@ -1,10 +1,15 @@
 extends KinematicBody2D
 
 export var invert_vertical = 1
+export var final = 0
 var inbody = null
 var GRAVITY = 700.0 # pixels/second/second
 var velocity = Vector2()
 
+func _ready():
+	if final != 0:
+		$AnimatedSprite.animation = "door"
+		
 func _process(delta):
 	if inbody != null and inbody.get_name().begins_with("Player") and Input.is_action_just_pressed("interact"):
 		if get_parent().get_node("EndgoalMirror") == null or get_parent().get_node("EndgoalMirror").inEndGoal:
@@ -12,7 +17,7 @@ func _process(delta):
 			global.current_stage += 1
 			global.save()
 			global.clean()
-			print(global.current_stage)
+			#print(global.current_stage)
 			if global.current_stage == 13:
 				get_tree().change_scene("res://Stages/Cutscenes/Cutscene1.tscn")
 				return
@@ -21,6 +26,8 @@ func _process(delta):
 				return
 			elif global.current_stage == 32:
 				get_tree().change_scene("res://Stages/Cutscenes/Cutscene3.tscn")
+			elif global.current_stage > 32:
+				get_parent().get_node("Timer").fadeout()
 				return
 			get_tree().reload_current_scene()
 
@@ -31,9 +38,9 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func _on_Endgoal_body_entered(body):
-	print("etnei")
+	#print("etnei")
 	inbody = body
 
 func _on_Endgoal_body_exited(body):
-	print("sai")
+	#print("sai")
 	inbody = null

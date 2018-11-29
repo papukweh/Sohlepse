@@ -35,6 +35,8 @@ var SE_PAUSE = load("res://Sound/403009__inspectorj__ui-confirmation-alert-b3.wa
 var SE_UNPAUSE = load("res://Sound/403010__inspectorj__ui-confirmation-alert-b2.wav")
 var SE_EXIT = load("res://Sound/413749__inspectorj__ui-confirmation-alert-d1.wav")
 
+var SE_DIE = load("res://Sound/257710__vmgraw__grunt-1.wav")
+var SE_WALKING = load("res://Sound/151229__owlstorm__grassy-footstep-2.wav")
 var SE_LEVER = load("res://Sound/277651__coral-island-studios__button-4.wav")
 var SE_BOX = load("res://Sound/218035__nitramdoh__moving-with-table.wav")
 var SE_BREAK = load("res://Sound/446118__justinvoke__crack-1.wav")
@@ -97,7 +99,6 @@ func save():
 		savegame.close()
 
 func create_save():
-	print("ih, nem tinha save. Criando.")
 	savegame.open(save_path, File.WRITE)
 	savegame.store_var(save_data)
 	savegame.close()
@@ -139,6 +140,9 @@ func stop_bgm():
 func play_sirine():
 	audio[0].play()
 	
+func stop_siren():
+	audio[0].stop()
+
 func play_bgm():
 	if current_stage < 13:
 		music.stream = ACT1_THEME
