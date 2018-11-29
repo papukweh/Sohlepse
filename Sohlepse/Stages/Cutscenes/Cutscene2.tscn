@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/Florest_bg.png" type="Texture" id=2]
 [ext_resource path="res://tileset_forest.tres" type="TileSet" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/X.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Endgoal.png" type="Texture" id=6]
+[ext_resource path="res://Assets/house.png" type="Texture" id=5]
+[ext_resource path="res://Assets/door.png" type="Texture" id=6]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -53,14 +53,17 @@ position = Vector2( -5.38857, 497.1 )
 
 [node name="Home" type="Sprite" parent="." index="4"]
 
-position = Vector2( 1343.91, 403.145 )
-scale = Vector2( 2.46973, 2.65674 )
+position = Vector2( 1205.5, 378.137 )
+scale = Vector2( 1.31228, 1.31228 )
 texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Endgoal" type="Sprite" parent="." index="5"]
 
-position = Vector2( 1242.53, 534.721 )
+position = Vector2( 1195.51, 539.74 )
+scale = Vector2( 1.14858, 1.14858 )
 texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Exit" type="Area2D" parent="." index="6"]
 
@@ -75,7 +78,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" index="0"]
 
-position = Vector2( 136.64, -37.1213 )
+position = Vector2( 105.64, -37.1213 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Exit" index="1"]

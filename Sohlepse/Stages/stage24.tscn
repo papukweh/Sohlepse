@@ -140,7 +140,6 @@ activated = 1
 motion = Vector2( 20, 0 )
 cycle = 5.0
 forest = 1
-big = 0
 
 [node name="Wall3" parent="Reality/Objects" index="10" groups=[
 "Lever1",
@@ -175,8 +174,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
 [node name="Wall4" parent="Reality/Objects" index="13" groups=[
-"Lever4",
 "Lever1",
+"Lever4",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 591.995, -416.786 )
@@ -479,31 +478,26 @@ activated = 1
 motion = Vector2( 0, 400 )
 cycle = 16.0
 forest = 1
-big = 0
 
 [node name="MovingPlatform2" parent="Mirror/Objects" index="8" instance=ExtResource( 10 )]
 
 position = Vector2( 1167.93, 413.493 )
 forest = 1
-big = 0
 
 [node name="MovingPlatform3" parent="Mirror/Objects" index="9" instance=ExtResource( 10 )]
 
 position = Vector2( 1169.43, 490.367 )
 forest = 1
-big = 0
 
 [node name="MovingPlatform4" parent="Mirror/Objects" index="10" instance=ExtResource( 10 )]
 
 position = Vector2( 1169.43, 571.763 )
 forest = 1
-big = 0
 
 [node name="MovingPlatform9" parent="Mirror/Objects" index="11" instance=ExtResource( 10 )]
 
 position = Vector2( 269.671, 820.655 )
 forest = 1
-big = 0
 
 [node name="MovingPlatform5" parent="Mirror/Objects" index="12" groups=[
 "Lever3",
@@ -554,7 +548,6 @@ scale = Vector2( 0.868535, 1 )
 motion = Vector2( 0, 290 )
 cycle = 12.0
 forest = 1
-big = 0
 
 [node name="MovingPlatform8" parent="Mirror/Objects" index="18" instance=ExtResource( 10 )]
 
@@ -563,7 +556,6 @@ scale = Vector2( 0.868535, 1 )
 motion = Vector2( 0, -235 )
 cycle = 10.0
 forest = 1
-big = 0
 
 [node name="Hazards" type="Node" parent="Mirror" index="1"]
 
@@ -704,6 +696,7 @@ __meta__ = {
 [node name="Endgoal" parent="." index="6" instance=ExtResource( 16 )]
 
 position = Vector2( 2517.92, 94.3686 )
+final = 0
 
 [node name="EndgoalMirror" parent="." index="7" instance=ExtResource( 17 )]
 

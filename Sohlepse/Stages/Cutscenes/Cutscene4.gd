@@ -21,7 +21,7 @@ func _ready():
 	$Player.hide()
 	$Player.terrain = 0.4
 	$Player.in_terrain +=1
-	$Player2.evil()
+	$Player2.wife()
 	$Player2.hide()
 	for i in range(50):
 		for i in range(10):

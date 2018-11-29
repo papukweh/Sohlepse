@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/Florest_bg.png" type="Texture" id=2]
 [ext_resource path="res://tileset_forest.tres" type="TileSet" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/X.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Endgoal.png" type="Texture" id=6]
+[ext_resource path="res://Assets/house.png" type="Texture" id=5]
+[ext_resource path="res://Assets/door.png" type="Texture" id=6]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -32,7 +32,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[node name="Cutscene4" type="Node2D" index="0"]
+[node name="Cutscene4" type="Node2D"]
 
 position = Vector2( -239.735, -3.4248 )
 script = ExtResource( 1 )
@@ -75,14 +75,17 @@ position = Vector2( 1234.43, 534.953 )
 
 [node name="Home" type="Sprite" parent="." index="4"]
 
-position = Vector2( 1343.91, 403.145 )
-scale = Vector2( 2.46973, 2.65674 )
+position = Vector2( 1246.91, 378.145 )
+scale = Vector2( 1.31228, 1.31228 )
 texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Endgoal" type="Sprite" parent="." index="5"]
 
-position = Vector2( 1242.53, 534.721 )
+position = Vector2( 1242.53, 538.721 )
+scale = Vector2( 1.14858, 1.14858 )
 texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Exit" type="Area2D" parent="." index="6"]
 

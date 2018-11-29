@@ -77,8 +77,8 @@ position = Vector2( -95.8211, 543.871 )
 
 [node name="Wall" type="Sprite" parent="." index="5"]
 
-position = Vector2( 545.167, 319.645 )
-scale = Vector2( 1, 8.0669 )
+position = Vector2( 545.167, 320.869 )
+scale = Vector2( 1, 8.02866 )
 z_index = 20
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Z Index" ]

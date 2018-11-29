@@ -52,6 +52,11 @@ func evil():
 	anim = "redstill"
 	prefix = "red"
 
+func wife():
+	$sprite.play("wifestill")
+	anim = "wifestill"
+	prefix = "wife"
+
 func _ready():
 	if invert_vertical == -1:
 		self.rotate(PI)

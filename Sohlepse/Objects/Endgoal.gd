@@ -1,10 +1,15 @@
 extends KinematicBody2D
 
 export var invert_vertical = 1
+export var final = 0
 var inbody = null
 var GRAVITY = 700.0 # pixels/second/second
 var velocity = Vector2()
 
+func _ready():
+	if final != 0:
+		$AnimatedSprite.animation = "door"
+		
 func _process(delta):
 	if inbody != null and inbody.get_name().begins_with("Player") and Input.is_action_just_pressed("interact"):
 		if get_parent().get_node("EndgoalMirror") == null or get_parent().get_node("EndgoalMirror").inEndGoal:
