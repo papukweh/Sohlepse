@@ -122,7 +122,6 @@ position = Vector2( 1488.86, 72.014 )
 motion = Vector2( -1500, 0 )
 cycle = 130.0
 forest = 1
-big = 0
 
 [node name="Wall" parent="Reality/Objects" index="3" groups=[
 "Button",
@@ -320,7 +319,6 @@ position = Vector2( 1489.79, 1061.3 )
 motion = Vector2( -1500, 0 )
 cycle = 130.0
 forest = 1
-big = 0
 
 [node name="Box7" parent="Mirror/Objects" index="5" instance=ExtResource( 7 )]
 
