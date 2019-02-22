@@ -340,7 +340,8 @@ func moving_right():
 	return move_right and not move_left
 	
 func die():
-	#$CollisionShape2D.disabled = false
+	global.deaths += 1
+	global.save()
 	self.velocity = Vector2(0,0)
 	dead = true
 	if invert_horizontal == -1 or invert_vertical == -1:

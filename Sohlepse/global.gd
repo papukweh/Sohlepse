@@ -1,11 +1,15 @@
 extends Node
 
 var savegame = File.new() 
-var save_path = "./savegame.save" 
-var save_data = {"last_stage": 1}
+var save_path = "./Saves/slot" 
 
 var current_stage = 1 
 var unlocked_stage = 1
+var player = ""
+var slot = 1
+var deaths = 0
+var playtime = 0
+var clock = null
 
 var current_act = 1
 var DEBUG = false
@@ -53,6 +57,61 @@ onready var base_master = -10
 onready var base_bgm = 0
 onready var base_se = 0
 
+func get_slot():
+	return slot
+	
+func get_player():
+	return player
+	
+func get_playtime():
+	return playtime
+	
+func get_deaths():
+	return deaths
+	
+func get_last_stage():
+	return unlocked_stage
+
+func new_game(slot, player):
+	var save_dict = {
+		"slot" : slot,
+        "player" : player,
+        "playtime" : 0,
+        "deaths" : 0,
+        "last_stage" : 1
+}
+	savegame.open(save_path+str(slot), File.WRITE)
+	savegame.store_line(to_json(save_dict))
+	savegame.close()
+
+func save():
+	if current_stage > unlocked_stage and current_stage <= FINAL:
+		unlocked_stage = current_stage
+	var save_dict = {
+		"slot" : get_slot(),
+        "player" : get_player(),
+        "playtime" : get_playtime(),
+        "deaths" : get_deaths(),
+        "last_stage" : get_last_stage()
+}
+	savegame.open(save_path+str(slot), File.WRITE)
+	savegame.store_line(to_json(save_dict))
+	savegame.close()
+
+func load_game(save_slot):
+	if not savegame.file_exists(save_path+str(save_slot)):
+		return -1
+	savegame.open(save_path+str(save_slot), File.READ)
+	var dict = parse_json(savegame.get_line())
+	player = dict["player"]
+	playtime = dict["playtime"]
+	deaths = dict["deaths"]
+	unlocked_stage = dict["last_stage"]
+	slot = save_slot
+	savegame.close()
+	clock.start()
+	return 0
+
 func restart():
 	restarting = true
 	get_tree().reload_current_scene()
@@ -83,30 +142,35 @@ func clean():
 	state = []
 	nclones = 0
 	
-func progress():
-	savegame.open(save_path, File.READ)
-	save_data = savegame.get_var()
-	savegame.close()
-	return save_data["last_stage"]
-	#return FINAL
-	
-func save():
-	if current_stage > unlocked_stage and current_stage <= FINAL:
-		unlocked_stage = current_stage
-		save_data["last_stage"] = current_stage
-		savegame.open(save_path, File.WRITE)
-		savegame.store_var(save_data)
-		savegame.close()
-
-func create_save():
-	savegame.open(save_path, File.WRITE)
-	savegame.store_var(save_data)
-	savegame.close()
+#func progress():
+#	savegame.open(save_path, File.READ)
+#	save_data = savegame.get_var()
+#	savegame.close()
+#	return save_data["last_stage"]
+#	#return FINAL
+#
+#func save():
+#	if current_stage > unlocked_stage and current_stage <= FINAL:
+#		unlocked_stage = current_stage
+#		save_data["last_stage"] = current_stage
+#		savegame.open(save_path, File.WRITE)
+#		savegame.store_var(save_data)
+#		savegame.close()
+#
+#func create_save():
+#	savegame.open(save_path, File.WRITE)
+#	savegame.store_var(save_data)
+#	savegame.close()
 
 func _ready():
-	if not savegame.file_exists(save_path):
-		create_save()
-	unlocked_stage = progress()
+	clock = Timer.new()
+	clock.connect("timeout", self, "_on_timer_timeout")
+	clock.wait_time = 60
+	add_child(clock)
+
+
+func _on_timer_timeout():
+	playtime += 1
 
 func initSound():
 	if audio.size() == 0:

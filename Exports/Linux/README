@@ -1,4 +1,6 @@
 Para jogar, apenas conceda permissão de executável para o arquivo Sohlepse.x86_64, com o comando:
 $ chmod +x ./Sohlepse.x_86_64
 
+E extraia o arquivo Sohlepse.pck.zip no mesmo diretório.
+
 Os saves do jogo são armazenados num arquivo savegame.save, neste mesmo diretório.
