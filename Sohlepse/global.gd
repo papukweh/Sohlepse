@@ -87,6 +87,7 @@ func new_game(slot, player):
 	unlocked_stage = 1
 
 func save():
+	get_tree().get_current_scene().get_node("Setup/AnimationPlayer").play("save")
 	if current_stage > unlocked_stage and current_stage <= FINAL:
 		unlocked_stage = current_stage
 	var save_dict = {

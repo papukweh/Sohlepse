@@ -14,7 +14,7 @@
 [sub_resource type="Theme" id=1]
 
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 
 size = 40
 use_mipmaps = false
@@ -22,7 +22,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 
 size = 20
 use_mipmaps = false
@@ -61,7 +61,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[node name="Pre-Menu" type="Control" index="0"]
+[node name="Pre-Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -154,7 +154,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
 custom_constants/shadow_offset_x = 3
@@ -206,7 +206,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
 custom_constants/shadow_offset_x = 3
@@ -260,7 +260,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
 custom_constants/shadow_offset_x = 3
@@ -702,7 +702,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Insira seu nome:"
