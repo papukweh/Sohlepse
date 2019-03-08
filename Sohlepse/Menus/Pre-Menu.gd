@@ -16,6 +16,9 @@ var fake = false
 signal pressed_slot(slot)
 
 func _ready():
+	if global.splash:
+		$AnimationPlayer.play("splash")
+		global.splash = false
 	global.initSound()
 	var container = $Save_window/ScrollContainer/VBoxContainer
 	var id = 0

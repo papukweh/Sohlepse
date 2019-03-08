@@ -1,4 +1,5 @@
 extends Node
+onready var splash = true
 
 var savegame = File.new() 
 var save_path = "./Saves/slot" 
