@@ -17,4 +17,5 @@ func _on_Limit_body_entered(body):
 
 func _timer_death():
 	global.deaths += 1
+	global.save()
 	global.restart()

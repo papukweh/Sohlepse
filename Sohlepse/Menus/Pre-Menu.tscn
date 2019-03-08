@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Menus/Pre-Menu.gd" type="Script" id=1]
 [ext_resource path="res://Menus/BG.tscn" type="PackedScene" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://Assets/Titulo.png" type="Texture" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Player.png" type="Texture" id=6]
-[ext_resource path="res://Assets/RedPlayer.png" type="Texture" id=7]
+[ext_resource path="res://Assets/RedPlayerMirror.png" type="Texture" id=7]
+[ext_resource path="res://Menus/Save_Button.tscn" type="PackedScene" id=8]
 
-[sub_resource type="Theme" id=3]
+[sub_resource type="Theme" id=1]
 
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 size = 40
 use_mipmaps = false
@@ -19,7 +20,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 
 size = 20
 use_mipmaps = false
@@ -27,7 +28,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Pre-Menu" type="Control" index="0"]
+[node name="Pre-Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -55,6 +56,7 @@ position = Vector2( 1.90735e-06, -1 )
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="." index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -70,7 +72,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = SubResource( 3 )
+theme = SubResource( 1 )
 popup_exclusive = false
 window_title = "Aviso"
 resizable = false
@@ -84,10 +86,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 396.0
-margin_top = 429.0
-margin_right = 603.0
-margin_bottom = 472.0
+margin_left = 400.0
+margin_top = 426.0
+margin_right = 607.0
+margin_bottom = 469.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -119,7 +121,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
 custom_constants/shadow_offset_x = 3
@@ -136,10 +138,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 333.0
-margin_top = 508.0
-margin_right = 673.0
-margin_bottom = 547.0
+margin_left = 337.0
+margin_top = 505.0
+margin_right = 677.0
+margin_bottom = 544.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -171,7 +173,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
 custom_constants/shadow_offset_x = 3
@@ -191,10 +193,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 436.0
-margin_top = 591.0
-margin_right = 568.0
-margin_bottom = 629.0
+margin_left = 440.0
+margin_top = 588.0
+margin_right = 572.0
+margin_bottom = 626.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -225,7 +227,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
 custom_constants/shadow_offset_x = 3
@@ -257,14 +259,14 @@ size_flags_vertical = 1
 
 [node name="Título" type="Sprite" parent="Title" index="0"]
 
-position = Vector2( 532.163, 174.381 )
+position = Vector2( 523.163, 174.381 )
 scale = Vector2( 0.929272, 0.929272 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Espelho" type="Sprite" parent="Title" index="1"]
 
-position = Vector2( 393.213, 333.421 )
+position = Vector2( 376.94, 330.33 )
 rotation = -3.14159
 scale = Vector2( 1.7, -1.7 )
 texture = ExtResource( 5 )
@@ -272,7 +274,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player" type="Sprite" parent="Title" index="2"]
 
-position = Vector2( 664.213, 348.421 )
+position = Vector2( 647.94, 345.33 )
 rotation = -3.14159
 scale = Vector2( 1.25, -1.25 )
 texture = ExtResource( 6 )
@@ -281,7 +283,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Player2" type="Sprite" parent="Title" index="3"]
 
 self_modulate = Color( 1, 1, 1, 0.320431 )
-position = Vector2( 395.213, 348.421 )
+position = Vector2( 378.94, 345.33 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
@@ -293,9 +295,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -562.0
+margin_left = -523.0
 margin_top = -51.0
-margin_right = -522.0
+margin_right = -483.0
 margin_bottom = -11.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -310,10 +312,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 621.0
-margin_top = 321.0
-margin_right = 1525.0
-margin_bottom = 681.0
+margin_left = 655.0
+margin_top = 311.0
+margin_right = 1424.0
+margin_bottom = 692.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -328,10 +330,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 644.0
-margin_top = 337.0
-margin_right = 1498.0
-margin_bottom = 658.0
+margin_left = 666.0
+margin_top = 324.0
+margin_right = 1408.0
+margin_bottom = 676.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -340,217 +342,236 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.176471, 0.333333, 0.34902, 1 )
 
-[node name="Slot1" type="Button" parent="Save_window" index="2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Save_window" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 663.0
-margin_top = 356.0
-margin_right = 1025.0
-margin_bottom = 480.0
+margin_left = 674.0
+margin_top = 336.0
+margin_right = 1420.0
+margin_bottom = 658.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
+rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
+scroll_horizontal_enabled = true
+scroll_horizontal = 0
+scroll_vertical_enabled = true
+scroll_vertical = 0
+scroll_deadzone = 0
 
-[node name="Label1" type="Label" parent="Save_window/Slot1" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 602.0
-margin_bottom = 90.0
-rect_scale = Vector2( 1.5, 1.5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Jogador: 
-Tempo jogado:
-Mortes:
-Fase atual:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Slot2" type="Button" parent="Save_window" index="3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Save_window/ScrollContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 664.0
-margin_top = 494.0
-margin_right = 1026.0
-margin_bottom = 618.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
-
-[node name="Label2" type="Label" parent="Save_window/Slot2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 602.0
-margin_bottom = 90.0
-rect_scale = Vector2( 1.5, 1.5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Jogador: 
-Tempo jogado:
-Mortes:
-Fase atual:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Slot3" type="Button" parent="Save_window" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 1039.0
-margin_top = 356.0
-margin_right = 1401.0
-margin_bottom = 480.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
-
-[node name="Label3" type="Label" parent="Save_window/Slot3" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 602.0
-margin_bottom = 90.0
-rect_scale = Vector2( 1.5, 1.5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Jogador: 
-Tempo jogado:
-Mortes:
-Fase atual:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Slot4" type="Button" parent="Save_window" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 1040.0
-margin_top = 496.0
-margin_right = 1402.0
+margin_right = 720.0
 margin_bottom = 620.0
+rect_min_size = Vector2( 720, 100 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
+alignment = 0
+_sections_unfolded = [ "Anchor", "Rect" ]
 
-[node name="Label4" type="Label" parent="Save_window/Slot4" index="0"]
+[node name="Line1" type="HBoxContainer" parent="Save_window/ScrollContainer/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 602.0
-margin_bottom = 90.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_right = 720.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 640, 100 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 2
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Jogador: 
-Tempo jogado:
-Mortes:
-Fase atual:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+size_flags_vertical = 1
+alignment = 1
 _sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="Slot01" parent="Save_window/ScrollContainer/VBoxContainer/Line1" index="0" instance=ExtResource( 8 )]
+
+margin_left = 38.0
+margin_right = 358.0
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Slot02" parent="Save_window/ScrollContainer/VBoxContainer/Line1" index="1" instance=ExtResource( 8 )]
+
+margin_left = 362.0
+margin_right = 682.0
+align = 2
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Line2" type="HBoxContainer" parent="Save_window/ScrollContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 104.0
+margin_right = 720.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 640, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Slot03" parent="Save_window/ScrollContainer/VBoxContainer/Line2" index="0" instance=ExtResource( 8 )]
+
+margin_left = 38.0
+margin_right = 358.0
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Slot04" parent="Save_window/ScrollContainer/VBoxContainer/Line2" index="1" instance=ExtResource( 8 )]
+
+margin_left = 362.0
+margin_right = 682.0
+align = 2
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Line3" type="HBoxContainer" parent="Save_window/ScrollContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 208.0
+margin_right = 720.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 640, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Slot05" parent="Save_window/ScrollContainer/VBoxContainer/Line3" index="0" instance=ExtResource( 8 )]
+
+margin_left = 38.0
+margin_right = 358.0
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Slot06" parent="Save_window/ScrollContainer/VBoxContainer/Line3" index="1" instance=ExtResource( 8 )]
+
+margin_left = 362.0
+margin_right = 682.0
+align = 2
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Line4" type="HBoxContainer" parent="Save_window/ScrollContainer/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 312.0
+margin_right = 720.0
+margin_bottom = 412.0
+rect_min_size = Vector2( 640, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Slot07" parent="Save_window/ScrollContainer/VBoxContainer/Line4" index="0" instance=ExtResource( 8 )]
+
+margin_left = 38.0
+margin_right = 358.0
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Slot08" parent="Save_window/ScrollContainer/VBoxContainer/Line4" index="1" instance=ExtResource( 8 )]
+
+margin_left = 362.0
+margin_right = 682.0
+align = 2
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Line5" type="HBoxContainer" parent="Save_window/ScrollContainer/VBoxContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 416.0
+margin_right = 720.0
+margin_bottom = 516.0
+rect_min_size = Vector2( 640, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Slot09" parent="Save_window/ScrollContainer/VBoxContainer/Line5" index="0" instance=ExtResource( 8 )]
+
+margin_left = 38.0
+margin_right = 358.0
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Slot10" parent="Save_window/ScrollContainer/VBoxContainer/Line5" index="1" instance=ExtResource( 8 )]
+
+margin_left = 362.0
+margin_right = 682.0
+align = 2
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Line6" type="HBoxContainer" parent="Save_window/ScrollContainer/VBoxContainer" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 520.0
+margin_right = 720.0
+margin_bottom = 620.0
+rect_min_size = Vector2( 640, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Slot11" parent="Save_window/ScrollContainer/VBoxContainer/Line6" index="0" instance=ExtResource( 8 )]
+
+margin_left = 38.0
+margin_right = 358.0
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Slot12" parent="Save_window/ScrollContainer/VBoxContainer/Line6" index="1" instance=ExtResource( 8 )]
+
+margin_left = 362.0
+margin_right = 682.0
+align = 2
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="Name_entry" type="Control" parent="." index="7"]
 
@@ -648,7 +669,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Insira seu nome:"
@@ -676,14 +697,6 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 [connection signal="mouse_exited" from="exit" to="." method="_on_exit_mouse_exited"]
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
-
-[connection signal="pressed" from="Save_window/Slot1" to="." method="_on_Slot1_pressed"]
-
-[connection signal="pressed" from="Save_window/Slot2" to="." method="_on_Slot2_pressed"]
-
-[connection signal="pressed" from="Save_window/Slot3" to="." method="_on_Slot3_pressed"]
-
-[connection signal="pressed" from="Save_window/Slot4" to="." method="_on_Slot4_pressed"]
 
 [connection signal="text_entered" from="Name_entry/LineEdit" to="." method="_on_LineEdit_text_entered"]
 

@@ -83,6 +83,7 @@ func new_game(slot, player):
 	savegame.open(save_path+str(slot), File.WRITE)
 	savegame.store_line(to_json(save_dict))
 	savegame.close()
+	unlocked_stage = 1
 
 func save():
 	if current_stage > unlocked_stage and current_stage <= FINAL:

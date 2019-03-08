@@ -23,10 +23,6 @@ func _process(delta):
 		global.play_se(global.SE_ACCEPT)
 		global.DEBUG = false
 		get_tree().change_scene("Menus/Stage_Menu.tscn")
-#	if pressed[tests_]:
-#		global.play_se(global.SE_ACCEPT)
-#		global.DEBUG = true
-#		get_tree().change_scene("Menus/Stage_Menu.tscn")
 	if pressed[options_]:
 		global.play_se(global.SE_ACCEPT)
 		get_tree().change_scene("Menus/Options.tscn")
@@ -35,7 +31,7 @@ func _process(delta):
 		get_tree().change_scene("Menus/Credits.tscn")
 	if pressed[exit_]:
 		global.play_se(global.SE_ACCEPT)
-		get_tree().quit()
+		get_tree().change_scene("Menus/Pre-Menu.tscn")
 	if Input.is_action_just_pressed("move_down"):
 		global.play_se(global.SE_MOVE,-15)
 		_atualiza((state+1)%5)
