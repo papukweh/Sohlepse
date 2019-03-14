@@ -1,89 +1,92 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Objects/Wall.gd" type="Script" id=1]
-[ext_resource path="res://Assets/big_actionable_wall_2a.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Forest_big_actionable_wall_2a.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Forest_big_actionable_wall_3b.png" type="Texture" id=4]
-[ext_resource path="res://Assets/big_actionable_wall.png" type="Texture" id=5]
-[ext_resource path="res://Assets/big_actionable_wall_3a.png" type="Texture" id=6]
-[ext_resource path="res://Assets/big_actionable_wall_3b.png" type="Texture" id=7]
-[ext_resource path="res://Assets/big_actionable_wall_3c.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Forest_big_actionable_wall_2b.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Forest_big_actionable_wall_3c.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Forest_big_actionable_wall_3a.png" type="Texture" id=11]
+[ext_resource path="res://Assets/base_3c.png" type="Texture" id=2]
+[ext_resource path="res://Assets/base_3d.png" type="Texture" id=3]
+[ext_resource path="res://Assets/base_3b.png" type="Texture" id=4]
+[ext_resource path="res://Assets/base_2c.png" type="Texture" id=5]
+[ext_resource path="res://Assets/base_1a.png" type="Texture" id=6]
+[ext_resource path="res://Assets/base_2b.png" type="Texture" id=7]
+[ext_resource path="res://Assets/base_2a.png" type="Texture" id=8]
+[ext_resource path="res://Assets/base_3a.png" type="Texture" id=9]
+[ext_resource path="res://Assets/base_1b.png" type="Texture" id=10]
+[ext_resource path="res://Assets/big_actionable_wall.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Forest_big_actionable_wall.png" type="Texture" id=12]
-[ext_resource path="res://Assets/big_actionable_wall_2b.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "20",
+"name": "32",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "120",
+"name": "33",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "131",
+"name": "31",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "10",
+"name": "22",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "30",
+"name": "10",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "31",
+"name": "21",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "32",
+"name": "20",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "121",
+"name": "30",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "132",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "130",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "110",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "21",
+"name": "11",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.96182, 69.8504 )
+extents = Vector2( 9.96182, 10 )
 
-[node name="Wall" type="StaticBody2D" index="0"]
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "forest",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19.4513, 5.6389 )
+
+[node name="Wall" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -100,14 +103,29 @@ forest = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
+position = Vector2( 0.214634, -36.2452 )
+scale = Vector2( 1, 1.15045 )
 frames = SubResource( 1 )
 animation = "10"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.0152325, 0.0330314 )
-scale = Vector2( 1.60591, 3.20781 )
+position = Vector2( -0.2792, 146.355 )
+scale = Vector2( 1.58319, 14.4633 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Wall_spr" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( -0.33424, 158.265 )
+scale = Vector2( 0.989547, 0.788103 )
+frames = SubResource( 3 )
+animation = "default"
+
+[node name="Base" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 0.0659444, -35.4696 )
+scale = Vector2( 1.228, 3.09622 )
+shape = SubResource( 4 )
 
 

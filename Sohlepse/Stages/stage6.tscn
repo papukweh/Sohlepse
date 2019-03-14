@@ -5,9 +5,9 @@
 [ext_resource path="res://tileset_test.tres" type="TileSet" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Lever.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Hazards/BigFallingFloor.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/MovingPlatform_OneWay.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Hazards/BigFallingFloor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/MovingPlatform_OneWay.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/BigWall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Hazards/Limit.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=11]
@@ -110,25 +110,23 @@ position = Vector2( -74.1851, 606.937 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Wall" parent="Reality/Objects" index="1" groups=[
-"Lever",
-] instance=ExtResource( 6 )]
-
-position = Vector2( -1029.03, 318.177 )
-scale = Vector2( 1, 10.0412 )
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="FallingFloor2" parent="Reality/Objects" index="2" instance=ExtResource( 7 )]
+[node name="FallingFloor2" parent="Reality/Objects" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( -448.006, 653.412 )
 scale = Vector2( -1.209, 1 )
 
-[node name="MovingPlatform3" parent="Reality/Objects" index="3" instance=ExtResource( 8 )]
+[node name="MovingPlatform3" parent="Reality/Objects" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( -675.823, 411.712 )
 motion = Vector2( -30, 200 )
 cycle = 10.0
-big = 0
+
+[node name="Wall2" parent="Reality/Objects" index="3" groups=[
+"Lever",
+] instance=ExtResource( 8 )]
+
+position = Vector2( -1026.48, 168.227 )
+scale = Vector2( 1, 1.40724 )
 
 [node name="Endgoal" parent="." index="6" instance=ExtResource( 9 )]
 

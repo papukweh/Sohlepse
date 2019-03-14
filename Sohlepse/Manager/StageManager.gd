@@ -25,6 +25,7 @@ func _ready():
 	$Setup/Viewports/C1/Viewport1.add_child(stage)
 	$Setup.world = get_node("Setup/Viewports/C1/Viewport1/stage"+str(id)+"/")
 	$Setup.can_load(stage.ACT, stage.MODE, stage.invert)
+	global.save()
 	
 	if global.current_stage < 13:
 		rand_bg = global.ACT1_BG2

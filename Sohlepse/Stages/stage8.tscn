@@ -120,7 +120,6 @@ position = Vector2( 700, -117 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 motion = Vector2( 140, 0 )
 cycle = 10.0
-big = 0
 
 [node name="MovingPlatform4" parent="Reality/Objects" index="3" groups=[
 "Button3",
@@ -131,7 +130,6 @@ scale = Vector2( 1.25, 1 )
 activated = 1
 motion = Vector2( 210, 0 )
 cycle = 10.0
-big = 0
 
 [node name="MovingPlatform5" parent="Reality/Objects" index="4" groups=[
 "Lever2",
@@ -142,7 +140,6 @@ scale = Vector2( 1.25, 1 )
 activated = 1
 motion = Vector2( 250, 0 )
 cycle = 10.0
-big = 0
 
 [node name="MovingPlatform6" parent="Reality/Objects" index="5" groups=[
 "Lever2",
@@ -153,7 +150,6 @@ scale = Vector2( -1.25, 1 )
 activated = 1
 motion = Vector2( 250, 0 )
 cycle = 10.0
-big = 0
 
 [node name="Button1" parent="Reality/Objects" index="6" instance=ExtResource( 6 )]
 
@@ -175,7 +171,6 @@ position = Vector2( 767, -308.142 )
 activated = 1
 motion = Vector2( 225, 0 )
 cycle = 11.0
-big = 0
 
 [node name="Wall1" parent="Reality/Objects" index="10" groups=[
 "Lever3",
@@ -201,7 +196,6 @@ scale = Vector2( 1, 2 )
 [node name="MovingPlatform3" parent="Reality/Objects" index="13" instance=ExtResource( 5 )]
 
 position = Vector2( 1024, -224 )
-big = 0
 
 [node name="Lever1" parent="Reality/Objects" index="14" instance=ExtResource( 8 )]
 

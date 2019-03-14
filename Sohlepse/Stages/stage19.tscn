@@ -105,22 +105,24 @@ __meta__ = {
 }
 
 [node name="Wall" parent="Reality/Objects" index="0" groups=[
-"MirrorLED1",
 "RealLED1",
+"MirrorLED1",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 978.648, -306.387 )
+position = Vector2( 987.648, -306.387 )
 rotation = 1.5708
+scale = Vector2( 1, 1.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
 [node name="Wall2" parent="Reality/Objects" index="1" groups=[
-"RealLED2",
 "MirrorLED2",
+"RealLED2",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 1730.54, -433.501 )
+position = Vector2( 1741.54, -433.501 )
 rotation = 1.5708
+scale = Vector2( 1, 1.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
@@ -129,8 +131,9 @@ activation = 1
 "MirrorLED3",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 2493, -568.597 )
+position = Vector2( 2504, -568.597 )
 rotation = 1.5708
+scale = Vector2( 1, 1.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
@@ -192,22 +195,24 @@ __meta__ = {
 }
 
 [node name="WallM" parent="Mirror/Objects" index="0" groups=[
-"MirrorLED1",
 "RealLED1",
+"MirrorLED1",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 978.648, -306.387 )
+position = Vector2( 987.648, -306.387 )
 rotation = 1.5708
+scale = Vector2( 1, 1.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
 [node name="WallM2" parent="Mirror/Objects" index="1" groups=[
-"RealLED2",
 "MirrorLED2",
+"RealLED2",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 1730.54, -433.501 )
+position = Vector2( 1741.54, -433.501 )
 rotation = 1.5708
+scale = Vector2( 1, 1.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
@@ -216,8 +221,9 @@ activation = 1
 "MirrorLED3",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 2493, -568.597 )
+position = Vector2( 2502, -568.597 )
 rotation = 1.5708
+scale = Vector2( 1, 1.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 

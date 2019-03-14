@@ -38,6 +38,9 @@ func _ready():
 		a.setup(self)
 		checks.push_back(false)
 
+func change_text(id, text):
+	get_node("Label"+str(id)).set_text(text)
+
 func body_entered(id):
 	#print("prita caralho")
 	if stop:

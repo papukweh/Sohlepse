@@ -16,6 +16,7 @@
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=16]
+
 [node name="stage11" type="Node" index="0"]
 
 script = ExtResource( 1 )
@@ -145,8 +146,6 @@ invert_horizontal = -1
 
 [node name="Reality" type="Node" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="Objects" type="Node" parent="Reality" index="0"]
 
 [node name="Wall1" parent="Reality/Objects" index="0" groups=[
@@ -186,7 +185,7 @@ begin = 1
 
 [node name="Box" parent="Reality/Objects" index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 606, -1114 )
+position = Vector2( 602, -1114 )
 
 [node name="Lever1" parent="Reality/Objects" index="5" instance=ExtResource( 7 )]
 
@@ -201,7 +200,6 @@ position = Vector2( 63.4012, -718 )
 position = Vector2( 282, -623 )
 motion = Vector2( 110, 0 )
 cycle = 5.001
-big = 0
 
 [node name="Button2" parent="Reality/Objects" index="8" instance=ExtResource( 9 )]
 
@@ -213,18 +211,15 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 927.615, -208.109 )
 motion = Vector2( 300, 0 )
 cycle = 15.0
-big = 0
 
 [node name="MovingPlatform2" parent="Reality/Objects" index="10" instance=ExtResource( 8 )]
 
 position = Vector2( 1396.43, -127.875 )
-big = 0
 
 [node name="MovingPlatform3" parent="Reality/Objects" index="11" instance=ExtResource( 8 )]
 
 position = Vector2( 780.214, -127.875 )
 scale = Vector2( 0.881685, 1 )
-big = 0
 
 [node name="Lever3" parent="Reality/Objects" index="12" instance=ExtResource( 7 )]
 
@@ -490,8 +485,6 @@ position = Vector2( 672, -40 )
 begin = 1
 
 [node name="Mirror" type="Node" parent="." index="8"]
-
-editor/display_folded = true
 
 [node name="Hazards" type="Node" parent="Mirror" index="0"]
 
@@ -840,7 +833,7 @@ begin = 1
 
 [node name="Box2" parent="Mirror/Objects" index="4" instance=ExtResource( 6 )]
 
-position = Vector2( -606, -1114 )
+position = Vector2( -612, -1114 )
 scale = Vector2( -1, 1 )
 
 [node name="Button5" parent="Mirror/Objects" index="5" instance=ExtResource( 9 )]
@@ -867,7 +860,6 @@ position = Vector2( -282, -623 )
 scale = Vector2( -1.5, 1 )
 motion = Vector2( 110, 0 )
 cycle = 5.001
-big = 0
 
 [node name="Button3" parent="Mirror/Objects" index="9" instance=ExtResource( 9 )]
 
@@ -881,19 +873,16 @@ position = Vector2( -927.615, -208.109 )
 scale = Vector2( -1.5, 1 )
 motion = Vector2( 300, 0 )
 cycle = 15.0
-big = 0
 
 [node name="MovingPlatform7" parent="Mirror/Objects" index="11" instance=ExtResource( 8 )]
 
 position = Vector2( -1396.43, -127.875 )
 scale = Vector2( -1.5, 1 )
-big = 0
 
 [node name="MovingPlatform5" parent="Mirror/Objects" index="12" instance=ExtResource( 8 )]
 
 position = Vector2( -780.214, -127.875 )
 scale = Vector2( -0.881685, 1 )
-big = 0
 
 [node name="Lever6" parent="Mirror/Objects" index="13" instance=ExtResource( 7 )]
 

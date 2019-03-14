@@ -124,3 +124,8 @@ func _on_Back_mouse_entered():
 
 func _on_Back_mouse_exited():
 	$Back/Label.set("custom_colors/font_color", Color(0.86,0.96,0.92))
+
+
+func _on_Back_pressed():
+	global.play_se(global.SE_CHANGE, -5)
+	get_tree().change_scene("Menus/MenuPrincipal.tscn")

@@ -14,6 +14,7 @@ const IDLE = [false, false, false, false]
 const INTERACT = [false, false, false, true]
 
 func _ready():
+	global.end = true
 	global.stop_siren()
 	global.stop_bgm()
 	$Player2.clone = true
@@ -23,6 +24,7 @@ func _ready():
 	$Player.in_terrain +=1
 	$Player2.wife()
 	$Player2.hide()
+	$Event2.change_text(0,global.get_player()+", você voltou!")
 	for i in range(50):
 		for i in range(10):
 			moveright.push_back(MOVE_RIGHT)
@@ -70,5 +72,7 @@ func _on_Exit_body_entered(body):
 		$Event2.hide()
 
 func _on_Timer_timeout():
+	global.completed = true
+	global.save()
 	global.play_se(global.SE_JOGAR)
 	get_tree().change_scene("res://Menus/Credits.tscn")

@@ -34,7 +34,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 65514, 1, 0, 65515, 536870923, 0, 65516, 536870923, 0, 65517, 536870923, 0, 65518, 536870923, 0, 65519, 536870923, 0, 65520, 536870923, 0, 65521, 536870923, 0, 65522, 536870923, 0, 65523, 536870923, 0, 65524, 536870923, 0, 65525, 536870923, 0, 65526, 536870923, 0, 65527, 536870923, 0, 65528, 536870923, 0, 65529, 536870923, 0, 65530, 536870923, 0, 65531, 536870923, 0, 65532, 536870923, 0, 65533, 536870923, 0, 65534, 536870923, 0, 65535, 1073741825, 0, 131050, 1, 0, 131071, 1, 0, 196586, 1, 0, 196607, 1, 0, 262122, 1, 0, 262143, 1073741825, 0, 327658, 1, 0, 327679, 1073741825, 0, 393194, 1, 0, 393215, 1, 0, 458730, 1, 0, 458751, 1073741825, 0, 524266, 1, 0, 524287, 1073741825, 0, 589802, 1, 0, 589823, 1073741825, 0, 655338, 1, 0, 655359, 1073741825, 0, 720874, 0, 0, 720875, 0, 0, 720876, 0, 0, 720877, 0, 0, 720878, 0, 0, 720879, 0, 0, 720880, 0, 0, 720881, 0, 0, 720882, 0, 0, 720883, 0, 0, 720884, 0, 0, 720885, 0, 0, 720886, 0, 0, 720887, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0 )
+tile_data = PoolIntArray( 458730, 11, 0, 458731, 11, 0, 458732, 11, 0, 458733, 11, 0, 458734, 11, 0, 458735, 11, 0, 458736, 11, 0, 458737, 11, 0, 458738, 11, 0, 458739, 11, 0, 458740, 11, 0, 458741, 11, 0, 458742, 11, 0, 458743, 11, 0, 458744, 11, 0, 458745, 11, 0, 458746, 11, 0, 458747, 11, 0, 458748, 11, 0, 458749, 11, 0, 458750, 11, 0, 458751, 11, 0, 524266, 1, 0, 524287, 1073741825, 0, 589802, 1, 0, 589823, 1073741825, 0, 655338, 1, 0, 655359, 1073741825, 0, 720874, 0, 0, 720875, 0, 0, 720876, 0, 0, 720877, 0, 0, 720878, 0, 0, 720879, 0, 0, 720880, 0, 0, 720881, 0, 0, 720882, 0, 0, 720883, 0, 0, 720884, 0, 0, 720885, 0, 0, 720886, 0, 0, 720887, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Real" type="ReferenceRect" parent="." index="1"]
@@ -97,32 +97,32 @@ _sections_unfolded = [ "Transform" ]
 "Button7",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( -220.223, 355.067 )
-scale = Vector2( 1, 8.89398 )
+position = Vector2( -226.405, 546.067 )
+scale = Vector2( 1, 3 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Wall4" parent="Objects/Real" index="3" groups=[
 "Button4",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( -1088.31, 355.067 )
-scale = Vector2( 1, 8.89398 )
+position = Vector2( -1088.31, 543.524 )
+scale = Vector2( 1, 3 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Wall5" parent="Objects/Real" index="4" groups=[
 "Button5",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( -650.335, 355.067 )
-scale = Vector2( 1, 8.89398 )
+position = Vector2( -643.335, 541.289 )
+scale = Vector2( 1, 3 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Wall6" parent="Objects/Real" index="5" groups=[
 "Button6",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( -329.295, 355.067 )
-scale = Vector2( 1, 8.89398 )
+position = Vector2( -329.295, 546.067 )
+scale = Vector2( 1, 3 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Button5" parent="Objects/Real" index="6" groups=[
@@ -158,6 +158,5 @@ events = [ Vector2( -1290, 590 ), Vector2( -1000, 640 ), Vector2( -650, 640 ), V
 labels = [ "", "Hmmm, preciso colocar algum peso aqui", "Obrigado, caixas", " " ]
 pos = [ Vector2( -1080, 300 ), Vector2( -1000, 340 ), Vector2( -1000, 380 ), Vector2( 0, 0 ) ]
 areascale = [ Vector2( 1, 1 ), Vector2( 1, -2 ), Vector2( 1, -2 ), Vector2( -2, -2 ) ]
-playanyway = false
 
 

@@ -222,8 +222,8 @@ motion = Vector2( 300, 0 )
 cycle = 10.0
 
 [node name="MovingPlatform2" parent="Mirror" index="3" groups=[
-"Lever3",
 "Lever2",
+"Lever3",
 ] instance=ExtResource( 9 )]
 
 position = Vector2( 50, 400 )
