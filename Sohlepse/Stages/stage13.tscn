@@ -88,8 +88,6 @@ invert_vertical = -1
 
 [node name="Objects" type="Node" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="Wall1" parent="Objects" index="0" groups=[
 "Lever1",
 ] instance=ExtResource( 4 )]
@@ -103,7 +101,8 @@ forest = 1
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 209.332, 320.049 )
-scale = Vector2( 1, 2.00742 )
+scale = Vector2( 1, -2 )
+_sections_unfolded = [ "Collision", "Transform" ]
 begin = 1
 forest = 1
 
@@ -121,12 +120,13 @@ forest = 1
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 868.401, 319.776 )
-scale = Vector2( 1, 1.98563 )
+scale = Vector2( 1, -2 )
+_sections_unfolded = [ "Collision", "Transform" ]
 forest = 1
 
 [node name="Wall4" parent="Objects" index="4" groups=[
-"Lever4",
 "Lever5",
+"Lever4",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 882.174, -127.817 )
@@ -135,12 +135,13 @@ activation = 1
 forest = 1
 
 [node name="Wall7" parent="Objects" index="5" groups=[
-"Lever6",
 "Lever3",
+"Lever6",
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 874.442, 127.727 )
-scale = Vector2( 1, 2.00186 )
+scale = Vector2( 1, -2 )
+_sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 forest = 1
 

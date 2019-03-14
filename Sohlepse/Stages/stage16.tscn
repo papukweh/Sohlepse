@@ -16,7 +16,7 @@
 [ext_resource path="res://Objects/Endgoal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=15]
 
-[node name="stage16" type="Node"]
+[node name="stage16" type="Node" index="0"]
 
 script = ExtResource( 1 )
 ACT = 2
@@ -96,8 +96,8 @@ position = Vector2( 192, 160 )
 "Button3",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 479.421, -946.108 )
-scale = Vector2( 1, 0.50709 )
+position = Vector2( 479.421, -964.667 )
+scale = Vector2( 1, 0.395857 )
 forest = 1
 
 [node name="Lever1" parent="Reality/Objects" index="1" groups=[
@@ -116,7 +116,7 @@ position = Vector2( 384.644, -834.79 )
 "Lever2",
 ] instance=ExtResource( 7 )]
 
-position = Vector2( 97.403, -1044.1 )
+position = Vector2( 107.403, -1044.1 )
 rotation = 1.5708
 scale = Vector2( 1, 1.2595 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -206,7 +206,7 @@ forest = 1
 "Lever1",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 479.884, 114.334 )
+position = Vector2( 479.884, 27.334 )
 scale = Vector2( 1, 0.50709 )
 forest = 1
 
@@ -225,7 +225,6 @@ activated = 1
 motion = Vector2( 350, 0 )
 cycle = 14.0
 forest = 1
-big = 0
 
 [node name="Box" parent="Mirror/Objects" index="3" instance=ExtResource( 8 )]
 

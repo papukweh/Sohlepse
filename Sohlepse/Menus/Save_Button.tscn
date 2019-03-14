@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menus/Save_Button.gd" type="Script" id=1]
 [ext_resource path="res://Assets/thumbnail1.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/RedPlayerMirror.png" type="Texture" id=4]
 
 [node name="Slot" type="Button"]
 
@@ -83,6 +85,22 @@ position = Vector2( 231.479, 50.3696 )
 scale = Vector2( 0.247358, 0.27574 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+
+visible = false
+position = Vector2( 251.274, 48.825 )
+scale = Vector2( 1.42356, 1.39705 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="." index="4"]
+
+visible = false
+modulate = Color( 1, 1, 1, 0.563529 )
+position = Vector2( 248.501, 61.9762 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="pressed" from="." to="." method="_on_Slot_pressed"]
 

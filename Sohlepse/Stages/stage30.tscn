@@ -75,6 +75,8 @@ position = Vector2( 341.026, 444.854 )
 
 position = Vector2( 658.082, 384.344 )
 scale = Vector2( 1, 1.94471 )
+z_index = 1
+_sections_unfolded = [ "Collision", "Z Index" ]
 begin = 1
 
 [node name="Wall2" parent="Objects" index="3" groups=[
@@ -82,7 +84,9 @@ begin = 1
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 814.464, 191.474 )
-scale = Vector2( 1, 1.94471 )
+scale = Vector2( -1, 1.94471 )
+z_index = 1
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="Wall3" parent="Objects" index="4" groups=[
 "Lever1",
@@ -90,6 +94,8 @@ scale = Vector2( 1, 1.94471 )
 
 position = Vector2( 733.399, 2.1814 )
 scale = Vector2( 1, 1.94471 )
+z_index = 1
+_sections_unfolded = [ "Collision", "Z Index" ]
 begin = 1
 
 [node name="Wall4" parent="Objects" index="5" groups=[
@@ -97,7 +103,9 @@ begin = 1
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 811.505, -193.084 )
-scale = Vector2( 1, 1.94471 )
+scale = Vector2( -1, 1.94471 )
+z_index = 1
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="Wall5" parent="Objects" index="6" groups=[
 "Lever1",
@@ -105,14 +113,17 @@ scale = Vector2( 1, 1.94471 )
 
 position = Vector2( 722.714, -383.375 )
 scale = Vector2( 1, 1.94471 )
+z_index = 1
+_sections_unfolded = [ "Collision", "Z Index" ]
 begin = 1
 
 [node name="Wall6" parent="Objects" index="7" groups=[
 "Lever1",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( 816.153, -575.679 )
-scale = Vector2( 1, 1.94471 )
+position = Vector2( 809.153, -575.679 )
+scale = Vector2( -1, 1.94471 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="MovingPlatform" parent="Objects" index="8" groups=[
 "Button2",
@@ -202,6 +213,8 @@ position = Vector2( 608, -295.625 )
 [node name="Thorns30" parent="Hazards" index="10" instance=ExtResource( 8 )]
 
 position = Vector2( 736, -295.625 )
+z_index = 2
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Thorns31" parent="Hazards" index="11" instance=ExtResource( 8 )]
 
@@ -226,6 +239,8 @@ position = Vector2( 1056, -103.625 )
 [node name="Thorns33" parent="Hazards" index="15" instance=ExtResource( 8 )]
 
 position = Vector2( 800, -103.625 )
+z_index = 2
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Thorns34" parent="Hazards" index="16" instance=ExtResource( 8 )]
 
@@ -260,6 +275,8 @@ position = Vector2( 672, 88.375 )
 [node name="Thorns35" parent="Hazards" index="21" instance=ExtResource( 8 )]
 
 position = Vector2( 736, 88.375 )
+z_index = 2
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Thorns12" parent="Hazards" index="22" groups=[
 "Lever1",
@@ -313,6 +330,8 @@ position = Vector2( 1056, 280.375 )
 [node name="Thorns36" parent="Hazards" index="29" instance=ExtResource( 8 )]
 
 position = Vector2( 800, 280.375 )
+z_index = 2
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Thorns19" parent="Hazards" index="30" groups=[
 "Lever1",

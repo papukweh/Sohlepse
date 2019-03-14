@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -73,7 +73,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 0, 0, 0 ), Color( 1, 0, 0, 0.215686 ), Color( 1, 0, 0, 0 ) ]
 }
 
-[node name="StageManager" type="Node2D" index="0"]
+[node name="StageManager" type="Node2D"]
 
 z_index = 20
 script = ExtResource( 1 )
@@ -92,7 +92,6 @@ autostart = false
 
 [node name="Tutoriais" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 136, 586 )
 z_index = 95
 _sections_unfolded = [ "Z Index" ]
@@ -171,6 +170,7 @@ blend_times = [  ]
 
 [node name="ColorRect" type="ColorRect" parent="Tutoriais" index="8"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -185,7 +185,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0, 0, 0, 0 )
+color = Color( 1, 1, 1, 1 )
 
 [node name="PauseMenu" parent="Tutoriais" index="9" instance=ExtResource( 5 )]
 

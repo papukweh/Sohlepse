@@ -637,8 +637,8 @@ blend_times = [  ]
 
 [node name="Mirror" type="Sprite" parent="AnimationPlayer" index="0"]
 
-visible = false
-position = Vector2( 40.7287, 641.105 )
+position = Vector2( 39.3683, 656.069 )
+scale = Vector2( 0.8, 0.8 )
 z_index = 250
 z_as_relative = false
 texture = ExtResource( 6 )

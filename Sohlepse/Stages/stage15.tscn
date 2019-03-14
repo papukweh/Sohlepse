@@ -91,13 +91,13 @@ invert_horizontal = -1
 [node name="Reality" type="Node" parent="." index="4"]
 
 [node name="Wall4" parent="Reality" index="0" groups=[
-"Lever2",
 "ButtonInst3",
+"Lever2",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( -864.113, 337.241 )
+position = Vector2( -1114.85, 342.241 )
 rotation = -1.5708
-scale = Vector2( 1, 1.57124 )
+scale = Vector2( 1, 1.7669 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 forest = 1
@@ -106,7 +106,7 @@ forest = 1
 "ButtonInst2",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( -879.587, 49.6739 )
+position = Vector2( -1125.59, 39.6739 )
 rotation = -1.5708
 scale = Vector2( 1, 1.64144 )
 _sections_unfolded = [ "Collision", "Transform" ]

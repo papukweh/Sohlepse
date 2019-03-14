@@ -10,7 +10,9 @@ var player = ""
 var slot = 1
 var deaths = 0
 var playtime = 0
+var completed = false
 var clock = null
+var end = false
 
 var current_act = 1
 var DEBUG = false
@@ -72,6 +74,9 @@ func get_deaths():
 	
 func get_last_stage():
 	return unlocked_stage
+	
+func get_completed():
+	return completed
 
 func new_game(slot, player):
 	var save_dict = {
@@ -79,7 +84,8 @@ func new_game(slot, player):
         "player" : player,
         "playtime" : 0,
         "deaths" : 0,
-        "last_stage" : 1
+        "last_stage" : 1,
+		"completed" : false
 }
 	savegame.open(save_path+str(slot), File.WRITE)
 	savegame.store_line(to_json(save_dict))
@@ -87,7 +93,8 @@ func new_game(slot, player):
 	unlocked_stage = 1
 
 func save():
-	get_tree().get_current_scene().get_node("Setup/AnimationPlayer").play("save")
+	if !global.end:
+		get_tree().get_current_scene().get_node("Setup/AnimationPlayer").play("save")
 	if current_stage > unlocked_stage and current_stage <= FINAL:
 		unlocked_stage = current_stage
 	var save_dict = {
@@ -95,7 +102,8 @@ func save():
         "player" : get_player(),
         "playtime" : get_playtime(),
         "deaths" : get_deaths(),
-        "last_stage" : get_last_stage()
+        "last_stage" : get_last_stage(),
+		"completed" : get_completed()
 }
 	savegame.open(save_path+str(slot), File.WRITE)
 	savegame.store_line(to_json(save_dict))
@@ -110,6 +118,7 @@ func load_game(save_slot):
 	playtime = dict["playtime"]
 	deaths = dict["deaths"]
 	unlocked_stage = dict["last_stage"]
+	completed = dict["completed"]
 	slot = save_slot
 	savegame.close()
 	clock.start()

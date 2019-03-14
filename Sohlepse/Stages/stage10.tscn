@@ -123,24 +123,24 @@ cycle = 725.0
 "Button",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 336.271, 384.742 )
-scale = Vector2( 1, 1.98064 )
+position = Vector2( 336.271, 374.002 )
+scale = Vector2( 1, 2.31628 )
 begin = 1
 
 [node name="Wall2" parent="Reality/Objects" index="10" groups=[
 "Button2",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 647.271, 384.742 )
-scale = Vector2( 1, 1.98064 )
+position = Vector2( 647.271, 374.002 )
+scale = Vector2( 1, 2.31628 )
 begin = 1
 
 [node name="Wall3" parent="Reality/Objects" index="11" groups=[
 "Button3",
 ] instance=ExtResource( 8 )]
 
-position = Vector2( 65.453, -223.47 )
-scale = Vector2( 1, 0.993262 )
+position = Vector2( 81.5463, -232.427 )
+scale = Vector2( 1, 1.25729 )
 begin = 1
 
 [node name="Button" parent="Reality/Objects" index="12" groups=[

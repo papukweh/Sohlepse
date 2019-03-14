@@ -119,7 +119,7 @@ forest = 1
 
 [node name="MovingPlatform3" parent="Reality/Objects" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 1488.86, 72.014 )
+position = Vector2( 1488.86, 33.0535 )
 motion = Vector2( -1500, 0 )
 cycle = 130.0
 forest = 1
@@ -144,15 +144,15 @@ forest = 1
 
 [node name="Box" parent="Reality/Objects" index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 285.704, 30.0225 )
+position = Vector2( 276.704, 30.0225 )
 
 [node name="Box2" parent="Reality/Objects" index="6" instance=ExtResource( 7 )]
 
-position = Vector2( 479.644, 33.3083 )
+position = Vector2( 470.644, 33.3083 )
 
 [node name="Box3" parent="Reality/Objects" index="7" instance=ExtResource( 7 )]
 
-position = Vector2( 1490.91, 30.405 )
+position = Vector2( 1490.91, -8.55552 )
 
 [node name="Button" parent="Reality/Objects" index="8" instance=ExtResource( 8 )]
 

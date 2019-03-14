@@ -65,8 +65,8 @@ position = Vector2( -542.722, 861.856 )
 "ButtonInst1",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( -482.237, -422.055 )
-scale = Vector2( 1, 2.8188 )
+position = Vector2( -475.237, -422.055 )
+scale = Vector2( -1, 2.8188 )
 _sections_unfolded = [ "Collision", "Transform" ]
 forest = 1
 
@@ -146,7 +146,7 @@ forest = 1
 "Lever5",
 ] instance=ExtResource( 11 )]
 
-position = Vector2( 1263.57, -415.558 )
+position = Vector2( 1263.57, -496.558 )
 scale = Vector2( 1, 0.71 )
 _sections_unfolded = [ "Collision", "Transform" ]
 begin = 1
@@ -156,8 +156,8 @@ forest = 1
 "Lever7",
 ] instance=ExtResource( 11 )]
 
-position = Vector2( 2304.71, -417.65 )
-scale = Vector2( 1, 0.71 )
+position = Vector2( 2306.71, -533.91 )
+scale = Vector2( 1, 0.780633 )
 _sections_unfolded = [ "Collision", "Transform" ]
 begin = 1
 forest = 1
@@ -167,9 +167,9 @@ forest = 1
 "ButtonInst3",
 ] instance=ExtResource( 11 )]
 
-position = Vector2( 2439.15, -274.419 )
+position = Vector2( 2342.07, -249.932 )
 rotation = 1.5708
-scale = Vector2( 1, 0.537 )
+scale = Vector2( 1, -0.642301 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
@@ -178,15 +178,13 @@ activation = 1
 "Lever4",
 ] instance=ExtResource( 11 )]
 
-position = Vector2( 591.995, -416.786 )
+position = Vector2( 591.995, -495.786 )
 scale = Vector2( 1, 0.71 )
 _sections_unfolded = [ "Collision", "Transform" ]
 begin = 1
 forest = 1
 
 [node name="Hazards" type="Node" parent="Reality" index="1"]
-
-editor/display_folded = true
 
 [node name="Thorns" parent="Reality/Hazards" index="0" groups=[
 "Lever6",
@@ -425,8 +423,8 @@ position = Vector2( 2272, -224 )
 "Lever4",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( -530.434, -25.9503 )
-scale = Vector2( 1, 4.70453 )
+position = Vector2( -530.434, -11.7937 )
+scale = Vector2( -1, 4.26214 )
 _sections_unfolded = [ "Collision", "Transform" ]
 begin = 1
 forest = 1
@@ -529,16 +527,16 @@ position = Vector2( 2723.88, 122.389 )
 "Lever6",
 ] instance=ExtResource( 11 )]
 
-position = Vector2( -132.907, 514.812 )
-scale = Vector2( 1, 1.68903 )
+position = Vector2( -132.907, 227.734 )
+scale = Vector2( 1, 2.01644 )
 forest = 1
 
 [node name="Wall2" parent="Mirror/Objects" index="16" groups=[
 "Lever5",
 ] instance=ExtResource( 11 )]
 
-position = Vector2( 1853.16, 510.153 )
-scale = Vector2( 1, 1.68903 )
+position = Vector2( 1853.16, 210.613 )
+scale = Vector2( 1, 2.04965 )
 forest = 1
 
 [node name="MovingPlatform7" parent="Mirror/Objects" index="17" instance=ExtResource( 10 )]

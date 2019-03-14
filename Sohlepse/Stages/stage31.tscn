@@ -11,7 +11,7 @@
 [ext_resource path="res://Hazards/Thorns.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Hazards/FireArea.tscn" type="PackedScene" id=10]
 
-[node name="stage31" index="0" instance=ExtResource( 1 )]
+[node name="stage31" instance=ExtResource( 1 )]
 
 ACT = 3
 
@@ -115,9 +115,9 @@ names = [ "Wall3Led2" ]
 "Button1",
 ] instance=ExtResource( 7 )]
 
-position = Vector2( 991.849, 224.595 )
+position = Vector2( 966.969, 224.595 )
 rotation = 1.5708
-scale = Vector2( 1, 2.9676 )
+scale = Vector2( 1, -3.75261 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="MovingPlatform" parent="Objects" index="7" groups=[
@@ -130,12 +130,12 @@ motion = Vector2( 0, -600 )
 cycle = 30.0
 
 [node name="Wall2" parent="Objects" index="8" groups=[
-"Wall2Led2",
 "Wall2Led1",
+"Wall2Led2",
 ] instance=ExtResource( 7 )]
 
-position = Vector2( 278.923, 543.32 )
-scale = Vector2( 1, 2.98959 )
+position = Vector2( 278.923, 552.202 )
+scale = Vector2( 1, 2.71202 )
 activation = 1
 
 [node name="Wall3" parent="Objects" index="9" groups=[
@@ -143,8 +143,8 @@ activation = 1
 "Wall3Led1",
 ] instance=ExtResource( 7 )]
 
-position = Vector2( 971.249, 544.431 )
-scale = Vector2( 1, 2.94564 )
+position = Vector2( 971.249, 553.346 )
+scale = Vector2( 1, 2.66704 )
 activation = 1
 
 [node name="MovingPlatform2" parent="Objects" index="10" groups=[

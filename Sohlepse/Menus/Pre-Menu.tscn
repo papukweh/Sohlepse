@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Menus/Pre-Menu.gd" type="Script" id=1]
 [ext_resource path="res://Menus/BG.tscn" type="PackedScene" id=2]
@@ -7,14 +7,15 @@
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Player.png" type="Texture" id=6]
 [ext_resource path="res://Assets/RedPlayerMirror.png" type="Texture" id=7]
-[ext_resource path="res://Menus/Save_Button.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/bg.png" type="Texture" id=9]
-[ext_resource path="res://Assets/splashscreen.png" type="Texture" id=10]
+[ext_resource path="res://Menus/Back.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Menus/Save_Button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/bg.png" type="Texture" id=10]
+[ext_resource path="res://Assets/splashscreen.png" type="Texture" id=11]
 
 [sub_resource type="Theme" id=1]
 
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 
 size = 40
 use_mipmaps = false
@@ -22,7 +23,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 
 size = 20
 use_mipmaps = false
@@ -61,7 +62,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[node name="Pre-Menu" type="Control"]
+[node name="Pre-Menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -154,7 +155,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
 custom_constants/shadow_offset_x = 3
@@ -206,7 +207,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
 custom_constants/shadow_offset_x = 3
@@ -260,7 +261,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.857071, 0.96, 0.92, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.519333 )
 custom_constants/shadow_offset_x = 3
@@ -339,7 +340,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Border" type="ColorRect" parent="Save_window" index="0"]
+[node name="Back" parent="Save_window" index="0" instance=ExtResource( 8 )]
+
+margin_left = 533.0
+margin_top = 679.0
+margin_right = 625.0
+margin_bottom = 713.0
+
+[node name="Border" type="ColorRect" parent="Save_window" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -357,7 +365,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.176471, 0.27451, 0.290196, 1 )
 
-[node name="Inside" type="ColorRect" parent="Save_window" index="1"]
+[node name="Inside" type="ColorRect" parent="Save_window" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -375,7 +383,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.176471, 0.333333, 0.34902, 1 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Save_window" index="2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Save_window" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -433,13 +441,13 @@ size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Slot01" parent="Save_window/ScrollContainer/VBoxContainer/Line1" index="0" instance=ExtResource( 8 )]
+[node name="Slot01" parent="Save_window/ScrollContainer/VBoxContainer/Line1" index="0" instance=ExtResource( 9 )]
 
 margin_left = 38.0
 margin_right = 358.0
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Slot02" parent="Save_window/ScrollContainer/VBoxContainer/Line1" index="1" instance=ExtResource( 8 )]
+[node name="Slot02" parent="Save_window/ScrollContainer/VBoxContainer/Line1" index="1" instance=ExtResource( 9 )]
 
 margin_left = 362.0
 margin_right = 682.0
@@ -465,13 +473,13 @@ size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Slot03" parent="Save_window/ScrollContainer/VBoxContainer/Line2" index="0" instance=ExtResource( 8 )]
+[node name="Slot03" parent="Save_window/ScrollContainer/VBoxContainer/Line2" index="0" instance=ExtResource( 9 )]
 
 margin_left = 38.0
 margin_right = 358.0
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Slot04" parent="Save_window/ScrollContainer/VBoxContainer/Line2" index="1" instance=ExtResource( 8 )]
+[node name="Slot04" parent="Save_window/ScrollContainer/VBoxContainer/Line2" index="1" instance=ExtResource( 9 )]
 
 margin_left = 362.0
 margin_right = 682.0
@@ -497,13 +505,13 @@ size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Slot05" parent="Save_window/ScrollContainer/VBoxContainer/Line3" index="0" instance=ExtResource( 8 )]
+[node name="Slot05" parent="Save_window/ScrollContainer/VBoxContainer/Line3" index="0" instance=ExtResource( 9 )]
 
 margin_left = 38.0
 margin_right = 358.0
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Slot06" parent="Save_window/ScrollContainer/VBoxContainer/Line3" index="1" instance=ExtResource( 8 )]
+[node name="Slot06" parent="Save_window/ScrollContainer/VBoxContainer/Line3" index="1" instance=ExtResource( 9 )]
 
 margin_left = 362.0
 margin_right = 682.0
@@ -529,13 +537,13 @@ size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Slot07" parent="Save_window/ScrollContainer/VBoxContainer/Line4" index="0" instance=ExtResource( 8 )]
+[node name="Slot07" parent="Save_window/ScrollContainer/VBoxContainer/Line4" index="0" instance=ExtResource( 9 )]
 
 margin_left = 38.0
 margin_right = 358.0
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Slot08" parent="Save_window/ScrollContainer/VBoxContainer/Line4" index="1" instance=ExtResource( 8 )]
+[node name="Slot08" parent="Save_window/ScrollContainer/VBoxContainer/Line4" index="1" instance=ExtResource( 9 )]
 
 margin_left = 362.0
 margin_right = 682.0
@@ -561,13 +569,13 @@ size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Slot09" parent="Save_window/ScrollContainer/VBoxContainer/Line5" index="0" instance=ExtResource( 8 )]
+[node name="Slot09" parent="Save_window/ScrollContainer/VBoxContainer/Line5" index="0" instance=ExtResource( 9 )]
 
 margin_left = 38.0
 margin_right = 358.0
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Slot10" parent="Save_window/ScrollContainer/VBoxContainer/Line5" index="1" instance=ExtResource( 8 )]
+[node name="Slot10" parent="Save_window/ScrollContainer/VBoxContainer/Line5" index="1" instance=ExtResource( 9 )]
 
 margin_left = 362.0
 margin_right = 682.0
@@ -593,13 +601,13 @@ size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Slot11" parent="Save_window/ScrollContainer/VBoxContainer/Line6" index="0" instance=ExtResource( 8 )]
+[node name="Slot11" parent="Save_window/ScrollContainer/VBoxContainer/Line6" index="0" instance=ExtResource( 9 )]
 
 margin_left = 38.0
 margin_right = 358.0
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Slot12" parent="Save_window/ScrollContainer/VBoxContainer/Line6" index="1" instance=ExtResource( 8 )]
+[node name="Slot12" parent="Save_window/ScrollContainer/VBoxContainer/Line6" index="1" instance=ExtResource( 9 )]
 
 margin_left = 362.0
 margin_right = 682.0
@@ -702,7 +710,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Insira seu nome:"
@@ -725,7 +733,7 @@ blend_times = [  ]
 
 visible = false
 position = Vector2( 519.882, 341.528 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Splash" type="Sprite" parent="AnimationPlayer" index="1"]
@@ -733,7 +741,7 @@ _sections_unfolded = [ "Visibility" ]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 575.348, 348.88 )
 scale = Vector2( 0.862466, 0.93247 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Visibility" ]
 
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
@@ -756,6 +764,14 @@ _sections_unfolded = [ "Visibility" ]
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 
+[connection signal="mouse_entered" from="Save_window/Back" to="." method="_on_Back_mouse_entered"]
+
+[connection signal="mouse_exited" from="Save_window/Back" to="." method="_on_Back_mouse_exited"]
+
+[connection signal="pressed" from="Save_window/Back" to="." method="_on_Back_pressed"]
+
 [connection signal="text_entered" from="Name_entry/LineEdit" to="." method="_on_LineEdit_text_entered"]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 
