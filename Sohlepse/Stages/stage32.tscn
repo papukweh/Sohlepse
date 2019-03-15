@@ -22,7 +22,7 @@
 [ext_resource path="res://Assets/lever_off.png" type="Texture" id=20]
 [ext_resource path="res://Assets/exit.png" type="Texture" id=21]
 
-[node name="stage32" instance=ExtResource( 1 )]
+[node name="stage32" index="0" instance=ExtResource( 1 )]
 
 ACT = 3
 MAX_CLONES = 0
@@ -69,7 +69,7 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 6299.83, -1053.43 )
+position = Vector2( -4267.99, 480.824 )
 
 [node name="Hazards" type="Node2D" parent="." index="3"]
 

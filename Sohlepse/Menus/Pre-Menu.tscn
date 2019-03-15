@@ -62,7 +62,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[node name="Pre-Menu" type="Control" index="0"]
+[node name="Pre-Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
