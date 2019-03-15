@@ -3,4 +3,4 @@ $ chmod +x ./Sohlepse.x_86_64
 
 E extraia o arquivo Sohlepse.pck.zip no mesmo diretório.
 
-Os saves do jogo são armazenados num arquivo savegame.save, neste mesmo diretório.
+Os saves do jogo são armazenados na pasta Saves, neste mesmo diretório.
