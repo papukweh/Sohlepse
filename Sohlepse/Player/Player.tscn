@@ -1,39 +1,39 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/RedPlayer.png" type="Texture" id=2]
-[ext_resource path="res://Assets/RedPlayer_pushing2.png" type="Texture" id=3]
-[ext_resource path="res://Assets/RedPlayer_pushing3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/wife.png" type="Texture" id=2]
+[ext_resource path="res://Assets/wife_walking2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/wife_walking1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Player_pushing2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Player_pushing3.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/wife.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Player.png" type="Texture" id=10]
-[ext_resource path="res://Assets/RedPlayer_walking1.png" type="Texture" id=11]
-[ext_resource path="res://Assets/RedPlayer_walking2.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=13]
-[ext_resource path="res://Assets/RedPlayer_pushing1.png" type="Texture" id=14]
-[ext_resource path="res://Assets/wife_walking2.png" type="Texture" id=15]
-[ext_resource path="res://Assets/wife_walking1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/RedPlayer_pushing2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/RedPlayer_pushing3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/RedPlayer_walking1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/RedPlayer_walking2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Player_walking1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Player_walking2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/RedPlayer_pushing1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/RedPlayer.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Player_pushing1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=16]
 [ext_resource path="res://Player/InputHandler.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 4.36212, 15.0242 )
+extents = Vector2( 3.63803, 15.0242 )
 
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "redstill",
+"name": "wifestill",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "redpushing_walk",
+"name": "wifewalking",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
@@ -43,37 +43,37 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "walking",
+"name": "redpushing_walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "wifestill",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "still",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "redwalking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "pushing_still",
+"name": "walking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "redpushing_still",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
-"name": "wifewalking",
+"name": "redstill",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "pushing_still",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "still",
 "speed": 5.0
 } ]
 

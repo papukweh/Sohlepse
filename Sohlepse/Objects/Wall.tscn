@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Objects/Wall.gd" type="Script" id=1]
-[ext_resource path="res://Assets/base_3c.png" type="Texture" id=2]
-[ext_resource path="res://Assets/base_3d.png" type="Texture" id=3]
-[ext_resource path="res://Assets/base_3b.png" type="Texture" id=4]
-[ext_resource path="res://Assets/base_2c.png" type="Texture" id=5]
-[ext_resource path="res://Assets/base_1a.png" type="Texture" id=6]
-[ext_resource path="res://Assets/base_2b.png" type="Texture" id=7]
-[ext_resource path="res://Assets/base_2a.png" type="Texture" id=8]
+[ext_resource path="res://Assets/base_1b.png" type="Texture" id=2]
+[ext_resource path="res://Assets/base_2b.png" type="Texture" id=3]
+[ext_resource path="res://Assets/base_2a.png" type="Texture" id=4]
+[ext_resource path="res://Assets/base_3d.png" type="Texture" id=5]
+[ext_resource path="res://Assets/base_3b.png" type="Texture" id=6]
+[ext_resource path="res://Assets/base_2c.png" type="Texture" id=7]
+[ext_resource path="res://Assets/base_3c.png" type="Texture" id=8]
 [ext_resource path="res://Assets/base_3a.png" type="Texture" id=9]
-[ext_resource path="res://Assets/base_1b.png" type="Texture" id=10]
+[ext_resource path="res://Assets/base_1a.png" type="Texture" id=10]
 [ext_resource path="res://Assets/actionable_wall.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Forest_actionable_wall.png" type="Texture" id=12]
 
@@ -18,37 +18,37 @@
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "32",
+"name": "11",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "33",
+"name": "21",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "31",
+"name": "20",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "22",
+"name": "33",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "10",
+"name": "31",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "21",
+"name": "22",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "20",
+"name": "32",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -58,11 +58,11 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "11",
+"name": "10",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 19.4513, 5.6389 )
@@ -81,12 +81,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.96182, 10 )
 
-[node name="Wall" type="StaticBody2D" index="0"]
+[node name="Wall" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -112,7 +112,7 @@ animation = "10"
 
 position = Vector2( 8.06595, -28.7621 )
 scale = Vector2( 1.228, 1.723 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Wall_spr" type="AnimatedSprite" parent="." index="2"]
 
@@ -123,9 +123,9 @@ animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( -0.2792, 0.0330314 )
-scale = Vector2( 1.58319, 3.20781 )
-shape = SubResource( 2 )
+position = Vector2( -0.2792, -2.32283 )
+scale = Vector2( 1.58319, 3.58377 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 

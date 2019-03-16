@@ -7,7 +7,7 @@ var GRAVITY = 700
 var velocity = Vector2()
 
 func _process(delta):
-	if inbodyM != null and inbodyM.get_name().begins_with("Player"):
+	if inbodyM != null and inbodyM.get_name().begins_with("Player") and !inbodyM.dead:
 		inEndGoal = true
 	else:
 		inEndGoal = false

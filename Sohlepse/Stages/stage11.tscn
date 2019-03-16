@@ -17,7 +17,7 @@
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=16]
 
-[node name="stage11" type="Node" index="0"]
+[node name="stage11" type="Node"]
 
 script = ExtResource( 1 )
 ACT = 2
@@ -168,24 +168,24 @@ _sections_unfolded = [ "Collision", "Transform" ]
 "Lever2",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( 107.48, -669.28 )
+position = Vector2( 89, -669.28 )
 rotation = 1.5708
-scale = Vector2( 1, 1.37233 )
+scale = Vector2( -1, -1.37233 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="Wall4" parent="Reality/Objects" index="3" groups=[
 "Lever2",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( 863.704, -623.995 )
+position = Vector2( 864, -623 )
 rotation = 1.5708
-scale = Vector2( 1, 4.99626 )
+scale = Vector2( 1, -4.75 )
 _sections_unfolded = [ "Collision", "Transform" ]
 begin = 1
 
 [node name="Box" parent="Reality/Objects" index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 602, -1114 )
+position = Vector2( 596, -1114 )
 
 [node name="Lever1" parent="Reality/Objects" index="5" instance=ExtResource( 7 )]
 
@@ -203,7 +203,7 @@ cycle = 5.001
 
 [node name="Button2" parent="Reality/Objects" index="8" instance=ExtResource( 9 )]
 
-position = Vector2( 840, -532 )
+position = Vector2( 880, -532 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="MovingPlatform4" parent="Reality/Objects" index="9" instance=ExtResource( 8 )]
@@ -487,6 +487,8 @@ begin = 1
 [node name="Mirror" type="Node" parent="." index="8"]
 
 [node name="Hazards" type="Node" parent="Mirror" index="0"]
+
+editor/display_folded = true
 
 [node name="Thorns13" parent="Mirror/Hazards" index="0" groups=[
 "Button3",
@@ -809,14 +811,14 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 position = Vector2( -607.832, -1067.92 )
 rotation = 1.5708
-scale = Vector2( -1, 1.19222 )
+scale = Vector2( 1, -1.19222 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Wall8" parent="Mirror/Objects" index="2" groups=[
 "Lever4",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( -107.48, -669.28 )
+position = Vector2( -89.48, -669.28 )
 rotation = 1.5708
 scale = Vector2( -1, 1.37233 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -825,15 +827,15 @@ _sections_unfolded = [ "Collision", "Transform" ]
 "Lever4",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( -863.704, -623.995 )
+position = Vector2( -864, -623 )
 rotation = 1.5708
-scale = Vector2( -1, 4.99626 )
+scale = Vector2( 1, 4.75 )
 _sections_unfolded = [ "Collision", "Transform" ]
 begin = 1
 
 [node name="Box2" parent="Mirror/Objects" index="4" instance=ExtResource( 6 )]
 
-position = Vector2( -612, -1114 )
+position = Vector2( -603, -1114 )
 scale = Vector2( -1, 1 )
 
 [node name="Button5" parent="Mirror/Objects" index="5" instance=ExtResource( 9 )]
@@ -863,7 +865,7 @@ cycle = 5.001
 
 [node name="Button3" parent="Mirror/Objects" index="9" instance=ExtResource( 9 )]
 
-position = Vector2( -840, -532 )
+position = Vector2( -880, -532 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Transform" ]
 

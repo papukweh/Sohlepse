@@ -16,7 +16,7 @@
 [ext_resource path="res://Objects/EndgoalMirror.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Stages/Tutorial/Event.tscn" type="PackedScene" id=15]
 
-[node name="stage17" index="0" instance=ExtResource( 1 )]
+[node name="stage17" instance=ExtResource( 1 )]
 
 ACT = 2
 PLAYERS = 2
@@ -66,7 +66,7 @@ invert_horizontal = -1
 "ButtonInst",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 354.569, 588.093 )
+position = Vector2( 339.569, 588.093 )
 scale = Vector2( 1, -1.25914 )
 _sections_unfolded = [ "Collision", "Transform" ]
 forest = 1
@@ -75,7 +75,7 @@ forest = 1
 "ButtonInst2",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 481.27, 542.782 )
+position = Vector2( 467.27, 542.782 )
 scale = Vector2( 1, 1.25914 )
 forest = 1
 
@@ -83,7 +83,7 @@ forest = 1
 "ButtonInst3",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 608.707, 588.563 )
+position = Vector2( 593.707, 588.563 )
 scale = Vector2( 1, -1.25914 )
 _sections_unfolded = [ "Collision", "Transform" ]
 forest = 1
@@ -92,7 +92,7 @@ forest = 1
 "ButtonInst4",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 737.553, 542.047 )
+position = Vector2( 723.553, 542.047 )
 scale = Vector2( 1, 1.25914 )
 forest = 1
 
@@ -100,7 +100,7 @@ forest = 1
 "ButtonInst5",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 864.989, 587.828 )
+position = Vector2( 849.989, 587.828 )
 scale = Vector2( 1, -1.25914 )
 _sections_unfolded = [ "Collision", "Transform" ]
 forest = 1
@@ -109,8 +109,8 @@ forest = 1
 "ButtonInst6",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( 979.163, 53.88 )
-scale = Vector2( 0.78476, 0.568879 )
+position = Vector2( 980.163, 17 )
+scale = Vector2( 0.78476, 0.6875 )
 forest = 1
 
 [node name="Box" parent="Reality/Objects" index="6" instance=ExtResource( 6 )]

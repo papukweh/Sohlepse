@@ -22,7 +22,7 @@
 [ext_resource path="res://Assets/lever_off.png" type="Texture" id=20]
 [ext_resource path="res://Assets/exit.png" type="Texture" id=21]
 
-[node name="stage32" index="0" instance=ExtResource( 1 )]
+[node name="stage32" instance=ExtResource( 1 )]
 
 ACT = 3
 MAX_CLONES = 0
@@ -543,9 +543,9 @@ cycle = 450.0
 "Button",
 ] instance=ExtResource( 9 )]
 
-position = Vector2( -4482.17, 534.647 )
+position = Vector2( -4482, 534 )
 rotation = 1.5708
-scale = Vector2( 1, -1.20746 )
+scale = Vector2( 1, -1.2 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Lever" parent="Objects" index="14" instance=ExtResource( 10 )]
@@ -656,8 +656,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 begin = 1
 
 [node name="Wall10" parent="Objects" index="28" groups=[
-"LED2",
 "LED1",
+"LED2",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 5071.84, -1063.93 )

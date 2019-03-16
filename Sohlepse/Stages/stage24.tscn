@@ -129,7 +129,7 @@ position = Vector2( -420.744, -246.791 )
 "Lever7",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( 2551.06, -341.53 )
+position = Vector2( 2551.06, -310.53 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
@@ -163,8 +163,8 @@ begin = 1
 forest = 1
 
 [node name="Wall1" parent="Reality/Objects" index="12" groups=[
-"ButtonInst2",
 "ButtonInst3",
+"ButtonInst2",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 2342.07, -249.932 )
@@ -174,8 +174,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 activation = 1
 
 [node name="Wall4" parent="Reality/Objects" index="13" groups=[
-"Lever1",
 "Lever4",
+"Lever1",
 ] instance=ExtResource( 11 )]
 
 position = Vector2( 591.995, -495.786 )

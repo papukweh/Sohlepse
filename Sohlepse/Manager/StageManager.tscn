@@ -73,7 +73,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 0, 0, 0 ), Color( 1, 0, 0, 0.215686 ), Color( 1, 0, 0, 0 ) ]
 }
 
-[node name="StageManager" type="Node2D"]
+[node name="StageManager" type="Node2D" index="0"]
 
 z_index = 20
 script = ExtResource( 1 )
@@ -170,7 +170,6 @@ blend_times = [  ]
 
 [node name="ColorRect" type="ColorRect" parent="Tutoriais" index="8"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -185,7 +184,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="PauseMenu" parent="Tutoriais" index="9" instance=ExtResource( 5 )]
 

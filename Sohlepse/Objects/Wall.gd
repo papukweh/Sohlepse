@@ -10,11 +10,16 @@ onready var bcount = 0
 onready var active_buttons = 1
 
 func _ready():
-	print("READY")
+	var sum = 0
+	for g in self.get_groups():
+		if !g.begins_with("root"):
+			bcount = bcount + 1
+
 	if begin != 0:
 		$Wall_spr.hide()
 		$CollisionShape2D.disabled = true
 		active = false
+		sum = bcount
 	else:
 		$Wall_spr.show()
 		$CollisionShape2D.disabled = false
@@ -23,21 +28,7 @@ func _ready():
 	if forest != 0:
 		$Wall_spr.animation = "forest"
 	
-	for g in self.get_groups():
-		print("TEM GRUPO")
-		if !g.begins_with("root"):
-			print("bcount+1")
-			bcount = bcount + 1
-	if activation != 0:
-		if bcount == 1:
-			print("setei 10")
-			$AnimatedSprite.animation = "10"
-		elif bcount == 2:
-			$AnimatedSprite.animation = "20"
-		elif bcount == 3:
-			$AnimatedSprite.animation = "30"
-		else:
-			print("Invalid number of buttons for " + $Wall_spr.name)
+	$AnimatedSprite.animation = str(bcount)+str(sum)
 
 func onTriggered():
 	var trigger = false
